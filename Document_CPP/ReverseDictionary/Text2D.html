@@ -126,16 +126,47 @@
   <title></title>
   </head>
   <body>
-  <h2>空のウインドウを表示する</h2>
-  <p>AC-Engineで空のウインドウを表示します。</p>
+  <h2>ウインドウに文字を表示する</h2>
+  <p>AC-Engineでウインドウに文字を表示します。</p>
+  <p>文字の表示に必要なフォントデータを生成するには <a href="../Reference/Tool/FontGenerator.html">フォントジェネレーター</a> を使用します。</p>
   <pre class="sourceCode cpp"><code class="sourceCode cpp">﻿
   <span class="ot">#include &lt;ace.h&gt;</span>
   
-  <span class="co">// 空のウインドウを表示するサンプルです。</span>
+  <span class="co">// TextObject2Dのサンプル。TextObject2Dを用いて文字を表示しています。</span>
   <span class="dt">int</span> main()
   {
       <span class="co">// AC-Engineを初期化する。</span>
-      ace::Engine::Initialize(ace::ToAString(<span class="st">&quot;Empty&quot;</span>).c_str(), <span class="dv">640</span>, <span class="dv">480</span>, ace::EngineOption());
+      ace::Engine::Initialize(ace::ToAString(<span class="st">&quot;TextObject2D&quot;</span>).c_str(), <span class="dv">640</span>, <span class="dv">480</span>, ace::EngineOption());
+  
+      <span class="co">// シーンを生成する</span>
+      <span class="dt">auto</span> scene = std::make_shared&lt;ace::Scene&gt;();
+  
+      <span class="co">// レイヤーを生成する</span>
+      <span class="dt">auto</span> layer = std::make_shared&lt;ace::Layer2D&gt;();
+  
+      <span class="co">// シーンにレイヤーを追加する</span>
+      scene-&gt;AddLayer(layer);
+  
+      <span class="co">// シーンを切り替える</span>
+      ace::Engine::ChangeScene(scene);
+  
+      <span class="co">// フォントを生成する</span>
+      <span class="dt">auto</span> smallFont = ace::Engine::GetGraphics()-&gt;CreateFont(ace::ToAString(<span class="st">&quot;Data/Font/small.aff&quot;</span>).c_str());
+  
+      <span class="co">// TextObject2Dのインスタンスを生成する</span>
+      <span class="dt">auto</span> smallObj = std::make_shared&lt;ace::TextObject2D&gt;();
+  
+      <span class="co">// 描画に使うフォントを設定する</span>
+      smallObj-&gt;SetFont(smallFont);
+  
+      <span class="co">// 描画位置を指定する</span>
+      smallObj-&gt;SetPosition(ace::Vector2DF(<span class="dv">100</span>, <span class="dv">100</span>));
+  
+      <span class="co">// 描画する文字列を指定する</span>
+      smallObj-&gt;SetText(ace::ToAString(<span class="st">&quot;文字列サンプル1&quot;</span>).c_str());
+  
+      <span class="co">//レイヤーへ追加する</span>
+      layer-&gt;AddObject(smallObj);
   
       <span class="co">// AC-Engineのウインドウが閉じられていないか確認する。</span>
       <span class="kw">while</span> (ace::Engine::DoEvents())

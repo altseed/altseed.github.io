@@ -126,16 +126,43 @@
   <title></title>
   </head>
   <body>
-  <h2>空のウインドウを表示する</h2>
-  <p>AC-Engineで空のウインドウを表示します。</p>
+  <h2>ウインドウに画像を表示する</h2>
+  <p>AC-Engineでウインドウに画像を表示します。</p>
   <pre class="sourceCode cpp"><code class="sourceCode cpp">﻿
   <span class="ot">#include &lt;ace.h&gt;</span>
   
-  <span class="co">// 空のウインドウを表示するサンプルです。</span>
+  <span class="co">// TextureObject2Dのサンプル。TextureObject2Dを用いて画像を表示しています。</span>
   <span class="dt">int</span> main()
   {
       <span class="co">// AC-Engineを初期化する。</span>
-      ace::Engine::Initialize(ace::ToAString(<span class="st">&quot;Empty&quot;</span>).c_str(), <span class="dv">640</span>, <span class="dv">480</span>, ace::EngineOption());
+      ace::Engine::Initialize(ace::ToAString(<span class="st">&quot;TextureObject2D&quot;</span>).c_str(), <span class="dv">640</span>, <span class="dv">480</span>, ace::EngineOption());
+  
+      <span class="co">// シーンを生成する</span>
+      <span class="dt">auto</span> scene = std::make_shared&lt;ace::Scene&gt;();
+  
+      <span class="co">// レイヤーを生成する</span>
+      <span class="dt">auto</span> layer = std::make_shared&lt;ace::Layer2D&gt;();
+  
+      <span class="co">// シーンにレイヤーを追加する</span>
+      scene-&gt;AddLayer(layer);
+  
+      <span class="co">// シーンを切り替える</span>
+      ace::Engine::ChangeScene(scene);
+  
+      <span class="co">// テクスチャを読み込む</span>
+      <span class="dt">auto</span> tex = ace::Engine::GetGraphics()-&gt;CreateTexture2D(ace::ToAString(<span class="st">&quot;Data/Texture/Sample1.png&quot;</span>).c_str());
+  
+      <span class="co">// TextureObject2Dのインスタンスを生成する</span>
+      <span class="dt">auto</span> obj = std::make_shared&lt;ace::TextureObject2D&gt;();
+  
+      <span class="co">// 描画に使うテクスチャを設定する</span>
+      obj-&gt;SetTexture(tex);
+  
+      <span class="co">// 描画位置を指定する</span>
+      obj-&gt;SetPosition(ace::Vector2DF(<span class="dv">100</span>, <span class="dv">100</span>));
+  
+      <span class="co">// レイヤーへ追加する</span>
+      layer-&gt;AddObject(obj);
   
       <span class="co">// AC-Engineのウインドウが閉じられていないか確認する。</span>
       <span class="kw">while</span> (ace::Engine::DoEvents())

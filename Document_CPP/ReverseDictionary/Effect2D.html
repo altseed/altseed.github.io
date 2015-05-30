@@ -126,16 +126,48 @@
   <title></title>
   </head>
   <body>
-  <h2>空のウインドウを表示する</h2>
-  <p>AC-Engineで空のウインドウを表示します。</p>
+  <h2 id="effekseer">ウインドウにEffekseerで作成したエフェクトを表示する</h2>
+  <p>AC-EngineでウインドウにEffekseerで作成したエフェクトを表示します。</p>
+  <p><a href="https://sites.google.com/site/effekseer/">Effekseer</a></p>
   <pre class="sourceCode cpp"><code class="sourceCode cpp">﻿
   <span class="ot">#include &lt;ace.h&gt;</span>
   
-  <span class="co">// 空のウインドウを表示するサンプルです。</span>
+  <span class="co">// EffectObject2Dのサンプル。エフェクトを表示しています。</span>
   <span class="dt">int</span> main()
   {
       <span class="co">// AC-Engineを初期化する。</span>
-      ace::Engine::Initialize(ace::ToAString(<span class="st">&quot;Empty&quot;</span>).c_str(), <span class="dv">640</span>, <span class="dv">480</span>, ace::EngineOption());
+      ace::Engine::Initialize(ace::ToAString(<span class="st">&quot;EffectObject2D&quot;</span>).c_str(), <span class="dv">640</span>, <span class="dv">480</span>, ace::EngineOption());
+  
+      <span class="co">// シーンを生成する</span>
+      <span class="dt">auto</span> scene = std::make_shared&lt;ace::Scene&gt;();
+  
+      <span class="co">// レイヤーを生成する</span>
+      <span class="dt">auto</span> layer = std::make_shared&lt;ace::Layer2D&gt;();
+  
+      <span class="co">// シーンにレイヤーを追加する</span>
+      scene-&gt;AddLayer(layer);
+  
+      <span class="co">// シーンを切り替える</span>
+      ace::Engine::ChangeScene(scene);
+  
+      <span class="co">// エフェクトを読み込む</span>
+      <span class="dt">auto</span> effect = ace::Engine::GetGraphics()-&gt;CreateEffect(ace::ToAString(<span class="st">&quot;Data/Effect/magic.efk&quot;</span>).c_str());
+  
+      <span class="co">// エフェクトオブジェクトを生成する</span>
+      <span class="dt">auto</span> effectObj = std::make_shared&lt;ace::EffectObject2D&gt;();
+  
+      <span class="co">// エフェクトをレイヤーに追加する</span>
+      layer-&gt;AddObject(effectObj);
+  
+      <span class="co">// エフェクトの位置、大きさを指定する</span>
+      effectObj-&gt;SetPosition(ace::Vector2DF(<span class="dv">320</span>, <span class="dv">240</span>));
+      effectObj-&gt;SetScale(ace::Vector2DF(<span class="dv">50</span>, <span class="dv">50</span>));
+      
+      <span class="co">// エフェクトを設定する</span>
+      effectObj-&gt;SetEffect(effect);
+  
+      <span class="co">// エフェクトを再生する</span>
+      effectObj-&gt;Play();
   
       <span class="co">// AC-Engineのウインドウが閉じられていないか確認する。</span>
       <span class="kw">while</span> (ace::Engine::DoEvents())

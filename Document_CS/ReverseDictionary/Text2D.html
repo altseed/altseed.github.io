@@ -126,19 +126,51 @@
   <title></title>
   </head>
   <body>
-  <h2>空のウインドウを表示する</h2>
-  <p>AC-Engineで空のウインドウを表示します。</p>
+  <h2>ウインドウに文字を表示する</h2>
+  <p>AC-Engineでウインドウに文字を表示します。</p>
+  <p>文字の表示に必要なフォントデータを生成するには <a href="../Reference/Tool/FontGenerator.html">フォントジェネレーター</a> を使用します。</p>
   <pre class="sourceCode cs"><code class="sourceCode cs">﻿
   <span class="co">/// </span><span class="kw">&lt;summary&gt;</span>
-  <span class="co">/// 空のウインドウを表示するサンプルです。</span>
+  <span class="co">/// TextObject2Dのサンプル。TextObject2Dを用いて文字を表示しています。</span>
   <span class="co">/// </span><span class="kw">&lt;/summary&gt;</span>
-  <span class="kw">class</span> Empty
+  <span class="kw">class</span> TextObject2D
   {
       [System.<span class="fu">STAThread</span>]
       <span class="kw">static</span> <span class="dt">void</span> <span class="fu">Main</span>(<span class="dt">string</span>[] args)
       {
           <span class="co">// AC-Engineを初期化する。</span>
-          ace.<span class="fu">Engine</span>.<span class="fu">Initialize</span>(<span class="st">&quot;Empty&quot;</span>, <span class="dv">640</span>, <span class="dv">480</span>, <span class="kw">new</span> ace.<span class="fu">EngineOption</span>());
+          ace.<span class="fu">Engine</span>.<span class="fu">Initialize</span>(<span class="st">&quot;TextObject2D&quot;</span>, <span class="dv">640</span>, <span class="dv">480</span>, <span class="kw">new</span> ace.<span class="fu">EngineOption</span>());
+  
+          <span class="co">// シーンを生成する</span>
+          <span class="dt">var</span> scene = <span class="kw">new</span> ace.<span class="fu">Scene</span>();
+  
+          <span class="co">// レイヤーを生成する</span>
+          <span class="dt">var</span> layer = <span class="kw">new</span> ace.<span class="fu">Layer2D</span>();
+  
+          <span class="co">// シーンにレイヤーを追加する</span>
+          scene.<span class="fu">AddLayer</span>(layer);
+  
+          <span class="co">// シーンを切り替える</span>
+          ace.<span class="fu">Engine</span>.<span class="fu">ChangeScene</span>(scene);
+  
+          <span class="co">// フォントを生成する</span>
+          <span class="dt">var</span> smallFont = ace.<span class="fu">Engine</span>.<span class="fu">Graphics</span>.<span class="fu">CreateFont</span>(<span class="st">&quot;Data/Font/small.aff&quot;</span>);
+  
+          <span class="co">// TextObject2Dのインスタンスを生成する</span>
+          <span class="dt">var</span> fontObj = <span class="kw">new</span> ace.<span class="fu">TextObject2D</span>();
+  
+          <span class="co">// 描画に使うフォントを設定する</span>
+          fontObj.<span class="fu">Font</span> = smallFont;
+  
+          <span class="co">// 描画位置を指定する</span>
+          fontObj.<span class="fu">Position</span> = <span class="kw">new</span> ace.<span class="fu">Vector2DF</span>(<span class="dv">100</span>, <span class="dv">100</span>);
+  
+          <span class="co">// 描画する文字列を指定する</span>
+          fontObj.<span class="fu">Text</span> = <span class="st">&quot;文字列サンプル1&quot;</span>;
+  
+          <span class="co">//レイヤーに追加する</span>
+          layer.<span class="fu">AddObject</span>(fontObj);
+          
   
           <span class="co">// AC-Engineのウインドウが閉じられていないか確認する。</span>
           <span class="kw">while</span> (ace.<span class="fu">Engine</span>.<span class="fu">DoEvents</span>())
@@ -150,8 +182,7 @@
           <span class="co">// AC-Engineの終了処理をする。</span>
           ace.<span class="fu">Engine</span>.<span class="fu">Terminate</span>();
       }
-  }
-  </code></pre>
+  }</code></pre>
   </body>
   </html>
   
