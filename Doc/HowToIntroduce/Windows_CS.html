@@ -11,22 +11,30 @@
           $("button[id='language_all']").click( function ()
           {
               Cookies.set('code_state', 'all');
+      
               $("pre[class='highlight cpp']").show();
+              $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").show();
+              $("h3[class='csharp']").show();
           });
       
           $("button[id='language_cpp']").click( function ()
           {
-          Cookies.set('code_state', 'cpp');
+              Cookies.set('code_state', 'cpp');
+      
               $("pre[class='highlight cpp']").show();
+              $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
           });
       
           $("button[id='language_cs']").click( function ()
           {
               Cookies.set('code_state', 'cs');
               $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
               $("pre[class='highlight csharp']").show();
+              $("h3[class='csharp']").show();
           });
       
           code_state = Cookies.get('code_state');
@@ -34,19 +42,25 @@
           if(code_state == 'all')
           {
               $("pre[class='highlight cpp']").show();
+              $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").show();
+              $("h3[class='csharp']").show();
           }
       
           if(code_state == 'cpp')
           {
               $("pre[class='highlight cpp']").show();
+              $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
           }
       
           if(code_state == 'cs')
           {
               $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
               $("pre[class='highlight csharp']").show();
+              $("h3[class='csharp']").show();
           }
       });
     </script>
@@ -62,7 +76,12 @@
     </div>
     <div id="content">
       <div class="main">
-        <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button><h2>C#版の導入(Windows)</h2>
+        <div class="language_selector">
+          <p>
+            表示するサンプルコードの言語を指定できます。
+          </p>
+          <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button>
+        </div><h2>C#版の導入(Windows)</h2>
 
 <p>C#版の導入方法について説明しています。</p>
 
@@ -76,15 +95,15 @@
 
 <h3>Altseedのダウンロード</h3>
 
-<p><a href="https://github.com/altseed/Altseed/releases/download/20150530/ACE_CS_20150531_WIN.zip">Altseed</a>　をダウンロードします。
+<p><a href="https://github.com/altseed/Altseed/releases/download/20150616/Altseed_CS_20150616_WIN.zip">Altseed</a>　をダウンロードします。
 ダウンロードしたファイルを解凍します。</p>
 
 <p>開発には以下のファイルを使用します。</p>
 
 <ul>
-<li>Runtime/ace_cs.dll</li>
-<li>Runtime/ace_cs.XML</li>
-<li>Runtime/ace_core.dll</li>
+<li>Runtime/Altseed.dll</li>
+<li>Runtime/Altseed.XML</li>
+<li>Runtime/Altseed_core.dll</li>
 </ul>
 
 <h3>プロジェクトの作成</h3>
@@ -92,7 +111,7 @@
 <ol>
 <li><code>ファイル-&gt;新規作成-&gt;プロジェクト</code>を選択します。</li>
 <li>左のカラムから<code>インストール済み-&gt;テンプレート-&gt;Visual C#</code>を選択した後、中央のカラムから<code>コンソールアプリケーション</code>を選択します。</li>
-<li>下のテキストボックスの<code>名前</code>にプロジェクト名を入力して<code>OK</code>を選択します。ここからは<code>ACE_Test</code>と入力したと仮定して説明をします。</li>
+<li>下のテキストボックスの<code>名前</code>にプロジェクト名を入力して<code>OK</code>を選択します。ここからは<code>Altseed_Test</code>と入力したと仮定して説明をします。</li>
 </ol>
 
 <p>これでプロジェクトの作成が完了しました。</p>
@@ -100,14 +119,14 @@
 <h3>プロジェクトの設定</h3>
 
 <ol>
-<li>ソリューションエクスプローラーの<code>ACE_Test</code>プロジェクトを右クリックします。<code>追加-&gt;既存の項目</code>を選択して、<code>ace_cs.dll</code>と<code>ace_core.dll</code> を追加します。</li>
-<li>追加された<code>ace_cs.dll</code>を右クリックして<code>プロパティ</code>を開き、<code>出力ディレクトリーにコピー</code>の項目を「新しい場合はコピーする」に変更します。同様に<code>ace_core.dll</code>に対しても<code>出力ディレクトリーにコピー</code>の項目を変更します。</li>
-<li><code>ACE_Test-&gt;参照設定</code>を右クリックして<code>参照の追加</code>を選択します。ここで、<code>参照</code>ボタンをクリックし、1で追加された<code>ace_cs.dll</code>を選択して<code>OK</code>を押します。</li>
+<li>ソリューションエクスプローラーの<code>ACE_Test</code>プロジェクトを右クリックします。<code>追加-&gt;既存の項目</code>を選択して、<code>Altseed.dll</code>と<code>Altseed_core.dll</code> を追加します。</li>
+<li>追加された<code>ace_cs.dll</code>を右クリックして<code>プロパティ</code>を開き、<code>出力ディレクトリーにコピー</code>の項目を「新しい場合はコピーする」に変更します。同様に<code>Altseed_core.dll</code>に対しても<code>出力ディレクトリーにコピー</code>の項目を変更します。</li>
+<li><code>ACE_Test-&gt;参照設定</code>を右クリックして<code>参照の追加</code>を選択します。ここで、<code>参照</code>ボタンをクリックし、1で追加された<code>Altseed.dll</code>を選択して<code>OK</code>を押します。</li>
 </ol>
 
 <p>以上でAltseedが使えるようになります。</p>
 
-<p>また、<code>ace_cs.XML</code>を<code>ace_cs.dll</code>と同じディレクトリに配置すると関数等の説明がVisualC#上で表示されるようになります。</p>
+<p>また、<code>Altseed.XML</code>を<code>Altseed.dll</code>と同じディレクトリに配置すると関数等の説明がVisualC#上で表示されるようになります。</p>
 
 <h3>ビルド、実行</h3>
 
@@ -118,7 +137,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ACE_Test
+namespace Altseed_Test
 {
     class Program
     {
@@ -126,17 +145,17 @@ namespace ACE_Test
         static void Main(string[] args)
         {
             // Altseedを初期化する。
-            ace.Engine.Initialize("Empty", 640, 480, new ace.EngineOption());
+            asd.Engine.Initialize("Empty", 640, 480, new asd.EngineOption());
 
             // Altseedが進行可能かチェックする。
-            while (ace.Engine.DoEvents())
+            while (asd.Engine.DoEvents())
             {
                 // Altseedを更新する。
-                ace.Engine.Update();
+                asd.Engine.Update();
             }
 
             // Altseedを終了する。
-            ace.Engine.Terminate();
+            asd.Engine.Terminate();
         }
     }
 }
@@ -212,11 +231,19 @@ namespace ACE_Test
           <a href="/Doc/HowToUseBasic/Geometry2D.html">図形の描画</a>
         </p>
         <p>
-          <a href="">画像の表示</a>
-        </p>
-        <p>
           <a href="/Doc/HowToUseBasic/PostEffect.html">ポストエフェクト</a>
         </p>
+        <p>
+          以下、追加中...
+        </p>
+        <h3>
+          リファレンス
+        </h3>
+        <a href="/Doc/Reference/Main.html">リファレンス</a>
+        <h3>
+          逆引き
+        </h3>
+        <a href="/Doc/ReverseDictionary.html">逆引き</a>
       </div>
     </div>
   </body>

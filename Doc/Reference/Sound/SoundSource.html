@@ -11,22 +11,30 @@
           $("button[id='language_all']").click( function ()
           {
               Cookies.set('code_state', 'all');
+      
               $("pre[class='highlight cpp']").show();
+              $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").show();
+              $("h3[class='csharp']").show();
           });
       
           $("button[id='language_cpp']").click( function ()
           {
-          Cookies.set('code_state', 'cpp');
+              Cookies.set('code_state', 'cpp');
+      
               $("pre[class='highlight cpp']").show();
+              $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
           });
       
           $("button[id='language_cs']").click( function ()
           {
               Cookies.set('code_state', 'cs');
               $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
               $("pre[class='highlight csharp']").show();
+              $("h3[class='csharp']").show();
           });
       
           code_state = Cookies.get('code_state');
@@ -34,19 +42,25 @@
           if(code_state == 'all')
           {
               $("pre[class='highlight cpp']").show();
+              $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").show();
+              $("h3[class='csharp']").show();
           }
       
           if(code_state == 'cpp')
           {
               $("pre[class='highlight cpp']").show();
+              $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
           }
       
           if(code_state == 'cs')
           {
               $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
               $("pre[class='highlight csharp']").show();
+              $("h3[class='csharp']").show();
           }
       });
     </script>
@@ -62,7 +76,12 @@
     </div>
     <div id="content">
       <div class="main">
-        <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button><h2>音源 (SoundSource)</h2>
+        <div class="language_selector">
+          <p>
+            表示するサンプルコードの言語を指定できます。
+          </p>
+          <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button>
+        </div><h2>音源 (SoundSource)</h2>
 
 <h3>概要</h3>
 
@@ -110,6 +129,8 @@ LoopStartingPoint及び、LoopEndPointを設定すると、先頭から音を再
 <h3>使用方法</h3>
 
 <p>SoundクラスとSoundSourceのサンプルです。</p>
+
+<h3 class="cpp">C++</h3>
 <pre class="highlight cpp"><code>
 <span class="cp">#include &lt;Altseed.h&gt;
 </span>
@@ -147,6 +168,8 @@ LoopStartingPoint及び、LoopEndPointを設定すると、先頭から音を再
 <span class="p">}</span>
 
 </code></pre>
+
+<h3 class="csharp">C#</h3>
 <pre class="highlight csharp"><code>
 <span class="c1">/// &lt;summary&gt;
 /// Soundを用いて音を鳴らすサンプルです。
@@ -251,11 +274,19 @@ LoopStartingPoint及び、LoopEndPointを設定すると、先頭から音を再
           <a href="/Doc/HowToUseBasic/Geometry2D.html">図形の描画</a>
         </p>
         <p>
-          <a href="">画像の表示</a>
-        </p>
-        <p>
           <a href="/Doc/HowToUseBasic/PostEffect.html">ポストエフェクト</a>
         </p>
+        <p>
+          以下、追加中...
+        </p>
+        <h3>
+          リファレンス
+        </h3>
+        <a href="/Doc/Reference/Main.html">リファレンス</a>
+        <h3>
+          逆引き
+        </h3>
+        <a href="/Doc/ReverseDictionary.html">逆引き</a>
       </div>
     </div>
   </body>

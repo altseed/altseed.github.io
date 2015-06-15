@@ -11,22 +11,30 @@
           $("button[id='language_all']").click( function ()
           {
               Cookies.set('code_state', 'all');
+      
               $("pre[class='highlight cpp']").show();
+              $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").show();
+              $("h3[class='csharp']").show();
           });
       
           $("button[id='language_cpp']").click( function ()
           {
-          Cookies.set('code_state', 'cpp');
+              Cookies.set('code_state', 'cpp');
+      
               $("pre[class='highlight cpp']").show();
+              $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
           });
       
           $("button[id='language_cs']").click( function ()
           {
               Cookies.set('code_state', 'cs');
               $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
               $("pre[class='highlight csharp']").show();
+              $("h3[class='csharp']").show();
           });
       
           code_state = Cookies.get('code_state');
@@ -34,19 +42,25 @@
           if(code_state == 'all')
           {
               $("pre[class='highlight cpp']").show();
+              $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").show();
+              $("h3[class='csharp']").show();
           }
       
           if(code_state == 'cpp')
           {
               $("pre[class='highlight cpp']").show();
+              $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
           }
       
           if(code_state == 'cs')
           {
               $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
               $("pre[class='highlight csharp']").show();
+              $("h3[class='csharp']").show();
           }
       });
     </script>
@@ -62,7 +76,12 @@
     </div>
     <div id="content">
       <div class="main">
-        <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button><h2>テキストオブジェクト2D (TextObject2D)</h2>
+        <div class="language_selector">
+          <p>
+            表示するサンプルコードの言語を指定できます。
+          </p>
+          <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button>
+        </div><h2>テキストオブジェクト2D (TextObject2D)</h2>
 
 <h3>概要</h3>
 
@@ -139,45 +158,39 @@
 
 <p>TextObject2Dクラスのサンプルです。</p>
 
-<p><img alt="SS" src="/Doc/img/ss/TextObject2D.png" /></p>
+<p><img alt="SS" src="/Doc/img/ss/TextObject2D_Simple.png" /></p>
+
+<h3 class="cpp">C++</h3>
 <pre class="highlight cpp"><code>
-<span class="cp">#include &lt;Altseed.h&gt;
+<span class="cp">#include &lt;Base.h&gt;
 </span>
-<span class="c1">// TextObject2Dのサンプル。TextObject2Dを用いて文字を表示しています。
-</span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="cm">/**
+@brief  文字列を表示するサンプル。
+*/</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="c1">// Altseedを初期化する。
-</span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"TextObject2D"</span><span class="p">).</span><span class="n">c_str</span><span class="p">(),</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="n">asd</span><span class="o">::</span><span class="n">EngineOption</span><span class="p">());</span>
+    <span class="c1">// Altseedを初期化する
+</span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"TextObject2D_Simple"</span><span class="p">).</span><span class="n">c_str</span><span class="p">(),</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="n">asd</span><span class="o">::</span><span class="n">EngineOption</span><span class="p">());</span>
 
-    <span class="c1">// シーンを生成する
-</span>    <span class="k">auto</span> <span class="n">scene</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">Scene</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="p">{</span>
+        <span class="c1">// フォントを生成する
+</span>        <span class="k">auto</span> <span class="n">font</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetGraphics</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CreateFont</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Data/Font/edge.aff"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
 
-    <span class="c1">// レイヤーを生成する
-</span>    <span class="k">auto</span> <span class="n">layer</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">Layer2D</span><span class="o">&gt;</span><span class="p">();</span>
+        <span class="c1">//TextObject2Dを生成する
+</span>        <span class="k">auto</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">TextObject2D</span><span class="o">&gt;</span><span class="p">();</span>
 
-    <span class="c1">// シーンにレイヤーを追加する
-</span>    <span class="n">scene</span><span class="o">-&gt;</span><span class="n">AddLayer</span><span class="p">(</span><span class="n">layer</span><span class="p">);</span>
+        <span class="c1">//描画に使うフォントを設定する
+</span>        <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetFont</span><span class="p">(</span><span class="n">font</span><span class="p">);</span>
 
-    <span class="c1">// シーンを切り替える
-</span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">ChangeScene</span><span class="p">(</span><span class="n">scene</span><span class="p">);</span>
+        <span class="c1">//描画位置を指定する
+</span>        <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetPosition</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Vector2DF</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">));</span>
 
-    <span class="c1">// フォントを生成する
-</span>    <span class="k">auto</span> <span class="n">smallFont</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetGraphics</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CreateFont</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Data/Font/small.aff"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
+        <span class="c1">//描画する文字列の指定
+</span>        <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetText</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"文字列サンプル1"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
 
-    <span class="c1">// TextObject2Dのインスタンスを生成する
-</span>    <span class="k">auto</span> <span class="n">smallObj</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">TextObject2D</span><span class="o">&gt;</span><span class="p">();</span>
-
-    <span class="c1">// 描画に使うフォントを設定する
-</span>    <span class="n">smallObj</span><span class="o">-&gt;</span><span class="n">SetFont</span><span class="p">(</span><span class="n">smallFont</span><span class="p">);</span>
-
-    <span class="c1">// 描画位置を指定する
-</span>    <span class="n">smallObj</span><span class="o">-&gt;</span><span class="n">SetPosition</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Vector2DF</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">));</span>
-
-    <span class="c1">// 描画する文字列を指定する
-</span>    <span class="n">smallObj</span><span class="o">-&gt;</span><span class="n">SetText</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"文字列サンプル1"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
-
-    <span class="c1">//レイヤーへ追加する
-</span>    <span class="n">layer</span><span class="o">-&gt;</span><span class="n">AddObject</span><span class="p">(</span><span class="n">smallObj</span><span class="p">);</span>
+        <span class="c1">//レイヤーへ追加する
+</span>        <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">AddObject2D</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
+    <span class="p">}</span>
 
     <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
 </span>    <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">DoEvents</span><span class="p">())</span>
@@ -186,54 +199,48 @@
 </span>        <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Update</span><span class="p">();</span>
     <span class="p">}</span>
 
-    <span class="c1">// Altseedの終了処理をする。
+    <span class="c1">// Altseedを終了する。
 </span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Terminate</span><span class="p">();</span>
-
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre>
-<pre class="highlight csharp"><code>
+
+<h3 class="csharp">C#</h3>
+<pre class="highlight csharp"><code><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Linq</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Text</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Threading.Tasks</span><span class="p">;</span>
+
 <span class="c1">/// &lt;summary&gt;
-/// TextObject2Dのサンプル。TextObject2Dを用いて文字を表示しています。
+/// 文字列を表示するサンプル。
 /// &lt;/summary&gt;
-</span><span class="k">class</span> <span class="nc">TextObject2D</span>
+</span><span class="k">class</span> <span class="nc">TextObject2D_Simple</span>
 <span class="p">{</span>
     <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
     <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="c1">// Altseedを初期化する。
-</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"TextObject2D"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"TextObject2D_Simple"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
 
-        <span class="c1">// シーンを生成する
-</span>        <span class="n">var</span> <span class="n">scene</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Scene</span><span class="p">();</span>
+        <span class="p">{</span>
+            <span class="c1">// フォントを生成する
+</span>            <span class="n">var</span> <span class="n">font</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateFont</span><span class="p">(</span><span class="s">"Data/Font/edge.aff"</span><span class="p">);</span>
 
-        <span class="c1">// レイヤーを生成する
-</span>        <span class="n">var</span> <span class="n">layer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Layer2D</span><span class="p">();</span>
+            <span class="c1">// TextObject2Dを生成する
+</span>            <span class="n">var</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextObject2D</span><span class="p">();</span>
 
-        <span class="c1">// シーンにレイヤーを追加する
-</span>        <span class="n">scene</span><span class="p">.</span><span class="nf">AddLayer</span><span class="p">(</span><span class="n">layer</span><span class="p">);</span>
+            <span class="c1">// 描画に使うフォントを設定する
+</span>            <span class="n">obj</span><span class="p">.</span><span class="n">Font</span> <span class="p">=</span> <span class="n">font</span><span class="p">;</span>
 
-        <span class="c1">// シーンを切り替える
-</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">ChangeScene</span><span class="p">(</span><span class="n">scene</span><span class="p">);</span>
+            <span class="c1">// 描画位置を指定する
+</span>            <span class="n">obj</span><span class="p">.</span><span class="n">Position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="m">100</span><span class="p">);</span>
 
-        <span class="c1">// フォントを生成する
-</span>        <span class="n">var</span> <span class="n">smallFont</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateFont</span><span class="p">(</span><span class="s">"Data/Font/small.aff"</span><span class="p">);</span>
+            <span class="c1">// 描画する文字列の指定
+</span>            <span class="n">obj</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"文字列サンプル1"</span><span class="p">;</span>
 
-        <span class="c1">// TextObject2Dのインスタンスを生成する
-</span>        <span class="n">var</span> <span class="n">fontObj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextObject2D</span><span class="p">();</span>
-
-        <span class="c1">// 描画に使うフォントを設定する
-</span>        <span class="n">fontObj</span><span class="p">.</span><span class="n">Font</span> <span class="p">=</span> <span class="n">smallFont</span><span class="p">;</span>
-
-        <span class="c1">// 描画位置を指定する
-</span>        <span class="n">fontObj</span><span class="p">.</span><span class="n">Position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="m">100</span><span class="p">);</span>
-
-        <span class="c1">// 描画する文字列を指定する
-</span>        <span class="n">fontObj</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"文字列サンプル1"</span><span class="p">;</span>
-
-        <span class="c1">//レイヤーに追加する
-</span>        <span class="n">layer</span><span class="p">.</span><span class="nf">AddObject</span><span class="p">(</span><span class="n">fontObj</span><span class="p">);</span>
-
+            <span class="c1">// レイヤーへの追加
+</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">AddObject2D</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
+        <span class="p">}</span>
 
         <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
 </span>        <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
@@ -246,7 +253,6 @@
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
-
 </code></pre>
 
       </div>
@@ -312,11 +318,19 @@
           <a href="/Doc/HowToUseBasic/Geometry2D.html">図形の描画</a>
         </p>
         <p>
-          <a href="">画像の表示</a>
-        </p>
-        <p>
           <a href="/Doc/HowToUseBasic/PostEffect.html">ポストエフェクト</a>
         </p>
+        <p>
+          以下、追加中...
+        </p>
+        <h3>
+          リファレンス
+        </h3>
+        <a href="/Doc/Reference/Main.html">リファレンス</a>
+        <h3>
+          逆引き
+        </h3>
+        <a href="/Doc/ReverseDictionary.html">逆引き</a>
       </div>
     </div>
   </body>
