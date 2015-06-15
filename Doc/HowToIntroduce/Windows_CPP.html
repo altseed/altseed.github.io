@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!--Always force latest IE rendering engine or request Chrome Frame-->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <!--Use title if it's in the page YAML frontmatter--><title>Altseed</title><link href="/stylesheets/base.css" rel="stylesheet" type="text/css" /><link href="/stylesheets/syntax.css" rel="stylesheet" type="text/css" /><script src="/javascripts/jquery-1.11.3.min.js" type="text/javascript"></script><script src="/javascripts/js.cookie.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      $(document).ready(function()
+      {
+          $("button[id='language_all']").click( function ()
+          {
+              Cookies.set('code_state', 'all');
+              $("pre[class='highlight cpp']").show();
+              $("pre[class='highlight csharp']").show();
+          });
+      
+          $("button[id='language_cpp']").click( function ()
+          {
+          Cookies.set('code_state', 'cpp');
+              $("pre[class='highlight cpp']").show();
+              $("pre[class='highlight csharp']").hide();
+          });
+      
+          $("button[id='language_cs']").click( function ()
+          {
+              Cookies.set('code_state', 'cs');
+              $("pre[class='highlight cpp']").hide();
+              $("pre[class='highlight csharp']").show();
+          });
+      
+          code_state = Cookies.get('code_state');
+      
+          if(code_state == 'all')
+          {
+              $("pre[class='highlight cpp']").show();
+              $("pre[class='highlight csharp']").show();
+          }
+      
+          if(code_state == 'cpp')
+          {
+              $("pre[class='highlight cpp']").show();
+              $("pre[class='highlight csharp']").hide();
+          }
+      
+          if(code_state == 'cs')
+          {
+              $("pre[class='highlight cpp']").hide();
+              $("pre[class='highlight csharp']").show();
+          }
+      });
+    </script>
+  </head>
+  <body class="Doc Doc_HowToIntroduce Doc_HowToIntroduce_Windows_CPP">
+    <div id="header">
+      <h1>
+        Altseed
+      </h1>
+      <p>
+        複数のプログラミング言語、複数の環境対応のゲームエンジン
+      </p>
+    </div>
+    <div id="content">
+      <div class="main">
+        <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button><h2>C++版の導入(Windows)</h2>
+
+<p>C++版の導入方法について説明しています。</p>
+
+<h3>VisualStudio2013の導入</h3>
+
+<p><a href="https://www.visualstudio.com/ja-jp/downloads/download-visual-studio-vs#DownloadFamilies_2">VisualStudioのWebページ</a>から
+「Visual Studio Community 2013 Update 4」をダウンロードします。ただし、会社内でAltseedを使用する場合は「Visual Studio Express 2013 with Update 4 for Windows Desktop」をダウンロードします。
+これらはプログラムのソースコードから実行可能なアプリケーションを生成するツールです。個人で開発する分には無料で使用できます。</p>
+
+<p>ダウンロードが終わったら、「Visual Studio」をインストールします。</p>
+
+<h3>Altseedのダウンロード</h3>
+
+<p><a href="https://github.com/altseed/Altseed/releases/download/20150530/ACE_CPP_20150531_WIN.zip">Altseed</a>　をダウンロードします。
+ダウンロードしたファイルを解凍します。</p>
+
+<p>開発には以下のファイルを使用します。</p>
+
+<ul>
+<li>Runtime/ace.h</li>
+<li>Runtime/ace_core.Debug.dll</li>
+<li>Runtime/ace_core.dll</li>
+<li>Runtime/Debug/ace_engine.lib</li>
+<li>Runtime/Release/ace_engine.lib</li>
+</ul>
+
+<h3>プロジェクトの作成</h3>
+
+<p>Visual Studioで開発するためには、最初にプロジェクトを作成する必要があります。以下の手順でプロジェクトを作成します。</p>
+
+<ol>
+<li><code>ファイル-&gt;新規作成-&gt;プロジェクト</code>を選択します。</li>
+<li>左のカラムから<code>インストール済み-&gt;テンプレート-&gt;Visual C++</code>を選択した後、中央のカラムから<code>コンソールアプリケーション</code>を選択します。</li>
+<li>下のテキストボックスの<code>名前</code>にプロジェクト名を入力して<code>OK</code>を選択します。ここからは<code>ACE_Test</code>と入力したと仮定して説明をします。</li>
+<li>ダイアログボックスが表示されますが、何も設定を変更せずにOKを押します。</li>
+</ol>
+
+<p>これでプロジェクトの作成が完了しました。</p>
+
+<h3>プロジェクトの設定</h3>
+
+<p>プロジェクトの設定をします。</p>
+
+<ol>
+<li>ソリューションエクスプローラから<code>ACE_Test</code>プロジェクトを右クリックし、プロパティを選択します。</li>
+<li><code>構成プロパティ-&gt;C++-&gt;コード設定</code>を選択します。そして、ランタイムライブラリを<code>マルチスレッドデバッグDLL</code>から<code>マルチスレッドデバッグ</code>に変更します。</li>
+<li><code>適用</code>をクリックします。</li>
+<li>左上の<code>アクティブ(Debug)</code>を選択し、<code>Release</code>に切り替えます。</li>
+<li><code>構成プロパティ-&gt;C++-&gt;コード設定</code>を選択します。そして、ランタイムライブラリを<code>マルチスレッドデバッグ</code>から<code>マルチスレッド</code>に変更します。</li>
+<li><code>OK</code>をクリックします。</li>
+</ol>
+
+<p>プロジェクトの設定が終わったらACEを追加します。</p>
+
+<ol>
+<li>Runtimeの中身を全て、<code>ACE_Test/ACE_Test/</code>にコピーします。</li>
+</ol>
+
+<p>最低限の動作をさせるならば、とりあえずコピーするだけで動作します。</p>
+
+<h3>ビルド、実行</h3>
+
+<p>ACE_Test.cpp を以下のソースコードに書き換えます。</p>
+<pre class="highlight plaintext"><code>// ACE_Test.cpp : コンソール アプリケーションのエントリ ポイントを定義します。
+//
+
+#include "stdafx.h"
+
+// Altseedのヘッダを読み込む
+#include "ace.h"
+
+// Altseedのライブラリを読み込む
+#if _DEBUG
+#pragma comment(lib,"Debug/ace_engine.lib")
+#else
+#pragma comment(lib,"Release/ace_engine.lib")
+#endif
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+    // Altseedを初期化する。
+    ace::Engine::Initialize(ace::ToAString("Empty").c_str(), 640, 480, ace::EngineOption());
+
+    // Altseedが進行可能かチェックする。
+    while (ace::Engine::DoEvents())
+    {
+        // Altseedを更新する。
+        ace::Engine::Update();
+    }
+
+    // Altseedを終了する。
+    ace::Engine::Terminate();
+
+    return 0;
+}
+
+
+</code></pre>
+
+<p>そして、メニューバーから<code>デバッグ-&gt;デバッグ開始</code>を選択します。
+黒いウインドウが表示されれば成功です。</p>
+
+<h3>今後開発する上での設定</h3>
+
+<p>今回は、Altseedのランタイムをコピーで済ませました。しかし、実際に開発する際は全てのファイルを配置し直すことをおすすめします。</p>
+
+<p><code>Debug/ace_engine.lib</code> と <code>Release/ace_engine.lib</code> は名称を変更し、 <code>ACE_Test.vcxproj</code> と同じディレクトリに移動しましょう。 <code>Debug</code> と <code>Release</code> というフォルダは
+VisualStudioがコンパイルをする際に一時的に生成されるファイルが配置されるディレクトリでもあります。不要なファイルを消すときに間違えて消してしまうかもしれません。</p>
+
+<p><code>ace_core.Debug.dll</code> と <code>ace_core.dll</code> は生成された実行ファイルが存在するディレクトリにもコピーしましょう。VisualStudioからデバッグしている間は問題は置きませんが、
+実行ファイルを起動する際は、実行ファイルと同じディレクトリにこれらのdllが存在する必要があります。</p>
+
+      </div>
+      <div class="menu">
+        <h2>
+          メニュー
+        </h2>
+        <h3>
+          概要
+        </h3>
+        <p>
+          <a href="index.html">TOP</a>
+        </p>
+        <p>
+          <a href="features.html">主要な機能</a>
+        </p>
+        <p>
+          <a href="faq.html">よくある質問</a>
+        </p>
+        <p>
+          <a href="showcase.html">採用事例</a>
+        </p>
+        <p>
+          <a href="history.html">更新履歴</a>
+        </p>
+        <h3>
+          導入
+        </h3>
+        <p>
+          <a href="">動作環境</a>
+        </p>
+        <p>
+          <a href="">導入方法</a>
+        </p>
+        <p>
+          <a href="download.html">ダウンロード</a>
+        </p>
+        <h3>
+          サポート
+        </h3>
+        <p>
+          <フォーラム 準備中></フォーラム>
+        </p>
+        <p>
+          <a href="">Slack</a>
+        </p>
+        <p>
+          <a href="https://github.com/altseed/Altseed">Github</a>
+        </p>
+        <h3>
+          チュートリアル
+        </h3>
+        <p>
+          <a href="https://github.com/altseed/STGLecture/blob/master/Document/cs/Index.md">C#による初心者向けSTG講座</a>
+        </p>
+        <p>
+          <a href="">初期化</a>
+        </p>
+        <p>
+          <a href="">図形の表示</a>
+        </p>
+        <p>
+          <a href="">画像の表示</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

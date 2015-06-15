@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!--Always force latest IE rendering engine or request Chrome Frame-->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <!--Use title if it's in the page YAML frontmatter--><title>Altseed</title><link href="/stylesheets/base.css" rel="stylesheet" type="text/css" /><link href="/stylesheets/syntax.css" rel="stylesheet" type="text/css" /><script src="/javascripts/jquery-1.11.3.min.js" type="text/javascript"></script><script src="/javascripts/js.cookie.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      $(document).ready(function()
+      {
+          $("button[id='language_all']").click( function ()
+          {
+              Cookies.set('code_state', 'all');
+              $("pre[class='highlight cpp']").show();
+              $("pre[class='highlight csharp']").show();
+          });
+      
+          $("button[id='language_cpp']").click( function ()
+          {
+          Cookies.set('code_state', 'cpp');
+              $("pre[class='highlight cpp']").show();
+              $("pre[class='highlight csharp']").hide();
+          });
+      
+          $("button[id='language_cs']").click( function ()
+          {
+              Cookies.set('code_state', 'cs');
+              $("pre[class='highlight cpp']").hide();
+              $("pre[class='highlight csharp']").show();
+          });
+      
+          code_state = Cookies.get('code_state');
+      
+          if(code_state == 'all')
+          {
+              $("pre[class='highlight cpp']").show();
+              $("pre[class='highlight csharp']").show();
+          }
+      
+          if(code_state == 'cpp')
+          {
+              $("pre[class='highlight cpp']").show();
+              $("pre[class='highlight csharp']").hide();
+          }
+      
+          if(code_state == 'cs')
+          {
+              $("pre[class='highlight cpp']").hide();
+              $("pre[class='highlight csharp']").show();
+          }
+      });
+    </script>
+  </head>
+  <body class="Doc Doc_Reference Doc_Reference_Sound Doc_Reference_Sound_Sound">
+    <div id="header">
+      <h1>
+        Altseed
+      </h1>
+      <p>
+        複数のプログラミング言語、複数の環境対応のゲームエンジン
+      </p>
+    </div>
+    <div id="content">
+      <div class="main">
+        <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button><h2>サウンド (Sound)</h2>
+
+<h3>概要</h3>
+
+<p>音の生成、管理を行う機能を提供します。音を鳴らす場合は必ず使用する必要があります。</p>
+
+<p>音源をファイルから生成する際、ファイルを解凍するかどうかを指定できます。通常、oggフォーマット等はwavファイルを圧縮した情報を格納し、再生する際にリアルタイムに解凍しつつ再生しています。ここでは、事前にファイルを解凍するか再生中にリアルタイムに解凍するかを指定できます。事前に解凍する場合、読み込み時間は長くなりメモリも消費しますが再生時のCPU負荷は小さくなります。一方、事前に解凍しない場合は、読み込み時間もメモリも小さくなりますが、再生時に若干CPUの処理を必要とします。基本的に、音が長いBGMは圧縮したまま、音が短くたくさん鳴らす効果音は解凍して読み込みます。</p>
+
+<p>再生を開始した音に対する操作はハンドルを経由して操作します。これはBGMは除き殆どの場合音は一度再生を開始したら二度と操作することが少ないからです。
+サウンドの引数に再生を開始した時に返された値を停止等の関数の引数に与えることで操作できます。</p>
+
+<h3>主なメソッド</h3>
+
+<table><thead>
+<tr>
+<th>名称</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>CreateSoundSource</td>
+<td>音源をファイルから生成します。</td>
+</tr>
+<tr>
+<td>Play</td>
+<td>音源を指定しその音を再生します。</td>
+</tr>
+<tr>
+<td>Stop</td>
+<td>再生中の音を停止します。</td>
+</tr>
+<tr>
+<td>Pause</td>
+<td>再生中の音を一時停止します。</td>
+</tr>
+<tr>
+<td>Resume</td>
+<td>一時停止中の音を再開します。</td>
+</tr>
+<tr>
+<td>SetVolume</td>
+<td>ボリュームを設定します。</td>
+</tr>
+<tr>
+<td>FadeIn</td>
+<td>音をフェードインさせます。</td>
+</tr>
+<tr>
+<td>FadeOut</td>
+<td>音をフェードアウトさせます。</td>
+</tr>
+</tbody></table>
+
+<h3>主なプロパティ</h3>
+
+<p>なし</p>
+
+<h3>主なイベント</h3>
+
+<p>なし</p>
+
+<h3>使用方法</h3>
+
+<p>SoundクラスとSoundSourceのサンプルです。</p>
+<pre class="highlight cpp"><code>
+<span class="cp">#include &lt;Altseed.h&gt;
+</span>
+<span class="c1">// Soundを用いて音を鳴らすサンプルです。
+</span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// Altseedを初期化する。
+</span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Sound"</span><span class="p">).</span><span class="n">c_str</span><span class="p">(),</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="n">asd</span><span class="o">::</span><span class="n">EngineOption</span><span class="p">());</span>
+
+    <span class="c1">// 音ファイルを読み込む。
+</span>    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">SoundSource</span><span class="o">&gt;</span> <span class="n">se1</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetSound</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CreateSoundSource</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Data/Sound/se1.wav"</span><span class="p">).</span><span class="n">c_str</span><span class="p">(),</span> <span class="nb">true</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">SoundSource</span><span class="o">&gt;</span> <span class="n">bgm1</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetSound</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CreateSoundSource</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Data/Sound/bgm1.ogg"</span><span class="p">).</span><span class="n">c_str</span><span class="p">(),</span> <span class="nb">false</span><span class="p">);</span>
+
+    <span class="c1">// 音を再生する。
+</span>    <span class="kt">int</span> <span class="n">id_se1</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetSound</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">Play</span><span class="p">(</span><span class="n">se1</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">id_bgm1</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetSound</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">Play</span><span class="p">(</span><span class="n">bgm1</span><span class="p">);</span>
+
+    <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
+</span>    <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">DoEvents</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// Altseedを更新する。
+</span>        <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Update</span><span class="p">();</span>
+
+        <span class="c1">// 音が再生終了してるか調べる。
+</span>        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetSound</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetIsPlaying</span><span class="p">(</span><span class="n">id_bgm1</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Altseedの終了処理をする。
+</span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Terminate</span><span class="p">();</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+</code></pre>
+<pre class="highlight csharp"><code>
+<span class="c1">/// &lt;summary&gt;
+/// Soundを用いて音を鳴らすサンプルです。
+/// &lt;/summary&gt;
+</span><span class="k">class</span> <span class="nc">Sound</span>
+<span class="p">{</span>
+    <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
+    <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Altseedを初期化する。
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"Sound"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
+
+        <span class="c1">// 音ファイルを読み込む
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">SoundSource</span> <span class="n">se1</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Sound</span><span class="p">.</span><span class="nf">CreateSoundSource</span><span class="p">(</span><span class="s">"Data/Sound/se1.wav"</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
+        <span class="n">asd</span><span class="p">.</span><span class="n">SoundSource</span> <span class="n">bgm1</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Sound</span><span class="p">.</span><span class="nf">CreateSoundSource</span><span class="p">(</span><span class="s">"Data/Sound/bgm1.ogg"</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
+
+        <span class="c1">// 音を再生する。
+</span>        <span class="kt">int</span> <span class="n">id_se1</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Sound</span><span class="p">.</span><span class="nf">Play</span><span class="p">(</span><span class="n">se1</span><span class="p">);</span>
+        <span class="kt">int</span> <span class="n">id_bgm1</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Sound</span><span class="p">.</span><span class="nf">Play</span><span class="p">(</span><span class="n">bgm1</span><span class="p">);</span>
+
+        <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
+</span>        <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="c1">// Altseedを更新する。
+</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
+
+            <span class="c1">// 音が再生終了してるか調べる。
+</span>            <span class="k">if</span><span class="p">(!</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Sound</span><span class="p">.</span><span class="nf">IsPlaying</span><span class="p">(</span><span class="n">id_bgm1</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Altseedの終了処理をする。
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+
+</code></pre>
+
+      </div>
+      <div class="menu">
+        <h2>
+          メニュー
+        </h2>
+        <h3>
+          概要
+        </h3>
+        <p>
+          <a href="index.html">TOP</a>
+        </p>
+        <p>
+          <a href="features.html">主要な機能</a>
+        </p>
+        <p>
+          <a href="faq.html">よくある質問</a>
+        </p>
+        <p>
+          <a href="showcase.html">採用事例</a>
+        </p>
+        <p>
+          <a href="history.html">更新履歴</a>
+        </p>
+        <h3>
+          導入
+        </h3>
+        <p>
+          <a href="">動作環境</a>
+        </p>
+        <p>
+          <a href="">導入方法</a>
+        </p>
+        <p>
+          <a href="download.html">ダウンロード</a>
+        </p>
+        <h3>
+          サポート
+        </h3>
+        <p>
+          <フォーラム 準備中></フォーラム>
+        </p>
+        <p>
+          <a href="">Slack</a>
+        </p>
+        <p>
+          <a href="https://github.com/altseed/Altseed">Github</a>
+        </p>
+        <h3>
+          チュートリアル
+        </h3>
+        <p>
+          <a href="https://github.com/altseed/STGLecture/blob/master/Document/cs/Index.md">C#による初心者向けSTG講座</a>
+        </p>
+        <p>
+          <a href="">初期化</a>
+        </p>
+        <p>
+          <a href="">図形の表示</a>
+        </p>
+        <p>
+          <a href="">画像の表示</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

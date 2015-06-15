@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <!--Always force latest IE rendering engine or request Chrome Frame-->
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-    <!--Use title if it's in the page YAML frontmatter--><title>コミュニティ</title><link href="/stylesheets/base.css" rel="stylesheet" type="text/css" /><link href="/stylesheets/syntax.css" rel="stylesheet" type="text/css" /><script src="/javascripts/jquery-1.11.3.min.js" type="text/javascript"></script><script src="/javascripts/js.cookie.js" type="text/javascript"></script>
+    <!--Use title if it's in the page YAML frontmatter--><title>Altseed</title><link href="/stylesheets/base.css" rel="stylesheet" type="text/css" /><link href="/stylesheets/syntax.css" rel="stylesheet" type="text/css" /><script src="/javascripts/jquery-1.11.3.min.js" type="text/javascript"></script><script src="/javascripts/js.cookie.js" type="text/javascript"></script>
     <script type="text/javascript">
       $(document).ready(function()
       {
@@ -51,7 +51,7 @@
       });
     </script>
   </head>
-  <body class="community">
+  <body class="Doc Doc_Reference Doc_Reference_Graphics Doc_Reference_Graphics_Texture2D">
     <div id="header">
       <h1>
         Altseed
@@ -62,57 +62,92 @@
     </div>
     <div id="content">
       <div class="main">
-        <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button><div id="contents">
-          <div class="main">
-            <h2>
-              コミュニティ
-            </h2>
-            <h3>
-              フォーラム
-            </h3>
-            <p>
-              準備中
-            </p>
-            <h3>
-              Slack
-            </h3>
-            <p>
-              Slack上のAltseedのチームです。開発の内容から雑談、ユーザー同士の交流まで行っています。
-              お気軽に参加どうぞ。
-            </p>
-            <p>
-              参加したい方は、下記のリンクから名前とメールアドレスを連絡するようお願いします。
-              連絡を受け次第、Slackに追加させていただきます。数日たっても返答がない場合は、お手数ではありますが
-              再度登録フォームに連絡するようお願いします。
-            </p>
-            <a href="https://docs.google.com/forms/d/1u36czwTTq1TYkGjWizIfc3ntAy6DuivFKh3zadcd0Gg">Slack登録フォームへ</a>
-            <h3>
-              github
-            </h3>
-            <p>
-              Altseedはオープンソースであり、github上で開発されています。バグ報告や機能要望をgithubのissueに投稿すると
-              その内容はすぐに主要な開発者全員に連絡が伝わります。そのため特に強いバグ修正や機能の要望を連絡する時に便利です。
-            </p>
-            <p>
-              当然、オープンソースですので外部からのドキュメントの修正、機能追加やバグ修正等も常時、受け付けています。
-              お気軽にPullRequestをどうぞ。
-            </p>
-            <p>
-              githubに掲載されているgitterというチャットにて毎週、開発に関するミーティングを行っています。
-              開発に携わってみたい方は是非とも参加をお願いします。
-            </p>
-            <a href="https://github.com/Altseed/Altseed">githubへ</a>
-            <h3>
-              メールアドレス
-            </h3>
-            <p>
-              内容が公開されては困る話や他の連絡手段がない場合はこちらへ。
-            </p>
-            <p>
-              amuc.engine(at)@gmail.com
-            </p>
-          </div>
-        </div>
+        <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button><h2>テクスチャ2D (Texture2D)</h2>
+
+<h3>概要</h3>
+
+<p>2次元の画像を定義します。グラフィックスから生成できます。
+基本的にはファイルから生成しますが、空のテクスチャを生成しプログラムから画像を編集することもできます。</p>
+
+<p>Engine.Graphics.CreateEmptyTexture2Dにより空のテクスチャを生成できます。
+このテクスチャはLock関数を実行すると画素を編集できます。
+Lockを実行し成功すると引数からTextureLockInfomationを取得できます。
+ここには画像サイズや1画素あたりのメモリサイズ、画素の先頭ポインタが格納されています。
+それらの情報を用いて、画素に情報を書き込みます。
+書き込み終わった後はUnlockを実行します。</p>
+
+<h3>主なメソッド</h3>
+
+<table><thead>
+<tr>
+<th>名称</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Lock</td>
+<td>テクスチャの編集を開始します。</td>
+</tr>
+<tr>
+<td>Unlock</td>
+<td>テクスチャの編集を終了します。</td>
+</tr>
+</tbody></table>
+
+<h3>主なプロパティ</h3>
+
+<p>なし</p>
+
+<h3>主なイベント</h3>
+
+<p>なし</p>
+
+<h3>使用方法</h3>
+
+<p>テクスチャオブジェクト2Dのサンプルを参照してください。</p>
+
+<p>これは書き込みを行うサンプルコードの1つです。textureにdataにある情報を書き込みます。</p>
+
+<ul>
+<li><p>C++
+&ldquo;`
+ace::TextureLockInfomation info = ace::TextureLockInfomation();
+if (texture-&gt;Lock(&amp;info))
+{</p>
+
+<p>auto dst = (uint8_t*)info.GetPixels();
+auto src = d;</p>
+
+<p>for(int i = 0; i &lt; info.Size.X * info.Size.Y * info.Pitch; i++)
+{
+    dst[i] = src[i];
+}</p>
+
+<p>texture-&gt;Unlock();
+}
+&rdquo;`</p></li>
+<li><p>C#
+&ldquo;`
+ace.TextureLockInfomation info = new ace.TextureLockInfomation();
+if (texture.Lock(info))
+{
+fixed(byte* d = &amp;data[0])
+{
+    var dst = (byte*)info.Pixels.ToPointer();
+    var src = d;</p>
+<pre class="highlight plaintext"><code>for(int i = 0; i &lt; info.Size.X * info.Size.Y * info.Pitch; i++)
+{
+    dst[i] = src[i];
+}
+</code></pre>
+
+<p>}</p>
+
+<p>texture.Unlock();
+}
+&rdquo;`</p></li>
+</ul>
+
       </div>
       <div class="menu">
         <h2>

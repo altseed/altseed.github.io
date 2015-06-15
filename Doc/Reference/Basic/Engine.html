@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!--Always force latest IE rendering engine or request Chrome Frame-->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <!--Use title if it's in the page YAML frontmatter--><title>Altseed</title><link href="/stylesheets/base.css" rel="stylesheet" type="text/css" /><link href="/stylesheets/syntax.css" rel="stylesheet" type="text/css" /><script src="/javascripts/jquery-1.11.3.min.js" type="text/javascript"></script><script src="/javascripts/js.cookie.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      $(document).ready(function()
+      {
+          $("button[id='language_all']").click( function ()
+          {
+              Cookies.set('code_state', 'all');
+              $("pre[class='highlight cpp']").show();
+              $("pre[class='highlight csharp']").show();
+          });
+      
+          $("button[id='language_cpp']").click( function ()
+          {
+          Cookies.set('code_state', 'cpp');
+              $("pre[class='highlight cpp']").show();
+              $("pre[class='highlight csharp']").hide();
+          });
+      
+          $("button[id='language_cs']").click( function ()
+          {
+              Cookies.set('code_state', 'cs');
+              $("pre[class='highlight cpp']").hide();
+              $("pre[class='highlight csharp']").show();
+          });
+      
+          code_state = Cookies.get('code_state');
+      
+          if(code_state == 'all')
+          {
+              $("pre[class='highlight cpp']").show();
+              $("pre[class='highlight csharp']").show();
+          }
+      
+          if(code_state == 'cpp')
+          {
+              $("pre[class='highlight cpp']").show();
+              $("pre[class='highlight csharp']").hide();
+          }
+      
+          if(code_state == 'cs')
+          {
+              $("pre[class='highlight cpp']").hide();
+              $("pre[class='highlight csharp']").show();
+          }
+      });
+    </script>
+  </head>
+  <body class="Doc Doc_Reference Doc_Reference_Basic Doc_Reference_Basic_Engine">
+    <div id="header">
+      <h1>
+        Altseed
+      </h1>
+      <p>
+        複数のプログラミング言語、複数の環境対応のゲームエンジン
+      </p>
+    </div>
+    <div id="content">
+      <div class="main">
+        <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button><h2>エンジン (Engine)</h2>
+        
+        <h3>概要</h3>
+        
+        <p>Altseedの機能を提供します。初期化、終了処理及び、殆どの機能を使用するためのプロパティを持っています。Altseedを使用するためには必ずエンジンを使用する必要があります。</p>
+        
+        <p>エンジンでAltseedの初期化を行えます。その時、様々なオプションを指定できます。例えば、フルスクリーンかどうかなどです。</p>
+        
+        <p>初期化時のオプションとしてリロード機能の有効無効をIsReloadingEnabledを変更することで設定できます。リロードはゲームを起動中でも画像を編集するとリアルタイムにゲーム中に反映してくれう機能です。詳細は<a href="/Doc/Reference/Misc/Reloading.html">リロード</a>を参照してくだい。</p>
+        
+        <p>シーンの変更や終了処理もエンジンで行います。</p>
+        
+        <p>フレームレート、及びゲーム内時間に関する詳細に関しては<a href="/Doc/Reference/BasicDesign.html">基本設計</a>を参照してください。</p>
+        
+        <h3>主なメソッド</h3>
+        
+        <table><thead>
+        <tr>
+        <th>名称</th>
+        <th>説明</th>
+        </tr>
+        </thead><tbody>
+        <tr>
+        <td>Initialize</td>
+        <td>Altseedを初期化します。使用開始時に必ず実行します。</td>
+        </tr>
+        <tr>
+        <td>DoEvents</td>
+        <td>Altseedのフレーム開始処理を実行します。毎フレームの開始時に必ず実行します。falseを返した場合、ACEを終了させる必要があります。</td>
+        </tr>
+        <tr>
+        <td>Update</td>
+        <td>Altseedの毎フレームの更新処理を実行します。毎フレーム、かならず実行します。</td>
+        </tr>
+        <tr>
+        <td>Terminate</td>
+        <td>Altseedの終了処理を実行します。Altseedを終了時に必ず実行します。</td>
+        </tr>
+        <tr>
+        <td>ChangeScene</td>
+        <td>更新するシーンを変更します。</td>
+        </tr>
+        <tr>
+        <td>ChangeSceneWithTransition</td>
+        <td>トランジションを適用し、更新するシーンを変更します。</td>
+        </tr>
+        <tr>
+        <td>Close</td>
+        <td>Altseedのウインドウを閉じます。</td>
+        </tr>
+        <tr>
+        <td>TakeScreenshot</td>
+        <td>スクリーンショットを撮影し、画像として保存します。</td>
+        </tr>
+        </tbody></table>
+        
+        <h3>主なプロパティ</h3>
+        
+        <h4>フレームレート系</h4>
+        
+        <table><thead>
+        <tr>
+        <th>名称</th>
+        <th>説明</th>
+        </tr>
+        </thead><tbody>
+        <tr>
+        <td>CurrentFPS</td>
+        <td>現在のFPS</td>
+        </tr>
+        <tr>
+        <td>TargetFPS</td>
+        <td>目標のFPS。このFPSに近づくように内部の更新が実行されます。</td>
+        </tr>
+        <tr>
+        <td>DeltaTime</td>
+        <td>1フレームの処理にかかった時間</td>
+        </tr>
+        <tr>
+        <td>TimeSpan</td>
+        <td>処理にかかった時間に対する時間指定可能な機能が進行する時間の倍率</td>
+        </tr>
+        <tr>
+        <td>FramerateMode</td>
+        <td>フレームレート制御方法</td>
+        </tr>
+        </tbody></table>
+        
+        <h3>主なイベント</h3>
+        
+        <p>なし</p>
+        
+        <h3>使用方法</h3>
+        
+        <p>全てのサンプルで使用されているので、そちらを参照してください。</p>
+        
+      </div>
+      <div class="menu">
+        <h2>
+          メニュー
+        </h2>
+        <h3>
+          概要
+        </h3>
+        <p>
+          <a href="index.html">TOP</a>
+        </p>
+        <p>
+          <a href="features.html">主要な機能</a>
+        </p>
+        <p>
+          <a href="faq.html">よくある質問</a>
+        </p>
+        <p>
+          <a href="showcase.html">採用事例</a>
+        </p>
+        <p>
+          <a href="history.html">更新履歴</a>
+        </p>
+        <h3>
+          導入
+        </h3>
+        <p>
+          <a href="">動作環境</a>
+        </p>
+        <p>
+          <a href="">導入方法</a>
+        </p>
+        <p>
+          <a href="download.html">ダウンロード</a>
+        </p>
+        <h3>
+          サポート
+        </h3>
+        <p>
+          <フォーラム 準備中></フォーラム>
+        </p>
+        <p>
+          <a href="">Slack</a>
+        </p>
+        <p>
+          <a href="https://github.com/altseed/Altseed">Github</a>
+        </p>
+        <h3>
+          チュートリアル
+        </h3>
+        <p>
+          <a href="https://github.com/altseed/STGLecture/blob/master/Document/cs/Index.md">C#による初心者向けSTG講座</a>
+        </p>
+        <p>
+          <a href="">初期化</a>
+        </p>
+        <p>
+          <a href="">図形の表示</a>
+        </p>
+        <p>
+          <a href="">画像の表示</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
