@@ -121,7 +121,7 @@
     <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
     <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="c1">// aceを初期化する
+        <span class="c1">// Altseedを初期化する
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"Geometry2D_RectangleShape"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
 
         <span class="n">var</span> <span class="n">texture</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Data/Texture/Sample1.png"</span><span class="p">);</span>
@@ -148,7 +148,7 @@
         <span class="c1">// aceが進行可能かチェックする。
 </span>        <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
         <span class="p">{</span>
-            <span class="c1">// aceを更新する。
+            <span class="c1">// Altseedを更新する。
 </span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
         <span class="p">}</span>
 
@@ -221,7 +221,7 @@
     <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
     <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="c1">// aceを初期化する
+        <span class="c1">// Altseedを初期化する
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"Geometry2D_ArcShape"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
 
         <span class="n">var</span> <span class="n">texture</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Data/Texture/Sample1.png"</span><span class="p">);</span>
@@ -232,7 +232,7 @@
         <span class="c1">//図形描画クラスをレイヤーに追加する。
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">AddObject2D</span><span class="p">(</span><span class="n">geometryObj</span><span class="p">);</span>
 
-        <span class="c1">// aceが進行可能かチェックする。
+        <span class="c1">// Altseedを更新する。
 </span>        <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
         <span class="p">{</span>
             <span class="c1">// aceを更新する。
@@ -246,7 +246,8 @@
 
 </code></pre>
 
-<h3>多角形の描画</h3>
+<h3>多角形の描画
+<p><img alt="SS" src="/Doc/img/ss/Geometry2D_PolygonShape.png" /></p>
 <pre class="highlight cpp"><code><span class="cp">#include &lt;Base.h&gt;
 </span>
 <span class="cm">/**
@@ -310,7 +311,7 @@
     <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
     <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="c1">// aceを初期化する
+        <span class="c1">// Altseedを初期化する
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"Geometry2D_PolygonShape"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
 
         <span class="n">var</span> <span class="n">texture</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Data/Texture/Sample1.png"</span><span class="p">);</span>
@@ -344,7 +345,7 @@
         <span class="c1">// aceが進行可能かチェックする。
 </span>        <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
         <span class="p">{</span>
-            <span class="c1">// aceを更新する。
+            <span class="c1">// Altseedを更新する。
 </span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
         <span class="p">}</span>
 
@@ -364,49 +365,49 @@
           概要
         </h3>
         <p>
-          <a href="index.html">TOP</a>
+          <a href="/index.html">TOP</a>
         </p>
         <p>
-          <a href="features.html">主要な機能</a>
+          <a href="/features.html">主要な機能</a>
         </p>
         <p>
-          <a href="faq.html">よくある質問</a>
+          <a href="/faq.html">よくある質問</a>
         </p>
         <p>
-          <a href="showcase.html">採用事例</a>
+          <a href="/showcase.html">採用事例</a>
         </p>
         <p>
-          <a href="history.html">更新履歴</a>
+          <a href="/history.html">更新履歴</a>
         </p>
         <h3>
           導入
         </h3>
         <p>
-          <a href="">動作環境</a>
+          <a href="/system_requirements.html">動作環境</a>
         </p>
         <p>
-          <a href="">導入方法</a>
-        </p>
-        <p>
-          <a href="download.html">ダウンロード</a>
+          <a href="/download.html">ダウンロード</a>
         </p>
         <h3>
           サポート
         </h3>
         <p>
-          <フォーラム 準備中></フォーラム>
+          フォーラム(準備中)
         </p>
         <p>
-          <a href="">Slack</a>
+          <a href="/slack.html">Slack</a>
         </p>
         <p>
-          <a href="https://github.com/altseed/Altseed">Github</a>
+          <a href="/github.html">Github</a>
+        </p>
+        <p>
+          <a href="/mail.html">メール</a>
         </p>
         <h3>
           チュートリアル
         </h3>
         <p>
-          <a href="https://github.com/altseed/STGLecture/blob/master/Document/cs/Index.md">C#による初心者向けSTG講座</a>
+          <a href="https://github.com/altseed/STGLecture/blob/master/Document/cs/Index.md">C#による初心者向け<br>STG制作講座(執筆中)</a>
         </p>
         <h3>
           使い方(基礎編)

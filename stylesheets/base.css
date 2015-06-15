@@ -2,102 +2,127 @@
 #header {
   position: relative;
   overflow: hidden;
-  background-color: #2A2A2A;
-  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5); }
+  background-color: #84a5ce;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+  width: 1000px;
+  margin: 0px auto; }
 
-/* line 8, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 10, D:/dev/_ACE/Website/source/stylesheets/base.sass */
 #header h1 {
-  width: 120px;
-  height: 24px;
+  margin: 0px 20px 10px 40px;
+  color: #ffffff;
+  font-size: 24px;
+  font-family: "verdana", "serif", "Hiragino Kaku Gothic Pro", "Meiryo", "sans-serif"; }
+
+/* line 16, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+#header p {
+  margin: 0px 20px 10px 40px;
   color: #ffffff;
   font-size: 14px;
   font-family: "verdana", "serif", "Hiragino Kaku Gothic Pro", "Meiryo", "sans-serif"; }
 
-/* line 15, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 23, D:/dev/_ACE/Website/source/stylesheets/base.sass */
 #content {
-  width: 840px;
+  width: 1000px;
   margin: 0px auto;
-  clear: right; }
+  clear: right;
+  font-family: "verdana", "serif", "Hiragino Kaku Gothic Pro", "Meiryo", "sans-serif"; }
 
-/* line 20, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 29, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+#content a:link {
+  color: #222222; }
+
+/* line 32, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+#content a:visited {
+  color: #333333; }
+
+/* line 35, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+#content a:hover {
+  color: #777777; }
+
+/* line 38, D:/dev/_ACE/Website/source/stylesheets/base.sass */
 #content #highlight {
   font-family: "verdana", "serif", "Hiragino Kaku Gothic Pro", "Meiryo", "sans-serif"; }
 
-/* line 23, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 41, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+#contents h1 {
+  color: #000000; }
+
+/* line 44, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+#contents h2 {
+  color: #000000; }
+
+/* line 47, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+#contents h3 {
+  color: #000000; }
+
+/* line 50, D:/dev/_ACE/Website/source/stylesheets/base.sass */
 #content .main {
   float: right;
-  width: 640px; }
+  width: 770px; }
 
-/* line 27, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 54, D:/dev/_ACE/Website/source/stylesheets/base.sass */
 #content .menu {
   float: left;
-  width: 200px; }
+  width: 230px; }
 
-/* line 31, D:/dev/_ACE/Website/source/stylesheets/base.sass */
-#content .menu h2 {
-  font-family: "verdana", "serif", "Hiragino Kaku Gothic Pro", "Meiryo", "sans-serif"; }
+/* line 58, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+#content .menu p {
+  margin: 0px 0px 5px 0px; }
 
-/* line 35, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 61, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+#content .menu a {
+  font-size: 14px; }
+
+/* line 64, D:/dev/_ACE/Website/source/stylesheets/base.sass */
 #contents .eyecatch {
   position: relative;
   text-align: center; }
 
-/* line 39, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 68, D:/dev/_ACE/Website/source/stylesheets/base.sass */
 #contents .eyecatch img {
   margin: 20px 0px 0px 0px;
   display: inline-block; }
 
-/* line 43, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 72, D:/dev/_ACE/Website/source/stylesheets/base.sass */
 #contents .eyecatch p {
   font-family: "verdana", "serif", "Hiragino Kaku Gothic Pro", "Meiryo", "sans-serif";
   background-color: #84a5ce;
   color: #ffffff; }
 
-/* line 48, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 77, D:/dev/_ACE/Website/source/stylesheets/base.sass */
 #contents h1 {
   color: #000000; }
 
-/* line 51, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 80, D:/dev/_ACE/Website/source/stylesheets/base.sass */
 #contents h2 {
   color: #000000; }
 
-/* line 54, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 83, D:/dev/_ACE/Website/source/stylesheets/base.sass */
 #contents h3 {
   color: #000000; }
 
-/* line 57, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 86, D:/dev/_ACE/Website/source/stylesheets/base.sass */
 #contents .main {
   margin: 0 auto; }
 
-/* line 60, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 89, D:/dev/_ACE/Website/source/stylesheets/base.sass */
 #contents {
   color: #000000;
   font-family: "verdana", "serif", "Hiragino Kaku Gothic Pro", "Meiryo", "sans-serif"; }
 
-/* line 64, D:/dev/_ACE/Website/source/stylesheets/base.sass */
-#contents a:link {
-  color: #222222; }
-
-/* line 67, D:/dev/_ACE/Website/source/stylesheets/base.sass */
-#contents a:visited {
-  color: #333333; }
-
-/* line 70, D:/dev/_ACE/Website/source/stylesheets/base.sass */
-#contents a:hover {
-  color: #444444; }
-
-/* line 73, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 93, D:/dev/_ACE/Website/source/stylesheets/base.sass */
 #contents .panelcontainer {
   position: relative;
   overflow: hidden; }
 
-/* line 77, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 97, D:/dev/_ACE/Website/source/stylesheets/base.sass */
 #contents .panels {
   position: relative;
   left: 50%;
   float: left; }
 
-/* line 82, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 102, D:/dev/_ACE/Website/source/stylesheets/base.sass */
 #contents .panel {
   position: relative;
   left: -50%;
@@ -108,28 +133,28 @@
   width: 200px;
   height: 350px; }
 
-/* line 92, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 112, D:/dev/_ACE/Website/source/stylesheets/base.sass */
 #contents .panel h3 {
   color: #ffffff;
   font-size: 16px;
   font-family: "verdana", "serif", "Hiragino Kaku Gothic Pro", "Meiryo", "sans-serif";
   text-align: center; }
 
-/* line 98, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 118, D:/dev/_ACE/Website/source/stylesheets/base.sass */
 #contents .panel h4 {
   color: #ffffff;
   font-size: 14px;
   font-family: "verdana", "serif", "Hiragino Kaku Gothic Pro", "Meiryo", "sans-serif";
   text-align: center; }
 
-/* line 104, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 124, D:/dev/_ACE/Website/source/stylesheets/base.sass */
 #contents .panel a:link {
   color: #cccccc; }
 
-/* line 107, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 127, D:/dev/_ACE/Website/source/stylesheets/base.sass */
 #contents .panel a:visited {
   color: #cccccc; }
 
-/* line 110, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 130, D:/dev/_ACE/Website/source/stylesheets/base.sass */
 #contents .panel a:hover {
   color: #ffffff; }
