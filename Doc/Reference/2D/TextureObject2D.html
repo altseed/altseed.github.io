@@ -153,31 +153,32 @@
 
 <p>TextureObject2Dクラスのサンプルです。</p>
 
-<p><img alt="SS" src="/Doc/img/ss/TextureObject2D_Simple.png" /></p>
+<p><img alt="SS" src="/Doc/img/ss/TextureObject2D_Simple.jpg" /></p>
 
 <h3 class="cpp">C++</h3>
 <pre class="highlight cpp"><code>
-<span class="cp">#include &lt;Base.h&gt;
+<span class="cp">#include &lt;Altseed.h&gt;
 </span>
 <span class="cm">/**
-@brief  テクスチャを表示するサンプル。
+@brief  画像を表示するサンプル。
 */</span>
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="c1">// Altseedを初期化する
 </span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"TextureObject2D_Simple"</span><span class="p">).</span><span class="n">c_str</span><span class="p">(),</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="n">asd</span><span class="o">::</span><span class="n">EngineOption</span><span class="p">());</span>
 
-    <span class="c1">// テクスチャを読み込む。
-</span>    <span class="k">auto</span> <span class="n">texture</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetGraphics</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CreateTexture2D</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Data/Texture/Sample1.png"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
+    <span class="c1">// 画像を読み込む。
+</span>    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">Texture2D</span><span class="o">&gt;</span> <span class="n">texture</span> <span class="o">=</span> 
+        <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetGraphics</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CreateTexture2D</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
 
-    <span class="c1">//TextureObject2Dを生成する
-</span>    <span class="k">auto</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">TextureObject2D</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="c1">// TextureObject2Dのインスタンスを生成する。
+</span>    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">TextureObject2D</span><span class="o">&gt;</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">TextureObject2D</span><span class="o">&gt;</span><span class="p">();</span>
 
-    <span class="c1">//描画に使うテクスチャを設定する
+    <span class="c1">// 描画される画像を設定する。
 </span>    <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetTexture</span><span class="p">(</span><span class="n">texture</span><span class="p">);</span>
 
-    <span class="c1">//描画位置を指定する
-</span>    <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetPosition</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Vector2DF</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">));</span>
+    <span class="c1">// 描画位置を指定する。
+</span>    <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetPosition</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Vector2DF</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">));</span>
 
     <span class="c1">// オブジェクトのインスタンスをエンジンに追加する。
 </span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">AddObject2D</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
@@ -195,14 +196,9 @@
 </code></pre>
 
 <h3 class="csharp">C#</h3>
-<pre class="highlight csharp"><code><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
-<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
-<span class="k">using</span> <span class="nn">System.Linq</span><span class="p">;</span>
-<span class="k">using</span> <span class="nn">System.Text</span><span class="p">;</span>
-<span class="k">using</span> <span class="nn">System.Threading.Tasks</span><span class="p">;</span>
-
+<pre class="highlight csharp"><code>
 <span class="c1">/// &lt;summary&gt;
-/// テクスチャを表示するサンプル。
+/// 画像を表示するサンプル。
 /// &lt;/summary&gt;
 </span><span class="k">class</span> <span class="nc">TextureObject2D_Simple</span>
 <span class="p">{</span>
@@ -212,17 +208,17 @@
         <span class="c1">// Altseedを初期化する。
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"TextureObject2D_Simple"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
 
-        <span class="c1">// テクスチャを読み込む。
-</span>        <span class="n">var</span> <span class="n">texture</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Data/Texture/Sample1.png"</span><span class="p">);</span>
+        <span class="c1">// 画像を読み込む。
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Texture2D</span> <span class="n">texture</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="p">);</span>
 
-        <span class="c1">// TextureObject2Dを生成する
-</span>        <span class="n">var</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextureObject2D</span><span class="p">();</span>
+        <span class="c1">// TextureObject2Dのインスタンスを生成する。
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">TextureObject2D</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextureObject2D</span><span class="p">();</span>
 
-        <span class="c1">// 描画に使うテクスチャを設定する
+        <span class="c1">// 描画される画像を設定する。
 </span>        <span class="n">obj</span><span class="p">.</span><span class="n">Texture</span> <span class="p">=</span> <span class="n">texture</span><span class="p">;</span>
 
-        <span class="c1">// 描画位置を指定する
-</span>        <span class="n">obj</span><span class="p">.</span><span class="n">Position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="m">100</span><span class="p">);</span>
+        <span class="c1">// 描画位置を指定する。
+</span>        <span class="n">obj</span><span class="p">.</span><span class="n">Position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="m">50</span><span class="p">,</span> <span class="m">50</span><span class="p">);</span>
 
         <span class="c1">// オブジェクトのインスタンスをエンジンに追加する。
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">AddObject2D</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
@@ -255,7 +251,7 @@
           <a href="/features.html">主要な機能</a>
         </p>
         <p>
-          <a href="/faq.html">よくある質問</a>
+          <a href="/Doc/FAQ.html">よくある質問</a>
         </p>
         <p>
           <a href="/showcase.html">採用事例</a>
@@ -306,7 +302,13 @@
           <a href="/Doc/HowToUseBasic/TextureObject2D.html">画像の描画</a>
         </p>
         <p>
+          <a href="/Doc/HowToUseBasic/SceneAndLayer.html">シーンとレイヤー</a>
+        </p>
+        <p>
           <a href="/Doc/HowToUseBasic/PostEffect.html">ポストエフェクト</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseBasic/Transition.html">シーン遷移</a>
         </p>
         <p>
           以下、追加中...

@@ -87,10 +87,10 @@
 
 <h3>グレースケール</h3>
 
-<p><img alt="SS" src="/Doc/img/ss/PostEffect_GrayScale.png" /></p>
+<p><img alt="SS" src="/Doc/img/ss/PostEffect_GrayScale.jpg" /></p>
 
 <h3 class="cpp">C++</h3>
-<pre class="highlight cpp"><code><span class="cp">#include &lt;Base.h&gt;
+<pre class="highlight cpp"><code><span class="cp">#include &lt;Altseed.h&gt;
 </span>
 <span class="cm">/**
     @brief  レイヤーにグレースケールのポストエフェクトを適用する。
@@ -100,7 +100,7 @@
     <span class="c1">// Altseedを初期化する
 </span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"PostEffect_GrayScale"</span><span class="p">).</span><span class="n">c_str</span><span class="p">(),</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="n">asd</span><span class="o">::</span><span class="n">EngineOption</span><span class="p">());</span>
 
-    <span class="k">auto</span> <span class="n">texture</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetGraphics</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CreateTexture2D</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Data/Texture/Object.png"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
+    <span class="k">auto</span> <span class="n">texture</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetGraphics</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CreateTexture2D</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
 
     <span class="c1">// シーンのコンストラクタを呼び出す。
 </span>    <span class="k">auto</span> <span class="n">scene</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">Scene</span><span class="o">&gt;</span><span class="p">();</span>
@@ -112,7 +112,7 @@
 </span>    <span class="k">auto</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">TextureObject2D</span><span class="o">&gt;</span><span class="p">();</span>
 
     <span class="c1">// オブジェクトの位置とテクスチャを設定。
-</span>    <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetPosition</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Vector2DF</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">));</span>
+</span>    <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetPosition</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Vector2DF</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">));</span>
     <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetTexture</span><span class="p">(</span><span class="n">texture</span><span class="p">);</span>
 
     <span class="c1">// シーンを変更し、そのシーンにレイヤーを追加し、そのレイヤーにオブジェクトを追加する。
@@ -152,7 +152,7 @@
             <span class="c1">// Altseedを初期化する
 </span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"PostEffect_GrayScale"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
 
-            <span class="n">var</span> <span class="n">texture</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Data/Texture/Object.png"</span><span class="p">);</span>
+            <span class="n">var</span> <span class="n">texture</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="p">);</span>
 
             <span class="c1">// シーンのコンストラクタを呼び出す。
 </span>            <span class="n">var</span> <span class="n">scene</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Scene</span><span class="p">();</span>
@@ -164,7 +164,7 @@
 </span>            <span class="n">var</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextureObject2D</span><span class="p">();</span>
 
             <span class="c1">// オブジェクトの位置とテクスチャを設定。
-</span>            <span class="n">obj</span><span class="p">.</span><span class="n">Position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="m">100</span><span class="p">);</span>
+</span>            <span class="n">obj</span><span class="p">.</span><span class="n">Position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="m">50</span><span class="p">,</span> <span class="m">50</span><span class="p">);</span>
             <span class="n">obj</span><span class="p">.</span><span class="n">Texture</span> <span class="p">=</span> <span class="n">texture</span><span class="p">;</span>
 
             <span class="c1">// シーンを変更し、そのシーンにレイヤーを追加し、そのレイヤーにオブジェクトを追加する。
@@ -189,10 +189,10 @@
 
 <h3>セピアカラー</h3>
 
-<p><img alt="SS" src="/Doc/img/ss/PostEffect_Sepia.png" /></p>
+<p><img alt="SS" src="/Doc/img/ss/PostEffect_Sepia.jpg" /></p>
 
 <h3 class="cpp">C++</h3>
-<pre class="highlight cpp"><code><span class="cp">#include &lt;Base.h&gt;
+<pre class="highlight cpp"><code><span class="cp">#include &lt;Altseed.h&gt;
 </span>
 <span class="cm">/**
     @brief  レイヤーにセピアカラーのポストエフェクトを適用する。
@@ -202,7 +202,7 @@
     <span class="c1">// Altseedを初期化する
 </span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"PostEffect_Sepia"</span><span class="p">).</span><span class="n">c_str</span><span class="p">(),</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="n">asd</span><span class="o">::</span><span class="n">EngineOption</span><span class="p">());</span>
 
-    <span class="k">auto</span> <span class="n">texture</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetGraphics</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CreateTexture2D</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Data/Texture/Object.png"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
+    <span class="k">auto</span> <span class="n">texture</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetGraphics</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CreateTexture2D</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
 
     <span class="c1">// シーンのコンストラクタを呼び出す。
 </span>    <span class="k">auto</span> <span class="n">scene</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">Scene</span><span class="o">&gt;</span><span class="p">();</span>
@@ -214,7 +214,7 @@
 </span>    <span class="k">auto</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">TextureObject2D</span><span class="o">&gt;</span><span class="p">();</span>
 
     <span class="c1">// オブジェクトの位置とテクスチャを設定。
-</span>    <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetPosition</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Vector2DF</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">));</span>
+</span>    <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetPosition</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Vector2DF</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">));</span>
     <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetTexture</span><span class="p">(</span><span class="n">texture</span><span class="p">);</span>
 
     <span class="c1">// シーンを変更し、そのシーンにレイヤーを追加し、そのレイヤーにオブジェクトを追加する。
@@ -254,7 +254,7 @@
             <span class="c1">// Altseedを初期化する
 </span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"PostEffect_Sepia"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
 
-            <span class="n">var</span> <span class="n">texture</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Data/Texture/Object.png"</span><span class="p">);</span>
+            <span class="n">var</span> <span class="n">texture</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="p">);</span>
 
             <span class="c1">// シーンのコンストラクタを呼び出す。
 </span>            <span class="n">var</span> <span class="n">scene</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Scene</span><span class="p">();</span>
@@ -266,7 +266,7 @@
 </span>            <span class="n">var</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextureObject2D</span><span class="p">();</span>
 
             <span class="c1">// オブジェクトの位置とテクスチャを設定。
-</span>            <span class="n">obj</span><span class="p">.</span><span class="n">Position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="m">100</span><span class="p">);</span>
+</span>            <span class="n">obj</span><span class="p">.</span><span class="n">Position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="m">50</span><span class="p">,</span> <span class="m">50</span><span class="p">);</span>
             <span class="n">obj</span><span class="p">.</span><span class="n">Texture</span> <span class="p">=</span> <span class="n">texture</span><span class="p">;</span>
 
             <span class="c1">// シーンを変更し、そのシーンにレイヤーを追加し、そのレイヤーにオブジェクトを追加する。
@@ -289,12 +289,11 @@
 
 </code></pre>
 
-<h3>ガウスぼかし</h3>
-
-<p><img alt="SS" src="/Doc/img/ss/PostEffect_GaussianBlur.png" /></p>
+<h3>ガウスぼかし
+<p><img alt="SS" src="/Doc/img/ss/PostEffect_GaussianBlur.jpg" /></p>
 
 <h3 class="cpp">C++</h3>
-<pre class="highlight cpp"><code><span class="cp">#include &lt;Base.h&gt;
+<pre class="highlight cpp"><code><span class="cp">#include &lt;Altseed.h&gt;
 </span>
 <span class="cm">/**
 @brief  レイヤーにガウスぼかしのポストエフェクトを適用する。
@@ -304,7 +303,7 @@
     <span class="c1">// Altseedを初期化する
 </span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"PostEffect_GaussianBlur"</span><span class="p">).</span><span class="n">c_str</span><span class="p">(),</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="n">asd</span><span class="o">::</span><span class="n">EngineOption</span><span class="p">());</span>
 
-    <span class="k">auto</span> <span class="n">texture</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetGraphics</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CreateTexture2D</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Data/Texture/Object.png"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
+    <span class="k">auto</span> <span class="n">texture</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetGraphics</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CreateTexture2D</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
 
     <span class="c1">// シーンのコンストラクタを呼び出す。
 </span>    <span class="k">auto</span> <span class="n">scene</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">Scene</span><span class="o">&gt;</span><span class="p">();</span>
@@ -316,7 +315,7 @@
 </span>    <span class="k">auto</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">TextureObject2D</span><span class="o">&gt;</span><span class="p">();</span>
 
     <span class="c1">// オブジェクトの位置とテクスチャを設定。
-</span>    <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetPosition</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Vector2DF</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">));</span>
+</span>    <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetPosition</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Vector2DF</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">));</span>
     <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetTexture</span><span class="p">(</span><span class="n">texture</span><span class="p">);</span>
 
     <span class="c1">// シーンを変更し、そのシーンにレイヤーを追加し、そのレイヤーにオブジェクトを追加する。
@@ -356,7 +355,7 @@
             <span class="c1">// Altseedを初期化する
 </span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"PostEffect_GaussianBlur"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
 
-            <span class="n">var</span> <span class="n">texture</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Data/Texture/Object.png"</span><span class="p">);</span>
+            <span class="n">var</span> <span class="n">texture</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="p">);</span>
 
             <span class="c1">// シーンのコンストラクタを呼び出す。
 </span>            <span class="n">var</span> <span class="n">scene</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Scene</span><span class="p">();</span>
@@ -368,7 +367,7 @@
 </span>            <span class="n">var</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextureObject2D</span><span class="p">();</span>
 
             <span class="c1">// オブジェクトの位置とテクスチャを設定。
-</span>            <span class="n">obj</span><span class="p">.</span><span class="n">Position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="m">100</span><span class="p">);</span>
+</span>            <span class="n">obj</span><span class="p">.</span><span class="n">Position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="m">50</span><span class="p">,</span> <span class="m">50</span><span class="p">);</span>
             <span class="n">obj</span><span class="p">.</span><span class="n">Texture</span> <span class="p">=</span> <span class="n">texture</span><span class="p">;</span>
 
             <span class="c1">// シーンを変更し、そのシーンにレイヤーを追加し、そのレイヤーにオブジェクトを追加する。
@@ -393,10 +392,10 @@
 
 <h3>ライトブルーム</h3>
 
-<p><img alt="SS" src="/Doc/img/ss/PostEffect_LightBloom.png" /></p>
+<p><img alt="SS" src="/Doc/img/ss/PostEffect_LightBloom.jpg" /></p>
 
 <h3 class="cpp">C++</h3>
-<pre class="highlight cpp"><code><span class="cp">#include &lt;Base.h&gt;
+<pre class="highlight cpp"><code><span class="cp">#include &lt;Altseed.h&gt;
 </span>
 <span class="cm">/**
 @brief  レイヤーにライトブルームのポストエフェクトを適用する。
@@ -406,7 +405,7 @@
     <span class="c1">// Altseedを初期化する
 </span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"PostEffect_LightBloom"</span><span class="p">).</span><span class="n">c_str</span><span class="p">(),</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="n">asd</span><span class="o">::</span><span class="n">EngineOption</span><span class="p">());</span>
 
-    <span class="k">auto</span> <span class="n">texture</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetGraphics</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CreateTexture2D</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Data/Texture/Object.png"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
+    <span class="k">auto</span> <span class="n">texture</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetGraphics</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CreateTexture2D</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
 
     <span class="c1">// シーンのコンストラクタを呼び出す。
 </span>    <span class="k">auto</span> <span class="n">scene</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">Scene</span><span class="o">&gt;</span><span class="p">();</span>
@@ -418,7 +417,7 @@
 </span>    <span class="k">auto</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">TextureObject2D</span><span class="o">&gt;</span><span class="p">();</span>
 
     <span class="c1">// オブジェクトの位置とテクスチャを設定。
-</span>    <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetPosition</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Vector2DF</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">));</span>
+</span>    <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetPosition</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Vector2DF</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">));</span>
     <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetTexture</span><span class="p">(</span><span class="n">texture</span><span class="p">);</span>
 
     <span class="c1">// シーンを変更し、そのシーンにレイヤーを追加し、そのレイヤーにオブジェクトを追加する。
@@ -473,7 +472,7 @@
             <span class="c1">// Altseedを初期化する
 </span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"PostEffect_LightBloom"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
 
-            <span class="n">var</span> <span class="n">texture</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Data/Texture/Object.png"</span><span class="p">);</span>
+            <span class="n">var</span> <span class="n">texture</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="p">);</span>
 
             <span class="c1">// シーンのコンストラクタを呼び出す。
 </span>            <span class="n">var</span> <span class="n">scene</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Scene</span><span class="p">();</span>
@@ -485,7 +484,7 @@
 </span>            <span class="n">var</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextureObject2D</span><span class="p">();</span>
 
             <span class="c1">// オブジェクトの位置とテクスチャを設定。
-</span>            <span class="n">obj</span><span class="p">.</span><span class="n">Position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="m">100</span><span class="p">);</span>
+</span>            <span class="n">obj</span><span class="p">.</span><span class="n">Position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="m">50</span><span class="p">,</span> <span class="m">50</span><span class="p">);</span>
             <span class="n">obj</span><span class="p">.</span><span class="n">Texture</span> <span class="p">=</span> <span class="n">texture</span><span class="p">;</span>
 
             <span class="c1">// シーンを変更し、そのシーンにレイヤーを追加し、そのレイヤーにオブジェクトを追加する。
@@ -535,7 +534,7 @@
           <a href="/features.html">主要な機能</a>
         </p>
         <p>
-          <a href="/faq.html">よくある質問</a>
+          <a href="/Doc/FAQ.html">よくある質問</a>
         </p>
         <p>
           <a href="/showcase.html">採用事例</a>
@@ -586,7 +585,13 @@
           <a href="/Doc/HowToUseBasic/TextureObject2D.html">画像の描画</a>
         </p>
         <p>
+          <a href="/Doc/HowToUseBasic/SceneAndLayer.html">シーンとレイヤー</a>
+        </p>
+        <p>
           <a href="/Doc/HowToUseBasic/PostEffect.html">ポストエフェクト</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseBasic/Transition.html">シーン遷移</a>
         </p>
         <p>
           以下、追加中...

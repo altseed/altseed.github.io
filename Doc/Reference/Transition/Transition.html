@@ -143,8 +143,6 @@
 
 <p>トランジションの例としてTransitionFadeクラスのサンプルを提示します。</p>
 
-<p><img alt="SS" src="/Doc/img/ss/Transition.png" /></p>
-
 <h3 class="cpp">C++</h3>
 <pre class="highlight cpp"><code>
 <span class="cp">#include &lt;Altseed.h&gt;
@@ -208,7 +206,7 @@
     <span class="c1">// マウスが左クリックされた時にScene1に遷移する。
 </span>    <span class="k">if</span> <span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetMouse</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetLeftButton</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetButtonState</span><span class="p">()</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">MouseButtonState</span><span class="o">::</span><span class="n">Push</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="k">auto</span><span class="o">&amp;</span> <span class="n">scene1</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Scene1</span><span class="o">&gt;</span><span class="p">();</span>
+        <span class="k">auto</span> <span class="n">scene1</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Scene1</span><span class="o">&gt;</span><span class="p">();</span>
         <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">ChangeScene</span><span class="p">(</span><span class="n">scene1</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -341,7 +339,7 @@
           <a href="/features.html">主要な機能</a>
         </p>
         <p>
-          <a href="/faq.html">よくある質問</a>
+          <a href="/Doc/FAQ.html">よくある質問</a>
         </p>
         <p>
           <a href="/showcase.html">採用事例</a>
@@ -392,7 +390,13 @@
           <a href="/Doc/HowToUseBasic/TextureObject2D.html">画像の描画</a>
         </p>
         <p>
+          <a href="/Doc/HowToUseBasic/SceneAndLayer.html">シーンとレイヤー</a>
+        </p>
+        <p>
           <a href="/Doc/HowToUseBasic/PostEffect.html">ポストエフェクト</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseBasic/Transition.html">シーン遷移</a>
         </p>
         <p>
           以下、追加中...
