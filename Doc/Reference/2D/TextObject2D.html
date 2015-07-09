@@ -176,19 +176,19 @@
         <span class="c1">// フォントを生成する
 </span>        <span class="k">auto</span> <span class="n">font</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetGraphics</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CreateFont</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Data/Font/edge.aff"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
 
-        <span class="c1">//TextObject2Dを生成する
+        <span class="c1">// TextObject2Dを生成する
 </span>        <span class="k">auto</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">TextObject2D</span><span class="o">&gt;</span><span class="p">();</span>
 
-        <span class="c1">//描画に使うフォントを設定する
+        <span class="c1">// 描画に使うフォントを設定する
 </span>        <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetFont</span><span class="p">(</span><span class="n">font</span><span class="p">);</span>
 
-        <span class="c1">//描画位置を指定する
+        <span class="c1">// 描画位置を指定する
 </span>        <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetPosition</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Vector2DF</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">));</span>
 
-        <span class="c1">//描画する文字列の指定
+        <span class="c1">// 描画する文字列の指定
 </span>        <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetText</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"文字列サンプル1"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
 
-        <span class="c1">//レイヤーへ追加する
+        <span class="c1">// オブジェクトのインスタンスをエンジンへ追加する。
 </span>        <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">AddObject2D</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
     <span class="p">}</span>
 
@@ -331,6 +331,18 @@
         </p>
         <p>
           以下、追加中...
+        </p>
+        <h3>
+          使い方(応用編)
+        </h3>
+        <p>
+          <a href="/Doc/HowToUseApplication/Pause.html">ポーズ</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/ImagePackageUI.html">UIの配置</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/CustomPostEffect.html">自作ポストエフェクト</a>
         </p>
         <h3>
           リファレンス

@@ -75,27 +75,32 @@
       </p>
     </div>
     <div id="content">
-      <div class="main">
-        <h2>よくある質問</h2>
-        
-        <h3>配布に関して</h3>
-        
-        <h4>Altseedを使用したアプリケーションを配布したいのですがよろしいでしょうか?</h4>
-        
-        <p>全く問題ありません。ただ、配布する際は、下記のライセンスのファイルを同梱するようお願いします。</p>
-        
-        <p>Windowsの場合、実行に必要なDirectX エンド ユーザー ランタイム と .NET Framework4.5 がインストールされている必要があることを明記しておくことをおすすめします。</p>
-        
-        <h4>自作のアプリケーションにAltseedを使用したいのですがライセンスの表記はどうすればいいでしょうか?</h4>
-        
-        <p><a href="https://github.com/Altseed/altseed/blob/master/LICENSE">ライセンス</a>をアプリケーションのヘルプ等に掲載してください。</p>
-        
-        <h4>ゲーム中の画像をプレイヤーに見られたくないのですがどうすればいいでしょうか?</h4>
-        
-        <p><a href="/Doc/Reference/Tool/FilePackageGenerator.html">ファイルパッケージジェネレーター</a> を使用すると全ての画像や音楽ファイルを1つにまとめることができます。</p>
-        
-        <p>1つにまとめられたパッケージからファイルを読み込む方法は <a href="/Doc/Reference/IO/File.html">ファイル</a> の機能を参照お願いします。</p>
-        
+      <div class="main"><h2>よくある質問</h2>
+
+<h3>配布に関して</h3>
+
+<h4>Altseedを使用したアプリケーションを配布したいのですがよろしいでしょうか?</h4>
+
+<p>全く問題ありません。ただ、配布する際は、下記のライセンスのファイルを同梱するようお願いします。</p>
+
+<p>Windowsの場合、実行に必要なDirectX エンド ユーザー ランタイム と .NET Framework4.5 がインストールされている必要があることを明記しておくことをおすすめします。</p>
+
+<h4>自作のアプリケーションにAltseedを使用したいのですがライセンスの表記はどうすればいいでしょうか?</h4>
+
+<p><a href="https://github.com/Altseed/altseed/blob/master/LICENSE">ライセンス</a>をアプリケーションのヘルプ等に掲載してください。</p>
+
+<h4>ゲーム中の画像をプレイヤーに見られたくないのですがどうすればいいでしょうか?</h4>
+
+<p><a href="/Doc/Reference/Tool/FilePackageGenerator.html">ファイルパッケージジェネレーター</a> を使用すると全ての画像や音楽ファイルを1つにまとめることができます。</p>
+
+<p>1つにまとめられたパッケージからファイルを読み込む方法は <a href="/Doc/Reference/IO/File.html">ファイル</a> の機能を参照お願いします。</p>
+
+<h3>C#版に関して</h3>
+
+<h4>C++ destructor does not have public access という例外がアプリケーション終了時に発生する。</h4>
+
+<p>アプリケーション終了時に <code>asd.Engine.Terminate();</code> のメソッドが実行されていない可能性が高いです。そうでなければAltseed自体のバグの可能性があります。</p>
+
       </div>
       <div class="menu">
         <h2>
@@ -172,6 +177,18 @@
         </p>
         <p>
           以下、追加中...
+        </p>
+        <h3>
+          使い方(応用編)
+        </h3>
+        <p>
+          <a href="/Doc/HowToUseApplication/Pause.html">ポーズ</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/ImagePackageUI.html">UIの配置</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/CustomPostEffect.html">自作ポストエフェクト</a>
         </p>
         <h3>
           リファレンス

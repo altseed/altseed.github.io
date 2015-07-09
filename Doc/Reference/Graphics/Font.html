@@ -86,11 +86,19 @@
         
         <h3>概要</h3>
         
-        <p>フォントを定義します。フォントは<a href="/Doc/Reference/Graphics/Graphics.html">グラフィックスクラス(Graphics)</a>のCreateFont関数に使用したいフォントのファイル(.affファイル)を指定することで作成することが出来ます。このクラスは情報を持つだけであり、実際に文字列を描画するには<a href="../2D/TextObject.html">テキストオブジェクト2D</a>に渡す必要があります。フォントは主に文字の書体、サイズ、枠線の情報が設定可能です。</p>
+        <p>描画する文字の書体、サイズ、枠線等の情報を定義します。実際に文字列を描画する際には<a href="../2D/TextObject.html">テキストオブジェクト2D</a>にフォントを渡します。</p>
         
         <p><img alt="フォント" src="/Doc/Reference/Graphics/img/Font.png" /></p>
         
-        <p>フォントのファイル(.affファイル)を生成するにはフォントジェネレータツールを使用します。詳しくは、<a href="/Doc/Reference/Tool/FontGenerator.html">フォントジェネレータ</a>の項目をご覧ください。</p>
+        <h3>フォントの生成方法</h3>
+        
+        <h4>.affファイルを生成して読み込む</h4>
+        
+        <p><a href="/Doc/Reference/Tool/FontGenerator.html">フォントジェネレータ</a>を用いて、フォントのファイル(.affファイル)を生成します。生成した.affファイルを<a href="/Doc/Reference/Graphics/Graphics.html">グラフィックスクラス(Graphics)</a>のCreateFont関数に使用したいフォントのファイル(.affファイル)を指定することでフォントを作成することが出来ます。詳しくは、<a href="/Doc/Reference/Tool/FontGenerator.html">フォントジェネレータ</a>の項目をご覧ください。</p>
+        
+        <h4>フォントファイルを読み込んで動的に生成する</h4>
+        
+        <p><a href="/Doc/Reference/Graphics/Graphics.html">グラフィックスクラス(Graphics)</a>のCreateDynamicFont関数に、OSにインストールされたフォント名(予定)やパスを渡すことで、フォントを作成することができます。</p>
         
         <h3>主なメソッド</h3>
         
@@ -184,6 +192,18 @@
         </p>
         <p>
           以下、追加中...
+        </p>
+        <h3>
+          使い方(応用編)
+        </h3>
+        <p>
+          <a href="/Doc/HowToUseApplication/Pause.html">ポーズ</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/ImagePackageUI.html">UIの配置</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/CustomPostEffect.html">自作ポストエフェクト</a>
         </p>
         <h3>
           リファレンス

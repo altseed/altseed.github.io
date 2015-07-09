@@ -129,134 +129,6 @@
 
 <p><img alt="SS" src="/Doc/img/ss/Collision2D.png" /></p>
 
-<h3 class="cpp">C++</h3>
-<pre class="highlight cpp"><code><span class="cp">#include &lt;Altseed.h&gt;
-</span>
-<span class="c1">// Collision2Dのサンプル。マウスによって操作する円がいずれかのオブジェクトにヒットしたら円が赤く変化します。
-</span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="c1">// Altseedを初期化する。
-</span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"GeometryObject2D"</span><span class="p">).</span><span class="n">c_str</span><span class="p">(),</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="n">asd</span><span class="o">::</span><span class="n">EngineOption</span><span class="p">());</span>
-
-    <span class="c1">// 図形描画クラスのコンストラクタを呼び出す。
-</span>    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">GeometryObject2D</span><span class="o">&gt;</span> <span class="n">geometryObj0</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">GeometryObject2D</span><span class="o">&gt;</span><span class="p">();</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">GeometryObject2D</span><span class="o">&gt;</span> <span class="n">geometryObj1</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">GeometryObject2D</span><span class="o">&gt;</span><span class="p">();</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">GeometryObject2D</span><span class="o">&gt;</span> <span class="n">geometryObj2</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">GeometryObject2D</span><span class="o">&gt;</span><span class="p">();</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">GeometryObject2D</span><span class="o">&gt;</span> <span class="n">geometryObj3</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">GeometryObject2D</span><span class="o">&gt;</span><span class="p">();</span>
-
-    <span class="c1">// マウスによって動かす円。
-</span>    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">CircleShape</span><span class="o">&gt;</span> <span class="n">selfCircle</span><span class="p">;</span>
-
-    <span class="c1">// 停止している円、三角形、矩形。
-</span>    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">CircleShape</span><span class="o">&gt;</span> <span class="n">circle</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">TriangleShape</span><span class="o">&gt;</span> <span class="n">triangle</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">RectangleShape</span><span class="o">&gt;</span> <span class="n">rect</span><span class="p">;</span>
-
-    <span class="c1">// シーンを生成する。
-</span>    <span class="k">auto</span> <span class="n">scene</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">Scene</span><span class="o">&gt;</span><span class="p">();</span>
-
-    <span class="c1">// シーンにレイヤーを追加する。
-</span>    <span class="k">auto</span> <span class="n">layer</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">Layer2D</span><span class="o">&gt;</span><span class="p">();</span>
-
-
-    <span class="c1">// 図形描画クラスをレイヤーに追加する。
-</span>    <span class="n">layer</span><span class="o">-&gt;</span><span class="n">AddObject</span><span class="p">(</span><span class="n">geometryObj0</span><span class="p">);</span>
-    <span class="n">layer</span><span class="o">-&gt;</span><span class="n">AddObject</span><span class="p">(</span><span class="n">geometryObj1</span><span class="p">);</span>
-    <span class="n">layer</span><span class="o">-&gt;</span><span class="n">AddObject</span><span class="p">(</span><span class="n">geometryObj2</span><span class="p">);</span>
-    <span class="n">layer</span><span class="o">-&gt;</span><span class="n">AddObject</span><span class="p">(</span><span class="n">geometryObj3</span><span class="p">);</span>
-
-    <span class="c1">// レイヤーを追加する。
-</span>    <span class="n">scene</span><span class="o">-&gt;</span><span class="n">AddLayer</span><span class="p">(</span><span class="n">layer</span><span class="p">);</span>
-
-    <span class="c1">// シーンを切り替える。
-</span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">ChangeScene</span><span class="p">(</span><span class="n">scene</span><span class="p">);</span>
-
-    <span class="c1">// マウスによって動かす円の形状と描画の設定を行う。
-</span>    <span class="p">{</span>
-        <span class="c1">// 円の外径、内径、頂点数、中心位置を指定する。
-</span>        <span class="n">selfCircle</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">CircleShape</span><span class="o">&gt;</span><span class="p">();</span>
-        <span class="n">selfCircle</span><span class="o">-&gt;</span><span class="n">SetOuterDiameter</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
-        <span class="n">selfCircle</span><span class="o">-&gt;</span><span class="n">SetInnerDiameter</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-        <span class="n">selfCircle</span><span class="o">-&gt;</span><span class="n">SetNumberOfCorners</span><span class="p">(</span><span class="mi">96</span><span class="p">);</span>
-        <span class="n">selfCircle</span><span class="o">-&gt;</span><span class="n">SetPosition</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Vector2DF</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">));</span>
-
-        <span class="c1">// 円を描画する図形として最前面に描画されるように設定する。
-</span>        <span class="n">geometryObj0</span><span class="o">-&gt;</span><span class="n">SetShape</span><span class="p">(</span><span class="n">selfCircle</span><span class="p">);</span>
-        <span class="n">geometryObj0</span><span class="o">-&gt;</span><span class="n">SetPosition</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Vector2DF</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
-        <span class="n">geometryObj0</span><span class="o">-&gt;</span><span class="n">SetDrawingPriority</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="c1">// 停止している円の形状と描画の設定を行う。
-</span>    <span class="p">{</span>
-        <span class="c1">// 円の外径、内径、頂点数、中心位置を指定する。
-</span>        <span class="n">circle</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">CircleShape</span><span class="o">&gt;</span><span class="p">();</span>
-        <span class="n">circle</span><span class="o">-&gt;</span><span class="n">SetOuterDiameter</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
-        <span class="n">circle</span><span class="o">-&gt;</span><span class="n">SetInnerDiameter</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-        <span class="n">circle</span><span class="o">-&gt;</span><span class="n">SetNumberOfCorners</span><span class="p">(</span><span class="mi">96</span><span class="p">);</span>
-        <span class="n">circle</span><span class="o">-&gt;</span><span class="n">SetPosition</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Vector2DF</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">));</span>
-
-        <span class="c1">// 円を描画する図形として設定する。
-</span>        <span class="n">geometryObj1</span><span class="o">-&gt;</span><span class="n">SetShape</span><span class="p">(</span><span class="n">circle</span><span class="p">);</span>
-        <span class="n">geometryObj1</span><span class="o">-&gt;</span><span class="n">SetPosition</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Vector2DF</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
-    <span class="p">}</span>
-
-    <span class="c1">// 停止している三角形の形状と描画の設定を行う。
-</span>    <span class="p">{</span>
-        <span class="c1">// 三角形の各頂点の位置を指定します。
-</span>        <span class="n">triangle</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">TriangleShape</span><span class="o">&gt;</span><span class="p">();</span>
-        <span class="n">triangle</span><span class="o">-&gt;</span><span class="n">SetPointByIndex</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Vector2DF</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">350</span><span class="p">),</span> <span class="mi">0</span><span class="p">);</span>
-        <span class="n">triangle</span><span class="o">-&gt;</span><span class="n">SetPointByIndex</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Vector2DF</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">450</span><span class="p">),</span> <span class="mi">1</span><span class="p">);</span>
-        <span class="n">triangle</span><span class="o">-&gt;</span><span class="n">SetPointByIndex</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Vector2DF</span><span class="p">(</span><span class="mi">540</span><span class="p">,</span> <span class="mi">450</span><span class="p">),</span> <span class="mi">2</span><span class="p">);</span>
-
-        <span class="c1">// 三角形を描画する図形として設定する。
-</span>        <span class="n">geometryObj2</span><span class="o">-&gt;</span><span class="n">SetShape</span><span class="p">(</span><span class="n">triangle</span><span class="p">);</span>
-        <span class="n">geometryObj2</span><span class="o">-&gt;</span><span class="n">SetPosition</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Vector2DF</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
-    <span class="p">}</span>
-
-    <span class="c1">// 停止している矩形の形状と描画の設定を行う。
-</span>    <span class="p">{</span>
-        <span class="n">rect</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">RectangleShape</span><span class="o">&gt;</span><span class="p">();</span>
-        <span class="n">rect</span><span class="o">-&gt;</span><span class="n">SetDrawingArea</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">RectF</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">200</span><span class="p">));</span>
-        <span class="n">rect</span><span class="o">-&gt;</span><span class="n">SetAngle</span><span class="p">(</span><span class="mi">15</span><span class="p">);</span>
-
-        <span class="n">geometryObj3</span><span class="o">-&gt;</span><span class="n">SetShape</span><span class="p">(</span><span class="n">rect</span><span class="p">);</span>
-        <span class="n">geometryObj3</span><span class="o">-&gt;</span><span class="n">SetPosition</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Vector2DF</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
-    <span class="p">}</span>
-
-
-    <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
-</span>    <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">DoEvents</span><span class="p">())</span>
-    <span class="p">{</span>
-        <span class="p">{</span>
-            <span class="c1">// マウスによって制御される円の中心位置をマウスの位置とする。
-</span>            <span class="n">selfCircle</span><span class="o">-&gt;</span><span class="n">SetPosition</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetMouse</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetPosition</span><span class="p">());</span>
-
-            <span class="c1">// 停止している円、三角形、矩形にマウスによって動く円が衝突した時に円を赤く変化させる。
-</span>            <span class="c1">// そうでない時は白く変化させる。
-</span>            <span class="k">if</span> <span class="p">(</span><span class="n">selfCircle</span><span class="o">-&gt;</span><span class="n">GetIsCollidedWith</span><span class="p">(</span><span class="n">circle</span><span class="p">)</span>
-                <span class="o">||</span> <span class="n">selfCircle</span><span class="o">-&gt;</span><span class="n">GetIsCollidedWith</span><span class="p">(</span><span class="n">triangle</span><span class="p">)</span>
-                <span class="o">||</span> <span class="n">selfCircle</span><span class="o">-&gt;</span><span class="n">GetIsCollidedWith</span><span class="p">(</span><span class="n">rect</span><span class="p">))</span>
-            <span class="p">{</span>
-                <span class="n">geometryObj0</span><span class="o">-&gt;</span><span class="n">SetColor</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Color</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">));</span>
-            <span class="p">}</span>
-            <span class="k">else</span>
-            <span class="p">{</span>
-                <span class="n">geometryObj0</span><span class="o">-&gt;</span><span class="n">SetColor</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Color</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">));</span>
-            <span class="p">}</span>
-
-            <span class="n">printf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span><span class="n">geometryObj1</span><span class="o">-&gt;</span><span class="n">GetDrawingPriority</span><span class="p">());</span>
-        <span class="p">}</span>
-        <span class="c1">// Altseedを更新する。
-</span>        <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Update</span><span class="p">();</span>
-    <span class="p">}</span>
-
-    <span class="c1">// Altseedの終了処理をする。
-</span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Terminate</span><span class="p">();</span>
-
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre>
-
 <h3 class="csharp">C#</h3>
 <pre class="highlight csharp"><code>
 <span class="c1">/// &lt;summary&gt;
@@ -466,6 +338,18 @@
         </p>
         <p>
           以下、追加中...
+        </p>
+        <h3>
+          使い方(応用編)
+        </h3>
+        <p>
+          <a href="/Doc/HowToUseApplication/Pause.html">ポーズ</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/ImagePackageUI.html">UIの配置</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/CustomPostEffect.html">自作ポストエフェクト</a>
         </p>
         <h3>
           リファレンス

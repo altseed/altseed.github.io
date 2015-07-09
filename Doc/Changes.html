@@ -84,6 +84,19 @@
         </div>
         <h2>変更点</h2>
         
+        <h3>2015/07/07</h3>
+        
+        <ul>
+        <li>画面をgifアニメーションとして録画する機能を追加(asd.Engine.CaptureScreenAsGifAnimation)</li>
+        <li>LayerにOnStart(レイヤーがシーンに追加された時に呼ばれるイベント)を追加</li>
+        <li>SceneにOnStart(シーンが実行され始めた時に呼ばれるイベント)を追加</li>
+        <li><p>動的フォント生成機能を追加(asd.Graphics.CreateDynamicFont)</p></li>
+        <li><p>asd.Font.CalcTextureSize() のconstを除去(C++のみ破壊的変更)</p></li>
+        <li><p>ポストエフェクトを自作する時に記述する定義部分を変更(破壊的変更)</p></li>
+        <li><p>asd.StaticFile.Bufferの型がbyte[]に変更(C#のみ破壊的変更)</p></li>
+        <li><p>asd.Texture2D.Lockの挙動がDirectXとOpenGLで異なっていた不具合を修正</p></li>
+        </ul>
+        
         <h3>2015/06/16</h3>
         
         <ul>
@@ -178,6 +191,18 @@
         </p>
         <p>
           以下、追加中...
+        </p>
+        <h3>
+          使い方(応用編)
+        </h3>
+        <p>
+          <a href="/Doc/HowToUseApplication/Pause.html">ポーズ</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/ImagePackageUI.html">UIの配置</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/CustomPostEffect.html">自作ポストエフェクト</a>
         </p>
         <h3>
           リファレンス

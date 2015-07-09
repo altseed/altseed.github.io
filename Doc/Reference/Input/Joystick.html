@@ -176,58 +176,6 @@
 
 <p>Joystickクラスのサンプルです。</p>
 
-<h3 class="cpp">C++</h3>
-<pre class="highlight cpp"><code>
-<span class="cp">#include &lt;Altseed.h&gt;
-</span>
-<span class="c1">// Joystickのサンプル。ジョイスティックによる入力を取得しています。
-</span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="c1">// Altseedを初期化する。
-</span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Joystick"</span><span class="p">).</span><span class="n">c_str</span><span class="p">(),</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="n">asd</span><span class="o">::</span><span class="n">EngineOption</span><span class="p">());</span>
-
-    <span class="c1">// ジョイスティックが最低一つ接続されているかどうかを確認する。
-</span>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetJoystickContainer</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetIsPresentAt</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
-    <span class="p">{</span>
-        <span class="c1">// 一つも接続されていない場合は終了する
-</span>        <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Terminate</span><span class="p">();</span>
-        <span class="n">printf</span><span class="p">(</span><span class="s">"No joystick are connected.</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
-        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
-</span>    <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">DoEvents</span><span class="p">())</span>
-    <span class="p">{</span>
-        <span class="c1">// 一つ目のジョイスティックの0番目のボタンの入力状態を表示する
-</span>        <span class="n">asd</span><span class="o">::</span><span class="n">Joystick</span><span class="o">*</span> <span class="n">joystick</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetJoystickContainer</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetJoystickAt</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-        <span class="k">switch</span> <span class="p">(</span><span class="n">joystick</span><span class="o">-&gt;</span><span class="n">GetButtonState</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
-        <span class="p">{</span>
-        <span class="k">case</span> <span class="n">asd</span><span class="p">:</span><span class="o">:</span><span class="n">JoystickButtonState</span><span class="o">::</span><span class="n">Free</span><span class="o">:</span> <span class="c1">//前フレームと本フレームで非押下
-</span>            <span class="n">printf</span><span class="p">(</span><span class="s">"Free</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
-            <span class="k">break</span><span class="p">;</span>
-        <span class="k">case</span> <span class="n">asd</span><span class="p">:</span><span class="o">:</span><span class="n">JoystickButtonState</span><span class="o">::</span><span class="n">Hold</span><span class="o">:</span> <span class="c1">//前フレームと本フレームで押下
-</span>            <span class="n">printf</span><span class="p">(</span><span class="s">"Hold</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
-            <span class="k">break</span><span class="p">;</span>
-        <span class="k">case</span> <span class="n">asd</span><span class="p">:</span><span class="o">:</span><span class="n">JoystickButtonState</span><span class="o">::</span><span class="n">Release</span><span class="o">:</span> <span class="c1">//前フレームで押下、本フレームで非押下
-</span>            <span class="n">printf</span><span class="p">(</span><span class="s">"Release</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
-            <span class="k">break</span><span class="p">;</span>
-        <span class="k">case</span> <span class="n">asd</span><span class="p">:</span><span class="o">:</span><span class="n">JoystickButtonState</span><span class="o">::</span><span class="n">Push</span><span class="o">:</span> <span class="c1">//前フレームで非押下、本フレームで押下
-</span>            <span class="n">printf</span><span class="p">(</span><span class="s">"Push</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
-            <span class="k">break</span><span class="p">;</span>
-        <span class="p">}</span>
-
-        <span class="c1">// Altseedを更新する。
-</span>        <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Update</span><span class="p">();</span>
-    <span class="p">}</span>
-
-    <span class="c1">//Altseedの終了処理をする。
-</span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Terminate</span><span class="p">();</span>
-
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-
-</code></pre>
-
 <h3 class="csharp">C#</h3>
 <pre class="highlight csharp"><code>
 <span class="c1">/// &lt;summary&gt;
@@ -359,6 +307,18 @@
         </p>
         <p>
           以下、追加中...
+        </p>
+        <h3>
+          使い方(応用編)
+        </h3>
+        <p>
+          <a href="/Doc/HowToUseApplication/Pause.html">ポーズ</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/ImagePackageUI.html">UIの配置</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/CustomPostEffect.html">自作ポストエフェクト</a>
         </p>
         <h3>
           リファレンス
