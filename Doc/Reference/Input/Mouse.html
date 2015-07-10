@@ -81,147 +81,88 @@
             表示するサンプルコードの言語を指定できます。
           </p>
           <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button>
-        </div><h2>マウス (Mouse)</h2>
-
-<h3>概要</h3>
-
-<p>マウスからの入力を扱うクラスです。</p>
-
-<p><a href="/Doc/Reference/Basic/Engine.html">エンジン</a>のMouseプロパティから現在のフレームのマウスの入力状態を持った当クラスのインスタンスを取得できます。</p>
-
-<p>マウスが持つ左ボタン、右ボタンならびに中央ボタンの押し状態と、中央ボタンのホイールの回転状態を調べることが出来ます。</p>
-
-<h4>ボタンの押し状態</h4>
-
-<p>押し状態は前のフレームと現在のフレームでそのボタンを押したかによって決まり、以下の4通りとなります。(○・・・押している、✕・・・押していない)</p>
-
-<table><thead>
-<tr>
-<th>状態</th>
-<th>前のフレーム</th>
-<th>現在のフレーム</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Free</td>
-<td>✕</td>
-<td>✕</td>
-</tr>
-<tr>
-<td>Release</td>
-<td>○</td>
-<td>✕</td>
-</tr>
-<tr>
-<td>Push</td>
-<td>✕</td>
-<td>○</td>
-</tr>
-<tr>
-<td>Hold</td>
-<td>○</td>
-<td>○</td>
-</tr>
-</tbody></table>
-
-<h3>主なメソッド</h3>
-
-<table><thead>
-<tr>
-<th>名称</th>
-<th>説明</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>LeftButton</td>
-<td>マウスの左ボタンの入力状態に関するインタフェースを取得(ボタンの押し状態)</td>
-</tr>
-<tr>
-<td>MiddleButton</td>
-<td>マウスの中央ボタンの入力状態に関するインタフェースを取得(ボタンの押し状態とホイールの回転状態)</td>
-</tr>
-<tr>
-<td>RightButton</td>
-<td>マウスの右ボタンの入力状態に関するインタフェースを取得(ボタンの押し状態)</td>
-</tr>
-<tr>
-<td>Position</td>
-<td>マウスポインタの位置を取得</td>
-</tr>
-</tbody></table>
-
-<h3>主なプロパティ</h3>
-
-<p>なし</p>
-
-<h3>主なイベント</h3>
-
-<p>なし</p>
-
-<h3>使用方法</h3>
-
-<p>Mouseクラスのサンプルです。</p>
-
-<h3 class="csharp">C#</h3>
-<pre class="highlight csharp"><code>
-<span class="c1">/// &lt;summary&gt;
-/// Mouseのサンプル。マウスによる入力を取得しています。
-/// &lt;/summary&gt;
-</span><span class="k">class</span> <span class="nc">Mouse</span>
-<span class="p">{</span>
-    <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
-    <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="c1">// Altseedを初期化する。
-</span>        <span class="n">var</span> <span class="n">initialized</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"Mouse"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
-
-        <span class="c1">// Altseedが続行可能か調べる。
-</span>        <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
-        <span class="p">{</span>
-            <span class="c1">// マウスへの参照を取得する。
-</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Mouse</span> <span class="n">mouse</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Mouse</span><span class="p">;</span>
-
-            <span class="c1">//マウスカーソルの座標を取得して表示する。
-</span>            <span class="p">{</span>
-                <span class="n">asd</span><span class="p">.</span><span class="n">Vector2DF</span> <span class="n">v</span> <span class="p">=</span> <span class="n">mouse</span><span class="p">.</span><span class="n">Position</span><span class="p">;</span>
-
-                <span class="n">System</span><span class="p">.</span><span class="n">Console</span><span class="p">.</span><span class="nf">Write</span><span class="p">(</span><span class="s">"Cursor Position:({0},{1}) "</span><span class="p">,</span> <span class="n">v</span><span class="p">.</span><span class="n">X</span><span class="p">,</span> <span class="n">v</span><span class="p">.</span><span class="n">Y</span><span class="p">);</span>
-            <span class="p">}</span>
-
-            <span class="c1">// マウスの中央ボタンの押下状態を表示する。
-</span>            <span class="k">switch</span> <span class="p">(</span><span class="n">mouse</span><span class="p">.</span><span class="n">MiddleButton</span><span class="p">.</span><span class="n">ButtonState</span><span class="p">)</span>
-            <span class="p">{</span>
-                <span class="k">case</span> <span class="n">asd</span><span class="p">.</span><span class="n">MouseButtonState</span><span class="p">.</span><span class="n">Free</span><span class="p">:</span> <span class="c1">//前フレーム、現フレーム共に非押下。
-</span>                    <span class="n">System</span><span class="p">.</span><span class="n">Console</span><span class="p">.</span><span class="nf">Write</span><span class="p">(</span><span class="s">"Middle Free"</span><span class="p">);</span>
-                    <span class="k">break</span><span class="p">;</span>
-                <span class="k">case</span> <span class="n">asd</span><span class="p">.</span><span class="n">MouseButtonState</span><span class="p">.</span><span class="n">Hold</span><span class="p">:</span> <span class="c1">//前フレーム、現フレーム共に押下。
-</span>                    <span class="n">System</span><span class="p">.</span><span class="n">Console</span><span class="p">.</span><span class="nf">Write</span><span class="p">(</span><span class="s">"Middle Hold"</span><span class="p">);</span>
-                    <span class="k">break</span><span class="p">;</span>
-                <span class="k">case</span> <span class="n">asd</span><span class="p">.</span><span class="n">MouseButtonState</span><span class="p">.</span><span class="n">Release</span><span class="p">:</span> <span class="c1">//前フレームで押下、現フレームで非押下。
-</span>                    <span class="n">System</span><span class="p">.</span><span class="n">Console</span><span class="p">.</span><span class="nf">Write</span><span class="p">(</span><span class="s">"Middle Release"</span><span class="p">);</span>
-                    <span class="k">break</span><span class="p">;</span>
-                <span class="k">case</span> <span class="n">asd</span><span class="p">.</span><span class="n">MouseButtonState</span><span class="p">.</span><span class="n">Push</span><span class="p">:</span> <span class="c1">//前フレームで非押下、現フレームで押下。
-</span>                    <span class="n">System</span><span class="p">.</span><span class="n">Console</span><span class="p">.</span><span class="nf">Write</span><span class="p">(</span><span class="s">"Middle Push"</span><span class="p">);</span>
-                    <span class="k">break</span><span class="p">;</span>
-            <span class="p">}</span>
-
-            <span class="c1">// マウスのホイールの回転状態を取得して表示する。
-</span>            <span class="p">{</span>
-                <span class="n">System</span><span class="p">.</span><span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">" Wheel : "</span> <span class="p">+</span> <span class="n">mouse</span><span class="p">.</span><span class="n">MiddleButton</span><span class="p">.</span><span class="n">WheelRotation</span><span class="p">);</span>
-            <span class="p">}</span>
-
-            <span class="c1">// Altseedを更新する。
-</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
-        <span class="p">}</span>
-
-        <span class="c1">// Altseedの終了処理をする。
-</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-
-</code></pre>
-
+        </div>
+        <h2>マウス (Mouse)</h2>
+        
+        <h3>概要</h3>
+        
+        <p>マウスからの入力を扱うクラスです。</p>
+        
+        <p><a href="/Doc/Reference/Basic/Engine.html">エンジン</a>のMouseプロパティから現在のフレームのマウスの入力状態を持った当クラスのインスタンスを取得できます。</p>
+        
+        <p>マウスが持つ左ボタン、右ボタンならびに中央ボタンの押し状態と、中央ボタンのホイールの回転状態を調べることが出来ます。</p>
+        
+        <h4>ボタンの押し状態</h4>
+        
+        <p>押し状態は前のフレームと現在のフレームでそのボタンを押したかによって決まり、以下の4通りとなります。(○・・・押している、✕・・・押していない)</p>
+        
+        <table><thead>
+        <tr>
+        <th>状態</th>
+        <th>前のフレーム</th>
+        <th>現在のフレーム</th>
+        </tr>
+        </thead><tbody>
+        <tr>
+        <td>Free</td>
+        <td>✕</td>
+        <td>✕</td>
+        </tr>
+        <tr>
+        <td>Release</td>
+        <td>○</td>
+        <td>✕</td>
+        </tr>
+        <tr>
+        <td>Push</td>
+        <td>✕</td>
+        <td>○</td>
+        </tr>
+        <tr>
+        <td>Hold</td>
+        <td>○</td>
+        <td>○</td>
+        </tr>
+        </tbody></table>
+        
+        <h3>主なメソッド</h3>
+        
+        <table><thead>
+        <tr>
+        <th>名称</th>
+        <th>説明</th>
+        </tr>
+        </thead><tbody>
+        <tr>
+        <td>LeftButton</td>
+        <td>マウスの左ボタンの入力状態に関するインタフェースを取得(ボタンの押し状態)</td>
+        </tr>
+        <tr>
+        <td>MiddleButton</td>
+        <td>マウスの中央ボタンの入力状態に関するインタフェースを取得(ボタンの押し状態とホイールの回転状態)</td>
+        </tr>
+        <tr>
+        <td>RightButton</td>
+        <td>マウスの右ボタンの入力状態に関するインタフェースを取得(ボタンの押し状態)</td>
+        </tr>
+        <tr>
+        <td>Position</td>
+        <td>マウスポインタの位置を取得</td>
+        </tr>
+        </tbody></table>
+        
+        <h3>主なプロパティ</h3>
+        
+        <p>なし</p>
+        
+        <h3>主なイベント</h3>
+        
+        <p>なし</p>
+        
+        <h3>使用方法</h3>
+        
+        <p>Mouseクラスのサンプルです。</p>
+        
       </div>
       <div class="menu">
         <h2>
@@ -288,6 +229,24 @@
           <a href="/Doc/HowToUseBasic/TextureObject2D.html">画像の描画</a>
         </p>
         <p>
+          <a href="/Doc/HowToUseBasic/TextObject2D.html">文字の描画</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseBasic/EffectObject2D.html">エフェクトの描画</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseBasic/Keyboard.html">キーボード入力</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseBasic/Mouse.html">マウス入力</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseBasic/Joystick.html">ジョイスティック入力</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseBasic/Sound.html">音の再生</a>
+        </p>
+        <p>
           <a href="/Doc/HowToUseBasic/SceneAndLayer.html">シーンとレイヤー</a>
         </p>
         <p>
@@ -297,7 +256,7 @@
           <a href="/Doc/HowToUseBasic/Transition.html">シーン遷移</a>
         </p>
         <p>
-          以下、追加中...
+          <a href="/Doc/HowToUseBasic/Object2DComponent.html"> オブジェクトの挙動の部品化</a>
         </p>
         <h3>
           使い方(応用編)
@@ -310,6 +269,9 @@
         </p>
         <p>
           <a href="/Doc/HowToUseApplication/CustomPostEffect.html">自作ポストエフェクト</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
         </p>
         <h3>
           リファレンス

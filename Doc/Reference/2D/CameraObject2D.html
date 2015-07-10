@@ -81,193 +81,52 @@
             表示するサンプルコードの言語を指定できます。
           </p>
           <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button>
-        </div><h2>カメラオブジェクト2D (CameraObject2D)</h2>
-
-<h3>概要</h3>
-
-<p><a href="/Doc/Reference/2D/Object2D.html">オブジェクト2Dクラス</a>を拡張し、レイヤー2Dの一部の領域のみを画面に描画できるようにする2D描画オブジェクトクラスです。
-レイヤー2Dをカメラで撮影して、撮影結果を画面に表示します。例えば、アクションゲームでプレイヤーの動作に合わせて全ての背景や敵キャラクターを動かすのではなく、カメラのみを動かすことにより処理量が少なく、かつわかりやすい実装を実現します。</p>
-
-<p>プロパティにはSrcとDstが存在が存在します。図で示すように、Srcは描画元となる撮影される領域、Dstは描画先となる画面上の領域になります。これらのサイズは任意で拡大縮小、横方向のみに拡大して描画といった変形もできます。</p>
-
-<p><img alt="カメラ" src="/Doc/Reference/2D/img/CameraObject2D.png" /></p>
-
-<p>また、Srcの位置はカメラオブジェクトの位置・回転・拡大の値によって変化します。例えばカメラオブジェクトが右に移動した場合、Srcの位置も右に移動します。キャラクターの位置にあわせてカメラオブジェクトを移動しキャラクターを常に画面の中心に表示するといった使い方に使用できます。</p>
-
-<h3>主なメソッド</h3>
-
-<p>なし</p>
-
-<h3>主なプロパティ</h3>
-
-<table><thead>
-<tr>
-<th>名称</th>
-<th>説明</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Src</td>
-<td>描画元</td>
-</tr>
-<tr>
-<td>Dst</td>
-<td>描画先</td>
-</tr>
-</tbody></table>
-
-<h3>主なイベント</h3>
-
-<p>なし</p>
-
-<h3>使用方法</h3>
-
-<p>CameraObject2Dクラスのサンプルです。</p>
-
-<p><img alt="SS" src="/Doc/img/ss/CameraObject2D.png" /></p>
-
-<h3 class="cpp">C++</h3>
-<pre class="highlight cpp"><code><span class="cp">#include &lt;Base.h&gt;
-</span>
-<span class="cm">/**
-@brief  カメラサンプルを表示する。
-*/</span>
-
-<span class="k">const</span> <span class="kt">int</span> <span class="n">SOURCE_SIZE</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span>
-<span class="k">const</span> <span class="kt">int</span> <span class="n">DESTINATION_SIZE</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="c1">// Altseedを初期化する。
-</span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"CameraObject2D"</span><span class="p">).</span><span class="n">c_str</span><span class="p">(),</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="n">asd</span><span class="o">::</span><span class="n">EngineOption</span><span class="p">());</span>
-
-    <span class="c1">// テクスチャ画像を準備する。
-</span>    <span class="p">{</span>
-        <span class="k">auto</span> <span class="n">tex0</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetGraphics</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CreateTexture2D</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Data/Texture/Sample1.png"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
-        <span class="k">auto</span> <span class="n">obj0</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">TextureObject2D</span><span class="o">&gt;</span><span class="p">();</span>
-        <span class="n">obj0</span><span class="o">-&gt;</span><span class="n">SetTexture</span><span class="p">(</span><span class="n">tex0</span><span class="p">);</span>
-        <span class="n">obj0</span><span class="o">-&gt;</span><span class="n">SetCenterPosition</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Vector2DF</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="mi">256</span><span class="p">));</span>
-        <span class="n">obj0</span><span class="o">-&gt;</span><span class="n">SetPosition</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Vector2DF</span><span class="p">(</span><span class="mi">320</span><span class="p">,</span> <span class="mi">240</span><span class="p">));</span>
-        <span class="n">obj0</span><span class="o">-&gt;</span><span class="n">SetScale</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Vector2DF</span><span class="p">(</span><span class="mf">0.5</span><span class="n">f</span><span class="p">,</span> <span class="mf">0.5</span><span class="n">f</span><span class="p">));</span>
-
-        <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">AddObject2D</span><span class="p">(</span><span class="n">obj0</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="c1">//二つ目のマウスポインタの周辺を拡大して表示するカメラを設定する。
-</span>    <span class="k">auto</span> <span class="n">camera</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">CameraObject2D</span><span class="o">&gt;</span><span class="p">();</span>
-
-    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">AddObject2D</span><span class="p">(</span><span class="n">camera</span><span class="p">);</span>
-
-    <span class="c1">//フレーム用テクスチャ画像を準備する。
-</span>    <span class="k">auto</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">TextureObject2D</span><span class="o">&gt;</span><span class="p">();</span>
-    <span class="p">{</span>
-        <span class="k">auto</span> <span class="n">tex</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetGraphics</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CreateTexture2D</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Data/Texture/Frame.png"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
-        <span class="n">frame</span><span class="o">-&gt;</span><span class="n">SetTexture</span><span class="p">(</span><span class="n">tex</span><span class="p">);</span>
-        <span class="n">frame</span><span class="o">-&gt;</span><span class="n">SetCenterPosition</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Vector2DF</span><span class="p">(</span><span class="mf">55.0</span><span class="n">f</span><span class="p">,</span> <span class="mf">55.0</span><span class="n">f</span><span class="p">));</span>
-
-        <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">AddObject2D</span><span class="p">(</span><span class="n">frame</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
-</span>    <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">DoEvents</span><span class="p">())</span>
-    <span class="p">{</span>
-        <span class="c1">//マウスポインタの位置を取得する。
-</span>        <span class="k">auto</span> <span class="n">pos</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetMouse</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetPosition</span><span class="p">();</span>
-
-        <span class="c1">//拡大用カメラの描画元を指定する。
-</span>        <span class="n">camera</span><span class="o">-&gt;</span><span class="n">SetSrc</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">RectI</span><span class="p">(</span><span class="n">pos</span><span class="p">.</span><span class="n">X</span> <span class="o">-</span> <span class="n">SOURCE_SIZE</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">pos</span><span class="p">.</span><span class="n">Y</span> <span class="o">-</span> <span class="n">SOURCE_SIZE</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">SOURCE_SIZE</span><span class="p">,</span> <span class="n">SOURCE_SIZE</span><span class="p">));</span>
-
-        <span class="c1">//ポインタを中心に100x100の拡大画像を表示する。
-</span>        <span class="n">camera</span><span class="o">-&gt;</span><span class="n">SetDst</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">RectI</span><span class="p">(</span><span class="n">pos</span><span class="p">.</span><span class="n">X</span> <span class="o">-</span> <span class="n">DESTINATION_SIZE</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">pos</span><span class="p">.</span><span class="n">Y</span> <span class="o">-</span> <span class="n">DESTINATION_SIZE</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">DESTINATION_SIZE</span><span class="p">,</span> <span class="n">DESTINATION_SIZE</span><span class="p">));</span>
-
-        <span class="c1">//フレーム画像の描画中心をマウスポインタの位置に合わせる。
-</span>        <span class="n">frame</span><span class="o">-&gt;</span><span class="n">SetPosition</span><span class="p">(</span><span class="n">pos</span><span class="p">);</span>
-
-        <span class="c1">// Altseedを更新する。
-</span>        <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Update</span><span class="p">();</span>
-    <span class="p">}</span>
-
-    <span class="c1">// Altseedを終了する。
-</span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Terminate</span><span class="p">();</span>
-<span class="p">}</span>
-</code></pre>
-
-<h3 class="csharp">C#</h3>
-<pre class="highlight csharp"><code><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
-<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
-<span class="k">using</span> <span class="nn">System.Linq</span><span class="p">;</span>
-<span class="k">using</span> <span class="nn">System.Text</span><span class="p">;</span>
-<span class="k">using</span> <span class="nn">System.Threading.Tasks</span><span class="p">;</span>
-
-<span class="k">public</span> <span class="k">class</span> <span class="nc">CameraObject2D</span>
-<span class="p">{</span>
-    <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
-    <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="c1">// Altseedを初期化する。
-</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"CameraObject2D"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
-
-
-        <span class="c1">// テクスチャを生成する。
-</span>        <span class="p">{</span>
-            <span class="n">var</span> <span class="n">tex0</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Data/Texture/Sample1.png"</span><span class="p">);</span>
-            <span class="n">var</span> <span class="n">obj0</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextureObject2D</span><span class="p">();</span>
-            <span class="n">obj0</span><span class="p">.</span><span class="n">Texture</span> <span class="p">=</span> <span class="n">tex0</span><span class="p">;</span>
-            <span class="n">obj0</span><span class="p">.</span><span class="n">CenterPosition</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="m">256</span><span class="p">,</span> <span class="m">256</span><span class="p">);</span>
-            <span class="n">obj0</span><span class="p">.</span><span class="n">Position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="m">320</span><span class="p">,</span> <span class="m">240</span><span class="p">);</span>
-            <span class="n">obj0</span><span class="p">.</span><span class="n">Scale</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="m">0.5f</span><span class="p">,</span> <span class="m">0.5f</span><span class="p">);</span>
-
-            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">AddObject2D</span><span class="p">(</span><span class="n">obj0</span><span class="p">);</span>
-        <span class="p">}</span>
-
-        <span class="c1">//一つ目の画面全体を写すカメラ。(オブジェクトをそのまま描画する。)
-</span>        <span class="p">{</span>
-            <span class="n">var</span> <span class="n">camera1</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">CameraObject2D</span><span class="p">();</span>
-            <span class="n">camera1</span><span class="p">.</span><span class="n">Src</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">RectI</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">);</span>
-            <span class="n">camera1</span><span class="p">.</span><span class="n">Dst</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">RectI</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">);</span>
-            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">AddObject2D</span><span class="p">(</span><span class="n">camera1</span><span class="p">);</span>
-        <span class="p">}</span>
-
-        <span class="c1">//二つ目のマウスポインタの周辺を拡大して表示するカメラ。
-</span>        <span class="n">var</span> <span class="n">camera2</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">CameraObject2D</span><span class="p">();</span>
-        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">AddObject2D</span><span class="p">(</span><span class="n">camera2</span><span class="p">);</span>
-
-        <span class="c1">//フレーム用テクスチャ画像を準備する。
-</span>        <span class="n">var</span> <span class="n">frame</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextureObject2D</span><span class="p">();</span>
-        <span class="p">{</span>
-            <span class="n">var</span> <span class="n">tex</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Data/Texture/Frame.png"</span><span class="p">);</span>
-            <span class="n">frame</span><span class="p">.</span><span class="n">Texture</span> <span class="p">=</span> <span class="n">tex</span><span class="p">;</span>
-            <span class="n">frame</span><span class="p">.</span><span class="n">CenterPosition</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="m">55.0f</span><span class="p">,</span> <span class="m">55.0f</span><span class="p">);</span>
-
-            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">AddObject2D</span><span class="p">(</span><span class="n">frame</span><span class="p">);</span>
-        <span class="p">}</span>
-
-        <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
-</span>        <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
-        <span class="p">{</span>
-            <span class="c1">//マウスポインタの位置を取得する。
-</span>            <span class="n">var</span> <span class="n">pos</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Mouse</span><span class="p">.</span><span class="n">Position</span><span class="p">;</span>
-
-            <span class="c1">//拡大用カメラの描画元を指定する。
-</span>            <span class="n">camera2</span><span class="p">.</span><span class="n">Src</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">RectI</span><span class="p">((</span><span class="kt">int</span><span class="p">)(</span><span class="n">pos</span><span class="p">.</span><span class="n">X</span><span class="p">)</span> <span class="p">-</span> <span class="m">25</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">pos</span><span class="p">.</span><span class="n">Y</span><span class="p">)</span> <span class="p">-</span> <span class="m">25</span><span class="p">,</span> <span class="m">50</span><span class="p">,</span> <span class="m">50</span><span class="p">);</span>
-
-            <span class="c1">//ポインタを中心に100x100の拡大画像を表示する。
-</span>            <span class="n">camera2</span><span class="p">.</span><span class="n">Dst</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">RectI</span><span class="p">((</span><span class="kt">int</span><span class="p">)(</span><span class="n">pos</span><span class="p">.</span><span class="n">X</span><span class="p">)</span> <span class="p">-</span> <span class="m">50</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">pos</span><span class="p">.</span><span class="n">Y</span><span class="p">)</span> <span class="p">-</span> <span class="m">50</span><span class="p">,</span> <span class="m">100</span><span class="p">,</span> <span class="m">100</span><span class="p">);</span>
-
-            <span class="c1">//フレーム画像の描画中心をマウスポインタの位置に合わせる。
-</span>            <span class="n">frame</span><span class="p">.</span><span class="n">Position</span> <span class="p">=</span> <span class="n">pos</span><span class="p">;</span>
-
-            <span class="c1">// Altseedを更新する。
-</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
-        <span class="p">}</span>
-
-        <span class="c1">// Altseedの終了処理をする。
-</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-</code></pre>
-
+        </div>
+        <h2>カメラオブジェクト2D (CameraObject2D)</h2>
+        
+        <h3>概要</h3>
+        
+        <p><a href="/Doc/Reference/2D/Object2D.html">オブジェクト2Dクラス</a>を拡張し、レイヤー2Dの一部の領域のみを画面に描画できるようにする2D描画オブジェクトクラスです。
+        レイヤー2Dをカメラで撮影して、撮影結果を画面に表示します。例えば、アクションゲームでプレイヤーの動作に合わせて全ての背景や敵キャラクターを動かすのではなく、カメラのみを動かすことにより処理量が少なく、かつわかりやすい実装を実現します。</p>
+        
+        <p>プロパティにはSrcとDstが存在が存在します。図で示すように、Srcは描画元となる撮影される領域、Dstは描画先となる画面上の領域になります。これらのサイズは任意で拡大縮小、横方向のみに拡大して描画といった変形もできます。</p>
+        
+        <p><img alt="カメラ" src="/Doc/Reference/2D/img/CameraObject2D.png" /></p>
+        
+        <p>また、Srcの位置はカメラオブジェクトの位置・回転・拡大の値によって変化します。例えばカメラオブジェクトが右に移動した場合、Srcの位置も右に移動します。キャラクターの位置にあわせてカメラオブジェクトを移動しキャラクターを常に画面の中心に表示するといった使い方に使用できます。</p>
+        
+        <h3>主なメソッド</h3>
+        
+        <p>なし</p>
+        
+        <h3>主なプロパティ</h3>
+        
+        <table><thead>
+        <tr>
+        <th>名称</th>
+        <th>説明</th>
+        </tr>
+        </thead><tbody>
+        <tr>
+        <td>Src</td>
+        <td>描画元</td>
+        </tr>
+        <tr>
+        <td>Dst</td>
+        <td>描画先</td>
+        </tr>
+        </tbody></table>
+        
+        <h3>主なイベント</h3>
+        
+        <p>なし</p>
+        
+        <h3>使用方法</h3>
+        
+        <p>CameraObject2Dクラスのサンプルです。</p>
+        
+        <p><img alt="SS" src="/Doc/img/ss/CameraObject2D.png" /></p>
+        
       </div>
       <div class="menu">
         <h2>
@@ -334,6 +193,24 @@
           <a href="/Doc/HowToUseBasic/TextureObject2D.html">画像の描画</a>
         </p>
         <p>
+          <a href="/Doc/HowToUseBasic/TextObject2D.html">文字の描画</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseBasic/EffectObject2D.html">エフェクトの描画</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseBasic/Keyboard.html">キーボード入力</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseBasic/Mouse.html">マウス入力</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseBasic/Joystick.html">ジョイスティック入力</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseBasic/Sound.html">音の再生</a>
+        </p>
+        <p>
           <a href="/Doc/HowToUseBasic/SceneAndLayer.html">シーンとレイヤー</a>
         </p>
         <p>
@@ -343,7 +220,7 @@
           <a href="/Doc/HowToUseBasic/Transition.html">シーン遷移</a>
         </p>
         <p>
-          以下、追加中...
+          <a href="/Doc/HowToUseBasic/Object2DComponent.html"> オブジェクトの挙動の部品化</a>
         </p>
         <h3>
           使い方(応用編)
@@ -356,6 +233,9 @@
         </p>
         <p>
           <a href="/Doc/HowToUseApplication/CustomPostEffect.html">自作ポストエフェクト</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
         </p>
         <h3>
           リファレンス

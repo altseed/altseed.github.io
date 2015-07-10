@@ -106,10 +106,8 @@
 <h3 class="cpp">C++</h3>
 <pre class="highlight cpp"><code><span class="cp">#include &lt;Altseed.h&gt;
 </span>
-<span class="cm">/**
-    @brief  レイヤーにセピアカラーのポストエフェクトを適用する。
-*/</span>
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="c1">// レイヤーにセピアカラーのポストエフェクトを適用する。
+</span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="c1">// Altseedを初期化する
 </span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"PostEffect_Sepia"</span><span class="p">).</span><span class="n">c_str</span><span class="p">(),</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="n">asd</span><span class="o">::</span><span class="n">EngineOption</span><span class="p">());</span>
@@ -157,9 +155,7 @@
 <span class="p">{</span>
     <span class="k">class</span> <span class="nc">PostEffect_Sepia</span>
     <span class="p">{</span>
-        <span class="c1">/// &lt;summary&gt;
-</span>        <span class="c1">/// レイヤーにセピアカラーのポストエフェクトを適用する。
-</span>        <span class="c1">/// &lt;/summary&gt;
+        <span class="c1">// レイヤーにセピアカラーのポストエフェクトを適用する。
 </span>        <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
     <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
         <span class="p">{</span>
@@ -267,6 +263,24 @@
           <a href="/Doc/HowToUseBasic/TextureObject2D.html">画像の描画</a>
         </p>
         <p>
+          <a href="/Doc/HowToUseBasic/TextObject2D.html">文字の描画</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseBasic/EffectObject2D.html">エフェクトの描画</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseBasic/Keyboard.html">キーボード入力</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseBasic/Mouse.html">マウス入力</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseBasic/Joystick.html">ジョイスティック入力</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseBasic/Sound.html">音の再生</a>
+        </p>
+        <p>
           <a href="/Doc/HowToUseBasic/SceneAndLayer.html">シーンとレイヤー</a>
         </p>
         <p>
@@ -276,7 +290,7 @@
           <a href="/Doc/HowToUseBasic/Transition.html">シーン遷移</a>
         </p>
         <p>
-          以下、追加中...
+          <a href="/Doc/HowToUseBasic/Object2DComponent.html"> オブジェクトの挙動の部品化</a>
         </p>
         <h3>
           使い方(応用編)
@@ -289,6 +303,9 @@
         </p>
         <p>
           <a href="/Doc/HowToUseApplication/CustomPostEffect.html">自作ポストエフェクト</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
         </p>
         <h3>
           リファレンス

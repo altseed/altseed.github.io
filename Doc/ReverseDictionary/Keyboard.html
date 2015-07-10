@@ -81,57 +81,11 @@
             表示するサンプルコードの言語を指定できます。
           </p>
           <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button>
-        </div><h2>キーボードの状態を取得する</h2>
-
-<p>Altseedでキーボードの状態を取得します。</p>
-
-<h3 class="csharp">C#</h3>
-<pre class="highlight csharp"><code>
-<span class="c1">/// &lt;summary&gt;
-/// Keyboardのサンプル。キーボードによる入力を取得しています。
-/// &lt;/summary&gt;
-</span><span class="k">class</span> <span class="nc">Keyboard</span>
-<span class="p">{</span>
-    <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
-    <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="c1">//Altseedを初期化する。
-</span>        <span class="n">var</span> <span class="n">initialized</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"Keyboard"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
-
-        <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
-</span>        <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
-        <span class="p">{</span>
-            <span class="c1">//キーボードへの参照を取得する。
-</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Keyboard</span> <span class="n">keyboard</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Keyboard</span><span class="p">;</span>
-
-            <span class="c1">//Zキーの押下状態を表示する。
-</span>            <span class="k">switch</span> <span class="p">(</span><span class="n">keyboard</span><span class="p">.</span><span class="nf">GetKeyState</span><span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Keys</span><span class="p">.</span><span class="n">Z</span><span class="p">))</span>
-            <span class="p">{</span>
-                <span class="k">case</span> <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span><span class="p">.</span><span class="n">Free</span><span class="p">:</span> <span class="c1">//前フレーム、現フレーム共に非押下。
-</span>                    <span class="n">System</span><span class="p">.</span><span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Z Free"</span><span class="p">);</span>
-                    <span class="k">break</span><span class="p">;</span>
-                <span class="k">case</span> <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span><span class="p">.</span><span class="n">Hold</span><span class="p">:</span> <span class="c1">//前フレーム、現フレーム共に押下。
-</span>                    <span class="n">System</span><span class="p">.</span><span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Z Hold"</span><span class="p">);</span>
-                    <span class="k">break</span><span class="p">;</span>
-                <span class="k">case</span> <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span><span class="p">.</span><span class="n">Release</span><span class="p">:</span> <span class="c1">//前フレームで押下、現フレームで非押下。
-</span>                    <span class="n">System</span><span class="p">.</span><span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Z Release"</span><span class="p">);</span>
-                    <span class="k">break</span><span class="p">;</span>
-                <span class="k">case</span> <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span><span class="p">.</span><span class="n">Push</span><span class="p">:</span> <span class="c1">//前フレームで非押下、現フレームで押下。
-</span>                    <span class="n">System</span><span class="p">.</span><span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Z Push"</span><span class="p">);</span>
-                    <span class="k">break</span><span class="p">;</span>
-            <span class="p">}</span>
-
-            <span class="c1">// Altseedを更新する。
-</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
-        <span class="p">}</span>
-
-        <span class="c1">//Altseedの終了処理をする。
-</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-</code></pre>
-
+        </div>
+        <h2>キーボードの状態を取得する</h2>
+        
+        <p>Altseedでキーボードの状態を取得します。</p>
+        
       </div>
       <div class="menu">
         <h2>
@@ -198,6 +152,24 @@
           <a href="/Doc/HowToUseBasic/TextureObject2D.html">画像の描画</a>
         </p>
         <p>
+          <a href="/Doc/HowToUseBasic/TextObject2D.html">文字の描画</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseBasic/EffectObject2D.html">エフェクトの描画</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseBasic/Keyboard.html">キーボード入力</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseBasic/Mouse.html">マウス入力</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseBasic/Joystick.html">ジョイスティック入力</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseBasic/Sound.html">音の再生</a>
+        </p>
+        <p>
           <a href="/Doc/HowToUseBasic/SceneAndLayer.html">シーンとレイヤー</a>
         </p>
         <p>
@@ -207,7 +179,7 @@
           <a href="/Doc/HowToUseBasic/Transition.html">シーン遷移</a>
         </p>
         <p>
-          以下、追加中...
+          <a href="/Doc/HowToUseBasic/Object2DComponent.html"> オブジェクトの挙動の部品化</a>
         </p>
         <h3>
           使い方(応用編)
@@ -220,6 +192,9 @@
         </p>
         <p>
           <a href="/Doc/HowToUseApplication/CustomPostEffect.html">自作ポストエフェクト</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
         </p>
         <h3>
           リファレンス

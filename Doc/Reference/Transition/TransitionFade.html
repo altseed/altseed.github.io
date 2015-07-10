@@ -81,205 +81,25 @@
             表示するサンプルコードの言語を指定できます。
           </p>
           <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button>
-        </div><h2>フェード (TransitionFade)</h2>
-
-<h3>概要</h3>
-
-<p>フェードは前のシーンをフェードアウトし、完全にフェードアウト仕切ったら次のシーンがフェードインするトランジションです。フェードアウトにかかる時間とフェードインにかかる時間を外部から指定できます。</p>
-
-<p>このトランジションで、実際にシーンが切り替わるタイミングはフェードアウトが終了した時です。フェードアウト中は前のシーンが実行され、フェードイン中は次のシーンが実行されます。</p>
-
-<p><img alt="フェード" src="/Doc/Reference/Transition/img/Fade.png" /></p>
-
-<h3>主なメソッド</h3>
-
-<p>なし</p>
-
-<h3>使用方法</h3>
-
-<p>Transitionクラスのサンプルです。</p>
-
-<h3 class="cpp">C++</h3>
-<pre class="highlight cpp"><code>
-<span class="cp">#include &lt;Altseed.h&gt;
-</span>
-<span class="c1">// Transitionを用いて、シーンの変更の見栄えを変更するサンプルです。
-</span>
-<span class="c1">// Scene1の画像を表示するシーン
-</span><span class="k">class</span> <span class="nc">Scene1</span> <span class="o">:</span> <span class="k">public</span> <span class="n">asd</span><span class="o">::</span><span class="n">Scene</span>
-<span class="p">{</span>
-<span class="k">protected</span><span class="o">:</span>
-    <span class="k">virtual</span> <span class="kt">void</span> <span class="n">OnUpdated</span><span class="p">()</span> <span class="n">override</span><span class="p">;</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="n">Scene1</span><span class="p">();</span>
-<span class="p">};</span>
-
-<span class="c1">// Scene2の画像を表示するシーン
-</span><span class="k">class</span> <span class="nc">Scene2</span> <span class="o">:</span> <span class="k">public</span> <span class="n">asd</span><span class="o">::</span><span class="n">Scene</span>
-<span class="p">{</span>
-<span class="k">protected</span><span class="o">:</span>
-    <span class="k">virtual</span> <span class="kt">void</span> <span class="n">OnUpdated</span><span class="p">()</span> <span class="n">override</span><span class="p">;</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="n">Scene2</span><span class="p">();</span>
-<span class="p">};</span>
-
-<span class="n">Scene1</span><span class="o">::</span><span class="n">Scene1</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="c1">// レイヤーを追加する。
-</span>    <span class="k">auto</span> <span class="n">layer</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">Layer2D</span><span class="o">&gt;</span><span class="p">();</span>
-    <span class="n">AddLayer</span><span class="p">(</span><span class="n">layer</span><span class="p">);</span>
-
-    <span class="c1">// Scene1を描画するインスタンスを生成してレイヤーに追加する。
-</span>    <span class="k">auto</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">TextureObject2D</span><span class="o">&gt;</span><span class="p">();</span>
-    <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetTexture</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetGraphics</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CreateTexture2D</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Data/Texture/Scene1.png"</span><span class="p">).</span><span class="n">c_str</span><span class="p">()));</span>
-    <span class="n">layer</span><span class="o">-&gt;</span><span class="n">AddObject</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="kt">void</span> <span class="n">Scene1</span><span class="o">::</span><span class="n">OnUpdated</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="c1">// マウスが左クリックされた時にフェード付きでScene2に遷移する。
-</span>    <span class="k">if</span> <span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetMouse</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetLeftButton</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetButtonState</span><span class="p">()</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">MouseButtonState</span><span class="o">::</span><span class="n">Push</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">auto</span> <span class="n">scene2</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Scene2</span><span class="o">&gt;</span><span class="p">();</span>
-        <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">ChangeSceneWithTransition</span><span class="p">(</span><span class="n">scene2</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">TransitionFade</span><span class="o">&gt;</span><span class="p">(</span><span class="mf">1.0</span><span class="n">f</span><span class="p">,</span> <span class="mf">1.0</span><span class="n">f</span><span class="p">));</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="n">Scene2</span><span class="o">::</span><span class="n">Scene2</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="c1">// レイヤーを追加する。
-</span>    <span class="k">auto</span> <span class="n">layer</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">Layer2D</span><span class="o">&gt;</span><span class="p">();</span>
-    <span class="n">AddLayer</span><span class="p">(</span><span class="n">layer</span><span class="p">);</span>
-
-    <span class="c1">// Scene2を描画するインスタンスを生成してレイヤーに追加する。
-</span>    <span class="k">auto</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">TextureObject2D</span><span class="o">&gt;</span><span class="p">();</span>
-    <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetTexture</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetGraphics</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CreateTexture2D</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Data/Texture/Scene2.png"</span><span class="p">).</span><span class="n">c_str</span><span class="p">()));</span>
-    <span class="n">layer</span><span class="o">-&gt;</span><span class="n">AddObject</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="kt">void</span> <span class="n">Scene2</span><span class="o">::</span><span class="n">OnUpdated</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="c1">// マウスが左クリックされた時にScene1に遷移する。
-</span>    <span class="k">if</span> <span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetMouse</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetLeftButton</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetButtonState</span><span class="p">()</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">MouseButtonState</span><span class="o">::</span><span class="n">Push</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">auto</span> <span class="n">scene1</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Scene1</span><span class="o">&gt;</span><span class="p">();</span>
-        <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">ChangeScene</span><span class="p">(</span><span class="n">scene1</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kt">int</span> <span class="n">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="c1">//Altseedを初期化する。
-</span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Transition"</span><span class="p">).</span><span class="n">c_str</span><span class="p">(),</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="n">asd</span><span class="o">::</span><span class="n">EngineOption</span><span class="p">());</span>
-
-    <span class="c1">// シーンをScene1に変更する。
-</span>    <span class="k">auto</span> <span class="n">scene</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Scene1</span><span class="o">&gt;</span><span class="p">();</span>
-    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">ChangeScene</span><span class="p">(</span><span class="n">scene</span><span class="p">);</span>
-
-    <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
-</span>    <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">DoEvents</span><span class="p">())</span>
-    <span class="p">{</span>
-        <span class="c1">// Altseedを更新する。
-</span>        <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Update</span><span class="p">();</span>
-    <span class="p">}</span>
-
-    <span class="c1">//Altseedの終了処理をする。
-</span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Terminate</span><span class="p">();</span>
-
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-
-</code></pre>
-
-<h3 class="csharp">C#</h3>
-<pre class="highlight csharp"><code>
-<span class="c1">/// &lt;summary&gt;
-/// Transitionを用いて、シーンの変更の見栄えを変更するサンプルです。
-/// &lt;/summary&gt;
-</span><span class="k">public</span> <span class="k">class</span> <span class="nc">Transition</span>
-<span class="p">{</span>
-    <span class="c1">/// &lt;summary&gt;
-</span>    <span class="c1">/// Scene1の画像を表示するシーン
-</span>    <span class="c1">/// &lt;/summary&gt;
-</span>    <span class="k">class</span> <span class="nc">Scene1</span> <span class="p">:</span> <span class="n">asd</span><span class="p">.</span><span class="n">Scene</span>
-    <span class="p">{</span>
-        <span class="k">public</span> <span class="nf">Scene1</span><span class="p">()</span>
-        <span class="p">{</span>
-            <span class="c1">// レイヤーを追加する。
-</span>            <span class="n">var</span> <span class="n">layer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Layer2D</span><span class="p">();</span>
-            <span class="nf">AddLayer</span><span class="p">(</span><span class="n">layer</span><span class="p">);</span>
-
-            <span class="c1">// Scene1を描画するインスタンスを生成してレイヤーに追加する。
-</span>            <span class="n">var</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextureObject2D</span><span class="p">();</span>
-            <span class="n">obj</span><span class="p">.</span><span class="n">Texture</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Data/Texture/Scene1.png"</span><span class="p">);</span>
-
-            <span class="n">layer</span><span class="p">.</span><span class="nf">AddObject</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
-        <span class="p">}</span>
-
-        <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnUpdated</span><span class="p">()</span>
-        <span class="p">{</span>
-            <span class="c1">// マウスが左クリックされた時にフェード付きでScene2に遷移する。
-</span>            <span class="k">if</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Mouse</span><span class="p">.</span><span class="n">LeftButton</span><span class="p">.</span><span class="n">ButtonState</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">MouseButtonState</span><span class="p">.</span><span class="n">Push</span><span class="p">)</span>
-            <span class="p">{</span>
-                <span class="n">var</span> <span class="n">scene2</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Scene2</span><span class="p">();</span>
-                <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">ChangeSceneWithTransition</span><span class="p">(</span><span class="n">scene2</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TransitionFade</span><span class="p">(</span><span class="m">1.0f</span><span class="p">,</span> <span class="m">1.0f</span><span class="p">));</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-
-    <span class="c1">/// &lt;summary&gt;
-</span>    <span class="c1">/// Scene2の画像を表示するシーン
-</span>    <span class="c1">/// &lt;/summary&gt;
-</span>    <span class="k">class</span> <span class="nc">Scene2</span> <span class="p">:</span> <span class="n">asd</span><span class="p">.</span><span class="n">Scene</span>
-    <span class="p">{</span>
-        <span class="k">public</span> <span class="nf">Scene2</span><span class="p">()</span>
-        <span class="p">{</span>
-            <span class="c1">// レイヤーを追加する。
-</span>            <span class="n">var</span> <span class="n">layer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Layer2D</span><span class="p">();</span>
-            <span class="nf">AddLayer</span><span class="p">(</span><span class="n">layer</span><span class="p">);</span>
-
-            <span class="c1">// Scene2を描画するインスタンスを生成してレイヤーに追加する。
-</span>            <span class="n">var</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextureObject2D</span><span class="p">();</span>
-            <span class="n">obj</span><span class="p">.</span><span class="n">Texture</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Data/Texture/Scene2.png"</span><span class="p">);</span>
-
-            <span class="n">layer</span><span class="p">.</span><span class="nf">AddObject</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
-        <span class="p">}</span>
-
-        <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnUpdated</span><span class="p">()</span>
-        <span class="p">{</span>
-            <span class="c1">// マウスが左クリックされた時にScene1へ遷移する。
-</span>            <span class="k">if</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Mouse</span><span class="p">.</span><span class="n">LeftButton</span><span class="p">.</span><span class="n">ButtonState</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">MouseButtonState</span><span class="p">.</span><span class="n">Push</span><span class="p">)</span>
-            <span class="p">{</span>
-                <span class="n">var</span> <span class="n">scene1</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Scene1</span><span class="p">();</span>
-                <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">ChangeScene</span><span class="p">(</span><span class="n">scene1</span><span class="p">);</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-
-    <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
-    <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="c1">// Altseedを初期化する。
-</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"Transition"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
-
-        <span class="c1">// シーンをScene1に変更する。
-</span>        <span class="n">var</span> <span class="n">scene</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Scene1</span><span class="p">();</span>
-        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">ChangeScene</span><span class="p">(</span><span class="n">scene</span><span class="p">);</span>
-
-        <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
-</span>        <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
-        <span class="p">{</span>
-            <span class="c1">// Altseedを更新する。
-</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
-        <span class="p">}</span>
-
-        <span class="c1">// Altseedの終了処理をする。
-</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-</code></pre>
-
+        </div>
+        <h2>フェード (TransitionFade)</h2>
+        
+        <h3>概要</h3>
+        
+        <p>フェードは前のシーンをフェードアウトし、完全にフェードアウト仕切ったら次のシーンがフェードインするトランジションです。フェードアウトにかかる時間とフェードインにかかる時間を外部から指定できます。</p>
+        
+        <p>このトランジションで、実際にシーンが切り替わるタイミングはフェードアウトが終了した時です。フェードアウト中は前のシーンが実行され、フェードイン中は次のシーンが実行されます。</p>
+        
+        <p><img alt="フェード" src="/Doc/Reference/Transition/img/Fade.png" /></p>
+        
+        <h3>主なメソッド</h3>
+        
+        <p>なし</p>
+        
+        <h3>使用方法</h3>
+        
+        <p>Transitionクラスのサンプルです。</p>
+        
       </div>
       <div class="menu">
         <h2>
@@ -346,6 +166,24 @@
           <a href="/Doc/HowToUseBasic/TextureObject2D.html">画像の描画</a>
         </p>
         <p>
+          <a href="/Doc/HowToUseBasic/TextObject2D.html">文字の描画</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseBasic/EffectObject2D.html">エフェクトの描画</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseBasic/Keyboard.html">キーボード入力</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseBasic/Mouse.html">マウス入力</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseBasic/Joystick.html">ジョイスティック入力</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseBasic/Sound.html">音の再生</a>
+        </p>
+        <p>
           <a href="/Doc/HowToUseBasic/SceneAndLayer.html">シーンとレイヤー</a>
         </p>
         <p>
@@ -355,7 +193,7 @@
           <a href="/Doc/HowToUseBasic/Transition.html">シーン遷移</a>
         </p>
         <p>
-          以下、追加中...
+          <a href="/Doc/HowToUseBasic/Object2DComponent.html"> オブジェクトの挙動の部品化</a>
         </p>
         <h3>
           使い方(応用編)
@@ -368,6 +206,9 @@
         </p>
         <p>
           <a href="/Doc/HowToUseApplication/CustomPostEffect.html">自作ポストエフェクト</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
         </p>
         <h3>
           リファレンス
