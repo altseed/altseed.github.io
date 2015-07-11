@@ -81,68 +81,181 @@
             表示するサンプルコードの言語を指定できます。
           </p>
           <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button>
-        </div>
-        <h2>マップオブジェクト2D (MapObject2D)</h2>
-        
-        <h3>概要</h3>
-        
-        <p><a href="/Doc/Reference/2D/Object2D.html">オブジェクト2Dクラス</a>を拡張し、チップを複数持った上でそれらを全て一括で高速に描画できる2D描画オブジェクトです。
-        同じくテクスチャを描画する<a href="/Doc/Reference/2D/TextureObject2D.html">テクスチャオブジェクト2D</a>の場合は、描画するテクスチャの数だけそのインスタンスを生成する必要があります。しかし、テクスチャオブジェクト2DはOnUpdateメソッドを呼び出す分、その数が増えるとゲームに対して甚だしい負荷がかかります。そこで、このマップオブジェクト2Dはテクスチャと描画の情報をまとめたチップを複数持つことで、OnUpdateメソッドを一度しか呼び出さずに複数のテクスチャを描画することができ、ゲームに掛かる負荷を減らすことが出来ます。図に示すように大量の画像も高速に描画できます。</p>
-        
-        <p><img alt="マップ" src="/Doc/Reference/2D/img/MapObject2D.png" /></p>
-        
-        <p>描画対象とするチップはAddChipにて追加、RemoveChipにて削除することが出来ます。</p>
-        
-        <p>アクションゲームにおいて、マップチップや背景オブジェクトなどのゲーム中にてほぼ更新する必要はないが大量に描画する必要があるテクスチャを扱うのにこのマップオブジェクト2Dは適しています。逆にプレイヤーや敵キャラクターなど毎フレーム更新するオブジェクトを扱うには、<a href="/Doc/Reference/2D/TextureObject2D.html">テクスチャオブジェクト2D</a>が適しています。</p>
-        
-        <p>チップの作成や設定については、<a href="/Doc/Reference/2D/Chip2D.html">チップ</a>の項を御覧ください。</p>
-        
-        <h3>主なメソッド</h3>
-        
-        <table><thead>
-        <tr>
-        <th>名称</th>
-        <th>説明</th>
-        </tr>
-        </thead><tbody>
-        <tr>
-        <td>AddChip</td>
-        <td>チップを描画対象として追加する (追加成功か否かが返り値)</td>
-        </tr>
-        <tr>
-        <td>RemoveChip</td>
-        <td>チップを描画対象から削除する(削除成功か否かが返り値)</td>
-        </tr>
-        </tbody></table>
-        
-        <h3>主なプロパティ</h3>
-        
-        <table><thead>
-        <tr>
-        <th>名称</th>
-        <th>説明</th>
-        </tr>
-        </thead><tbody>
-        <tr>
-        <td>CenterPosition</td>
-        <td>描画の際に適用する変換(拡大、回転、移動)の基準位置。(親から見た相対座標にて設定)</td>
-        </tr>
-        <tr>
-        <td>DrawingPriority</td>
-        <td>描画の優先順位</td>
-        </tr>
-        </tbody></table>
-        
-        <h3>主なイベント</h3>
-        
-        <p>なし</p>
-        
-        <h3>使用方法</h3>
-        
-        <p>MapObject2Dクラスのサンプルです。</p>
-        
-        <p><img alt="SS" src="/Doc/img/ss/MapObject2D_Simple.png" /></p>
-        
+        </div><h2>マップオブジェクト2D (MapObject2D)</h2>
+
+<h3>概要</h3>
+
+<p><a href="/Doc/Reference/2D/Object2D.html">オブジェクト2Dクラス</a>を拡張し、チップを複数持った上でそれらを全て一括で高速に描画できる2D描画オブジェクトです。
+同じくテクスチャを描画する<a href="/Doc/Reference/2D/TextureObject2D.html">テクスチャオブジェクト2D</a>の場合は、描画するテクスチャの数だけそのインスタンスを生成する必要があります。しかし、テクスチャオブジェクト2DはOnUpdateメソッドを呼び出す分、その数が増えるとゲームに対して甚だしい負荷がかかります。そこで、このマップオブジェクト2Dはテクスチャと描画の情報をまとめたチップを複数持つことで、OnUpdateメソッドを一度しか呼び出さずに複数のテクスチャを描画することができ、ゲームに掛かる負荷を減らすことが出来ます。図に示すように大量の画像も高速に描画できます。</p>
+
+<p><img alt="マップ" src="/Doc/Reference/2D/img/MapObject2D.png" /></p>
+
+<p>描画対象とするチップはAddChipにて追加、RemoveChipにて削除することが出来ます。</p>
+
+<p>アクションゲームにおいて、マップチップや背景オブジェクトなどのゲーム中にてほぼ更新する必要はないが大量に描画する必要があるテクスチャを扱うのにこのマップオブジェクト2Dは適しています。逆にプレイヤーや敵キャラクターなど毎フレーム更新するオブジェクトを扱うには、<a href="/Doc/Reference/2D/TextureObject2D.html">テクスチャオブジェクト2D</a>が適しています。</p>
+
+<p>チップの作成や設定については、<a href="/Doc/Reference/2D/Chip2D.html">チップ</a>の項を御覧ください。</p>
+
+<h3>主なメソッド</h3>
+
+<table><thead>
+<tr>
+<th>名称</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>AddChip</td>
+<td>チップを描画対象として追加する (追加成功か否かが返り値)</td>
+</tr>
+<tr>
+<td>RemoveChip</td>
+<td>チップを描画対象から削除する(削除成功か否かが返り値)</td>
+</tr>
+</tbody></table>
+
+<h3>主なプロパティ</h3>
+
+<table><thead>
+<tr>
+<th>名称</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>CenterPosition</td>
+<td>描画の際に適用する変換(拡大、回転、移動)の基準位置。(親から見た相対座標にて設定)</td>
+</tr>
+<tr>
+<td>DrawingPriority</td>
+<td>描画の優先順位</td>
+</tr>
+</tbody></table>
+
+<h3>主なイベント</h3>
+
+<p>なし</p>
+
+<h3>使用方法</h3>
+
+<p>MapObject2Dクラスのサンプルです。</p>
+
+<p><img alt="SS" src="/Doc/img/ss/MapObject2D_Basic.jpg" /></p>
+
+<h3 class="cpp">C++</h3>
+<pre class="highlight cpp"><code>
+<span class="cp">#include &lt;Base.h&gt;
+</span>
+<span class="cm">/**
+@brief  マップを表示するサンプル。
+*/</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// Altseedを初期化する
+</span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"MapObject2D_Basic"</span><span class="p">).</span><span class="n">c_str</span><span class="p">(),</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="n">asd</span><span class="o">::</span><span class="n">EngineOption</span><span class="p">());</span>
+
+    <span class="p">{</span>
+        <span class="c1">//マップオブジェクトを生成する。
+</span>        <span class="k">auto</span> <span class="n">mapObject</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">MapObject2D</span><span class="o">&gt;</span><span class="p">();</span>
+
+        <span class="k">auto</span> <span class="n">texture</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetGraphics</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CreateTexture2D</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Data/Texture/Chip1.png"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
+
+        <span class="c1">//マップオブジェクトに16*12=184個のチップを登録する。
+</span>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">16</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="mi">12</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="c1">//チップを生成する。
+</span>                <span class="k">auto</span> <span class="n">chip</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">Chip2D</span><span class="o">&gt;</span><span class="p">();</span>
+
+                <span class="c1">//チップにテクスチャを設定する。
+</span>                <span class="n">chip</span><span class="o">-&gt;</span><span class="n">SetTexture</span><span class="p">(</span><span class="n">texture</span><span class="p">);</span>
+
+                <span class="c1">//チップの描画先を指定する。
+</span>                <span class="n">chip</span><span class="o">-&gt;</span><span class="n">SetPosition</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Vector2DF</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="mi">40</span><span class="p">,</span> <span class="n">j</span> <span class="o">*</span> <span class="mi">40</span><span class="p">));</span>
+
+                <span class="c1">//マップオブジェクトにチップを追加する。
+</span>                <span class="n">mapObject</span><span class="o">-&gt;</span><span class="n">AddChip</span><span class="p">(</span><span class="n">chip</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="c1">// マップオブジェクトのインスタンスをエンジンへ追加する。
+</span>        <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">AddObject2D</span><span class="p">(</span><span class="n">mapObject</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
+</span>    <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">DoEvents</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// Altseedを更新する。
+</span>        <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Update</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Altseedを終了する。
+</span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Terminate</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre>
+
+<h3 class="csharp">C#</h3>
+<pre class="highlight csharp"><code><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Linq</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Text</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Threading.Tasks</span><span class="p">;</span>
+
+<span class="c1">/// &lt;summary&gt;
+/// マップを表示するサンプル。
+/// &lt;/summary&gt;
+</span><span class="k">class</span> <span class="nc">MapObject2D_Basic</span>
+<span class="p">{</span>
+    <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
+    <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Altseedを初期化する。
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"MapObject2D_Basic"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
+
+        <span class="p">{</span>
+            <span class="c1">//マップオブジェクトを生成する。
+</span>            <span class="n">var</span> <span class="n">mapObject</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">MapObject2D</span><span class="p">();</span>
+
+            <span class="n">var</span> <span class="n">texture</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Data/Texture/Chip1.png"</span><span class="p">);</span>
+
+            <span class="c1">//マップオブジェクトに16*12=184個のチップを登録する。
+</span>            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="m">16</span><span class="p">;</span> <span class="p">++</span><span class="n">i</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">j</span> <span class="p">&lt;</span> <span class="m">12</span><span class="p">;</span> <span class="p">++</span><span class="n">j</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="c1">//チップを生成する。
+</span>                    <span class="n">var</span> <span class="n">chip</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Chip2D</span><span class="p">();</span>
+
+                    <span class="c1">//チップにテクスチャを設定する。
+</span>                    <span class="n">chip</span><span class="p">.</span><span class="n">Texture</span> <span class="p">=</span> <span class="n">texture</span><span class="p">;</span>
+
+                    <span class="c1">//チップの描画先を指定する。
+</span>                    <span class="n">chip</span><span class="p">.</span><span class="n">Position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="n">i</span> <span class="p">*</span> <span class="m">40</span><span class="p">,</span> <span class="n">j</span> <span class="p">*</span> <span class="m">40</span><span class="p">);</span>
+
+                    <span class="c1">//マップオブジェクトにチップを追加する。
+</span>                    <span class="n">mapObject</span><span class="p">.</span><span class="nf">AddChip</span><span class="p">(</span><span class="n">chip</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+
+            <span class="c1">//レイヤーにマップオブジェクトを追加する。
+</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">AddObject2D</span><span class="p">(</span><span class="n">mapObject</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
+</span>        <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="c1">// Altseedを更新する。
+</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Altseedの終了処理をする。
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre>
+
       </div>
       <div class="menu">
         <h2>
@@ -227,6 +340,9 @@
           <a href="/Doc/HowToUseBasic/Sound.html">音の再生</a>
         </p>
         <p>
+          <a href="/Doc/HowToUseBasic/Collision2D.html">衝突判定</a>
+        </p>
+        <p>
           <a href="/Doc/HowToUseBasic/SceneAndLayer.html">シーンとレイヤー</a>
         </p>
         <p>
@@ -234,6 +350,9 @@
         </p>
         <p>
           <a href="/Doc/HowToUseBasic/Transition.html">シーン遷移</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseBasic/CameraObject2D.html">カメラ</a>
         </p>
         <p>
           <a href="/Doc/HowToUseBasic/Object2DComponent.html"> オブジェクトの挙動の部品化</a>
@@ -257,10 +376,6 @@
           リファレンス
         </h3>
         <a href="/Doc/Reference/Main.html">リファレンス</a>
-        <h3>
-          逆引き
-        </h3>
-        <a href="/Doc/ReverseDictionary.html">逆引き</a>
       </div>
     </div>
   </body>

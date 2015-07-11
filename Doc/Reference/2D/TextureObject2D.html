@@ -153,7 +153,7 @@
 
 <p>TextureObject2Dクラスのサンプルです。</p>
 
-<p><img alt="SS" src="/Doc/img/ss/TextureObject2D_Simple.jpg" /></p>
+<p><img alt="SS" src="/Doc/img/ss/TextureObject2D_Basic.jpg" /></p>
 
 <h3 class="cpp">C++</h3>
 <pre class="highlight cpp"><code>
@@ -165,7 +165,7 @@
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="c1">// Altseedを初期化する
-</span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"TextureObject2D_Simple"</span><span class="p">).</span><span class="n">c_str</span><span class="p">(),</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="n">asd</span><span class="o">::</span><span class="n">EngineOption</span><span class="p">());</span>
+</span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"TextureObject2D_Basic"</span><span class="p">).</span><span class="n">c_str</span><span class="p">(),</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="n">asd</span><span class="o">::</span><span class="n">EngineOption</span><span class="p">());</span>
 
     <span class="c1">// 画像を読み込む。
 </span>    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">Texture2D</span><span class="o">&gt;</span> <span class="n">texture</span> <span class="o">=</span> 
@@ -200,13 +200,13 @@
 <span class="c1">/// &lt;summary&gt;
 /// 画像を表示するサンプル。
 /// &lt;/summary&gt;
-</span><span class="k">class</span> <span class="nc">TextureObject2D_Simple</span>
+</span><span class="k">class</span> <span class="nc">TextureObject2D_Basic</span>
 <span class="p">{</span>
     <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
     <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="c1">// Altseedを初期化する。
-</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"TextureObject2D_Simple"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"TextureObject2D_Basic"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
 
         <span class="c1">// 画像を読み込む。
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Texture2D</span> <span class="n">texture</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="p">);</span>
@@ -320,6 +320,9 @@
           <a href="/Doc/HowToUseBasic/Sound.html">音の再生</a>
         </p>
         <p>
+          <a href="/Doc/HowToUseBasic/Collision2D.html">衝突判定</a>
+        </p>
+        <p>
           <a href="/Doc/HowToUseBasic/SceneAndLayer.html">シーンとレイヤー</a>
         </p>
         <p>
@@ -327,6 +330,9 @@
         </p>
         <p>
           <a href="/Doc/HowToUseBasic/Transition.html">シーン遷移</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseBasic/CameraObject2D.html">カメラ</a>
         </p>
         <p>
           <a href="/Doc/HowToUseBasic/Object2DComponent.html"> オブジェクトの挙動の部品化</a>
@@ -350,10 +356,6 @@
           リファレンス
         </h3>
         <a href="/Doc/Reference/Main.html">リファレンス</a>
-        <h3>
-          逆引き
-        </h3>
-        <a href="/Doc/ReverseDictionary.html">逆引き</a>
       </div>
     </div>
   </body>

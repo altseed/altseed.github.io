@@ -81,23 +81,261 @@
             表示するサンプルコードの言語を指定できます。
           </p>
           <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button>
-        </div>
-        <h2>ポストエフェクト (PostEffect)</h2>
-        
-        <h3>概要</h3>
-        
-        <p>ポストエフェクトは画面に対し何らかの効果を加えて表示される映像を変化させる機能です。
-        現在、ポストエフェクトを設定できる対象はレイヤーのみで、レイヤーに設定した場合、
-        既に描画済みのレイヤーとポストエフェクトが設定されたレイヤーの描画した結果全てに対して効果を与えます。
-        また、試験的にカメラ3Dにも設定でき、カメラで描画した結果に対して効果を与えます。</p>
-        
-        <p>ポストエフェクトは既に用意されているポストエフェクトの他に自分でポストエフェクトを開発できます。
-        詳細は、カスタムポストエフェクトの項目で説明しています。</p>
-        
-        <p><img alt="ポストエフェクトなし" src="/Doc/Reference/PostEffect/img/none.png" /></p>
-        
-        <p><img alt="ポストエフェクトあり" src="/Doc/Reference/PostEffect/img/gb.png" /></p>
-        
+        </div><h2>ポストエフェクト (PostEffect)</h2>
+
+<h3>概要</h3>
+
+<p>ポストエフェクトは画面に対し何らかの効果を加えて表示される映像を変化させる機能です。
+現在、ポストエフェクトを設定できる対象はレイヤーのみで、レイヤーに設定した場合、
+既に描画済みのレイヤーとポストエフェクトが設定されたレイヤーの描画した結果全てに対して効果を与えます。
+また、試験的にカメラ3Dにも設定でき、カメラで描画した結果に対して効果を与えます。</p>
+
+<p><img alt="ポストエフェクトなし" src="/Doc/Reference/PostEffect/img/none.png" /></p>
+
+<p><img alt="ポストエフェクトあり" src="/Doc/Reference/PostEffect/img/gb.png" /></p>
+
+<h3>自作ポストエフェクト</h3>
+
+<p>PostEffect、Shader2D、Material2Dのクラスを使用することで自作ポストエフェクトを実装できます。</p>
+
+<p>下記のサンプルでは、階調を反転させています。</p>
+
+<p><img alt="SS" src="/Doc/img/ss/CustomPostEffect_Invert.jpg" /></p>
+
+<h3 class="cpp">C++</h3>
+<pre class="highlight cpp"><code><span class="cp">#include &lt;Altseed.h&gt;
+</span>
+<span class="c1">// 階調を反転するポストエフェクトのサンプル。
+</span>
+<span class="cm">/**
+    @brief  DirectX向けシェーダー(HLSLで記述)
+*/</span>
+<span class="k">static</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">shader2d_dx_ps</span> <span class="o">=</span> <span class="n">R</span><span class="s">"(</span><span class="err">
+</span><span class="s">Texture2D g_texture : register( t0 );</span><span class="err">
+</span><span class="s">SamplerState g_sampler : register( s0 );</span><span class="err">
+
+</span><span class="s">struct PS_Input</span><span class="err">
+</span><span class="s">{</span><span class="err">
+</span><span class="s">    float4 SV_Position : SV_POSITION;</span><span class="err">
+</span><span class="s">    float4 Position : POSITION;</span><span class="err">
+</span><span class="s">    float2 UV : UV;</span><span class="err">
+</span><span class="s">    float4 Color : COLOR;</span><span class="err">
+</span><span class="s">};</span><span class="err">
+
+</span><span class="s">float4 main( const PS_Input Input ) : SV_Target</span><span class="err">
+</span><span class="s">{</span><span class="err">
+</span><span class="s">    float4 color = g_texture.Sample(g_sampler, Input.UV);</span><span class="err">
+</span><span class="s">    return float4( 1.0 - color.x, 1.0 - color.y, 1.0 - color.z, color.w);</span><span class="err">
+</span><span class="s">}</span><span class="err">
+
+</span><span class="s">)"</span><span class="p">;</span>
+
+<span class="cm">/**
+    @brief  OpenGL向けシェーダー(GLSLで記述)
+*/</span>
+<span class="k">static</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">shader2d_gl_ps</span> <span class="o">=</span> <span class="n">R</span><span class="s">"(</span><span class="err">
+</span><span class="s">uniform sampler2D   g_texture;</span><span class="err">
+
+</span><span class="s">in vec4 inPosition;</span><span class="err">
+</span><span class="s">in vec2 inUV;</span><span class="err">
+</span><span class="s">in vec4 inColor;</span><span class="err">
+
+</span><span class="s">out vec4 outOutput;</span><span class="err">
+
+</span><span class="s">void main()</span><span class="err">
+</span><span class="s">{</span><span class="err">
+</span><span class="s">    vec4 color = texture(g_texture, inUV.xy);</span><span class="err">
+</span><span class="s">    outOutput = vec4( 1.0 - color.x, 1.0 - color.y, 1.0 - color.z, color.w);</span><span class="err">
+</span><span class="s">}</span><span class="err">
+
+</span><span class="s">)"</span><span class="p">;</span>
+
+<span class="cm">/**
+    @brief  階調を反転させるポストエフェクト
+*/</span>
+<span class="k">class</span> <span class="nc">InvertPostEffect</span> <span class="o">:</span> <span class="k">public</span> <span class="n">asd</span><span class="o">::</span><span class="n">PostEffect</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">Shader2D</span><span class="o">&gt;</span>      <span class="n">shader</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">Material2D</span><span class="o">&gt;</span>    <span class="n">material2d</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">InvertPostEffect</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// シェーダーをHLSL/GLSLから生成する。
+</span>        <span class="k">if</span> <span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetGraphics</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetGraphicsDeviceType</span><span class="p">()</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">GraphicsDeviceType</span><span class="o">::</span><span class="n">DirectX11</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">shader</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetGraphics</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CreateShader2D</span><span class="p">(</span>
+                <span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="n">shader2d_dx_ps</span><span class="p">).</span><span class="n">c_str</span><span class="p">()</span>
+                <span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetGraphics</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetGraphicsDeviceType</span><span class="p">()</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">GraphicsDeviceType</span><span class="o">::</span><span class="n">OpenGL</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">shader</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetGraphics</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CreateShader2D</span><span class="p">(</span>
+                <span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="n">shader2d_gl_ps</span><span class="p">).</span><span class="n">c_str</span><span class="p">()</span>
+                <span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="n">material2d</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetGraphics</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CreateMaterial2D</span><span class="p">(</span><span class="n">shader</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kt">void</span> <span class="n">OnDraw</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">RenderTexture2D</span><span class="o">&gt;</span> <span class="n">dst</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">RenderTexture2D</span><span class="o">&gt;</span> <span class="n">src</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// マテリアルを経由してシェーダー内のg_texture変数に画面の画像(src)を入力する。
+</span>        <span class="n">material2d</span><span class="o">-&gt;</span><span class="n">SetTexture2D</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"g_texture"</span><span class="p">).</span><span class="n">c_str</span><span class="p">(),</span> <span class="n">src</span><span class="p">);</span>
+
+        <span class="c1">// 出力画像(dst)に指定したマテリアルで描画する。
+</span>        <span class="n">DrawOnTexture2DWithMaterial</span><span class="p">(</span><span class="n">dst</span><span class="p">,</span> <span class="n">material2d</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// Altseedを初期化する
+</span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"CustomPostEffect_Invert"</span><span class="p">).</span><span class="n">c_str</span><span class="p">(),</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="n">asd</span><span class="o">::</span><span class="n">EngineOption</span><span class="p">());</span>
+
+    <span class="c1">// シーン、レイヤー、画像を表示するオブジェクトを生成する。
+</span>    <span class="k">auto</span> <span class="n">scene</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">Scene</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="k">auto</span> <span class="n">layer</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">Layer2D</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="k">auto</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">TextureObject2D</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetTexture</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetGraphics</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CreateTexture2D</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="p">).</span><span class="n">c_str</span><span class="p">()));</span>
+
+    <span class="c1">// シーンを変更し、そのシーンにレイヤーを追加し、そのレイヤーにオブジェクトを追加する。
+</span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">ChangeScene</span><span class="p">(</span><span class="n">scene</span><span class="p">);</span>
+    <span class="n">scene</span><span class="o">-&gt;</span><span class="n">AddLayer</span><span class="p">(</span><span class="n">layer</span><span class="p">);</span>
+    <span class="n">layer</span><span class="o">-&gt;</span><span class="n">AddObject</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
+
+    <span class="c1">// レイヤーにポストエフェクトを適用する。
+</span>    <span class="n">layer</span><span class="o">-&gt;</span><span class="n">AddPostEffect</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">InvertPostEffect</span><span class="o">&gt;</span><span class="p">());</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">DoEvents</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Update</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Terminate</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre>
+
+<h3 class="csharp">C#</h3>
+<pre class="highlight csharp"><code>
+<span class="c1">/// &lt;summary&gt;
+/// 階調を反転するポストエフェクトのサンプル。
+/// &lt;/summary&gt;
+</span><span class="k">class</span> <span class="nc">CustomPostEffect_Invert</span>
+<span class="p">{</span>
+    <span class="c1">/// &lt;summary&gt;
+</span>    <span class="c1">/// DirectX向けシェーダー(HLSLで記述)
+</span>    <span class="c1">/// &lt;/summary&gt;
+</span>    <span class="k">static</span> <span class="kt">string</span> <span class="n">shader2d_dx_ps</span> <span class="p">=</span> <span class="err">@</span><span class="s">"
+</span><span class="n">Texture2D</span> <span class="n">g_texture</span> <span class="p">:</span> <span class="nf">register</span><span class="p">(</span> <span class="n">t0</span> <span class="p">);</span>
+<span class="n">SamplerState</span> <span class="n">g_sampler</span> <span class="p">:</span> <span class="nf">register</span><span class="p">(</span> <span class="n">s0</span> <span class="p">);</span>
+
+<span class="k">struct</span> <span class="nc">PS_Input</span>
+<span class="p">{</span>
+    <span class="n">float4</span> <span class="n">SV_Position</span> <span class="p">:</span> <span class="n">SV_POSITION</span><span class="p">;</span>
+    <span class="n">float4</span> <span class="n">Position</span> <span class="p">:</span> <span class="n">POSITION</span><span class="p">;</span>
+    <span class="n">float2</span> <span class="n">UV</span> <span class="p">:</span> <span class="n">UV</span><span class="p">;</span>
+    <span class="n">float4</span> <span class="n">Color</span> <span class="p">:</span> <span class="n">COLOR</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="n">float4</span> <span class="nf">main</span><span class="p">(</span> <span class="k">const</span> <span class="n">PS_Input</span> <span class="n">Input</span> <span class="p">)</span> <span class="p">:</span> <span class="n">SV_Target</span>
+<span class="p">{</span>
+    <span class="n">float4</span> <span class="n">color</span> <span class="p">=</span> <span class="n">g_texture</span><span class="p">.</span><span class="nf">Sample</span><span class="p">(</span><span class="n">g_sampler</span><span class="p">,</span> <span class="n">Input</span><span class="p">.</span><span class="n">UV</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nf">float4</span><span class="p">(</span> <span class="m">1.0</span> <span class="p">-</span> <span class="n">color</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="m">1.0</span> <span class="p">-</span> <span class="n">color</span><span class="p">.</span><span class="n">y</span><span class="p">,</span> <span class="m">1.0</span> <span class="p">-</span> <span class="n">color</span><span class="p">.</span><span class="n">z</span><span class="p">,</span> <span class="n">color</span><span class="p">.</span><span class="n">w</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="s">";
+</span>    <span class="c1">/// &lt;summary&gt;
+</span>    <span class="c1">/// OpenGL向けシェーダー(GLSLで記述)
+</span>    <span class="c1">/// &lt;/summary&gt;
+</span>    <span class="k">static</span> <span class="kt">string</span> <span class="n">shader2d_gl_ps</span> <span class="p">=</span> <span class="err">@</span><span class="s">"
+</span><span class="n">uniform</span> <span class="n">sampler2D</span> <span class="n">g_texture</span><span class="p">;</span>
+
+<span class="k">in</span> <span class="n">vec4</span> <span class="n">inPosition</span><span class="p">;</span>
+<span class="k">in</span> <span class="n">vec2</span> <span class="n">inUV</span><span class="p">;</span>
+<span class="k">in</span> <span class="n">vec4</span> <span class="n">inColor</span><span class="p">;</span>
+
+<span class="k">out</span> <span class="n">vec4</span> <span class="n">outOutput</span><span class="p">;</span>
+
+<span class="k">void</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">vec4</span> <span class="n">color</span> <span class="p">=</span> <span class="nf">texture</span><span class="p">(</span><span class="n">g_texture</span><span class="p">,</span> <span class="n">inUV</span><span class="p">.</span><span class="n">xy</span><span class="p">);</span>
+    <span class="n">outOutput</span> <span class="p">=</span> <span class="nf">vec4</span><span class="p">(</span> <span class="m">1.0</span> <span class="p">-</span> <span class="n">color</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="m">1.0</span> <span class="p">-</span> <span class="n">color</span><span class="p">.</span><span class="n">y</span><span class="p">,</span> <span class="m">1.0</span> <span class="p">-</span> <span class="n">color</span><span class="p">.</span><span class="n">z</span><span class="p">,</span> <span class="n">color</span><span class="p">.</span><span class="n">w</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="s">";
+</span>
+    <span class="c1">/// &lt;summary&gt;
+</span>    <span class="c1">/// 階調を反転させるポストエフェクト
+</span>    <span class="c1">/// &lt;/summary&gt;
+</span>    <span class="k">class</span> <span class="nc">InvertPostEffect</span> <span class="p">:</span> <span class="n">asd</span><span class="p">.</span><span class="n">PostEffect</span>
+    <span class="p">{</span>
+        <span class="n">asd</span><span class="p">.</span><span class="n">Shader2D</span> <span class="n">shader</span><span class="p">;</span>
+        <span class="n">asd</span><span class="p">.</span><span class="n">Material2D</span> <span class="n">material2d</span><span class="p">;</span>
+
+        <span class="k">public</span> <span class="nf">InvertPostEffect</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="c1">// シェーダーをHLSL/GLSLから生成する。
+</span>            <span class="k">if</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="n">GraphicsDeviceType</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">GraphicsDeviceType</span><span class="p">.</span><span class="n">DirectX11</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">shader</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateShader2D</span><span class="p">(</span>
+                    <span class="n">shader2d_dx_ps</span>
+                    <span class="p">);</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="n">GraphicsDeviceType</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">GraphicsDeviceType</span><span class="p">.</span><span class="n">OpenGL</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">shader</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateShader2D</span><span class="p">(</span>
+                    <span class="n">shader2d_gl_ps</span>
+                    <span class="p">);</span>
+            <span class="p">}</span>
+
+            <span class="c1">// シェーダーからマテリアルを生成する。
+</span>            <span class="n">material2d</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateMaterial2D</span><span class="p">(</span><span class="n">shader</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnDraw</span><span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">RenderTexture2D</span> <span class="n">dst</span><span class="p">,</span> <span class="n">asd</span><span class="p">.</span><span class="n">RenderTexture2D</span> <span class="n">src</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// マテリアルを経由してシェーダー内のg_texture変数に画面の画像(src)を入力する。
+</span>            <span class="n">material2d</span><span class="p">.</span><span class="nf">SetTexture2D</span><span class="p">(</span><span class="s">"g_texture"</span><span class="p">,</span> <span class="n">src</span><span class="p">);</span>
+
+            <span class="c1">// 出力画像(dst)に指定したマテリアルで描画する。
+</span>            <span class="nf">DrawOnTexture2DWithMaterial</span><span class="p">(</span><span class="n">dst</span><span class="p">,</span> <span class="n">material2d</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
+    <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Altseedを初期化する。
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"CustomPostEffect_Invert"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
+
+        <span class="c1">// シーン、レイヤー、画像を表示するオブジェクトを生成する。
+</span>        <span class="n">var</span> <span class="n">scene</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Scene</span><span class="p">();</span>
+        <span class="n">var</span> <span class="n">layer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Layer2D</span><span class="p">();</span>
+        <span class="n">var</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextureObject2D</span><span class="p">();</span>
+        <span class="n">obj</span><span class="p">.</span><span class="n">Texture</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="p">);</span>
+
+        <span class="c1">// シーンを変更し、そのシーンにレイヤーを追加し、そのレイヤーにオブジェクトを追加する。
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">ChangeScene</span><span class="p">(</span><span class="n">scene</span><span class="p">);</span>
+        <span class="n">scene</span><span class="p">.</span><span class="nf">AddLayer</span><span class="p">(</span><span class="n">layer</span><span class="p">);</span>
+        <span class="n">layer</span><span class="p">.</span><span class="nf">AddObject</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
+
+        <span class="c1">// レイヤーにポストエフェクトを適用する。
+</span>        <span class="n">layer</span><span class="p">.</span><span class="nf">AddPostEffect</span><span class="p">(</span><span class="k">new</span> <span class="nf">InvertPostEffect</span><span class="p">());</span>
+
+        <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+
+</code></pre>
+
       </div>
       <div class="menu">
         <h2>
@@ -182,6 +420,9 @@
           <a href="/Doc/HowToUseBasic/Sound.html">音の再生</a>
         </p>
         <p>
+          <a href="/Doc/HowToUseBasic/Collision2D.html">衝突判定</a>
+        </p>
+        <p>
           <a href="/Doc/HowToUseBasic/SceneAndLayer.html">シーンとレイヤー</a>
         </p>
         <p>
@@ -189,6 +430,9 @@
         </p>
         <p>
           <a href="/Doc/HowToUseBasic/Transition.html">シーン遷移</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseBasic/CameraObject2D.html">カメラ</a>
         </p>
         <p>
           <a href="/Doc/HowToUseBasic/Object2DComponent.html"> オブジェクトの挙動の部品化</a>
@@ -212,10 +456,6 @@
           リファレンス
         </h3>
         <a href="/Doc/Reference/Main.html">リファレンス</a>
-        <h3>
-          逆引き
-        </h3>
-        <a href="/Doc/ReverseDictionary.html">逆引き</a>
       </div>
     </div>
   </body>

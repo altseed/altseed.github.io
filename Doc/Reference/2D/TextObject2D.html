@@ -81,86 +81,188 @@
             表示するサンプルコードの言語を指定できます。
           </p>
           <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button>
-        </div>
-        <h2>テキストオブジェクト2D (TextObject2D)</h2>
-        
-        <h3>概要</h3>
-        
-        <p><a href="/Doc/Reference/2D/Object2D.html">オブジェクト2Dクラス</a>を拡張し、文字列を描画することが可能な2D描画オブジェクトです。</p>
-        
-        <p>最低限、描画に使用するフォントと描画する文字列を設定すると図に示すように文字列の左上を基準に文字列を描画することが出来ます。フォントの設定によって図に示すように文字サイズが設定でき、枠線付き文字の描画や文字列の回転も可能です。</p>
-        
-        <p><img alt="テキスト" src="/Doc/Reference/2D/img/TextObject2D.png" /></p>
-        
-        <p>他にも文字列の描画方向、描画色、アルファブレンドの種類、反転フラグなどが指定可能です。
-        ゲームのスコアやステータスなど文字を扱う描画オブジェクト全般に使用可能です。</p>
-        
-        <p>フォントについては<a href="/Doc/Reference/Graphics/Font.html">フォント</a>の項を御覧ください。</p>
-        
-        <h3>主なメソッド</h3>
-        
-        <p>なし</p>
-        
-        <h3>主なプロパティ</h3>
-        
-        <table><thead>
-        <tr>
-        <th>名称</th>
-        <th>説明</th>
-        </tr>
-        </thead><tbody>
-        <tr>
-        <td>Font</td>
-        <td>描画文字列に使用するフォント</td>
-        </tr>
-        <tr>
-        <td>Text</td>
-        <td>描画する文字列。(\nで描画文字列を改行可能)</td>
-        </tr>
-        <tr>
-        <td>AlphaBlendMode</td>
-        <td>テクスチャ描画の際に適用されるアルファブレンドの種類</td>
-        </tr>
-        <tr>
-        <td>CenterPosition</td>
-        <td>文字列描画の際に適用する変換(拡大、回転、移動)の基準位置(親から見た相対座標にて設定)</td>
-        </tr>
-        <tr>
-        <td>Color</td>
-        <td>文字列に合成する色のRGBA値を0~255の間で指定(Aの値を255未満にすると透明になる)</td>
-        </tr>
-        <tr>
-        <td>DrawingPriority</td>
-        <td>描画の優先順位</td>
-        </tr>
-        <tr>
-        <td>TurnLR</td>
-        <td>個々の文字の描画左右反転フラグ</td>
-        </tr>
-        <tr>
-        <td>TurnUL</td>
-        <td>個々の文字の描画上下反転フラグ</td>
-        </tr>
-        <tr>
-        <td>WritingDirection</td>
-        <td>文字列の描画する方向(左から右:Horizontalもしくは上から下:Vertical)</td>
-        </tr>
-        <tr>
-        <td>TextureFilterType</td>
-        <td>描画時のテクスチャフィルタ(近傍補間:Nearestもしくは線形補間:Linear)</td>
-        </tr>
-        </tbody></table>
-        
-        <h3>主なイベント</h3>
-        
-        <p>なし</p>
-        
-        <h3>使用方法</h3>
-        
-        <p>TextObject2Dクラスのサンプルです。</p>
-        
-        <p><img alt="SS" src="/Doc/img/ss/TextObject2D_Simple.png" /></p>
-        
+        </div><h2>テキストオブジェクト2D (TextObject2D)</h2>
+
+<h3>概要</h3>
+
+<p><a href="/Doc/Reference/2D/Object2D.html">オブジェクト2Dクラス</a>を拡張し、文字列を描画することが可能な2D描画オブジェクトです。</p>
+
+<p>最低限、描画に使用するフォントと描画する文字列を設定すると図に示すように文字列の左上を基準に文字列を描画することが出来ます。フォントの設定によって図に示すように文字サイズが設定でき、枠線付き文字の描画や文字列の回転も可能です。</p>
+
+<p><img alt="テキスト" src="/Doc/Reference/2D/img/TextObject2D.png" /></p>
+
+<p>他にも文字列の描画方向、描画色、アルファブレンドの種類、反転フラグなどが指定可能です。
+ゲームのスコアやステータスなど文字を扱う描画オブジェクト全般に使用可能です。</p>
+
+<p>フォントについては<a href="/Doc/Reference/Graphics/Font.html">フォント</a>の項を御覧ください。</p>
+
+<h3>主なメソッド</h3>
+
+<p>なし</p>
+
+<h3>主なプロパティ</h3>
+
+<table><thead>
+<tr>
+<th>名称</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Font</td>
+<td>描画文字列に使用するフォント</td>
+</tr>
+<tr>
+<td>Text</td>
+<td>描画する文字列。(\nで描画文字列を改行可能)</td>
+</tr>
+<tr>
+<td>AlphaBlendMode</td>
+<td>テクスチャ描画の際に適用されるアルファブレンドの種類</td>
+</tr>
+<tr>
+<td>CenterPosition</td>
+<td>文字列描画の際に適用する変換(拡大、回転、移動)の基準位置(親から見た相対座標にて設定)</td>
+</tr>
+<tr>
+<td>Color</td>
+<td>文字列に合成する色のRGBA値を0~255の間で指定(Aの値を255未満にすると透明になる)</td>
+</tr>
+<tr>
+<td>DrawingPriority</td>
+<td>描画の優先順位</td>
+</tr>
+<tr>
+<td>TurnLR</td>
+<td>個々の文字の描画左右反転フラグ</td>
+</tr>
+<tr>
+<td>TurnUL</td>
+<td>個々の文字の描画上下反転フラグ</td>
+</tr>
+<tr>
+<td>WritingDirection</td>
+<td>文字列の描画する方向(左から右:Horizontalもしくは上から下:Vertical)</td>
+</tr>
+<tr>
+<td>TextureFilterType</td>
+<td>描画時のテクスチャフィルタ(近傍補間:Nearestもしくは線形補間:Linear)</td>
+</tr>
+<tr>
+<td>LineSpacing</td>
+<td>文字列を描画する際の行間値</td>
+</tr>
+<tr>
+<td>LetterSpacing</td>
+<td>文字列を描画する際の文字間値</td>
+</tr>
+</tbody></table>
+
+<h3>主なイベント</h3>
+
+<p>なし</p>
+
+<h3>使用方法</h3>
+
+<p>TextObject2Dクラスのサンプルです。</p>
+
+<p><img alt="SS" src="/Doc/img/ss/TextObject2D_Basic.jpg" /></p>
+
+<h3 class="cpp">C++</h3>
+<pre class="highlight cpp"><code>
+<span class="cp">#include &lt;Base.h&gt;
+</span>
+<span class="cm">/**
+@brief  文字列を表示するサンプル。
+*/</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// Altseedを初期化する
+</span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"TextObject2D_Basic"</span><span class="p">).</span><span class="n">c_str</span><span class="p">(),</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="n">asd</span><span class="o">::</span><span class="n">EngineOption</span><span class="p">());</span>
+
+    <span class="p">{</span>
+        <span class="c1">// フォントを生成する
+</span>        <span class="k">auto</span> <span class="n">font</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetGraphics</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CreateFont</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Data/Font/Font1.aff"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
+
+        <span class="c1">// TextObject2Dを生成する
+</span>        <span class="k">auto</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">TextObject2D</span><span class="o">&gt;</span><span class="p">();</span>
+
+        <span class="c1">// 描画に使うフォントを設定する
+</span>        <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetFont</span><span class="p">(</span><span class="n">font</span><span class="p">);</span>
+
+        <span class="c1">// 描画位置を指定する
+</span>        <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetPosition</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Vector2DF</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">));</span>
+
+        <span class="c1">// 描画する文字列の指定
+</span>        <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetText</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"普通の文字列描画"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
+
+        <span class="c1">// オブジェクトのインスタンスをエンジンへ追加する。
+</span>        <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">AddObject2D</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
+</span>    <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">DoEvents</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// Altseedを更新する。
+</span>        <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Update</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Altseedを終了する。
+</span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Terminate</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre>
+
+<h3 class="csharp">C#</h3>
+<pre class="highlight csharp"><code><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Linq</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Text</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Threading.Tasks</span><span class="p">;</span>
+
+<span class="c1">/// &lt;summary&gt;
+/// 文字列を表示するサンプル。
+/// &lt;/summary&gt;
+</span><span class="k">class</span> <span class="nc">TextObject2D_Basic</span>
+<span class="p">{</span>
+    <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
+    <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Altseedを初期化する。
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"TextObject2D_Basic"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
+
+        <span class="p">{</span>
+            <span class="c1">// フォントを生成する
+</span>            <span class="n">var</span> <span class="n">font</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateFont</span><span class="p">(</span><span class="s">"Data/Font/Font1.aff"</span><span class="p">);</span>
+
+            <span class="c1">// TextObject2Dを生成する
+</span>            <span class="n">var</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextObject2D</span><span class="p">();</span>
+
+            <span class="c1">// 描画に使うフォントを設定する
+</span>            <span class="n">obj</span><span class="p">.</span><span class="n">Font</span> <span class="p">=</span> <span class="n">font</span><span class="p">;</span>
+
+            <span class="c1">// 描画位置を指定する
+</span>            <span class="n">obj</span><span class="p">.</span><span class="n">Position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="m">100</span><span class="p">);</span>
+
+            <span class="c1">// 描画する文字列の指定
+</span>            <span class="n">obj</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"普通の文字列描画"</span><span class="p">;</span>
+
+            <span class="c1">// エンジンへの追加
+</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">AddObject2D</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
+</span>        <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="c1">// Altseedを更新する。
+</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Altseedの終了処理をする。
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
       </div>
       <div class="menu">
         <h2>
@@ -245,6 +347,9 @@
           <a href="/Doc/HowToUseBasic/Sound.html">音の再生</a>
         </p>
         <p>
+          <a href="/Doc/HowToUseBasic/Collision2D.html">衝突判定</a>
+        </p>
+        <p>
           <a href="/Doc/HowToUseBasic/SceneAndLayer.html">シーンとレイヤー</a>
         </p>
         <p>
@@ -252,6 +357,9 @@
         </p>
         <p>
           <a href="/Doc/HowToUseBasic/Transition.html">シーン遷移</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseBasic/CameraObject2D.html">カメラ</a>
         </p>
         <p>
           <a href="/Doc/HowToUseBasic/Object2DComponent.html"> オブジェクトの挙動の部品化</a>
@@ -275,10 +383,6 @@
           リファレンス
         </h3>
         <a href="/Doc/Reference/Main.html">リファレンス</a>
-        <h3>
-          逆引き
-        </h3>
-        <a href="/Doc/ReverseDictionary.html">逆引き</a>
       </div>
     </div>
   </body>

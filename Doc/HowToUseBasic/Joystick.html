@@ -106,9 +106,12 @@
 
     <span class="c1">// ボタンの入力状態を表示する文字描画オブジェクトを設定して、エンジンに追加する。
 </span>    <span class="k">auto</span> <span class="n">stateText</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">TextObject2D</span><span class="o">&gt;</span><span class="p">();</span>
-    <span class="n">stateText</span><span class="o">-&gt;</span><span class="n">SetPosition</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Vector2DF</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">));</span>
+    <span class="n">stateText</span><span class="o">-&gt;</span><span class="n">SetPosition</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Vector2DF</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">));</span>
     <span class="n">stateText</span><span class="o">-&gt;</span><span class="n">SetFont</span><span class="p">(</span><span class="n">font</span><span class="p">);</span>
     <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">AddObject2D</span><span class="p">(</span><span class="n">stateText</span><span class="p">);</span>
+
+    <span class="c1">// ボタンをたくさん認識する可能性があるため行間を詰める。
+</span>    <span class="n">stateText</span><span class="o">-&gt;</span><span class="n">SetLineSpacing</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">);</span>
 
     <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
 </span>    <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">DoEvents</span><span class="p">())</span>
@@ -179,9 +182,12 @@
 
         <span class="c1">// ボタンの入力状態を表示する文字描画オブジェクトを設定して、エンジンに追加する。
 </span>        <span class="n">var</span> <span class="n">stateText</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextObject2D</span><span class="p">();</span>
-        <span class="n">stateText</span><span class="p">.</span><span class="n">Position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="m">10</span><span class="p">,</span> <span class="m">10</span><span class="p">);</span>
+        <span class="n">stateText</span><span class="p">.</span><span class="n">Position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="m">10</span><span class="p">,</span> <span class="m">5</span><span class="p">);</span>
         <span class="n">stateText</span><span class="p">.</span><span class="n">Font</span> <span class="p">=</span> <span class="n">font</span><span class="p">;</span>
         <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">AddObject2D</span><span class="p">(</span><span class="n">stateText</span><span class="p">);</span>
+
+        <span class="c1">//ボタンをたくさん認識する可能性があるため表示の行間を詰める。
+</span>        <span class="n">stateText</span><span class="p">.</span><span class="n">LineSpacing</span> <span class="p">=</span> <span class="p">-</span><span class="m">15</span><span class="p">;</span>
 
         <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
 </span>        <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
@@ -445,6 +451,9 @@
           <a href="/Doc/HowToUseBasic/Sound.html">音の再生</a>
         </p>
         <p>
+          <a href="/Doc/HowToUseBasic/Collision2D.html">衝突判定</a>
+        </p>
+        <p>
           <a href="/Doc/HowToUseBasic/SceneAndLayer.html">シーンとレイヤー</a>
         </p>
         <p>
@@ -452,6 +461,9 @@
         </p>
         <p>
           <a href="/Doc/HowToUseBasic/Transition.html">シーン遷移</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseBasic/CameraObject2D.html">カメラ</a>
         </p>
         <p>
           <a href="/Doc/HowToUseBasic/Object2DComponent.html"> オブジェクトの挙動の部品化</a>
@@ -475,10 +487,6 @@
           リファレンス
         </h3>
         <a href="/Doc/Reference/Main.html">リファレンス</a>
-        <h3>
-          逆引き
-        </h3>
-        <a href="/Doc/ReverseDictionary.html">逆引き</a>
       </div>
     </div>
   </body>
