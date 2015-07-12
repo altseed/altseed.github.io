@@ -111,7 +111,7 @@
 */</span>
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="c1">// Altseedを初期化する
+    <span class="c1">// Altseedを初期化する。
 </span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"GeometryObject2D_CircleShape"</span><span class="p">).</span><span class="n">c_str</span><span class="p">(),</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="n">asd</span><span class="o">::</span><span class="n">EngineOption</span><span class="p">());</span>
 
     <span class="c1">// 図形描画オブジェクトのインスタンスを生成する。
@@ -120,10 +120,10 @@
     <span class="c1">// 図形描画オブジェクトのインスタンスをエンジンに追加する。
 </span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">AddObject2D</span><span class="p">(</span><span class="n">geometryObj</span><span class="p">);</span>
 
-    <span class="c1">// 円を図形描画クラスにて描画する。
+    <span class="c1">// 円の図形クラスのインスタンスを生成する。
 </span>    <span class="k">auto</span> <span class="n">arc</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">CircleShape</span><span class="o">&gt;</span><span class="p">();</span>
 
-    <span class="c1">// 円の外径、中心位置を指定。
+    <span class="c1">// 円の外径、中心位置を指定する。
 </span>    <span class="n">arc</span><span class="o">-&gt;</span><span class="n">SetOuterDiameter</span><span class="p">(</span><span class="mi">400</span><span class="p">);</span>
     <span class="n">arc</span><span class="o">-&gt;</span><span class="n">SetPosition</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Vector2DF</span><span class="p">(</span><span class="mi">320</span><span class="p">,</span> <span class="mi">240</span><span class="p">));</span>
 
@@ -151,7 +151,7 @@
     <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
     <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
     <span class="p">{</span>   
-        <span class="c1">// Altseedを初期化する
+        <span class="c1">// Altseedを初期化する。
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"GeometryObject2D_CircleShape"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
 
         <span class="c1">// 図形描画オブジェクトのインスタンスを生成する。
@@ -160,10 +160,10 @@
         <span class="c1">// 図形描画オブジェクトのインスタンスをエンジンに追加する。
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">AddObject2D</span><span class="p">(</span><span class="n">geometryObj</span><span class="p">);</span>
 
-        <span class="c1">// 円を図形描画クラスにて描画する。
+        <span class="c1">// 円の図形クラスのインスタンスを生成する。
 </span>        <span class="n">var</span> <span class="n">arc</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">CircleShape</span><span class="p">();</span>
 
-        <span class="c1">// 円の外径、中心位置を指定。
+        <span class="c1">// 円の外径、中心位置を指定する。
 </span>        <span class="n">arc</span><span class="p">.</span><span class="n">OuterDiameter</span> <span class="p">=</span> <span class="m">400</span><span class="p">;</span>
         <span class="n">arc</span><span class="p">.</span><span class="n">Position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="m">320</span><span class="p">,</span> <span class="m">240</span><span class="p">);</span>
 
@@ -198,7 +198,7 @@
 */</span>
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="c1">// Altseedを初期化する
+    <span class="c1">// Altseedを初期化する。
 </span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"GeometryObject2D_ArcShape"</span><span class="p">).</span><span class="n">c_str</span><span class="p">(),</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="n">asd</span><span class="o">::</span><span class="n">EngineOption</span><span class="p">());</span>
 
     <span class="c1">// 図形描画オブジェクトのインスタンスを生成する。
@@ -207,10 +207,10 @@
     <span class="c1">// 図形描画オブジェクトのインスタンスをエンジンに追加する。
 </span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">AddObject2D</span><span class="p">(</span><span class="n">geometryObj</span><span class="p">);</span>
 
-    <span class="c1">// 弧を図形描画クラスにて描画する。
+    <span class="c1">// 弧の図形クラスのインスタンスを生成する。
 </span>    <span class="k">auto</span> <span class="n">arc</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">ArcShape</span><span class="o">&gt;</span><span class="p">();</span>
 
-    <span class="c1">// 弧の外径、内径、頂点数、中心位置、開始頂点番号、終了頂点番号を指定。
+    <span class="c1">// 弧の外径、内径、頂点数、中心位置、開始頂点番号、終了頂点番号を指定する。
 </span>    <span class="n">arc</span><span class="o">-&gt;</span><span class="n">SetOuterDiameter</span><span class="p">(</span><span class="mi">400</span><span class="p">);</span>
     <span class="n">arc</span><span class="o">-&gt;</span><span class="n">SetInnerDiameter</span><span class="p">(</span><span class="mi">40</span><span class="p">);</span>
     <span class="n">arc</span><span class="o">-&gt;</span><span class="n">SetNumberOfCorners</span><span class="p">(</span><span class="mi">96</span><span class="p">);</span>
@@ -232,6 +232,7 @@
     <span class="c1">// Altseedを終了する。
 </span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Terminate</span><span class="p">();</span>
 <span class="p">}</span>
+
 </code></pre>
 
 <h3 class="csharp">C#</h3>
@@ -243,19 +244,19 @@
     <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
     <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="c1">// Altseedを初期化する
+        <span class="c1">// Altseedを初期化する。
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"GeometryObject2D_ArcShape"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
 
-        <span class="c1">// 図形描画クラスのコンストラクタを呼び出す
+        <span class="c1">// 図形描画クラスのコンストラクタを呼び出す。
 </span>        <span class="n">var</span> <span class="n">geometryObj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">GeometryObject2D</span><span class="p">();</span>
 
         <span class="c1">// 図形描画オブジェクトのインスタンスをエンジンに追加する。
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">AddObject2D</span><span class="p">(</span><span class="n">geometryObj</span><span class="p">);</span>
 
-        <span class="c1">// 弧を図形描画クラスにて描画する。
+        <span class="c1">// 弧の図形クラスのインスタンスを生成する。
 </span>        <span class="n">var</span> <span class="n">arc</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">ArcShape</span><span class="p">();</span>
 
-        <span class="c1">// 弧の外径、内径、頂点数、中心位置、開始頂点番号、終了頂点番号を指定。
+        <span class="c1">// 弧の外径、内径、頂点数、中心位置、開始頂点番号、終了頂点番号を指定する。
 </span>        <span class="n">arc</span><span class="p">.</span><span class="n">OuterDiameter</span> <span class="p">=</span> <span class="m">400</span><span class="p">;</span>
         <span class="n">arc</span><span class="p">.</span><span class="n">InnerDiameter</span> <span class="p">=</span> <span class="m">40</span><span class="p">;</span>
         <span class="n">arc</span><span class="p">.</span><span class="n">NumberOfCorners</span> <span class="p">=</span> <span class="m">96</span><span class="p">;</span>
@@ -263,7 +264,7 @@
         <span class="n">arc</span><span class="p">.</span><span class="n">StartingCorner</span> <span class="p">=</span> <span class="m">90</span><span class="p">;</span>
         <span class="n">arc</span><span class="p">.</span><span class="n">EndingCorner</span> <span class="p">=</span> <span class="m">45</span><span class="p">;</span>
 
-        <span class="c1">// 弧を描画する図形として設定し、合成するテクスチャも設定。
+        <span class="c1">// 弧を描画する図形として設定する。
 </span>        <span class="n">geometryObj</span><span class="p">.</span><span class="n">Shape</span> <span class="p">=</span> <span class="n">arc</span><span class="p">;</span>
         <span class="n">geometryObj</span><span class="p">.</span><span class="n">Color</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Color</span><span class="p">(</span><span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">);</span>
 
@@ -294,7 +295,7 @@
 */</span>
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="c1">// Altseedを初期化する
+    <span class="c1">// Altseedを初期化する。
 </span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"GeometryObject2D_RectangleShape"</span><span class="p">).</span><span class="n">c_str</span><span class="p">(),</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="n">asd</span><span class="o">::</span><span class="n">EngineOption</span><span class="p">());</span>
 
     <span class="c1">// 図形描画オブジェクトのインスタンスを生成する。
@@ -303,13 +304,13 @@
     <span class="c1">// 図形描画オブジェクトのインスタンスをエンジンに追加する。
 </span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">AddObject2D</span><span class="p">(</span><span class="n">geometryObj</span><span class="p">);</span>
 
-    <span class="c1">// 矩形を図形描画クラスにて描画する。
+    <span class="c1">// 矩形の図形クラスのインスタンスを生成する。
 </span>    <span class="k">auto</span> <span class="n">rect</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">RectangleShape</span><span class="o">&gt;</span><span class="p">();</span>
 
-    <span class="c1">// 矩形の描画範囲を指定。
+    <span class="c1">// 矩形の描画範囲を指定する。
 </span>    <span class="n">rect</span><span class="o">-&gt;</span><span class="n">SetDrawingArea</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">RectF</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">210</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">200</span><span class="p">));</span>
 
-    <span class="c1">// 矩形を描画する図形として設定し、合成するテクスチャも設定。
+    <span class="c1">// 矩形を描画する図形として設定する。
 </span>    <span class="n">geometryObj</span><span class="o">-&gt;</span><span class="n">SetShape</span><span class="p">(</span><span class="n">rect</span><span class="p">);</span>
 
     <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
@@ -322,6 +323,7 @@
     <span class="c1">// Altseedを終了する。
 </span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Terminate</span><span class="p">();</span>
 <span class="p">}</span>
+
 </code></pre>
 
 <h3 class="csharp">C#</h3>
@@ -339,22 +341,22 @@
     <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
     <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="c1">// Altseedを初期化する
+        <span class="c1">// Altseedを初期化する。
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"GeometryObject2D_RectangleShape"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
 
-        <span class="c1">// 図形描画クラスのコンストラクタを呼び出す
+        <span class="c1">// 図形描画オブジェクトのインスタンスを生成する。
 </span>        <span class="n">var</span> <span class="n">geometryObj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">GeometryObject2D</span><span class="p">();</span>
 
         <span class="c1">// 図形描画クラスのインスタンスをエンジンに追加する。
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">AddObject2D</span><span class="p">(</span><span class="n">geometryObj</span><span class="p">);</span>
 
-        <span class="c1">// 矩形を図形描画クラスにて描画する。
+        <span class="c1">// 矩形の図形クラスのインスタンスを生成する。
 </span>        <span class="n">var</span> <span class="n">rect</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">RectangleShape</span><span class="p">();</span>
 
-        <span class="c1">// 矩形の描画範囲を指定。
+        <span class="c1">// 矩形の描画範囲を指定する。
 </span>        <span class="n">rect</span><span class="p">.</span><span class="n">DrawingArea</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">RectF</span><span class="p">(</span><span class="m">10</span><span class="p">,</span> <span class="m">210</span><span class="p">,</span> <span class="m">300</span><span class="p">,</span> <span class="m">200</span><span class="p">);</span>
 
-        <span class="c1">// 矩形を描画する図形として設定し、合成するテクスチャも設定。
+        <span class="c1">// 矩形を描画する図形として設定しする。
 </span>        <span class="n">geometryObj</span><span class="p">.</span><span class="n">Shape</span> <span class="p">=</span> <span class="n">rect</span><span class="p">;</span>
 
         <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
@@ -372,7 +374,7 @@
 
 </code></pre>
 
-多角形の描画</h3>
+<h3>多角形の描画</h3>
 
 <p><img alt="SS" src="/Doc/img/ss/GeometryObject2D_PolygonShape.jpg" /></p>
 
@@ -384,7 +386,7 @@
 */</span>
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="c1">// Altseedを初期化する
+    <span class="c1">// Altseedを初期化する。
 </span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"GeometryObject2D_PolygonShape"</span><span class="p">).</span><span class="n">c_str</span><span class="p">(),</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="n">asd</span><span class="o">::</span><span class="n">EngineOption</span><span class="p">());</span>
 
     <span class="c1">// 図形描画オブジェクトのインスタンスを生成する。
@@ -393,7 +395,7 @@
     <span class="c1">// 図形描画オブジェクトのインスタンスをエンジンに追加する。
 </span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">AddObject2D</span><span class="p">(</span><span class="n">geometryObj</span><span class="p">);</span>
 
-    <span class="c1">// 多角形を図形描画クラスにて描画する。
+        <span class="c1">// 多角形の図形クラスのインスタンスを生成する。
 </span>    <span class="k">auto</span> <span class="n">polygon</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">PolygonShape</span><span class="o">&gt;</span><span class="p">();</span>
 
     <span class="c1">// 多角形を構成する頂点を追加していく。（星形になるようにする。）
@@ -429,16 +431,16 @@
     <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
     <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="c1">// Altseedを初期化する
+        <span class="c1">// Altseedを初期化する。
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"GeometryObject2D_PolygonShape"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
 
-        <span class="c1">// 図形描画クラスのコンストラクタを呼び出す
+        <span class="c1">// 図形描画オブジェクトのインスタンスを生成する。
 </span>        <span class="n">var</span> <span class="n">geometryObj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">GeometryObject2D</span><span class="p">();</span>
 
         <span class="c1">// 図形描画オブジェクトのインスタンスをエンジンに追加する。
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">AddObject2D</span><span class="p">(</span><span class="n">geometryObj</span><span class="p">);</span>
 
-        <span class="c1">// 多角形を図形描画クラスにて描画する。
+        <span class="c1">// 多角形の図形クラスのインスタンスを生成する。
 </span>        <span class="n">var</span> <span class="n">polygon</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">PolygonShape</span><span class="p">();</span>
 
         <span class="c1">// 多角形を構成する頂点を追加していく。（星形になるようにする。）
@@ -450,7 +452,7 @@
             <span class="n">polygon</span><span class="p">.</span><span class="nf">AddVertex</span><span class="p">(</span><span class="n">vec</span> <span class="p">+</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="m">320</span><span class="p">,</span> <span class="m">240</span><span class="p">));</span>
         <span class="p">}</span>
 
-        <span class="c1">// 多角形を描画する図形として設定し、合成するテクスチャも設定。
+        <span class="c1">// 多角形を描画する図形として設定する。
 </span>        <span class="n">geometryObj</span><span class="p">.</span><span class="n">Shape</span> <span class="p">=</span> <span class="n">polygon</span><span class="p">;</span>
 
         <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
@@ -480,7 +482,7 @@
 */</span>
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="c1">// Altseedを初期化する
+    <span class="c1">// Altseedを初期化する。
 </span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"GeometryObject2D_PolygonShape_Textured"</span><span class="p">).</span><span class="n">c_str</span><span class="p">(),</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="n">asd</span><span class="o">::</span><span class="n">EngineOption</span><span class="p">());</span>
 
     <span class="c1">// テクスチャとして図形に合成する画像を読み込む。
@@ -492,7 +494,7 @@
     <span class="c1">// 図形描画オブジェクトのインスタンスをエンジンに追加する。
 </span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">AddObject2D</span><span class="p">(</span><span class="n">geometryObj</span><span class="p">);</span>
 
-    <span class="c1">// 多角形を図形描画クラスにて描画する。
+    <span class="c1">// 多角形の図形クラスのインスタンスを生成する。
 </span>    <span class="k">auto</span> <span class="n">polygon</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">PolygonShape</span><span class="o">&gt;</span><span class="p">();</span>
 
     <span class="c1">// 多角形を構成する頂点を追加していく。（星形になるようにする。）
@@ -505,7 +507,7 @@
 
     <span class="p">}</span>
 
-    <span class="c1">// 多角形を描画する図形として設定し、合成するテクスチャも設定。
+    <span class="c1">// 多角形を描画する図形として設定し、合成するテクスチャも設定する。
 </span>    <span class="n">geometryObj</span><span class="o">-&gt;</span><span class="n">SetShape</span><span class="p">(</span><span class="n">polygon</span><span class="p">);</span>
     <span class="n">geometryObj</span><span class="o">-&gt;</span><span class="n">SetTexture</span><span class="p">(</span><span class="n">texture</span><span class="p">);</span>
 
@@ -530,7 +532,7 @@
     <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
     <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="c1">// Altseedを初期化する
+        <span class="c1">// Altseedを初期化する。
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"GeometryObject2D_PolygonShape_Textured"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
 
         <span class="c1">// テクスチャとして図形に合成する画像を読み込む。
@@ -542,7 +544,7 @@
         <span class="c1">// 図形描画オブジェクトのインスタンスをエンジンに追加する。
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">AddObject2D</span><span class="p">(</span><span class="n">geometryObj</span><span class="p">);</span>
 
-        <span class="c1">// 多角形を図形描画クラスにて描画する。
+        <span class="c1">// 多角形の図形クラスのインスタンスを生成する。
 </span>        <span class="n">var</span> <span class="n">polygon</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">PolygonShape</span><span class="p">();</span>
 
         <span class="c1">// 多角形を構成する頂点を追加していく。（星形になるようにする。）
@@ -555,7 +557,7 @@
 
         <span class="p">}</span>
 
-        <span class="c1">// 多角形を描画する図形として設定し、合成するテクスチャも設定。
+        <span class="c1">// 多角形を描画する図形として設定し、合成するテクスチャも設定する。
 </span>        <span class="n">geometryObj</span><span class="p">.</span><span class="n">Shape</span> <span class="p">=</span> <span class="n">polygon</span><span class="p">;</span>
         <span class="n">geometryObj</span><span class="p">.</span><span class="n">Texture</span> <span class="p">=</span> <span class="n">texture</span><span class="p">;</span>
 

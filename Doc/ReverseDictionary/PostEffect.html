@@ -95,21 +95,22 @@
 <span class="c1">// レイヤーにグレースケールのポストエフェクトを適用する。
 </span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="c1">// Altseedを初期化する
+    <span class="c1">// Altseedを初期化する。
 </span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"PostEffect_GrayScale"</span><span class="p">).</span><span class="n">c_str</span><span class="p">(),</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="n">asd</span><span class="o">::</span><span class="n">EngineOption</span><span class="p">());</span>
 
-    <span class="k">auto</span> <span class="n">texture</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetGraphics</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CreateTexture2D</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
+    <span class="c1">// 画像を読み込む。
+</span>    <span class="k">auto</span> <span class="n">texture</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetGraphics</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CreateTexture2D</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
 
-    <span class="c1">// シーンのコンストラクタを呼び出す。
+    <span class="c1">// シーンクラスのインスタンスを生成するす。
 </span>    <span class="k">auto</span> <span class="n">scene</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">Scene</span><span class="o">&gt;</span><span class="p">();</span>
 
-    <span class="c1">// レイヤーのコンストラクタを呼び出す。
+    <span class="c1">// レイヤークラスのインスタンスを生成する。
 </span>    <span class="k">auto</span> <span class="n">layer</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">Layer2D</span><span class="o">&gt;</span><span class="p">();</span>
 
-    <span class="c1">// オブジェクトのコンストラクタを呼び出す。
+    <span class="c1">// 画像描画オブジェクトのインスタンスを生成する。
 </span>    <span class="k">auto</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">TextureObject2D</span><span class="o">&gt;</span><span class="p">();</span>
 
-    <span class="c1">// オブジェクトの位置とテクスチャを設定。
+    <span class="c1">// オブジェクトの位置とテクスチャを設定する。
 </span>    <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetPosition</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Vector2DF</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">));</span>
     <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetTexture</span><span class="p">(</span><span class="n">texture</span><span class="p">);</span>
 
@@ -118,15 +119,18 @@
     <span class="n">scene</span><span class="o">-&gt;</span><span class="n">AddLayer</span><span class="p">(</span><span class="n">layer</span><span class="p">);</span>
     <span class="n">layer</span><span class="o">-&gt;</span><span class="n">AddObject</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
 
-    <span class="c1">// レイヤーにグレースケールのポストエフェクトを適用。
+    <span class="c1">// レイヤーにグレースケールのポストエフェクトを適用する。
 </span>    <span class="n">layer</span><span class="o">-&gt;</span><span class="n">AddPostEffect</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">PostEffectGrayScale</span><span class="o">&gt;</span><span class="p">());</span>
 
-    <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">DoEvents</span><span class="p">())</span>
+    <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
+</span>    <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">DoEvents</span><span class="p">())</span>
     <span class="p">{</span>
-        <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Update</span><span class="p">();</span>
+        <span class="c1">// Altseedを更新する。
+</span>        <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Update</span><span class="p">();</span>
     <span class="p">}</span>
 
-    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Terminate</span><span class="p">();</span>
+    <span class="c1">// Altseedを終了する。
+</span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Terminate</span><span class="p">();</span>
 <span class="p">}</span>
 </code></pre>
 
@@ -148,18 +152,19 @@
             <span class="c1">// Altseedを初期化する
 </span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"PostEffect_GrayScale"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
 
-            <span class="n">var</span> <span class="n">texture</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="p">);</span>
+            <span class="c1">// 画像を読み込む。
+</span>            <span class="n">var</span> <span class="n">texture</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="p">);</span>
 
-            <span class="c1">// シーンのコンストラクタを呼び出す。
+            <span class="c1">// シーンクラスのインスタンスを生成する。
 </span>            <span class="n">var</span> <span class="n">scene</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Scene</span><span class="p">();</span>
 
-            <span class="c1">// レイヤーのコンストラクタを呼び出す。
+            <span class="c1">// レイヤークラスのインスタンスを生成する。
 </span>            <span class="n">var</span> <span class="n">layer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Layer2D</span><span class="p">();</span>
 
-            <span class="c1">// オブジェクトのコンストラクタを呼び出す。
+            <span class="c1">// 画像描画オブジェクトのインスタンスを生成する。
 </span>            <span class="n">var</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextureObject2D</span><span class="p">();</span>
 
-            <span class="c1">// オブジェクトの位置とテクスチャを設定。
+            <span class="c1">// オブジェクトの位置とテクスチャを設定する。
 </span>            <span class="n">obj</span><span class="p">.</span><span class="n">Position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="m">50</span><span class="p">,</span> <span class="m">50</span><span class="p">);</span>
             <span class="n">obj</span><span class="p">.</span><span class="n">Texture</span> <span class="p">=</span> <span class="n">texture</span><span class="p">;</span>
 
@@ -168,15 +173,18 @@
             <span class="n">scene</span><span class="p">.</span><span class="nf">AddLayer</span><span class="p">(</span><span class="n">layer</span><span class="p">);</span>
             <span class="n">layer</span><span class="p">.</span><span class="nf">AddObject</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
 
-            <span class="c1">// レイヤーにグレースケールのポストエフェクトを適用。
+            <span class="c1">// レイヤーにグレースケールのポストエフェクトを適用する。
 </span>            <span class="n">layer</span><span class="p">.</span><span class="nf">AddPostEffect</span><span class="p">(</span><span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">PostEffectGrayScale</span><span class="p">());</span>
 
-            <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
+            <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
+</span>            <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
             <span class="p">{</span>
-                <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
+                <span class="c1">// Altseedを更新する。
+</span>                <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
             <span class="p">}</span>
 
-            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
+            <span class="c1">// Altseedを終了する。
+</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -193,21 +201,22 @@
 <span class="c1">// レイヤーにセピアカラーのポストエフェクトを適用する。
 </span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="c1">// Altseedを初期化する
+    <span class="c1">// Altseedを初期化する。
 </span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"PostEffect_Sepia"</span><span class="p">).</span><span class="n">c_str</span><span class="p">(),</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="n">asd</span><span class="o">::</span><span class="n">EngineOption</span><span class="p">());</span>
 
-    <span class="k">auto</span> <span class="n">texture</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetGraphics</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CreateTexture2D</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
+    <span class="c1">// 画像を読み込む。
+</span>    <span class="k">auto</span> <span class="n">texture</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetGraphics</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CreateTexture2D</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
 
-    <span class="c1">// シーンのコンストラクタを呼び出す。
+    <span class="c1">// シーンクラスのインスタンスを生成する。
 </span>    <span class="k">auto</span> <span class="n">scene</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">Scene</span><span class="o">&gt;</span><span class="p">();</span>
 
-    <span class="c1">// レイヤーのコンストラクタを呼び出す。
+    <span class="c1">// レイヤークラスのインスタンスを生成する。
 </span>    <span class="k">auto</span> <span class="n">layer</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">Layer2D</span><span class="o">&gt;</span><span class="p">();</span>
 
-    <span class="c1">// オブジェクトのコンストラクタを呼び出す。
+    <span class="c1">// 画像描画オブジェクトのインスタンスを生成する。
 </span>    <span class="k">auto</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">TextureObject2D</span><span class="o">&gt;</span><span class="p">();</span>
 
-    <span class="c1">// オブジェクトの位置とテクスチャを設定。
+    <span class="c1">// オブジェクトの位置とテクスチャを設定する。
 </span>    <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetPosition</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Vector2DF</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">));</span>
     <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetTexture</span><span class="p">(</span><span class="n">texture</span><span class="p">);</span>
 
@@ -216,15 +225,18 @@
     <span class="n">scene</span><span class="o">-&gt;</span><span class="n">AddLayer</span><span class="p">(</span><span class="n">layer</span><span class="p">);</span>
     <span class="n">layer</span><span class="o">-&gt;</span><span class="n">AddObject</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
 
-    <span class="c1">// レイヤーにセピアカラーのポストエフェクトを適用。
+    <span class="c1">// レイヤーにセピアカラーのポストエフェクトを適用する。
 </span>    <span class="n">layer</span><span class="o">-&gt;</span><span class="n">AddPostEffect</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">PostEffectSepia</span><span class="o">&gt;</span><span class="p">());</span>
 
-    <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">DoEvents</span><span class="p">())</span>
+    <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
+</span>    <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">DoEvents</span><span class="p">())</span>
     <span class="p">{</span>
-        <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Update</span><span class="p">();</span>
+        <span class="c1">// Altseedを更新する。
+</span>        <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Update</span><span class="p">();</span>
     <span class="p">}</span>
 
-    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Terminate</span><span class="p">();</span>
+    <span class="c1">// Altseedを終了する。
+</span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Terminate</span><span class="p">();</span>
 <span class="p">}</span>
 </code></pre>
 
@@ -243,21 +255,22 @@
 </span>        <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
     <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
         <span class="p">{</span>
-            <span class="c1">// Altseedを初期化する
+            <span class="c1">// Altseedを初期化する。
 </span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"PostEffect_Sepia"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
 
-            <span class="n">var</span> <span class="n">texture</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="p">);</span>
+            <span class="c1">// 画像を読み込む。
+</span>            <span class="n">var</span> <span class="n">texture</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="p">);</span>
 
-            <span class="c1">// シーンのコンストラクタを呼び出す。
+            <span class="c1">// シーンクラスのインスタンスを生成する。
 </span>            <span class="n">var</span> <span class="n">scene</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Scene</span><span class="p">();</span>
 
-            <span class="c1">// レイヤーのコンストラクタを呼び出す。
+            <span class="c1">// レイヤークラスのインスタンスを生成する。
 </span>            <span class="n">var</span> <span class="n">layer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Layer2D</span><span class="p">();</span>
 
-            <span class="c1">// オブジェクトのコンストラクタを呼び出す。
+            <span class="c1">// 画像描画オブジェクトのインスタンスを生成する。
 </span>            <span class="n">var</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextureObject2D</span><span class="p">();</span>
 
-            <span class="c1">// オブジェクトの位置とテクスチャを設定。
+            <span class="c1">// オブジェクトの位置とテクスチャを設定する。
 </span>            <span class="n">obj</span><span class="p">.</span><span class="n">Position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="m">50</span><span class="p">,</span> <span class="m">50</span><span class="p">);</span>
             <span class="n">obj</span><span class="p">.</span><span class="n">Texture</span> <span class="p">=</span> <span class="n">texture</span><span class="p">;</span>
 
@@ -269,12 +282,15 @@
             <span class="c1">// レイヤーにセピアカラーのポストエフェクトを適用。
 </span>            <span class="n">layer</span><span class="p">.</span><span class="nf">AddPostEffect</span><span class="p">(</span><span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">PostEffectSepia</span><span class="p">());</span>
 
-            <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
+            <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
+</span>            <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
             <span class="p">{</span>
-                <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
+                <span class="c1">// Altseedを更新する。
+</span>                <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
             <span class="p">}</span>
 
-            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
+            <span class="c1">// Altseedを終了する。
+</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -291,21 +307,21 @@
 <span class="c1">// レイヤーにガウスぼかしのポストエフェクトを適用する。
 </span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="c1">// Altseedを初期化する
+    <span class="c1">// Altseedを初期化する。
 </span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"PostEffect_GaussianBlur"</span><span class="p">).</span><span class="n">c_str</span><span class="p">(),</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="n">asd</span><span class="o">::</span><span class="n">EngineOption</span><span class="p">());</span>
 
     <span class="k">auto</span> <span class="n">texture</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetGraphics</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CreateTexture2D</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
 
-    <span class="c1">// シーンのコンストラクタを呼び出す。
+    <span class="c1">// シーンクラスのインスタンスを生成する。
 </span>    <span class="k">auto</span> <span class="n">scene</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">Scene</span><span class="o">&gt;</span><span class="p">();</span>
 
-    <span class="c1">// レイヤーのコンストラクタを呼び出す。
+    <span class="c1">// レイヤークラスのインスタンスを生成する。
 </span>    <span class="k">auto</span> <span class="n">layer</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">Layer2D</span><span class="o">&gt;</span><span class="p">();</span>
 
     <span class="c1">// オブジェクトのコンストラクタを呼び出す。
 </span>    <span class="k">auto</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">TextureObject2D</span><span class="o">&gt;</span><span class="p">();</span>
 
-    <span class="c1">// オブジェクトの位置とテクスチャを設定。
+    <span class="c1">// 画像描画オブジェクトのインスタンスを生成する。
 </span>    <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetPosition</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Vector2DF</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">));</span>
     <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetTexture</span><span class="p">(</span><span class="n">texture</span><span class="p">);</span>
 
@@ -317,12 +333,15 @@
     <span class="c1">// レイヤーにガウスぼかしのポストエフェクトを適用。
 </span>    <span class="n">layer</span><span class="o">-&gt;</span><span class="n">AddPostEffect</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">PostEffectGaussianBlur</span><span class="o">&gt;</span><span class="p">());</span>
 
-    <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">DoEvents</span><span class="p">())</span>
+    <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
+</span>    <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">DoEvents</span><span class="p">())</span>
     <span class="p">{</span>
-        <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Update</span><span class="p">();</span>
+        <span class="c1">// Altseedを更新する。
+</span>        <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Update</span><span class="p">();</span>
     <span class="p">}</span>
 
-    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Terminate</span><span class="p">();</span>
+    <span class="c1">// Altseedを終了する。
+</span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Terminate</span><span class="p">();</span>
 <span class="p">}</span>
 </code></pre>
 
@@ -341,21 +360,21 @@
 </span>        <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
     <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
         <span class="p">{</span>
-            <span class="c1">// Altseedを初期化する
+            <span class="c1">// Altseedを初期化する。
 </span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"PostEffect_GaussianBlur"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
 
             <span class="n">var</span> <span class="n">texture</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="p">);</span>
 
-            <span class="c1">// シーンのコンストラクタを呼び出す。
+            <span class="c1">// シーンクラスのインスタンスを生成する。
 </span>            <span class="n">var</span> <span class="n">scene</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Scene</span><span class="p">();</span>
 
-            <span class="c1">// レイヤーのコンストラクタを呼び出す。
+            <span class="c1">// レイヤークラスのインスタンスを生成する。
 </span>            <span class="n">var</span> <span class="n">layer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Layer2D</span><span class="p">();</span>
 
-            <span class="c1">// オブジェクトのコンストラクタを呼び出す。
+            <span class="c1">// 画像描画オブジェクトのインスタンスを生成する。
 </span>            <span class="n">var</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextureObject2D</span><span class="p">();</span>
 
-            <span class="c1">// オブジェクトの位置とテクスチャを設定。
+            <span class="c1">// オブジェクトの位置とテクスチャを設定する。
 </span>            <span class="n">obj</span><span class="p">.</span><span class="n">Position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="m">50</span><span class="p">,</span> <span class="m">50</span><span class="p">);</span>
             <span class="n">obj</span><span class="p">.</span><span class="n">Texture</span> <span class="p">=</span> <span class="n">texture</span><span class="p">;</span>
 
@@ -367,12 +386,15 @@
             <span class="c1">// レイヤーにガウスぼかしのポストエフェクトを適用。
 </span>            <span class="n">layer</span><span class="p">.</span><span class="nf">AddPostEffect</span><span class="p">(</span><span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">PostEffectGaussianBlur</span><span class="p">());</span>
 
-            <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
+            <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
+</span>            <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
             <span class="p">{</span>
-                <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
+                <span class="c1">// Altseedを更新する。
+</span>                <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
             <span class="p">}</span>
 
-            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
+            <span class="c1">// Altseedを終了する。
+</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -389,18 +411,18 @@
 <span class="c1">// レイヤーにライトブルームのポストエフェクトを適用する。
 </span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="c1">// Altseedを初期化する
+    <span class="c1">// Altseedを初期化する。
 </span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"PostEffect_LightBloom"</span><span class="p">).</span><span class="n">c_str</span><span class="p">(),</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="n">asd</span><span class="o">::</span><span class="n">EngineOption</span><span class="p">());</span>
 
     <span class="k">auto</span> <span class="n">texture</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetGraphics</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CreateTexture2D</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
 
-    <span class="c1">// シーンのコンストラクタを呼び出す。
+    <span class="c1">// シーンクラスのインスタンスを生成する。
 </span>    <span class="k">auto</span> <span class="n">scene</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">Scene</span><span class="o">&gt;</span><span class="p">();</span>
 
-    <span class="c1">// レイヤーのコンストラクタを呼び出す。
+    <span class="c1">// レイヤークラスのインスタンスを生成する。
 </span>    <span class="k">auto</span> <span class="n">layer</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">Layer2D</span><span class="o">&gt;</span><span class="p">();</span>
 
-    <span class="c1">// オブジェクトのコンストラクタを呼び出す。
+    <span class="c1">// 画像描画オブジェクトのインスタンスを生成する。
 </span>    <span class="k">auto</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">TextureObject2D</span><span class="o">&gt;</span><span class="p">();</span>
 
     <span class="c1">// オブジェクトの位置とテクスチャを設定。
@@ -412,7 +434,7 @@
     <span class="n">scene</span><span class="o">-&gt;</span><span class="n">AddLayer</span><span class="p">(</span><span class="n">layer</span><span class="p">);</span>
     <span class="n">layer</span><span class="o">-&gt;</span><span class="n">AddObject</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
 
-    <span class="c1">// ライトブルームのコンストラクタを呼び出す。
+    <span class="c1">// ライトブルームクラスのインスタンスを生成する。
 </span>    <span class="k">auto</span> <span class="n">posteffect</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">PostEffectLightBloom</span><span class="o">&gt;</span><span class="p">();</span>
 
     <span class="c1">// ライトブルームのぼかしの強さを設定する。
@@ -430,12 +452,15 @@
     <span class="c1">// HDRモードをONにする（ライトブルームの効果が見えるようにするため）
 </span>    <span class="n">scene</span><span class="o">-&gt;</span><span class="n">SetHDRMode</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
 
-    <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">DoEvents</span><span class="p">())</span>
+    <span class="c1">// Altseedのウインドウが閉じられていないか確認する。 
+</span>    <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">DoEvents</span><span class="p">())</span>
     <span class="p">{</span>
-        <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Update</span><span class="p">();</span>
+        <span class="c1">// Altseedを更新する。
+</span>        <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Update</span><span class="p">();</span>
     <span class="p">}</span>
 
-    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Terminate</span><span class="p">();</span>
+    <span class="c1">// Altseedを終了する。
+</span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Terminate</span><span class="p">();</span>
 <span class="p">}</span>
 </code></pre>
 
@@ -454,21 +479,21 @@
 </span>        <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
     <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
         <span class="p">{</span>
-            <span class="c1">// Altseedを初期化する
+            <span class="c1">// Altseedを初期化する。
 </span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"PostEffect_LightBloom"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
 
             <span class="n">var</span> <span class="n">texture</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="p">);</span>
 
-            <span class="c1">// シーンのコンストラクタを呼び出す。
+            <span class="c1">// シーンクラスのインスタンスを生成する。
 </span>            <span class="n">var</span> <span class="n">scene</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Scene</span><span class="p">();</span>
 
             <span class="c1">// レイヤーのコンストラクタを呼び出す。
 </span>            <span class="n">var</span> <span class="n">layer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Layer2D</span><span class="p">();</span>
 
-            <span class="c1">// オブジェクトのコンストラクタを呼び出す。
+            <span class="c1">// レイヤークラスのインスタンスを生成する。
 </span>            <span class="n">var</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextureObject2D</span><span class="p">();</span>
 
-            <span class="c1">// オブジェクトの位置とテクスチャを設定。
+            <span class="c1">// 画像描画オブジェクトのインスタンスを生成する。
 </span>            <span class="n">obj</span><span class="p">.</span><span class="n">Position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="m">50</span><span class="p">,</span> <span class="m">50</span><span class="p">);</span>
             <span class="n">obj</span><span class="p">.</span><span class="n">Texture</span> <span class="p">=</span> <span class="n">texture</span><span class="p">;</span>
 
@@ -477,7 +502,7 @@
             <span class="n">scene</span><span class="p">.</span><span class="nf">AddLayer</span><span class="p">(</span><span class="n">layer</span><span class="p">);</span>
             <span class="n">layer</span><span class="p">.</span><span class="nf">AddObject</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
 
-            <span class="c1">// ライトブルームのコンストラクタを呼び出す。
+            <span class="c1">// ライトブルームクラスのインスタンスを生成する。
 </span>            <span class="n">var</span> <span class="n">posteffect</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">PostEffectLightBloom</span><span class="p">();</span>
 
             <span class="c1">// ライトブルームのぼかしの強さを設定する。
@@ -492,12 +517,15 @@
             <span class="c1">// レイヤーにライトブルームのポストエフェクトを適用。
 </span>            <span class="n">layer</span><span class="p">.</span><span class="nf">AddPostEffect</span><span class="p">(</span><span class="n">posteffect</span><span class="p">);</span>
 
-            <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
+            <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
+</span>            <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
             <span class="p">{</span>
-                <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
+                <span class="c1">// Altseedを更新する。
+</span>                <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
             <span class="p">}</span>
 
-            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
+            <span class="c1">// Altseedを終了する。
+</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>

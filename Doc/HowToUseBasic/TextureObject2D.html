@@ -98,14 +98,14 @@
 */</span>
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="c1">// Altseedを初期化する
+    <span class="c1">// Altseedを初期化する。
 </span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"TextureObject2D_Basic"</span><span class="p">).</span><span class="n">c_str</span><span class="p">(),</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="n">asd</span><span class="o">::</span><span class="n">EngineOption</span><span class="p">());</span>
 
     <span class="c1">// 画像を読み込む。
 </span>    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">Texture2D</span><span class="o">&gt;</span> <span class="n">texture</span> <span class="o">=</span> 
         <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetGraphics</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CreateTexture2D</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
 
-    <span class="c1">// TextureObject2Dのインスタンスを生成する。
+    <span class="c1">// 画像描画オブジェクトのインスタンスを生成する。
 </span>    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">TextureObject2D</span><span class="o">&gt;</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">TextureObject2D</span><span class="o">&gt;</span><span class="p">();</span>
 
     <span class="c1">// 描画される画像を設定する。
@@ -114,7 +114,7 @@
     <span class="c1">// 描画位置を指定する。
 </span>    <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetPosition</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Vector2DF</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">));</span>
 
-    <span class="c1">// オブジェクトのインスタンスをエンジンに追加する。
+    <span class="c1">// 画像描画オブジェクトのインスタンスをエンジンに追加する。
 </span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">AddObject2D</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
 
     <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
@@ -145,7 +145,7 @@
         <span class="c1">// 画像を読み込む。
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Texture2D</span> <span class="n">texture</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="p">);</span>
 
-        <span class="c1">// TextureObject2Dのインスタンスを生成する。
+        <span class="c1">// 画像描画オブジェクトのインスタンスを生成する。
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">TextureObject2D</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextureObject2D</span><span class="p">();</span>
 
         <span class="c1">// 描画される画像を設定する。
@@ -154,7 +154,7 @@
         <span class="c1">// 描画位置を指定する。
 </span>        <span class="n">obj</span><span class="p">.</span><span class="n">Position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="m">50</span><span class="p">,</span> <span class="m">50</span><span class="p">);</span>
 
-        <span class="c1">// オブジェクトのインスタンスをエンジンに追加する。
+        <span class="c1">// 画像描画オブジェクトのインスタンスをエンジンに追加する。
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">AddObject2D</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
 
         <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
@@ -183,14 +183,14 @@
 */</span>
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="c1">// Altseedを初期化する
+    <span class="c1">// Altseedを初期化する。
 </span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"TextureObject2D_Turn"</span><span class="p">).</span><span class="n">c_str</span><span class="p">(),</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="n">asd</span><span class="o">::</span><span class="n">EngineOption</span><span class="p">());</span>
 
     <span class="c1">// 画像を読み込む。
 </span>    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">Texture2D</span><span class="o">&gt;</span> <span class="n">texture</span> <span class="o">=</span>
         <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetGraphics</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CreateTexture2D</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
 
-    <span class="c1">// TextureObject2Dのインスタンスを生成する。
+    <span class="c1">// 画像描画オブジェクトのインスタンスを生成する。
 </span>    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">TextureObject2D</span><span class="o">&gt;</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">TextureObject2D</span><span class="o">&gt;</span><span class="p">();</span>
 
     <span class="c1">// 描画される画像を設定する。
@@ -202,7 +202,7 @@
     <span class="c1">// 画像を上下に反転する。
 </span>    <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetTurnUL</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
 
-    <span class="c1">// オブジェクトのインスタンスをエンジンに追加する。
+    <span class="c1">// 画像描画オブジェクトのインスタンスをエンジンに追加する。
 </span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">AddObject2D</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
 
     <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
@@ -233,7 +233,7 @@
         <span class="c1">// 画像を読み込む。
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Texture2D</span> <span class="n">texture</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="p">);</span>
 
-        <span class="c1">// TextureObject2Dのインスタンスを生成する。
+        <span class="c1">// 画像描画オブジェクトのインスタンスを生成する。
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">TextureObject2D</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextureObject2D</span><span class="p">();</span>
 
         <span class="c1">// 描画される画像を設定する。
@@ -245,7 +245,7 @@
         <span class="c1">// 画像を上下に反転する。
 </span>        <span class="n">obj</span><span class="p">.</span><span class="n">TurnUL</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
 
-        <span class="c1">// オブジェクトのインスタンスをエンジンに追加する。
+        <span class="c1">// 画像描画オブジェクトのインスタンスをエンジンに追加する。
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">AddObject2D</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
 
         <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
@@ -274,14 +274,14 @@
 */</span>
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="c1">// Altseedを初期化する
+    <span class="c1">// Altseedを初期化する。
 </span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"TextureObject2D_Src"</span><span class="p">).</span><span class="n">c_str</span><span class="p">(),</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="n">asd</span><span class="o">::</span><span class="n">EngineOption</span><span class="p">());</span>
 
     <span class="c1">// 画像を読み込む。
 </span>    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">Texture2D</span><span class="o">&gt;</span> <span class="n">texture</span> <span class="o">=</span>
         <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetGraphics</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CreateTexture2D</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
 
-    <span class="c1">// TextureObject2Dのインスタンスを生成する。
+    <span class="c1">// 画像描画オブジェクトのインスタンスを生成する。
 </span>    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">TextureObject2D</span><span class="o">&gt;</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">TextureObject2D</span><span class="o">&gt;</span><span class="p">();</span>
 
     <span class="c1">// 描画される画像を設定する。
@@ -293,7 +293,7 @@
     <span class="c1">// 切り出す領域を指定する。
 </span>    <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetSrc</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">RectF</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">));</span>
 
-    <span class="c1">// オブジェクトのインスタンスをエンジンに追加する。
+    <span class="c1">// 画像描画オブジェクトのインスタンスをエンジンに追加する。
 </span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">AddObject2D</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
 
     <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
@@ -324,7 +324,7 @@
         <span class="c1">// 画像を読み込む。
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Texture2D</span> <span class="n">texture</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="p">);</span>
 
-        <span class="c1">// TextureObject2Dのインスタンスを生成する。
+        <span class="c1">// 画像描画オブジェクトのインスタンスを生成する。
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">TextureObject2D</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextureObject2D</span><span class="p">();</span>
 
         <span class="c1">// 描画される画像を設定する。
@@ -336,7 +336,7 @@
         <span class="c1">// 切り出す領域を指定する。
 </span>        <span class="n">obj</span><span class="p">.</span><span class="n">Src</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">RectF</span><span class="p">(</span><span class="m">150</span><span class="p">,</span> <span class="m">150</span><span class="p">,</span> <span class="m">200</span><span class="p">,</span> <span class="m">200</span><span class="p">);</span>
 
-        <span class="c1">// オブジェクトのインスタンスをエンジンに追加する。
+        <span class="c1">// 画像描画オブジェクトのインスタンスをエンジンに追加する。
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">AddObject2D</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
 
         <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
@@ -353,7 +353,7 @@
 
 </code></pre>
 
-画像を変形して描画</h3>
+<h3>画像を変形して描画</h3>
 
 <p><img alt="SS" src="/Doc/img/ss/TextureObject2D_Transform.png" /></p>
 
@@ -373,7 +373,7 @@
 </span>    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">Texture2D</span><span class="o">&gt;</span> <span class="n">texture</span> <span class="o">=</span>
         <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetGraphics</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CreateTexture2D</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
 
-    <span class="c1">// TextureObject2Dのインスタンスを生成する。
+    <span class="c1">// 画像描画オブジェクトのインスタンスを生成する。
 </span>    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">TextureObject2D</span><span class="o">&gt;</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">TextureObject2D</span><span class="o">&gt;</span><span class="p">();</span>
 
     <span class="c1">// 描画される画像を設定する。
@@ -391,7 +391,7 @@
     <span class="c1">// 画像をX,Y方向に0.4倍に縮小する。
 </span>    <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetScale</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Vector2DF</span><span class="p">(</span><span class="mf">0.4</span><span class="n">f</span><span class="p">,</span> <span class="mf">0.4</span><span class="n">f</span><span class="p">));</span>
 
-    <span class="c1">// オブジェクトのインスタンスをエンジンに追加する。
+    <span class="c1">// 画像描画オブジェクトのインスタンスをエンジンに追加する。
 </span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">AddObject2D</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
 
     <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
@@ -422,7 +422,7 @@
         <span class="c1">// 画像を読み込む。
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Texture2D</span> <span class="n">texture</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="p">);</span>
 
-        <span class="c1">// TextureObject2Dのインスタンスを生成する。
+        <span class="c1">// 画像描画オブジェクトのインスタンスを生成する。
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">TextureObject2D</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextureObject2D</span><span class="p">();</span>
 
         <span class="c1">// 描画される画像を設定する。
@@ -440,7 +440,7 @@
         <span class="c1">// 画像をX,Y方向に0.4倍に縮小する。
 </span>        <span class="n">obj</span><span class="p">.</span><span class="n">Scale</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="m">0.4f</span><span class="p">,</span> <span class="m">0.4f</span><span class="p">);</span>
 
-        <span class="c1">// オブジェクトのインスタンスをエンジンに追加する。
+        <span class="c1">// 画像描画オブジェクトのインスタンスをエンジンに追加する。
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">AddObject2D</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
 
         <span class="c1">// Altseedのウインドウが閉じられていないか確認する。

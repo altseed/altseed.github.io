@@ -98,26 +98,26 @@
 */</span>
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="c1">// Altseedを初期化する
+    <span class="c1">// Altseedを初期化する。
 </span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"TextObject2D_Basic"</span><span class="p">).</span><span class="n">c_str</span><span class="p">(),</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="n">asd</span><span class="o">::</span><span class="n">EngineOption</span><span class="p">());</span>
 
     <span class="p">{</span>
-        <span class="c1">// フォントを生成する
+        <span class="c1">// フォントを生成する。
 </span>        <span class="k">auto</span> <span class="n">font</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetGraphics</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CreateFont</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Data/Font/Font1.aff"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
 
-        <span class="c1">// TextObject2Dを生成する
+        <span class="c1">// 文字描画オブジェクトを生成する
 </span>        <span class="k">auto</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">TextObject2D</span><span class="o">&gt;</span><span class="p">();</span>
 
-        <span class="c1">// 描画に使うフォントを設定する
+        <span class="c1">// 描画に使うフォントを設定する。
 </span>        <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetFont</span><span class="p">(</span><span class="n">font</span><span class="p">);</span>
 
-        <span class="c1">// 描画位置を指定する
+        <span class="c1">// 描画位置を指定する。
 </span>        <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetPosition</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Vector2DF</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">));</span>
 
-        <span class="c1">// 描画する文字列の指定
+        <span class="c1">// 描画する文字列を指定する。
 </span>        <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetText</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"普通の文字列描画"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
 
-        <span class="c1">// オブジェクトのインスタンスをエンジンへ追加する。
+        <span class="c1">// 文字描画オブジェクトのインスタンスをエンジンへ追加する。
 </span>        <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">AddObject2D</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
     <span class="p">}</span>
 
@@ -152,22 +152,22 @@
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"TextObject2D_Basic"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
 
         <span class="p">{</span>
-            <span class="c1">// フォントを生成する
+            <span class="c1">// フォントを生成する。
 </span>            <span class="n">var</span> <span class="n">font</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateFont</span><span class="p">(</span><span class="s">"Data/Font/Font1.aff"</span><span class="p">);</span>
 
-            <span class="c1">// TextObject2Dを生成する
+            <span class="c1">// 文字描画オブジェクトを生成する。
 </span>            <span class="n">var</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextObject2D</span><span class="p">();</span>
 
-            <span class="c1">// 描画に使うフォントを設定する
+            <span class="c1">// 描画に使うフォントを設定する。
 </span>            <span class="n">obj</span><span class="p">.</span><span class="n">Font</span> <span class="p">=</span> <span class="n">font</span><span class="p">;</span>
 
-            <span class="c1">// 描画位置を指定する
+            <span class="c1">// 描画位置を指定する。
 </span>            <span class="n">obj</span><span class="p">.</span><span class="n">Position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="m">100</span><span class="p">);</span>
 
-            <span class="c1">// 描画する文字列の指定
+            <span class="c1">// 描画する文字列を指定する。
 </span>            <span class="n">obj</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"普通の文字列描画"</span><span class="p">;</span>
 
-            <span class="c1">// エンジンへの追加
+            <span class="c1">// 文字描画オブジェクトのインスタンスをエンジンへ追加する。
 </span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">AddObject2D</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
         <span class="p">}</span>
 
