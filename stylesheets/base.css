@@ -1,4 +1,4 @@
-/* line 2, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 2, D:/dev/_Altseed/Website/source/stylesheets/base.sass */
 #header {
   position: relative;
   overflow: hidden;
@@ -7,127 +7,127 @@
   width: 1000px;
   margin: 0px auto; }
 
-/* line 10, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 10, D:/dev/_Altseed/Website/source/stylesheets/base.sass */
 #header h1 {
   margin: 0px 20px 10px 40px;
   color: #ffffff;
   font-size: 24px;
   font-family: "verdana", "serif", "Hiragino Kaku Gothic Pro", "Meiryo", "sans-serif"; }
 
-/* line 16, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 16, D:/dev/_Altseed/Website/source/stylesheets/base.sass */
 #header p {
   margin: 0px 20px 10px 40px;
   color: #ffffff;
   font-size: 14px;
   font-family: "verdana", "serif", "Hiragino Kaku Gothic Pro", "Meiryo", "sans-serif"; }
 
-/* line 23, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 23, D:/dev/_Altseed/Website/source/stylesheets/base.sass */
 #content {
   width: 1000px;
   margin: 0px auto;
   clear: right;
   font-family: "verdana", "serif", "Hiragino Kaku Gothic Pro", "Meiryo", "sans-serif"; }
 
-/* line 29, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 29, D:/dev/_Altseed/Website/source/stylesheets/base.sass */
 #content a:link {
   color: #222222; }
 
-/* line 32, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 32, D:/dev/_Altseed/Website/source/stylesheets/base.sass */
 #content a:visited {
   color: #333333; }
 
-/* line 35, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 35, D:/dev/_Altseed/Website/source/stylesheets/base.sass */
 #content a:hover {
   color: #777777; }
 
-/* line 38, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 38, D:/dev/_Altseed/Website/source/stylesheets/base.sass */
 #content #highlight {
   font-family: "verdana", "serif", "Hiragino Kaku Gothic Pro", "Meiryo", "sans-serif"; }
 
-/* line 41, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 41, D:/dev/_Altseed/Website/source/stylesheets/base.sass */
 #contents h1 {
   color: #000000; }
 
-/* line 44, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 44, D:/dev/_Altseed/Website/source/stylesheets/base.sass */
 #contents h2 {
   color: #000000; }
 
-/* line 47, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 47, D:/dev/_Altseed/Website/source/stylesheets/base.sass */
 #contents h3 {
   color: #000000; }
 
-/* line 50, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 50, D:/dev/_Altseed/Website/source/stylesheets/base.sass */
 #content .main {
   float: right;
   width: 770px; }
 
-/* line 54, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 54, D:/dev/_Altseed/Website/source/stylesheets/base.sass */
 #content .language_selector {
   background-color: #406080;
   padding: 5px 5px 5px 5px; }
 
-/* line 58, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 58, D:/dev/_Altseed/Website/source/stylesheets/base.sass */
 #content .menu {
   float: left;
   width: 230px; }
 
-/* line 62, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 62, D:/dev/_Altseed/Website/source/stylesheets/base.sass */
 #content .menu p {
   margin: 0px 0px 5px 0px; }
 
-/* line 65, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 65, D:/dev/_Altseed/Website/source/stylesheets/base.sass */
 #content .menu a {
   font-size: 14px; }
 
-/* line 87, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 87, D:/dev/_Altseed/Website/source/stylesheets/base.sass */
 #contents .eyecatch {
   position: relative;
   text-align: center; }
 
-/* line 91, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 91, D:/dev/_Altseed/Website/source/stylesheets/base.sass */
 #contents .eyecatch img {
   margin: 20px 0px 0px 0px;
   display: inline-block; }
 
-/* line 95, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 95, D:/dev/_Altseed/Website/source/stylesheets/base.sass */
 #contents .eyecatch p {
   font-family: "verdana", "serif", "Hiragino Kaku Gothic Pro", "Meiryo", "sans-serif";
   background-color: #84a5ce;
   color: #ffffff; }
 
-/* line 100, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 100, D:/dev/_Altseed/Website/source/stylesheets/base.sass */
 #contents h1 {
   color: #000000; }
 
-/* line 103, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 103, D:/dev/_Altseed/Website/source/stylesheets/base.sass */
 #contents h2 {
   color: #000000; }
 
-/* line 106, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 106, D:/dev/_Altseed/Website/source/stylesheets/base.sass */
 #contents h3 {
   color: #000000; }
 
-/* line 109, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 109, D:/dev/_Altseed/Website/source/stylesheets/base.sass */
 #contents .main {
   margin: 0 auto; }
 
-/* line 112, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 112, D:/dev/_Altseed/Website/source/stylesheets/base.sass */
 #contents {
   color: #000000;
   font-family: "verdana", "serif", "Hiragino Kaku Gothic Pro", "Meiryo", "sans-serif"; }
 
-/* line 116, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 116, D:/dev/_Altseed/Website/source/stylesheets/base.sass */
 #contents .panelcontainer {
   position: relative;
   overflow: hidden; }
 
-/* line 120, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 120, D:/dev/_Altseed/Website/source/stylesheets/base.sass */
 #contents .panels {
   position: relative;
   left: 50%;
   float: left; }
 
-/* line 125, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 125, D:/dev/_Altseed/Website/source/stylesheets/base.sass */
 #contents .panel {
   position: relative;
   left: -50%;
@@ -138,28 +138,28 @@
   width: 200px;
   height: 350px; }
 
-/* line 135, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 135, D:/dev/_Altseed/Website/source/stylesheets/base.sass */
 #contents .panel h3 {
   color: #ffffff;
   font-size: 16px;
   font-family: "verdana", "serif", "Hiragino Kaku Gothic Pro", "Meiryo", "sans-serif";
   text-align: center; }
 
-/* line 141, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 141, D:/dev/_Altseed/Website/source/stylesheets/base.sass */
 #contents .panel h4 {
   color: #ffffff;
   font-size: 14px;
   font-family: "verdana", "serif", "Hiragino Kaku Gothic Pro", "Meiryo", "sans-serif";
   text-align: center; }
 
-/* line 147, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 147, D:/dev/_Altseed/Website/source/stylesheets/base.sass */
 #contents .panel a:link {
   color: #cccccc; }
 
-/* line 150, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 150, D:/dev/_Altseed/Website/source/stylesheets/base.sass */
 #contents .panel a:visited {
   color: #cccccc; }
 
-/* line 153, D:/dev/_ACE/Website/source/stylesheets/base.sass */
+/* line 153, D:/dev/_Altseed/Website/source/stylesheets/base.sass */
 #contents .panel a:hover {
   color: #ffffff; }
