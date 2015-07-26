@@ -81,194 +81,71 @@
             表示するサンプルコードの言語を指定できます。
           </p>
           <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button>
-        </div><h2>オブジェクト2Dコンポーネント (Object2DComponent)</h2>
-
-<h3>概要</h3>
-
-<p>Object2DComponentを継承して独自のパラメータを追加したり、イベントに独自のイベントを設定したりすることで、<a href="/Doc/Reference/2D/Object2D.html">オブジェクト</a>に機能を追加するコンポーネントを作成することができます。たとえばオブジェクトの回転アニメーション機能などをコンポーネント化することで、その機能の再利用性を高めることができます。</p>
-
-<p>Object2DComponentを継承して独自の機能を持つコンポーネントを作成し、AddComponentメソッドによってオブジェクトを登録すると、そのコンポーネントのOnUpdateメソッドが毎フレーム呼び出されるようになります。</p>
-
-<p>Altseedには同様の機能としてLayer2DComponent, SceneComponentがあります。それぞれレイヤーとシーンに登録して使うコンポーネントの基底クラスです。</p>
-
-<h3>主なメソッド</h3>
-
-<table><thead>
-<tr>
-<th>名称</th>
-<th>説明</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Vanish</td>
-<td>このコンポーネントをオブジェクトから削除します。OnUpdateが呼ばれなくなります。</td>
-</tr>
-</tbody></table>
-
-<h3>主なプロパティ</h3>
-
-<table><thead>
-<tr>
-<th>名称</th>
-<th>説明</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Owner</td>
-<td>このコンポーネントが登録されているオブジェクト。</td>
-</tr>
-<tr>
-<td>IsUpdated</td>
-<td>このコンポーネントのOnUpdateが実行されるかどうか。</td>
-</tr>
-<tr>
-<td>IsAlive</td>
-<td>このコンポーネントが有効か(実行中か)どうか。取得専用。</td>
-</tr>
-</tbody></table>
-
-<h3>主なイベント</h3>
-
-<table><thead>
-<tr>
-<th>名称</th>
-<th>説明</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>OnUpdate</td>
-<td>オーバーライドして、毎フレーム実行される更新イベントを記述することができます。</td>
-</tr>
-</tbody></table>
-
-<h3>使用方法</h3>
-
-<p>Object2DComponentクラスのサンプルです。</p>
-
-<p><img alt="SS" src="/Doc/img/ss/Object2DComponent.jpg" /></p>
-
-<h3 class="cpp">C++</h3>
-<pre class="highlight cpp"><code>
-<span class="cp">#include &lt;Altseed.h&gt;
-</span>
-<span class="c1">// Object2DComponentを用いて、オブジェクトのパラメーターを変更するサンプル。
-</span>
-<span class="c1">// オブジェクトを回転させるコンポーネント
-</span><span class="k">class</span> <span class="nc">RotatingComponent</span> <span class="o">:</span> <span class="k">public</span> <span class="n">asd</span><span class="o">::</span><span class="n">Object2DComponent</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">void</span> <span class="n">OnUpdate</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="c1">// 毎フレーム、オブジェクトの角度を回転させる
-</span>        <span class="n">GetOwner</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">SetAngle</span><span class="p">(</span><span class="n">GetOwner</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetAngle</span><span class="p">()</span> <span class="o">+</span> <span class="mi">2</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">};</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="c1">// Altseedを初期化する。
-</span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Object2DComponent"</span><span class="p">).</span><span class="n">c_str</span><span class="p">(),</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="n">asd</span><span class="o">::</span><span class="n">EngineOption</span><span class="p">());</span>
-
-    <span class="c1">// オブジェクトを生成する。
-</span>    <span class="k">auto</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">TextureObject2D</span><span class="o">&gt;</span><span class="p">();</span>
-
-    <span class="c1">// 画像を読み込む。
-</span>    <span class="k">auto</span> <span class="n">texture</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetGraphics</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CreateTexture2D</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
-
-    <span class="c1">// オブジェクトに画像を設定する。
-</span>    <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetTexture</span><span class="p">(</span><span class="n">texture</span><span class="p">);</span>
-
-    <span class="c1">// オブジェクトの位置を設定する。
-</span>    <span class="n">obj</span><span class="o">-&gt;</span><span class="n">SetPosition</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Vector2DF</span><span class="p">(</span><span class="mi">320</span><span class="p">,</span> <span class="mi">240</span><span class="p">));</span>
-
-    <span class="c1">// エンジンにオブジェクトを追加する。
-</span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">AddObject2D</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
-
-    <span class="c1">// 回転コンポーネントを生成する。
-</span>    <span class="k">auto</span> <span class="n">component</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">RotatingComponent</span><span class="o">&gt;</span><span class="p">();</span>
-
-    <span class="c1">// オブジェクトに回転コンポーネントをコンポーネント名"Rotate"で追加する。
-</span>    <span class="n">obj</span><span class="o">-&gt;</span><span class="n">AddComponent</span><span class="p">(</span><span class="n">component</span><span class="p">,</span> <span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Rotate"</span><span class="p">));</span>
-
-    <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
-</span>    <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">DoEvents</span><span class="p">())</span>
-    <span class="p">{</span>
-        <span class="c1">// Altseedを更新する。
-</span>        <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Update</span><span class="p">();</span>
-
-        <span class="k">if</span> <span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetKeyboard</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetKeyState</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Keys</span><span class="o">::</span><span class="n">P</span><span class="p">)</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">KeyState</span><span class="o">::</span><span class="n">Push</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">TakeScreenshot</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Object2DComponent.jpg"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-
-    <span class="c1">//Altseedの終了処理をする。
-</span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Terminate</span><span class="p">();</span>
-
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-
-</code></pre>
-
-<h3 class="csharp">C#</h3>
-<pre class="highlight csharp"><code>
-<span class="k">namespace</span> <span class="nn">sample_cs</span>
-<span class="p">{</span>
-    <span class="k">class</span> <span class="nc">Object2DComponent</span>
-    <span class="p">{</span>
-        <span class="c1">// オブジェクトを回転させるコンポーネント。
-</span>        <span class="k">class</span> <span class="nc">RotateComponent</span> <span class="p">:</span> <span class="n">asd</span><span class="p">.</span><span class="n">Object2DComponent</span>
-        <span class="p">{</span>
-            <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnUpdate</span><span class="p">()</span>
-            <span class="p">{</span>
-                <span class="c1">// 毎フレーム、オブジェクトの角度を回転させる
-</span>                <span class="n">Owner</span><span class="p">.</span><span class="n">Angle</span> <span class="p">+=</span> <span class="m">2</span><span class="p">;</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-
-        <span class="c1">// Object2DComponentを用いて、オブジェクトのパラメーターを変更するサンプル。
-</span>        <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
-    <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="c1">// Altseedを初期化する。
-</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"Object2DComponent"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
-
-            <span class="c1">// オブジェクトを生成する。
-</span>            <span class="n">var</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextureObject2D</span><span class="p">();</span>
-
-            <span class="c1">// 画像を読み込む。
-</span>            <span class="n">var</span> <span class="n">texture</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="p">);</span>
-
-            <span class="c1">// オブジェクトに画像を設定する。
-</span>            <span class="n">obj</span><span class="p">.</span><span class="n">Texture</span> <span class="p">=</span> <span class="n">texture</span><span class="p">;</span>
-
-            <span class="c1">// オブジェクトの位置を設定する。
-</span>            <span class="n">obj</span><span class="p">.</span><span class="n">Position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="m">320</span><span class="p">,</span> <span class="m">240</span><span class="p">);</span>
-
-            <span class="c1">// エンジンにオブジェクトを追加する。
-</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">AddObject2D</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
-
-            <span class="c1">// 回転コンポーネントを生成する。
-</span>            <span class="n">var</span> <span class="n">component</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RotateComponent</span><span class="p">();</span>
-
-            <span class="c1">// オブジェクトに回転コンポーネントをコンポーネント名"Rotate"で追加する。
-</span>            <span class="n">obj</span><span class="p">.</span><span class="nf">AddComponent</span><span class="p">(</span><span class="n">component</span><span class="p">,</span> <span class="s">"Rotate"</span><span class="p">);</span>
-
-            <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
-</span>            <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
-            <span class="p">{</span>
-                <span class="c1">// Altseedを更新する。
-</span>                <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
-            <span class="p">}</span>
-
-            <span class="c1">//Altseedの終了処理をする。
-</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-</code></pre>
-
+        </div>
+        <h2>オブジェクト2Dコンポーネント (Object2DComponent)</h2>
+        
+        <h3>概要</h3>
+        
+        <p>Object2DComponentを継承して独自のパラメータを追加したり、イベントに独自のイベントを設定したりすることで、<a href="/Doc/Reference/2D/Object2D.html">オブジェクト</a>に機能を追加するコンポーネントを作成することができます。たとえばオブジェクトの回転アニメーション機能などをコンポーネント化することで、その機能の再利用性を高めることができます。</p>
+        
+        <p>Object2DComponentを継承して独自の機能を持つコンポーネントを作成し、AddComponentメソッドによってオブジェクトを登録すると、そのコンポーネントのOnUpdateメソッドが毎フレーム呼び出されるようになります。</p>
+        
+        <p>Altseedには同様の機能としてLayer2DComponent, SceneComponentがあります。それぞれレイヤーとシーンに登録して使うコンポーネントの基底クラスです。</p>
+        
+        <h3>主なメソッド</h3>
+        
+        <table><thead>
+        <tr>
+        <th>名称</th>
+        <th>説明</th>
+        </tr>
+        </thead><tbody>
+        <tr>
+        <td>Vanish</td>
+        <td>このコンポーネントをオブジェクトから削除します。OnUpdateが呼ばれなくなります。</td>
+        </tr>
+        </tbody></table>
+        
+        <h3>主なプロパティ</h3>
+        
+        <table><thead>
+        <tr>
+        <th>名称</th>
+        <th>説明</th>
+        </tr>
+        </thead><tbody>
+        <tr>
+        <td>Owner</td>
+        <td>このコンポーネントが登録されているオブジェクト。</td>
+        </tr>
+        <tr>
+        <td>IsUpdated</td>
+        <td>このコンポーネントのOnUpdateが実行されるかどうか。</td>
+        </tr>
+        <tr>
+        <td>IsAlive</td>
+        <td>このコンポーネントが有効か(実行中か)どうか。取得専用。</td>
+        </tr>
+        </tbody></table>
+        
+        <h3>主なイベント</h3>
+        
+        <table><thead>
+        <tr>
+        <th>名称</th>
+        <th>説明</th>
+        </tr>
+        </thead><tbody>
+        <tr>
+        <td>OnUpdate</td>
+        <td>オーバーライドして、毎フレーム実行される更新イベントを記述することができます。</td>
+        </tr>
+        </tbody></table>
+        
+        <h3>使用方法</h3>
+        
+        <p>Object2DComponentクラスのサンプルです。</p>
+        
       </div>
       <div class="menu">
         <h2>
