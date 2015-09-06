@@ -128,44 +128,47 @@ Lockを実行し成功すると引数からTextureLockInfomationを取得でき�
 <p>これは書き込みを行うサンプルコードの1つです。textureにdataにある情報を書き込みます。</p>
 
 <ul>
-<li><p>C++
-&ldquo;`
-ace::TextureLockInfomation info = ace::TextureLockInfomation();
+<li>C++</li>
+</ul>
+<pre class="highlight plaintext"><code>
+asd::TextureLockInfomation info = asd::TextureLockInfomation();
 if (texture-&gt;Lock(&amp;info))
-{</p>
-
-<p>auto dst = (uint8_t*)info.GetPixels();
-auto src = d;</p>
-
-<p>for(int i = 0; i &lt; info.Size.X * info.Size.Y * info.Pitch; i++)
 {
-    dst[i] = src[i];
-}</p>
+    auto dst = (uint8_t*)info.GetPixels();
+    auto src = d;
 
-<p>texture-&gt;Unlock();
+    for(int i = 0; i &lt; info.Size.X * info.Size.Y * info.Pitch; i++)
+    {
+        dst[i] = src[i];
+    }
+
+    texture-&gt;Unlock();
 }
-&rdquo;`</p></li>
-<li><p>C#
-&ldquo;`
-ace.TextureLockInfomation info = new ace.TextureLockInfomation();
-if (texture.Lock(info))
-{
-fixed(byte* d = &amp;data[0])
-{
-    var dst = (byte*)info.Pixels.ToPointer();
-    var src = d;</p>
-<pre class="highlight plaintext"><code>for(int i = 0; i &lt; info.Size.X * info.Size.Y * info.Pitch; i++)
-{
-    dst[i] = src[i];
-}
+
 </code></pre>
 
-<p>}</p>
-
-<p>texture.Unlock();
-}
-&rdquo;`</p></li>
+<ul>
+<li>C#</li>
 </ul>
+<pre class="highlight plaintext"><code>
+asd.TextureLockInfomation info = new asd.TextureLockInfomation();
+if (texture.Lock(info))
+{
+    fixed(byte* d = &amp;data[0])
+    {
+        var dst = (byte*)info.Pixels.ToPointer();
+        var src = d;
+
+        for(int i = 0; i &lt; info.Size.X * info.Size.Y * info.Pitch; i++)
+        {
+            dst[i] = src[i];
+        }
+    }
+
+    texture.Unlock();
+}
+
+</code></pre>
 
       </div>
       <div class="menu">
@@ -267,6 +270,9 @@ fixed(byte* d = &amp;data[0])
         </p>
         <p>
           <a href="/Doc/HowToUseBasic/Object2DComponent.html"> オブジェクトの挙動の部品化</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseBasic/EngineMisc.html"> エンジンの機能(その他)</a>
         </p>
         <h3>
           使い方(応用編)
