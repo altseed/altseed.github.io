@@ -65,7 +65,7 @@
       });
     </script>
   </head>
-  <body class="Doc Doc_Reference Doc_Reference_Graphics Doc_Reference_Graphics_Texture2D">
+  <body class="Doc Doc_HowToUseBasic Doc_HowToUseBasic_Texture">
     <div id="header">
       <h1>
         Altseed
@@ -81,53 +81,11 @@
             表示するサンプルコードの言語を指定できます。
           </p>
           <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button>
-        </div><h2>テクスチャ2D (Texture2D)</h2>
+        </div><h2>画像の機能</h2>
 
-<h3>概要</h3>
+<p>空の画像を生成したり、読み込んだ画像を編集したりできます。</p>
 
-<p>2次元の画像を定義します。グラフィックスから生成できます。
-基本的にはファイルから生成しますが、空のテクスチャを生成しプログラムから画像を編集することもできます。</p>
-
-<p><code>Engine.Graphics.CreateEmptyTexture2D</code> により空のテクスチャを生成できます。
-このテクスチャはLock関数を実行すると画素を編集できます。
-Lockを実行し成功すると引数からTextureLockInfomationを取得できます。
-ここには画像サイズや1画素あたりのメモリサイズ、画素の先頭ポインタが格納されています。
-それらの情報を用いて、画素に情報を書き込みます。
-書き込み終わった後はUnlockを実行します。</p>
-
-<p>また、<code>Engine.Graphics.CreateEditableTexture2D</code> を実行すると、編集可能な画像を生成できます。</p>
-
-<h3>主なメソッド</h3>
-
-<table><thead>
-<tr>
-<th>名称</th>
-<th>説明</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Lock</td>
-<td>テクスチャの編集を開始します。</td>
-</tr>
-<tr>
-<td>Unlock</td>
-<td>テクスチャの編集を終了します。</td>
-</tr>
-</tbody></table>
-
-<h3>主なプロパティ</h3>
-
-<p>なし</p>
-
-<h3>主なイベント</h3>
-
-<p>なし</p>
-
-<h3>使用方法</h3>
-
-<p>テクスチャオブジェクト2Dのサンプルを参照してください。</p>
-
-<p>これは書き込みを行うサンプルの1つです。textureにdataにある情報を書き込みます。</p>
+<h3>空の画像の編集</h3>
 
 <p><img alt="SS" src="/Doc/img/ss/Texture_Basic.jpg" /></p>
 
@@ -253,7 +211,7 @@ Lockを実行し成功すると引数からTextureLockInfomationを取得でき�
 <span class="p">}</span>
 </code></pre>
 
-<p>読み込んだ画像を編集するサンプルです。</p>
+<h3>読み込んだ画像の編集</h3>
 
 <p><img alt="SS" src="/Doc/img/ss/Texture_Edit.jpg" /></p>
 
