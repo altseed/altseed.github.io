@@ -97,6 +97,10 @@ Lockを実行し成功すると引数からTextureLockInfomationを取得でき�
 
 <p>また、<code>Engine.Graphics.CreateEditableTexture2D</code> を実行すると、編集可能な画像を生成できます。</p>
 
+<p>Altseedでは、pngファイルを読み込んだ時に拡張子以外のパスが一致するddsファイルが存在する場合、pngファイルのかわりにddsファイルを読み込みます。
+ddsファイルは編集しにくい、形式によっては非可逆という欠点はありますが、読み込みが高速なのでリリース時に使用することが多いです。
+そのため、pngファイルのかわりにddsファイルが存在する場合、ddsファイルを読み込みます。</p>
+
 <h3>主なメソッド</h3>
 
 <table><thead>
@@ -200,6 +204,15 @@ Lockを実行し成功すると引数からTextureLockInfomationを取得でき�
 /// &lt;/summary&gt;
 </span><span class="k">class</span> <span class="nc">Texture_Basic</span>
 <span class="p">{</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+
     <span class="k">public</span> <span class="k">unsafe</span> <span class="k">void</span> <span class="nf">Run</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="c1">// Altseedを初期化する。
@@ -323,6 +336,15 @@ Lockを実行し成功すると引数からTextureLockInfomationを取得でき�
 /// &lt;/summary&gt;
 </span><span class="k">class</span> <span class="nc">Texture_Edit</span>
 <span class="p">{</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+
     <span class="k">public</span> <span class="k">unsafe</span> <span class="k">void</span> <span class="nf">Run</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="c1">// Altseedを初期化する。

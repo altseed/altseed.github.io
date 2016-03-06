@@ -168,7 +168,8 @@
         <span class="n">material2d</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetGraphics</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CreateMaterial2D</span><span class="p">(</span><span class="n">shader</span><span class="p">);</span>
     <span class="p">}</span>
 
-    <span class="kt">void</span> <span class="n">OnDraw</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">RenderTexture2D</span><span class="o">&gt;</span> <span class="n">dst</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">RenderTexture2D</span><span class="o">&gt;</span> <span class="n">src</span><span class="p">)</span>
+<span class="k">protected</span><span class="o">:</span>
+    <span class="kt">void</span> <span class="n">OnDraw</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">RenderTexture2D</span><span class="o">&gt;</span> <span class="n">dst</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">RenderTexture2D</span><span class="o">&gt;</span> <span class="n">src</span><span class="p">)</span> <span class="n">override</span>
     <span class="p">{</span>
         <span class="c1">// マテリアルを経由してシェーダー内のg_texture変数に画面の画像(src)を入力する。
 </span>        <span class="n">material2d</span><span class="o">-&gt;</span><span class="n">SetTexture2D</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"g_texture"</span><span class="p">).</span><span class="n">c_str</span><span class="p">(),</span> <span class="n">src</span><span class="p">);</span>
@@ -283,7 +284,7 @@
 </span>            <span class="n">material2d</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateMaterial2D</span><span class="p">(</span><span class="n">shader</span><span class="p">);</span>
         <span class="p">}</span>
 
-        <span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnDraw</span><span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">RenderTexture2D</span> <span class="n">dst</span><span class="p">,</span> <span class="n">asd</span><span class="p">.</span><span class="n">RenderTexture2D</span> <span class="n">src</span><span class="p">)</span>
+        <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnDraw</span><span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">RenderTexture2D</span> <span class="n">dst</span><span class="p">,</span> <span class="n">asd</span><span class="p">.</span><span class="n">RenderTexture2D</span> <span class="n">src</span><span class="p">)</span>
         <span class="p">{</span>
             <span class="c1">// マテリアルを経由してシェーダー内のg_texture変数に画面の画像(src)を入力する。
 </span>            <span class="n">material2d</span><span class="p">.</span><span class="nf">SetTexture2D</span><span class="p">(</span><span class="s">"g_texture"</span><span class="p">,</span> <span class="n">src</span><span class="p">);</span>
@@ -319,6 +320,17 @@
         <span class="p">}</span>
 
         <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
+    <span class="p">}</span>
+
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
@@ -453,7 +465,8 @@
         <span class="n">material2d</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetGraphics</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CreateMaterial2D</span><span class="p">(</span><span class="n">shader</span><span class="p">);</span>
     <span class="p">}</span>
 
-    <span class="kt">void</span> <span class="n">OnDraw</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">RenderTexture2D</span><span class="o">&gt;</span> <span class="n">dst</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">RenderTexture2D</span><span class="o">&gt;</span> <span class="n">src</span><span class="p">)</span>
+<span class="k">protected</span><span class="o">:</span>
+    <span class="kt">void</span> <span class="n">OnDraw</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">RenderTexture2D</span><span class="o">&gt;</span> <span class="n">dst</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">RenderTexture2D</span><span class="o">&gt;</span> <span class="n">src</span><span class="p">)</span> <span class="n">override</span>
     <span class="p">{</span>
         <span class="c1">// マテリアルを経由してシェーダー内のg_texture変数に画面の画像(src)を入力する。
 </span>        <span class="n">material2d</span><span class="o">-&gt;</span><span class="n">SetTexture2D</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"g_texture"</span><span class="p">).</span><span class="n">c_str</span><span class="p">(),</span> <span class="n">src</span><span class="p">);</span>
@@ -504,6 +517,16 @@
 /// &lt;/summary&gt;
 </span><span class="k">class</span> <span class="nc">CustomPostEffect_Mosaic</span>
 <span class="p">{</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+
     <span class="c1">/// &lt;summary&gt;
 </span>    <span class="c1">/// DirectX向けシェーダー(HLSLで記述)
 </span>    <span class="c1">/// &lt;/summary&gt;
@@ -601,6 +624,16 @@
         <span class="n">asd</span><span class="p">.</span><span class="n">Shader2D</span> <span class="n">shader</span><span class="p">;</span>
         <span class="n">asd</span><span class="p">.</span><span class="n">Material2D</span> <span class="n">material2d</span><span class="p">;</span>
 
+        <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
+        <span class="p">{</span>
+            <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
+        <span class="p">{</span>
+            <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+        <span class="p">}</span>
+
         <span class="k">public</span> <span class="nf">MosaicPostEffect</span><span class="p">()</span>
         <span class="p">{</span>
             <span class="c1">// シェーダーをHLSL/GLSLから生成する。
@@ -621,7 +654,7 @@
 </span>            <span class="n">material2d</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateMaterial2D</span><span class="p">(</span><span class="n">shader</span><span class="p">);</span>
         <span class="p">}</span>
 
-        <span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnDraw</span><span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">RenderTexture2D</span> <span class="n">dst</span><span class="p">,</span> <span class="n">asd</span><span class="p">.</span><span class="n">RenderTexture2D</span> <span class="n">src</span><span class="p">)</span>
+        <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnDraw</span><span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">RenderTexture2D</span> <span class="n">dst</span><span class="p">,</span> <span class="n">asd</span><span class="p">.</span><span class="n">RenderTexture2D</span> <span class="n">src</span><span class="p">)</span>
         <span class="p">{</span>
             <span class="c1">// マテリアルを経由してシェーダー内のg_texture変数に画面の画像(src)を入力する。
 </span>            <span class="n">material2d</span><span class="p">.</span><span class="nf">SetTexture2D</span><span class="p">(</span><span class="s">"g_texture"</span><span class="p">,</span> <span class="n">src</span><span class="p">);</span>

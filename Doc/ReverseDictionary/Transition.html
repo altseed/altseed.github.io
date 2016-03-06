@@ -97,7 +97,7 @@
     <span class="o">:</span> <span class="k">public</span> <span class="n">asd</span><span class="o">::</span><span class="n">Scene</span>
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-    <span class="kt">void</span> <span class="n">OnStart</span><span class="p">()</span> <span class="n">override</span>
+    <span class="kt">void</span> <span class="n">OnRegistered</span><span class="p">()</span> <span class="n">override</span>
     <span class="p">{</span>
         <span class="c1">// 画像を読み込み、オブジェクトに設定する。
 </span>        <span class="k">auto</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">TextureObject2D</span><span class="o">&gt;</span><span class="p">();</span>
@@ -116,7 +116,7 @@
     <span class="o">:</span> <span class="k">public</span> <span class="n">asd</span><span class="o">::</span><span class="n">Scene</span>
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-    <span class="kt">void</span> <span class="n">OnStart</span><span class="p">()</span> <span class="n">override</span>
+    <span class="kt">void</span> <span class="n">OnRegistered</span><span class="p">()</span> <span class="n">override</span>
     <span class="p">{</span>
         <span class="c1">// 画像を読み込み、オブジェクトに設定する。
 </span>        <span class="k">auto</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">TextureObject2D</span><span class="o">&gt;</span><span class="p">();</span>
@@ -168,12 +168,21 @@
 <pre class="highlight csharp"><code>
 <span class="k">class</span> <span class="nc">Transition_Fade</span>
 <span class="p">{</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+
     <span class="c1">// フェードアウト・フェードインでシーン遷移をするサンプル。
 </span>
     <span class="c1">// 遷移後のシーン
 </span>    <span class="k">class</span> <span class="nc">Scene2</span> <span class="p">:</span> <span class="n">asd</span><span class="p">.</span><span class="n">Scene</span>
     <span class="p">{</span>
-        <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnStart</span><span class="p">()</span>
+        <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnRegistered</span><span class="p">()</span>
         <span class="p">{</span>
             <span class="c1">// 画像を読み込み、オブジェクトに設定する。
 </span>            <span class="n">var</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextureObject2D</span><span class="p">();</span>
@@ -190,7 +199,7 @@
     <span class="c1">// 遷移前のシーン
 </span>    <span class="k">class</span> <span class="nc">Scene1</span> <span class="p">:</span> <span class="n">asd</span><span class="p">.</span><span class="n">Scene</span>
     <span class="p">{</span>
-        <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnStart</span><span class="p">()</span>
+        <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnRegistered</span><span class="p">()</span>
         <span class="p">{</span>
             <span class="c1">// 画像を読み込み、オブジェクトに設定する。
 </span>            <span class="n">var</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextureObject2D</span><span class="p">();</span>

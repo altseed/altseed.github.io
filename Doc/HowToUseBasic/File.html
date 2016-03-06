@@ -139,8 +139,17 @@
 <span class="p">{</span>
     <span class="k">class</span> <span class="nc">File_RootDirectory</span>
     <span class="p">{</span>
+        <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
+        <span class="p">{</span>
+            <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"ファイルを探す際のルートディレクトリを設定する機能のサンプル。"</span><span class="p">;</span> <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
+        <span class="p">{</span>
+            <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"ルートディレクトリの設定"</span><span class="p">;</span> <span class="p">}</span>
+        <span class="p">}</span>
+
         <span class="c1">// AddRootDirectory を用いて、ファイルの起点となる場所を指定。
-</span>        <span class="c1">// その起点を基準とした相対パスで画像を指定し描画するサンプルです。
+</span>        <span class="c1">// その起点を基準とした相対パスで画像を指定し描画するサンプル。
 </span>        <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
     <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
         <span class="p">{</span>
@@ -235,7 +244,16 @@
 <span class="p">{</span>
     <span class="k">class</span> <span class="nc">File_PackFile</span>
     <span class="p">{</span>
-        <span class="c1">// PackFileを用いて、パッケージから画像を表示するサンプルです。
+        <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
+        <span class="p">{</span>
+            <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"Altseedのパッケージ機能でパッケージにまとめたファイルにアクセスするサンプル。"</span><span class="p">;</span> <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
+        <span class="p">{</span>
+            <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"パッケージからのファイル読み込み"</span><span class="p">;</span> <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="c1">// PackFileを用いて、パッケージから画像を表示するサンプル。
 </span>        <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
     <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
         <span class="p">{</span>
@@ -336,7 +354,16 @@
 <span class="p">{</span>
     <span class="k">class</span> <span class="nc">File_StaticFile</span>
     <span class="p">{</span>
-        <span class="c1">// StaticFile を用いて、ファイルからテキストを読み込むサンプルです。
+        <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
+        <span class="p">{</span>
+            <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
+        <span class="p">{</span>
+            <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="c1">// StaticFile を用いて、ファイルからテキストを読み込むサンプル。
 </span>        <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
     <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
         <span class="p">{</span>
@@ -452,6 +479,15 @@
 <span class="p">{</span>
     <span class="k">class</span> <span class="nc">File_StreamFile</span>
     <span class="p">{</span>
+        <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
+        <span class="p">{</span>
+            <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
+        <span class="p">{</span>
+            <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+        <span class="p">}</span>
+
         <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
     <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
         <span class="p">{</span>

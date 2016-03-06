@@ -81,83 +81,116 @@
             表示するサンプルコードの言語を指定できます。
           </p>
           <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button>
-        </div>
-        <h2>変更点</h2>
-        
-        <h3>2015/11/14</h3>
-        
-        <ul>
-        <li>OnDestroyをOnDisposeに名称を変更(破壊的変更)</li>
-        <li>レイヤーに追加されていないEffectObject2DでPlayを実行した時に例外が発生するように変更</li>
-        <li>カメラの描画結果にフィルタを掛けれるように変更</li>
-        <li>音関係、様々な不具合修正</li>
-        </ul>
-        
-        <h3>2015/09/06</h3>
-        
-        <ul>
-        <li>タイトルを変更する関数を追加</li>
-        <li>Object2DにUpdatePriorityを追加</li>
-        <li>特定のオブジェクトのみを表示する機能をカメラオブジェクト2Dに追加</li>
-        <li>カメラオブジェクト2Dで表示した画像をテクスチャとして使用できる機能を追加</li>
-        <li>カリングの不具合を修正</li>
-        <li>動的フォントの不具合を修正</li>
-        </ul>
-        
-        <h3>2015/07/26</h3>
-        
-        <ul>
-        <li>Effekseerで作成したエフェクトの一部が拡大されない不具合の修正</li>
-        <li>Intelのビデオカードでブルームがおかしくなる不具合の修正</li>
-        <li>C++とC#のコメントを統一化</li>
-        <li>サンプルの追加</li>
-        </ul>
-        
-        <h3>2015/07/12</h3>
-        
-        <ul>
-        <li>asd.Font　描画の際に行間と文字間を調整する機能を追加</li>
-        <li>asd.Effect　アプリケーション終了時に落ちる可能性がある不具合を修正(C++のみ)</li>
-        </ul>
-        
-        <h3>2015/07/12</h3>
-        
-        <ul>
-        <li>asd.Font　描画の際に行間と文字間を調整する機能を追加</li>
-        <li>asd.Effect　アプリケーション終了時に落ちる可能性がある不具合を修正(C++のみ)</li>
-        </ul>
-        
-        <h3>2015/07/07</h3>
-        
-        <ul>
-        <li>画面をgifアニメーションとして録画する機能を追加(asd.Engine.CaptureScreenAsGifAnimation)</li>
-        <li>LayerにOnStart(レイヤーがシーンに追加された時に呼ばれるイベント)を追加</li>
-        <li>SceneにOnStart(シーンが実行され始めた時に呼ばれるイベント)を追加</li>
-        <li><p>動的フォント生成機能を追加(asd.Graphics.CreateDynamicFont)</p></li>
-        <li><p>asd.Font.CalcTextureSize() のconstを除去(C++のみ破壊的変更)</p></li>
-        <li><p>ポストエフェクトを自作する時に記述する定義部分を変更(破壊的変更)</p></li>
-        <li><p>asd.StaticFile.Bufferの型がbyte[]に変更(C#のみ破壊的変更)</p></li>
-        <li><p>asd.Texture2D.Lockの挙動がDirectXとOpenGLで異なっていた不具合を修正</p></li>
-        </ul>
-        
-        <h3>2015/06/16</h3>
-        
-        <ul>
-        <li>GeometryObject2Dで図形が設定されていない時に表示しようとすると落ちる不具合の修正</li>
-        </ul>
-        
-        <h3>2015/05/31</h3>
-        
-        <ul>
-        <li>様々な不具合の修正</li>
-        </ul>
-        
-        <h3>2015/05/30</h3>
-        
-        <ul>
-        <li>一般公開</li>
-        </ul>
-        
+        </div><h2>変更点</h2>
+
+<h3>2016/03/06</h3>
+
+<ul>
+<li>イベントハンドラの名称や実行タイミングを修正(破壊的変更)
+
+<ul>
+<li>今までの<code>OnStart</code>は<code>OnAdded</code>に変更</li>
+<li>今までの<code>OnVanish</code>は<code>OnDispose</code>に統合</li>
+<li><code>Scene.OnUpdateForTheFirstTime</code>は<code>Scene.OnStartUpdating</code>に変更。Update中に呼ばれていたのをUpdate外で呼ぶように</li>
+<li><code>Scene.OnChanging</code>は<code>Scene.OnStopUpdating</code>に変更</li>
+<li><code>Scene.OnDispose</code>の実行タイミングを、今まで他のシーンへChangeSceneしたときだったが<code>Scene.Dispose</code>メソッドを呼んだときに変更。今までの用途には代わりに<code>Scene.OnUnregistered</code>を用意</li>
+<li>いくつか今までなかったタイミングで呼ばれるイベントを追加。詳しくはリファレンスを参照のこと。</li>
+</ul></li>
+<li>オブジェクト・レイヤー・シーンの破棄に関するルールを整理(破壊的変更)
+
+<ul>
+<li>オブジェクト・レイヤーの<code>Vanish</code>メソッドを<code>Dispose</code>メソッドに変更</li>
+<li><code>Scene.Dispose</code>メソッドを追加</li>
+<li>C#側で、オブジェクト・レイヤー・シーンの<code>Dispose</code>メソッドを呼ぶとアンマネージドメモリを即解放するように変更</li>
+<li><code>Engine.ChangeScene</code>メソッドが自動的にシーンをDisposeするように変更</li>
+</ul></li>
+<li><p>親子関係で同期できる項目をいくつか追加(破壊的変更)</p>
+
+<ul>
+<li>AddChildメソッドが取る引数を３つに変更</li>
+<li><code>ChildMode</code>列挙体は<code>ChildTransformingMode</code>に変更。</li>
+<li>第２引数に<code>ChildManagementMode.Nothing</code>を渡すと従来の動作になる</li>
+<li>オブジェクトの管理や描画に関する項目を同期する機能を追加。詳しくはリファレンスを参照のこと</li>
+</ul></li>
+<li><p>DDS読込に対応</p></li>
+<li><p>カーソル機能を追加</p></li>
+<li><p>クリップボード機能を追加</p></li>
+</ul>
+
+<h3>2015/11/14</h3>
+
+<ul>
+<li>OnDestroyをOnDisposeに名称を変更(破壊的変更)</li>
+<li>レイヤーに追加されていないEffectObject2DでPlayを実行した時に例外が発生するように変更</li>
+<li>カメラの描画結果にフィルタを掛けれるように変更</li>
+<li>音関係、様々な不具合修正</li>
+</ul>
+
+<h3>2015/09/06</h3>
+
+<ul>
+<li>タイトルを変更する関数を追加</li>
+<li>Object2DにUpdatePriorityを追加</li>
+<li>特定のオブジェクトのみを表示する機能をカメラオブジェクト2Dに追加</li>
+<li>カメラオブジェクト2Dで表示した画像をテクスチャとして使用できる機能を追加</li>
+<li>カリングの不具合を修正</li>
+<li>動的フォントの不具合を修正</li>
+</ul>
+
+<h3>2015/07/26</h3>
+
+<ul>
+<li>Effekseerで作成したエフェクトの一部が拡大されない不具合の修正</li>
+<li>Intelのビデオカードでブルームがおかしくなる不具合の修正</li>
+<li>C++とC#のコメントを統一化</li>
+<li>サンプルの追加</li>
+</ul>
+
+<h3>2015/07/12</h3>
+
+<ul>
+<li>asd.Font　描画の際に行間と文字間を調整する機能を追加</li>
+<li>asd.Effect　アプリケーション終了時に落ちる可能性がある不具合を修正(C++のみ)</li>
+</ul>
+
+<h3>2015/07/12</h3>
+
+<ul>
+<li>asd.Font　描画の際に行間と文字間を調整する機能を追加</li>
+<li>asd.Effect　アプリケーション終了時に落ちる可能性がある不具合を修正(C++のみ)</li>
+</ul>
+
+<h3>2015/07/07</h3>
+
+<ul>
+<li>画面をgifアニメーションとして録画する機能を追加(asd.Engine.CaptureScreenAsGifAnimation)</li>
+<li>LayerにOnStart(レイヤーがシーンに追加された時に呼ばれるイベント)を追加</li>
+<li>SceneにOnStart(シーンが実行され始めた時に呼ばれるイベント)を追加</li>
+<li><p>動的フォント生成機能を追加(asd.Graphics.CreateDynamicFont)</p></li>
+<li><p>asd.Font.CalcTextureSize() のconstを除去(C++のみ破壊的変更)</p></li>
+<li><p>ポストエフェクトを自作する時に記述する定義部分を変更(破壊的変更)</p></li>
+<li><p>asd.StaticFile.Bufferの型がbyte[]に変更(C#のみ破壊的変更)</p></li>
+<li><p>asd.Texture2D.Lockの挙動がDirectXとOpenGLで異なっていた不具合を修正</p></li>
+</ul>
+
+<h3>2015/06/16</h3>
+
+<ul>
+<li>GeometryObject2Dで図形が設定されていない時に表示しようとすると落ちる不具合の修正</li>
+</ul>
+
+<h3>2015/05/31</h3>
+
+<ul>
+<li>様々な不具合の修正</li>
+</ul>
+
+<h3>2015/05/30</h3>
+
+<ul>
+<li>一般公開</li>
+</ul>
+
       </div>
       <div class="menu">
         <h2>

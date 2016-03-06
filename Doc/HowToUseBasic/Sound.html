@@ -126,6 +126,15 @@
 <span class="p">{</span>
     <span class="k">class</span> <span class="nc">Sound_SE</span>
     <span class="p">{</span>
+        <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
+        <span class="p">{</span>
+            <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
+        <span class="p">{</span>
+            <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+        <span class="p">}</span>
+
         <span class="c1">// Soundを用いて音を鳴らすサンプル。
 </span>        <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
     <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
@@ -133,7 +142,7 @@
             <span class="c1">// Altseedを初期化する。
 </span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"Sound_SE"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
 
-            <span class="c1">// 音ファイルを読み込む。
+            <span class="c1">// 音ファイルを読み込む。SEの場合、第２引数を true に設定することで、この場でファイルを解凍することが推奨されている。
 </span>            <span class="n">asd</span><span class="p">.</span><span class="n">SoundSource</span> <span class="n">se1</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Sound</span><span class="p">.</span><span class="nf">CreateSoundSource</span><span class="p">(</span><span class="s">"Data/Sound/se1.wav"</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
 
             <span class="c1">// 音を再生する。
@@ -146,7 +155,7 @@
 </span>                <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
 
                 <span class="c1">// 音が再生終了してるか調べる。
-</span>                <span class="k">if</span> <span class="p">(!</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Sound</span><span class="p">.</span><span class="nf">IsPlaying</span><span class="p">(</span><span class="n">id_se1</span><span class="p">))</span>
+</span>                <span class="k">if</span> <span class="p">(!</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Sound</span><span class="p">.</span><span class="nf">GetIsPlaying</span><span class="p">(</span><span class="n">id_se1</span><span class="p">))</span>
                 <span class="p">{</span>
                     <span class="k">break</span><span class="p">;</span>
                 <span class="p">}</span>
@@ -198,16 +207,19 @@
 </code></pre>
 
 <h3 class="csharp">C#</h3>
-<pre class="highlight csharp"><code><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
-<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
-<span class="k">using</span> <span class="nn">System.Linq</span><span class="p">;</span>
-<span class="k">using</span> <span class="nn">System.Text</span><span class="p">;</span>
-<span class="k">using</span> <span class="nn">System.Threading.Tasks</span><span class="p">;</span>
-
-<span class="k">namespace</span> <span class="nn">sample_cs</span>
+<pre class="highlight csharp"><code><span class="k">namespace</span> <span class="nn">sample_cs</span>
 <span class="p">{</span>
     <span class="k">class</span> <span class="nc">Sound_BGM</span>
     <span class="p">{</span>
+        <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
+        <span class="p">{</span>
+            <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
+        <span class="p">{</span>
+            <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+        <span class="p">}</span>
+
         <span class="c1">// Soundを用いてBGMを鳴らすサンプル。
 </span>        <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
     <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
@@ -215,7 +227,7 @@
             <span class="c1">// Altseedを初期化する。
 </span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"Sound_BGM"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
 
-            <span class="c1">// 音声ファイルを読み込む
+            <span class="c1">// 音声ファイルを読み込む。BGMの場合、第２引数を false に設定することで、再生しながらファイルを解凍することが推奨されている。
 </span>            <span class="n">asd</span><span class="p">.</span><span class="n">SoundSource</span> <span class="n">bgm1</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Sound</span><span class="p">.</span><span class="nf">CreateSoundSource</span><span class="p">(</span><span class="s">"Data/Sound/bgm1.ogg"</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
 
             <span class="c1">// 音声を再生する。
@@ -228,7 +240,7 @@
 </span>                <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
 
                 <span class="c1">// 音声が再生終了してるか調べる。
-</span>                <span class="k">if</span> <span class="p">(!</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Sound</span><span class="p">.</span><span class="nf">IsPlaying</span><span class="p">(</span><span class="n">id_bgm1</span><span class="p">))</span>
+</span>                <span class="k">if</span> <span class="p">(!</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Sound</span><span class="p">.</span><span class="nf">GetIsPlaying</span><span class="p">(</span><span class="n">id_bgm1</span><span class="p">))</span>
                 <span class="p">{</span>
                     <span class="k">break</span><span class="p">;</span>
                 <span class="p">}</span>
@@ -281,16 +293,19 @@
 </code></pre>
 
 <h3 class="csharp">C#</h3>
-<pre class="highlight csharp"><code><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
-<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
-<span class="k">using</span> <span class="nn">System.Linq</span><span class="p">;</span>
-<span class="k">using</span> <span class="nn">System.Text</span><span class="p">;</span>
-<span class="k">using</span> <span class="nn">System.Threading.Tasks</span><span class="p">;</span>
-
-<span class="k">namespace</span> <span class="nn">sample_cs</span>
+<pre class="highlight csharp"><code><span class="k">namespace</span> <span class="nn">sample_cs</span>
 <span class="p">{</span>
     <span class="k">class</span> <span class="nc">Sound_Loop</span>
     <span class="p">{</span>
+        <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
+        <span class="p">{</span>
+            <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
+        <span class="p">{</span>
+            <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+        <span class="p">}</span>
+
         <span class="c1">// BGMをループ再生するサンプル。
 </span>        <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
     <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
@@ -298,7 +313,7 @@
             <span class="c1">// Altseedを初期化する。
 </span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"Sound_Loop"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
 
-            <span class="c1">// 音声ファイルを読み込む。
+            <span class="c1">// 音声ファイルを読み込む。BGMの場合、第２引数を false に設定することで、再生しながらファイルを解凍することが推奨されている。
 </span>            <span class="n">asd</span><span class="p">.</span><span class="n">SoundSource</span> <span class="n">bgm1</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Sound</span><span class="p">.</span><span class="nf">CreateSoundSource</span><span class="p">(</span><span class="s">"Data/Sound/bgm1.ogg"</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
 
             <span class="c1">// 音声のループを有効にする。
@@ -316,12 +331,6 @@
             <span class="p">{</span>
                 <span class="c1">// Altseedを更新する。
 </span>                <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
-
-                <span class="c1">// 音声が再生終了してるか調べる。
-</span>                <span class="k">if</span> <span class="p">(!</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Sound</span><span class="p">.</span><span class="nf">IsPlaying</span><span class="p">(</span><span class="n">id_bgm1</span><span class="p">))</span>
-                <span class="p">{</span>
-                    <span class="k">break</span><span class="p">;</span>
-                <span class="p">}</span>
             <span class="p">}</span>
 
             <span class="c1">// Altseedの終了処理をする。

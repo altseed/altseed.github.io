@@ -142,16 +142,19 @@
 </code></pre>
 
 <h3 class="csharp">C#</h3>
-<pre class="highlight csharp"><code><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
-<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
-<span class="k">using</span> <span class="nn">System.Linq</span><span class="p">;</span>
-<span class="k">using</span> <span class="nn">System.Text</span><span class="p">;</span>
-<span class="k">using</span> <span class="nn">System.Threading.Tasks</span><span class="p">;</span>
-
-<span class="k">namespace</span> <span class="nn">sample_cs</span>
+<pre class="highlight csharp"><code><span class="k">namespace</span> <span class="nn">sample_cs</span>
 <span class="p">{</span>
     <span class="k">class</span> <span class="nc">SceneAndLayer_Basic</span>
     <span class="p">{</span>
+        <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
+        <span class="p">{</span>
+            <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"シーンとレイヤーを手動で生成して操作するサンプル。"</span><span class="p">;</span> <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
+        <span class="p">{</span>
+            <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"シーンとレイヤーの基本"</span><span class="p">;</span> <span class="p">}</span>
+        <span class="p">}</span>
+
         <span class="c1">// シーンとレイヤーを手動で生成する。
 </span>        <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
     <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
@@ -281,6 +284,15 @@
 <span class="p">{</span>
     <span class="k">class</span> <span class="nc">SceneAndLayer_CustomLayer</span>
     <span class="p">{</span>
+        <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
+        <span class="p">{</span>
+            <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"Layer2Dクラスを継承して、ふるまいをカスタマイズするサンプル。"</span><span class="p">;</span> <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
+        <span class="p">{</span>
+            <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"レイヤーのカスタマイズ"</span><span class="p">;</span> <span class="p">}</span>
+        <span class="p">}</span>
+
         <span class="c1">// このサンプルで使用するカスタマイズしたレイヤー。
 </span>        <span class="k">class</span> <span class="nc">SampleLayer</span> <span class="p">:</span> <span class="n">asd</span><span class="p">.</span><span class="n">Layer2D</span>
         <span class="p">{</span>
@@ -433,6 +445,15 @@
 <span class="p">{</span>
     <span class="k">class</span> <span class="nc">SceneAndLayer_CustomScene</span>
     <span class="p">{</span>
+        <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
+        <span class="p">{</span>
+            <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"Sceneクラスを継承して、ふるまいをカスタマイズするサンプル。"</span><span class="p">;</span> <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
+        <span class="p">{</span>
+            <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"シーンのカスタマイズ"</span><span class="p">;</span> <span class="p">}</span>
+        <span class="p">}</span>
+
         <span class="c1">// このサンプルで使用するカスタマイズされたシーン。
 </span>        <span class="k">class</span> <span class="nc">SampleScene</span> <span class="p">:</span> <span class="n">asd</span><span class="p">.</span><span class="n">Scene</span>
         <span class="p">{</span>

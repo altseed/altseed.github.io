@@ -101,7 +101,7 @@
 <span class="k">class</span> <span class="nc">PauseLayer</span>
     <span class="o">:</span> <span class="k">public</span> <span class="n">asd</span><span class="o">::</span><span class="n">Layer2D</span>
 <span class="p">{</span>
-    <span class="kt">void</span> <span class="n">OnStart</span><span class="p">()</span> <span class="n">override</span>
+    <span class="kt">void</span> <span class="n">OnAdded</span><span class="p">()</span> <span class="n">override</span>
     <span class="p">{</span>
         <span class="c1">// ポーズ以外のレイヤーの更新を停止する。
 </span>        <span class="k">for</span><span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="n">layer</span> <span class="o">:</span> <span class="n">GetScene</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetLayers</span><span class="p">())</span>
@@ -124,7 +124,7 @@
             <span class="p">{</span>
                 <span class="n">layer</span><span class="o">-&gt;</span><span class="n">SetIsUpdated</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
             <span class="p">}</span>
-            <span class="n">Vanish</span><span class="p">();</span>
+            <span class="n">Dispose</span><span class="p">();</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">};</span>
@@ -200,12 +200,22 @@
 /// &lt;/summary&gt;
 </span><span class="k">class</span> <span class="nc">Pause_Basic</span>
 <span class="p">{</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+
     <span class="c1">/// &lt;summary&gt;
 </span>    <span class="c1">/// ポーズを実行するレイヤー
 </span>    <span class="c1">/// &lt;/summary&gt;
 </span>    <span class="k">class</span> <span class="nc">PauseLayer</span> <span class="p">:</span> <span class="n">asd</span><span class="p">.</span><span class="n">Layer2D</span>
     <span class="p">{</span>
-        <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnStart</span><span class="p">()</span>
+        <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnAdded</span><span class="p">()</span>
         <span class="p">{</span>
             <span class="c1">// ポーズ以外のレイヤーの更新を停止する。
 </span>            <span class="k">foreach</span> <span class="p">(</span><span class="n">var</span> <span class="n">layer</span> <span class="k">in</span> <span class="n">Scene</span><span class="p">.</span><span class="n">Layers</span><span class="p">)</span>
@@ -228,7 +238,7 @@
                 <span class="p">{</span>
                     <span class="n">layer</span><span class="p">.</span><span class="n">IsUpdated</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
                 <span class="p">}</span>
-                <span class="nf">Vanish</span><span class="p">();</span>
+                <span class="nf">Dispose</span><span class="p">();</span>
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}</span>
