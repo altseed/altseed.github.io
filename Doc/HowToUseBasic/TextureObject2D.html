@@ -138,11 +138,15 @@
 <span class="p">{</span>
     <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
     <span class="p">{</span>
-        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"画像を表示する基本的なサンプルです。"</span><span class="p">;</span> <span class="p">}</span>
     <span class="p">}</span>
     <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
     <span class="p">{</span>
-        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"画像の表示"</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">ClassName</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"TextureObject2D_Basic"</span><span class="p">;</span> <span class="p">}</span>
     <span class="p">}</span>
 
     <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
@@ -177,6 +181,32 @@
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
+</code></pre>
+
+<h3 class="java">Java</h3>
+<pre class="highlight java"><code>  <span class="kd">class</span> <span class="nc">TextureObject2D_Basic</span>    <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"画像を表示する基本的なサンプルです。"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"画像の表示"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Initialize</span><span class="o">(</span><span class="s">"TextureObject2D_Basic"</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">EngineOption</span><span class="o">());</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Texture2D</span> <span class="n">texture</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getGraphics</span><span class="o">().</span><span class="na">CreateTexture2D</span><span class="o">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="o">);</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">TextureObject2D</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">TextureObject2D</span><span class="o">();</span>
+        <span class="n">obj</span><span class="o">.</span><span class="na">setTexture</span><span class="o">(</span><span class="n">texture</span><span class="o">);</span>
+        <span class="n">obj</span><span class="o">.</span><span class="na">setPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">50</span><span class="o">,</span> <span class="mi">50</span><span class="o">));</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">obj</span><span class="o">);</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
+        <span class="o">{</span>
+            <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Update</span><span class="o">();</span>
+        <span class="o">}</span>
+
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Terminate</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
 </code></pre>
 
 <h3>画像の上下を反転して描画</h3>
@@ -235,11 +265,15 @@
 <span class="p">{</span>
     <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
     <span class="p">{</span>
-        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"画像の上下を反転して描画するサンプルです。"</span><span class="p">;</span> <span class="p">}</span>
     <span class="p">}</span>
     <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
     <span class="p">{</span>
-        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"画像の上下反転"</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">ClassName</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"TextureObject2D_Turn"</span><span class="p">;</span> <span class="p">}</span>
     <span class="p">}</span>
 
     <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
@@ -277,6 +311,33 @@
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
+</code></pre>
+
+<h3 class="java">Java</h3>
+<pre class="highlight java"><code>  <span class="kd">class</span> <span class="nc">TextureObject2D_Turn</span>    <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"画像の上下を反転して描画するサンプルです。"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"画像の上下反転"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Initialize</span><span class="o">(</span><span class="s">"TextureObject2D_Turn"</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">EngineOption</span><span class="o">());</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Texture2D</span> <span class="n">texture</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getGraphics</span><span class="o">().</span><span class="na">CreateTexture2D</span><span class="o">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="o">);</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">TextureObject2D</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">TextureObject2D</span><span class="o">();</span>
+        <span class="n">obj</span><span class="o">.</span><span class="na">setTexture</span><span class="o">(</span><span class="n">texture</span><span class="o">);</span>
+        <span class="n">obj</span><span class="o">.</span><span class="na">setPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">50</span><span class="o">,</span> <span class="mi">50</span><span class="o">));</span>
+        <span class="n">obj</span><span class="o">.</span><span class="na">setTurnUL</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">obj</span><span class="o">);</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
+        <span class="o">{</span>
+            <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Update</span><span class="o">();</span>
+        <span class="o">}</span>
+
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Terminate</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
 </code></pre>
 
 <h3>画像の一部を切り出して描画</h3>
@@ -335,11 +396,15 @@
 <span class="p">{</span>
     <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
     <span class="p">{</span>
-        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"画像の一部を切り出して描画するサンプルです。"</span><span class="p">;</span> <span class="p">}</span>
     <span class="p">}</span>
     <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
     <span class="p">{</span>
-        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"画像の切り抜き"</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">ClassName</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"TextureObject2D_Src"</span><span class="p">;</span> <span class="p">}</span>
     <span class="p">}</span>
 
     <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
@@ -377,6 +442,33 @@
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
+
+</code></pre>
+
+<h3 class="java">Java</h3>
+<pre class="highlight java"><code>  <span class="kd">class</span> <span class="nc">TextureObject2D_Src</span>    <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"画像の一部を切り出して描画するサンプルです。"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"画像の切り抜き"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Initialize</span><span class="o">(</span><span class="s">"TextureObject2D_Src"</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">EngineOption</span><span class="o">());</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Texture2D</span> <span class="n">texture</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getGraphics</span><span class="o">().</span><span class="na">CreateTexture2D</span><span class="o">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="o">);</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">TextureObject2D</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">TextureObject2D</span><span class="o">();</span>
+        <span class="n">obj</span><span class="o">.</span><span class="na">setTexture</span><span class="o">(</span><span class="n">texture</span><span class="o">);</span>
+        <span class="n">obj</span><span class="o">.</span><span class="na">setPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">50</span><span class="o">,</span> <span class="mi">50</span><span class="o">));</span>
+        <span class="n">obj</span><span class="o">.</span><span class="na">setSrc</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">RectF</span><span class="o">(</span><span class="mi">150</span><span class="o">,</span> <span class="mi">150</span><span class="o">,</span> <span class="mi">200</span><span class="o">,</span> <span class="mi">200</span><span class="o">));</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">obj</span><span class="o">);</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
+        <span class="o">{</span>
+            <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Update</span><span class="o">();</span>
+        <span class="o">}</span>
+
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Terminate</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 
 </code></pre>
 
@@ -442,11 +534,15 @@
 <span class="p">{</span>
     <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
     <span class="p">{</span>
-        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"画像を回転させたり、拡大縮小して描画するサンプルです。"</span><span class="p">;</span> <span class="p">}</span>
     <span class="p">}</span>
     <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
     <span class="p">{</span>
-        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"画像の変形"</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">ClassName</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"TextureObject2D_Transform"</span><span class="p">;</span> <span class="p">}</span>
     <span class="p">}</span>
 
     <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
@@ -490,6 +586,35 @@
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
+</code></pre>
+
+<h3 class="java">Java</h3>
+<pre class="highlight java"><code>  <span class="kd">class</span> <span class="nc">TextureObject2D_Transform</span>    <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"画像を回転させたり、拡大縮小して描画するサンプルです。"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"画像の変形"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Initialize</span><span class="o">(</span><span class="s">"TextureObject2D_Transform"</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">EngineOption</span><span class="o">());</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Texture2D</span> <span class="n">texture</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getGraphics</span><span class="o">().</span><span class="na">CreateTexture2D</span><span class="o">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="o">);</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">TextureObject2D</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">TextureObject2D</span><span class="o">();</span>
+        <span class="n">obj</span><span class="o">.</span><span class="na">setTexture</span><span class="o">(</span><span class="n">texture</span><span class="o">);</span>
+        <span class="n">obj</span><span class="o">.</span><span class="na">setPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">320</span><span class="o">,</span> <span class="mi">240</span><span class="o">));</span>
+        <span class="n">obj</span><span class="o">.</span><span class="na">setCenterPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">256</span><span class="o">,</span> <span class="mi">256</span><span class="o">));</span>
+        <span class="n">obj</span><span class="o">.</span><span class="na">setAngle</span><span class="o">(</span><span class="mi">45</span><span class="o">);</span>
+        <span class="n">obj</span><span class="o">.</span><span class="na">setScale</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mf">0.4f</span><span class="o">,</span> <span class="mf">0.4f</span><span class="o">));</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">obj</span><span class="o">);</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
+        <span class="o">{</span>
+            <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Update</span><span class="o">();</span>
+        <span class="o">}</span>
+
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Terminate</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
 </code></pre>
 
       </div>
@@ -613,6 +738,15 @@
         </p>
         <p>
           <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/DrawAdditionally2D.html">追加描画(2D)</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/Window.html">外部ウィンドウ</a>
         </p>
         <h3>
           リファレンス

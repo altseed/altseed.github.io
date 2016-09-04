@@ -93,7 +93,7 @@
 <span class="c1">// フェードアウト・フェードインでシーン遷移をするサンプル。
 </span>
 <span class="c1">// 遷移後のシーン
-</span><span class="k">class</span> <span class="nc">Scene2</span>
+</span><span class="k">class</span> <span class="nc">Transition</span><span class="n">_Fade_Scene2</span>
     <span class="o">:</span> <span class="k">public</span> <span class="n">asd</span><span class="o">::</span><span class="n">Scene</span>
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
@@ -112,7 +112,7 @@
 <span class="p">};</span>
 
 <span class="c1">// 遷移前のシーン
-</span><span class="k">class</span> <span class="nc">Scene1</span>
+</span><span class="k">class</span> <span class="nc">Transition</span><span class="n">_Fade_Scene1</span>
     <span class="o">:</span> <span class="k">public</span> <span class="n">asd</span><span class="o">::</span><span class="n">Scene</span>
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
@@ -136,7 +136,7 @@
         <span class="p">{</span>
             <span class="c1">// フェードアウト・インによるシーン遷移を開始する。
 </span>            <span class="c1">// 1秒かけてフェードアウトし、1.5秒かけてフェードイン。
-</span>            <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">ChangeSceneWithTransition</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Scene2</span><span class="o">&gt;</span><span class="p">(),</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">TransitionFade</span><span class="o">&gt;</span><span class="p">(</span><span class="mf">1.0</span><span class="n">f</span><span class="p">,</span> <span class="mf">1.5</span><span class="n">f</span><span class="p">));</span>
+</span>            <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">ChangeSceneWithTransition</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Transition_Fade_Scene2</span><span class="o">&gt;</span><span class="p">(),</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">TransitionFade</span><span class="o">&gt;</span><span class="p">(</span><span class="mf">1.0</span><span class="n">f</span><span class="p">,</span> <span class="mf">1.5</span><span class="n">f</span><span class="p">));</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">};</span>
@@ -147,7 +147,7 @@
 </span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Transition_Fade"</span><span class="p">).</span><span class="n">c_str</span><span class="p">(),</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="n">asd</span><span class="o">::</span><span class="n">EngineOption</span><span class="p">());</span>
 
     <span class="c1">// シーンのインスタンスを生成する。
-</span>    <span class="k">auto</span> <span class="n">scene</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Scene1</span><span class="o">&gt;</span><span class="p">();</span>
+</span>    <span class="k">auto</span> <span class="n">scene</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Transition_Fade_Scene1</span><span class="o">&gt;</span><span class="p">();</span>
 
     <span class="c1">// シーンをシーン1に設定する。
 </span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">ChangeScene</span><span class="p">(</span><span class="n">scene</span><span class="p">);</span>
@@ -166,62 +166,78 @@
 
 <h3 class="csharp">C#</h3>
 <pre class="highlight csharp"><code>
+
+<span class="c1">// フェードアウト・フェードインでシーン遷移をするサンプル。
+</span>
+<span class="c1">// 遷移後のシーン
+</span><span class="k">class</span> <span class="nc">Transition_Fade_Scene2</span> <span class="p">:</span> <span class="n">asd</span><span class="p">.</span><span class="n">Scene</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnRegistered</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// 画像を読み込み、オブジェクトに設定する。
+</span>        <span class="n">var</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextureObject2D</span><span class="p">();</span>
+        <span class="n">var</span> <span class="n">tex</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Data/Texture/Scene2.png"</span><span class="p">);</span>
+        <span class="n">obj</span><span class="p">.</span><span class="n">Texture</span> <span class="p">=</span> <span class="n">tex</span><span class="p">;</span>
+
+        <span class="c1">// シーンにレイヤーを追加し、そのレイヤーにオブジェクトを追加する。
+</span>        <span class="n">var</span> <span class="n">layer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Layer2D</span><span class="p">();</span>
+        <span class="nf">AddLayer</span><span class="p">(</span><span class="n">layer</span><span class="p">);</span>
+        <span class="n">layer</span><span class="p">.</span><span class="nf">AddObject</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnUpdated</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// マウスの左ボタンが押されるのを待つ。
+</span>        <span class="k">if</span><span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Mouse</span><span class="p">.</span><span class="n">LeftButton</span><span class="p">.</span><span class="n">ButtonState</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">MouseButtonState</span><span class="p">.</span><span class="n">Push</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// フェードアウト・インによるシーン遷移を開始する。
+</span>            <span class="c1">// 1秒かけてフェードアウトし、1.5秒かけてフェードイン。
+</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">ChangeSceneWithTransition</span><span class="p">(</span><span class="k">new</span> <span class="nf">Transition_Fade_Scene1</span><span class="p">(),</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TransitionFade</span><span class="p">(</span><span class="m">1.0f</span><span class="p">,</span> <span class="m">1.5f</span><span class="p">));</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// 遷移前のシーン
+</span><span class="k">class</span> <span class="nc">Transition_Fade_Scene1</span> <span class="p">:</span> <span class="n">asd</span><span class="p">.</span><span class="n">Scene</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnRegistered</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// 画像を読み込み、オブジェクトに設定する。
+</span>        <span class="n">var</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextureObject2D</span><span class="p">();</span>
+        <span class="n">var</span> <span class="n">tex</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Data/Texture/Scene1.png"</span><span class="p">);</span>
+        <span class="n">obj</span><span class="p">.</span><span class="n">Texture</span> <span class="p">=</span> <span class="n">tex</span><span class="p">;</span>
+
+        <span class="c1">// シーンにレイヤーを追加し、そのレイヤーにオブジェクトを追加する。
+</span>        <span class="n">var</span> <span class="n">layer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Layer2D</span><span class="p">();</span>
+        <span class="nf">AddLayer</span><span class="p">(</span><span class="n">layer</span><span class="p">);</span>
+        <span class="n">layer</span><span class="p">.</span><span class="nf">AddObject</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnUpdated</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// マウスの左ボタンが押されるのを待つ。
+</span>        <span class="k">if</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Mouse</span><span class="p">.</span><span class="n">LeftButton</span><span class="p">.</span><span class="n">ButtonState</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">MouseButtonState</span><span class="p">.</span><span class="n">Push</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// フェードアウト・インによるシーン遷移を開始する。
+</span>            <span class="c1">// 1秒かけてフェードアウトし、1.5秒かけてフェードイン。
+</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">ChangeSceneWithTransition</span><span class="p">(</span><span class="k">new</span> <span class="nf">Transition_Fade_Scene2</span><span class="p">(),</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TransitionFade</span><span class="p">(</span><span class="m">1.0f</span><span class="p">,</span> <span class="m">1.5f</span><span class="p">));</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
 <span class="k">class</span> <span class="nc">Transition_Fade</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
     <span class="p">{</span>
-        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"フェードイン・フェードアウトを用いてシーン遷移をするサンプルです。"</span><span class="p">;</span> <span class="p">}</span>
     <span class="p">}</span>
     <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
     <span class="p">{</span>
-        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"フェードイン・フェードアウト"</span><span class="p">;</span> <span class="p">}</span>
     <span class="p">}</span>
-
-    <span class="c1">// フェードアウト・フェードインでシーン遷移をするサンプル。
-</span>
-    <span class="c1">// 遷移後のシーン
-</span>    <span class="k">class</span> <span class="nc">Scene2</span> <span class="p">:</span> <span class="n">asd</span><span class="p">.</span><span class="n">Scene</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">ClassName</span>
     <span class="p">{</span>
-        <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnRegistered</span><span class="p">()</span>
-        <span class="p">{</span>
-            <span class="c1">// 画像を読み込み、オブジェクトに設定する。
-</span>            <span class="n">var</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextureObject2D</span><span class="p">();</span>
-            <span class="n">var</span> <span class="n">tex</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Data/Texture/Scene2.png"</span><span class="p">);</span>
-            <span class="n">obj</span><span class="p">.</span><span class="n">Texture</span> <span class="p">=</span> <span class="n">tex</span><span class="p">;</span>
-
-            <span class="c1">// シーンにレイヤーを追加し、そのレイヤーにオブジェクトを追加する。
-</span>            <span class="n">var</span> <span class="n">layer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Layer2D</span><span class="p">();</span>
-            <span class="nf">AddLayer</span><span class="p">(</span><span class="n">layer</span><span class="p">);</span>
-            <span class="n">layer</span><span class="p">.</span><span class="nf">AddObject</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-
-    <span class="c1">// 遷移前のシーン
-</span>    <span class="k">class</span> <span class="nc">Scene1</span> <span class="p">:</span> <span class="n">asd</span><span class="p">.</span><span class="n">Scene</span>
-    <span class="p">{</span>
-        <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnRegistered</span><span class="p">()</span>
-        <span class="p">{</span>
-            <span class="c1">// 画像を読み込み、オブジェクトに設定する。
-</span>            <span class="n">var</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextureObject2D</span><span class="p">();</span>
-            <span class="n">var</span> <span class="n">tex</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Data/Texture/Scene1.png"</span><span class="p">);</span>
-            <span class="n">obj</span><span class="p">.</span><span class="n">Texture</span> <span class="p">=</span> <span class="n">tex</span><span class="p">;</span>
-
-            <span class="c1">// シーンにレイヤーを追加し、そのレイヤーにオブジェクトを追加する。
-</span>            <span class="n">var</span> <span class="n">layer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Layer2D</span><span class="p">();</span>
-            <span class="nf">AddLayer</span><span class="p">(</span><span class="n">layer</span><span class="p">);</span>
-            <span class="n">layer</span><span class="p">.</span><span class="nf">AddObject</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
-        <span class="p">}</span>
-
-        <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnUpdated</span><span class="p">()</span>
-        <span class="p">{</span>
-            <span class="c1">// マウスの左ボタンが押されるのを待つ。
-</span>            <span class="k">if</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Mouse</span><span class="p">.</span><span class="n">LeftButton</span><span class="p">.</span><span class="n">ButtonState</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">MouseButtonState</span><span class="p">.</span><span class="n">Push</span><span class="p">)</span>
-            <span class="p">{</span>
-                <span class="c1">// フェードアウト・インによるシーン遷移を開始する。
-</span>                <span class="c1">// 1秒かけてフェードアウトし、1.5秒かけてフェードイン。
-</span>                <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">ChangeSceneWithTransition</span><span class="p">(</span><span class="k">new</span> <span class="nf">Scene2</span><span class="p">(),</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TransitionFade</span><span class="p">(</span><span class="m">1.0f</span><span class="p">,</span> <span class="m">1.5f</span><span class="p">));</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"Transition_Fade"</span><span class="p">;</span> <span class="p">}</span>
     <span class="p">}</span>
 
     <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
@@ -231,7 +247,7 @@
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"Transition_Fade"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
 
         <span class="c1">// シーンのインスタンスを生成する。
-</span>        <span class="n">var</span> <span class="n">scene</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Scene1</span><span class="p">();</span>
+</span>        <span class="n">var</span> <span class="n">scene</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Transition_Fade_Scene1</span><span class="p">();</span>
 
         <span class="c1">// シーンをシーン1に設定する。
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">ChangeScene</span><span class="p">(</span><span class="n">scene</span><span class="p">);</span>
@@ -248,6 +264,29 @@
     <span class="p">}</span>
 <span class="p">}</span>
 
+
+</code></pre>
+
+<h3 class="java">Java</h3>
+<pre class="highlight java"><code>  <span class="kd">class</span> <span class="nc">Transition_Fade</span>    <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"フェードイン・フェードアウトを用いてシーン遷移をするサンプルです。"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"フェードイン・フェードアウト"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Initialize</span><span class="o">(</span><span class="s">"Transition_Fade"</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">EngineOption</span><span class="o">());</span>
+        <span class="n">Transition_Fade_Scene1</span> <span class="n">scene</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Transition_Fade_Scene1</span><span class="o">();</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">ChangeScene</span><span class="o">(</span><span class="n">scene</span><span class="o">);</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
+        <span class="o">{</span>
+            <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Update</span><span class="o">();</span>
+        <span class="o">}</span>
+
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Terminate</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 
 </code></pre>
 
@@ -372,6 +411,15 @@
         </p>
         <p>
           <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/DrawAdditionally2D.html">追加描画(2D)</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/Window.html">外部ウィンドウ</a>
         </p>
         <h3>
           リファレンス

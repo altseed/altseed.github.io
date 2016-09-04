@@ -85,7 +85,7 @@
 
 <h3>概要</h3>
 
-<p><a href="/Doc/Reference/PostEffect/PostEffect.html">ポストエフェクト</a>をユーザーが実装するために使用するマテリアルクラスです。
+<p><a href="/Doc/Reference/PostEffect/PostEffect.html">ポストエフェクト</a>やスプライトの描画をユーザーが実装するために使用するマテリアルクラスです。
 シェーダー2Dを元に生成され、シェーダー2Dに記述されたシェーダーを実行し、画像を加工します。</p>
 
 <p>マテリアル2Dクラスはシェーダーに記述された変数に値を設定する機能を持ちます。
@@ -305,22 +305,11 @@
 </code></pre>
 
 <h3 class="csharp">C#</h3>
-<pre class="highlight csharp"><code>
-<span class="c1">/// &lt;summary&gt;
-/// 一部の領域にモザイクをかけるポストエフェクトのサンプル。
+<pre class="highlight csharp"><code><span class="c1">/// &lt;summary&gt;
+/// 一部の領域にモザイクをかけるポストエフェクト
 /// &lt;/summary&gt;
-</span><span class="k">class</span> <span class="nc">CustomPostEffect_Mosaic</span>
+</span><span class="k">class</span> <span class="nc">CustomPostEffect_MosaicPostEffect</span> <span class="p">:</span> <span class="n">asd</span><span class="p">.</span><span class="n">PostEffect</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
-    <span class="p">{</span>
-        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
-    <span class="p">}</span>
-
-    <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
-    <span class="p">{</span>
-        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
-    <span class="p">}</span>
-
     <span class="c1">/// &lt;summary&gt;
 </span>    <span class="c1">/// DirectX向けシェーダー(HLSLで記述)
 </span>    <span class="c1">/// &lt;/summary&gt;
@@ -410,58 +399,58 @@
 
 <span class="s">";
 </span>
-    <span class="c1">/// &lt;summary&gt;
-</span>    <span class="c1">/// 一部の領域にモザイクをかけるポストエフェクト
-</span>    <span class="c1">/// &lt;/summary&gt;
-</span>    <span class="k">class</span> <span class="nc">MosaicPostEffect</span> <span class="p">:</span> <span class="n">asd</span><span class="p">.</span><span class="n">PostEffect</span>
+    <span class="n">asd</span><span class="p">.</span><span class="n">Shader2D</span> <span class="n">shader</span><span class="p">;</span>
+    <span class="n">asd</span><span class="p">.</span><span class="n">Material2D</span> <span class="n">material2d</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="nf">CustomPostEffect_MosaicPostEffect</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="n">asd</span><span class="p">.</span><span class="n">Shader2D</span> <span class="n">shader</span><span class="p">;</span>
-        <span class="n">asd</span><span class="p">.</span><span class="n">Material2D</span> <span class="n">material2d</span><span class="p">;</span>
-
-        <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
+        <span class="c1">// シェーダーをHLSL/GLSLから生成する。
+</span>        <span class="k">if</span><span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="n">GraphicsDeviceType</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">GraphicsDeviceType</span><span class="p">.</span><span class="n">DirectX11</span><span class="p">)</span>
         <span class="p">{</span>
-            <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+            <span class="n">shader</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateShader2D</span><span class="p">(</span>
+                <span class="n">shader2d_dx_ps</span>
+                <span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="n">GraphicsDeviceType</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">GraphicsDeviceType</span><span class="p">.</span><span class="n">OpenGL</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">shader</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateShader2D</span><span class="p">(</span>
+                <span class="n">shader2d_gl_ps</span>
+                <span class="p">);</span>
         <span class="p">}</span>
 
-        <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
-        <span class="p">{</span>
-            <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
-        <span class="p">}</span>
+        <span class="c1">// シェーダーからマテリアルを生成する。
+</span>        <span class="n">material2d</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateMaterial2D</span><span class="p">(</span><span class="n">shader</span><span class="p">);</span>
+    <span class="p">}</span>
 
-        <span class="k">public</span> <span class="nf">MosaicPostEffect</span><span class="p">()</span>
-        <span class="p">{</span>
-            <span class="c1">// シェーダーをHLSL/GLSLから生成する。
-</span>            <span class="k">if</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="n">GraphicsDeviceType</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">GraphicsDeviceType</span><span class="p">.</span><span class="n">DirectX11</span><span class="p">)</span>
-            <span class="p">{</span>
-                <span class="n">shader</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateShader2D</span><span class="p">(</span>
-                    <span class="n">shader2d_dx_ps</span>
-                    <span class="p">);</span>
-            <span class="p">}</span>
-            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="n">GraphicsDeviceType</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">GraphicsDeviceType</span><span class="p">.</span><span class="n">OpenGL</span><span class="p">)</span>
-            <span class="p">{</span>
-                <span class="n">shader</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateShader2D</span><span class="p">(</span>
-                    <span class="n">shader2d_gl_ps</span>
-                    <span class="p">);</span>
-            <span class="p">}</span>
+    <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnDraw</span><span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">RenderTexture2D</span> <span class="n">dst</span><span class="p">,</span> <span class="n">asd</span><span class="p">.</span><span class="n">RenderTexture2D</span> <span class="n">src</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// マテリアルを経由してシェーダー内のg_texture変数に画面の画像(src)を入力する。
+</span>        <span class="n">material2d</span><span class="p">.</span><span class="nf">SetTexture2D</span><span class="p">(</span><span class="s">"g_texture"</span><span class="p">,</span> <span class="n">src</span><span class="p">);</span>
 
-            <span class="c1">// シェーダーからマテリアルを生成する。
-</span>            <span class="n">material2d</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateMaterial2D</span><span class="p">(</span><span class="n">shader</span><span class="p">);</span>
-        <span class="p">}</span>
+        <span class="c1">// マテリアルを経由してシェーダー内のg_area変数にポストエフェクトを適用する範囲を入力する。
+</span>        <span class="n">material2d</span><span class="p">.</span><span class="nf">SetVector2DF</span><span class="p">(</span><span class="s">"g_windowSize"</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">WindowSize</span><span class="p">.</span><span class="n">X</span><span class="p">,</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">WindowSize</span><span class="p">.</span><span class="n">Y</span><span class="p">));</span>
 
-        <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnDraw</span><span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">RenderTexture2D</span> <span class="n">dst</span><span class="p">,</span> <span class="n">asd</span><span class="p">.</span><span class="n">RenderTexture2D</span> <span class="n">src</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="c1">// マテリアルを経由してシェーダー内のg_texture変数に画面の画像(src)を入力する。
-</span>            <span class="n">material2d</span><span class="p">.</span><span class="nf">SetTexture2D</span><span class="p">(</span><span class="s">"g_texture"</span><span class="p">,</span> <span class="n">src</span><span class="p">);</span>
+        <span class="c1">// マテリアルを経由してシェーダー内のg_area変数にポストエフェクトを適用する範囲を入力する。
+</span>        <span class="n">material2d</span><span class="p">.</span><span class="nf">SetVector4DF</span><span class="p">(</span><span class="s">"g_area"</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector4DF</span><span class="p">(</span><span class="m">50</span><span class="p">,</span> <span class="m">50</span><span class="p">,</span> <span class="m">200</span><span class="p">,</span> <span class="m">200</span><span class="p">));</span>
 
-            <span class="c1">// マテリアルを経由してシェーダー内のg_area変数にポストエフェクトを適用する範囲を入力する。
-</span>            <span class="n">material2d</span><span class="p">.</span><span class="nf">SetVector2DF</span><span class="p">(</span><span class="s">"g_windowSize"</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">WindowSize</span><span class="p">.</span><span class="n">X</span><span class="p">,</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">WindowSize</span><span class="p">.</span><span class="n">Y</span><span class="p">));</span>
+        <span class="c1">// 出力画像(dst)に指定したマテリアルで描画する。
+</span>        <span class="nf">DrawOnTexture2DWithMaterial</span><span class="p">(</span><span class="n">dst</span><span class="p">,</span> <span class="n">material2d</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-            <span class="c1">// マテリアルを経由してシェーダー内のg_area変数にポストエフェクトを適用する範囲を入力する。
-</span>            <span class="n">material2d</span><span class="p">.</span><span class="nf">SetVector4DF</span><span class="p">(</span><span class="s">"g_area"</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector4DF</span><span class="p">(</span><span class="m">50</span><span class="p">,</span><span class="m">50</span><span class="p">,</span> <span class="m">200</span><span class="p">,</span> <span class="m">200</span><span class="p">));</span>
+<span class="c1">/// &lt;summary&gt;
+/// 一部の領域にモザイクをかけるポストエフェクトのサンプル。
+/// &lt;/summary&gt;
+</span><span class="k">class</span> <span class="nc">CustomPostEffect_Mosaic</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"一部の領域にモザイクをかけるポストエフェクトのサンプルです。"</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
 
-            <span class="c1">// 出力画像(dst)に指定したマテリアルで描画する。
-</span>            <span class="nf">DrawOnTexture2DWithMaterial</span><span class="p">(</span><span class="n">dst</span><span class="p">,</span> <span class="n">material2d</span><span class="p">);</span>
-        <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"モザイク ポストエフェクト"</span><span class="p">;</span> <span class="p">}</span>
     <span class="p">}</span>
 
     <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
@@ -482,7 +471,7 @@
         <span class="n">layer</span><span class="p">.</span><span class="nf">AddObject</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
 
         <span class="c1">// レイヤーにポストエフェクトを適用する。
-</span>        <span class="n">layer</span><span class="p">.</span><span class="nf">AddPostEffect</span><span class="p">(</span><span class="k">new</span> <span class="nf">MosaicPostEffect</span><span class="p">());</span>
+</span>        <span class="n">layer</span><span class="p">.</span><span class="nf">AddPostEffect</span><span class="p">(</span><span class="k">new</span> <span class="nf">CustomPostEffect_MosaicPostEffect</span><span class="p">());</span>
 
         <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
         <span class="p">{</span>
@@ -617,6 +606,15 @@
         </p>
         <p>
           <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/DrawAdditionally2D.html">追加描画(2D)</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/Window.html">外部ウィンドウ</a>
         </p>
         <h3>
           リファレンス

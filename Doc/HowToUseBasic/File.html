@@ -135,57 +135,84 @@
 
 <h3 class="csharp">C#</h3>
 <pre class="highlight csharp"><code>
-<span class="k">namespace</span> <span class="nn">sample_cs</span>
+<span class="k">class</span> <span class="nc">File_RootDirectory</span>
 <span class="p">{</span>
-    <span class="k">class</span> <span class="nc">File_RootDirectory</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
     <span class="p">{</span>
-        <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
-        <span class="p">{</span>
-            <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"ファイルを探す際のルートディレクトリを設定する機能のサンプル。"</span><span class="p">;</span> <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
-        <span class="p">{</span>
-            <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"ルートディレクトリの設定"</span><span class="p">;</span> <span class="p">}</span>
-        <span class="p">}</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"ファイルを探す際のルートディレクトリを設定する機能のサンプル。"</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"ルートディレクトリの設定"</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">ClassName</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"File_RootDirectory"</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
 
-        <span class="c1">// AddRootDirectory を用いて、ファイルの起点となる場所を指定。
-</span>        <span class="c1">// その起点を基準とした相対パスで画像を指定し描画するサンプル。
-</span>        <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
+    <span class="c1">// AddRootDirectory を用いて、ファイルの起点となる場所を指定。
+</span>    <span class="c1">// その起点を基準とした相対パスで画像を指定し描画するサンプル。
+</span>    <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
     <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Altseedを初期化する。
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"File_RootDirectory"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
+
+        <span class="c1">// ルートディレクトリを追加する。
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">File</span><span class="p">.</span><span class="nf">AddRootDirectory</span><span class="p">(</span><span class="s">"Data/Texture"</span><span class="p">);</span>
+
+        <span class="c1">// オブジェクトを生成する。
+</span>        <span class="n">var</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextureObject2D</span><span class="p">();</span>
+
+        <span class="c1">// 画像を読み込む。
+</span>        <span class="n">var</span> <span class="n">texture</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Picture1.png"</span><span class="p">);</span>
+
+        <span class="c1">// オブジェクトに画像を設定する。
+</span>        <span class="n">obj</span><span class="p">.</span><span class="n">Texture</span> <span class="p">=</span> <span class="n">texture</span><span class="p">;</span>
+
+        <span class="c1">// オブジェクトの位置を設定する。
+</span>        <span class="n">obj</span><span class="p">.</span><span class="n">Position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="m">100</span><span class="p">);</span>
+
+        <span class="c1">// エンジンにオブジェクトを追加する。
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">AddObject2D</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
+
+        <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
+</span>        <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
         <span class="p">{</span>
-            <span class="c1">// Altseedを初期化する。
-</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"File_RootDirectory"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
-
-            <span class="c1">// ルートディレクトリを追加する。
-</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">File</span><span class="p">.</span><span class="nf">AddRootDirectory</span><span class="p">(</span><span class="s">"Data/Texture"</span><span class="p">);</span>
-
-            <span class="c1">// オブジェクトを生成する。
-</span>            <span class="n">var</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextureObject2D</span><span class="p">();</span>
-
-            <span class="c1">// 画像を読み込む。
-</span>            <span class="n">var</span> <span class="n">texture</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Picture1.png"</span><span class="p">);</span>
-
-            <span class="c1">// オブジェクトに画像を設定する。
-</span>            <span class="n">obj</span><span class="p">.</span><span class="n">Texture</span> <span class="p">=</span> <span class="n">texture</span><span class="p">;</span>
-
-            <span class="c1">// オブジェクトの位置を設定する。
-</span>            <span class="n">obj</span><span class="p">.</span><span class="n">Position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="m">100</span><span class="p">);</span>
-
-            <span class="c1">// エンジンにオブジェクトを追加する。
-</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">AddObject2D</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
-
-            <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
-</span>            <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
-            <span class="p">{</span>
-                <span class="c1">// Altseedを更新する。
-</span>                <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
-            <span class="p">}</span>
-
-            <span class="c1">//Altseedの終了処理をする。
-</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
+            <span class="c1">// Altseedを更新する。
+</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
         <span class="p">}</span>
+
+        <span class="c1">//Altseedの終了処理をする。
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
+</code></pre>
+
+<h3 class="java">Java</h3>
+<pre class="highlight java"><code>  <span class="kd">class</span> <span class="nc">File_RootDirectory</span>    <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"ファイルを探す際のルートディレクトリを設定する機能のサンプル。"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"ルートディレクトリの設定"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Initialize</span><span class="o">(</span><span class="s">"File_RootDirectory"</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">EngineOption</span><span class="o">());</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getFile</span><span class="o">().</span><span class="na">AddRootDirectory</span><span class="o">(</span><span class="s">"Data/Texture"</span><span class="o">);</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">TextureObject2D</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">TextureObject2D</span><span class="o">();</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Texture2D</span> <span class="n">texture</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getGraphics</span><span class="o">().</span><span class="na">CreateTexture2D</span><span class="o">(</span><span class="s">"Picture1.png"</span><span class="o">);</span>
+        <span class="n">obj</span><span class="o">.</span><span class="na">setTexture</span><span class="o">(</span><span class="n">texture</span><span class="o">);</span>
+        <span class="n">obj</span><span class="o">.</span><span class="na">setPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">100</span><span class="o">,</span> <span class="mi">100</span><span class="o">));</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">obj</span><span class="o">);</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
+        <span class="o">{</span>
+            <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Update</span><span class="o">();</span>
+        <span class="o">}</span>
+
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Terminate</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 
 </code></pre>
 
@@ -240,56 +267,83 @@
 
 <h3 class="csharp">C#</h3>
 <pre class="highlight csharp"><code>
-<span class="k">namespace</span> <span class="nn">sample_cs</span>
+<span class="k">class</span> <span class="nc">File_PackFile</span>
 <span class="p">{</span>
-    <span class="k">class</span> <span class="nc">File_PackFile</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
     <span class="p">{</span>
-        <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
-        <span class="p">{</span>
-            <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"Altseedのパッケージ機能でパッケージにまとめたファイルにアクセスするサンプル。"</span><span class="p">;</span> <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
-        <span class="p">{</span>
-            <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"パッケージからのファイル読み込み"</span><span class="p">;</span> <span class="p">}</span>
-        <span class="p">}</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"Altseedのパッケージ機能でパッケージにまとめたファイルにアクセスするサンプル。"</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"パッケージからのファイル読み込み"</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">ClassName</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"File_PackFile"</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
 
-        <span class="c1">// PackFileを用いて、パッケージから画像を表示するサンプル。
-</span>        <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
+    <span class="c1">// PackFileを用いて、パッケージから画像を表示するサンプル。
+</span>    <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
     <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Altseedを初期化する。
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"File_PackFile"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
+
+        <span class="c1">// パッケージをルートディレクトリに追加する。
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">File</span><span class="p">.</span><span class="nf">AddRootDirectory</span><span class="p">(</span><span class="s">"Data.pack"</span><span class="p">);</span>
+
+        <span class="c1">// オブジェクトを生成する。
+</span>        <span class="n">var</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextureObject2D</span><span class="p">();</span>
+
+        <span class="c1">// パッケージ内の画像を読み込む。
+</span>        <span class="n">var</span> <span class="n">texture</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Texture/Picture1.png"</span><span class="p">);</span>
+
+        <span class="c1">// オブジェクトに画像を設定する。
+</span>        <span class="n">obj</span><span class="p">.</span><span class="n">Texture</span> <span class="p">=</span> <span class="n">texture</span><span class="p">;</span>
+
+        <span class="c1">// オブジェクトの位置を設定する。
+</span>        <span class="n">obj</span><span class="p">.</span><span class="n">Position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="m">100</span><span class="p">);</span>
+
+        <span class="c1">// エンジンにオブジェクトを追加する。
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">AddObject2D</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
+
+        <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
+</span>        <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
         <span class="p">{</span>
-            <span class="c1">// Altseedを初期化する。
-</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"File_PackFile"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
-
-            <span class="c1">// パッケージをルートディレクトリに追加する。
-</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">File</span><span class="p">.</span><span class="nf">AddRootDirectory</span><span class="p">(</span><span class="s">"Data.pack"</span><span class="p">);</span>
-
-            <span class="c1">// オブジェクトを生成する。
-</span>            <span class="n">var</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextureObject2D</span><span class="p">();</span>
-
-            <span class="c1">// パッケージ内の画像を読み込む。
-</span>            <span class="n">var</span> <span class="n">texture</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Texture/Picture1.png"</span><span class="p">);</span>
-
-            <span class="c1">// オブジェクトに画像を設定する。
-</span>            <span class="n">obj</span><span class="p">.</span><span class="n">Texture</span> <span class="p">=</span> <span class="n">texture</span><span class="p">;</span>
-
-            <span class="c1">// オブジェクトの位置を設定する。
-</span>            <span class="n">obj</span><span class="p">.</span><span class="n">Position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="m">100</span><span class="p">);</span>
-
-            <span class="c1">// エンジンにオブジェクトを追加する。
-</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">AddObject2D</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
-
-            <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
-</span>            <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
-            <span class="p">{</span>
-                <span class="c1">// Altseedを更新する。
-</span>                <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
-            <span class="p">}</span>
-
-            <span class="c1">//Altseedの終了処理をする。
-</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
+            <span class="c1">// Altseedを更新する。
+</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
         <span class="p">}</span>
+
+        <span class="c1">//Altseedの終了処理をする。
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
+</code></pre>
+
+<h3 class="java">Java</h3>
+<pre class="highlight java"><code>  <span class="kd">class</span> <span class="nc">File_PackFile</span>    <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"Altseedのパッケージ機能でパッケージにまとめたファイルにアクセスするサンプル。"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"パッケージからのファイル読み込み"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Initialize</span><span class="o">(</span><span class="s">"File_PackFile"</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">EngineOption</span><span class="o">());</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getFile</span><span class="o">().</span><span class="na">AddRootDirectory</span><span class="o">(</span><span class="s">"Data.pack"</span><span class="o">);</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">TextureObject2D</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">TextureObject2D</span><span class="o">();</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Texture2D</span> <span class="n">texture</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getGraphics</span><span class="o">().</span><span class="na">CreateTexture2D</span><span class="o">(</span><span class="s">"Texture/Picture1.png"</span><span class="o">);</span>
+        <span class="n">obj</span><span class="o">.</span><span class="na">setTexture</span><span class="o">(</span><span class="n">texture</span><span class="o">);</span>
+        <span class="n">obj</span><span class="o">.</span><span class="na">setPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">100</span><span class="o">,</span> <span class="mi">100</span><span class="o">));</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">obj</span><span class="o">);</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
+        <span class="o">{</span>
+            <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Update</span><span class="o">();</span>
+        <span class="o">}</span>
+
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Terminate</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 
 </code></pre>
 
@@ -350,65 +404,96 @@
 <h3 class="csharp">C#</h3>
 <pre class="highlight csharp"><code><span class="k">using</span> <span class="nn">System.Text</span><span class="p">;</span>
 
-<span class="k">namespace</span> <span class="nn">sample_cs</span>
+<span class="k">class</span> <span class="nc">File_StaticFile</span>
 <span class="p">{</span>
-    <span class="k">class</span> <span class="nc">File_StaticFile</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
     <span class="p">{</span>
-        <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
-        <span class="p">{</span>
-            <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
-        <span class="p">{</span>
-            <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
-        <span class="p">}</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">ClassName</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"File_StaticFile"</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
 
-        <span class="c1">// StaticFile を用いて、ファイルからテキストを読み込むサンプル。
-</span>        <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
+    <span class="c1">// StaticFile を用いて、ファイルからテキストを読み込むサンプル。
+</span>    <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
     <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Altseedを初期化する。
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"File_StaticFile"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
+
+        <span class="c1">// フォントを生成する。
+</span>        <span class="n">var</span> <span class="n">font</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateFont</span><span class="p">(</span><span class="s">"Data/Font/Font1.aff"</span><span class="p">);</span>
+
+        <span class="c1">// オブジェクトを生成する。
+</span>        <span class="n">var</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextObject2D</span><span class="p">();</span>
+
+        <span class="c1">// 描画に使うフォントを設定する
+</span>        <span class="n">obj</span><span class="p">.</span><span class="n">Font</span> <span class="p">=</span> <span class="n">font</span><span class="p">;</span>
+
+        <span class="c1">// 描画位置を指定する
+</span>        <span class="n">obj</span><span class="p">.</span><span class="n">Position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="m">100</span><span class="p">);</span>
+
+        <span class="c1">// ファイルオブジェクト作成
+</span>        <span class="n">var</span> <span class="n">staticFile</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">File</span><span class="p">.</span><span class="nf">CreateStaticFile</span><span class="p">(</span><span class="s">"Data/Text/HelloWorld.txt"</span><span class="p">);</span>
+
+        <span class="c1">// 描画したいテキストのバイト列をファイルから読み取る
+</span>        <span class="kt">byte</span><span class="p">[]</span> <span class="n">textBytes</span> <span class="p">=</span> <span class="n">staticFile</span><span class="p">.</span><span class="n">Buffer</span><span class="p">;</span>
+
+        <span class="c1">// UTF-8でバイト列をデコードする
+</span>        <span class="kt">char</span><span class="p">[]</span> <span class="n">text</span> <span class="p">=</span> <span class="n">Encoding</span><span class="p">.</span><span class="n">UTF8</span><span class="p">.</span><span class="nf">GetChars</span><span class="p">(</span><span class="n">textBytes</span><span class="p">);</span>
+
+        <span class="c1">// 描画する文字列の指定
+</span>        <span class="n">obj</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="kt">string</span><span class="p">.</span><span class="nf">Concat</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
+
+        <span class="c1">// オブジェクトのインスタンスをエンジンへ追加する。
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">AddObject2D</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
+
+        <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
+</span>        <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
         <span class="p">{</span>
-            <span class="c1">// Altseedを初期化する。
-</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"File_StaticFile"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
-
-            <span class="c1">// フォントを生成する。
-</span>            <span class="n">var</span> <span class="n">font</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateFont</span><span class="p">(</span><span class="s">"Data/Font/Font1.aff"</span><span class="p">);</span>
-
-            <span class="c1">// オブジェクトを生成する。
-</span>            <span class="n">var</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextObject2D</span><span class="p">();</span>
-
-            <span class="c1">// 描画に使うフォントを設定する
-</span>            <span class="n">obj</span><span class="p">.</span><span class="n">Font</span> <span class="p">=</span> <span class="n">font</span><span class="p">;</span>
-
-            <span class="c1">// 描画位置を指定する
-</span>            <span class="n">obj</span><span class="p">.</span><span class="n">Position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="m">100</span><span class="p">);</span>
-
-            <span class="c1">// ファイルオブジェクト作成
-</span>            <span class="n">var</span> <span class="n">staticFile</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">File</span><span class="p">.</span><span class="nf">CreateStaticFile</span><span class="p">(</span><span class="s">"Data/Text/HelloWorld.txt"</span><span class="p">);</span>
-
-            <span class="c1">// 描画したいテキストのバイト列をファイルから読み取る
-</span>            <span class="kt">byte</span><span class="p">[]</span> <span class="n">textBytes</span> <span class="p">=</span> <span class="n">staticFile</span><span class="p">.</span><span class="n">Buffer</span><span class="p">;</span>
-
-            <span class="c1">// UTF-8でバイト列をデコードする
-</span>            <span class="kt">char</span><span class="p">[]</span> <span class="n">text</span> <span class="p">=</span> <span class="n">Encoding</span><span class="p">.</span><span class="n">UTF8</span><span class="p">.</span><span class="nf">GetChars</span><span class="p">(</span><span class="n">textBytes</span><span class="p">);</span>
-
-            <span class="c1">// 描画する文字列の指定
-</span>            <span class="n">obj</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="kt">string</span><span class="p">.</span><span class="nf">Concat</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
-
-            <span class="c1">// オブジェクトのインスタンスをエンジンへ追加する。
-</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">AddObject2D</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
-
-            <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
-</span>            <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
-            <span class="p">{</span>
-                <span class="c1">// Altseedを更新する。
-</span>                <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
-            <span class="p">}</span>
-
-            <span class="c1">// Altseedを終了する。
-</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
+            <span class="c1">// Altseedを更新する。
+</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
         <span class="p">}</span>
+
+        <span class="c1">// Altseedを終了する。
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
+
+</code></pre>
+
+<h3 class="java">Java</h3>
+<pre class="highlight java"><code>  <span class="kd">class</span> <span class="nc">File_StaticFile</span>    <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">""</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">""</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Initialize</span><span class="o">(</span><span class="s">"File_StaticFile"</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">EngineOption</span><span class="o">());</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Font</span> <span class="n">font</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getGraphics</span><span class="o">().</span><span class="na">CreateFont</span><span class="o">(</span><span class="s">"Data/Font/Font1.aff"</span><span class="o">);</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">TextObject2D</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">TextObject2D</span><span class="o">();</span>
+        <span class="n">obj</span><span class="o">.</span><span class="na">setFont</span><span class="o">(</span><span class="n">font</span><span class="o">);</span>
+        <span class="n">obj</span><span class="o">.</span><span class="na">setPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">100</span><span class="o">,</span> <span class="mi">100</span><span class="o">));</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">StaticFile</span> <span class="n">staticFile</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getFile</span><span class="o">().</span><span class="na">CreateStaticFile</span><span class="o">(</span><span class="s">"Data/Text/HelloWorld.txt"</span><span class="o">);</span>
+        <span class="kt">short</span><span class="o">[]</span> <span class="n">textBytes</span> <span class="o">=</span> <span class="n">staticFile</span><span class="o">.</span><span class="na">getBuffer</span><span class="o">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">Char</span><span class="o">[]</span> <span class="n">text</span> <span class="o">=</span> <span class="n">Encoding</span><span class="o">.</span><span class="na">getUTF8</span><span class="o">().</span><span class="na">GetChars</span><span class="o">(</span><span class="n">textBytes</span><span class="o">);</span>
+        <span class="n">obj</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span><span class="o">.</span><span class="na">Concat</span><span class="o">(</span><span class="n">text</span><span class="o">));</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">obj</span><span class="o">);</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
+        <span class="o">{</span>
+            <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Update</span><span class="o">();</span>
+        <span class="o">}</span>
+
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Terminate</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 
 </code></pre>
 
@@ -475,65 +560,97 @@
 <pre class="highlight csharp"><code><span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
 <span class="k">using</span> <span class="nn">System.Text</span><span class="p">;</span>
 
-<span class="k">namespace</span> <span class="nn">sample_cs</span>
+<span class="k">class</span> <span class="nc">File_StreamFile</span>
 <span class="p">{</span>
-    <span class="k">class</span> <span class="nc">File_StreamFile</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
     <span class="p">{</span>
-        <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
-        <span class="p">{</span>
-            <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
-        <span class="p">{</span>
-            <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
-        <span class="p">}</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">ClassName</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"File_StreamFile"</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
 
-        <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
+    <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
     <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Altseedを初期化する。
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"File_StreamFile"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
+
+        <span class="c1">// フォントを生成する。
+</span>        <span class="n">var</span> <span class="n">font</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateFont</span><span class="p">(</span><span class="s">"Data/Font/Font1.aff"</span><span class="p">);</span>
+
+        <span class="c1">// オブジェクトを生成する。
+</span>        <span class="n">var</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextObject2D</span><span class="p">();</span>
+
+        <span class="c1">// 描画に使うフォントを設定する
+</span>        <span class="n">obj</span><span class="p">.</span><span class="n">Font</span> <span class="p">=</span> <span class="n">font</span><span class="p">;</span>
+
+        <span class="c1">// 描画位置を指定する
+</span>        <span class="n">obj</span><span class="p">.</span><span class="n">Position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="m">100</span><span class="p">);</span>
+
+        <span class="c1">// ファイルオブジェクト作成
+</span>        <span class="n">var</span> <span class="n">staticFile</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">File</span><span class="p">.</span><span class="nf">CreateStreamFile</span><span class="p">(</span><span class="s">"Data/Text/HelloWorld.txt"</span><span class="p">);</span>
+
+        <span class="c1">// ファイルの内容をバッファへ格納
+</span>        <span class="n">var</span> <span class="n">buffer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">byte</span><span class="p">&gt;();</span>
+        <span class="n">staticFile</span><span class="p">.</span><span class="nf">Read</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="m">32</span><span class="p">);</span>
+
+        <span class="c1">// UTF-8でバイト列をデコードする
+</span>        <span class="kt">char</span><span class="p">[]</span> <span class="n">text</span> <span class="p">=</span> <span class="n">Encoding</span><span class="p">.</span><span class="n">UTF8</span><span class="p">.</span><span class="nf">GetChars</span><span class="p">(</span><span class="n">buffer</span><span class="p">.</span><span class="nf">ToArray</span><span class="p">());</span>
+
+        <span class="c1">// 描画する文字列の指定
+</span>        <span class="n">obj</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="kt">string</span><span class="p">.</span><span class="nf">Concat</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
+
+        <span class="c1">// オブジェクトのインスタンスをエンジンへ追加する。
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">AddObject2D</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
+
+        <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
+</span>        <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
         <span class="p">{</span>
-            <span class="c1">// Altseedを初期化する。
-</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"File_StreamFile"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
-
-            <span class="c1">// フォントを生成する。
-</span>            <span class="n">var</span> <span class="n">font</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateFont</span><span class="p">(</span><span class="s">"Data/Font/Font1.aff"</span><span class="p">);</span>
-
-            <span class="c1">// オブジェクトを生成する。
-</span>            <span class="n">var</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextObject2D</span><span class="p">();</span>
-
-            <span class="c1">// 描画に使うフォントを設定する
-</span>            <span class="n">obj</span><span class="p">.</span><span class="n">Font</span> <span class="p">=</span> <span class="n">font</span><span class="p">;</span>
-
-            <span class="c1">// 描画位置を指定する
-</span>            <span class="n">obj</span><span class="p">.</span><span class="n">Position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="m">100</span><span class="p">);</span>
-
-            <span class="c1">// ファイルオブジェクト作成
-</span>            <span class="n">var</span> <span class="n">staticFile</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">File</span><span class="p">.</span><span class="nf">CreateStreamFile</span><span class="p">(</span><span class="s">"Data/Text/HelloWorld.txt"</span><span class="p">);</span>
-
-            <span class="c1">// ファイルの内容をバッファへ格納
-</span>            <span class="n">var</span> <span class="n">buffer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">byte</span><span class="p">&gt;();</span>
-            <span class="n">staticFile</span><span class="p">.</span><span class="nf">Read</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="m">32</span><span class="p">);</span>
-
-            <span class="c1">// UTF-8でバイト列をデコードする
-</span>            <span class="kt">char</span><span class="p">[]</span> <span class="n">text</span> <span class="p">=</span> <span class="n">Encoding</span><span class="p">.</span><span class="n">UTF8</span><span class="p">.</span><span class="nf">GetChars</span><span class="p">(</span><span class="n">buffer</span><span class="p">.</span><span class="nf">ToArray</span><span class="p">());</span>
-
-            <span class="c1">// 描画する文字列の指定
-</span>            <span class="n">obj</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="kt">string</span><span class="p">.</span><span class="nf">Concat</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
-
-            <span class="c1">// オブジェクトのインスタンスをエンジンへ追加する。
-</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">AddObject2D</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
-
-            <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
-</span>            <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
-            <span class="p">{</span>
-                <span class="c1">// Altseedを更新する。
-</span>                <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
-            <span class="p">}</span>
-
-            <span class="c1">// Altseedを終了する。
-</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
+            <span class="c1">// Altseedを更新する。
+</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
         <span class="p">}</span>
+
+        <span class="c1">// Altseedを終了する。
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
+
+</code></pre>
+
+<h3 class="java">Java</h3>
+<pre class="highlight java"><code>  <span class="kd">class</span> <span class="nc">File_StreamFile</span>    <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">""</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">""</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Initialize</span><span class="o">(</span><span class="s">"File_StreamFile"</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">EngineOption</span><span class="o">());</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Font</span> <span class="n">font</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getGraphics</span><span class="o">().</span><span class="na">CreateFont</span><span class="o">(</span><span class="s">"Data/Font/Font1.aff"</span><span class="o">);</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">TextObject2D</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">TextObject2D</span><span class="o">();</span>
+        <span class="n">obj</span><span class="o">.</span><span class="na">setFont</span><span class="o">(</span><span class="n">font</span><span class="o">);</span>
+        <span class="n">obj</span><span class="o">.</span><span class="na">setPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">100</span><span class="o">,</span> <span class="mi">100</span><span class="o">));</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">StreamFile</span> <span class="n">staticFile</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getFile</span><span class="o">().</span><span class="na">CreateStreamFile</span><span class="o">(</span><span class="s">"Data/Text/HelloWorld.txt"</span><span class="o">);</span>
+        <span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">ArrayList</span><span class="o">&lt;</span><span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">Integer</span><span class="o">&gt;</span> <span class="n">buffer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">ArrayList</span><span class="o">&lt;</span><span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">Integer</span><span class="o">&gt;();</span>
+        <span class="n">staticFile</span><span class="o">.</span><span class="na">Read</span><span class="o">(</span><span class="n">buffer</span><span class="o">,</span> <span class="mi">32</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">Char</span><span class="o">[]</span> <span class="n">text</span> <span class="o">=</span> <span class="n">Encoding</span><span class="o">.</span><span class="na">getUTF8</span><span class="o">().</span><span class="na">GetChars</span><span class="o">(</span><span class="n">buffer</span><span class="o">.</span><span class="na">ToArray</span><span class="o">());</span>
+        <span class="n">obj</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span><span class="o">.</span><span class="na">Concat</span><span class="o">(</span><span class="n">text</span><span class="o">));</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">obj</span><span class="o">);</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
+        <span class="o">{</span>
+            <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Update</span><span class="o">();</span>
+        <span class="o">}</span>
+
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Terminate</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 
 </code></pre>
 
@@ -658,6 +775,15 @@
         </p>
         <p>
           <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/DrawAdditionally2D.html">追加描画(2D)</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/Window.html">外部ウィンドウ</a>
         </p>
         <h3>
           リファレンス

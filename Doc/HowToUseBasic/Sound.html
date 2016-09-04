@@ -122,50 +122,78 @@
 
 <h3 class="csharp">C#</h3>
 <pre class="highlight csharp"><code>
-<span class="k">namespace</span> <span class="nn">sample_cs</span>
+<span class="k">class</span> <span class="nc">Sound_SE</span>
 <span class="p">{</span>
-    <span class="k">class</span> <span class="nc">Sound_SE</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
     <span class="p">{</span>
-        <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
-        <span class="p">{</span>
-            <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
-        <span class="p">{</span>
-            <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
-        <span class="p">}</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"効果音(Sound Effect)を再生するサンプルです。"</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"効果音の再生"</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">ClassName</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"Sound_SE"</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
 
-        <span class="c1">// Soundを用いて音を鳴らすサンプル。
-</span>        <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
+    <span class="c1">// Soundを用いて音を鳴らすサンプル。
+</span>    <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
     <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Altseedを初期化する。
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"Sound_SE"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
+
+        <span class="c1">// 音ファイルを読み込む。SEの場合、第２引数を true に設定することで、この場でファイルを解凍することが推奨されている。
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">SoundSource</span> <span class="n">se1</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Sound</span><span class="p">.</span><span class="nf">CreateSoundSource</span><span class="p">(</span><span class="s">"Data/Sound/se1.wav"</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
+
+        <span class="c1">// 音を再生する。
+</span>        <span class="kt">int</span> <span class="n">id_se1</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Sound</span><span class="p">.</span><span class="nf">Play</span><span class="p">(</span><span class="n">se1</span><span class="p">);</span>
+
+        <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
+</span>        <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
         <span class="p">{</span>
-            <span class="c1">// Altseedを初期化する。
-</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"Sound_SE"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
+            <span class="c1">// Altseedを更新する。
+</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
 
-            <span class="c1">// 音ファイルを読み込む。SEの場合、第２引数を true に設定することで、この場でファイルを解凍することが推奨されている。
-</span>            <span class="n">asd</span><span class="p">.</span><span class="n">SoundSource</span> <span class="n">se1</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Sound</span><span class="p">.</span><span class="nf">CreateSoundSource</span><span class="p">(</span><span class="s">"Data/Sound/se1.wav"</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
-
-            <span class="c1">// 音を再生する。
-</span>            <span class="kt">int</span> <span class="n">id_se1</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Sound</span><span class="p">.</span><span class="nf">Play</span><span class="p">(</span><span class="n">se1</span><span class="p">);</span>
-
-            <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
-</span>            <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
+            <span class="c1">// 音が再生終了してるか調べる。
+</span>            <span class="k">if</span> <span class="p">(!</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Sound</span><span class="p">.</span><span class="nf">GetIsPlaying</span><span class="p">(</span><span class="n">id_se1</span><span class="p">))</span>
             <span class="p">{</span>
-                <span class="c1">// Altseedを更新する。
-</span>                <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
-
-                <span class="c1">// 音が再生終了してるか調べる。
-</span>                <span class="k">if</span> <span class="p">(!</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Sound</span><span class="p">.</span><span class="nf">GetIsPlaying</span><span class="p">(</span><span class="n">id_se1</span><span class="p">))</span>
-                <span class="p">{</span>
-                    <span class="k">break</span><span class="p">;</span>
-                <span class="p">}</span>
+                <span class="k">break</span><span class="p">;</span>
             <span class="p">}</span>
-
-            <span class="c1">// Altseedの終了処理をする。
-</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
         <span class="p">}</span>
+
+        <span class="c1">// Altseedの終了処理をする。
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
+</code></pre>
+
+<h3 class="java">Java</h3>
+<pre class="highlight java"><code>  <span class="kd">class</span> <span class="nc">Sound_SE</span>    <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"効果音(Sound Effect)を再生するサンプルです。"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"効果音の再生"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Initialize</span><span class="o">(</span><span class="s">"Sound_SE"</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">EngineOption</span><span class="o">());</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">SoundSource</span> <span class="n">se1</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getSound</span><span class="o">().</span><span class="na">CreateSoundSource</span><span class="o">(</span><span class="s">"Data/Sound/se1.wav"</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
+        <span class="kt">int</span> <span class="n">id_se1</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getSound</span><span class="o">().</span><span class="na">Play</span><span class="o">(</span><span class="n">se1</span><span class="o">);</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
+        <span class="o">{</span>
+            <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Update</span><span class="o">();</span>
+            <span class="k">if</span><span class="o">(!</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getSound</span><span class="o">().</span><span class="na">GetIsPlaying</span><span class="o">(</span><span class="n">id_se1</span><span class="o">))</span>
+            <span class="o">{</span>
+                <span class="k">break</span><span class="o">;</span>
+            <span class="o">}</span>
+
+        <span class="o">}</span>
+
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Terminate</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 
 </code></pre>
 
@@ -207,50 +235,79 @@
 </code></pre>
 
 <h3 class="csharp">C#</h3>
-<pre class="highlight csharp"><code><span class="k">namespace</span> <span class="nn">sample_cs</span>
+<pre class="highlight csharp"><code>
+<span class="k">class</span> <span class="nc">Sound_BGM</span>
 <span class="p">{</span>
-    <span class="k">class</span> <span class="nc">Sound_BGM</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
     <span class="p">{</span>
-        <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
-        <span class="p">{</span>
-            <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
-        <span class="p">{</span>
-            <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
-        <span class="p">}</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"BGMを再生するサンプルです。"</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"BGMの再生"</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">ClassName</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"Sound_BGM"</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
 
-        <span class="c1">// Soundを用いてBGMを鳴らすサンプル。
-</span>        <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
+    <span class="c1">// Soundを用いてBGMを鳴らすサンプル。
+</span>    <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
     <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Altseedを初期化する。
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"Sound_BGM"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
+
+        <span class="c1">// 音声ファイルを読み込む。BGMの場合、第２引数を false に設定することで、再生しながらファイルを解凍することが推奨されている。
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">SoundSource</span> <span class="n">bgm1</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Sound</span><span class="p">.</span><span class="nf">CreateSoundSource</span><span class="p">(</span><span class="s">"Data/Sound/bgm1.ogg"</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
+
+        <span class="c1">// 音声を再生する。
+</span>        <span class="kt">int</span> <span class="n">id_bgm1</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Sound</span><span class="p">.</span><span class="nf">Play</span><span class="p">(</span><span class="n">bgm1</span><span class="p">);</span>
+
+        <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
+</span>        <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
         <span class="p">{</span>
-            <span class="c1">// Altseedを初期化する。
-</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"Sound_BGM"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
+            <span class="c1">// Altseedを更新する。
+</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
 
-            <span class="c1">// 音声ファイルを読み込む。BGMの場合、第２引数を false に設定することで、再生しながらファイルを解凍することが推奨されている。
-</span>            <span class="n">asd</span><span class="p">.</span><span class="n">SoundSource</span> <span class="n">bgm1</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Sound</span><span class="p">.</span><span class="nf">CreateSoundSource</span><span class="p">(</span><span class="s">"Data/Sound/bgm1.ogg"</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
-
-            <span class="c1">// 音声を再生する。
-</span>            <span class="kt">int</span> <span class="n">id_bgm1</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Sound</span><span class="p">.</span><span class="nf">Play</span><span class="p">(</span><span class="n">bgm1</span><span class="p">);</span>
-
-            <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
-</span>            <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
+            <span class="c1">// 音声が再生終了してるか調べる。
+</span>            <span class="k">if</span> <span class="p">(!</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Sound</span><span class="p">.</span><span class="nf">GetIsPlaying</span><span class="p">(</span><span class="n">id_bgm1</span><span class="p">))</span>
             <span class="p">{</span>
-                <span class="c1">// Altseedを更新する。
-</span>                <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
-
-                <span class="c1">// 音声が再生終了してるか調べる。
-</span>                <span class="k">if</span> <span class="p">(!</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Sound</span><span class="p">.</span><span class="nf">GetIsPlaying</span><span class="p">(</span><span class="n">id_bgm1</span><span class="p">))</span>
-                <span class="p">{</span>
-                    <span class="k">break</span><span class="p">;</span>
-                <span class="p">}</span>
+                <span class="k">break</span><span class="p">;</span>
             <span class="p">}</span>
-
-            <span class="c1">// Altseedの終了処理をする。
-</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
         <span class="p">}</span>
+
+        <span class="c1">// Altseedの終了処理をする。
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
+</code></pre>
+
+<h3 class="java">Java</h3>
+<pre class="highlight java"><code>  <span class="kd">class</span> <span class="nc">Sound_BGM</span>    <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"BGMを再生するサンプルです。"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"BGMの再生"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Initialize</span><span class="o">(</span><span class="s">"Sound_BGM"</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">EngineOption</span><span class="o">());</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">SoundSource</span> <span class="n">bgm1</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getSound</span><span class="o">().</span><span class="na">CreateSoundSource</span><span class="o">(</span><span class="s">"Data/Sound/bgm1.ogg"</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span>
+        <span class="kt">int</span> <span class="n">id_bgm1</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getSound</span><span class="o">().</span><span class="na">Play</span><span class="o">(</span><span class="n">bgm1</span><span class="o">);</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
+        <span class="o">{</span>
+            <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Update</span><span class="o">();</span>
+            <span class="k">if</span><span class="o">(!</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getSound</span><span class="o">().</span><span class="na">GetIsPlaying</span><span class="o">(</span><span class="n">id_bgm1</span><span class="o">))</span>
+            <span class="o">{</span>
+                <span class="k">break</span><span class="o">;</span>
+            <span class="o">}</span>
+
+        <span class="o">}</span>
+
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Terminate</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 
 </code></pre>
 
@@ -293,51 +350,78 @@
 </code></pre>
 
 <h3 class="csharp">C#</h3>
-<pre class="highlight csharp"><code><span class="k">namespace</span> <span class="nn">sample_cs</span>
+<pre class="highlight csharp"><code>
+<span class="k">class</span> <span class="nc">Sound_Loop</span>
 <span class="p">{</span>
-    <span class="k">class</span> <span class="nc">Sound_Loop</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
     <span class="p">{</span>
-        <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
-        <span class="p">{</span>
-            <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
-        <span class="p">{</span>
-            <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
-        <span class="p">}</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"BGMをループ再生するサンプルです。"</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"BGMのループ再生"</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">ClassName</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"Sound_Loop"</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
 
-        <span class="c1">// BGMをループ再生するサンプル。
-</span>        <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
+    <span class="c1">// BGMをループ再生するサンプル。
+</span>    <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
     <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Altseedを初期化する。
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"Sound_Loop"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
+
+        <span class="c1">// 音声ファイルを読み込む。BGMの場合、第２引数を false に設定することで、再生しながらファイルを解凍することが推奨されている。
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">SoundSource</span> <span class="n">bgm1</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Sound</span><span class="p">.</span><span class="nf">CreateSoundSource</span><span class="p">(</span><span class="s">"Data/Sound/bgm1.ogg"</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
+
+        <span class="c1">// 音声のループを有効にする。
+</span>        <span class="n">bgm1</span><span class="p">.</span><span class="n">IsLoopingMode</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+
+        <span class="c1">// 音声のループ始端を1秒に、ループ終端を6秒に設定する。
+</span>        <span class="n">bgm1</span><span class="p">.</span><span class="n">LoopStartingPoint</span> <span class="p">=</span> <span class="m">1.0f</span><span class="p">;</span>
+        <span class="n">bgm1</span><span class="p">.</span><span class="n">LoopEndPoint</span> <span class="p">=</span> <span class="m">6.0f</span><span class="p">;</span>
+
+        <span class="c1">// 音声を再生する。
+</span>        <span class="kt">int</span> <span class="n">id_bgm1</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Sound</span><span class="p">.</span><span class="nf">Play</span><span class="p">(</span><span class="n">bgm1</span><span class="p">);</span>
+
+        <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
+</span>        <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
         <span class="p">{</span>
-            <span class="c1">// Altseedを初期化する。
-</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"Sound_Loop"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
-
-            <span class="c1">// 音声ファイルを読み込む。BGMの場合、第２引数を false に設定することで、再生しながらファイルを解凍することが推奨されている。
-</span>            <span class="n">asd</span><span class="p">.</span><span class="n">SoundSource</span> <span class="n">bgm1</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Sound</span><span class="p">.</span><span class="nf">CreateSoundSource</span><span class="p">(</span><span class="s">"Data/Sound/bgm1.ogg"</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
-
-            <span class="c1">// 音声のループを有効にする。
-</span>            <span class="n">bgm1</span><span class="p">.</span><span class="n">IsLoopingMode</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
-
-            <span class="c1">// 音声のループ始端を1秒に、ループ終端を6秒に設定する。
-</span>            <span class="n">bgm1</span><span class="p">.</span><span class="n">LoopStartingPoint</span> <span class="p">=</span> <span class="m">1.0f</span><span class="p">;</span>
-            <span class="n">bgm1</span><span class="p">.</span><span class="n">LoopEndPoint</span> <span class="p">=</span> <span class="m">6.0f</span><span class="p">;</span>
-
-            <span class="c1">// 音声を再生する。
-</span>            <span class="kt">int</span> <span class="n">id_bgm1</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Sound</span><span class="p">.</span><span class="nf">Play</span><span class="p">(</span><span class="n">bgm1</span><span class="p">);</span>
-
-            <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
-</span>            <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
-            <span class="p">{</span>
-                <span class="c1">// Altseedを更新する。
-</span>                <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
-            <span class="p">}</span>
-
-            <span class="c1">// Altseedの終了処理をする。
-</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
+            <span class="c1">// Altseedを更新する。
+</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
         <span class="p">}</span>
+
+        <span class="c1">// Altseedの終了処理をする。
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
+</code></pre>
+
+<h3 class="java">Java</h3>
+<pre class="highlight java"><code>  <span class="kd">class</span> <span class="nc">Sound_Loop</span>    <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"BGMをループ再生するサンプルです。"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"BGMのループ再生"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Initialize</span><span class="o">(</span><span class="s">"Sound_Loop"</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">EngineOption</span><span class="o">());</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">SoundSource</span> <span class="n">bgm1</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getSound</span><span class="o">().</span><span class="na">CreateSoundSource</span><span class="o">(</span><span class="s">"Data/Sound/bgm1.ogg"</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span>
+        <span class="n">bgm1</span><span class="o">.</span><span class="na">setIsLoopingMode</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+        <span class="n">bgm1</span><span class="o">.</span><span class="na">setLoopStartingPoint</span><span class="o">(</span><span class="mf">1.0f</span><span class="o">);</span>
+        <span class="n">bgm1</span><span class="o">.</span><span class="na">setLoopEndPoint</span><span class="o">(</span><span class="mf">6.0f</span><span class="o">);</span>
+        <span class="kt">int</span> <span class="n">id_bgm1</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getSound</span><span class="o">().</span><span class="na">Play</span><span class="o">(</span><span class="n">bgm1</span><span class="o">);</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
+        <span class="o">{</span>
+            <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Update</span><span class="o">();</span>
+        <span class="o">}</span>
+
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Terminate</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 
 </code></pre>
 
@@ -462,6 +546,15 @@
         </p>
         <p>
           <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/DrawAdditionally2D.html">追加描画(2D)</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/Window.html">外部ウィンドウ</a>
         </p>
         <h3>
           リファレンス

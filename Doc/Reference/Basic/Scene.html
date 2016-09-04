@@ -112,6 +112,8 @@
         </tr>
         </tbody></table>
         
+        <p>これらの操作は、実際にはメソッドを呼び出したフレームの最後に処理されるのでご注意ください。</p>
+        
         <h3>主なプロパティ</h3>
         
         <table><thead>
@@ -143,20 +145,28 @@
         <td>ObjectのOnUpdateとLayerのOnUpdatedが実行された後に毎フレーム実行される更新イベント</td>
         </tr>
         <tr>
-        <td>OnUpdateForTheFirstTime</td>
-        <td>最初のObjectのOnUpdateとLayerのOnUpdatingが実行される前に一度だけ実行されるイベント</td>
+        <td>OnRegistered</td>
+        <td>Engineへ追加されたときに一度だけ実行されるイベント</td>
+        </tr>
+        <tr>
+        <td>OnStartUpdating</td>
+        <td>このシーンのUpdateが実行され始めるときに一度だけ実行されるイベント</td>
         </tr>
         <tr>
         <td>OnTransitionFinished</td>
         <td>トランジション終了時にDoEvents関数内で呼び出されるイベント</td>
         </tr>
         <tr>
-        <td>OnChanging</td>
-        <td>このシーンから別のシーンに切り替わる際に一度だけ呼び出されるイベント</td>
+        <td>OnTransitionBegin</td>
+        <td>このシーンから別のシーンに切り替わり始める際に一度だけ呼び出されるイベント</td>
         </tr>
         <tr>
-        <td>OnDestroy</td>
-        <td>このシーンが無条件に破棄される際に一度だけ呼び出されるイベント</td>
+        <td>OnUnregistered</td>
+        <td>このシーンのUpdateが停止するときに一度だけ実行されるイベント</td>
+        </tr>
+        <tr>
+        <td>OnDispose</td>
+        <td>このシーンが破棄される際に一度だけ呼び出されるイベント</td>
         </tr>
         </tbody></table>
         
@@ -285,6 +295,15 @@
         </p>
         <p>
           <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/DrawAdditionally2D.html">追加描画(2D)</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/Window.html">外部ウィンドウ</a>
         </p>
         <h3>
           リファレンス

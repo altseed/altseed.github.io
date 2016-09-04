@@ -114,15 +114,15 @@
     <span class="p">{</span>
 
         <span class="c1">// キーボードのZキーの入力状態を取得する。
-</span>        <span class="c1">// キー入力状態を示す文字列を更新する。
-</span>        <span class="k">switch</span> <span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetKeyboard</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetKeyState</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Keys</span><span class="o">::</span><span class="n">Z</span><span class="p">))</span>
-        <span class="p">{</span>
-        <span class="k">case</span> <span class="n">asd</span><span class="p">:</span><span class="o">:</span><span class="n">KeyState</span><span class="o">::</span><span class="n">Free</span><span class="o">:</span> <span class="c1">// Zキーを離している状態。
-</span>            <span class="n">keyStateText</span><span class="o">-&gt;</span><span class="n">SetText</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Zキーを離しています。"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
-            <span class="k">break</span><span class="p">;</span>
-        <span class="k">case</span> <span class="n">asd</span><span class="p">:</span><span class="o">:</span><span class="n">KeyState</span><span class="o">::</span><span class="n">Hold</span><span class="o">:</span> <span class="c1">// Zキーを押している状態。
-</span>            <span class="n">keyStateText</span><span class="o">-&gt;</span><span class="n">SetText</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Zキーを押しています。"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
-            <span class="k">break</span><span class="p">;</span>
+</span>        <span class="k">auto</span> <span class="n">zstate</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetKeyboard</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetKeyState</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Keys</span><span class="o">::</span><span class="n">Z</span><span class="p">);</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">KeyState</span><span class="o">::</span><span class="n">Free</span><span class="p">)</span> <span class="c1">// Zキーを離している状態。
+</span>        <span class="p">{</span>
+            <span class="n">keyStateText</span><span class="o">-&gt;</span><span class="n">SetText</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Zキーを離しています。"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">KeyState</span><span class="o">::</span><span class="n">Hold</span><span class="p">)</span> <span class="c1">// Zキーを押している状態。
+</span>        <span class="p">{</span>
+            <span class="n">keyStateText</span><span class="o">-&gt;</span><span class="n">SetText</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Zキーを押しています。"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
         <span class="p">}</span>
 
         <span class="c1">// Altseedを更新する。
@@ -145,11 +145,15 @@
 <span class="p">{</span>
     <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
     <span class="p">{</span>
-        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"Zキーを押しているかどうかを調べ、結果を表示するサンプルです。"</span><span class="p">;</span> <span class="p">}</span>
     <span class="p">}</span>
     <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
     <span class="p">{</span>
-        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"キーボード入力の基本"</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">ClassName</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"Keyboard_Basic"</span><span class="p">;</span> <span class="p">}</span>
     <span class="p">}</span>
 
     <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
@@ -158,7 +162,7 @@
         <span class="c1">// Altseedを初期化する。
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"Keyboard_Basic"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
 
-        <span class="n">var</span> <span class="n">font</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateDynamicFont</span><span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="n">Empty</span><span class="p">,</span> <span class="m">40</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Color</span><span class="p">(</span><span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">),</span> <span class="m">1</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Color</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">255</span><span class="p">));</span>
+        <span class="n">var</span> <span class="n">font</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateDynamicFont</span><span class="p">(</span><span class="s">""</span><span class="p">,</span> <span class="m">40</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Color</span><span class="p">(</span><span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">),</span> <span class="m">1</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Color</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">255</span><span class="p">));</span>
 
         <span class="c1">// キーの入力状態を表示する文字描画オブジェクトを設定して、エンジンに追加する。
 </span>        <span class="n">var</span> <span class="n">keyStateText</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextObject2D</span><span class="p">();</span>
@@ -170,15 +174,16 @@
 </span>        <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
         <span class="p">{</span>
             <span class="c1">// キーボードのZキーの入力状態を取得する。
-</span>            <span class="c1">// キー入力状態を示す文字列を更新する。
-</span>            <span class="k">switch</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Keyboard</span><span class="p">.</span><span class="nf">GetKeyState</span><span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Keys</span><span class="p">.</span><span class="n">Z</span><span class="p">))</span>
-            <span class="p">{</span>
-                <span class="k">case</span> <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span><span class="p">.</span><span class="n">Free</span><span class="p">:</span> <span class="c1">// Zキーを離している状態。
-</span>                    <span class="n">keyStateText</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"Zキーを離しています。"</span><span class="p">;</span>
-                    <span class="k">break</span><span class="p">;</span>
-                <span class="k">case</span> <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span><span class="p">.</span><span class="n">Hold</span><span class="p">:</span> <span class="c1">// Zキーを押している状態。
-</span>                    <span class="n">keyStateText</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"Zキーを押しています。"</span><span class="p">;</span>
-                    <span class="k">break</span><span class="p">;</span>
+</span>
+            <span class="n">var</span> <span class="n">zstate</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Keyboard</span><span class="p">.</span><span class="nf">GetKeyState</span><span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Keys</span><span class="p">.</span><span class="n">Z</span><span class="p">);</span>
+
+            <span class="k">if</span><span class="p">(</span><span class="n">zstate</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span><span class="p">.</span><span class="n">Free</span><span class="p">)</span> <span class="c1">// Zキーを離している状態。
+</span>            <span class="p">{</span>
+                    <span class="n">keyStateText</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"Zキーを離しています。"</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">zstate</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span><span class="p">.</span><span class="n">Hold</span><span class="p">)</span> <span class="c1">// Zキーを押している状態。
+</span>            <span class="p">{</span>
+                    <span class="n">keyStateText</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"Zキーを押しています。"</span><span class="p">;</span>
             <span class="p">}</span>
 
             <span class="c1">// Altseedを更新する。
@@ -190,6 +195,46 @@
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
+
+</code></pre>
+
+<h3 class="java">Java</h3>
+<pre class="highlight java"><code><span class="kd">public</span>  <span class="kd">class</span> <span class="nc">Keyboard_Basic</span>    <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"Zキーを押しているかどうかを調べ、結果を表示するサンプルです。"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"キーボード入力の基本"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Initialize</span><span class="o">(</span><span class="s">"Keyboard_Basic"</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">EngineOption</span><span class="o">());</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Font</span> <span class="n">font</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getGraphics</span><span class="o">().</span><span class="na">CreateDynamicFont</span><span class="o">(</span><span class="s">""</span><span class="o">,</span> <span class="mi">40</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Color</span><span class="o">(</span><span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">),</span> <span class="mi">1</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Color</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">255</span><span class="o">));</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">TextObject2D</span> <span class="n">keyStateText</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">TextObject2D</span><span class="o">();</span>
+        <span class="n">keyStateText</span><span class="o">.</span><span class="na">setPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">10</span><span class="o">));</span>
+        <span class="n">keyStateText</span><span class="o">.</span><span class="na">setFont</span><span class="o">(</span><span class="n">font</span><span class="o">);</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">keyStateText</span><span class="o">);</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
+        <span class="o">{</span>
+            <span class="n">asd</span><span class="o">.</span><span class="na">KeyState</span> <span class="n">zstate</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getKeyboard</span><span class="o">().</span><span class="na">GetKeyState</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Keys</span><span class="o">.</span><span class="na">Z</span><span class="o">);</span>
+            <span class="k">if</span><span class="o">((</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">KeyState</span><span class="o">.</span><span class="na">Free</span><span class="o">))</span>
+            <span class="o">{</span>
+                <span class="n">keyStateText</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"Zキーを離しています。"</span><span class="o">);</span>
+            <span class="o">}</span>
+            <span class="k">else</span>
+            <span class="o">{</span>
+                <span class="k">if</span><span class="o">((</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">KeyState</span><span class="o">.</span><span class="na">Hold</span><span class="o">))</span>
+                <span class="o">{</span>
+                    <span class="n">keyStateText</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"Zキーを押しています。"</span><span class="o">);</span>
+                <span class="o">}</span>
+
+            <span class="o">}</span>
+
+            <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Update</span><span class="o">();</span>
+        <span class="o">}</span>
+
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Terminate</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 
 </code></pre>
 
@@ -221,21 +266,23 @@
 </span>    <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">DoEvents</span><span class="p">())</span>
     <span class="p">{</span>
         <span class="c1">// キーボードのZキーの入力状態を取得する。
-</span>        <span class="c1">// キー入力状態を示す文字列を更新する。
-</span>        <span class="k">switch</span> <span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetKeyboard</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetKeyState</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Keys</span><span class="o">::</span><span class="n">Z</span><span class="p">))</span>
-        <span class="p">{</span>
-        <span class="k">case</span> <span class="n">asd</span><span class="p">:</span><span class="o">:</span><span class="n">KeyState</span><span class="o">::</span><span class="n">Free</span><span class="o">:</span> <span class="c1">// 前フレームと本フレームで非押下
-</span>            <span class="n">keyStateText</span><span class="o">-&gt;</span><span class="n">SetText</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Zキーを離しています。"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
-            <span class="k">break</span><span class="p">;</span>
-        <span class="k">case</span> <span class="n">asd</span><span class="p">:</span><span class="o">:</span><span class="n">KeyState</span><span class="o">::</span><span class="n">Hold</span><span class="o">:</span> <span class="c1">// 前フレームと本フレームで押下
-</span>            <span class="n">keyStateText</span><span class="o">-&gt;</span><span class="n">SetText</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Zキーを押しています。"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
-            <span class="k">break</span><span class="p">;</span>
-        <span class="k">case</span> <span class="n">asd</span><span class="p">:</span><span class="o">:</span><span class="n">KeyState</span><span class="o">::</span><span class="n">Release</span><span class="o">:</span> <span class="c1">// 前フレームで押下、本フレームで非押下
-</span>            <span class="n">keyStateText</span><span class="o">-&gt;</span><span class="n">SetText</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Zキーを離しました!"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
-            <span class="k">break</span><span class="p">;</span>
-        <span class="k">case</span> <span class="n">asd</span><span class="p">:</span><span class="o">:</span><span class="n">KeyState</span><span class="o">::</span><span class="n">Push</span><span class="o">:</span> <span class="c1">// 前フレームで非押下、本フレームで押下
-</span>            <span class="n">keyStateText</span><span class="o">-&gt;</span><span class="n">SetText</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Zキーを押しました!"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
-            <span class="k">break</span><span class="p">;</span>
+</span>        <span class="k">auto</span> <span class="n">zstate</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetKeyboard</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetKeyState</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Keys</span><span class="o">::</span><span class="n">Z</span><span class="p">);</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">KeyState</span><span class="o">::</span><span class="n">Free</span><span class="p">)</span> <span class="c1">// 前フレームと本フレームで非押下
+</span>        <span class="p">{</span>
+            <span class="n">keyStateText</span><span class="o">-&gt;</span><span class="n">SetText</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Zキーを離しています。"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">KeyState</span><span class="o">::</span><span class="n">Hold</span><span class="p">)</span> <span class="c1">// 前フレームと本フレームで押下
+</span>        <span class="p">{</span>
+            <span class="n">keyStateText</span><span class="o">-&gt;</span><span class="n">SetText</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Zキーを押しています。"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">KeyState</span><span class="o">::</span><span class="n">Release</span><span class="p">)</span> <span class="c1">// 前フレームで押下、本フレームで非押下
+</span>        <span class="p">{</span>
+            <span class="n">keyStateText</span><span class="o">-&gt;</span><span class="n">SetText</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Zキーを離しました!"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">KeyState</span><span class="o">::</span><span class="n">Push</span><span class="p">)</span> <span class="c1">// 前フレームで非押下、本フレームで押下
+</span>        <span class="p">{</span>
+            <span class="n">keyStateText</span><span class="o">-&gt;</span><span class="n">SetText</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Zキーを押しました!"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
         <span class="p">}</span>
 
         <span class="c1">// Altseedを更新する。
@@ -258,11 +305,15 @@
 <span class="p">{</span>
     <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
     <span class="p">{</span>
-        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"キーボードのキー入力状態を詳しく調べ、状態を表示するサンプルです。"</span><span class="p">;</span> <span class="p">}</span>
     <span class="p">}</span>
     <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
     <span class="p">{</span>
-        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"キーボードの入力状態"</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">ClassName</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"Keyboard_SingularKey"</span><span class="p">;</span> <span class="p">}</span>
     <span class="p">}</span>
 
     <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
@@ -271,7 +322,7 @@
         <span class="c1">// Altseedを初期化する。
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"Keyboard_SingularKey"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
 
-        <span class="n">var</span> <span class="n">font</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateDynamicFont</span><span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="n">Empty</span><span class="p">,</span> <span class="m">40</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Color</span><span class="p">(</span><span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">),</span> <span class="m">1</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Color</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">255</span><span class="p">));</span>
+        <span class="n">var</span> <span class="n">font</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateDynamicFont</span><span class="p">(</span><span class="s">""</span><span class="p">,</span> <span class="m">40</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Color</span><span class="p">(</span><span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">),</span> <span class="m">1</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Color</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">255</span><span class="p">));</span>
 
         <span class="c1">// キーの入力状態を表示する文字描画オブジェクトを設定して、エンジンに追加する。
 </span>        <span class="n">var</span> <span class="n">keyStateText</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextObject2D</span><span class="p">();</span>
@@ -283,21 +334,24 @@
 </span>        <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
         <span class="p">{</span>
             <span class="c1">// キーボードのZキーの入力状態を取得する。
-</span>            <span class="c1">// キー入力状態を示す文字列を更新する。
-</span>            <span class="k">switch</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Keyboard</span><span class="p">.</span><span class="nf">GetKeyState</span><span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Keys</span><span class="p">.</span><span class="n">Z</span><span class="p">))</span>
-            <span class="p">{</span>
-                <span class="k">case</span> <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span><span class="p">.</span><span class="n">Free</span><span class="p">:</span> <span class="c1">// 前フレームと本フレームで非押下
-</span>                    <span class="n">keyStateText</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"Zキーを離しています。"</span><span class="p">;</span>
-                    <span class="k">break</span><span class="p">;</span>
-                <span class="k">case</span> <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span><span class="p">.</span><span class="n">Hold</span><span class="p">:</span> <span class="c1">// 前フレームと本フレームで押下
-</span>                    <span class="n">keyStateText</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"Zキーを押しています。"</span><span class="p">;</span>
-                    <span class="k">break</span><span class="p">;</span>
-                <span class="k">case</span> <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span><span class="p">.</span><span class="n">Release</span><span class="p">:</span> <span class="c1">// 前フレームで押下、本フレームで非押下
-</span>                    <span class="n">keyStateText</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"Zキーを離しました!"</span><span class="p">;</span>
-                    <span class="k">break</span><span class="p">;</span>
-                <span class="k">case</span> <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span><span class="p">.</span><span class="n">Push</span><span class="p">:</span> <span class="c1">// 前フレームで非押下、本フレームで押下
-</span>                    <span class="n">keyStateText</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"Zキーを押しました!"</span><span class="p">;</span>
-                    <span class="k">break</span><span class="p">;</span>
+</span>
+            <span class="n">var</span> <span class="n">zstate</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Keyboard</span><span class="p">.</span><span class="nf">GetKeyState</span><span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Keys</span><span class="p">.</span><span class="n">Z</span><span class="p">);</span>
+
+            <span class="k">if</span><span class="p">(</span><span class="n">zstate</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span><span class="p">.</span><span class="n">Free</span><span class="p">)</span> <span class="c1">// 前フレームと本フレームで非押下
+</span>            <span class="p">{</span>
+                <span class="n">keyStateText</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"Zキーを離しています。"</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">zstate</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span><span class="p">.</span><span class="n">Hold</span><span class="p">)</span> <span class="c1">// 前フレームと本フレームで押下
+</span>            <span class="p">{</span>
+                <span class="n">keyStateText</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"Zキーを押しています。"</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">zstate</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span><span class="p">.</span><span class="n">Release</span><span class="p">)</span> <span class="c1">// 前フレームで押下、本フレームで非押下
+</span>            <span class="p">{</span>
+                <span class="n">keyStateText</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"Zキーを離しました!"</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">zstate</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span><span class="p">.</span><span class="n">Push</span><span class="p">)</span> <span class="c1">// 前フレームで非押下、本フレームで押下
+</span>            <span class="p">{</span>
+                <span class="n">keyStateText</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"Zキーを押しました!"</span><span class="p">;</span>
             <span class="p">}</span>
 
             <span class="c1">// Altseedを更新する。
@@ -309,6 +363,62 @@
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
+
+</code></pre>
+
+<h3 class="java">Java</h3>
+<pre class="highlight java"><code><span class="kd">public</span>  <span class="kd">class</span> <span class="nc">Keyboard_SingularKey</span>    <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"キーボードのキー入力状態を詳しく調べ、状態を表示するサンプルです。"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"キーボードの入力状態"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Initialize</span><span class="o">(</span><span class="s">"Keyboard_SingularKey"</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">EngineOption</span><span class="o">());</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Font</span> <span class="n">font</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getGraphics</span><span class="o">().</span><span class="na">CreateDynamicFont</span><span class="o">(</span><span class="s">""</span><span class="o">,</span> <span class="mi">40</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Color</span><span class="o">(</span><span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">),</span> <span class="mi">1</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Color</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">255</span><span class="o">));</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">TextObject2D</span> <span class="n">keyStateText</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">TextObject2D</span><span class="o">();</span>
+        <span class="n">keyStateText</span><span class="o">.</span><span class="na">setPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">10</span><span class="o">));</span>
+        <span class="n">keyStateText</span><span class="o">.</span><span class="na">setFont</span><span class="o">(</span><span class="n">font</span><span class="o">);</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">keyStateText</span><span class="o">);</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
+        <span class="o">{</span>
+            <span class="n">asd</span><span class="o">.</span><span class="na">KeyState</span> <span class="n">zstate</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getKeyboard</span><span class="o">().</span><span class="na">GetKeyState</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Keys</span><span class="o">.</span><span class="na">Z</span><span class="o">);</span>
+            <span class="k">if</span><span class="o">((</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">KeyState</span><span class="o">.</span><span class="na">Free</span><span class="o">))</span>
+            <span class="o">{</span>
+                <span class="n">keyStateText</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"Zキーを離しています。"</span><span class="o">);</span>
+            <span class="o">}</span>
+            <span class="k">else</span>
+            <span class="o">{</span>
+                <span class="k">if</span><span class="o">((</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">KeyState</span><span class="o">.</span><span class="na">Hold</span><span class="o">))</span>
+                <span class="o">{</span>
+                    <span class="n">keyStateText</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"Zキーを押しています。"</span><span class="o">);</span>
+                <span class="o">}</span>
+                <span class="k">else</span>
+                <span class="o">{</span>
+                    <span class="k">if</span><span class="o">((</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">KeyState</span><span class="o">.</span><span class="na">Release</span><span class="o">))</span>
+                    <span class="o">{</span>
+                        <span class="n">keyStateText</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"Zキーを離しました!"</span><span class="o">);</span>
+                    <span class="o">}</span>
+                    <span class="k">else</span>
+                    <span class="o">{</span>
+                        <span class="k">if</span><span class="o">((</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">KeyState</span><span class="o">.</span><span class="na">Push</span><span class="o">))</span>
+                        <span class="o">{</span>
+                            <span class="n">keyStateText</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"Zキーを押しました!"</span><span class="o">);</span>
+                        <span class="o">}</span>
+
+                    <span class="o">}</span>
+
+                <span class="o">}</span>
+
+            <span class="o">}</span>
+
+            <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Update</span><span class="o">();</span>
+        <span class="o">}</span>
+
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Terminate</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 
 </code></pre>
 
@@ -337,22 +447,20 @@
     <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">AddObject2D</span><span class="p">(</span><span class="n">keyStateText</span><span class="p">);</span>
 
     <span class="c1">// 入力チェックするキー一覧。(Z, X, C, V, B)
-</span>    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">Keys</span><span class="o">&gt;</span> <span class="n">keys</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="n">asd</span><span class="o">::</span><span class="n">Keys</span><span class="o">::</span><span class="n">Z</span><span class="p">,</span> 
-        <span class="n">asd</span><span class="o">::</span><span class="n">Keys</span><span class="o">::</span><span class="n">X</span><span class="p">,</span> 
-        <span class="n">asd</span><span class="o">::</span><span class="n">Keys</span><span class="o">::</span><span class="n">C</span><span class="p">,</span> 
-        <span class="n">asd</span><span class="o">::</span><span class="n">Keys</span><span class="o">::</span><span class="n">V</span><span class="p">,</span> 
-        <span class="n">asd</span><span class="o">::</span><span class="n">Keys</span><span class="o">::</span><span class="n">B</span> 
-    <span class="p">};</span>
+</span>    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">Keys</span><span class="o">&gt;</span> <span class="n">keys</span><span class="p">;</span>
+    <span class="n">keys</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Keys</span><span class="o">::</span><span class="n">Z</span><span class="p">);</span>
+    <span class="n">keys</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Keys</span><span class="o">::</span><span class="n">X</span><span class="p">);</span>
+    <span class="n">keys</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Keys</span><span class="o">::</span><span class="n">C</span><span class="p">);</span>
+    <span class="n">keys</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Keys</span><span class="o">::</span><span class="n">V</span><span class="p">);</span>
+    <span class="n">keys</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Keys</span><span class="o">::</span><span class="n">B</span><span class="p">);</span>
 
     <span class="c1">//キーを文字列に変換するマップ。
-</span>    <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">Keys</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">keyToStr</span> <span class="o">=</span> <span class="p">{</span> 
-        <span class="p">{</span> <span class="n">asd</span><span class="o">::</span><span class="n">Keys</span><span class="o">::</span><span class="n">Z</span><span class="p">,</span> <span class="s">"Z"</span> <span class="p">},</span>
-        <span class="p">{</span> <span class="n">asd</span><span class="o">::</span><span class="n">Keys</span><span class="o">::</span><span class="n">X</span><span class="p">,</span> <span class="s">"X"</span> <span class="p">},</span>
-        <span class="p">{</span> <span class="n">asd</span><span class="o">::</span><span class="n">Keys</span><span class="o">::</span><span class="n">C</span><span class="p">,</span> <span class="s">"C"</span> <span class="p">},</span>
-        <span class="p">{</span> <span class="n">asd</span><span class="o">::</span><span class="n">Keys</span><span class="o">::</span><span class="n">V</span><span class="p">,</span> <span class="s">"V"</span> <span class="p">},</span>
-        <span class="p">{</span> <span class="n">asd</span><span class="o">::</span><span class="n">Keys</span><span class="o">::</span><span class="n">B</span><span class="p">,</span> <span class="s">"B"</span> <span class="p">}</span>
-    <span class="p">};</span>
+</span>    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">keyStrs</span><span class="p">;</span>
+    <span class="n">keyStrs</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">"Z"</span><span class="p">);</span>
+    <span class="n">keyStrs</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">"X"</span><span class="p">);</span>
+    <span class="n">keyStrs</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">"C"</span><span class="p">);</span>
+    <span class="n">keyStrs</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">"V"</span><span class="p">);</span>
+    <span class="n">keyStrs</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">"B"</span><span class="p">);</span>
 
     <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
 </span>    <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">DoEvents</span><span class="p">())</span>
@@ -360,25 +468,28 @@
         <span class="n">asd</span><span class="o">::</span><span class="n">astring</span> <span class="n">displayStr</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">""</span><span class="p">);</span>
 
         <span class="c1">//すべてのキーに対して入力状態を確認してから表示する。
-</span>        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">key</span> <span class="o">:</span> <span class="n">keys</span><span class="p">)</span>
+</span>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">keys</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
         <span class="p">{</span>
-            <span class="k">auto</span> <span class="n">keyStr</span> <span class="o">=</span> <span class="n">keyToStr</span><span class="p">[</span><span class="n">key</span><span class="p">];</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">keystr</span> <span class="o">=</span> <span class="n">keyStrs</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
 
             <span class="c1">// キーボードのZキーの入力状態を取得する。
-</span>            <span class="k">switch</span> <span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetKeyboard</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetKeyState</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
-            <span class="p">{</span>
-            <span class="k">case</span> <span class="n">asd</span><span class="p">:</span><span class="o">:</span><span class="n">KeyState</span><span class="o">::</span><span class="n">Free</span><span class="o">:</span> <span class="c1">// 前フレームと本フレームで非押下
-</span>                <span class="n">displayStr</span> <span class="o">+=</span> <span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">((</span><span class="n">keyStr</span> <span class="o">+</span> <span class="s">"キーを離しています。"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
-                <span class="k">break</span><span class="p">;</span>
-            <span class="k">case</span> <span class="n">asd</span><span class="p">:</span><span class="o">:</span><span class="n">KeyState</span><span class="o">::</span><span class="n">Hold</span><span class="o">:</span> <span class="c1">// 前フレームと本フレームで押下
-</span>                <span class="n">displayStr</span> <span class="o">+=</span> <span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">((</span><span class="n">keyStr</span> <span class="o">+</span> <span class="s">"キーを押しています。"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
-                <span class="k">break</span><span class="p">;</span>
-            <span class="k">case</span> <span class="n">asd</span><span class="p">:</span><span class="o">:</span><span class="n">KeyState</span><span class="o">::</span><span class="n">Release</span><span class="o">:</span> <span class="c1">// 前フレームで押下、本フレームで非押下
-</span>                <span class="n">displayStr</span> <span class="o">+=</span> <span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">((</span><span class="n">keyStr</span> <span class="o">+</span> <span class="s">"キーを離しました!"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
-                <span class="k">break</span><span class="p">;</span>
-            <span class="k">case</span> <span class="n">asd</span><span class="p">:</span><span class="o">:</span><span class="n">KeyState</span><span class="o">::</span><span class="n">Push</span><span class="o">:</span> <span class="c1">// 前フレームで非押下、本フレームで押下
-</span>                <span class="n">displayStr</span> <span class="o">+=</span> <span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">((</span><span class="n">keyStr</span> <span class="o">+</span> <span class="s">"キーを押しました!"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
-                <span class="k">break</span><span class="p">;</span>
+</span>            <span class="n">asd</span><span class="o">::</span><span class="n">KeyState</span> <span class="n">zstate</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetKeyboard</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetKeyState</span><span class="p">(</span><span class="n">keys</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">KeyState</span><span class="o">::</span><span class="n">Free</span><span class="p">)</span> <span class="c1">// 前フレームと本フレームで非押下
+</span>            <span class="p">{</span>
+                <span class="n">displayStr</span> <span class="o">+=</span> <span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">((</span><span class="n">keystr</span> <span class="o">+</span> <span class="s">"キーを離しています。"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">KeyState</span><span class="o">::</span><span class="n">Hold</span><span class="p">)</span> <span class="c1">// 前フレームと本フレームで押下
+</span>            <span class="p">{</span>
+                <span class="n">displayStr</span> <span class="o">+=</span> <span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">((</span><span class="n">keystr</span> <span class="o">+</span> <span class="s">"キーを押しています。"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">KeyState</span><span class="o">::</span><span class="n">Release</span><span class="p">)</span> <span class="c1">// 前フレームで押下、本フレームで非押下
+</span>            <span class="p">{</span>
+                <span class="n">displayStr</span> <span class="o">+=</span> <span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">((</span><span class="n">keystr</span> <span class="o">+</span> <span class="s">"キーを離しました!"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">KeyState</span><span class="o">::</span><span class="n">Push</span><span class="p">)</span> <span class="c1">// 前フレームで非押下、本フレームで押下
+</span>            <span class="p">{</span>
+                <span class="n">displayStr</span> <span class="o">+=</span> <span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">((</span><span class="n">keystr</span> <span class="o">+</span> <span class="s">"キーを押しました!"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
             <span class="p">}</span>
 
             <span class="n">displayStr</span> <span class="o">+=</span> <span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
@@ -408,11 +519,15 @@
 <span class="p">{</span>
     <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
     <span class="p">{</span>
-        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"キーボードの複数のキーの入力状態を調べ、表示するサンプルです。"</span><span class="p">;</span> <span class="p">}</span>
     <span class="p">}</span>
     <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
     <span class="p">{</span>
-        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"複数のキーの入力状態"</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">ClassName</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"Keyboard_PuralKeys"</span><span class="p">;</span> <span class="p">}</span>
     <span class="p">}</span>
 
     <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
@@ -421,7 +536,7 @@
         <span class="c1">// Altseedを初期化する。
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"Keyboard_PuralKeys"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
 
-        <span class="n">var</span> <span class="n">font</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateDynamicFont</span><span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="n">Empty</span><span class="p">,</span> <span class="m">40</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Color</span><span class="p">(</span><span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">),</span> <span class="m">1</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Color</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">255</span><span class="p">));</span>
+        <span class="n">var</span> <span class="n">font</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateDynamicFont</span><span class="p">(</span><span class="s">""</span><span class="p">,</span> <span class="m">40</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Color</span><span class="p">(</span><span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">),</span> <span class="m">1</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Color</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">255</span><span class="p">));</span>
 
         <span class="c1">// キーの入力状態を表示する文字描画オブジェクトを設定して、エンジンに追加する。
 </span>        <span class="n">var</span> <span class="n">keyStateText</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextObject2D</span><span class="p">();</span>
@@ -430,51 +545,49 @@
         <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">AddObject2D</span><span class="p">(</span><span class="n">keyStateText</span><span class="p">);</span>
 
         <span class="c1">// 入力チェックするキー一覧。(Z, X, C, V, B)
-</span>        <span class="n">List</span><span class="p">&lt;</span><span class="n">asd</span><span class="p">.</span><span class="n">Keys</span><span class="p">&gt;</span> <span class="n">keys</span>
-            <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">asd</span><span class="p">.</span><span class="n">Keys</span><span class="p">&gt;()</span> <span class="p">{</span>
-                <span class="n">asd</span><span class="p">.</span><span class="n">Keys</span><span class="p">.</span><span class="n">Z</span><span class="p">,</span>
-                <span class="n">asd</span><span class="p">.</span><span class="n">Keys</span><span class="p">.</span><span class="n">X</span><span class="p">,</span>
-                <span class="n">asd</span><span class="p">.</span><span class="n">Keys</span><span class="p">.</span><span class="n">C</span><span class="p">,</span>
-                <span class="n">asd</span><span class="p">.</span><span class="n">Keys</span><span class="p">.</span><span class="n">V</span><span class="p">,</span>
-                <span class="n">asd</span><span class="p">.</span><span class="n">Keys</span><span class="p">.</span><span class="n">B</span>
-            <span class="p">};</span>
+</span>        <span class="n">List</span><span class="p">&lt;</span><span class="n">asd</span><span class="p">.</span><span class="n">Keys</span><span class="p">&gt;</span> <span class="n">keys</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">asd</span><span class="p">.</span><span class="n">Keys</span><span class="p">&gt;();</span>
+        <span class="n">keys</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Keys</span><span class="p">.</span><span class="n">Z</span><span class="p">);</span>
+        <span class="n">keys</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Keys</span><span class="p">.</span><span class="n">X</span><span class="p">);</span>
+        <span class="n">keys</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Keys</span><span class="p">.</span><span class="n">C</span><span class="p">);</span>
+        <span class="n">keys</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Keys</span><span class="p">.</span><span class="n">V</span><span class="p">);</span>
+        <span class="n">keys</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Keys</span><span class="p">.</span><span class="n">B</span><span class="p">);</span>
 
-        <span class="c1">//キーを文字列に変換するマップ。
-</span>        <span class="n">Dictionary</span><span class="p">&lt;</span><span class="n">asd</span><span class="p">.</span><span class="n">Keys</span><span class="p">,</span> <span class="kt">string</span><span class="p">&gt;</span> <span class="n">keyToStr</span>
-            <span class="p">=</span> <span class="k">new</span> <span class="n">Dictionary</span><span class="p">&lt;</span><span class="n">asd</span><span class="p">.</span><span class="n">Keys</span><span class="p">,</span> <span class="kt">string</span><span class="p">&gt;()</span>
-        <span class="p">{</span>
-            <span class="p">{</span> <span class="n">asd</span><span class="p">.</span><span class="n">Keys</span><span class="p">.</span><span class="n">Z</span><span class="p">,</span> <span class="s">"Z"</span> <span class="p">},</span>
-            <span class="p">{</span> <span class="n">asd</span><span class="p">.</span><span class="n">Keys</span><span class="p">.</span><span class="n">X</span><span class="p">,</span> <span class="s">"X"</span> <span class="p">},</span>
-            <span class="p">{</span> <span class="n">asd</span><span class="p">.</span><span class="n">Keys</span><span class="p">.</span><span class="n">C</span><span class="p">,</span> <span class="s">"C"</span> <span class="p">},</span>
-            <span class="p">{</span> <span class="n">asd</span><span class="p">.</span><span class="n">Keys</span><span class="p">.</span><span class="n">V</span><span class="p">,</span> <span class="s">"V"</span> <span class="p">},</span>
-            <span class="p">{</span> <span class="n">asd</span><span class="p">.</span><span class="n">Keys</span><span class="p">.</span><span class="n">B</span><span class="p">,</span> <span class="s">"B"</span> <span class="p">}</span>
-        <span class="p">};</span>
+        <span class="c1">//キーの文字列表現。
+</span>        <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">keyStrs</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;();</span>
+        <span class="n">keyStrs</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="s">"Z"</span><span class="p">);</span>
+        <span class="n">keyStrs</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="s">"X"</span><span class="p">);</span>
+        <span class="n">keyStrs</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="s">"C"</span><span class="p">);</span>
+        <span class="n">keyStrs</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="s">"V"</span><span class="p">);</span>
+        <span class="n">keyStrs</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="s">"B"</span><span class="p">);</span>
 
         <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
 </span>        <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
         <span class="p">{</span>
-            <span class="kt">string</span> <span class="n">displayStr</span> <span class="p">=</span> <span class="kt">string</span><span class="p">.</span><span class="n">Empty</span><span class="p">;</span>
+            <span class="kt">string</span> <span class="n">displayStr</span> <span class="p">=</span> <span class="s">""</span><span class="p">;</span>
 
             <span class="c1">//すべてのキーに対して入力状態を確認してから表示する。
-</span>            <span class="k">foreach</span> <span class="p">(</span><span class="n">var</span> <span class="n">key</span> <span class="k">in</span> <span class="n">keys</span><span class="p">)</span>
+</span>            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">keys</span><span class="p">.</span><span class="n">Count</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
             <span class="p">{</span>
-                <span class="n">var</span> <span class="n">keyStr</span> <span class="p">=</span> <span class="n">keyToStr</span><span class="p">[</span><span class="n">key</span><span class="p">];</span>
+                <span class="kt">string</span> <span class="n">keystr</span> <span class="p">=</span> <span class="n">keyStrs</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
 
                 <span class="c1">// キーボードのZキーの入力状態を取得する。
-</span>                <span class="k">switch</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Keyboard</span><span class="p">.</span><span class="nf">GetKeyState</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
-                <span class="p">{</span>
-                    <span class="k">case</span> <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span><span class="p">.</span><span class="n">Free</span><span class="p">:</span> <span class="c1">// 前フレームと本フレームで非押下
-</span>                        <span class="n">displayStr</span> <span class="p">+=</span> <span class="p">(</span><span class="n">keyStr</span> <span class="p">+</span> <span class="s">"キーを離しています。"</span><span class="p">);</span>
-                        <span class="k">break</span><span class="p">;</span>
-                    <span class="k">case</span> <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span><span class="p">.</span><span class="n">Hold</span><span class="p">:</span> <span class="c1">// 前フレームと本フレームで押下
-</span>                        <span class="n">displayStr</span> <span class="p">+=</span> <span class="p">(</span><span class="n">keyStr</span> <span class="p">+</span> <span class="s">"キーを押しています。"</span><span class="p">);</span>
-                        <span class="k">break</span><span class="p">;</span>
-                    <span class="k">case</span> <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span><span class="p">.</span><span class="n">Release</span><span class="p">:</span> <span class="c1">// 前フレームで押下、本フレームで非押下
-</span>                        <span class="n">displayStr</span> <span class="p">+=</span> <span class="p">(</span><span class="n">keyStr</span> <span class="p">+</span> <span class="s">"キーを離しました!"</span><span class="p">);</span>
-                        <span class="k">break</span><span class="p">;</span>
-                    <span class="k">case</span> <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span><span class="p">.</span><span class="n">Push</span><span class="p">:</span> <span class="c1">// 前フレームで非押下、本フレームで押下
-</span>                        <span class="n">displayStr</span> <span class="p">+=</span> <span class="p">(</span><span class="n">keyStr</span> <span class="p">+</span> <span class="s">"キーを押しました!"</span><span class="p">);</span>
-                        <span class="k">break</span><span class="p">;</span>
+</span>                <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span> <span class="n">state</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Keyboard</span><span class="p">.</span><span class="nf">GetKeyState</span><span class="p">(</span><span class="n">keys</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span><span class="p">.</span><span class="n">Free</span><span class="p">)</span> <span class="c1">// 前フレームと本フレームで非押下
+</span>                <span class="p">{</span>
+                    <span class="n">displayStr</span> <span class="p">+=</span> <span class="p">(</span><span class="n">keystr</span> <span class="p">+</span> <span class="s">"キーを離しています。"</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span><span class="p">.</span><span class="n">Hold</span><span class="p">)</span> <span class="c1">// 前フレームと本フレームで押下
+</span>                <span class="p">{</span>
+                    <span class="n">displayStr</span> <span class="p">+=</span> <span class="p">(</span><span class="n">keystr</span> <span class="p">+</span> <span class="s">"キーを押しています。"</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span><span class="p">.</span><span class="n">Release</span><span class="p">)</span> <span class="c1">// 前フレームで押下、本フレームで非押下
+</span>                <span class="p">{</span>
+                    <span class="n">displayStr</span> <span class="p">+=</span> <span class="p">(</span><span class="n">keystr</span> <span class="p">+</span> <span class="s">"キーを離しました!"</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span><span class="p">.</span><span class="n">Push</span><span class="p">)</span> <span class="c1">// 前フレームで非押下、本フレームで押下
+</span>                <span class="p">{</span>
+                    <span class="n">displayStr</span> <span class="p">+=</span> <span class="p">(</span><span class="n">keystr</span> <span class="p">+</span> <span class="s">"キーを押しました!"</span><span class="p">);</span>
                 <span class="p">}</span>
 
                 <span class="n">displayStr</span> <span class="p">+=</span> <span class="s">"\n"</span><span class="p">;</span>
@@ -492,6 +605,81 @@
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
+
+</code></pre>
+
+<h3 class="java">Java</h3>
+<pre class="highlight java"><code><span class="kd">public</span>  <span class="kd">class</span> <span class="nc">Keyboard_PuralKeys</span>    <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"キーボードの複数のキーの入力状態を調べ、表示するサンプルです。"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"複数のキーの入力状態"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Initialize</span><span class="o">(</span><span class="s">"Keyboard_PuralKeys"</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">EngineOption</span><span class="o">());</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Font</span> <span class="n">font</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getGraphics</span><span class="o">().</span><span class="na">CreateDynamicFont</span><span class="o">(</span><span class="s">""</span><span class="o">,</span> <span class="mi">40</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Color</span><span class="o">(</span><span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">),</span> <span class="mi">1</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Color</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">255</span><span class="o">));</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">TextObject2D</span> <span class="n">keyStateText</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">TextObject2D</span><span class="o">();</span>
+        <span class="n">keyStateText</span><span class="o">.</span><span class="na">setPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">10</span><span class="o">));</span>
+        <span class="n">keyStateText</span><span class="o">.</span><span class="na">setFont</span><span class="o">(</span><span class="n">font</span><span class="o">);</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">keyStateText</span><span class="o">);</span>
+        <span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">ArrayList</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">.</span><span class="na">Keys</span><span class="o">&gt;</span> <span class="n">keys</span> <span class="o">=</span> <span class="k">new</span> <span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">ArrayList</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">.</span><span class="na">Keys</span><span class="o">&gt;();</span>
+        <span class="n">keys</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Keys</span><span class="o">.</span><span class="na">Z</span><span class="o">);</span>
+        <span class="n">keys</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Keys</span><span class="o">.</span><span class="na">X</span><span class="o">);</span>
+        <span class="n">keys</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Keys</span><span class="o">.</span><span class="na">C</span><span class="o">);</span>
+        <span class="n">keys</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Keys</span><span class="o">.</span><span class="na">V</span><span class="o">);</span>
+        <span class="n">keys</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Keys</span><span class="o">.</span><span class="na">B</span><span class="o">);</span>
+        <span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">ArrayList</span><span class="o">&lt;</span><span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span><span class="o">&gt;</span> <span class="n">keyStrs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">ArrayList</span><span class="o">&lt;</span><span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span><span class="o">&gt;();</span>
+        <span class="n">keyStrs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"Z"</span><span class="o">);</span>
+        <span class="n">keyStrs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"X"</span><span class="o">);</span>
+        <span class="n">keyStrs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"C"</span><span class="o">);</span>
+        <span class="n">keyStrs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"V"</span><span class="o">);</span>
+        <span class="n">keyStrs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"B"</span><span class="o">);</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
+        <span class="o">{</span>
+            <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">displayStr</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
+            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="o">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">keys</span><span class="o">.</span><span class="na">size</span><span class="o">());</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+                <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">keystr</span> <span class="o">=</span> <span class="n">keyStrs</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+                <span class="n">asd</span><span class="o">.</span><span class="na">KeyState</span> <span class="n">state</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getKeyboard</span><span class="o">().</span><span class="na">GetKeyState</span><span class="o">(</span><span class="n">keys</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
+                <span class="k">if</span><span class="o">((</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">KeyState</span><span class="o">.</span><span class="na">Free</span><span class="o">))</span>
+                <span class="o">{</span>
+                    <span class="n">displayStr</span> <span class="o">+=</span> <span class="o">(</span><span class="n">keystr</span> <span class="o">+</span> <span class="s">"キーを離しています。"</span><span class="o">);</span>
+                <span class="o">}</span>
+                <span class="k">else</span>
+                <span class="o">{</span>
+                    <span class="k">if</span><span class="o">((</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">KeyState</span><span class="o">.</span><span class="na">Hold</span><span class="o">))</span>
+                    <span class="o">{</span>
+                        <span class="n">displayStr</span> <span class="o">+=</span> <span class="o">(</span><span class="n">keystr</span> <span class="o">+</span> <span class="s">"キーを押しています。"</span><span class="o">);</span>
+                    <span class="o">}</span>
+                    <span class="k">else</span>
+                    <span class="o">{</span>
+                        <span class="k">if</span><span class="o">((</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">KeyState</span><span class="o">.</span><span class="na">Release</span><span class="o">))</span>
+                        <span class="o">{</span>
+                            <span class="n">displayStr</span> <span class="o">+=</span> <span class="o">(</span><span class="n">keystr</span> <span class="o">+</span> <span class="s">"キーを離しました!"</span><span class="o">);</span>
+                        <span class="o">}</span>
+                        <span class="k">else</span>
+                        <span class="o">{</span>
+                            <span class="k">if</span><span class="o">((</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">KeyState</span><span class="o">.</span><span class="na">Push</span><span class="o">))</span>
+                            <span class="o">{</span>
+                                <span class="n">displayStr</span> <span class="o">+=</span> <span class="o">(</span><span class="n">keystr</span> <span class="o">+</span> <span class="s">"キーを押しました!"</span><span class="o">);</span>
+                            <span class="o">}</span>
+
+                        <span class="o">}</span>
+
+                    <span class="o">}</span>
+
+                <span class="o">}</span>
+
+                <span class="n">displayStr</span> <span class="o">+=</span> <span class="s">"\n"</span><span class="o">;</span>
+            <span class="o">}</span>
+
+            <span class="n">keyStateText</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">displayStr</span><span class="o">);</span>
+            <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Update</span><span class="o">();</span>
+        <span class="o">}</span>
+
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Terminate</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 
 </code></pre>
 
@@ -616,6 +804,15 @@
         </p>
         <p>
           <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/DrawAdditionally2D.html">追加描画(2D)</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/Window.html">外部ウィンドウ</a>
         </p>
         <h3>
           リファレンス

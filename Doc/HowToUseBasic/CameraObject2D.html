@@ -150,8 +150,18 @@
 <span class="p">{</span>
     <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
     <span class="p">{</span>
-        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"カメラを用いた描画空間の一部を切り取って描画する\nサンプルを表示する。"</span><span class="p">;</span> <span class="p">}</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"カメラを用いて描画空間の一部を切り取って描画するサンプルです。"</span><span class="p">;</span> <span class="p">}</span>
     <span class="p">}</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"カメラの基本"</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">ClassName</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"CameraObject2D_Basic"</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+
 
     <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
     <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
@@ -191,13 +201,42 @@
         <span class="c1">// Altseedを終了する。
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
     <span class="p">}</span>
-
-
-    <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
-    <span class="p">{</span>
-        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"カメラの基本"</span><span class="p">;</span> <span class="p">}</span>
-    <span class="p">}</span>
 <span class="p">}</span>
+
+</code></pre>
+
+<h3 class="java">Java</h3>
+<pre class="highlight java"><code><span class="kd">public</span>  <span class="kd">class</span> <span class="nc">CameraObject2D_Basic</span>    <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"カメラを用いて描画空間の一部を切り取って描画するサンプルです。"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"カメラの基本"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Initialize</span><span class="o">(</span><span class="s">"CameraObject2D_Basic"</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">EngineOption</span><span class="o">());</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Texture2D</span> <span class="n">tex0</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getGraphics</span><span class="o">().</span><span class="na">CreateTexture2D</span><span class="o">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="o">);</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">TextureObject2D</span> <span class="n">obj0</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">TextureObject2D</span><span class="o">();</span>
+        <span class="n">obj0</span><span class="o">.</span><span class="na">setTexture</span><span class="o">(</span><span class="n">tex0</span><span class="o">);</span>
+        <span class="n">obj0</span><span class="o">.</span><span class="na">setPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">10</span><span class="o">));</span>
+        <span class="n">obj0</span><span class="o">.</span><span class="na">setScale</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mf">0.7f</span><span class="o">,</span> <span class="mf">0.7f</span><span class="o">));</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">obj0</span><span class="o">);</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">CameraObject2D</span> <span class="n">entityCamera</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">CameraObject2D</span><span class="o">();</span>
+        <span class="n">entityCamera</span><span class="o">.</span><span class="na">setSrc</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">RectI</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">));</span>
+        <span class="n">entityCamera</span><span class="o">.</span><span class="na">setDst</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">RectI</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">));</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">entityCamera</span><span class="o">);</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">CameraObject2D</span> <span class="n">camera</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">CameraObject2D</span><span class="o">();</span>
+        <span class="n">camera</span><span class="o">.</span><span class="na">setSrc</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">RectI</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">10</span><span class="o">,</span> <span class="mi">150</span><span class="o">,</span> <span class="mi">150</span><span class="o">));</span>
+        <span class="n">camera</span><span class="o">.</span><span class="na">setDst</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">RectI</span><span class="o">(</span><span class="mi">450</span><span class="o">,</span> <span class="mi">10</span><span class="o">,</span> <span class="mi">150</span><span class="o">,</span> <span class="mi">150</span><span class="o">));</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">camera</span><span class="o">);</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
+        <span class="o">{</span>
+            <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Update</span><span class="o">();</span>
+        <span class="o">}</span>
+
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Terminate</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 
 </code></pre>
 
@@ -289,12 +328,17 @@
 <span class="p">{</span>
     <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
     <span class="p">{</span>
-        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"カメラを用いて描画空間の一部を虫眼鏡のように拡大して描画するサンプルです。"</span><span class="p">;</span> <span class="p">}</span>
     <span class="p">}</span>
     <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
     <span class="p">{</span>
-        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"カメラによる拡大描画"</span><span class="p">;</span> <span class="p">}</span>
     <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">ClassName</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"CameraObject2D_Magnify"</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+
 
     <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
     <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
@@ -360,6 +404,49 @@
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
+
+</code></pre>
+
+<h3 class="java">Java</h3>
+<pre class="highlight java"><code><span class="kd">public</span>  <span class="kd">class</span> <span class="nc">CameraObject2D_Magnify</span>    <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"カメラを用いて描画空間の一部を虫眼鏡のように拡大して描画するサンプルです。"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"カメラによる拡大描画"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Initialize</span><span class="o">(</span><span class="s">"CameraObject2D_Magnify"</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">EngineOption</span><span class="o">());</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Texture2D</span> <span class="n">tex0</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getGraphics</span><span class="o">().</span><span class="na">CreateTexture2D</span><span class="o">(</span><span class="s">"Data/Texture/Sample1.png"</span><span class="o">);</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">TextureObject2D</span> <span class="n">obj0</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">TextureObject2D</span><span class="o">();</span>
+        <span class="n">obj0</span><span class="o">.</span><span class="na">setTexture</span><span class="o">(</span><span class="n">tex0</span><span class="o">);</span>
+        <span class="n">obj0</span><span class="o">.</span><span class="na">setCenterPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">256</span><span class="o">,</span> <span class="mi">256</span><span class="o">));</span>
+        <span class="n">obj0</span><span class="o">.</span><span class="na">setPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">320</span><span class="o">,</span> <span class="mi">240</span><span class="o">));</span>
+        <span class="n">obj0</span><span class="o">.</span><span class="na">setScale</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mf">0.5f</span><span class="o">,</span> <span class="mf">0.5f</span><span class="o">));</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">obj0</span><span class="o">);</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">CameraObject2D</span> <span class="n">camera1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">CameraObject2D</span><span class="o">();</span>
+        <span class="n">camera1</span><span class="o">.</span><span class="na">setSrc</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">RectI</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">));</span>
+        <span class="n">camera1</span><span class="o">.</span><span class="na">setDst</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">RectI</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">));</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">camera1</span><span class="o">);</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">CameraObject2D</span> <span class="n">camera2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">CameraObject2D</span><span class="o">();</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">camera2</span><span class="o">);</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">TextureObject2D</span> <span class="n">frame</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">TextureObject2D</span><span class="o">();</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Texture2D</span> <span class="n">tex</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getGraphics</span><span class="o">().</span><span class="na">CreateTexture2D</span><span class="o">(</span><span class="s">"Data/Texture/Frame.png"</span><span class="o">);</span>
+        <span class="n">frame</span><span class="o">.</span><span class="na">setTexture</span><span class="o">(</span><span class="n">tex</span><span class="o">);</span>
+        <span class="n">frame</span><span class="o">.</span><span class="na">setCenterPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mf">55.0f</span><span class="o">,</span> <span class="mf">55.0f</span><span class="o">));</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">frame</span><span class="o">);</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
+        <span class="o">{</span>
+            <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span> <span class="n">pos</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getMouse</span><span class="o">().</span><span class="na">getPosition</span><span class="o">();</span>
+            <span class="n">camera2</span><span class="o">.</span><span class="na">setSrc</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">RectI</span><span class="o">(((</span><span class="kt">int</span><span class="o">)</span><span class="n">pos</span><span class="o">.</span><span class="na">X</span> <span class="o">-</span> <span class="mi">25</span><span class="o">),</span> <span class="o">((</span><span class="kt">int</span><span class="o">)</span><span class="n">pos</span><span class="o">.</span><span class="na">Y</span> <span class="o">-</span> <span class="mi">25</span><span class="o">),</span> <span class="mi">50</span><span class="o">,</span> <span class="mi">50</span><span class="o">));</span>
+            <span class="n">camera2</span><span class="o">.</span><span class="na">setDst</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">RectI</span><span class="o">(((</span><span class="kt">int</span><span class="o">)</span><span class="n">pos</span><span class="o">.</span><span class="na">X</span> <span class="o">-</span> <span class="mi">50</span><span class="o">),</span> <span class="o">((</span><span class="kt">int</span><span class="o">)</span><span class="n">pos</span><span class="o">.</span><span class="na">Y</span> <span class="o">-</span> <span class="mi">50</span><span class="o">),</span> <span class="mi">100</span><span class="o">,</span> <span class="mi">100</span><span class="o">));</span>
+            <span class="n">frame</span><span class="o">.</span><span class="na">setPosition</span><span class="o">(</span><span class="n">pos</span><span class="o">);</span>
+            <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Update</span><span class="o">();</span>
+        <span class="o">}</span>
+
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Terminate</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 
 </code></pre>
 
@@ -445,6 +532,11 @@
     <span class="p">{</span>
         <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
     <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">ClassName</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"CameraObject2D_Group"</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+
 
     <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
     <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
@@ -495,6 +587,45 @@
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
+
+</code></pre>
+
+<h3 class="java">Java</h3>
+<pre class="highlight java"><code><span class="kd">public</span>  <span class="kd">class</span> <span class="nc">CameraObject2D_Group</span>    <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">""</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">""</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Initialize</span><span class="o">(</span><span class="s">"CameraObject2D_Group"</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">EngineOption</span><span class="o">());</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Texture2D</span> <span class="n">tex</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getGraphics</span><span class="o">().</span><span class="na">CreateTexture2D</span><span class="o">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="o">);</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">TextureObject2D</span> <span class="n">obj1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">TextureObject2D</span><span class="o">();</span>
+        <span class="n">obj1</span><span class="o">.</span><span class="na">setTexture</span><span class="o">(</span><span class="n">tex</span><span class="o">);</span>
+        <span class="n">obj1</span><span class="o">.</span><span class="na">setPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">10</span><span class="o">));</span>
+        <span class="n">obj1</span><span class="o">.</span><span class="na">setScale</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mf">0.5f</span><span class="o">,</span> <span class="mf">0.5f</span><span class="o">));</span>
+        <span class="n">obj1</span><span class="o">.</span><span class="na">setCameraGroup</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">obj1</span><span class="o">);</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">TextureObject2D</span> <span class="n">obj2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">TextureObject2D</span><span class="o">();</span>
+        <span class="n">obj2</span><span class="o">.</span><span class="na">setTexture</span><span class="o">(</span><span class="n">tex</span><span class="o">);</span>
+        <span class="n">obj2</span><span class="o">.</span><span class="na">setPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">310</span><span class="o">,</span> <span class="mi">10</span><span class="o">));</span>
+        <span class="n">obj2</span><span class="o">.</span><span class="na">setScale</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mf">0.5f</span><span class="o">,</span> <span class="mf">0.5f</span><span class="o">));</span>
+        <span class="n">obj2</span><span class="o">.</span><span class="na">setCameraGroup</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">obj2</span><span class="o">);</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">CameraObject2D</span> <span class="n">camera</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">CameraObject2D</span><span class="o">();</span>
+        <span class="n">camera</span><span class="o">.</span><span class="na">setSrc</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">RectI</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">));</span>
+        <span class="n">camera</span><span class="o">.</span><span class="na">setDst</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">RectI</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">));</span>
+        <span class="n">camera</span><span class="o">.</span><span class="na">setCameraGroup</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">camera</span><span class="o">);</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
+        <span class="o">{</span>
+            <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Update</span><span class="o">();</span>
+        <span class="o">}</span>
+
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Terminate</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 
 </code></pre>
 
@@ -581,10 +712,18 @@
 /// &lt;/summary&gt;
 </span><span class="k">public</span> <span class="k">class</span> <span class="nc">CameraObject2D_Texture</span>
 <span class="p">{</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
     <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
     <span class="p">{</span>
         <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
     <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">ClassName</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"CameraObject2D_Texture"</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>   
 
     <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
     <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
@@ -648,12 +787,53 @@
         <span class="c1">// Altseedを終了する。
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
     <span class="p">}</span>
-
-    <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
-    <span class="p">{</span>
-        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
-    <span class="p">}</span>
 <span class="p">}</span>
+
+</code></pre>
+
+<h3 class="java">Java</h3>
+<pre class="highlight java"><code><span class="kd">public</span>  <span class="kd">class</span> <span class="nc">CameraObject2D_Texture</span>    <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">""</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">""</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Initialize</span><span class="o">(</span><span class="s">"CameraObject2D_Texture"</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">EngineOption</span><span class="o">());</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Texture2D</span> <span class="n">tex</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getGraphics</span><span class="o">().</span><span class="na">CreateTexture2D</span><span class="o">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="o">);</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">TextureObject2D</span> <span class="n">obj1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">TextureObject2D</span><span class="o">();</span>
+        <span class="n">obj1</span><span class="o">.</span><span class="na">setTexture</span><span class="o">(</span><span class="n">tex</span><span class="o">);</span>
+        <span class="n">obj1</span><span class="o">.</span><span class="na">setPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">200</span><span class="o">,</span> <span class="mi">10</span><span class="o">));</span>
+        <span class="n">obj1</span><span class="o">.</span><span class="na">setAngle</span><span class="o">(</span><span class="mf">45.0f</span><span class="o">);</span>
+        <span class="n">obj1</span><span class="o">.</span><span class="na">setScale</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mf">0.5f</span><span class="o">,</span> <span class="mf">0.5f</span><span class="o">));</span>
+        <span class="n">obj1</span><span class="o">.</span><span class="na">setCameraGroup</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">obj1</span><span class="o">);</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">CameraObject2D</span> <span class="n">cameraOffscreen</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">CameraObject2D</span><span class="o">();</span>
+        <span class="n">cameraOffscreen</span><span class="o">.</span><span class="na">setSrc</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">RectI</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">));</span>
+        <span class="n">cameraOffscreen</span><span class="o">.</span><span class="na">setDst</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">RectI</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">));</span>
+        <span class="n">cameraOffscreen</span><span class="o">.</span><span class="na">setCameraGroup</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+        <span class="n">cameraOffscreen</span><span class="o">.</span><span class="na">setIsOffsecreenMode</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">cameraOffscreen</span><span class="o">);</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">TextureObject2D</span> <span class="n">obj2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">TextureObject2D</span><span class="o">();</span>
+        <span class="n">obj2</span><span class="o">.</span><span class="na">setTexture</span><span class="o">(</span><span class="n">cameraOffscreen</span><span class="o">.</span><span class="na">getTexture</span><span class="o">());</span>
+        <span class="n">obj2</span><span class="o">.</span><span class="na">setPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">310</span><span class="o">,</span> <span class="mi">10</span><span class="o">));</span>
+        <span class="n">obj2</span><span class="o">.</span><span class="na">setScale</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mf">0.5f</span><span class="o">,</span> <span class="mf">0.5f</span><span class="o">));</span>
+        <span class="n">obj2</span><span class="o">.</span><span class="na">setCameraGroup</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">obj2</span><span class="o">);</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">CameraObject2D</span> <span class="n">camera</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">CameraObject2D</span><span class="o">();</span>
+        <span class="n">camera</span><span class="o">.</span><span class="na">setSrc</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">RectI</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">));</span>
+        <span class="n">camera</span><span class="o">.</span><span class="na">setDst</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">RectI</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">));</span>
+        <span class="n">camera</span><span class="o">.</span><span class="na">setCameraGroup</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">camera</span><span class="o">);</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
+        <span class="o">{</span>
+            <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Update</span><span class="o">();</span>
+        <span class="o">}</span>
+
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Terminate</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 
 </code></pre>
 
@@ -778,6 +958,15 @@
         </p>
         <p>
           <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/DrawAdditionally2D.html">追加描画(2D)</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/Window.html">外部ウィンドウ</a>
         </p>
         <h3>
           リファレンス

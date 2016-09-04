@@ -112,6 +112,10 @@
     <span class="n">ChildDrawingMode</span><span class="p">.</span><span class="n">Color</span> <span class="p">|</span> <span class="n">ChildDrawingMode</span><span class="p">.</span><span class="n">DrawingPriority</span><span class="p">);</span>
 </code></pre>
 
+<h3>注意点</h3>
+
+<p>他のオブジェクトの子オブジェクトとして登録したオブジェクトも、基本的には改めてレイヤーの<code>AddObject</code>でレイヤーに登録しなければ描画されません。レイヤーへの登録状況を親オブジェクトと同期するには、後述する<code>ChildManagementMode</code>を適切に設定してください。</p>
+
 <h2>同期できるものと同期方法</h2>
 
 <p>以下のパラメータを同期することができます。</p>
@@ -126,7 +130,7 @@
 </thead><tbody>
 <tr>
 <td>RegistrationToLayer</td>
-<td>親が追加されているレイヤーに子も自動的に追加されます。親がレイヤーから取り除かれると、子も取り除かれます。</td>
+<td>子のレイヤーへの登録状況を親と同じにします。つまり、親が追加されているレイヤーに子も自動的に追加されます。親がレイヤーから取り除かれると、子も取り除かれます。</td>
 </tr>
 <tr>
 <td>Disposal</td>
@@ -321,6 +325,15 @@
         </p>
         <p>
           <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/DrawAdditionally2D.html">追加描画(2D)</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/Window.html">外部ウィンドウ</a>
         </p>
         <h3>
           リファレンス

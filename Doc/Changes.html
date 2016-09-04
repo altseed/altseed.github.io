@@ -83,6 +83,24 @@
           <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button>
         </div><h2>変更点</h2>
 
+<h3>1.0.0 (2016/09/04)</h3>
+
+<ul>
+<li>オブジェクトシステムを管理するメソッドでの操作が実際に処理されるタイミングをフレームの最後まで遅らせるように変更。以下の操作が対象
+
+<ul>
+<li>ChangeSceneなどによるシーン遷移</li>
+<li>シーンへのレイヤーの追加・削除</li>
+<li>レイヤーへのオブジェクトの追加・削除</li>
+<li>オブジェクトの親子関係の操作</li>
+<li>シーン、レイヤー、オブジェクトへのコンポーネントの追加・削除</li>
+<li>シーン、レイヤー、オブジェクト、コンポーネントのDisposeによる破棄</li>
+</ul></li>
+<li><p>シーン・レイヤー・オブジェクトのコンポーネントに新たなイベントハンドラを追加。コンポーネントの持ち主がコンテナに登録されたタイミングをハンドルできる</p></li>
+<li><p>シェーダーで拡張可能な2Dスプライト描画機能を追加</p></li>
+<li><p>VisualStudio2015に対応</p></li>
+</ul>
+
 <h3>2016/04/12</h3>
 
 <ul>
@@ -320,6 +338,15 @@
         </p>
         <p>
           <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/DrawAdditionally2D.html">追加描画(2D)</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/Window.html">外部ウィンドウ</a>
         </p>
         <h3>
           リファレンス

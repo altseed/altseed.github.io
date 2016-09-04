@@ -107,6 +107,10 @@
         <p>オブジェクト2Dの通常の描画機能では実現しにくい描画のために、オブジェクト2Dには直接画像を描画する機能を持っています。DrawSpriteAdditionallyという関数で描画はできますが、この描画はOnDrawSpriteAdditionallyというイベント内部でのみ
         有効です。それ以外の場所で実行した場合の挙動は未定義です。</p>
         
+        <p>追加描画ではスプライト、長方形、円形等を描画できます。</p>
+        
+        <p>専用のシェーダーを用いて複雑な描画もできます。そのシェーダーとして<a href="/Doc/Reference/2D/Material2D.html">マテリアル2D</a>を使用できます。</p>
+        
         <h3>主なメソッド</h3>
         
         <h4>システム系</h4>
@@ -118,10 +122,6 @@
         </tr>
         </thead><tbody>
         <tr>
-        <td>Dispose</td>
-        <td>このオブジェクトを破棄(消去)します。</td>
-        </tr>
-        <tr>
         <td>AddChild</td>
         <td>指定した2Dオブジェクトをこのオブジェクトの子オブジェクトとしてこのインスタンスに追加します。</td>
         </tr>
@@ -129,7 +129,13 @@
         <td>RemoveChild</td>
         <td>指定した子オブジェクトをこのインスタンスから削除します。</td>
         </tr>
+        <tr>
+        <td>Dispose</td>
+        <td>このオブジェクトを破棄(消去)します。</td>
+        </tr>
         </tbody></table>
+        
+        <p>これらの操作は、実際にはメソッドを呼び出したフレームの最後に処理されるのでご注意ください。</p>
         
         <h3>主なプロパティ</h3>
         
@@ -194,8 +200,16 @@
         </tr>
         </thead><tbody>
         <tr>
-        <td>OnStart</td>
-        <td>オブジェクトがレイヤーに登録された時、ようはレイヤー2DのAddObjectを実行した時に発生する初期化イベント</td>
+        <td>OnAdded</td>
+        <td>オブジェクトがレイヤーに登録された時に発生するイベント</td>
+        </tr>
+        <tr>
+        <td>OnRemoved</td>
+        <td>オブジェクトがレイヤーから登録解除された時に発生するイベント</td>
+        </tr>
+        <tr>
+        <td>OnDispose</td>
+        <td>オブジェクトが破棄される時に発生するイベント</td>
         </tr>
         <tr>
         <td>OnUpdate</td>
@@ -335,6 +349,15 @@
         </p>
         <p>
           <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/DrawAdditionally2D.html">追加描画(2D)</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/Window.html">外部ウィンドウ</a>
         </p>
         <h3>
           リファレンス

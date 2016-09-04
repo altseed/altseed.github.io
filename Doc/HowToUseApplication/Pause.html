@@ -196,82 +196,82 @@
 <h3 class="csharp">C#</h3>
 <pre class="highlight csharp"><code>
 <span class="c1">/// &lt;summary&gt;
+/// ポーズを実行するレイヤー
+/// &lt;/summary&gt;
+</span><span class="k">class</span> <span class="nc">Pause_PauseLayer</span> <span class="p">:</span> <span class="n">asd</span><span class="p">.</span><span class="n">Layer2D</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnAdded</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// ポーズ以外のレイヤーの更新を停止する。
+</span>        <span class="k">foreach</span><span class="p">(</span><span class="n">var</span> <span class="n">layer</span> <span class="k">in</span> <span class="n">Scene</span><span class="p">.</span><span class="n">Layers</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">layer</span> <span class="p">!=</span> <span class="k">this</span><span class="p">)</span> <span class="n">layer</span><span class="p">.</span><span class="n">IsUpdated</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">// ポーズを表示するオブジェクトを生成する。
+</span>        <span class="n">var</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextureObject2D</span><span class="p">();</span>
+        <span class="n">obj</span><span class="p">.</span><span class="n">Texture</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Data/Texture/Pause1.png"</span><span class="p">);</span>
+        <span class="nf">AddObject</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnUpdated</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// スペースが押されたら、他のレイヤーの更新を再開して、ポーズレイヤーを破棄する。
+</span>        <span class="k">if</span><span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Keyboard</span><span class="p">.</span><span class="nf">GetKeyState</span><span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Keys</span><span class="p">.</span><span class="n">Space</span><span class="p">)</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span><span class="p">.</span><span class="n">Push</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">foreach</span><span class="p">(</span><span class="n">var</span> <span class="n">layer</span> <span class="k">in</span> <span class="n">Scene</span><span class="p">.</span><span class="n">Layers</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">layer</span><span class="p">.</span><span class="n">IsUpdated</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="nf">Dispose</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">/// &lt;summary&gt;
+/// ゲームの挙動を描画するレイヤー
+/// &lt;/summary&gt;
+</span><span class="k">class</span> <span class="nc">Pause_MainLayer</span> <span class="p">:</span> <span class="n">asd</span><span class="p">.</span><span class="n">Layer2D</span>
+<span class="p">{</span>
+    <span class="n">asd</span><span class="p">.</span><span class="n">TextureObject2D</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="nf">Pause_MainLayer</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// 画像を表示するオブジェクトを生成する。
+</span>        <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextureObject2D</span><span class="p">();</span>
+        <span class="n">obj</span><span class="p">.</span><span class="n">Texture</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="p">);</span>
+        <span class="n">obj</span><span class="p">.</span><span class="n">Position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="m">320</span><span class="p">,</span> <span class="m">240</span><span class="p">);</span>
+        <span class="n">obj</span><span class="p">.</span><span class="n">CenterPosition</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="n">Texture</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">X</span> <span class="p">/</span> <span class="m">2</span><span class="p">,</span> <span class="n">obj</span><span class="p">.</span><span class="n">Texture</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">Y</span> <span class="p">/</span> <span class="m">2</span><span class="p">);</span>
+        <span class="nf">AddObject</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnUpdated</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// スペースが押されたら、ポーズレイヤーを追加する。
+</span>        <span class="k">if</span><span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Keyboard</span><span class="p">.</span><span class="nf">GetKeyState</span><span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Keys</span><span class="p">.</span><span class="n">Space</span><span class="p">)</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span><span class="p">.</span><span class="n">Push</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">var</span> <span class="n">pauseLayer</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Pause_PauseLayer</span><span class="p">();</span>
+            <span class="n">Scene</span><span class="p">.</span><span class="nf">AddLayer</span><span class="p">(</span><span class="n">pauseLayer</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// 画像を回転させる。
+</span>        <span class="n">obj</span><span class="p">.</span><span class="n">Angle</span> <span class="p">+=</span> <span class="m">1.0f</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">/// &lt;summary&gt;
 /// ポーズのサンプル。
 /// &lt;/summary&gt;
 </span><span class="k">class</span> <span class="nc">Pause_Basic</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
     <span class="p">{</span>
-        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"レイヤーの処理を一時停止するサンプルです。"</span><span class="p">;</span> <span class="p">}</span>
     <span class="p">}</span>
 
     <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
     <span class="p">{</span>
-        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
-    <span class="p">}</span>
-
-    <span class="c1">/// &lt;summary&gt;
-</span>    <span class="c1">/// ポーズを実行するレイヤー
-</span>    <span class="c1">/// &lt;/summary&gt;
-</span>    <span class="k">class</span> <span class="nc">PauseLayer</span> <span class="p">:</span> <span class="n">asd</span><span class="p">.</span><span class="n">Layer2D</span>
-    <span class="p">{</span>
-        <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnAdded</span><span class="p">()</span>
-        <span class="p">{</span>
-            <span class="c1">// ポーズ以外のレイヤーの更新を停止する。
-</span>            <span class="k">foreach</span> <span class="p">(</span><span class="n">var</span> <span class="n">layer</span> <span class="k">in</span> <span class="n">Scene</span><span class="p">.</span><span class="n">Layers</span><span class="p">)</span>
-            <span class="p">{</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">layer</span> <span class="p">!=</span> <span class="k">this</span><span class="p">)</span> <span class="n">layer</span><span class="p">.</span><span class="n">IsUpdated</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
-            <span class="p">}</span>
-
-            <span class="c1">// ポーズを表示するオブジェクトを生成する。
-</span>            <span class="n">var</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextureObject2D</span><span class="p">();</span>
-            <span class="n">obj</span><span class="p">.</span><span class="n">Texture</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Data/Texture/Pause1.png"</span><span class="p">);</span>
-            <span class="nf">AddObject</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
-        <span class="p">}</span>
-
-        <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnUpdated</span><span class="p">()</span>
-        <span class="p">{</span>
-            <span class="c1">// スペースが押されたら、他のレイヤーの更新を再開して、ポーズレイヤーを破棄する。
-</span>            <span class="k">if</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Keyboard</span><span class="p">.</span><span class="nf">GetKeyState</span><span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Keys</span><span class="p">.</span><span class="n">Space</span><span class="p">)</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span><span class="p">.</span><span class="n">Push</span><span class="p">)</span>
-            <span class="p">{</span>
-                <span class="k">foreach</span> <span class="p">(</span><span class="n">var</span> <span class="n">layer</span> <span class="k">in</span> <span class="n">Scene</span><span class="p">.</span><span class="n">Layers</span><span class="p">)</span>
-                <span class="p">{</span>
-                    <span class="n">layer</span><span class="p">.</span><span class="n">IsUpdated</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
-                <span class="p">}</span>
-                <span class="nf">Dispose</span><span class="p">();</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-
-    <span class="c1">/// &lt;summary&gt;
-</span>    <span class="c1">/// ゲームの挙動を描画するレイヤー
-</span>    <span class="c1">/// &lt;/summary&gt;
-</span>    <span class="k">class</span> <span class="nc">MainLayer</span> <span class="p">:</span> <span class="n">asd</span><span class="p">.</span><span class="n">Layer2D</span>
-    <span class="p">{</span>
-        <span class="n">asd</span><span class="p">.</span><span class="n">TextureObject2D</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
-
-        <span class="k">public</span> <span class="nf">MainLayer</span><span class="p">()</span>
-        <span class="p">{</span>
-            <span class="c1">// 画像を表示するオブジェクトを生成する。
-</span>            <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextureObject2D</span><span class="p">();</span>
-            <span class="n">obj</span><span class="p">.</span><span class="n">Texture</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateTexture2D</span><span class="p">(</span><span class="s">"Data/Texture/Picture1.png"</span><span class="p">);</span>
-            <span class="n">obj</span><span class="p">.</span><span class="n">Position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="m">320</span><span class="p">,</span> <span class="m">240</span><span class="p">);</span>
-            <span class="n">obj</span><span class="p">.</span><span class="n">CenterPosition</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="n">Texture</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">X</span> <span class="p">/</span> <span class="m">2</span><span class="p">,</span> <span class="n">obj</span><span class="p">.</span><span class="n">Texture</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">Y</span> <span class="p">/</span> <span class="m">2</span><span class="p">);</span>
-            <span class="nf">AddObject</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
-        <span class="p">}</span>
-
-        <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnUpdated</span><span class="p">()</span>
-        <span class="p">{</span>
-            <span class="c1">// スペースが押されたら、ポーズレイヤーを追加する。
-</span>            <span class="k">if</span><span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Keyboard</span><span class="p">.</span><span class="nf">GetKeyState</span><span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Keys</span><span class="p">.</span><span class="n">Space</span><span class="p">)</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span><span class="p">.</span><span class="n">Push</span><span class="p">)</span>
-            <span class="p">{</span>
-                <span class="n">var</span> <span class="n">pauseLayer</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">PauseLayer</span><span class="p">();</span>
-                <span class="n">Scene</span><span class="p">.</span><span class="nf">AddLayer</span><span class="p">(</span><span class="n">pauseLayer</span><span class="p">);</span>
-            <span class="p">}</span>
-
-            <span class="c1">// 画像を回転させる。
-</span>            <span class="n">obj</span><span class="p">.</span><span class="n">Angle</span> <span class="p">+=</span> <span class="m">1.0f</span><span class="p">;</span>
-        <span class="p">}</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"ポーズ"</span><span class="p">;</span> <span class="p">}</span>
     <span class="p">}</span>
 
     <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
@@ -284,7 +284,7 @@
 </span>        <span class="n">var</span> <span class="n">scene</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Scene</span><span class="p">();</span>
 
         <span class="c1">// ゲームの挙動を描画するレイヤーを生成する
-</span>        <span class="n">var</span> <span class="n">layer</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">MainLayer</span><span class="p">();</span>
+</span>        <span class="n">var</span> <span class="n">layer</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Pause_MainLayer</span><span class="p">();</span>
 
         <span class="c1">// シーンにレイヤーを追加する
 </span>        <span class="n">scene</span><span class="p">.</span><span class="nf">AddLayer</span><span class="p">(</span><span class="n">layer</span><span class="p">);</span>
@@ -427,6 +427,15 @@
         </p>
         <p>
           <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/DrawAdditionally2D.html">追加描画(2D)</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/Window.html">外部ウィンドウ</a>
         </p>
         <h3>
           リファレンス

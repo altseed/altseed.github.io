@@ -90,7 +90,8 @@
         
         <p><a href="/Doc/Reference/Basic/Engine.html">エンジン</a>のMouseプロパティから現在のフレームのマウスの入力状態を持った当クラスのインスタンスを取得できます。</p>
         
-        <p>マウスが持つ左ボタン、右ボタンならびに中央ボタンの押し状態と、中央ボタンのホイールの回転状態を調べることが出来ます。</p>
+        <p>マウスが持つ左ボタン、右ボタンならびに中央ボタンの押し状態と、中央ボタンのホイールの回転状態を調べることが出来ます。
+        （2016.06.09に追加したGetButtonInputStateにてマウス上のすべてのボタンの押し状態を調べられるようになりました。）</p>
         
         <h4>ボタンの押し状態</h4>
         
@@ -134,26 +135,40 @@
         </tr>
         </thead><tbody>
         <tr>
+        <td>GetButtonInputState</td>
+        <td>指定したボタンの入力状態を取得（押し状態）</td>
+        </tr>
+        </tbody></table>
+        
+        <h3>主なプロパティ</h3>
+        
+        <table><thead>
+        <tr>
+        <th>名称</th>
+        <th>説明</th>
+        </tr>
+        </thead><tbody>
+        <tr>
         <td>LeftButton</td>
-        <td>マウスの左ボタンの入力状態に関するインタフェースを取得(ボタンの押し状態)</td>
+        <td>マウスの左ボタンの入力状態を持つクラスを取得(ボタンの押し状態)</td>
         </tr>
         <tr>
         <td>MiddleButton</td>
-        <td>マウスの中央ボタンの入力状態に関するインタフェースを取得(ボタンの押し状態とホイールの回転状態)</td>
+        <td>マウスの中央ボタンの入力状態を持つクラスを取得(ボタンの押し状態とホイールの回転状態)</td>
         </tr>
         <tr>
         <td>RightButton</td>
-        <td>マウスの右ボタンの入力状態に関するインタフェースを取得(ボタンの押し状態)</td>
+        <td>マウスの右ボタンの入力状態を持つクラスを取得(ボタンの押し状態)</td>
+        </tr>
+        <tr>
+        <td>Wheel</td>
+        <td>ホイールの回転度合い</td>
         </tr>
         <tr>
         <td>Position</td>
         <td>マウスポインタの位置を取得</td>
         </tr>
         </tbody></table>
-        
-        <h3>主なプロパティ</h3>
-        
-        <p>なし</p>
         
         <h3>主なイベント</h3>
         
@@ -284,6 +299,15 @@
         </p>
         <p>
           <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/DrawAdditionally2D.html">追加描画(2D)</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/Window.html">外部ウィンドウ</a>
         </p>
         <h3>
           リファレンス

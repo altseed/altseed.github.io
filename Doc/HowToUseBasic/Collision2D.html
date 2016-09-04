@@ -184,9 +184,17 @@
 /// &lt;/summary&gt;
 </span><span class="k">public</span> <span class="k">class</span> <span class="nc">Collision2D_Basic</span>
 <span class="p">{</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
     <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
     <span class="p">{</span>
         <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">ClassName</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"Collision2D_Basic"</span><span class="p">;</span> <span class="p">}</span>
     <span class="p">}</span>
 
     <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
@@ -200,10 +208,10 @@
         <span class="n">asd</span><span class="p">.</span><span class="n">GeometryObject2D</span> <span class="n">geometryObj1</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">GeometryObject2D</span><span class="p">();</span>
 
         <span class="c1">// マウスによって動かす円。
-</span>        <span class="n">asd</span><span class="p">.</span><span class="n">CircleShape</span> <span class="n">selfCircle</span><span class="p">;</span>
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">CircleShape</span> <span class="n">selfCircle</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
 
         <span class="c1">// 停止している円。
-</span>        <span class="n">asd</span><span class="p">.</span><span class="n">CircleShape</span> <span class="n">circle</span><span class="p">;</span>
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">CircleShape</span> <span class="n">circle</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
 
         <span class="c1">// 図形描画オブジェクトをエンジンに追加する。
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">AddObject2D</span><span class="p">(</span><span class="n">geometryObj0</span><span class="p">);</span>
@@ -258,12 +266,51 @@
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
 
     <span class="p">}</span>
-
-    <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
-    <span class="p">{</span>
-        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
-    <span class="p">}</span>
 <span class="p">}</span>
+</code></pre>
+
+<h3 class="java">Java</h3>
+<pre class="highlight java"><code><span class="kd">public</span>  <span class="kd">class</span> <span class="nc">Collision2D_Basic</span>    <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">""</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">""</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Initialize</span><span class="o">(</span><span class="s">"Collision2D_Basic"</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">EngineOption</span><span class="o">());</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">GeometryObject2D</span> <span class="n">geometryObj0</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">GeometryObject2D</span><span class="o">();</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">GeometryObject2D</span> <span class="n">geometryObj1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">GeometryObject2D</span><span class="o">();</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">CircleShape</span> <span class="n">selfCircle</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">CircleShape</span> <span class="n">circle</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">geometryObj0</span><span class="o">);</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">geometryObj1</span><span class="o">);</span>
+        <span class="n">selfCircle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">CircleShape</span><span class="o">();</span>
+        <span class="n">selfCircle</span><span class="o">.</span><span class="na">setOuterDiameter</span><span class="o">(</span><span class="mi">100</span><span class="o">);</span>
+        <span class="n">geometryObj0</span><span class="o">.</span><span class="na">setShape</span><span class="o">(</span><span class="n">selfCircle</span><span class="o">);</span>
+        <span class="n">circle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">CircleShape</span><span class="o">();</span>
+        <span class="n">circle</span><span class="o">.</span><span class="na">setOuterDiameter</span><span class="o">(</span><span class="mi">100</span><span class="o">);</span>
+        <span class="n">circle</span><span class="o">.</span><span class="na">setPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">100</span><span class="o">,</span> <span class="mi">100</span><span class="o">));</span>
+        <span class="n">geometryObj1</span><span class="o">.</span><span class="na">setShape</span><span class="o">(</span><span class="n">circle</span><span class="o">);</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
+        <span class="o">{</span>
+            <span class="n">selfCircle</span><span class="o">.</span><span class="na">setPosition</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getMouse</span><span class="o">().</span><span class="na">getPosition</span><span class="o">());</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">selfCircle</span><span class="o">.</span><span class="na">GetIsCollidedWith</span><span class="o">(</span><span class="n">circle</span><span class="o">))</span>
+            <span class="o">{</span>
+                <span class="n">geometryObj0</span><span class="o">.</span><span class="na">setColor</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Color</span><span class="o">(</span><span class="mi">255</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">255</span><span class="o">));</span>
+            <span class="o">}</span>
+            <span class="k">else</span>
+            <span class="o">{</span>
+                <span class="n">geometryObj0</span><span class="o">.</span><span class="na">setColor</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Color</span><span class="o">(</span><span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">));</span>
+            <span class="o">}</span>
+
+            <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Update</span><span class="o">();</span>
+        <span class="o">}</span>
+
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Terminate</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
 </code></pre>
 
 <h3>円とあらゆる図形との衝突判定</h3>
@@ -383,9 +430,17 @@
 /// &lt;/summary&gt;
 </span><span class="k">public</span> <span class="k">class</span> <span class="nc">Collision2D_Geometries</span>
 <span class="p">{</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
     <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
     <span class="p">{</span>
         <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">ClassName</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"Collision2D_Geometries"</span><span class="p">;</span> <span class="p">}</span>
     <span class="p">}</span>
 
     <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
@@ -401,12 +456,12 @@
         <span class="n">asd</span><span class="p">.</span><span class="n">GeometryObject2D</span> <span class="n">geometryObj3</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">GeometryObject2D</span><span class="p">();</span>
 
         <span class="c1">// マウスによって動かす円。
-</span>        <span class="n">asd</span><span class="p">.</span><span class="n">CircleShape</span> <span class="n">selfCircle</span><span class="p">;</span>
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">CircleShape</span> <span class="n">selfCircle</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
 
         <span class="c1">// 停止している円、三角形、矩形。
-</span>        <span class="n">asd</span><span class="p">.</span><span class="n">CircleShape</span> <span class="n">circle</span><span class="p">;</span>
-        <span class="n">asd</span><span class="p">.</span><span class="n">TriangleShape</span> <span class="n">triangle</span><span class="p">;</span>
-        <span class="n">asd</span><span class="p">.</span><span class="n">RectangleShape</span> <span class="n">rect</span><span class="p">;</span>
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">CircleShape</span> <span class="n">circle</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
+        <span class="n">asd</span><span class="p">.</span><span class="n">TriangleShape</span> <span class="n">triangle</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
+        <span class="n">asd</span><span class="p">.</span><span class="n">RectangleShape</span> <span class="n">rect</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
 
 
         <span class="c1">// 図形描画オブジェクトをエンジンに追加する。
@@ -486,12 +541,66 @@
         <span class="c1">// Altseedの終了処理をする。
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
     <span class="p">}</span>
-
-    <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
-    <span class="p">{</span>
-        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
-    <span class="p">}</span>
 <span class="p">}</span>
+
+</code></pre>
+
+<h3 class="java">Java</h3>
+<pre class="highlight java"><code><span class="kd">public</span>  <span class="kd">class</span> <span class="nc">Collision2D_Geometries</span>    <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">""</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">""</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Initialize</span><span class="o">(</span><span class="s">"Collision2D_Geometries"</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">EngineOption</span><span class="o">());</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">GeometryObject2D</span> <span class="n">geometryObj0</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">GeometryObject2D</span><span class="o">();</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">GeometryObject2D</span> <span class="n">geometryObj1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">GeometryObject2D</span><span class="o">();</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">GeometryObject2D</span> <span class="n">geometryObj2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">GeometryObject2D</span><span class="o">();</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">GeometryObject2D</span> <span class="n">geometryObj3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">GeometryObject2D</span><span class="o">();</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">CircleShape</span> <span class="n">selfCircle</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">CircleShape</span> <span class="n">circle</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">TriangleShape</span> <span class="n">triangle</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">RectangleShape</span> <span class="n">rect</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">geometryObj0</span><span class="o">);</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">geometryObj1</span><span class="o">);</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">geometryObj2</span><span class="o">);</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">geometryObj3</span><span class="o">);</span>
+        <span class="n">selfCircle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">CircleShape</span><span class="o">();</span>
+        <span class="n">selfCircle</span><span class="o">.</span><span class="na">setOuterDiameter</span><span class="o">(</span><span class="mi">100</span><span class="o">);</span>
+        <span class="n">geometryObj0</span><span class="o">.</span><span class="na">setShape</span><span class="o">(</span><span class="n">selfCircle</span><span class="o">);</span>
+        <span class="n">circle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">CircleShape</span><span class="o">();</span>
+        <span class="n">circle</span><span class="o">.</span><span class="na">setOuterDiameter</span><span class="o">(</span><span class="mi">100</span><span class="o">);</span>
+        <span class="n">circle</span><span class="o">.</span><span class="na">setPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">400</span><span class="o">,</span> <span class="mi">100</span><span class="o">));</span>
+        <span class="n">geometryObj1</span><span class="o">.</span><span class="na">setShape</span><span class="o">(</span><span class="n">circle</span><span class="o">);</span>
+        <span class="n">triangle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">TriangleShape</span><span class="o">();</span>
+        <span class="n">triangle</span><span class="o">.</span><span class="na">SetPointByIndex</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">440</span><span class="o">,</span> <span class="mi">350</span><span class="o">),</span> <span class="mi">0</span><span class="o">);</span>
+        <span class="n">triangle</span><span class="o">.</span><span class="na">SetPointByIndex</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">340</span><span class="o">,</span> <span class="mi">450</span><span class="o">),</span> <span class="mi">1</span><span class="o">);</span>
+        <span class="n">triangle</span><span class="o">.</span><span class="na">SetPointByIndex</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">580</span><span class="o">,</span> <span class="mi">450</span><span class="o">),</span> <span class="mi">2</span><span class="o">);</span>
+        <span class="n">geometryObj2</span><span class="o">.</span><span class="na">setShape</span><span class="o">(</span><span class="n">triangle</span><span class="o">);</span>
+        <span class="n">rect</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">RectangleShape</span><span class="o">();</span>
+        <span class="n">rect</span><span class="o">.</span><span class="na">setDrawingArea</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">RectF</span><span class="o">(</span><span class="mi">70</span><span class="o">,</span> <span class="mi">110</span><span class="o">,</span> <span class="mi">300</span><span class="o">,</span> <span class="mi">200</span><span class="o">));</span>
+        <span class="n">rect</span><span class="o">.</span><span class="na">setAngle</span><span class="o">(</span><span class="mi">15</span><span class="o">);</span>
+        <span class="n">geometryObj3</span><span class="o">.</span><span class="na">setShape</span><span class="o">(</span><span class="n">rect</span><span class="o">);</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
+        <span class="o">{</span>
+            <span class="n">selfCircle</span><span class="o">.</span><span class="na">setPosition</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getMouse</span><span class="o">().</span><span class="na">getPosition</span><span class="o">());</span>
+            <span class="k">if</span><span class="o">(((</span><span class="n">selfCircle</span><span class="o">.</span><span class="na">GetIsCollidedWith</span><span class="o">(</span><span class="n">circle</span><span class="o">)</span> <span class="o">||</span> <span class="n">selfCircle</span><span class="o">.</span><span class="na">GetIsCollidedWith</span><span class="o">(</span><span class="n">triangle</span><span class="o">))</span> <span class="o">||</span> <span class="n">selfCircle</span><span class="o">.</span><span class="na">GetIsCollidedWith</span><span class="o">(</span><span class="n">rect</span><span class="o">)))</span>
+            <span class="o">{</span>
+                <span class="n">geometryObj0</span><span class="o">.</span><span class="na">setColor</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Color</span><span class="o">(</span><span class="mi">255</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">255</span><span class="o">));</span>
+            <span class="o">}</span>
+            <span class="k">else</span>
+            <span class="o">{</span>
+                <span class="n">geometryObj0</span><span class="o">.</span><span class="na">setColor</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Color</span><span class="o">(</span><span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">));</span>
+            <span class="o">}</span>
+
+            <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Update</span><span class="o">();</span>
+        <span class="o">}</span>
+
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Terminate</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 
 </code></pre>
 
@@ -616,6 +725,15 @@
         </p>
         <p>
           <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/DrawAdditionally2D.html">追加描画(2D)</a>
+        </p>
+        <p>
+          <a href="/Doc/HowToUseApplication/Window.html">外部ウィンドウ</a>
         </p>
         <h3>
           リファレンス
