@@ -98,7 +98,7 @@
       });
     </script>
   </head>
-  <body class="Doc Doc_Reference Doc_Reference_Transition Doc_Reference_Transition_Transition">
+  <body class="Doc Doc_HowToIntroduce Doc_HowToIntroduce_Windows_JAVA">
     <div id="header">
       <h1>
         Altseed
@@ -114,67 +114,164 @@
             表示するサンプルコードの言語を指定できます。
           </p>
           <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button><button id="language_java">Java</button>
-        </div><h2>トランジション (Transition)</h2>
+        </div><h2>Java版の導入</h2>
 
-<h3>概要</h3>
+<p>Java版の導入方法について説明しています。</p>
 
-<p>トランジションはシーンを変更する際に、画面が瞬間的に切り替わるのではなく何かしらの画面効果を加えてシーンを変更する機能です。例えば、フェードイン・フェードアウトといった画面効果を与えます。トランジションはシーンを変更する際に<code>Engine.Change.ChangeSceneWithTransition</code>の引数にトランジションのインスタンスを与えることで使用できます。</p>
+<p>Windowsでは、Java版はWindows(64bit)でないと動作しません。ご注意ください。</p>
 
-<p>注意する点としてトランジションを設定した場合は即座にシーン変更が行われない点があります。例えばフェードの場合、フェードアウトが終わるまでは前のシーンの更新が実行され、フェードインが開始されてから次のシーンの更新が実行されます。既にトランジションが実行されている最中に、更にシーンを変更しようとすると予期せぬ挙動が発生する可能性があります。</p>
+<h3>Altseedのダウンロード</h3>
 
-<p>トランジションにはメソッドが存在しますが、基本的にそれらのメソッドはトランジションの機能を自分で開発したい人向けであり通常のユーザーはシーンを変更するときにトランジションを継承したクラスのインスタンスを渡すだけでトランジションの機能を使用できます。</p>
+<p><a href="http://altseed.github.io/download.html">公式サイト</a>からAltseedのJava版の最新版をダウンロードします。
+ダウンロードしたファイルを解凍します。</p>
 
-<p><img alt="トランジション" src="/Doc/Reference/Transition/img/Fade.png" /></p>
+<p>開発には以下のファイルを使用します。</p>
 
-<p>トランジションは既に用意されているトランジションの他に自分でトランジションを開発できます。<code>Transition</code>クラスを継承し動作を定義することで新たなトランジションを実現できます。<code>OnUpdate</code>を継承し、毎フレームの更新の内容を記述します。ここでは、主にトランジションの描画内容の指定、シーンが変更されるタイミング、及びトランジションが終了するタイミングを指定します。<code>DrawTriangleWithPreviousScene</code>と<code>DrawRectangleWithNextScene</code>でシーンを画像として描画し、<code>ChangeScene</code>で前のシーンから次のシーンへ変更、<code>Finish</code>でトランジションを終了します。</p>
+<ul>
+<li>Runtime/Altseed.jar</li>
+<li>Runtime/Altseed_core.dll</li>
+</ul>
 
-<p>シーンが変更されるまでは次のシーンは描画できず、変更した後は前のシーンは更新が停止してしまうので、最終フレームが描画されます。</p>
+<h3>JDKのインストール</h3>
 
-<h3>主なメソッド</h3>
+<p><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">JDK</a>をインストールします。</p>
 
-<table><thead>
-<tr>
-<th>名称</th>
-<th>説明</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ChangeScene</td>
-<td>シーンを次のシーンに変更します。トランジションの機能を自分で開発する人向けです。</td>
-</tr>
-<tr>
-<td>Finish</td>
-<td>トランジションを終了します。トランジションの機能を自分で開発する人向けです。</td>
-</tr>
-<tr>
-<td>DrawTriangleWithNextScene</td>
-<td>次のシーンを画像として三角形に貼り付けて描画します。トランジションの機能を自分で開発する人向けです。</td>
-</tr>
-<tr>
-<td>DrawTriangleWithPreviousScene(</td>
-<td>前のシーンを画像として三角形に貼り付けて描画します。トランジションの機能を自分で開発する人向けです。</td>
-</tr>
-</tbody></table>
-
-<h3>主なプロパティ</h3>
-
-<h3>主なイベント</h3>
+<p>Windowsでは、環境変数を以下のように設定します。</p>
 
 <table><thead>
 <tr>
-<th>名称</th>
-<th>説明</th>
+<th style="text-align: left">環境変数名</th>
+<th style="text-align: right">値</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>OnUpdate</td>
-<td>毎フレーム実行される更新イベント</td>
+<td style="text-align: left">JAVA_HOME</td>
+<td style="text-align: right">C:\Program Files\Java\jdk1.8.0_xx</td>
+</tr>
+<tr>
+<td style="text-align: left">PATH</td>
+<td style="text-align: right">C:\Program Files\Java\jdk1.8.0_xx\bin</td>
 </tr>
 </tbody></table>
 
-<h3>使用方法</h3>
+<p>パスは標準インストールの場合です。
+xxの部分はインストールしたバージョンに合わせて変更します。</p>
 
-<p>トランジションの例としてTransitionFadeクラスのサンプルを提示します。</p>
+<h3>コマンドラインで実行する場合</h3>
+
+<p><code>Altseed.jar</code> が存在するフォルダに<code>Main.java</code>　という空のテキストファイルを用意します。</p>
+
+<p><code>Main.java</code> を以下のソースコードに書き換えます。</p>
+<pre class="highlight plaintext"><code>class Main
+{
+    static
+    {
+        System.loadLibrary("Altseed_core");
+    }
+
+    public static void main(String args[])
+    {
+        asd.Engine.Initialize("Empty", 640, 480, new asd.EngineOption());
+
+        while(asd.Engine.DoEvents())
+        {
+            asd.Engine.Update();
+        }
+
+        asd.Engine.Terminate();
+    }
+}
+
+</code></pre>
+
+<p>コマンドラインから以下のように打ち込みます。</p>
+
+<p>Windowsでは:</p>
+
+<p><code>javac Main.java -classpath ./Altseed.jar</code></p>
+
+<p><code>java -classpath ./;Altseed.jar Main</code></p>
+
+<p>黒いウインドウが表示されれば成功です。</p>
+
+<p>Macでは、GUIを適切に動作させるため、実行時に <code>-XstartOnFirstThread</code> オプションが必要です:</p>
+
+<p><code>javac Main.java -classpath ./Altseed.jar</code></p>
+
+<p><code>java -classpath ./;Altseed.jar -XstartOnFirstThread Main</code></p>
+
+<h3>Eclipseを使用する場合</h3>
+
+<p><a href="https://eclipse.org/">Eclipse</a>をインストールします。</p>
+
+<p>新規にプロジェクトを作成します。</p>
+
+<p><code>ファイル-&gt;新規-&gt;プロジェクト</code> と選択します。
+生成できるプロジェクトが表示されるので<code>Javaプロジェクト</code>を選択します。</p>
+
+<p>Mainクラスを追加します。</p>
+
+<p><code>src</code> を右クリックして、<code>新規-&gt;クラス</code>　と選択します。名前にはMainと入力して完了を押します。</p>
+
+<h4>Altseed.jarの追加</h4>
+
+<p>「パッケージ・エクスプローラー」でプロジェクトを選択します。
+プロジェクトを右クリックして、<code>ビルド・パス-&gt;外部アーカイブの追加</code> を選択します。
+Jarファイルを選択できるので、<code>Altseed.jar</code>　を選択します。</p>
+
+<h4>Altseed_core.dllの追加</h4>
+
+<p>Altseed_core.dllを追加します。</p>
+
+<p>「パッケージ・エクスプローラー」でプロジェクトを選択します。
+プロジェクトを右クリックして、<code>ビルド・パス-&gt;ビルドパスの構成</code> を選択します。</p>
+
+<p>そうすると<code>ソース、プロジェクト、ライブラリー、順序およびエクスポート</code>　というタブが表示されるプロパティのウインドウが表示されます。</p>
+
+<p><code>ライブラリー</code> のタブをクリックします。</p>
+
+<p><code>ライブラリーの追加</code> のボタンをクリックします。</p>
+
+<p>追加できるライブラリーの種類一覧が表示されるので <code>ユーザーライブラリー</code> を選択します。</p>
+
+<p>次に選択できるユーザーライブラリーの一覧が表示されますが、何もないので<code>ユーザーライブラリー</code>　のボタンをクリックし、
+表示されたウインドウの<code>新規</code>　ボタンを押します。</p>
+
+<p>ライブラリ名を入力できるので、適当な名前を入力します。</p>
+
+<p>追加されたライブラリを選択して<code>完了</code>　のボタンを押します。</p>
+
+<p>追加されたライブラリをクリックすると、<code>ネイティブ・ライブラリー・ロケーション</code>　という項目が表示されます。</p>
+
+<p>ダブルクリックすると、ディレクトリを指定できるので<code>Altseed_core.dll</code>　が存在するディレクトリを選択します。</p>
+
+<h4>ソースコードの記述</h4>
+
+<p><code>Main.java</code> を以下のソースコードに書き換えます。</p>
+<pre class="highlight plaintext"><code>class Main
+{
+
+    static
+    {
+        System.loadLibrary("Altseed_core");
+    }
+
+    public static void main(String args[])
+    {
+        asd.Engine.Initialize("Empty", 640, 480, new asd.EngineOption());
+
+        while(asd.Engine.DoEvents())
+        {
+            asd.Engine.Update();
+        }
+
+        asd.Engine.Terminate();
+    }
+}
+
+</code></pre>
+
+<p>実行ボタンを押すと黒いウインドウが表示されれば成功です。</p>
 
       </div>
       <div class="menu">

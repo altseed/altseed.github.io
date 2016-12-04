@@ -16,6 +16,8 @@
               $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").show();
               $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
           });
       
           $("button[id='language_cpp']").click( function ()
@@ -26,6 +28,8 @@
               $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").hide();
               $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
           });
       
           $("button[id='language_cs']").click( function ()
@@ -35,6 +39,19 @@
               $("h3[class='cpp']").hide();
               $("pre[class='highlight csharp']").show();
               $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          });
+      
+          $("button[id='language_java']").click( function ()
+          {
+              Cookies.set('code_state', 'cs');
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
           });
       
           code_state = Cookies.get('code_state');
@@ -45,6 +62,8 @@
               $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").show();
               $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
           }
       
           if(code_state == 'cpp')
@@ -53,6 +72,8 @@
               $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").hide();
               $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
           }
       
           if(code_state == 'cs')
@@ -61,6 +82,18 @@
               $("h3[class='cpp']").hide();
               $("pre[class='highlight csharp']").show();
               $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          }
+      
+          if(code_state == 'java')
+          {
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
           }
       });
     </script>
@@ -80,7 +113,7 @@
           <p>
             表示するサンプルコードの言語を指定できます。
           </p>
-          <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button>
+          <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button><button id="language_java">Java</button>
         </div><h2>2Dの衝突判定を行う</h2>
 
 <p>Altseedで2Dの衝突判定を行います。</p>
@@ -254,31 +287,69 @@
 </code></pre>
 
 <h3 class="java">Java</h3>
-<pre class="highlight java"><code><span class="kd">public</span>  <span class="kd">class</span> <span class="nc">Collision2D_Basic</span>    <span class="o">{</span>
-    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="s">""</span><span class="o">;</span>
-    <span class="o">}</span>
+<pre class="highlight java"><code><span class="cm">/**
+ * Collision2Dのサンプル1。マウスによって操作する円が固定された円にヒットしたら円が赤く変化します。
+*/</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Collision2D_Basic</span> 
+<span class="o">{</span>
     <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="s">""</span><span class="o">;</span>
     <span class="o">}</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">""</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getClassName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"Collision2D_Basic"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[])</span>
+    <span class="o">{</span>
+        <span class="c1">// Altseedを初期化する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Initialize</span><span class="o">(</span><span class="s">"Collision2D_Basic"</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">EngineOption</span><span class="o">());</span>
+
+        <span class="c1">// 図形描画オブジェクトのインスタンスを生成する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">GeometryObject2D</span> <span class="n">geometryObj0</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">GeometryObject2D</span><span class="o">();</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">GeometryObject2D</span> <span class="n">geometryObj1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">GeometryObject2D</span><span class="o">();</span>
+
+        <span class="c1">// マウスによって動かす円。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">CircleShape</span> <span class="n">selfCircle</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+
+        <span class="c1">// 停止している円。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">CircleShape</span> <span class="n">circle</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+
+        <span class="c1">// 図形描画オブジェクトをエンジンに追加する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">geometryObj0</span><span class="o">);</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">geometryObj1</span><span class="o">);</span>
+
+        <span class="c1">// マウスによって動かす円の形状と描画の設定を行う。</span>
+        <span class="c1">// マウスによって動かす円の形状と描画の設定を行う。</span>
+
+        <span class="c1">// 円の外径を指定する。</span>
         <span class="n">selfCircle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">CircleShape</span><span class="o">();</span>
         <span class="n">selfCircle</span><span class="o">.</span><span class="na">setOuterDiameter</span><span class="o">(</span><span class="mi">100</span><span class="o">);</span>
+
+        <span class="c1">// マウスによって動かす円を描画する図形として設定する。</span>
         <span class="n">geometryObj0</span><span class="o">.</span><span class="na">setShape</span><span class="o">(</span><span class="n">selfCircle</span><span class="o">);</span>
+
+        <span class="c1">// 停止している円の形状と描画の設定を行う。</span>
+        <span class="c1">// 停止している円の形状と描画の設定を行う。</span>
+
+        <span class="c1">// 円の外径、内径、頂点数、中心位置を指定する。</span>
         <span class="n">circle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">CircleShape</span><span class="o">();</span>
         <span class="n">circle</span><span class="o">.</span><span class="na">setOuterDiameter</span><span class="o">(</span><span class="mi">100</span><span class="o">);</span>
         <span class="n">circle</span><span class="o">.</span><span class="na">setPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">100</span><span class="o">,</span> <span class="mi">100</span><span class="o">));</span>
+
+        <span class="c1">// 停止している円を描画する図形として設定する。</span>
         <span class="n">geometryObj1</span><span class="o">.</span><span class="na">setShape</span><span class="o">(</span><span class="n">circle</span><span class="o">);</span>
+
+
+        <span class="c1">// Altseedのウインドウが閉じられていないか確認する。</span>
         <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
         <span class="o">{</span>
+            <span class="c1">// マウスによって制御される円の中心位置をマウスの位置とする。</span>
             <span class="n">selfCircle</span><span class="o">.</span><span class="na">setPosition</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getMouse</span><span class="o">().</span><span class="na">getPosition</span><span class="o">());</span>
+
+            <span class="c1">// 固定されている円に、マウスによって動く円が衝突した時に円を赤く変化させる。</span>
+            <span class="c1">// そうでない時は白く変化させる。</span>
             <span class="k">if</span><span class="o">(</span><span class="n">selfCircle</span><span class="o">.</span><span class="na">GetIsCollidedWith</span><span class="o">(</span><span class="n">circle</span><span class="o">))</span>
             <span class="o">{</span>
                 <span class="n">geometryObj0</span><span class="o">.</span><span class="na">setColor</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Color</span><span class="o">(</span><span class="mi">255</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">255</span><span class="o">));</span>
@@ -288,9 +359,13 @@
                 <span class="n">geometryObj0</span><span class="o">.</span><span class="na">setColor</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Color</span><span class="o">(</span><span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">));</span>
             <span class="o">}</span>
 
+
+            <span class="c1">// Altseedを更新する。</span>
             <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Update</span><span class="o">();</span>
         <span class="o">}</span>
 
+
+        <span class="c1">// Altseedの終了処理をする。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Terminate</span><span class="o">();</span>
     <span class="o">}</span>
 <span class="o">}</span>
@@ -415,9 +490,6 @@
         </p>
         <p>
           <a href="/Doc/HowToUseApplication/CustomPostEffect.html">自作ポストエフェクト</a>
-        </p>
-        <p>
-          <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
         </p>
         <p>
           <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>

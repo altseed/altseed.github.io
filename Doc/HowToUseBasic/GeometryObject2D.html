@@ -16,6 +16,8 @@
               $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").show();
               $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
           });
       
           $("button[id='language_cpp']").click( function ()
@@ -26,6 +28,8 @@
               $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").hide();
               $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
           });
       
           $("button[id='language_cs']").click( function ()
@@ -35,6 +39,19 @@
               $("h3[class='cpp']").hide();
               $("pre[class='highlight csharp']").show();
               $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          });
+      
+          $("button[id='language_java']").click( function ()
+          {
+              Cookies.set('code_state', 'cs');
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
           });
       
           code_state = Cookies.get('code_state');
@@ -45,6 +62,8 @@
               $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").show();
               $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
           }
       
           if(code_state == 'cpp')
@@ -53,6 +72,8 @@
               $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").hide();
               $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
           }
       
           if(code_state == 'cs')
@@ -61,6 +82,18 @@
               $("h3[class='cpp']").hide();
               $("pre[class='highlight csharp']").show();
               $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          }
+      
+          if(code_state == 'java')
+          {
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
           }
       });
     </script>
@@ -80,7 +113,7 @@
           <p>
             表示するサンプルコードの言語を指定できます。
           </p>
-          <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button>
+          <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button><button id="language_java">Java</button>
         </div><h2>図形の描画</h2>
 
 <p>Altseedで図形を描画するには<a href="/Doc/Reference/2D/GeometryObject2D.html">GeometryObject2D</a>という図形の描画専用のオブジェクトのクラスと<a href="/Doc/Reference/Shape/Shape.html">Shape</a>という図形クラスを使用します。</p>
@@ -199,26 +232,51 @@
 </code></pre>
 
 <h3 class="java">Java</h3>
-<pre class="highlight java"><code><span class="kd">public</span>  <span class="kd">class</span> <span class="nc">GeometryObject2D_CircleShape</span>    <span class="o">{</span>
+<pre class="highlight java"><code><span class="cm">/**
+ * 円を描画するサンプル。
+*/</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">GeometryObject2D_CircleShape</span> 
+<span class="o">{</span>
     <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="s">""</span><span class="o">;</span>
     <span class="o">}</span>
     <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="s">""</span><span class="o">;</span>
     <span class="o">}</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getClassName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"GeometryObject2D_CircleShape"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[])</span>
+    <span class="o">{</span>
+        <span class="c1">// Altseedを初期化する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Initialize</span><span class="o">(</span><span class="s">"GeometryObject2D_CircleShape"</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">EngineOption</span><span class="o">());</span>
+
+        <span class="c1">// 図形描画オブジェクトのインスタンスを生成する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">GeometryObject2D</span> <span class="n">geometryObj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">GeometryObject2D</span><span class="o">();</span>
+
+        <span class="c1">// 図形描画オブジェクトのインスタンスをエンジンに追加する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">geometryObj</span><span class="o">);</span>
+
+        <span class="c1">// 円の図形クラスのインスタンスを生成する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">CircleShape</span> <span class="n">arc</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">CircleShape</span><span class="o">();</span>
+
+        <span class="c1">// 円の外径、中心位置を指定する。</span>
         <span class="n">arc</span><span class="o">.</span><span class="na">setOuterDiameter</span><span class="o">(</span><span class="mi">400</span><span class="o">);</span>
         <span class="n">arc</span><span class="o">.</span><span class="na">setPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">320</span><span class="o">,</span> <span class="mi">240</span><span class="o">));</span>
+
+        <span class="c1">// 円を描画する図形として設定する。</span>
         <span class="n">geometryObj</span><span class="o">.</span><span class="na">setShape</span><span class="o">(</span><span class="n">arc</span><span class="o">);</span>
+
+        <span class="c1">// Altseedのウインドウが閉じられていないか確認する。</span>
         <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
         <span class="o">{</span>
+            <span class="c1">// Altseedを更新する。</span>
             <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Update</span><span class="o">();</span>
+
         <span class="o">}</span>
 
+
+        <span class="c1">// Altseedを終了する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Terminate</span><span class="o">();</span>
     <span class="o">}</span>
 <span class="o">}</span>
@@ -335,30 +393,55 @@
 </code></pre>
 
 <h3 class="java">Java</h3>
-<pre class="highlight java"><code>  <span class="kd">class</span> <span class="nc">GeometryObject2D_ArcShape</span>    <span class="o">{</span>
+<pre class="highlight java"><code><span class="cm">/**
+ * 弧を表示するサンプル。
+*/</span>
+<span class="kd">class</span> <span class="nc">GeometryObject2D_ArcShape</span> 
+<span class="o">{</span>
     <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="s">""</span><span class="o">;</span>
     <span class="o">}</span>
     <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="s">""</span><span class="o">;</span>
     <span class="o">}</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getClassName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"GeometryObject2D_ArcShape"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[])</span>
+    <span class="o">{</span>
+        <span class="c1">// Altseedを初期化する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Initialize</span><span class="o">(</span><span class="s">"GeometryObject2D_ArcShape"</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">EngineOption</span><span class="o">());</span>
+
+        <span class="c1">// 図形描画クラスのコンストラクタを呼び出す。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">GeometryObject2D</span> <span class="n">geometryObj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">GeometryObject2D</span><span class="o">();</span>
+
+        <span class="c1">// 図形描画オブジェクトのインスタンスをエンジンに追加する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">geometryObj</span><span class="o">);</span>
+
+        <span class="c1">// 弧の図形クラスのインスタンスを生成する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">ArcShape</span> <span class="n">arc</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">ArcShape</span><span class="o">();</span>
+
+        <span class="c1">// 弧の外径、内径、頂点数、中心位置、開始頂点番号、終了頂点番号を指定する。</span>
         <span class="n">arc</span><span class="o">.</span><span class="na">setOuterDiameter</span><span class="o">(</span><span class="mi">400</span><span class="o">);</span>
         <span class="n">arc</span><span class="o">.</span><span class="na">setInnerDiameter</span><span class="o">(</span><span class="mi">40</span><span class="o">);</span>
         <span class="n">arc</span><span class="o">.</span><span class="na">setNumberOfCorners</span><span class="o">(</span><span class="mi">96</span><span class="o">);</span>
         <span class="n">arc</span><span class="o">.</span><span class="na">setPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">320</span><span class="o">,</span> <span class="mi">240</span><span class="o">));</span>
         <span class="n">arc</span><span class="o">.</span><span class="na">setStartingCorner</span><span class="o">(</span><span class="mi">90</span><span class="o">);</span>
         <span class="n">arc</span><span class="o">.</span><span class="na">setEndingCorner</span><span class="o">(</span><span class="mi">45</span><span class="o">);</span>
+
+        <span class="c1">// 弧を描画する図形として設定する。</span>
         <span class="n">geometryObj</span><span class="o">.</span><span class="na">setShape</span><span class="o">(</span><span class="n">arc</span><span class="o">);</span>
+
+        <span class="c1">// Altseedを更新する。</span>
         <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
         <span class="o">{</span>
+            <span class="c1">// Altseedを更新する。</span>
             <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Update</span><span class="o">();</span>
+
         <span class="o">}</span>
 
+
+        <span class="c1">// Altseedの終了処理をする。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Terminate</span><span class="o">();</span>
     <span class="o">}</span>
 <span class="o">}</span>
@@ -470,25 +553,50 @@
 </code></pre>
 
 <h3 class="java">Java</h3>
-<pre class="highlight java"><code>  <span class="kd">class</span> <span class="nc">GeometryObject2D_RectangleShape</span>    <span class="o">{</span>
+<pre class="highlight java"><code><span class="cm">/**
+ * 矩形を表示するサンプル。
+*/</span>
+<span class="kd">class</span> <span class="nc">GeometryObject2D_RectangleShape</span> 
+<span class="o">{</span>
     <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="s">""</span><span class="o">;</span>
     <span class="o">}</span>
     <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="s">""</span><span class="o">;</span>
     <span class="o">}</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getClassName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"GeometryObject2D_RectangleShape"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[])</span>
+    <span class="o">{</span>
+        <span class="c1">// Altseedを初期化する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Initialize</span><span class="o">(</span><span class="s">"GeometryObject2D_RectangleShape"</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">EngineOption</span><span class="o">());</span>
+
+        <span class="c1">// 図形描画オブジェクトのインスタンスを生成する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">GeometryObject2D</span> <span class="n">geometryObj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">GeometryObject2D</span><span class="o">();</span>
+
+        <span class="c1">// 図形描画クラスのインスタンスをエンジンに追加する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">geometryObj</span><span class="o">);</span>
+
+        <span class="c1">// 矩形の図形クラスのインスタンスを生成する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">RectangleShape</span> <span class="n">rect</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">RectangleShape</span><span class="o">();</span>
+
+        <span class="c1">// 矩形の描画範囲を指定する。</span>
         <span class="n">rect</span><span class="o">.</span><span class="na">setDrawingArea</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">RectF</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">210</span><span class="o">,</span> <span class="mi">300</span><span class="o">,</span> <span class="mi">200</span><span class="o">));</span>
+
+        <span class="c1">// 矩形を描画する図形として設定しする。</span>
         <span class="n">geometryObj</span><span class="o">.</span><span class="na">setShape</span><span class="o">(</span><span class="n">rect</span><span class="o">);</span>
+
+        <span class="c1">// Altseedのウインドウが閉じられていないか確認する。</span>
         <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
         <span class="o">{</span>
+            <span class="c1">// Altseedを更新する。</span>
             <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Update</span><span class="o">();</span>
+
         <span class="o">}</span>
 
+
+        <span class="c1">// Altseedの終了処理をする。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Terminate</span><span class="o">();</span>
     <span class="o">}</span>
 <span class="o">}</span>
@@ -623,21 +731,40 @@
 </code></pre>
 
 <h3 class="java">Java</h3>
-<pre class="highlight java"><code>  <span class="kd">class</span> <span class="nc">GeometryObject2D_PolygonShape</span>    <span class="o">{</span>
+<pre class="highlight java"><code><span class="cm">/**
+ * 多角形を表示するサンプル。
+*/</span>
+<span class="kd">class</span> <span class="nc">GeometryObject2D_PolygonShape</span> 
+<span class="o">{</span>
     <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="s">""</span><span class="o">;</span>
     <span class="o">}</span>
     <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="s">""</span><span class="o">;</span>
     <span class="o">}</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getClassName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"GeometryObject2D_PolygonShape"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[])</span>
+    <span class="o">{</span>
+        <span class="c1">// Altseedを初期化する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Initialize</span><span class="o">(</span><span class="s">"GeometryObject2D_PolygonShape"</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">EngineOption</span><span class="o">());</span>
+
+        <span class="c1">// 図形描画オブジェクトのインスタンスを生成する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">GeometryObject2D</span> <span class="n">geometryObj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">GeometryObject2D</span><span class="o">();</span>
+
+        <span class="c1">// 図形描画オブジェクトのインスタンスをエンジンに追加する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">geometryObj</span><span class="o">);</span>
+
+        <span class="c1">// 多角形の図形クラスのインスタンスを生成する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">PolygonShape</span> <span class="n">polygon</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">PolygonShape</span><span class="o">();</span>
-        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="o">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">);</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+
+        <span class="c1">// 多角形を構成する頂点を追加していく。（星形になるようにする。）</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="o">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">);</span> <span class="n">i</span><span class="o">++)</span>
+        <span class="o">{</span>
             <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span> <span class="n">vec</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
             <span class="n">vec</span><span class="o">.</span><span class="na">setDegree</span><span class="o">((</span><span class="n">i</span> <span class="o">*</span> <span class="mi">36</span><span class="o">));</span>
+
             <span class="k">if</span><span class="o">(((</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">)</span> <span class="o">==</span> <span class="mi">0</span><span class="o">))</span>
             <span class="o">{</span>
                 <span class="n">vec</span><span class="o">.</span><span class="na">setLength</span><span class="o">(</span><span class="mi">200</span><span class="o">);</span>
@@ -647,15 +774,22 @@
                 <span class="n">vec</span><span class="o">.</span><span class="na">setLength</span><span class="o">(</span><span class="mi">75</span><span class="o">);</span>
             <span class="o">}</span>
 
-            <span class="n">polygon</span><span class="o">.</span><span class="na">AddVertex</span><span class="o">((</span><span class="n">vec</span> <span class="o">+</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">320</span><span class="o">,</span> <span class="mi">240</span><span class="o">)));</span>
+            <span class="n">polygon</span><span class="o">.</span><span class="na">AddVertex</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">.</span><span class="na">Add</span><span class="o">(</span><span class="n">vec</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">320</span><span class="o">,</span> <span class="mi">240</span><span class="o">)));</span>
         <span class="o">}</span>
 
+        <span class="c1">// 多角形を描画する図形として設定する。</span>
         <span class="n">geometryObj</span><span class="o">.</span><span class="na">setShape</span><span class="o">(</span><span class="n">polygon</span><span class="o">);</span>
+
+        <span class="c1">// Altseedのウインドウが閉じられていないか確認する。</span>
         <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
         <span class="o">{</span>
+            <span class="c1">// Altseedを更新する。</span>
             <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Update</span><span class="o">();</span>
+
         <span class="o">}</span>
 
+
+        <span class="c1">// Altseedの終了処理をする。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Terminate</span><span class="o">();</span>
     <span class="o">}</span>
 <span class="o">}</span>
@@ -799,22 +933,43 @@
 </code></pre>
 
 <h3 class="java">Java</h3>
-<pre class="highlight java"><code>  <span class="kd">class</span> <span class="nc">GeometryObject2D_PolygonShape_Textured</span>    <span class="o">{</span>
+<pre class="highlight java"><code><span class="cm">/**
+ * 多角形をテクスチャを合成した上で表示するサンプル。
+*/</span>
+<span class="kd">class</span> <span class="nc">GeometryObject2D_PolygonShape_Textured</span> 
+<span class="o">{</span>
     <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="s">""</span><span class="o">;</span>
     <span class="o">}</span>
     <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="s">""</span><span class="o">;</span>
     <span class="o">}</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getClassName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"GeometryObject2D_PolygonShape_Textured"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[])</span>
+    <span class="o">{</span>
+        <span class="c1">// Altseedを初期化する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Initialize</span><span class="o">(</span><span class="s">"GeometryObject2D_PolygonShape_Textured"</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">EngineOption</span><span class="o">());</span>
+
+        <span class="c1">// テクスチャとして図形に合成する画像を読み込む。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Texture2D</span> <span class="n">texture</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getGraphics</span><span class="o">().</span><span class="na">CreateTexture2D</span><span class="o">(</span><span class="s">"Data/Texture/Sample1.png"</span><span class="o">);</span>
+
+        <span class="c1">// 図形描画オブジェクトのインスタンスを生成する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">GeometryObject2D</span> <span class="n">geometryObj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">GeometryObject2D</span><span class="o">();</span>
+
+        <span class="c1">// 図形描画オブジェクトのインスタンスをエンジンに追加する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">geometryObj</span><span class="o">);</span>
+
+        <span class="c1">// 多角形の図形クラスのインスタンスを生成する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">PolygonShape</span> <span class="n">polygon</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">PolygonShape</span><span class="o">();</span>
-        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="o">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">);</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+
+        <span class="c1">// 多角形を構成する頂点を追加していく。（星形になるようにする。）</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="o">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">);</span> <span class="n">i</span><span class="o">++)</span>
+        <span class="o">{</span>
             <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span> <span class="n">vec</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
             <span class="n">vec</span><span class="o">.</span><span class="na">setDegree</span><span class="o">((</span><span class="n">i</span> <span class="o">*</span> <span class="mi">36</span><span class="o">));</span>
+
             <span class="k">if</span><span class="o">(((</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">)</span> <span class="o">==</span> <span class="mi">0</span><span class="o">))</span>
             <span class="o">{</span>
                 <span class="n">vec</span><span class="o">.</span><span class="na">setLength</span><span class="o">(</span><span class="mi">200</span><span class="o">);</span>
@@ -824,16 +979,23 @@
                 <span class="n">vec</span><span class="o">.</span><span class="na">setLength</span><span class="o">(</span><span class="mi">75</span><span class="o">);</span>
             <span class="o">}</span>
 
-            <span class="n">polygon</span><span class="o">.</span><span class="na">AddVertex</span><span class="o">((</span><span class="n">vec</span> <span class="o">+</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">320</span><span class="o">,</span> <span class="mi">240</span><span class="o">)));</span>
+            <span class="n">polygon</span><span class="o">.</span><span class="na">AddVertex</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">.</span><span class="na">Add</span><span class="o">(</span><span class="n">vec</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">320</span><span class="o">,</span> <span class="mi">240</span><span class="o">)));</span>
         <span class="o">}</span>
 
+        <span class="c1">// 多角形を描画する図形として設定し、合成するテクスチャも設定する。</span>
         <span class="n">geometryObj</span><span class="o">.</span><span class="na">setShape</span><span class="o">(</span><span class="n">polygon</span><span class="o">);</span>
         <span class="n">geometryObj</span><span class="o">.</span><span class="na">setTexture</span><span class="o">(</span><span class="n">texture</span><span class="o">);</span>
+
+        <span class="c1">// Altseedのウインドウが閉じられていないか確認する。</span>
         <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
         <span class="o">{</span>
+            <span class="c1">// Altseedを更新する。</span>
             <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Update</span><span class="o">();</span>
+
         <span class="o">}</span>
 
+
+        <span class="c1">// Altseedを終了する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Terminate</span><span class="o">();</span>
     <span class="o">}</span>
 <span class="o">}</span>
@@ -958,9 +1120,6 @@
         </p>
         <p>
           <a href="/Doc/HowToUseApplication/CustomPostEffect.html">自作ポストエフェクト</a>
-        </p>
-        <p>
-          <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
         </p>
         <p>
           <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>

@@ -16,6 +16,8 @@
               $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").show();
               $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
           });
       
           $("button[id='language_cpp']").click( function ()
@@ -26,6 +28,8 @@
               $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").hide();
               $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
           });
       
           $("button[id='language_cs']").click( function ()
@@ -35,6 +39,19 @@
               $("h3[class='cpp']").hide();
               $("pre[class='highlight csharp']").show();
               $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          });
+      
+          $("button[id='language_java']").click( function ()
+          {
+              Cookies.set('code_state', 'cs');
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
           });
       
           code_state = Cookies.get('code_state');
@@ -45,6 +62,8 @@
               $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").show();
               $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
           }
       
           if(code_state == 'cpp')
@@ -53,6 +72,8 @@
               $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").hide();
               $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
           }
       
           if(code_state == 'cs')
@@ -61,6 +82,18 @@
               $("h3[class='cpp']").hide();
               $("pre[class='highlight csharp']").show();
               $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          }
+      
+          if(code_state == 'java')
+          {
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
           }
       });
     </script>
@@ -80,8 +113,16 @@
           <p>
             表示するサンプルコードの言語を指定できます。
           </p>
-          <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button>
+          <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button><button id="language_java">Java</button>
         </div><h2>変更点</h2>
+
+<h3>1.1.0 (2016/12/03)</h3>
+
+<ul>
+<li>Java(JVM)に対応</li>
+<li>エフェクトの歪みに対応</li>
+<li>MapObject2D内のChip2Dのソートに対応</li>
+</ul>
 
 <h3>1.0.0 (2016/09/04)</h3>
 
@@ -335,9 +376,6 @@
         </p>
         <p>
           <a href="/Doc/HowToUseApplication/CustomPostEffect.html">自作ポストエフェクト</a>
-        </p>
-        <p>
-          <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
         </p>
         <p>
           <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>

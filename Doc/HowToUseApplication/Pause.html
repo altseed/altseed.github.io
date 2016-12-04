@@ -16,6 +16,8 @@
               $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").show();
               $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
           });
       
           $("button[id='language_cpp']").click( function ()
@@ -26,6 +28,8 @@
               $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").hide();
               $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
           });
       
           $("button[id='language_cs']").click( function ()
@@ -35,6 +39,19 @@
               $("h3[class='cpp']").hide();
               $("pre[class='highlight csharp']").show();
               $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          });
+      
+          $("button[id='language_java']").click( function ()
+          {
+              Cookies.set('code_state', 'cs');
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
           });
       
           code_state = Cookies.get('code_state');
@@ -45,6 +62,8 @@
               $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").show();
               $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
           }
       
           if(code_state == 'cpp')
@@ -53,6 +72,8 @@
               $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").hide();
               $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
           }
       
           if(code_state == 'cs')
@@ -61,6 +82,18 @@
               $("h3[class='cpp']").hide();
               $("pre[class='highlight csharp']").show();
               $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          }
+      
+          if(code_state == 'java')
+          {
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
           }
       });
     </script>
@@ -80,7 +113,7 @@
           <p>
             表示するサンプルコードの言語を指定できます。
           </p>
-          <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button>
+          <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button><button id="language_java">Java</button>
         </div><h2>ポーズ</h2>
 
 <p>Altseedでは、Layerの機能を使用して簡単にポーズを実装することができます。</p>
@@ -198,7 +231,7 @@
 <span class="c1">/// &lt;summary&gt;
 /// ポーズを実行するレイヤー
 /// &lt;/summary&gt;
-</span><span class="k">class</span> <span class="nc">Pause_PauseLayer</span> <span class="p">:</span> <span class="n">asd</span><span class="p">.</span><span class="n">Layer2D</span>
+</span><span class="k">class</span> <span class="nc">Pause_Basic_PauseLayer</span> <span class="p">:</span> <span class="n">asd</span><span class="p">.</span><span class="n">Layer2D</span>
 <span class="p">{</span>
     <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnAdded</span><span class="p">()</span>
     <span class="p">{</span>
@@ -231,11 +264,11 @@
 <span class="c1">/// &lt;summary&gt;
 /// ゲームの挙動を描画するレイヤー
 /// &lt;/summary&gt;
-</span><span class="k">class</span> <span class="nc">Pause_MainLayer</span> <span class="p">:</span> <span class="n">asd</span><span class="p">.</span><span class="n">Layer2D</span>
+</span><span class="k">class</span> <span class="nc">Pause_Basic_MainLayer</span> <span class="p">:</span> <span class="n">asd</span><span class="p">.</span><span class="n">Layer2D</span>
 <span class="p">{</span>
     <span class="n">asd</span><span class="p">.</span><span class="n">TextureObject2D</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
 
-    <span class="k">public</span> <span class="nf">Pause_MainLayer</span><span class="p">()</span>
+    <span class="k">public</span> <span class="nf">Pause_Basic_MainLayer</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="c1">// 画像を表示するオブジェクトを生成する。
 </span>        <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextureObject2D</span><span class="p">();</span>
@@ -250,7 +283,7 @@
         <span class="c1">// スペースが押されたら、ポーズレイヤーを追加する。
 </span>        <span class="k">if</span><span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Keyboard</span><span class="p">.</span><span class="nf">GetKeyState</span><span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Keys</span><span class="p">.</span><span class="n">Space</span><span class="p">)</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span><span class="p">.</span><span class="n">Push</span><span class="p">)</span>
         <span class="p">{</span>
-            <span class="n">var</span> <span class="n">pauseLayer</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Pause_PauseLayer</span><span class="p">();</span>
+            <span class="n">var</span> <span class="n">pauseLayer</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Pause_Basic_PauseLayer</span><span class="p">();</span>
             <span class="n">Scene</span><span class="p">.</span><span class="nf">AddLayer</span><span class="p">(</span><span class="n">pauseLayer</span><span class="p">);</span>
         <span class="p">}</span>
 
@@ -274,6 +307,11 @@
         <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"ポーズ"</span><span class="p">;</span> <span class="p">}</span>
     <span class="p">}</span>
 
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">ClassName</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"Pause_Basic"</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+
     <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
     <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
     <span class="p">{</span>
@@ -284,7 +322,7 @@
 </span>        <span class="n">var</span> <span class="n">scene</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Scene</span><span class="p">();</span>
 
         <span class="c1">// ゲームの挙動を描画するレイヤーを生成する
-</span>        <span class="n">var</span> <span class="n">layer</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Pause_MainLayer</span><span class="p">();</span>
+</span>        <span class="n">var</span> <span class="n">layer</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Pause_Basic_MainLayer</span><span class="p">();</span>
 
         <span class="c1">// シーンにレイヤーを追加する
 </span>        <span class="n">scene</span><span class="p">.</span><span class="nf">AddLayer</span><span class="p">(</span><span class="n">layer</span><span class="p">);</span>
@@ -303,6 +341,53 @@
 </span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
+
+</code></pre>
+
+<h3 class="java">Java</h3>
+<pre class="highlight java"><code><span class="cm">/**
+ * ポーズのサンプル。
+*/</span>
+<span class="kd">class</span> <span class="nc">Pause_Basic</span> 
+<span class="o">{</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"レイヤーの処理を一時停止するサンプルです。"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"ポーズ"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getClassName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"Pause_Basic"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[])</span>
+    <span class="o">{</span>
+        <span class="c1">// Altseedを初期化する。</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Initialize</span><span class="o">(</span><span class="s">"Pause_Basic"</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">EngineOption</span><span class="o">());</span>
+
+        <span class="c1">// シーンを生成する</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Scene</span> <span class="n">scene</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Scene</span><span class="o">();</span>
+
+        <span class="c1">// ゲームの挙動を描画するレイヤーを生成する</span>
+        <span class="n">Pause_Basic_MainLayer</span> <span class="n">layer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pause_Basic_MainLayer</span><span class="o">();</span>
+
+        <span class="c1">// シーンにレイヤーを追加する</span>
+        <span class="n">scene</span><span class="o">.</span><span class="na">AddLayer</span><span class="o">(</span><span class="n">layer</span><span class="o">);</span>
+
+        <span class="c1">// シーンを切り替える</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">ChangeScene</span><span class="o">(</span><span class="n">scene</span><span class="o">);</span>
+
+        <span class="c1">// Altseedのウインドウが閉じられていないか確認する。</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
+        <span class="o">{</span>
+            <span class="c1">// Altseedを更新する。</span>
+            <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Update</span><span class="o">();</span>
+        <span class="o">}</span>
+
+
+        <span class="c1">// Altseedの終了処理をする。</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Terminate</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 
 </code></pre>
 
@@ -424,9 +509,6 @@
         </p>
         <p>
           <a href="/Doc/HowToUseApplication/CustomPostEffect.html">自作ポストエフェクト</a>
-        </p>
-        <p>
-          <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
         </p>
         <p>
           <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>

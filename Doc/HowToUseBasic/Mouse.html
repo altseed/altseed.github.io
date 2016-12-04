@@ -16,6 +16,8 @@
               $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").show();
               $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
           });
       
           $("button[id='language_cpp']").click( function ()
@@ -26,6 +28,8 @@
               $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").hide();
               $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
           });
       
           $("button[id='language_cs']").click( function ()
@@ -35,6 +39,19 @@
               $("h3[class='cpp']").hide();
               $("pre[class='highlight csharp']").show();
               $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          });
+      
+          $("button[id='language_java']").click( function ()
+          {
+              Cookies.set('code_state', 'cs');
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
           });
       
           code_state = Cookies.get('code_state');
@@ -45,6 +62,8 @@
               $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").show();
               $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
           }
       
           if(code_state == 'cpp')
@@ -53,6 +72,8 @@
               $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").hide();
               $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
           }
       
           if(code_state == 'cs')
@@ -61,6 +82,18 @@
               $("h3[class='cpp']").hide();
               $("pre[class='highlight csharp']").show();
               $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          }
+      
+          if(code_state == 'java')
+          {
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
           }
       });
     </script>
@@ -80,7 +113,7 @@
           <p>
             表示するサンプルコードの言語を指定できます。
           </p>
-          <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button>
+          <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button><button id="language_java">Java</button>
         </div><h2>マウスの入力状態の取得</h2>
 
 <p>AltseedでMouseを扱うには、Engineクラスが持つMouseプロパティを取得します。</p>
@@ -194,22 +227,38 @@
 </code></pre>
 
 <h3 class="java">Java</h3>
-<pre class="highlight java"><code><span class="kd">public</span>  <span class="kd">class</span> <span class="nc">Mouse_Click</span>    <span class="o">{</span>
+<pre class="highlight java"><code><span class="cm">/**
+ * マウスによる入力を取得を取得するサンプル。
+*/</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Mouse_Click</span> 
+<span class="o">{</span>
     <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="s">"マウスの左クリックを検知するサンプルです。"</span><span class="o">;</span>
     <span class="o">}</span>
     <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="s">"マウスのクリック検知"</span><span class="o">;</span>
     <span class="o">}</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getClassName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"Mouse_Click"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[])</span>
+    <span class="o">{</span>
+        <span class="c1">// Altseedを初期化する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Initialize</span><span class="o">(</span><span class="s">"Mouse_Click"</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">EngineOption</span><span class="o">());</span>
+
+        <span class="c1">// マウスの状態を表示するテキストを生成する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Font</span> <span class="n">font</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getGraphics</span><span class="o">().</span><span class="na">CreateDynamicFont</span><span class="o">(</span><span class="s">""</span><span class="o">,</span> <span class="mi">40</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Color</span><span class="o">(</span><span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">),</span> <span class="mi">1</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Color</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">255</span><span class="o">));</span>
+
+        <span class="c1">// マウスの左ボタンをクリックしたか否かを表示する文字描画オブジェクトを設定して、エンジンに追加する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">TextObject2D</span> <span class="n">stateText</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">TextObject2D</span><span class="o">();</span>
         <span class="n">stateText</span><span class="o">.</span><span class="na">setPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">10</span><span class="o">));</span>
         <span class="n">stateText</span><span class="o">.</span><span class="na">setFont</span><span class="o">(</span><span class="n">font</span><span class="o">);</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">stateText</span><span class="o">);</span>
+
+        <span class="c1">// Altseedのウインドウが閉じられていないか確認する。</span>
         <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
         <span class="o">{</span>
+            <span class="c1">// 左ボタンが押されているかを表示する。</span>
             <span class="k">if</span><span class="o">((</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getMouse</span><span class="o">().</span><span class="na">getLeftButton</span><span class="o">().</span><span class="na">getButtonState</span><span class="o">()</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">MouseButtonState</span><span class="o">.</span><span class="na">Hold</span><span class="o">))</span>
             <span class="o">{</span>
                 <span class="n">stateText</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"左ボタンが押されています。"</span><span class="o">);</span>
@@ -219,9 +268,13 @@
                 <span class="n">stateText</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"左ボタンが押されていません。"</span><span class="o">);</span>
             <span class="o">}</span>
 
+            <span class="c1">// Altseedを更新する。</span>
             <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Update</span><span class="o">();</span>
+
         <span class="o">}</span>
 
+
+        <span class="c1">// Altseedの終了処理をする。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Terminate</span><span class="o">();</span>
     <span class="o">}</span>
 <span class="o">}</span>
@@ -358,23 +411,41 @@
 </code></pre>
 
 <h3 class="java">Java</h3>
-<pre class="highlight java"><code><span class="kd">public</span>  <span class="kd">class</span> <span class="nc">Mouse_State</span>    <span class="o">{</span>
+<pre class="highlight java"><code><span class="cm">/**
+ * マウスの様々な状態を取得するサンプル。
+*/</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Mouse_State</span> 
+<span class="o">{</span>
     <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="s">"マウスの中ボタンの状態を調べ、状態を表示するサンプルです。"</span><span class="o">;</span>
     <span class="o">}</span>
     <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="s">"マウスボタンの状態"</span><span class="o">;</span>
     <span class="o">}</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getClassName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"Mouse_State"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[])</span>
+    <span class="o">{</span>
+        <span class="c1">// Altseedを初期化する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Initialize</span><span class="o">(</span><span class="s">"Mouse_State"</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">EngineOption</span><span class="o">());</span>
+
+        <span class="c1">// マウスの状態を表示するテキストを生成する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Font</span> <span class="n">font</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getGraphics</span><span class="o">().</span><span class="na">CreateDynamicFont</span><span class="o">(</span><span class="s">""</span><span class="o">,</span> <span class="mi">40</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Color</span><span class="o">(</span><span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">),</span> <span class="mi">1</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Color</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">255</span><span class="o">));</span>
+
+        <span class="c1">// マウスの中ボタンの入力状態を表示する文字描画オブジェクトを設定して、エンジンに追加する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">TextObject2D</span> <span class="n">buttonStateText</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">TextObject2D</span><span class="o">();</span>
         <span class="n">buttonStateText</span><span class="o">.</span><span class="na">setPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">10</span><span class="o">));</span>
         <span class="n">buttonStateText</span><span class="o">.</span><span class="na">setFont</span><span class="o">(</span><span class="n">font</span><span class="o">);</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">buttonStateText</span><span class="o">);</span>
+
+        <span class="c1">// Altseedのウインドウが閉じられていないか確認する。</span>
         <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
         <span class="o">{</span>
+            <span class="c1">// マウスの中央クリック状態を取得して表示する。</span>
+
             <span class="n">asd</span><span class="o">.</span><span class="na">MouseButtonState</span> <span class="n">middlestate</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getMouse</span><span class="o">().</span><span class="na">getMiddleButton</span><span class="o">().</span><span class="na">getButtonState</span><span class="o">();</span>
+
             <span class="k">if</span><span class="o">((</span><span class="n">middlestate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">MouseButtonState</span><span class="o">.</span><span class="na">Free</span><span class="o">))</span>
             <span class="o">{</span>
                 <span class="n">buttonStateText</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"中ボタンを離しています。"</span><span class="o">);</span>
@@ -397,16 +468,17 @@
                         <span class="o">{</span>
                             <span class="n">buttonStateText</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"中ボタンを押しました!"</span><span class="o">);</span>
                         <span class="o">}</span>
-
                     <span class="o">}</span>
-
                 <span class="o">}</span>
-
             <span class="o">}</span>
 
+            <span class="c1">// Altseedを更新する。</span>
             <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Update</span><span class="o">();</span>
+
         <span class="o">}</span>
 
+
+        <span class="c1">// Altseedの終了処理をする。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Terminate</span><span class="o">();</span>
     <span class="o">}</span>
 <span class="o">}</span>
@@ -495,7 +567,7 @@
         <span class="p">{</span>
             <span class="c1">// マウスカーソルの座標を取得して表示する。
 </span>            <span class="n">asd</span><span class="p">.</span><span class="n">Vector2DF</span> <span class="n">pos</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Mouse</span><span class="p">.</span><span class="n">Position</span><span class="p">;</span>
-            <span class="n">stateText</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"マウスカーソルの位置 : ("</span> <span class="p">+</span> <span class="n">pos</span><span class="p">.</span><span class="n">X</span><span class="p">.</span><span class="nf">ToString</span><span class="p">()</span> <span class="p">+</span> <span class="s">","</span> <span class="p">+</span> <span class="n">pos</span><span class="p">.</span><span class="n">Y</span><span class="p">.</span><span class="nf">ToString</span><span class="p">()</span> <span class="p">+</span> <span class="s">")"</span><span class="p">;</span>
+            <span class="n">stateText</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"マウスカーソルの位置 : ("</span> <span class="p">+</span> <span class="n">pos</span><span class="p">.</span><span class="n">X</span> <span class="p">+</span> <span class="s">","</span> <span class="p">+</span> <span class="n">pos</span><span class="p">.</span><span class="n">Y</span> <span class="p">+</span> <span class="s">")"</span><span class="p">;</span>
 
             <span class="c1">// Altseedを更新する。
 </span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
@@ -510,27 +582,48 @@
 </code></pre>
 
 <h3 class="java">Java</h3>
-<pre class="highlight java"><code><span class="kd">public</span>  <span class="kd">class</span> <span class="nc">Mouse_Position</span>    <span class="o">{</span>
+<pre class="highlight java"><code><span class="cm">/**
+ * マウスの座標を取得を取得するサンプル。
+*/</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Mouse_Position</span> 
+<span class="o">{</span>
     <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="s">"マウスの座標を取得し、その位置を表示するサンプルです。"</span><span class="o">;</span>
     <span class="o">}</span>
     <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="s">"マウス座標の取得"</span><span class="o">;</span>
     <span class="o">}</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getClassName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"Mouse_Position"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[])</span>
+    <span class="o">{</span>
+        <span class="c1">// Altseedを初期化する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Initialize</span><span class="o">(</span><span class="s">"Mouse_Position"</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">EngineOption</span><span class="o">());</span>
+
+        <span class="c1">// マウスの状態を表示するテキストを生成する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Font</span> <span class="n">font</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getGraphics</span><span class="o">().</span><span class="na">CreateDynamicFont</span><span class="o">(</span><span class="s">""</span><span class="o">,</span> <span class="mi">25</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Color</span><span class="o">(</span><span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">),</span> <span class="mi">1</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Color</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">255</span><span class="o">));</span>
+
+        <span class="c1">// マウスカーソルの座標を表示する文字描画オブジェクトを設定して、エンジンに追加する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">TextObject2D</span> <span class="n">stateText</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">TextObject2D</span><span class="o">();</span>
         <span class="n">stateText</span><span class="o">.</span><span class="na">setPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">10</span><span class="o">));</span>
         <span class="n">stateText</span><span class="o">.</span><span class="na">setFont</span><span class="o">(</span><span class="n">font</span><span class="o">);</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">stateText</span><span class="o">);</span>
+
+        <span class="c1">// Altseedのウインドウが閉じられていないか確認する。</span>
         <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
         <span class="o">{</span>
+            <span class="c1">// マウスカーソルの座標を取得して表示する。</span>
             <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span> <span class="n">pos</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getMouse</span><span class="o">().</span><span class="na">getPosition</span><span class="o">();</span>
-            <span class="n">stateText</span><span class="o">.</span><span class="na">setText</span><span class="o">(((((</span><span class="s">"マウスカーソルの位置 : ("</span>  <span class="o">+</span> <span class="n">pos</span><span class="o">.</span><span class="na">X</span><span class="o">.</span><span class="na">ToString</span><span class="o">())</span> <span class="o">+</span> <span class="s">","</span> <span class="o">)</span> <span class="o">+</span> <span class="n">pos</span><span class="o">.</span><span class="na">Y</span><span class="o">.</span><span class="na">ToString</span><span class="o">())</span> <span class="o">+</span> <span class="s">")"</span><span class="o">));</span>
+            <span class="n">stateText</span><span class="o">.</span><span class="na">setText</span><span class="o">(((((</span><span class="s">"マウスカーソルの位置 : ("</span> <span class="o">+</span> <span class="n">pos</span><span class="o">.</span><span class="na">X</span><span class="o">)</span> <span class="o">+</span> <span class="s">","</span><span class="o">)</span> <span class="o">+</span> <span class="n">pos</span><span class="o">.</span><span class="na">Y</span><span class="o">)</span> <span class="o">+</span> <span class="s">")"</span><span class="o">));</span>
+
+            <span class="c1">// Altseedを更新する。</span>
             <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Update</span><span class="o">();</span>
+
         <span class="o">}</span>
 
+
+        <span class="c1">// Altseedの終了処理をする。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Terminate</span><span class="o">();</span>
     <span class="o">}</span>
 <span class="o">}</span>
@@ -617,7 +710,7 @@
 </span>        <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
         <span class="p">{</span>
             <span class="c1">// マウスのホイールの回転状態を取得して表示する。
-</span>            <span class="n">wheelStateText</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"ホイールの回転度合 : "</span> <span class="p">+</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Mouse</span><span class="p">.</span><span class="n">MiddleButton</span><span class="p">.</span><span class="n">WheelRotation</span><span class="p">.</span><span class="nf">ToString</span><span class="p">();</span>
+</span>            <span class="n">wheelStateText</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"ホイールの回転度合 : "</span> <span class="p">+</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Mouse</span><span class="p">.</span><span class="n">MiddleButton</span><span class="p">.</span><span class="n">WheelRotation</span><span class="p">;</span>
 
             <span class="c1">// Altseedを更新する。
 </span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
@@ -632,26 +725,47 @@
 </code></pre>
 
 <h3 class="java">Java</h3>
-<pre class="highlight java"><code><span class="kd">public</span>  <span class="kd">class</span> <span class="nc">Mouse_Wheel</span>    <span class="o">{</span>
+<pre class="highlight java"><code><span class="cm">/**
+ * マウスのホイールの回転度合を取得するサンプル。
+*/</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Mouse_Wheel</span> 
+<span class="o">{</span>
     <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="s">"マウスホイールの回転の度合いを調べ、表示するサンプルです。"</span><span class="o">;</span>
     <span class="o">}</span>
     <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="s">"マウスホイール"</span><span class="o">;</span>
     <span class="o">}</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getClassName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"Mouse_Wheel"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[])</span>
+    <span class="o">{</span>
+        <span class="c1">// Altseedを初期化する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Initialize</span><span class="o">(</span><span class="s">"Mouse_Wheel"</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">EngineOption</span><span class="o">());</span>
+
+        <span class="c1">// マウスの状態を表示するテキストを生成する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Font</span> <span class="n">font</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getGraphics</span><span class="o">().</span><span class="na">CreateDynamicFont</span><span class="o">(</span><span class="s">""</span><span class="o">,</span> <span class="mi">40</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Color</span><span class="o">(</span><span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">),</span> <span class="mi">1</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Color</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">255</span><span class="o">));</span>
+
+        <span class="c1">// マウスのホイールの回転度合を表示する文字描画オブジェクトを設定して、エンジンに追加する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">TextObject2D</span> <span class="n">wheelStateText</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">TextObject2D</span><span class="o">();</span>
         <span class="n">wheelStateText</span><span class="o">.</span><span class="na">setPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">10</span><span class="o">));</span>
         <span class="n">wheelStateText</span><span class="o">.</span><span class="na">setFont</span><span class="o">(</span><span class="n">font</span><span class="o">);</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">wheelStateText</span><span class="o">);</span>
+
+        <span class="c1">// Altseedのウインドウが閉じられていないか確認する。</span>
         <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
         <span class="o">{</span>
-            <span class="n">wheelStateText</span><span class="o">.</span><span class="na">setText</span><span class="o">((</span><span class="s">"ホイールの回転度合 : "</span>  <span class="o">+</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getMouse</span><span class="o">().</span><span class="na">getMiddleButton</span><span class="o">().</span><span class="na">getWheelRotation</span><span class="o">().</span><span class="na">ToString</span><span class="o">()));</span>
+            <span class="c1">// マウスのホイールの回転状態を取得して表示する。</span>
+            <span class="n">wheelStateText</span><span class="o">.</span><span class="na">setText</span><span class="o">((</span><span class="s">"ホイールの回転度合 : "</span> <span class="o">+</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getMouse</span><span class="o">().</span><span class="na">getMiddleButton</span><span class="o">().</span><span class="na">getWheelRotation</span><span class="o">()));</span>
+
+            <span class="c1">// Altseedを更新する。</span>
             <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Update</span><span class="o">();</span>
+
         <span class="o">}</span>
 
+
+        <span class="c1">// Altseedの終了処理をする。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Terminate</span><span class="o">();</span>
     <span class="o">}</span>
 <span class="o">}</span>
@@ -776,9 +890,6 @@
         </p>
         <p>
           <a href="/Doc/HowToUseApplication/CustomPostEffect.html">自作ポストエフェクト</a>
-        </p>
-        <p>
-          <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
         </p>
         <p>
           <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>

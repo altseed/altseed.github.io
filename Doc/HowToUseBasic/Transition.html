@@ -16,6 +16,8 @@
               $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").show();
               $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
           });
       
           $("button[id='language_cpp']").click( function ()
@@ -26,6 +28,8 @@
               $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").hide();
               $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
           });
       
           $("button[id='language_cs']").click( function ()
@@ -35,6 +39,19 @@
               $("h3[class='cpp']").hide();
               $("pre[class='highlight csharp']").show();
               $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          });
+      
+          $("button[id='language_java']").click( function ()
+          {
+              Cookies.set('code_state', 'cs');
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
           });
       
           code_state = Cookies.get('code_state');
@@ -45,6 +62,8 @@
               $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").show();
               $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
           }
       
           if(code_state == 'cpp')
@@ -53,6 +72,8 @@
               $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").hide();
               $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
           }
       
           if(code_state == 'cs')
@@ -61,6 +82,18 @@
               $("h3[class='cpp']").hide();
               $("pre[class='highlight csharp']").show();
               $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          }
+      
+          if(code_state == 'java')
+          {
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
           }
       });
     </script>
@@ -80,7 +113,7 @@
           <p>
             表示するサンプルコードの言語を指定できます。
           </p>
-          <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button>
+          <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button><button id="language_java">Java</button>
         </div><h2>シーン遷移</h2>
 
 <h3>フェードアウト・フェードイン</h3>
@@ -268,57 +301,88 @@
 </code></pre>
 
 <h3 class="java">Java</h3>
-<pre class="highlight java"><code>  <span class="kd">class</span> <span class="nc">Transition_Fade</span>    <span class="o">{</span>
+<pre class="highlight java"><code><span class="kd">class</span> <span class="nc">Transition_Fade</span> 
+<span class="o">{</span>
     <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="s">"フェードイン・フェードアウトを用いてシーン遷移をするサンプルです。"</span><span class="o">;</span>
     <span class="o">}</span>
     <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="s">"フェードイン・フェードアウト"</span><span class="o">;</span>
     <span class="o">}</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getClassName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"Transition_Fade"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[])</span>
+    <span class="o">{</span>
+        <span class="c1">// Altseedを初期化する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Initialize</span><span class="o">(</span><span class="s">"Transition_Fade"</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">EngineOption</span><span class="o">());</span>
+
+        <span class="c1">// シーンのインスタンスを生成する。</span>
         <span class="n">Transition_Fade_Scene1</span> <span class="n">scene</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Transition_Fade_Scene1</span><span class="o">();</span>
+
+        <span class="c1">// シーンをシーン1に設定する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">ChangeScene</span><span class="o">(</span><span class="n">scene</span><span class="o">);</span>
+
+        <span class="c1">// Altseedのウインドウが閉じられていないか確認する。</span>
         <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
         <span class="o">{</span>
+            <span class="c1">// Altseedを更新する。</span>
             <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Update</span><span class="o">();</span>
         <span class="o">}</span>
 
+
+        <span class="c1">// Altseedを終了する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Terminate</span><span class="o">();</span>
     <span class="o">}</span>
 <span class="o">}</span>
-  <span class="kd">class</span> <span class="nc">Transition_Fade_Scene1</span>  <span class="kd">extends</span> <span class="n">asd</span><span class="o">.</span><span class="na">Scene</span>  <span class="o">{</span>
-    <span class="kd">protected</span>    <span class="kt">void</span> <span class="n">OnRegistered</span><span class="o">(){</span>
+<span class="kd">class</span> <span class="nc">Transition_Fade_Scene1</span> <span class="kd">extends</span> <span class="n">asd</span><span class="o">.</span><span class="na">Scene</span>
+<span class="o">{</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="n">OnRegistered</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="c1">// 画像を読み込み、オブジェクトに設定する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">TextureObject2D</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">TextureObject2D</span><span class="o">();</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Texture2D</span> <span class="n">tex</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getGraphics</span><span class="o">().</span><span class="na">CreateTexture2D</span><span class="o">(</span><span class="s">"Data/Texture/Scene1.png"</span><span class="o">);</span>
         <span class="n">obj</span><span class="o">.</span><span class="na">setTexture</span><span class="o">(</span><span class="n">tex</span><span class="o">);</span>
+
+        <span class="c1">// シーンにレイヤーを追加し、そのレイヤーにオブジェクトを追加する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Layer2D</span> <span class="n">layer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Layer2D</span><span class="o">();</span>
         <span class="n">AddLayer</span><span class="o">(</span><span class="n">layer</span><span class="o">);</span>
         <span class="n">layer</span><span class="o">.</span><span class="na">AddObject</span><span class="o">(</span><span class="n">obj</span><span class="o">);</span>
     <span class="o">}</span>
-    <span class="kd">protected</span>    <span class="kt">void</span> <span class="n">OnUpdated</span><span class="o">(){</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="n">OnUpdated</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="c1">// マウスの左ボタンが押されるのを待つ。</span>
         <span class="k">if</span><span class="o">((</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getMouse</span><span class="o">().</span><span class="na">getLeftButton</span><span class="o">().</span><span class="na">getButtonState</span><span class="o">()</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">MouseButtonState</span><span class="o">.</span><span class="na">Push</span><span class="o">))</span>
         <span class="o">{</span>
+            <span class="c1">// フェードアウト・インによるシーン遷移を開始する。</span>
+            <span class="c1">// 1秒かけてフェードアウトし、1.5秒かけてフェードイン。</span>
             <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">ChangeSceneWithTransition</span><span class="o">(</span><span class="k">new</span> <span class="n">Transition_Fade_Scene2</span><span class="o">(),</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">TransitionFade</span><span class="o">(</span><span class="mf">1.0f</span><span class="o">,</span> <span class="mf">1.5f</span><span class="o">));</span>
         <span class="o">}</span>
-
     <span class="o">}</span>
 <span class="o">}</span>
-  <span class="kd">class</span> <span class="nc">Transition_Fade_Scene2</span>  <span class="kd">extends</span> <span class="n">asd</span><span class="o">.</span><span class="na">Scene</span>  <span class="o">{</span>
-    <span class="kd">protected</span>    <span class="kt">void</span> <span class="n">OnRegistered</span><span class="o">(){</span>
+<span class="kd">class</span> <span class="nc">Transition_Fade_Scene2</span> <span class="kd">extends</span> <span class="n">asd</span><span class="o">.</span><span class="na">Scene</span>
+<span class="o">{</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="n">OnRegistered</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="c1">// 画像を読み込み、オブジェクトに設定する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">TextureObject2D</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">TextureObject2D</span><span class="o">();</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Texture2D</span> <span class="n">tex</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getGraphics</span><span class="o">().</span><span class="na">CreateTexture2D</span><span class="o">(</span><span class="s">"Data/Texture/Scene2.png"</span><span class="o">);</span>
         <span class="n">obj</span><span class="o">.</span><span class="na">setTexture</span><span class="o">(</span><span class="n">tex</span><span class="o">);</span>
+
+        <span class="c1">// シーンにレイヤーを追加し、そのレイヤーにオブジェクトを追加する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Layer2D</span> <span class="n">layer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Layer2D</span><span class="o">();</span>
         <span class="n">AddLayer</span><span class="o">(</span><span class="n">layer</span><span class="o">);</span>
         <span class="n">layer</span><span class="o">.</span><span class="na">AddObject</span><span class="o">(</span><span class="n">obj</span><span class="o">);</span>
     <span class="o">}</span>
-    <span class="kd">protected</span>    <span class="kt">void</span> <span class="n">OnUpdated</span><span class="o">(){</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="n">OnUpdated</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="c1">// マウスの左ボタンが押されるのを待つ。</span>
         <span class="k">if</span><span class="o">((</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getMouse</span><span class="o">().</span><span class="na">getLeftButton</span><span class="o">().</span><span class="na">getButtonState</span><span class="o">()</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">MouseButtonState</span><span class="o">.</span><span class="na">Push</span><span class="o">))</span>
         <span class="o">{</span>
+            <span class="c1">// フェードアウト・インによるシーン遷移を開始する。</span>
+            <span class="c1">// 1秒かけてフェードアウトし、1.5秒かけてフェードイン。</span>
             <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">ChangeSceneWithTransition</span><span class="o">(</span><span class="k">new</span> <span class="n">Transition_Fade_Scene1</span><span class="o">(),</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">TransitionFade</span><span class="o">(</span><span class="mf">1.0f</span><span class="o">,</span> <span class="mf">1.5f</span><span class="o">));</span>
         <span class="o">}</span>
-
     <span class="o">}</span>
 <span class="o">}</span>
 
@@ -442,9 +506,6 @@
         </p>
         <p>
           <a href="/Doc/HowToUseApplication/CustomPostEffect.html">自作ポストエフェクト</a>
-        </p>
-        <p>
-          <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
         </p>
         <p>
           <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>

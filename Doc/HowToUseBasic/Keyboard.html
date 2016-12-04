@@ -16,6 +16,8 @@
               $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").show();
               $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
           });
       
           $("button[id='language_cpp']").click( function ()
@@ -26,6 +28,8 @@
               $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").hide();
               $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
           });
       
           $("button[id='language_cs']").click( function ()
@@ -35,6 +39,19 @@
               $("h3[class='cpp']").hide();
               $("pre[class='highlight csharp']").show();
               $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          });
+      
+          $("button[id='language_java']").click( function ()
+          {
+              Cookies.set('code_state', 'cs');
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
           });
       
           code_state = Cookies.get('code_state');
@@ -45,6 +62,8 @@
               $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").show();
               $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
           }
       
           if(code_state == 'cpp')
@@ -53,6 +72,8 @@
               $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").hide();
               $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
           }
       
           if(code_state == 'cs')
@@ -61,6 +82,18 @@
               $("h3[class='cpp']").hide();
               $("pre[class='highlight csharp']").show();
               $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          }
+      
+          if(code_state == 'java')
+          {
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
           }
       });
     </script>
@@ -80,7 +113,7 @@
           <p>
             表示するサンプルコードの言語を指定できます。
           </p>
-          <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button>
+          <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button><button id="language_java">Java</button>
         </div><h2>キーボードの入力状態の取得</h2>
 
 <p>AltseedでKeyboardを扱うには、Engineクラスが持つKeyboardプロパティを取得します。このKeyboardプロパティには現状のキーボードの入力状態が保存されているためキーを指定することによってその状態を取得することができます。</p>
@@ -199,23 +232,40 @@
 </code></pre>
 
 <h3 class="java">Java</h3>
-<pre class="highlight java"><code><span class="kd">public</span>  <span class="kd">class</span> <span class="nc">Keyboard_Basic</span>    <span class="o">{</span>
+<pre class="highlight java"><code><span class="cm">/**
+ * キーボードによる入力を取得するサンプル。
+*/</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Keyboard_Basic</span> 
+<span class="o">{</span>
     <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="s">"Zキーを押しているかどうかを調べ、結果を表示するサンプルです。"</span><span class="o">;</span>
     <span class="o">}</span>
     <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="s">"キーボード入力の基本"</span><span class="o">;</span>
     <span class="o">}</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getClassName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"Keyboard_Basic"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[])</span>
+    <span class="o">{</span>
+        <span class="c1">// Altseedを初期化する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Initialize</span><span class="o">(</span><span class="s">"Keyboard_Basic"</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">EngineOption</span><span class="o">());</span>
+
         <span class="n">asd</span><span class="o">.</span><span class="na">Font</span> <span class="n">font</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getGraphics</span><span class="o">().</span><span class="na">CreateDynamicFont</span><span class="o">(</span><span class="s">""</span><span class="o">,</span> <span class="mi">40</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Color</span><span class="o">(</span><span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">),</span> <span class="mi">1</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Color</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">255</span><span class="o">));</span>
+
+        <span class="c1">// キーの入力状態を表示する文字描画オブジェクトを設定して、エンジンに追加する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">TextObject2D</span> <span class="n">keyStateText</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">TextObject2D</span><span class="o">();</span>
         <span class="n">keyStateText</span><span class="o">.</span><span class="na">setPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">10</span><span class="o">));</span>
         <span class="n">keyStateText</span><span class="o">.</span><span class="na">setFont</span><span class="o">(</span><span class="n">font</span><span class="o">);</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">keyStateText</span><span class="o">);</span>
+
+        <span class="c1">// Altseedのウインドウが閉じられていないか確認する。</span>
         <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
         <span class="o">{</span>
+            <span class="c1">// キーボードのZキーの入力状態を取得する。</span>
+
             <span class="n">asd</span><span class="o">.</span><span class="na">KeyState</span> <span class="n">zstate</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getKeyboard</span><span class="o">().</span><span class="na">GetKeyState</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Keys</span><span class="o">.</span><span class="na">Z</span><span class="o">);</span>
+
             <span class="k">if</span><span class="o">((</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">KeyState</span><span class="o">.</span><span class="na">Free</span><span class="o">))</span>
             <span class="o">{</span>
                 <span class="n">keyStateText</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"Zキーを離しています。"</span><span class="o">);</span>
@@ -226,12 +276,15 @@
                 <span class="o">{</span>
                     <span class="n">keyStateText</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"Zキーを押しています。"</span><span class="o">);</span>
                 <span class="o">}</span>
-
             <span class="o">}</span>
 
+            <span class="c1">// Altseedを更新する。</span>
             <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Update</span><span class="o">();</span>
+
         <span class="o">}</span>
 
+
+        <span class="c1">// Altseedの終了処理をする。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Terminate</span><span class="o">();</span>
     <span class="o">}</span>
 <span class="o">}</span>
@@ -367,23 +420,40 @@
 </code></pre>
 
 <h3 class="java">Java</h3>
-<pre class="highlight java"><code><span class="kd">public</span>  <span class="kd">class</span> <span class="nc">Keyboard_SingularKey</span>    <span class="o">{</span>
+<pre class="highlight java"><code><span class="cm">/**
+ * キーボードの一つのキーの入力状態を取得するサンプル。
+*/</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Keyboard_SingularKey</span> 
+<span class="o">{</span>
     <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="s">"キーボードのキー入力状態を詳しく調べ、状態を表示するサンプルです。"</span><span class="o">;</span>
     <span class="o">}</span>
     <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="s">"キーボードの入力状態"</span><span class="o">;</span>
     <span class="o">}</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getClassName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"Keyboard_SingularKey"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[])</span>
+    <span class="o">{</span>
+        <span class="c1">// Altseedを初期化する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Initialize</span><span class="o">(</span><span class="s">"Keyboard_SingularKey"</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">EngineOption</span><span class="o">());</span>
+
         <span class="n">asd</span><span class="o">.</span><span class="na">Font</span> <span class="n">font</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getGraphics</span><span class="o">().</span><span class="na">CreateDynamicFont</span><span class="o">(</span><span class="s">""</span><span class="o">,</span> <span class="mi">40</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Color</span><span class="o">(</span><span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">),</span> <span class="mi">1</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Color</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">255</span><span class="o">));</span>
+
+        <span class="c1">// キーの入力状態を表示する文字描画オブジェクトを設定して、エンジンに追加する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">TextObject2D</span> <span class="n">keyStateText</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">TextObject2D</span><span class="o">();</span>
         <span class="n">keyStateText</span><span class="o">.</span><span class="na">setPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">10</span><span class="o">));</span>
         <span class="n">keyStateText</span><span class="o">.</span><span class="na">setFont</span><span class="o">(</span><span class="n">font</span><span class="o">);</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">keyStateText</span><span class="o">);</span>
+
+        <span class="c1">// Altseedのウインドウが閉じられていないか確認する。</span>
         <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
         <span class="o">{</span>
+            <span class="c1">// キーボードのZキーの入力状態を取得する。</span>
+
             <span class="n">asd</span><span class="o">.</span><span class="na">KeyState</span> <span class="n">zstate</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getKeyboard</span><span class="o">().</span><span class="na">GetKeyState</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Keys</span><span class="o">.</span><span class="na">Z</span><span class="o">);</span>
+
             <span class="k">if</span><span class="o">((</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">KeyState</span><span class="o">.</span><span class="na">Free</span><span class="o">))</span>
             <span class="o">{</span>
                 <span class="n">keyStateText</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"Zキーを離しています。"</span><span class="o">);</span>
@@ -406,24 +476,24 @@
                         <span class="o">{</span>
                             <span class="n">keyStateText</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"Zキーを押しました!"</span><span class="o">);</span>
                         <span class="o">}</span>
-
                     <span class="o">}</span>
-
                 <span class="o">}</span>
-
             <span class="o">}</span>
 
+            <span class="c1">// Altseedを更新する。</span>
             <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Update</span><span class="o">();</span>
+
         <span class="o">}</span>
 
+
+        <span class="c1">// Altseedの終了処理をする。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Terminate</span><span class="o">();</span>
     <span class="o">}</span>
 <span class="o">}</span>
 
 </code></pre>
 
-<h3>複数のキーの詳しい入力状態を取得</h3>
-
+<h3>複数のキーの詳しい入力状態を取得
 <p><img alt="SS" src="/Doc/img/ss/Keyboard_PuralKeys.gif" /></p>
 
 <h3 class="cpp">C++</h3>
@@ -609,38 +679,62 @@
 </code></pre>
 
 <h3 class="java">Java</h3>
-<pre class="highlight java"><code><span class="kd">public</span>  <span class="kd">class</span> <span class="nc">Keyboard_PuralKeys</span>    <span class="o">{</span>
+<pre class="highlight java"><code><span class="cm">/**
+ * キーボードの複数のキーの入力状態を取得するサンプル。
+*/</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Keyboard_PuralKeys</span> 
+<span class="o">{</span>
     <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="s">"キーボードの複数のキーの入力状態を調べ、表示するサンプルです。"</span><span class="o">;</span>
     <span class="o">}</span>
     <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="s">"複数のキーの入力状態"</span><span class="o">;</span>
     <span class="o">}</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getClassName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"Keyboard_PuralKeys"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[])</span>
+    <span class="o">{</span>
+        <span class="c1">// Altseedを初期化する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Initialize</span><span class="o">(</span><span class="s">"Keyboard_PuralKeys"</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">EngineOption</span><span class="o">());</span>
+
         <span class="n">asd</span><span class="o">.</span><span class="na">Font</span> <span class="n">font</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getGraphics</span><span class="o">().</span><span class="na">CreateDynamicFont</span><span class="o">(</span><span class="s">""</span><span class="o">,</span> <span class="mi">40</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Color</span><span class="o">(</span><span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">),</span> <span class="mi">1</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Color</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">255</span><span class="o">));</span>
+
+        <span class="c1">// キーの入力状態を表示する文字描画オブジェクトを設定して、エンジンに追加する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">TextObject2D</span> <span class="n">keyStateText</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">TextObject2D</span><span class="o">();</span>
         <span class="n">keyStateText</span><span class="o">.</span><span class="na">setPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">10</span><span class="o">));</span>
         <span class="n">keyStateText</span><span class="o">.</span><span class="na">setFont</span><span class="o">(</span><span class="n">font</span><span class="o">);</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">keyStateText</span><span class="o">);</span>
+
+        <span class="c1">// 入力チェックするキー一覧。(Z, X, C, V, B)</span>
         <span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">ArrayList</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">.</span><span class="na">Keys</span><span class="o">&gt;</span> <span class="n">keys</span> <span class="o">=</span> <span class="k">new</span> <span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">ArrayList</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">.</span><span class="na">Keys</span><span class="o">&gt;();</span>
         <span class="n">keys</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Keys</span><span class="o">.</span><span class="na">Z</span><span class="o">);</span>
         <span class="n">keys</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Keys</span><span class="o">.</span><span class="na">X</span><span class="o">);</span>
         <span class="n">keys</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Keys</span><span class="o">.</span><span class="na">C</span><span class="o">);</span>
         <span class="n">keys</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Keys</span><span class="o">.</span><span class="na">V</span><span class="o">);</span>
         <span class="n">keys</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Keys</span><span class="o">.</span><span class="na">B</span><span class="o">);</span>
+
+        <span class="c1">// キーの文字列表現。</span>
         <span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">ArrayList</span><span class="o">&lt;</span><span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span><span class="o">&gt;</span> <span class="n">keyStrs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">ArrayList</span><span class="o">&lt;</span><span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span><span class="o">&gt;();</span>
         <span class="n">keyStrs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"Z"</span><span class="o">);</span>
         <span class="n">keyStrs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"X"</span><span class="o">);</span>
         <span class="n">keyStrs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"C"</span><span class="o">);</span>
         <span class="n">keyStrs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"V"</span><span class="o">);</span>
         <span class="n">keyStrs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"B"</span><span class="o">);</span>
+
+        <span class="c1">// Altseedのウインドウが閉じられていないか確認する。</span>
         <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
         <span class="o">{</span>
             <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">displayStr</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
-            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="o">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">keys</span><span class="o">.</span><span class="na">size</span><span class="o">());</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
-                <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">keystr</span> <span class="o">=</span> <span class="n">keyStrs</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
-                <span class="n">asd</span><span class="o">.</span><span class="na">KeyState</span> <span class="n">state</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getKeyboard</span><span class="o">().</span><span class="na">GetKeyState</span><span class="o">(</span><span class="n">keys</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
+
+            <span class="c1">// すべてのキーに対して入力状態を確認してから表示する。</span>
+            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="o">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">keys</span><span class="o">.</span><span class="na">size</span><span class="o">());</span> <span class="n">i</span><span class="o">++)</span>
+            <span class="o">{</span>
+                <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">keystr</span> <span class="o">=</span> <span class="n">keyStrs</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+
+                <span class="c1">// キーボードのZキーの入力状態を取得する。</span>
+                <span class="n">asd</span><span class="o">.</span><span class="na">KeyState</span> <span class="n">state</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getKeyboard</span><span class="o">().</span><span class="na">GetKeyState</span><span class="o">(</span><span class="n">keys</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">));</span>
+
                 <span class="k">if</span><span class="o">((</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">KeyState</span><span class="o">.</span><span class="na">Free</span><span class="o">))</span>
                 <span class="o">{</span>
                     <span class="n">displayStr</span> <span class="o">+=</span> <span class="o">(</span><span class="n">keystr</span> <span class="o">+</span> <span class="s">"キーを離しています。"</span><span class="o">);</span>
@@ -663,20 +757,23 @@
                             <span class="o">{</span>
                                 <span class="n">displayStr</span> <span class="o">+=</span> <span class="o">(</span><span class="n">keystr</span> <span class="o">+</span> <span class="s">"キーを押しました!"</span><span class="o">);</span>
                             <span class="o">}</span>
-
                         <span class="o">}</span>
-
                     <span class="o">}</span>
-
                 <span class="o">}</span>
 
                 <span class="n">displayStr</span> <span class="o">+=</span> <span class="s">"\n"</span><span class="o">;</span>
             <span class="o">}</span>
 
+            <span class="c1">// キー入力状態を示す文字列を更新する。</span>
             <span class="n">keyStateText</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">displayStr</span><span class="o">);</span>
+
+            <span class="c1">// Altseedを更新する。</span>
             <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Update</span><span class="o">();</span>
+
         <span class="o">}</span>
 
+
+        <span class="c1">// Altseedの終了処理をする。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Terminate</span><span class="o">();</span>
     <span class="o">}</span>
 <span class="o">}</span>
@@ -801,9 +898,6 @@
         </p>
         <p>
           <a href="/Doc/HowToUseApplication/CustomPostEffect.html">自作ポストエフェクト</a>
-        </p>
-        <p>
-          <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
         </p>
         <p>
           <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>

@@ -16,6 +16,8 @@
               $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").show();
               $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
           });
       
           $("button[id='language_cpp']").click( function ()
@@ -26,6 +28,8 @@
               $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").hide();
               $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
           });
       
           $("button[id='language_cs']").click( function ()
@@ -35,6 +39,19 @@
               $("h3[class='cpp']").hide();
               $("pre[class='highlight csharp']").show();
               $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          });
+      
+          $("button[id='language_java']").click( function ()
+          {
+              Cookies.set('code_state', 'cs');
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
           });
       
           code_state = Cookies.get('code_state');
@@ -45,6 +62,8 @@
               $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").show();
               $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
           }
       
           if(code_state == 'cpp')
@@ -53,6 +72,8 @@
               $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").hide();
               $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
           }
       
           if(code_state == 'cs')
@@ -61,6 +82,18 @@
               $("h3[class='cpp']").hide();
               $("pre[class='highlight csharp']").show();
               $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          }
+      
+          if(code_state == 'java')
+          {
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
           }
       });
     </script>
@@ -80,7 +113,7 @@
           <p>
             表示するサンプルコードの言語を指定できます。
           </p>
-          <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button>
+          <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button><button id="language_java">Java</button>
         </div><h2>ログ出力</h2>
 
 <p>Log.htmlにログを出力することができます。</p>
@@ -207,33 +240,61 @@
 </code></pre>
 
 <h3 class="java">Java</h3>
-<pre class="highlight java"><code>  <span class="kd">class</span> <span class="nc">Log_Basic</span>    <span class="o">{</span>
+<pre class="highlight java"><code><span class="kd">class</span> <span class="nc">Log_Basic</span> 
+<span class="o">{</span>
     <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="s">"ログファイルにログを出力するサンプルです。"</span><span class="o">;</span>
     <span class="o">}</span>
     <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="s">"ログ出力"</span><span class="o">;</span>
     <span class="o">}</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getClassName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"Log_Basic"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[])</span>
+    <span class="o">{</span>
+        <span class="c1">// Altseedを初期化する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Initialize</span><span class="o">(</span><span class="s">"Log"</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">EngineOption</span><span class="o">());</span>
+
+        <span class="c1">// Engineの標準のロガーを使う（Log.htmlに出力される）</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Log</span> <span class="n">logger</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getLogger</span><span class="o">();</span>
+
+        <span class="c1">// ヘッダー文字列を出力する</span>
         <span class="n">logger</span><span class="o">.</span><span class="na">WriteHeading</span><span class="o">(</span><span class="s">"サンプル出力"</span><span class="o">);</span>
+
+        <span class="c1">// 文字列を出力する</span>
         <span class="n">logger</span><span class="o">.</span><span class="na">Write</span><span class="o">(</span><span class="s">"文字列"</span><span class="o">);</span>
+
+        <span class="c1">// 改行付きで文字列を出力する</span>
         <span class="n">logger</span><span class="o">.</span><span class="na">WriteLine</span><span class="o">(</span><span class="s">"文字列＋改行"</span><span class="o">);</span>
+
+        <span class="c1">// 山括弧のエスケープもされる</span>
         <span class="n">logger</span><span class="o">.</span><span class="na">WriteLine</span><span class="o">(</span><span class="s">"&lt;文字列&gt;"</span><span class="o">);</span>
+
+        <span class="c1">// 水平線(&lt;hr/&gt;)</span>
         <span class="n">logger</span><span class="o">.</span><span class="na">WriteHorizontalRule</span><span class="o">();</span>
+
+        <span class="c1">// 強調された文字列を出力する</span>
         <span class="n">logger</span><span class="o">.</span><span class="na">WriteLineStrongly</span><span class="o">(</span><span class="s">"強調文字列"</span><span class="o">);</span>
+
+
+        <span class="c1">// メッセージ用の文字列を用意する。TextObject2D_DynamicFontのサンプルを参照</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Font</span> <span class="n">font</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getGraphics</span><span class="o">().</span><span class="na">CreateDynamicFont</span><span class="o">(</span><span class="s">""</span><span class="o">,</span> <span class="mi">26</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Color</span><span class="o">(</span><span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">),</span> <span class="mi">1</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Color</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">255</span><span class="o">));</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">TextObject2D</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">TextObject2D</span><span class="o">();</span>
         <span class="n">obj</span><span class="o">.</span><span class="na">setFont</span><span class="o">(</span><span class="n">font</span><span class="o">);</span>
         <span class="n">obj</span><span class="o">.</span><span class="na">setPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">));</span>
         <span class="n">obj</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"Log.htmlにログを出力しました。\nウィンドウを閉じる前に確認してください。"</span><span class="o">);</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">obj</span><span class="o">);</span>
+
+        <span class="c1">// Altseedのウインドウが閉じられていないか確認する。</span>
         <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
         <span class="o">{</span>
+            <span class="c1">// Altseedを更新する。</span>
             <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Update</span><span class="o">();</span>
         <span class="o">}</span>
 
+
+        <span class="c1">// Altseedを終了する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Terminate</span><span class="o">();</span>
     <span class="o">}</span>
 <span class="o">}</span>
@@ -356,31 +417,56 @@
 </code></pre>
 
 <h3 class="java">Java</h3>
-<pre class="highlight java"><code>  <span class="kd">class</span> <span class="nc">Log_OutputLevel</span>    <span class="o">{</span>
+<pre class="highlight java"><code><span class="kd">class</span> <span class="nc">Log_OutputLevel</span> 
+<span class="o">{</span>
     <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="s">"ログファイルにログを出力するサンプルです。\n出力レベルを指定し、低レベルのログを無視します。"</span><span class="o">;</span>
     <span class="o">}</span>
     <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="s">"ログの出力レベルの指定"</span><span class="o">;</span>
     <span class="o">}</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getClassName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"Log_OutputLevel"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[])</span>
+    <span class="o">{</span>
+        <span class="c1">// Altseedを初期化する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Initialize</span><span class="o">(</span><span class="s">"Log_OutputLevel"</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">EngineOption</span><span class="o">());</span>
+
+        <span class="c1">// Engineの標準のロガーを使う（Log.htmlに出力される）</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Log</span> <span class="n">logger</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getLogger</span><span class="o">();</span>
+
+        <span class="c1">// ヘッダー文字列を出力する</span>
         <span class="n">logger</span><span class="o">.</span><span class="na">WriteHeading</span><span class="o">(</span><span class="s">"サンプル出力"</span><span class="o">);</span>
+
+        <span class="c1">// SetOutputLevelメソッドで指定したものより低いレベルに指定した出力は、実行されない</span>
+        <span class="c1">// レベルが高い方から順に、Information, Warning, Critical, Error</span>
         <span class="n">logger</span><span class="o">.</span><span class="na">setOutputLevel</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">LogLevel</span><span class="o">.</span><span class="na">Critical</span><span class="o">);</span>
+
+        <span class="c1">// Criticalレベルで出力する。</span>
         <span class="n">logger</span><span class="o">.</span><span class="na">WriteLine</span><span class="o">(</span><span class="s">"出力されるログ(critical)"</span><span class="o">,</span> <span class="n">asd</span><span class="o">.</span><span class="na">LogLevel</span><span class="o">.</span><span class="na">Critical</span><span class="o">);</span>
+
+        <span class="c1">// Informationレベルで出力する。</span>
         <span class="n">logger</span><span class="o">.</span><span class="na">WriteLine</span><span class="o">(</span><span class="s">"出力されないログ(information)"</span><span class="o">,</span> <span class="n">asd</span><span class="o">.</span><span class="na">LogLevel</span><span class="o">.</span><span class="na">Information</span><span class="o">);</span>
+
+
+        <span class="c1">// メッセージ文字列を用意する。TextObject_DynamicFontのサンプルを参照</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Font</span> <span class="n">font</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getGraphics</span><span class="o">().</span><span class="na">CreateDynamicFont</span><span class="o">(</span><span class="s">""</span><span class="o">,</span> <span class="mi">26</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Color</span><span class="o">(</span><span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">),</span> <span class="mi">1</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Color</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">255</span><span class="o">));</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">TextObject2D</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">TextObject2D</span><span class="o">();</span>
         <span class="n">obj</span><span class="o">.</span><span class="na">setFont</span><span class="o">(</span><span class="n">font</span><span class="o">);</span>
         <span class="n">obj</span><span class="o">.</span><span class="na">setPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">));</span>
         <span class="n">obj</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"Log.htmlにログを出力しました。\nウィンドウを閉じる前に確認してください。"</span><span class="o">);</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">obj</span><span class="o">);</span>
+
+        <span class="c1">// Altseedのウインドウが閉じられていないか確認する。</span>
         <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
         <span class="o">{</span>
+            <span class="c1">// Altseedを更新する。</span>
             <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Update</span><span class="o">();</span>
         <span class="o">}</span>
 
+
+        <span class="c1">// Altseedを終了する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Terminate</span><span class="o">();</span>
     <span class="o">}</span>
 <span class="o">}</span>
@@ -540,39 +626,77 @@
 </code></pre>
 
 <h3 class="java">Java</h3>
-<pre class="highlight java"><code>  <span class="kd">class</span> <span class="nc">Log_Table</span>    <span class="o">{</span>
+<pre class="highlight java"><code><span class="kd">class</span> <span class="nc">Log_Table</span> 
+<span class="o">{</span>
     <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="s">"ログファイルに表組みで表現されたログを出力するサンプルです。"</span><span class="o">;</span>
     <span class="o">}</span>
     <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="s">"表組みされたログ出力"</span><span class="o">;</span>
     <span class="o">}</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getClassName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"Log_Table"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[])</span>
+    <span class="o">{</span>
+        <span class="c1">// Altseedを初期化する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Initialize</span><span class="o">(</span><span class="s">"Log"</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">EngineOption</span><span class="o">());</span>
+
+        <span class="c1">// Engineの標準のロガーを使う（Log.htmlに出力される）</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Log</span> <span class="n">logger</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getLogger</span><span class="o">();</span>
+
+        <span class="c1">// ヘッダーを出力する</span>
         <span class="n">logger</span><span class="o">.</span><span class="na">WriteHeading</span><span class="o">(</span><span class="s">"サンプル出力"</span><span class="o">);</span>
+
+        <span class="c1">// 表組みでの出力を開始する</span>
         <span class="n">logger</span><span class="o">.</span><span class="na">BeginTable</span><span class="o">();</span>
+
+        <span class="c1">// 表のセルに文字列を出力する</span>
         <span class="n">logger</span><span class="o">.</span><span class="na">Write</span><span class="o">(</span><span class="s">"セル１"</span><span class="o">);</span>
+
+        <span class="c1">// 次の列に進む</span>
         <span class="n">logger</span><span class="o">.</span><span class="na">ChangeColumn</span><span class="o">();</span>
+
+        <span class="c1">// 表のセルに文字列を出力する</span>
         <span class="n">logger</span><span class="o">.</span><span class="na">Write</span><span class="o">(</span><span class="s">"セル２(ChangeColumn)"</span><span class="o">);</span>
+
+        <span class="c1">// 次の行に進む。前の行にはもう戻れない</span>
         <span class="n">logger</span><span class="o">.</span><span class="na">ChangeRow</span><span class="o">();</span>
+
+        <span class="c1">// 表のセルに文字列を出力する</span>
         <span class="n">logger</span><span class="o">.</span><span class="na">Write</span><span class="o">(</span><span class="s">"セル３(ChangeRow)"</span><span class="o">);</span>
+
+        <span class="c1">// 表組みでの出力を終了する</span>
         <span class="n">logger</span><span class="o">.</span><span class="na">EndTable</span><span class="o">();</span>
+
+
+        <span class="c1">// SetOutputLevelメソッドで指定したものより低いレベルに指定した出力は、実行されない</span>
+        <span class="c1">// レベルが高い方から順に、Information, Warning, Critical, Error</span>
         <span class="n">logger</span><span class="o">.</span><span class="na">setOutputLevel</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">LogLevel</span><span class="o">.</span><span class="na">Critical</span><span class="o">);</span>
+
+        <span class="c1">// Warningレベルで表組みで出力する。Criticalより低いレベルなので出力されない</span>
         <span class="n">logger</span><span class="o">.</span><span class="na">BeginTable</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">LogLevel</span><span class="o">.</span><span class="na">Warning</span><span class="o">);</span>
         <span class="n">logger</span><span class="o">.</span><span class="na">Write</span><span class="o">(</span><span class="s">"出力されないテーブル"</span><span class="o">,</span> <span class="n">asd</span><span class="o">.</span><span class="na">LogLevel</span><span class="o">.</span><span class="na">Warning</span><span class="o">);</span>
         <span class="n">logger</span><span class="o">.</span><span class="na">EndTable</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">LogLevel</span><span class="o">.</span><span class="na">Warning</span><span class="o">);</span>
+
+
+        <span class="c1">// メッセージ文字列を用意する。TextObject_DynamicFontのサンプルを参照</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Font</span> <span class="n">font</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getGraphics</span><span class="o">().</span><span class="na">CreateDynamicFont</span><span class="o">(</span><span class="s">""</span><span class="o">,</span> <span class="mi">26</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Color</span><span class="o">(</span><span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">),</span> <span class="mi">1</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Color</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">255</span><span class="o">));</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">TextObject2D</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">TextObject2D</span><span class="o">();</span>
         <span class="n">obj</span><span class="o">.</span><span class="na">setFont</span><span class="o">(</span><span class="n">font</span><span class="o">);</span>
         <span class="n">obj</span><span class="o">.</span><span class="na">setPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">));</span>
         <span class="n">obj</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"Log.htmlにログを出力しました。\nウィンドウを閉じる前に確認してください。"</span><span class="o">);</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">obj</span><span class="o">);</span>
+
+        <span class="c1">// Altseedのウインドウが閉じられていないか確認する。</span>
         <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
         <span class="o">{</span>
+            <span class="c1">// Altseedを更新する。</span>
             <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Update</span><span class="o">();</span>
         <span class="o">}</span>
 
+
+        <span class="c1">// Altseedを終了する。</span>
         <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Terminate</span><span class="o">();</span>
     <span class="o">}</span>
 <span class="o">}</span>
@@ -697,9 +821,6 @@
         </p>
         <p>
           <a href="/Doc/HowToUseApplication/CustomPostEffect.html">自作ポストエフェクト</a>
-        </p>
-        <p>
-          <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
         </p>
         <p>
           <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>

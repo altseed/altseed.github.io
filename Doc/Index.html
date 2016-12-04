@@ -16,6 +16,8 @@
               $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").show();
               $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
           });
       
           $("button[id='language_cpp']").click( function ()
@@ -26,6 +28,8 @@
               $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").hide();
               $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
           });
       
           $("button[id='language_cs']").click( function ()
@@ -35,6 +39,19 @@
               $("h3[class='cpp']").hide();
               $("pre[class='highlight csharp']").show();
               $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          });
+      
+          $("button[id='language_java']").click( function ()
+          {
+              Cookies.set('code_state', 'cs');
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
           });
       
           code_state = Cookies.get('code_state');
@@ -45,6 +62,8 @@
               $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").show();
               $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
           }
       
           if(code_state == 'cpp')
@@ -53,6 +72,8 @@
               $("h3[class='cpp']").show();
               $("pre[class='highlight csharp']").hide();
               $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
           }
       
           if(code_state == 'cs')
@@ -61,6 +82,18 @@
               $("h3[class='cpp']").hide();
               $("pre[class='highlight csharp']").show();
               $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          }
+      
+          if(code_state == 'java')
+          {
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
           }
       });
     </script>
@@ -80,7 +113,7 @@
           <p>
             表示するサンプルコードの言語を指定できます。
           </p>
-          <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button>
+          <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button><button id="language_java">Java</button>
         </div>
         <h2>Altseed</h2>
         
@@ -88,14 +121,16 @@
         
         <p>「Altseed」は筑波大学のサークル「AmusementCreators」のメンバーが中心となって開発されているゲームエンジンです。</p>
         
-        <p>特徴としてC++、C#の2つのプログラミング言語で開発できる、という点があります。現在はWindows、Mac上でC++、C#の2種類しか動作しませんが
-        対応OS、対応言語共に増えていく予定です。</p>
+        <p>特徴としてC++、C#、Javaの3つのプログラミング言語で開発できる、という点があります。
+        現在はWindows、Mac上でC++、C#、Javaの3種類しか動作します。
+        今後、対応OS、対応言語共に増えていく予定です。</p>
         
         <p>2Dゲームを開発するために必要な機能はひと通り用意されており、開発中ですが3Dゲームを開発するための機能も用意はされています。</p>
         
         <ul>
         <li><a href="/Doc/HowToIntroduce/Windows_CPP.html">導入方法(C++版、Windows)</a></li>
         <li><a href="/Doc/HowToIntroduce/Windows_CS.html">導入方法(C#版、Windows)</a></li>
+        <li><p><a href="/Doc/HowToIntroduce/Windows_JAVA.html">導入方法(Java版、Windows)</a></p></li>
         <li><p>Linuxの場合、自分でソースコードからコンパイルする必要があります。</p></li>
         <li><p><a href="/Doc/Reference/Main.html">リファレンス</a></p></li>
         <li><p><a href="/Doc/FAQ.html">よくある質問</a></p></li>
@@ -264,9 +299,6 @@
         </p>
         <p>
           <a href="/Doc/HowToUseApplication/CustomPostEffect.html">自作ポストエフェクト</a>
-        </p>
-        <p>
-          <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
         </p>
         <p>
           <a href="/Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
