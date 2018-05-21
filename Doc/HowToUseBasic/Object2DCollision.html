@@ -98,7 +98,7 @@
       });
     </script>
   </head>
-  <body class="Doc Doc_Reference Doc_Reference_Main">
+  <body class="Doc Doc_HowToUseBasic Doc_HowToUseBasic_Object2DCollision">
     <div id="header">
       <h1>
         Altseed
@@ -115,151 +115,16 @@
           </p>
           <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button><button id="language_java">Java</button>
         </div>
-        <h2>リファレンス</h2>
+        <h2>2Dの衝突判定</h2>
         
-        <p>各機能ごとの説明を記述します。</p>
+        <p>Object2Dにコライダを登録し、それらを用いての他のObject2Dに登録されたコライダとの衝突を検出することができます
+        コライダはObject2DのTransformプロパティ(Scale, Angle, Position)に応じて自動的に変形されます。</p>
         
-        <h3>言語ごとの違いについて</h3>
+        <p>詳しくは<a href="/Doc/Reference/2D/Object2D.html#collision">Object2Dの衝突判定の項目</a>並びに<a href="/Doc/Reference/Collider2D/Collider2D.html">Collider2D</a>のページをご覧ください。</p>
         
-        <h4>C++</h4>
+        <h2>オブジェクト同士の衝突判定</h2>
         
-        <p>プロパティに相当する機能が存在しないため、GetXX、SetXXといったメソッドで実装されています。</p>
-        
-        <h4>Java</h4>
-        
-        <p>プロパティに相当する機能が存在しないため、getXX、setXXといったメソッドで実装されています。</p>
-        
-        <ul>
-        <li><a href="/Doc/Reference/BasicDesign.html">基本設計</a></li>
-        <li><a href="/Doc/Reference/AvailableFileFormats.html">対応ファイルフォーマット</a></li>
-        </ul>
-        
-        <h3>基本</h3>
-        
-        <ul>
-        <li><a href="/Doc/Reference/Basic/Engine.html">エンジン</a></li>
-        <li><a href="/Doc/Reference/Basic/Scene.html">シーン</a></li>
-        <li><a href="/Doc/Reference/Basic/Layer.html">レイヤー</a></li>
-        <li><p><a href="/Doc/Reference/Basic/FamilySystem.html">親子関係機能</a></p></li>
-        <li><p><a href="/Doc/Reference/Basic/Cursor.html">カーソル</a></p></li>
-        </ul>
-        
-        <h3>描画</h3>
-        
-        <ul>
-        <li><a href="/Doc/Reference/Graphics/Graphics.html">グラフィックス</a></li>
-        <li><a href="/Doc/Reference/Graphics/Texture2D.html">テクスチャ2D</a></li>
-        <li><a href="/Doc/Reference/Graphics/Effect.html">エフェクト</a></li>
-        <li><a href="/Doc/Reference/Graphics/Font.html">フォント</a></li>
-        <li><a href="/Doc/Reference/Graphics/ImagePackage.html">画像パッケージ</a></li>
-        </ul>
-        
-        <h4>2D</h4>
-        
-        <ul>
-        <li><a href="/Doc/Reference/2D/Layer2D.html">レイヤー2D</a></li>
-        <li><a href="/Doc/Reference/2D/Object2D.html">オブジェクト2D</a></li>
-        <li><a href="/Doc/Reference/2D/DrawnObject2D.html">描画オブジェクト2D</a></li>
-        <li><a href="/Doc/Reference/2D/TextureObject2D.html">テクスチャオブジェクト2D</a></li>
-        <li><a href="/Doc/Reference/2D/EffectObject2D.html">エフェクトオブジェクト2D</a></li>
-        <li><a href="/Doc/Reference/2D/TextObject2D.html">テキストオブジェクト2D</a></li>
-        <li><a href="/Doc/Reference/2D/MapObject2D.html">マップオブジェクト2D</a></li>
-        <li><a href="/Doc/Reference/2D/GeometryObject2D.html">図形オブジェクト2D</a></li>
-        <li><p><a href="/Doc/Reference/2D/CameraObject2D.html">カメラオブジェクト2D</a></p></li>
-        <li><p><a href="/Doc/Reference/2D/Shader2D.html">シェーダー2D</a></p></li>
-        <li><p><a href="/Doc/Reference/2D/Material2D.html">マテリアル2D</a></p></li>
-        </ul>
-        
-        <h4>2D図形</h4>
-        
-        <ul>
-        <li><a href="/Doc/Reference/Shape/Shape.html">図形</a></li>
-        <li><a href="/Doc/Reference/Shape/ArcShape.html">弧</a></li>
-        <li><a href="/Doc/Reference/Shape/CircleShape.html">円</a></li>
-        <li><a href="/Doc/Reference/Shape/TriangleShape.html">三角形</a></li>
-        <li><a href="/Doc/Reference/Shape/RectangleShape.html">矩形</a></li>
-        <li><a href="/Doc/Reference/Shape/PolygonShape.html">多角形</a></li>
-        <li><a href="/Doc/Reference/Shape/LineShape.html">線分</a></li>
-        </ul>
-        
-        <h4>2D衝突判定</h4>
-        
-        <ul>
-        <li><a href="/Doc/Reference/Collider2D/Collider2D.html">2Dコライダ</a></li>
-        <li><a href="/Doc/Reference/Collider2D/CircleCollider.html">円形コライダ</a></li>
-        <li><a href="/Doc/Reference/Collider2D/LineCollider.html">線分コライダ</a></li>
-        <li><a href="/Doc/Reference/Collider2D/RectangleCollider.html">矩形コライダ</a></li>
-        <li><a href="/Doc/Reference/Collider2D/PolygonCollider.html">多角形コライダ</a></li>
-        </ul>
-        
-        <h4>3D</h4>
-        
-        <ul>
-        <li>開発中</li>
-        </ul>
-        
-        <h4>コンポーネント</h4>
-        
-        <ul>
-        <li><a href="./Basic/SceneComponent.html">シーンコンポーネント</a></li>
-        <li><a href="./2D/Layer2DComponent.html">レイヤー2Dコンポーネント</a></li>
-        <li><a href="./2D/Object2DComponent.html">オブジェクト2Dコンポーネント</a></li>
-        </ul>
-        
-        <h4>ポストエフェクト</h4>
-        
-        <ul>
-        <li><a href="/Doc/Reference/PostEffect/PostEffect.html">ポストエフェクト</a></li>
-        <li><a href="/Doc/Reference/PostEffect/PostEffectGrayScale.html">グレースケール</a></li>
-        <li><a href="/Doc/Reference/PostEffect/PostEffectSepia.html">セピア</a></li>
-        <li><a href="/Doc/Reference/PostEffect/PostEffectGaussianBlur.html">ガウスぼかし</a></li>
-        <li><a href="/Doc/Reference/PostEffect/PostEffectLightBloom.html">ライトブルーム</a></li>
-        </ul>
-        
-        <h4>シーン遷移</h4>
-        
-        <ul>
-        <li><a href="/Doc/Reference/Transition/Transition.html">トランジション</a></li>
-        <li><a href="/Doc/Reference/Transition/TransitionFade.html">フェード</a></li>
-        </ul>
-        
-        <h3>音</h3>
-        
-        <ul>
-        <li><a href="/Doc/Reference/Sound/Sound.html">サウンド</a></li>
-        <li><a href="/Doc/Reference/Sound/SoundSource.html">音源</a></li>
-        </ul>
-        
-        <h3>入力</h3>
-        
-        <ul>
-        <li><a href="/Doc/Reference/Input/Mouse.html">マウス</a></li>
-        <li><a href="/Doc/Reference/Input/Keyboard.html">キーボード</a></li>
-        <li><a href="/Doc/Reference/Input/Joystick.html">ジョイスティック</a></li>
-        <li><a href="/Doc/Reference/Input/JoystickContainer.html">ジョイスティックコンテナ</a></li>
-        </ul>
-        
-        <h3>ファイル</h3>
-        
-        <ul>
-        <li><a href="/Doc/Reference/IO/File.html">ファイル</a></li>
-        <li><a href="/Doc/Reference/IO/StaticFile.html">スタティックファイル</a></li>
-        <li><a href="/Doc/Reference/IO/StreamFile.html">ストリームファイル</a></li>
-        </ul>
-        
-        <h3>ツール</h3>
-        
-        <ul>
-        <li><a href="/Doc/Reference/Tool/FontGenerator.html">フォントジェネレーター</a></li>
-        <li><a href="/Doc/Reference/Tool/ImagePackageGenerator.html">イメージパッケージジェネレーター</a></li>
-        <li><a href="/Doc/Reference/Tool/FilePackageGenerator.html">ファイルパッケージングジェネレーター</a></li>
-        </ul>
-        
-        <h3>他</h3>
-        
-        <ul>
-        <li><a href="/Doc/Reference/Misc/Reloading.html">リロード</a></li>
-        </ul>
+        <p>準備中&hellip;</p>
         
       </div>
       <div class="menu">

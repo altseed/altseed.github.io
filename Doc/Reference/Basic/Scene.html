@@ -114,99 +114,106 @@
             表示するサンプルコードの言語を指定できます。
           </p>
           <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button><button id="language_java">Java</button>
-        </div>
-        <h2>シーン (Scene)</h2>
-        
-        <h3>概要</h3>
-        
-        <p>ロゴ画面、タイトル画面、ゲーム画面、ゲームオーバー画面といったゲーム画面を継承により定義します。
-        シーン自体には画像を描画する機能はなく、実際に画像を表示するためにはシーンにレイヤーを登録する必要があります。
-        レイヤーを複数保持しレイヤーを管理する機能を持っています。</p>
-        
-        <h3>主なメソッド</h3>
-        
-        <table><thead>
-        <tr>
-        <th>名称</th>
-        <th>説明</th>
-        </tr>
-        </thead><tbody>
-        <tr>
-        <td>AddLayer</td>
-        <td>このシーンにレイヤーを追加します。</td>
-        </tr>
-        <tr>
-        <td>RemoveLayer</td>
-        <td>このシーンからレイヤーを取り除きます。</td>
-        </tr>
-        <tr>
-        <td>Dispose</td>
-        <td>このシーンを破棄(消去)します。</td>
-        </tr>
-        </tbody></table>
-        
-        <p>これらの操作は、実際にはメソッドを呼び出したフレームの最後に処理されるのでご注意ください。</p>
-        
-        <h3>主なプロパティ</h3>
-        
-        <table><thead>
-        <tr>
-        <th>名称</th>
-        <th>説明</th>
-        </tr>
-        </thead><tbody>
-        <tr>
-        <td>HDRMode</td>
-        <td>このシーンに描画された結果をHDRとして記録します。HDRの場合、グレアブルームといったポストエフェクトを使用する際に効果を発揮します。</td>
-        </tr>
-        </tbody></table>
-        
-        <h3>主なイベント</h3>
-        
-        <table><thead>
-        <tr>
-        <th>名称</th>
-        <th>説明</th>
-        </tr>
-        </thead><tbody>
-        <tr>
-        <td>OnUpdating</td>
-        <td>ObjectのOnUpdateとLayerのOnUpdatingが実行される前に毎フレーム実行される更新イベント</td>
-        </tr>
-        <tr>
-        <td>OnUpdated</td>
-        <td>ObjectのOnUpdateとLayerのOnUpdatedが実行された後に毎フレーム実行される更新イベント</td>
-        </tr>
-        <tr>
-        <td>OnRegistered</td>
-        <td>Engineへ追加されたときに一度だけ実行されるイベント</td>
-        </tr>
-        <tr>
-        <td>OnStartUpdating</td>
-        <td>このシーンのUpdateが実行され始めるときに一度だけ実行されるイベント</td>
-        </tr>
-        <tr>
-        <td>OnTransitionFinished</td>
-        <td>トランジション終了時にDoEvents関数内で呼び出されるイベント</td>
-        </tr>
-        <tr>
-        <td>OnTransitionBegin</td>
-        <td>このシーンから別のシーンに切り替わり始める際に一度だけ呼び出されるイベント</td>
-        </tr>
-        <tr>
-        <td>OnUnregistered</td>
-        <td>このシーンのUpdateが停止するときに一度だけ実行されるイベント</td>
-        </tr>
-        <tr>
-        <td>OnDispose</td>
-        <td>このシーンが破棄される際に一度だけ呼び出されるイベント</td>
-        </tr>
-        </tbody></table>
-        
-        <h3>使用方法</h3>
-        
-        <p>ほぼ全てのサンプルで使用されているので、そちらを参照してください。</p>
-        
+        </div><h2>シーン (Scene)</h2>
+
+<h3>概要</h3>
+
+<p>ロゴ画面、タイトル画面、ゲーム画面、ゲームオーバー画面といったゲーム画面を継承により定義します。
+シーン自体には画像を描画する機能はなく、実際に画像を表示するためにはシーンにレイヤーを登録する必要があります。
+レイヤーを複数保持しレイヤーを管理する機能を持っています。</p>
+
+<h3>主なメソッド</h3>
+
+<table><thead>
+<tr>
+<th>名称</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>AddLayer</td>
+<td>このシーンにレイヤーを追加します。</td>
+</tr>
+<tr>
+<td>RemoveLayer</td>
+<td>このシーンからレイヤーを取り除きます。</td>
+</tr>
+<tr>
+<td>Dispose</td>
+<td>このシーンを破棄(消去)します。</td>
+</tr>
+</tbody></table>
+
+<p>これらの操作は、実際にはメソッドを呼び出したフレームの最後に処理されるのでご注意ください。</p>
+
+<h3>主なプロパティ</h3>
+
+<table><thead>
+<tr>
+<th>名称</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>HDRMode</td>
+<td>このシーンに描画された結果をHDRとして記録します。HDRの場合、グレアブルームといったポストエフェクトを使用する際に効果を発揮します。</td>
+</tr>
+</tbody></table>
+
+<h3>主なイベント</h3>
+
+<table><thead>
+<tr>
+<th>名称</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>OnUpdating</td>
+<td>ObjectのOnUpdateとLayerのOnUpdatingが実行される前に毎フレーム実行される更新イベント</td>
+</tr>
+<tr>
+<td>OnUpdated</td>
+<td>ObjectのOnUpdateとLayerのOnUpdatedが実行された後に毎フレーム実行される更新イベント</td>
+</tr>
+<tr>
+<td>OnRegistered</td>
+<td>Engineへ追加されたときに一度だけ実行されるイベント</td>
+</tr>
+<tr>
+<td>OnStartUpdating</td>
+<td>このシーンのUpdateが実行され始めるときに一度だけ実行されるイベント</td>
+</tr>
+<tr>
+<td>OnTransitionFinished</td>
+<td>トランジション終了時にDoEvents関数内で呼び出されるイベント</td>
+</tr>
+<tr>
+<td>OnTransitionBegin</td>
+<td>このシーンから別のシーンに切り替わり始める際に一度だけ呼び出されるイベント</td>
+</tr>
+<tr>
+<td>OnStopUpdating</td>
+<td>このシーンのUpdateが呼ばれなくなるときに一度だけ実行されるイベント</td>
+</tr>
+<tr>
+<td>OnUnregistered</td>
+<td>このシーンのUpdateが停止するときに一度だけ実行されるイベント</td>
+</tr>
+<tr>
+<td>OnDispose</td>
+<td>このシーンが破棄される際に一度だけ呼び出されるイベント</td>
+</tr>
+</tbody></table>
+
+<p><code>OnRegisterd</code>などのシーン遷移にかかわるイベントは、以下の図のようなタイミングで呼び出されます。詳しくは<a href="/Doc/Reference/Basic/EventSystem.html">イベント機能</a>をご覧ください。</p>
+
+<p><img alt="シーンのイベント" src="/Doc/Reference/Basic/img/SceneEvents.png" /></p>
+
+<h3>使用方法</h3>
+
+<p>ほぼ全てのサンプルで使用されているので、そちらを参照してください。</p>
+
       </div>
       <div class="menu">
         <h2>

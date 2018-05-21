@@ -254,6 +254,51 @@
         </tr>
         </tbody></table>
         
+        <h3><a name="collision">衝突判定系</a></h3>
+        
+        <p>オブジェクトにコライダを追加することによって同一のレイヤー上にある別のオブジェクトとの衝突判定を行うことが出来ます。
+        コライダについては<a href="/Doc/Reference/Collider2D/Collider2D.html">コライダ</a>のページをご覧ください。</p>
+        
+        <h4>主なメソッド</h4>
+        
+        <table><thead>
+        <tr>
+        <th>名称</th>
+        <th>説明</th>
+        </tr>
+        </thead><tbody>
+        <tr>
+        <td>AddCollider</td>
+        <td>指定した2Dコライダをこのオブジェクトのインスタンスのコライダとして追加します。</td>
+        </tr>
+        <tr>
+        <td>RemoveCollider</td>
+        <td>指定した2Dコライダをこのオブジェクトのインスタンスから削除します。</td>
+        </tr>
+        </tbody></table>
+        
+        <h4>主なイベント</h4>
+        
+        <table><thead>
+        <tr>
+        <th>名称</th>
+        <th>説明</th>
+        </tr>
+        </thead><tbody>
+        <tr>
+        <td>OnCollisionEnter</td>
+        <td>このオブジェクトに属するコライダが別のオブジェクトのコライダとの衝突を開始した時に呼び出されるイベント</td>
+        </tr>
+        <tr>
+        <td>OnCollisionStay</td>
+        <td>このオブジェクトに属するコライダが別のオブジェクトのコライダとの衝突を継続している時に呼び出されるイベント</td>
+        </tr>
+        <tr>
+        <td>OnCollisionExit</td>
+        <td>このオブジェクトに属するコライダが別のオブジェクトのコライダとの衝突を終了した時に呼び出されるイベント</td>
+        </tr>
+        </tbody></table>
+        
         <h3>使用方法</h3>
         
         <p>ほぼ全てのサンプルで使用されています。
