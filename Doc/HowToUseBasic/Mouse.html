@@ -146,7 +146,7 @@
 </span>    <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">DoEvents</span><span class="p">())</span>
     <span class="p">{</span>
         <span class="c1">// 左ボタンが押されているかを表示する。
-</span>        <span class="k">if</span> <span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetMouse</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetLeftButton</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetButtonState</span><span class="p">()</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">MouseButtonState</span><span class="o">::</span><span class="n">Hold</span><span class="p">)</span>
+</span>        <span class="k">if</span> <span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetMouse</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetLeftButton</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetButtonState</span><span class="p">()</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">ButtonState</span><span class="o">::</span><span class="n">Hold</span><span class="p">)</span>
         <span class="p">{</span>
             <span class="n">stateText</span><span class="o">-&gt;</span><span class="n">SetText</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"左ボタンが押されています。"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
         <span class="p">}</span>
@@ -205,7 +205,7 @@
 </span>        <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
         <span class="p">{</span>
             <span class="c1">// 左ボタンが押されているかを表示する。
-</span>            <span class="k">if</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Mouse</span><span class="p">.</span><span class="n">LeftButton</span><span class="p">.</span><span class="n">ButtonState</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">MouseButtonState</span><span class="p">.</span><span class="n">Hold</span><span class="p">)</span>
+</span>            <span class="k">if</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Mouse</span><span class="p">.</span><span class="n">LeftButton</span><span class="p">.</span><span class="n">ButtonState</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">ButtonState</span><span class="p">.</span><span class="n">Hold</span><span class="p">)</span>
             <span class="p">{</span>
                 <span class="n">stateText</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"左ボタンが押されています。"</span><span class="p">;</span>
             <span class="p">}</span>
@@ -259,7 +259,7 @@
         <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
         <span class="o">{</span>
             <span class="c1">// 左ボタンが押されているかを表示する。</span>
-            <span class="k">if</span><span class="o">((</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getMouse</span><span class="o">().</span><span class="na">getLeftButton</span><span class="o">().</span><span class="na">getButtonState</span><span class="o">()</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">MouseButtonState</span><span class="o">.</span><span class="na">Hold</span><span class="o">))</span>
+            <span class="k">if</span><span class="o">((</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getMouse</span><span class="o">().</span><span class="na">getLeftButton</span><span class="o">().</span><span class="na">getButtonState</span><span class="o">()</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">ButtonState</span><span class="o">.</span><span class="na">Hold</span><span class="o">))</span>
             <span class="o">{</span>
                 <span class="n">stateText</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"左ボタンが押されています。"</span><span class="o">);</span>
             <span class="o">}</span>
@@ -311,19 +311,19 @@
         <span class="c1">// マウスの中央クリック状態を取得して表示する。
 </span>        <span class="k">auto</span> <span class="n">middlestate</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetMouse</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetMiddleButton</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetButtonState</span><span class="p">();</span>
 
-        <span class="k">if</span> <span class="p">(</span><span class="n">middlestate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">MouseButtonState</span><span class="o">::</span><span class="n">Free</span><span class="p">)</span> <span class="c1">//前フレームと本フレームで非押下
+        <span class="k">if</span> <span class="p">(</span><span class="n">middlestate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">ButtonState</span><span class="o">::</span><span class="n">Free</span><span class="p">)</span> <span class="c1">//前フレームと本フレームで非押下
 </span>        <span class="p">{</span>
             <span class="n">buttonStateText</span><span class="o">-&gt;</span><span class="n">SetText</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"中ボタンを離しています。"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
         <span class="p">}</span>
-        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">middlestate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">MouseButtonState</span><span class="o">::</span><span class="n">Hold</span><span class="p">)</span> <span class="c1">//前フレームと本フレームで押下
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">middlestate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">ButtonState</span><span class="o">::</span><span class="n">Hold</span><span class="p">)</span> <span class="c1">//前フレームと本フレームで押下
 </span>        <span class="p">{</span>
             <span class="n">buttonStateText</span><span class="o">-&gt;</span><span class="n">SetText</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"中ボタンを押しています。"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
         <span class="p">}</span>
-        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">middlestate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">MouseButtonState</span><span class="o">::</span><span class="n">Release</span><span class="p">)</span> <span class="c1">//前フレームで押下、本フレームで非押下
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">middlestate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">ButtonState</span><span class="o">::</span><span class="n">Release</span><span class="p">)</span> <span class="c1">//前フレームで押下、本フレームで非押下
 </span>        <span class="p">{</span>
             <span class="n">buttonStateText</span><span class="o">-&gt;</span><span class="n">SetText</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"中ボタンを離しました!"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
         <span class="p">}</span>
-        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">middlestate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">MouseButtonState</span><span class="o">::</span><span class="n">Push</span><span class="p">)</span> <span class="c1">//前フレームで非押下、本フレームで押下
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">middlestate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">ButtonState</span><span class="o">::</span><span class="n">Push</span><span class="p">)</span> <span class="c1">//前フレームで非押下、本フレームで押下
 </span>        <span class="p">{</span>
             <span class="n">buttonStateText</span><span class="o">-&gt;</span><span class="n">SetText</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"中ボタンを押しました!"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
         <span class="p">}</span>
@@ -381,19 +381,19 @@
 </span>
             <span class="n">var</span> <span class="n">middlestate</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Mouse</span><span class="p">.</span><span class="n">MiddleButton</span><span class="p">.</span><span class="n">ButtonState</span><span class="p">;</span>
 
-            <span class="k">if</span><span class="p">(</span><span class="n">middlestate</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">MouseButtonState</span><span class="p">.</span><span class="n">Free</span><span class="p">)</span> <span class="c1">//前フレームと本フレームで非押下
+            <span class="k">if</span><span class="p">(</span><span class="n">middlestate</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">ButtonState</span><span class="p">.</span><span class="n">Free</span><span class="p">)</span> <span class="c1">//前フレームと本フレームで非押下
 </span>            <span class="p">{</span>
                 <span class="n">buttonStateText</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"中ボタンを離しています。"</span><span class="p">;</span>
             <span class="p">}</span>
-            <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">middlestate</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">MouseButtonState</span><span class="p">.</span><span class="n">Hold</span><span class="p">)</span> <span class="c1">//前フレームと本フレームで押下
+            <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">middlestate</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">ButtonState</span><span class="p">.</span><span class="n">Hold</span><span class="p">)</span> <span class="c1">//前フレームと本フレームで押下
 </span>            <span class="p">{</span>
                 <span class="n">buttonStateText</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"中ボタンを押しています。"</span><span class="p">;</span>
             <span class="p">}</span>
-            <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">middlestate</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">MouseButtonState</span><span class="p">.</span><span class="n">Release</span><span class="p">)</span> <span class="c1">//前フレームで押下、本フレームで非押下
+            <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">middlestate</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">ButtonState</span><span class="p">.</span><span class="n">Release</span><span class="p">)</span> <span class="c1">//前フレームで押下、本フレームで非押下
 </span>            <span class="p">{</span>
                 <span class="n">buttonStateText</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"中ボタンを離しました!"</span><span class="p">;</span>
             <span class="p">}</span>
-            <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">middlestate</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">MouseButtonState</span><span class="p">.</span><span class="n">Push</span><span class="p">)</span> <span class="c1">//前フレームで非押下、本フレームで押下
+            <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">middlestate</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">ButtonState</span><span class="p">.</span><span class="n">Push</span><span class="p">)</span> <span class="c1">//前フレームで非押下、本フレームで押下
 </span>            <span class="p">{</span>
                 <span class="n">buttonStateText</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"中ボタンを押しました!"</span><span class="p">;</span>
             <span class="p">}</span>
@@ -444,27 +444,27 @@
         <span class="o">{</span>
             <span class="c1">// マウスの中央クリック状態を取得して表示する。</span>
 
-            <span class="n">asd</span><span class="o">.</span><span class="na">MouseButtonState</span> <span class="n">middlestate</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getMouse</span><span class="o">().</span><span class="na">getMiddleButton</span><span class="o">().</span><span class="na">getButtonState</span><span class="o">();</span>
+            <span class="n">asd</span><span class="o">.</span><span class="na">ButtonState</span> <span class="n">middlestate</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getMouse</span><span class="o">().</span><span class="na">getMiddleButton</span><span class="o">().</span><span class="na">getButtonState</span><span class="o">();</span>
 
-            <span class="k">if</span><span class="o">((</span><span class="n">middlestate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">MouseButtonState</span><span class="o">.</span><span class="na">Free</span><span class="o">))</span>
+            <span class="k">if</span><span class="o">((</span><span class="n">middlestate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">ButtonState</span><span class="o">.</span><span class="na">Free</span><span class="o">))</span>
             <span class="o">{</span>
                 <span class="n">buttonStateText</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"中ボタンを離しています。"</span><span class="o">);</span>
             <span class="o">}</span>
             <span class="k">else</span>
             <span class="o">{</span>
-                <span class="k">if</span><span class="o">((</span><span class="n">middlestate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">MouseButtonState</span><span class="o">.</span><span class="na">Hold</span><span class="o">))</span>
+                <span class="k">if</span><span class="o">((</span><span class="n">middlestate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">ButtonState</span><span class="o">.</span><span class="na">Hold</span><span class="o">))</span>
                 <span class="o">{</span>
                     <span class="n">buttonStateText</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"中ボタンを押しています。"</span><span class="o">);</span>
                 <span class="o">}</span>
                 <span class="k">else</span>
                 <span class="o">{</span>
-                    <span class="k">if</span><span class="o">((</span><span class="n">middlestate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">MouseButtonState</span><span class="o">.</span><span class="na">Release</span><span class="o">))</span>
+                    <span class="k">if</span><span class="o">((</span><span class="n">middlestate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">ButtonState</span><span class="o">.</span><span class="na">Release</span><span class="o">))</span>
                     <span class="o">{</span>
                         <span class="n">buttonStateText</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"中ボタンを離しました!"</span><span class="o">);</span>
                     <span class="o">}</span>
                     <span class="k">else</span>
                     <span class="o">{</span>
-                        <span class="k">if</span><span class="o">((</span><span class="n">middlestate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">MouseButtonState</span><span class="o">.</span><span class="na">Push</span><span class="o">))</span>
+                        <span class="k">if</span><span class="o">((</span><span class="n">middlestate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">ButtonState</span><span class="o">.</span><span class="na">Push</span><span class="o">))</span>
                         <span class="o">{</span>
                             <span class="n">buttonStateText</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"中ボタンを押しました!"</span><span class="o">);</span>
                         <span class="o">}</span>
@@ -485,8 +485,7 @@
 
 </code></pre>
 
-<h3>マウスカーソルの位置の取得</h3>
-
+<h3>マウスカーソルの位置の取得
 <p><img alt="SS" src="/Doc/img/ss/Mouse_Position.gif" /></p>
 
 <h3 class="cpp">C++</h3>
@@ -630,8 +629,7 @@
 
 </code></pre>
 
-<h3>マウスホイールの回転度合の取得</h3>
-
+<h3>マウスホイールの回転度合の取得
 <p><img alt="SS" src="/Doc/img/ss/Mouse_Wheel.gif" /></p>
 
 <h3 class="cpp">C++</h3>

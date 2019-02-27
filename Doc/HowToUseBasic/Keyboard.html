@@ -149,11 +149,11 @@
         <span class="c1">// キーボードのZキーの入力状態を取得する。
 </span>        <span class="k">auto</span> <span class="n">zstate</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetKeyboard</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetKeyState</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Keys</span><span class="o">::</span><span class="n">Z</span><span class="p">);</span>
 
-        <span class="k">if</span> <span class="p">(</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">KeyState</span><span class="o">::</span><span class="n">Free</span><span class="p">)</span> <span class="c1">// Zキーを離している状態。
+        <span class="k">if</span> <span class="p">(</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">ButtonState</span><span class="o">::</span><span class="n">Free</span><span class="p">)</span> <span class="c1">// Zキーを離している状態。
 </span>        <span class="p">{</span>
             <span class="n">keyStateText</span><span class="o">-&gt;</span><span class="n">SetText</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Zキーを離しています。"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
         <span class="p">}</span>
-        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">KeyState</span><span class="o">::</span><span class="n">Hold</span><span class="p">)</span> <span class="c1">// Zキーを押している状態。
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">ButtonState</span><span class="o">::</span><span class="n">Hold</span><span class="p">)</span> <span class="c1">// Zキーを押している状態。
 </span>        <span class="p">{</span>
             <span class="n">keyStateText</span><span class="o">-&gt;</span><span class="n">SetText</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Zキーを押しています。"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
         <span class="p">}</span>
@@ -210,11 +210,11 @@
 </span>
             <span class="n">var</span> <span class="n">zstate</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Keyboard</span><span class="p">.</span><span class="nf">GetKeyState</span><span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Keys</span><span class="p">.</span><span class="n">Z</span><span class="p">);</span>
 
-            <span class="k">if</span><span class="p">(</span><span class="n">zstate</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span><span class="p">.</span><span class="n">Free</span><span class="p">)</span> <span class="c1">// Zキーを離している状態。
+            <span class="k">if</span><span class="p">(</span><span class="n">zstate</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">ButtonState</span><span class="p">.</span><span class="n">Free</span><span class="p">)</span> <span class="c1">// Zキーを離している状態。
 </span>            <span class="p">{</span>
                     <span class="n">keyStateText</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"Zキーを離しています。"</span><span class="p">;</span>
             <span class="p">}</span>
-            <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">zstate</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span><span class="p">.</span><span class="n">Hold</span><span class="p">)</span> <span class="c1">// Zキーを押している状態。
+            <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">zstate</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">ButtonState</span><span class="p">.</span><span class="n">Hold</span><span class="p">)</span> <span class="c1">// Zキーを押している状態。
 </span>            <span class="p">{</span>
                     <span class="n">keyStateText</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"Zキーを押しています。"</span><span class="p">;</span>
             <span class="p">}</span>
@@ -264,15 +264,15 @@
         <span class="o">{</span>
             <span class="c1">// キーボードのZキーの入力状態を取得する。</span>
 
-            <span class="n">asd</span><span class="o">.</span><span class="na">KeyState</span> <span class="n">zstate</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getKeyboard</span><span class="o">().</span><span class="na">GetKeyState</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Keys</span><span class="o">.</span><span class="na">Z</span><span class="o">);</span>
+            <span class="n">asd</span><span class="o">.</span><span class="na">ButtonState</span> <span class="n">zstate</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getKeyboard</span><span class="o">().</span><span class="na">GetKeyState</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Keys</span><span class="o">.</span><span class="na">Z</span><span class="o">);</span>
 
-            <span class="k">if</span><span class="o">((</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">KeyState</span><span class="o">.</span><span class="na">Free</span><span class="o">))</span>
+            <span class="k">if</span><span class="o">((</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">ButtonState</span><span class="o">.</span><span class="na">Free</span><span class="o">))</span>
             <span class="o">{</span>
                 <span class="n">keyStateText</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"Zキーを離しています。"</span><span class="o">);</span>
             <span class="o">}</span>
             <span class="k">else</span>
             <span class="o">{</span>
-                <span class="k">if</span><span class="o">((</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">KeyState</span><span class="o">.</span><span class="na">Hold</span><span class="o">))</span>
+                <span class="k">if</span><span class="o">((</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">ButtonState</span><span class="o">.</span><span class="na">Hold</span><span class="o">))</span>
                 <span class="o">{</span>
                     <span class="n">keyStateText</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"Zキーを押しています。"</span><span class="o">);</span>
                 <span class="o">}</span>
@@ -321,19 +321,19 @@
         <span class="c1">// キーボードのZキーの入力状態を取得する。
 </span>        <span class="k">auto</span> <span class="n">zstate</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetKeyboard</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetKeyState</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Keys</span><span class="o">::</span><span class="n">Z</span><span class="p">);</span>
 
-        <span class="k">if</span> <span class="p">(</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">KeyState</span><span class="o">::</span><span class="n">Free</span><span class="p">)</span> <span class="c1">// 前フレームと本フレームで非押下
+        <span class="k">if</span> <span class="p">(</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">ButtonState</span><span class="o">::</span><span class="n">Free</span><span class="p">)</span> <span class="c1">// 前フレームと本フレームで非押下
 </span>        <span class="p">{</span>
             <span class="n">keyStateText</span><span class="o">-&gt;</span><span class="n">SetText</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Zキーを離しています。"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
         <span class="p">}</span>
-        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">KeyState</span><span class="o">::</span><span class="n">Hold</span><span class="p">)</span> <span class="c1">// 前フレームと本フレームで押下
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">ButtonState</span><span class="o">::</span><span class="n">Hold</span><span class="p">)</span> <span class="c1">// 前フレームと本フレームで押下
 </span>        <span class="p">{</span>
             <span class="n">keyStateText</span><span class="o">-&gt;</span><span class="n">SetText</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Zキーを押しています。"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
         <span class="p">}</span>
-        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">KeyState</span><span class="o">::</span><span class="n">Release</span><span class="p">)</span> <span class="c1">// 前フレームで押下、本フレームで非押下
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">ButtonState</span><span class="o">::</span><span class="n">Release</span><span class="p">)</span> <span class="c1">// 前フレームで押下、本フレームで非押下
 </span>        <span class="p">{</span>
             <span class="n">keyStateText</span><span class="o">-&gt;</span><span class="n">SetText</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Zキーを離しました!"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
         <span class="p">}</span>
-        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">KeyState</span><span class="o">::</span><span class="n">Push</span><span class="p">)</span> <span class="c1">// 前フレームで非押下、本フレームで押下
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">ButtonState</span><span class="o">::</span><span class="n">Push</span><span class="p">)</span> <span class="c1">// 前フレームで非押下、本フレームで押下
 </span>        <span class="p">{</span>
             <span class="n">keyStateText</span><span class="o">-&gt;</span><span class="n">SetText</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">"Zキーを押しました!"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
         <span class="p">}</span>
@@ -390,19 +390,19 @@
 </span>
             <span class="n">var</span> <span class="n">zstate</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Keyboard</span><span class="p">.</span><span class="nf">GetKeyState</span><span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Keys</span><span class="p">.</span><span class="n">Z</span><span class="p">);</span>
 
-            <span class="k">if</span><span class="p">(</span><span class="n">zstate</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span><span class="p">.</span><span class="n">Free</span><span class="p">)</span> <span class="c1">// 前フレームと本フレームで非押下
+            <span class="k">if</span><span class="p">(</span><span class="n">zstate</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">ButtonState</span><span class="p">.</span><span class="n">Free</span><span class="p">)</span> <span class="c1">// 前フレームと本フレームで非押下
 </span>            <span class="p">{</span>
                 <span class="n">keyStateText</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"Zキーを離しています。"</span><span class="p">;</span>
             <span class="p">}</span>
-            <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">zstate</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span><span class="p">.</span><span class="n">Hold</span><span class="p">)</span> <span class="c1">// 前フレームと本フレームで押下
+            <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">zstate</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">ButtonState</span><span class="p">.</span><span class="n">Hold</span><span class="p">)</span> <span class="c1">// 前フレームと本フレームで押下
 </span>            <span class="p">{</span>
                 <span class="n">keyStateText</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"Zキーを押しています。"</span><span class="p">;</span>
             <span class="p">}</span>
-            <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">zstate</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span><span class="p">.</span><span class="n">Release</span><span class="p">)</span> <span class="c1">// 前フレームで押下、本フレームで非押下
+            <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">zstate</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">ButtonState</span><span class="p">.</span><span class="n">Release</span><span class="p">)</span> <span class="c1">// 前フレームで押下、本フレームで非押下
 </span>            <span class="p">{</span>
                 <span class="n">keyStateText</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"Zキーを離しました!"</span><span class="p">;</span>
             <span class="p">}</span>
-            <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">zstate</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span><span class="p">.</span><span class="n">Push</span><span class="p">)</span> <span class="c1">// 前フレームで非押下、本フレームで押下
+            <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">zstate</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">ButtonState</span><span class="p">.</span><span class="n">Push</span><span class="p">)</span> <span class="c1">// 前フレームで非押下、本フレームで押下
 </span>            <span class="p">{</span>
                 <span class="n">keyStateText</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"Zキーを押しました!"</span><span class="p">;</span>
             <span class="p">}</span>
@@ -452,27 +452,27 @@
         <span class="o">{</span>
             <span class="c1">// キーボードのZキーの入力状態を取得する。</span>
 
-            <span class="n">asd</span><span class="o">.</span><span class="na">KeyState</span> <span class="n">zstate</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getKeyboard</span><span class="o">().</span><span class="na">GetKeyState</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Keys</span><span class="o">.</span><span class="na">Z</span><span class="o">);</span>
+            <span class="n">asd</span><span class="o">.</span><span class="na">ButtonState</span> <span class="n">zstate</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getKeyboard</span><span class="o">().</span><span class="na">GetKeyState</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Keys</span><span class="o">.</span><span class="na">Z</span><span class="o">);</span>
 
-            <span class="k">if</span><span class="o">((</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">KeyState</span><span class="o">.</span><span class="na">Free</span><span class="o">))</span>
+            <span class="k">if</span><span class="o">((</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">ButtonState</span><span class="o">.</span><span class="na">Free</span><span class="o">))</span>
             <span class="o">{</span>
                 <span class="n">keyStateText</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"Zキーを離しています。"</span><span class="o">);</span>
             <span class="o">}</span>
             <span class="k">else</span>
             <span class="o">{</span>
-                <span class="k">if</span><span class="o">((</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">KeyState</span><span class="o">.</span><span class="na">Hold</span><span class="o">))</span>
+                <span class="k">if</span><span class="o">((</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">ButtonState</span><span class="o">.</span><span class="na">Hold</span><span class="o">))</span>
                 <span class="o">{</span>
                     <span class="n">keyStateText</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"Zキーを押しています。"</span><span class="o">);</span>
                 <span class="o">}</span>
                 <span class="k">else</span>
                 <span class="o">{</span>
-                    <span class="k">if</span><span class="o">((</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">KeyState</span><span class="o">.</span><span class="na">Release</span><span class="o">))</span>
+                    <span class="k">if</span><span class="o">((</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">ButtonState</span><span class="o">.</span><span class="na">Release</span><span class="o">))</span>
                     <span class="o">{</span>
                         <span class="n">keyStateText</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"Zキーを離しました!"</span><span class="o">);</span>
                     <span class="o">}</span>
                     <span class="k">else</span>
                     <span class="o">{</span>
-                        <span class="k">if</span><span class="o">((</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">KeyState</span><span class="o">.</span><span class="na">Push</span><span class="o">))</span>
+                        <span class="k">if</span><span class="o">((</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">ButtonState</span><span class="o">.</span><span class="na">Push</span><span class="o">))</span>
                         <span class="o">{</span>
                             <span class="n">keyStateText</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"Zキーを押しました!"</span><span class="o">);</span>
                         <span class="o">}</span>
@@ -493,7 +493,8 @@
 
 </code></pre>
 
-<h3>複数のキーの詳しい入力状態を取得
+<h3>複数のキーの詳しい入力状態を取得</h3>
+
 <p><img alt="SS" src="/Doc/img/ss/Keyboard_PuralKeys.gif" /></p>
 
 <h3 class="cpp">C++</h3>
@@ -543,21 +544,21 @@
             <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">keystr</span> <span class="o">=</span> <span class="n">keyStrs</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
 
             <span class="c1">// キーボードのZキーの入力状態を取得する。
-</span>            <span class="n">asd</span><span class="o">::</span><span class="n">KeyState</span> <span class="n">zstate</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetKeyboard</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetKeyState</span><span class="p">(</span><span class="n">keys</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span>            <span class="n">asd</span><span class="o">::</span><span class="n">ButtonState</span> <span class="n">zstate</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetKeyboard</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetKeyState</span><span class="p">(</span><span class="n">keys</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
 
-            <span class="k">if</span> <span class="p">(</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">KeyState</span><span class="o">::</span><span class="n">Free</span><span class="p">)</span> <span class="c1">// 前フレームと本フレームで非押下
+            <span class="k">if</span> <span class="p">(</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">ButtonState</span><span class="o">::</span><span class="n">Free</span><span class="p">)</span> <span class="c1">// 前フレームと本フレームで非押下
 </span>            <span class="p">{</span>
                 <span class="n">displayStr</span> <span class="o">+=</span> <span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">((</span><span class="n">keystr</span> <span class="o">+</span> <span class="s">"キーを離しています。"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
             <span class="p">}</span>
-            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">KeyState</span><span class="o">::</span><span class="n">Hold</span><span class="p">)</span> <span class="c1">// 前フレームと本フレームで押下
+            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">ButtonState</span><span class="o">::</span><span class="n">Hold</span><span class="p">)</span> <span class="c1">// 前フレームと本フレームで押下
 </span>            <span class="p">{</span>
                 <span class="n">displayStr</span> <span class="o">+=</span> <span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">((</span><span class="n">keystr</span> <span class="o">+</span> <span class="s">"キーを押しています。"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
             <span class="p">}</span>
-            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">KeyState</span><span class="o">::</span><span class="n">Release</span><span class="p">)</span> <span class="c1">// 前フレームで押下、本フレームで非押下
+            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">ButtonState</span><span class="o">::</span><span class="n">Release</span><span class="p">)</span> <span class="c1">// 前フレームで押下、本フレームで非押下
 </span>            <span class="p">{</span>
                 <span class="n">displayStr</span> <span class="o">+=</span> <span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">((</span><span class="n">keystr</span> <span class="o">+</span> <span class="s">"キーを離しました!"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
             <span class="p">}</span>
-            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">KeyState</span><span class="o">::</span><span class="n">Push</span><span class="p">)</span> <span class="c1">// 前フレームで非押下、本フレームで押下
+            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">zstate</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">ButtonState</span><span class="o">::</span><span class="n">Push</span><span class="p">)</span> <span class="c1">// 前フレームで非押下、本フレームで押下
 </span>            <span class="p">{</span>
                 <span class="n">displayStr</span> <span class="o">+=</span> <span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">((</span><span class="n">keystr</span> <span class="o">+</span> <span class="s">"キーを押しました!"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
             <span class="p">}</span>
@@ -641,21 +642,21 @@
                 <span class="kt">string</span> <span class="n">keystr</span> <span class="p">=</span> <span class="n">keyStrs</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
 
                 <span class="c1">// キーボードのZキーの入力状態を取得する。
-</span>                <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span> <span class="n">state</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Keyboard</span><span class="p">.</span><span class="nf">GetKeyState</span><span class="p">(</span><span class="n">keys</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span>                <span class="n">asd</span><span class="p">.</span><span class="n">ButtonState</span> <span class="n">state</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Keyboard</span><span class="p">.</span><span class="nf">GetKeyState</span><span class="p">(</span><span class="n">keys</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
 
-                <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span><span class="p">.</span><span class="n">Free</span><span class="p">)</span> <span class="c1">// 前フレームと本フレームで非押下
+                <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">ButtonState</span><span class="p">.</span><span class="n">Free</span><span class="p">)</span> <span class="c1">// 前フレームと本フレームで非押下
 </span>                <span class="p">{</span>
                     <span class="n">displayStr</span> <span class="p">+=</span> <span class="p">(</span><span class="n">keystr</span> <span class="p">+</span> <span class="s">"キーを離しています。"</span><span class="p">);</span>
                 <span class="p">}</span>
-                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span><span class="p">.</span><span class="n">Hold</span><span class="p">)</span> <span class="c1">// 前フレームと本フレームで押下
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">ButtonState</span><span class="p">.</span><span class="n">Hold</span><span class="p">)</span> <span class="c1">// 前フレームと本フレームで押下
 </span>                <span class="p">{</span>
                     <span class="n">displayStr</span> <span class="p">+=</span> <span class="p">(</span><span class="n">keystr</span> <span class="p">+</span> <span class="s">"キーを押しています。"</span><span class="p">);</span>
                 <span class="p">}</span>
-                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span><span class="p">.</span><span class="n">Release</span><span class="p">)</span> <span class="c1">// 前フレームで押下、本フレームで非押下
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">ButtonState</span><span class="p">.</span><span class="n">Release</span><span class="p">)</span> <span class="c1">// 前フレームで押下、本フレームで非押下
 </span>                <span class="p">{</span>
                     <span class="n">displayStr</span> <span class="p">+=</span> <span class="p">(</span><span class="n">keystr</span> <span class="p">+</span> <span class="s">"キーを離しました!"</span><span class="p">);</span>
                 <span class="p">}</span>
-                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">KeyState</span><span class="p">.</span><span class="n">Push</span><span class="p">)</span> <span class="c1">// 前フレームで非押下、本フレームで押下
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">ButtonState</span><span class="p">.</span><span class="n">Push</span><span class="p">)</span> <span class="c1">// 前フレームで非押下、本フレームで押下
 </span>                <span class="p">{</span>
                     <span class="n">displayStr</span> <span class="p">+=</span> <span class="p">(</span><span class="n">keystr</span> <span class="p">+</span> <span class="s">"キーを押しました!"</span><span class="p">);</span>
                 <span class="p">}</span>
@@ -733,27 +734,27 @@
                 <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">keystr</span> <span class="o">=</span> <span class="n">keyStrs</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
 
                 <span class="c1">// キーボードのZキーの入力状態を取得する。</span>
-                <span class="n">asd</span><span class="o">.</span><span class="na">KeyState</span> <span class="n">state</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getKeyboard</span><span class="o">().</span><span class="na">GetKeyState</span><span class="o">(</span><span class="n">keys</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">));</span>
+                <span class="n">asd</span><span class="o">.</span><span class="na">ButtonState</span> <span class="n">state</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getKeyboard</span><span class="o">().</span><span class="na">GetKeyState</span><span class="o">(</span><span class="n">keys</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">));</span>
 
-                <span class="k">if</span><span class="o">((</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">KeyState</span><span class="o">.</span><span class="na">Free</span><span class="o">))</span>
+                <span class="k">if</span><span class="o">((</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">ButtonState</span><span class="o">.</span><span class="na">Free</span><span class="o">))</span>
                 <span class="o">{</span>
                     <span class="n">displayStr</span> <span class="o">+=</span> <span class="o">(</span><span class="n">keystr</span> <span class="o">+</span> <span class="s">"キーを離しています。"</span><span class="o">);</span>
                 <span class="o">}</span>
                 <span class="k">else</span>
                 <span class="o">{</span>
-                    <span class="k">if</span><span class="o">((</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">KeyState</span><span class="o">.</span><span class="na">Hold</span><span class="o">))</span>
+                    <span class="k">if</span><span class="o">((</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">ButtonState</span><span class="o">.</span><span class="na">Hold</span><span class="o">))</span>
                     <span class="o">{</span>
                         <span class="n">displayStr</span> <span class="o">+=</span> <span class="o">(</span><span class="n">keystr</span> <span class="o">+</span> <span class="s">"キーを押しています。"</span><span class="o">);</span>
                     <span class="o">}</span>
                     <span class="k">else</span>
                     <span class="o">{</span>
-                        <span class="k">if</span><span class="o">((</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">KeyState</span><span class="o">.</span><span class="na">Release</span><span class="o">))</span>
+                        <span class="k">if</span><span class="o">((</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">ButtonState</span><span class="o">.</span><span class="na">Release</span><span class="o">))</span>
                         <span class="o">{</span>
                             <span class="n">displayStr</span> <span class="o">+=</span> <span class="o">(</span><span class="n">keystr</span> <span class="o">+</span> <span class="s">"キーを離しました!"</span><span class="o">);</span>
                         <span class="o">}</span>
                         <span class="k">else</span>
                         <span class="o">{</span>
-                            <span class="k">if</span><span class="o">((</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">KeyState</span><span class="o">.</span><span class="na">Push</span><span class="o">))</span>
+                            <span class="k">if</span><span class="o">((</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">ButtonState</span><span class="o">.</span><span class="na">Push</span><span class="o">))</span>
                             <span class="o">{</span>
                                 <span class="n">displayStr</span> <span class="o">+=</span> <span class="o">(</span><span class="n">keystr</span> <span class="o">+</span> <span class="s">"キーを押しました!"</span><span class="o">);</span>
                             <span class="o">}</span>

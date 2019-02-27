@@ -165,7 +165,7 @@
     <span class="kt">void</span> <span class="n">OnUpdated</span><span class="p">()</span> <span class="n">override</span>
     <span class="p">{</span>
         <span class="c1">// マウスの左ボタンが押されるのを待つ。
-</span>        <span class="k">if</span> <span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetMouse</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetLeftButton</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetButtonState</span><span class="p">()</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">MouseButtonState</span><span class="o">::</span><span class="n">Push</span><span class="p">)</span>
+</span>        <span class="k">if</span> <span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetMouse</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetLeftButton</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetButtonState</span><span class="p">()</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">ButtonState</span><span class="o">::</span><span class="n">Push</span><span class="p">)</span>
         <span class="p">{</span>
             <span class="c1">// フェードアウト・インによるシーン遷移を開始する。
 </span>            <span class="c1">// 1秒かけてフェードアウトし、1.5秒かけてフェードイン。
@@ -221,7 +221,7 @@
     <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnUpdated</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="c1">// マウスの左ボタンが押されるのを待つ。
-</span>        <span class="k">if</span><span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Mouse</span><span class="p">.</span><span class="n">LeftButton</span><span class="p">.</span><span class="n">ButtonState</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">MouseButtonState</span><span class="p">.</span><span class="n">Push</span><span class="p">)</span>
+</span>        <span class="k">if</span><span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Mouse</span><span class="p">.</span><span class="n">LeftButton</span><span class="p">.</span><span class="n">ButtonState</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">ButtonState</span><span class="p">.</span><span class="n">Push</span><span class="p">)</span>
         <span class="p">{</span>
             <span class="c1">// フェードアウト・インによるシーン遷移を開始する。
 </span>            <span class="c1">// 1秒かけてフェードアウトし、1.5秒かけてフェードイン。
@@ -249,7 +249,7 @@
     <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnUpdated</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="c1">// マウスの左ボタンが押されるのを待つ。
-</span>        <span class="k">if</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Mouse</span><span class="p">.</span><span class="n">LeftButton</span><span class="p">.</span><span class="n">ButtonState</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">MouseButtonState</span><span class="p">.</span><span class="n">Push</span><span class="p">)</span>
+</span>        <span class="k">if</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Mouse</span><span class="p">.</span><span class="n">LeftButton</span><span class="p">.</span><span class="n">ButtonState</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">ButtonState</span><span class="p">.</span><span class="n">Push</span><span class="p">)</span>
         <span class="p">{</span>
             <span class="c1">// フェードアウト・インによるシーン遷移を開始する。
 </span>            <span class="c1">// 1秒かけてフェードアウトし、1.5秒かけてフェードイン。
@@ -352,7 +352,7 @@
     <span class="kd">protected</span> <span class="kt">void</span> <span class="n">OnUpdated</span><span class="o">()</span>
     <span class="o">{</span>
         <span class="c1">// マウスの左ボタンが押されるのを待つ。</span>
-        <span class="k">if</span><span class="o">((</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getMouse</span><span class="o">().</span><span class="na">getLeftButton</span><span class="o">().</span><span class="na">getButtonState</span><span class="o">()</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">MouseButtonState</span><span class="o">.</span><span class="na">Push</span><span class="o">))</span>
+        <span class="k">if</span><span class="o">((</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getMouse</span><span class="o">().</span><span class="na">getLeftButton</span><span class="o">().</span><span class="na">getButtonState</span><span class="o">()</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">ButtonState</span><span class="o">.</span><span class="na">Push</span><span class="o">))</span>
         <span class="o">{</span>
             <span class="c1">// フェードアウト・インによるシーン遷移を開始する。</span>
             <span class="c1">// 1秒かけてフェードアウトし、1.5秒かけてフェードイン。</span>
@@ -377,7 +377,7 @@
     <span class="kd">protected</span> <span class="kt">void</span> <span class="n">OnUpdated</span><span class="o">()</span>
     <span class="o">{</span>
         <span class="c1">// マウスの左ボタンが押されるのを待つ。</span>
-        <span class="k">if</span><span class="o">((</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getMouse</span><span class="o">().</span><span class="na">getLeftButton</span><span class="o">().</span><span class="na">getButtonState</span><span class="o">()</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">MouseButtonState</span><span class="o">.</span><span class="na">Push</span><span class="o">))</span>
+        <span class="k">if</span><span class="o">((</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getMouse</span><span class="o">().</span><span class="na">getLeftButton</span><span class="o">().</span><span class="na">getButtonState</span><span class="o">()</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">ButtonState</span><span class="o">.</span><span class="na">Push</span><span class="o">))</span>
         <span class="o">{</span>
             <span class="c1">// フェードアウト・インによるシーン遷移を開始する。</span>
             <span class="c1">// 1秒かけてフェードアウトし、1.5秒かけてフェードイン。</span>

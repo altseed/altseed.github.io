@@ -164,19 +164,19 @@
             <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">buttonIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">buttonIndex</span> <span class="o">&lt;</span> <span class="n">joystick</span><span class="o">-&gt;</span><span class="n">GetButtonsCount</span><span class="p">();</span> <span class="o">++</span><span class="n">buttonIndex</span><span class="p">)</span>
             <span class="p">{</span>
                 <span class="k">auto</span> <span class="n">state</span> <span class="o">=</span> <span class="n">joystick</span><span class="o">-&gt;</span><span class="n">GetButtonState</span><span class="p">(</span><span class="n">buttonIndex</span><span class="p">);</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">JoystickButtonState</span><span class="o">::</span><span class="n">Free</span><span class="p">)</span> <span class="c1">//前フレームと本フレームで非押下
+                <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">ButtonState</span><span class="o">::</span><span class="n">Free</span><span class="p">)</span> <span class="c1">//前フレームと本フレームで非押下
 </span>                <span class="p">{</span>
                     <span class="n">displayStr</span> <span class="o">+=</span> <span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">((</span><span class="s">"ボタン "</span> <span class="o">+</span> <span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">buttonIndex</span><span class="p">)</span> <span class="o">+</span> <span class="s">"を離しています。"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
                 <span class="p">}</span>
-                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">JoystickButtonState</span><span class="o">::</span><span class="n">Hold</span><span class="p">)</span> <span class="c1">//前フレームと本フレームで押下
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">ButtonState</span><span class="o">::</span><span class="n">Hold</span><span class="p">)</span> <span class="c1">//前フレームと本フレームで押下
 </span>                <span class="p">{</span>
                     <span class="n">displayStr</span> <span class="o">+=</span> <span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">((</span><span class="s">"ボタン "</span> <span class="o">+</span> <span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">buttonIndex</span><span class="p">)</span> <span class="o">+</span> <span class="s">"を押しています。"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
                 <span class="p">}</span>
-                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">JoystickButtonState</span><span class="o">::</span><span class="n">Release</span><span class="p">)</span> <span class="c1">//前フレームで押下、本フレームで非押下
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">ButtonState</span><span class="o">::</span><span class="n">Release</span><span class="p">)</span> <span class="c1">//前フレームで押下、本フレームで非押下
 </span>                <span class="p">{</span>
                     <span class="n">displayStr</span> <span class="o">+=</span> <span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">((</span><span class="s">"ボタン "</span> <span class="o">+</span> <span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">buttonIndex</span><span class="p">)</span> <span class="o">+</span> <span class="s">"を離しました!"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
                 <span class="p">}</span>
-                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">JoystickButtonState</span><span class="o">::</span><span class="n">Push</span><span class="p">)</span> <span class="c1">//前フレームで非押下、本フレームで押下
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">ButtonState</span><span class="o">::</span><span class="n">Push</span><span class="p">)</span> <span class="c1">//前フレームで非押下、本フレームで押下
 </span>                <span class="p">{</span>
                     <span class="n">displayStr</span> <span class="o">+=</span> <span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">((</span><span class="s">"ボタン "</span> <span class="o">+</span> <span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">buttonIndex</span><span class="p">)</span> <span class="o">+</span> <span class="s">"を押しました!"</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
                 <span class="p">}</span>
@@ -256,19 +256,19 @@
                 <span class="p">{</span>
                     <span class="n">var</span> <span class="n">state</span> <span class="p">=</span> <span class="n">joystick</span><span class="p">.</span><span class="nf">GetButtonState</span><span class="p">(</span><span class="n">buttonIndex</span><span class="p">);</span>
 
-                    <span class="k">if</span><span class="p">(</span><span class="n">state</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">JoystickButtonState</span><span class="p">.</span><span class="n">Free</span><span class="p">)</span> <span class="c1">//前フレームと本フレームで非押下
+                    <span class="k">if</span><span class="p">(</span><span class="n">state</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">ButtonState</span><span class="p">.</span><span class="n">Free</span><span class="p">)</span> <span class="c1">//前フレームと本フレームで非押下
 </span>                    <span class="p">{</span>
                             <span class="n">displayStr</span> <span class="p">+=</span> <span class="p">(</span><span class="s">"ボタン "</span> <span class="p">+</span> <span class="n">buttonIndex</span> <span class="p">+</span> <span class="s">"を離しています。"</span><span class="p">);</span>
                     <span class="p">}</span>
-                    <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">state</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">JoystickButtonState</span><span class="p">.</span><span class="n">Hold</span><span class="p">)</span> <span class="c1">//前フレームと本フレームで押下
+                    <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">state</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">ButtonState</span><span class="p">.</span><span class="n">Hold</span><span class="p">)</span> <span class="c1">//前フレームと本フレームで押下
 </span>                    <span class="p">{</span>
                             <span class="n">displayStr</span> <span class="p">+=</span> <span class="p">(</span><span class="s">"ボタン "</span> <span class="p">+</span> <span class="n">buttonIndex</span> <span class="p">+</span> <span class="s">"を押しています。"</span><span class="p">);</span>
                     <span class="p">}</span>
-                    <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">state</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">JoystickButtonState</span><span class="p">.</span><span class="n">Release</span><span class="p">)</span> <span class="c1">//前フレームで押下、本フレームで非押下
+                    <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">state</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">ButtonState</span><span class="p">.</span><span class="n">Release</span><span class="p">)</span> <span class="c1">//前フレームで押下、本フレームで非押下
 </span>                    <span class="p">{</span>
                             <span class="n">displayStr</span> <span class="p">+=</span> <span class="p">(</span><span class="s">"ボタン "</span> <span class="p">+</span> <span class="n">buttonIndex</span> <span class="p">+</span> <span class="s">"を離しました!"</span><span class="p">);</span>
                     <span class="p">}</span>
-                    <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">state</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">JoystickButtonState</span><span class="p">.</span><span class="n">Push</span><span class="p">)</span> <span class="c1">//前フレームで非押下、本フレームで押下
+                    <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">state</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">ButtonState</span><span class="p">.</span><span class="n">Push</span><span class="p">)</span> <span class="c1">//前フレームで非押下、本フレームで押下
 </span>                    <span class="p">{</span>
                             <span class="n">displayStr</span> <span class="p">+=</span> <span class="p">(</span><span class="s">"ボタン "</span> <span class="p">+</span> <span class="n">buttonIndex</span> <span class="p">+</span> <span class="s">"を押しました!"</span><span class="p">);</span>
                     <span class="p">}</span>
@@ -341,27 +341,27 @@
 
                 <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">buttonIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="o">(</span><span class="n">buttonIndex</span> <span class="o">&lt;</span> <span class="n">joystick</span><span class="o">.</span><span class="na">getButtonsCount</span><span class="o">());</span> <span class="n">buttonIndex</span><span class="o">++)</span>
                 <span class="o">{</span>
-                    <span class="n">asd</span><span class="o">.</span><span class="na">JoystickButtonState</span> <span class="n">state</span> <span class="o">=</span> <span class="n">joystick</span><span class="o">.</span><span class="na">GetButtonState</span><span class="o">(</span><span class="n">buttonIndex</span><span class="o">);</span>
+                    <span class="n">asd</span><span class="o">.</span><span class="na">ButtonState</span> <span class="n">state</span> <span class="o">=</span> <span class="n">joystick</span><span class="o">.</span><span class="na">GetButtonState</span><span class="o">(</span><span class="n">buttonIndex</span><span class="o">);</span>
 
-                    <span class="k">if</span><span class="o">((</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">JoystickButtonState</span><span class="o">.</span><span class="na">Free</span><span class="o">))</span>
+                    <span class="k">if</span><span class="o">((</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">ButtonState</span><span class="o">.</span><span class="na">Free</span><span class="o">))</span>
                     <span class="o">{</span>
                         <span class="n">displayStr</span> <span class="o">+=</span> <span class="o">((</span><span class="s">"ボタン "</span> <span class="o">+</span> <span class="n">buttonIndex</span><span class="o">)</span> <span class="o">+</span> <span class="s">"を離しています。"</span><span class="o">);</span>
                     <span class="o">}</span>
                     <span class="k">else</span>
                     <span class="o">{</span>
-                        <span class="k">if</span><span class="o">((</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">JoystickButtonState</span><span class="o">.</span><span class="na">Hold</span><span class="o">))</span>
+                        <span class="k">if</span><span class="o">((</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">ButtonState</span><span class="o">.</span><span class="na">Hold</span><span class="o">))</span>
                         <span class="o">{</span>
                             <span class="n">displayStr</span> <span class="o">+=</span> <span class="o">((</span><span class="s">"ボタン "</span> <span class="o">+</span> <span class="n">buttonIndex</span><span class="o">)</span> <span class="o">+</span> <span class="s">"を押しています。"</span><span class="o">);</span>
                         <span class="o">}</span>
                         <span class="k">else</span>
                         <span class="o">{</span>
-                            <span class="k">if</span><span class="o">((</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">JoystickButtonState</span><span class="o">.</span><span class="na">Release</span><span class="o">))</span>
+                            <span class="k">if</span><span class="o">((</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">ButtonState</span><span class="o">.</span><span class="na">Release</span><span class="o">))</span>
                             <span class="o">{</span>
                                 <span class="n">displayStr</span> <span class="o">+=</span> <span class="o">((</span><span class="s">"ボタン "</span> <span class="o">+</span> <span class="n">buttonIndex</span><span class="o">)</span> <span class="o">+</span> <span class="s">"を離しました!"</span><span class="o">);</span>
                             <span class="o">}</span>
                             <span class="k">else</span>
                             <span class="o">{</span>
-                                <span class="k">if</span><span class="o">((</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">JoystickButtonState</span><span class="o">.</span><span class="na">Push</span><span class="o">))</span>
+                                <span class="k">if</span><span class="o">((</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">ButtonState</span><span class="o">.</span><span class="na">Push</span><span class="o">))</span>
                                 <span class="o">{</span>
                                     <span class="n">displayStr</span> <span class="o">+=</span> <span class="o">((</span><span class="s">"ボタン "</span> <span class="o">+</span> <span class="n">buttonIndex</span><span class="o">)</span> <span class="o">+</span> <span class="s">"を押しました!"</span><span class="o">);</span>
                                 <span class="o">}</span>
@@ -642,19 +642,19 @@
 </span>            <span class="k">auto</span> <span class="n">joystick</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetJoystickContainer</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetJoystickAt</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 
             <span class="k">auto</span> <span class="n">state</span> <span class="o">=</span> <span class="n">joystick</span><span class="o">-&gt;</span><span class="n">GetButtonStateAt</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">JoystickButtonType</span><span class="o">::</span><span class="n">RightRight</span><span class="p">);</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">JoystickButtonState</span><span class="o">::</span><span class="n">Free</span><span class="p">)</span> <span class="c1">//前フレームと本フレームで非押下
+            <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">ButtonState</span><span class="o">::</span><span class="n">Free</span><span class="p">)</span> <span class="c1">//前フレームと本フレームで非押下
 </span>            <span class="p">{</span>
                 <span class="n">displayStr</span> <span class="o">+=</span> <span class="n">u</span><span class="s">"ボタンを離しています。"</span><span class="p">;</span>
             <span class="p">}</span>
-            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">JoystickButtonState</span><span class="o">::</span><span class="n">Hold</span><span class="p">)</span> <span class="c1">//前フレームと本フレームで押下
+            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">ButtonState</span><span class="o">::</span><span class="n">Hold</span><span class="p">)</span> <span class="c1">//前フレームと本フレームで押下
 </span>            <span class="p">{</span>
                 <span class="n">displayStr</span> <span class="o">+=</span> <span class="n">u</span><span class="s">"ボタンを押しています。"</span><span class="p">;</span>
             <span class="p">}</span>
-            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">JoystickButtonState</span><span class="o">::</span><span class="n">Release</span><span class="p">)</span> <span class="c1">//前フレームで押下、本フレームで非押下
+            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">ButtonState</span><span class="o">::</span><span class="n">Release</span><span class="p">)</span> <span class="c1">//前フレームで押下、本フレームで非押下
 </span>            <span class="p">{</span>
                 <span class="n">displayStr</span> <span class="o">+=</span> <span class="n">u</span><span class="s">"ボタンを離しました!"</span><span class="p">;</span>
             <span class="p">}</span>
-            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">JoystickButtonState</span><span class="o">::</span><span class="n">Push</span><span class="p">)</span> <span class="c1">//前フレームで非押下、本フレームで押下
+            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">ButtonState</span><span class="o">::</span><span class="n">Push</span><span class="p">)</span> <span class="c1">//前フレームで非押下、本フレームで押下
 </span>            <span class="p">{</span>
                 <span class="n">displayStr</span> <span class="o">+=</span> <span class="n">u</span><span class="s">"ボタンを押しました!"</span><span class="p">;</span>
             <span class="p">}</span>
@@ -732,19 +732,19 @@
 </span>                <span class="n">var</span> <span class="n">joystick</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">JoystickContainer</span><span class="p">.</span><span class="nf">GetJoystickAt</span><span class="p">(</span><span class="m">0</span><span class="p">);</span>
 
                 <span class="n">var</span> <span class="n">state</span> <span class="p">=</span> <span class="n">joystick</span><span class="p">.</span><span class="nf">GetButtonStateAt</span><span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">JoystickButtonType</span><span class="p">.</span><span class="n">RightRight</span><span class="p">);</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">JoystickButtonState</span><span class="p">.</span><span class="n">Free</span><span class="p">)</span> <span class="c1">//前フレームと本フレームで非押下
+                <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">ButtonState</span><span class="p">.</span><span class="n">Free</span><span class="p">)</span> <span class="c1">//前フレームと本フレームで非押下
 </span>                <span class="p">{</span>
                     <span class="n">displayStr</span> <span class="p">+=</span> <span class="p">(</span><span class="s">"ボタンを離しています。"</span><span class="p">);</span>
                 <span class="p">}</span>
-                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">JoystickButtonState</span><span class="p">.</span><span class="n">Hold</span><span class="p">)</span> <span class="c1">//前フレームと本フレームで押下
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">ButtonState</span><span class="p">.</span><span class="n">Hold</span><span class="p">)</span> <span class="c1">//前フレームと本フレームで押下
 </span>                <span class="p">{</span>
                     <span class="n">displayStr</span> <span class="p">+=</span> <span class="p">(</span><span class="s">"ボタンを押しています。"</span><span class="p">);</span>
                 <span class="p">}</span>
-                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">JoystickButtonState</span><span class="p">.</span><span class="n">Release</span><span class="p">)</span> <span class="c1">//前フレームで押下、本フレームで非押下
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">ButtonState</span><span class="p">.</span><span class="n">Release</span><span class="p">)</span> <span class="c1">//前フレームで押下、本フレームで非押下
 </span>                <span class="p">{</span>
                     <span class="n">displayStr</span> <span class="p">+=</span> <span class="p">(</span><span class="s">"ボタンを離しました!"</span><span class="p">);</span>
                 <span class="p">}</span>
-                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">JoystickButtonState</span><span class="p">.</span><span class="n">Push</span><span class="p">)</span> <span class="c1">//前フレームで非押下、本フレームで押下
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">ButtonState</span><span class="p">.</span><span class="n">Push</span><span class="p">)</span> <span class="c1">//前フレームで非押下、本フレームで押下
 </span>                <span class="p">{</span>
                     <span class="n">displayStr</span> <span class="p">+=</span> <span class="p">(</span><span class="s">"ボタンを押しました!"</span><span class="p">);</span>
                 <span class="p">}</span>
@@ -819,26 +819,26 @@
                     <span class="c1">// RightRightはPSの場合〇、XBOXの場合、Bボタンを示す。</span>
                     <span class="n">asd</span><span class="o">.</span><span class="na">Joystick</span> <span class="n">joystick</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getJoystickContainer</span><span class="o">().</span><span class="na">GetJoystickAt</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
 
-                    <span class="n">asd</span><span class="o">.</span><span class="na">JoystickButtonState</span> <span class="n">state</span> <span class="o">=</span> <span class="n">joystick</span><span class="o">.</span><span class="na">GetButtonStateAt</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">JoystickButtonType</span><span class="o">.</span><span class="na">RightRight</span><span class="o">);</span>
-                    <span class="k">if</span><span class="o">((</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">JoystickButtonState</span><span class="o">.</span><span class="na">Free</span><span class="o">))</span>
+                    <span class="n">asd</span><span class="o">.</span><span class="na">ButtonState</span> <span class="n">state</span> <span class="o">=</span> <span class="n">joystick</span><span class="o">.</span><span class="na">GetButtonStateAt</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">JoystickButtonType</span><span class="o">.</span><span class="na">RightRight</span><span class="o">);</span>
+                    <span class="k">if</span><span class="o">((</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">ButtonState</span><span class="o">.</span><span class="na">Free</span><span class="o">))</span>
                     <span class="o">{</span>
                         <span class="n">displayStr</span> <span class="o">+=</span> <span class="s">"ボタンを離しています。"</span><span class="o">;</span>
                     <span class="o">}</span>
                     <span class="k">else</span>
                     <span class="o">{</span>
-                        <span class="k">if</span><span class="o">((</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">JoystickButtonState</span><span class="o">.</span><span class="na">Hold</span><span class="o">))</span>
+                        <span class="k">if</span><span class="o">((</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">ButtonState</span><span class="o">.</span><span class="na">Hold</span><span class="o">))</span>
                         <span class="o">{</span>
                             <span class="n">displayStr</span> <span class="o">+=</span> <span class="s">"ボタンを押しています。"</span><span class="o">;</span>
                         <span class="o">}</span>
                         <span class="k">else</span>
                         <span class="o">{</span>
-                            <span class="k">if</span><span class="o">((</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">JoystickButtonState</span><span class="o">.</span><span class="na">Release</span><span class="o">))</span>
+                            <span class="k">if</span><span class="o">((</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">ButtonState</span><span class="o">.</span><span class="na">Release</span><span class="o">))</span>
                             <span class="o">{</span>
                                 <span class="n">displayStr</span> <span class="o">+=</span> <span class="s">"ボタンを離しました!"</span><span class="o">;</span>
                             <span class="o">}</span>
                             <span class="k">else</span>
                             <span class="o">{</span>
-                                <span class="k">if</span><span class="o">((</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">JoystickButtonState</span><span class="o">.</span><span class="na">Push</span><span class="o">))</span>
+                                <span class="k">if</span><span class="o">((</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">ButtonState</span><span class="o">.</span><span class="na">Push</span><span class="o">))</span>
                                 <span class="o">{</span>
                                     <span class="n">displayStr</span> <span class="o">+=</span> <span class="s">"ボタンを押しました!"</span><span class="o">;</span>
                                 <span class="o">}</span>
