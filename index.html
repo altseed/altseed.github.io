@@ -1,0 +1,131 @@
+﻿
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Altseed2 | Altseed2 </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Altseed2 | Altseed2 ">
+    <meta name="generator" content="docfx 2.56.2.0">
+    
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/reference.css">
+    <meta property="docfx:navrel" content="toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="">
+    
+  </head>
+
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" src="logo.png" alt="" style="height:100%;margin-right:15px;">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <link rel="stylesheet" href="styles/top.css">
+        <div id="title">
+            <img src="Logo.png">
+            <div id="title_texts">
+                <h1 class="no-border">Altseed2</h1>
+                <p>マルチプラットフォームなゲーム用ライブラリ</p>
+            </div>
+        </div>
+
+        <div id="content">
+            
+<div id="budges">
+<p>NuGet:<a href="https://www.nuget.org/packages/Altseed2"><img src="https://img.shields.io/nuget/vpre/Altseed2?color=darkgreen&amp;logo=nuget&amp;label=%20&amp;style=plastic" alt="NuGet Package"></a>
+Engine:<a href="https://github.com/altseed/Altseed2-csharp"><img src="https://img.shields.io/github/commits-since/altseed/Altseed2-csharp/2.0.0-beta1?include_prereleases&amp;logo=github&amp;color=blue&amp;style=plastic" alt="GitHub Engine"></a>
+Core:<a href="https://github.com/altseed/Altseed2"><img src="https://img.shields.io/github/milestones/progress/altseed/Altseed2/1?color=orange&amp;logo=github&amp;style=plastic" alt="Github Core"></a></p>
+</div>
+<h2 id="altseed2とは">Altseed2とは</h2>
+<p>Altseed2 はグラフィック、サウンド、ジョイスティックなどの機能をまとめたゲーム用ライブラリです。
+オブジェクト指向を用いた開発に適したインタフェースにより、複雑になりがちな機能を少ないコード量で実装することができます。
+かつての Altseed と異なり、ノードシステムを採用しており、オブジェクトやオブジェクトが持つ機能の管理を、より柔軟に行うことができます。
+その他にも、Altseed2 には初代 Altseed にはなかった機能がいくつか実装されています。</p>
+<h2 id="使い方">使い方</h2>
+<p>チュートリアルは<a href="Tutorials/Chap0/index.html">こちら</a>！</p>
+<h2 id="altseed2-でできること">Altseed2 でできること</h2>
+<h3 id="例--オーディオビジュアライザ">例 : オーディオビジュアライザ</h3>
+<p>Altseed2 で新たに追加された機能の中に、再生中の音声についてスペクトル解析を行う機能があります。
+これを使用することで、音楽に合わせて動くオブジェクトを、簡単に実装することができます。</p>
+<video width="320" height="240" autoplay="" muted="true" loop="true" preload="" poster="Images/Spectrum.png">
+  <source src="Images/Spectrum.mp4" type="video/mp4">
+  <source src="Images/Spectrum.webm" type="video/webm">
+  <img src="Images/Spectrum.png">
+</source></source></video>
+<!--[!code-csharp[Main](Src/Samples/AudioVisualizerDemonstration/AudioVisualizerDemonstration.cs)]-->
+<h3 id="例--衝突判定">例 : 衝突判定</h3>
+<p>Altseed2 では、オブジェクト同士の衝突判定機能が実装されています。
+衝突時の処理を、メソッドとしてクラスの中に記述することができます。</p>
+<video width="320" height="240" autoplay="" muted="true" loop="true" preload="" poster="Images/Collision.png">
+  <source src="Images/Collision.mp4" type="video/mp4">
+  <source src="Images/Collision.webm" type="video/webm">
+  <img src="Images/Collision.png">
+</source></source></video>
+<!--[!code-csharp[Main](Src/Samples/CollisionDemonstration/CollisionDemonstration.cs)]-->
+<h2 id="必要な環境">必要な環境</h2>
+<p>Windows : 10 以降 (DirectX11 以上が必要)<br>
+Mac : Mojave 以降<br>
+Linux : 2.1 以降</p>
+<h2 id="リファレンス">リファレンス</h2>
+<ul>
+<li><a class="xref" href="References/Altseed2.html">リファレンス</a></li>
+</ul>
+<h2 id="サポート">サポート</h2>
+<ul>
+<li><a href="https://github.com/altseed/Altseed2">GitHub</a></li>
+</ul>
+<h2 id="altseed2-for-rust-について">Altseed2 For Rust について</h2>
+<p>現在、Rust で使用できる Altseed2 を鋭意開発中です。</p>
+
+        </div>
+        
+    
+    <footer>
+      <div class="grad-bottom"></div>
+      <div class="footer">
+        <div class="container">
+          <span class="pull-right">
+            <a href="#top">Back to top</a>
+          </span>
+          Copyright &copy; 2020 Altseed .
+          
+        </div>
+      </div>
+    </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

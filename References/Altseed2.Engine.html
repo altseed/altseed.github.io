@@ -1,0 +1,1255 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Engine クラス
+   | Altseed2 </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Engine クラス
+   | Altseed2 ">
+    <meta name="generator" content="docfx 2.56.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/reference.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" src="../logo.png" alt="" style="height:100%;margin-right:15px;">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+                
+                <ul class="nav level1 navbar-nav">
+                      <li>
+                          <a href="../Tutorials/index.html" title="&#12481;&#12517;&#12540;&#12488;&#12522;&#12450;&#12523;">&#12481;&#12517;&#12540;&#12488;&#12522;&#12450;&#12523;</a>
+                      </li>
+                      <li>
+                          <a href="../Manual/index.html" title="&#27231;&#33021;&#35299;&#35500;">&#27231;&#33021;&#35299;&#35500;</a>
+                      </li>
+                      <li>
+                          <a href="../References/Altseed2.html" title="&#12522;&#12501;&#12449;&#12524;&#12531;&#12473;">&#12522;&#12501;&#12449;&#12524;&#12531;&#12473;</a>
+                      </li>
+                      <li>
+                          <a href="../First/index.html" title="&#21021;&#20195;Altseed&#12399;&#12467;&#12481;&#12521;">&#21021;&#20195;Altseed&#12399;&#12467;&#12481;&#12521;</a>
+                      </li>
+                </ul>    </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div>
+              <div class="sidefilter">
+                <form class="toc-filter">
+                  <span class="glyphicon glyphicon-filter filter-icon"></span>
+                  <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
+                </form>
+              </div>
+              <div class="sidetoc">
+                <div class="toc" id="toc">
+                  
+                  <ul class="nav level1">
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="Altseed2.html" title="Altseed2" class="">Altseed2</a>
+                        
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="Altseed2.AlphaBlend.html" title="AlphaBlend" class="">AlphaBlend</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.ArcNode.html" title="ArcNode" class="">ArcNode</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.BlendEquation.html" title="BlendEquation" class="">BlendEquation</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.BlendFunction.html" title="BlendFunction" class="">BlendFunction</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.BuiltinShader.html" title="BuiltinShader" class="">BuiltinShader</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.BuiltinShaderType.html" title="BuiltinShaderType" class="">BuiltinShaderType</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.ButtonState.html" title="ButtonState" class="">ButtonState</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.CameraNode.html" title="CameraNode" class="">CameraNode</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.CircleCollider.html" title="CircleCollider" class="">CircleCollider</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.CircleColliderNode.html" title="CircleColliderNode" class="">CircleColliderNode</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.CircleColliderNode.ScaleCalcType.html" title="CircleColliderNode.ScaleCalcType" class="">CircleColliderNode.ScaleCalcType</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.CircleColliderVisualizeNode.html" title="CircleColliderVisualizeNode" class="">CircleColliderVisualizeNode</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.CircleNode.html" title="CircleNode" class="">CircleNode</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.Collider.html" title="Collider" class="">Collider</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.ColliderNode.html" title="ColliderNode" class="">ColliderNode</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.ColliderVisualizeNodeFactory.html" title="ColliderVisualizeNodeFactory" class="">ColliderVisualizeNodeFactory</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.CollisionInfo.html" title="CollisionInfo" class="">CollisionInfo</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.CollisionManagerNode.html" title="CollisionManagerNode" class="">CollisionManagerNode</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.CollisionType.html" title="CollisionType" class="">CollisionType</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.Color.html" title="Color" class="">Color</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.CommandList.html" title="CommandList" class="">CommandList</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.Configuration.html" title="Configuration" class="">Configuration</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.Cursor.html" title="Cursor" class="">Cursor</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.CursorMode.html" title="CursorMode" class="">CursorMode</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.Easing.html" title="Easing" class="">Easing</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.EasingType.html" title="EasingType" class="">EasingType</a>
+                          </li>
+                          <li class="active">
+                            <a href="Altseed2.Engine.html" title="Engine" class="active">Engine</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.FFTWindow.html" title="FFTWindow" class="">FFTWindow</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.File.html" title="File" class="">File</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.Font.html" title="Font" class="">Font</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.FramerateMode.html" title="FramerateMode" class="">FramerateMode</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.Glyph.html" title="Glyph" class="">Glyph</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.ICollisionEventReceiver.html" title="ICollisionEventReceiver" class="">ICollisionEventReceiver</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.Joystick.html" title="Joystick" class="">Joystick</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.JoystickAxis.html" title="JoystickAxis" class="">JoystickAxis</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.JoystickButton.html" title="JoystickButton" class="">JoystickButton</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.JoystickInfo.html" title="JoystickInfo" class="">JoystickInfo</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.JoystickType.html" title="JoystickType" class="">JoystickType</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.Key.html" title="Key" class="">Key</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.Keyboard.html" title="Keyboard" class="">Keyboard</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.LineNode.html" title="LineNode" class="">LineNode</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.Log.html" title="Log" class="">Log</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.LogCategory.html" title="LogCategory" class="">LogCategory</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.LogLevel.html" title="LogLevel" class="">LogLevel</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.Material.html" title="Material" class="">Material</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.MathHelper.html" title="MathHelper" class="">MathHelper</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.Matrix33F.html" title="Matrix33F" class="">Matrix33F</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.Matrix33I.html" title="Matrix33I" class="">Matrix33I</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.Matrix44F.html" title="Matrix44F" class="">Matrix44F</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.Matrix44I.html" title="Matrix44I" class="">Matrix44I</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.Mouse.html" title="Mouse" class="">Mouse</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.MouseButton.html" title="MouseButton" class="">MouseButton</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.Node.html" title="Node" class="">Node</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.PolygonCollider.html" title="PolygonCollider" class="">PolygonCollider</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.PolygonColliderNode.html" title="PolygonColliderNode" class="">PolygonColliderNode</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.PolygonColliderVisualizeNode.html" title="PolygonColliderVisualizeNode" class="">PolygonColliderVisualizeNode</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.PolygonNode.html" title="PolygonNode" class="">PolygonNode</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.PostEffectGaussianBlurNode.html" title="PostEffectGaussianBlurNode" class="">PostEffectGaussianBlurNode</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.PostEffectGrayScaleNode.html" title="PostEffectGrayScaleNode" class="">PostEffectGrayScaleNode</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.PostEffectLightBloomNode.html" title="PostEffectLightBloomNode" class="">PostEffectLightBloomNode</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.PostEffectNode.html" title="PostEffectNode" class="">PostEffectNode</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.PostEffectSepiaNode.html" title="PostEffectSepiaNode" class="">PostEffectSepiaNode</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.RectangleCollider.html" title="RectangleCollider" class="">RectangleCollider</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.RectangleColliderNode.html" title="RectangleColliderNode" class="">RectangleColliderNode</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.RectangleColliderVisualizeNode.html" title="RectangleColliderVisualizeNode" class="">RectangleColliderVisualizeNode</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.RectangleNode.html" title="RectangleNode" class="">RectangleNode</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.RectF.html" title="RectF" class="">RectF</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.RectI.html" title="RectI" class="">RectI</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.RegisteredStatus.html" title="RegisteredStatus" class="">RegisteredStatus</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.RenderPassParameter.html" title="RenderPassParameter" class="">RenderPassParameter</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.RenderTexture.html" title="RenderTexture" class="">RenderTexture</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.RuledTransitionEffectNode.html" title="RuledTransitionEffectNode" class="">RuledTransitionEffectNode</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.RuledTransitionNode.html" title="RuledTransitionNode" class="">RuledTransitionNode</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.RuledTransitionState.html" title="RuledTransitionState" class="">RuledTransitionState</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.Shader.html" title="Shader" class="">Shader</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.ShaderStage.html" title="ShaderStage" class="">ShaderStage</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.ShapeNode.html" title="ShapeNode" class="">ShapeNode</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.Sound.html" title="Sound" class="">Sound</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.SoundMixer.html" title="SoundMixer" class="">SoundMixer</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.SpriteNode.html" title="SpriteNode" class="">SpriteNode</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.StaticFile.html" title="StaticFile" class="">StaticFile</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.StreamFile.html" title="StreamFile" class="">StreamFile</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.TextNode.html" title="TextNode" class="">TextNode</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.Texture2D.html" title="Texture2D" class="">Texture2D</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.TextureBase.html" title="TextureBase" class="">TextureBase</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.TextureFilter.html" title="TextureFilter" class="">TextureFilter</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.TextureFormat.html" title="TextureFormat" class="">TextureFormat</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.TextureWrapMode.html" title="TextureWrapMode" class="">TextureWrapMode</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.Tool.html" title="Tool" class="">Tool</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.ToolColor.html" title="ToolColor" class="">ToolColor</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.ToolColorEditFlags.html" title="ToolColorEditFlags" class="">ToolColorEditFlags</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.ToolComboFlags.html" title="ToolComboFlags" class="">ToolComboFlags</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.ToolCond.html" title="ToolCond" class="">ToolCond</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.ToolDir.html" title="ToolDir" class="">ToolDir</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.ToolFocused.html" title="ToolFocused" class="">ToolFocused</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.ToolGlyphRange.html" title="ToolGlyphRange" class="">ToolGlyphRange</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.ToolHoveredFlags.html" title="ToolHoveredFlags" class="">ToolHoveredFlags</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.ToolInputTextFlags.html" title="ToolInputTextFlags" class="">ToolInputTextFlags</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.ToolSelectableFlags.html" title="ToolSelectableFlags" class="">ToolSelectableFlags</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.ToolStyleVar.html" title="ToolStyleVar" class="">ToolStyleVar</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.ToolTabBarFlags.html" title="ToolTabBarFlags" class="">ToolTabBarFlags</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.ToolTreeNodeFlags.html" title="ToolTreeNodeFlags" class="">ToolTreeNodeFlags</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.ToolUsage.html" title="ToolUsage" class="">ToolUsage</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.ToolWindowFlags.html" title="ToolWindowFlags" class="">ToolWindowFlags</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.TransformNode.html" title="TransformNode" class="">TransformNode</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.TransitionNode.html" title="TransitionNode" class="">TransitionNode</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.TriangleNode.html" title="TriangleNode" class="">TriangleNode</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.Vector2F.html" title="Vector2F" class="">Vector2F</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.Vector2I.html" title="Vector2I" class="">Vector2I</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.Vector3F.html" title="Vector3F" class="">Vector3F</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.Vector3I.html" title="Vector3I" class="">Vector3I</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.Vector4F.html" title="Vector4F" class="">Vector4F</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.Vector4I.html" title="Vector4I" class="">Vector4I</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.Vertex.html" title="Vertex" class="">Vertex</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.WritingDirection.html" title="WritingDirection" class="">WritingDirection</a>
+                          </li>
+                        </ul>  </li>
+                  </ul>        </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Altseed2.Engine">
+  
+  
+  <h1 id="Altseed2_Engine" data-uid="Altseed2.Engine" class="text-break">Engine クラス
+  </h1>
+  <div class="markdown level0 summary"><p>Altseed2 のエンジンを表します。</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  
+    <h3 id="継承関係">継承関係</h3>
+  <div class="inheritance">
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">Engine</span></div>
+  </div>
+  
+  
+  
+  
+  
+  <h3 id="MemberToc">&#12513;&#12531;&#12496;&#12540;</h3>
+  <h4>&#12501;&#12451;&#12540;&#12523;&#12489;
+  </h4>
+      <h5><a class="xref" href="Altseed2.Engine.html#Altseed2_Engine_MaxCameraGroupCount">MaxCameraGroupCount</a></h5>
+      <section><p>カメラグループの個数の最大値</p>
+</section>
+      <h5><a class="xref" href="Altseed2.Engine.html#Altseed2_Engine_MaxStackalloclLength">MaxStackalloclLength</a></h5>
+      <section></section>
+  <h4>&#12503;&#12525;&#12497;&#12486;&#12451;
+  </h4>
+      <h5><a class="xref" href="Altseed2.Engine.html#Altseed2_Engine_ClearColor">ClearColor</a></h5>
+      <section><p>スクリーンのクリア色を取得または設定します。</p>
+</section>
+      <h5><a class="xref" href="Altseed2.Engine.html#Altseed2_Engine_CurrentFPS">CurrentFPS</a></h5>
+      <section><p>現在のFPSを取得します。</p>
+</section>
+      <h5><a class="xref" href="Altseed2.Engine.html#Altseed2_Engine_DeltaSecond">DeltaSecond</a></h5>
+      <section><p>前のフレームからの経過時間(秒)を取得します。</p>
+</section>
+      <h5><a class="xref" href="Altseed2.Engine.html#Altseed2_Engine_File">File</a></h5>
+      <section><p>ファイルを管理するクラスを取得します。</p>
+</section>
+      <h5><a class="xref" href="Altseed2.Engine.html#Altseed2_Engine_FramerateMode">FramerateMode</a></h5>
+      <section><p>フレームレートの制御方法を取得または設定します。</p>
+</section>
+      <h5><a class="xref" href="Altseed2.Engine.html#Altseed2_Engine_Graphics">Graphics</a></h5>
+      <section><p>グラフィックのクラスを取得します。</p>
+</section>
+      <h5><a class="xref" href="Altseed2.Engine.html#Altseed2_Engine_Joystick">Joystick</a></h5>
+      <section><p>ジョイスティックを管理するクラスを取得します。</p>
+</section>
+      <h5><a class="xref" href="Altseed2.Engine.html#Altseed2_Engine_Keyboard">Keyboard</a></h5>
+      <section><p>キーボードを管理するクラスを取得します。</p>
+</section>
+      <h5><a class="xref" href="Altseed2.Engine.html#Altseed2_Engine_Log">Log</a></h5>
+      <section><p>ログを管理するクラスを取得します。</p>
+</section>
+      <h5><a class="xref" href="Altseed2.Engine.html#Altseed2_Engine_Mouse">Mouse</a></h5>
+      <section><p>マウスを管理するクラスを取得します。</p>
+</section>
+      <h5><a class="xref" href="Altseed2.Engine.html#Altseed2_Engine_Sound">Sound</a></h5>
+      <section><p>音を管理するクラスを取得します。</p>
+</section>
+      <h5><a class="xref" href="Altseed2.Engine.html#Altseed2_Engine_TargetFPS">TargetFPS</a></h5>
+      <section><p>目標フレームレートを取得または設定します。</p>
+</section>
+      <h5><a class="xref" href="Altseed2.Engine.html#Altseed2_Engine_Tool">Tool</a></h5>
+      <section><p>ツールを管理するクラスを取得します。</p>
+</section>
+      <h5><a class="xref" href="Altseed2.Engine.html#Altseed2_Engine_Vector2FBuffer">Vector2FBuffer</a></h5>
+      <section></section>
+      <h5><a class="xref" href="Altseed2.Engine.html#Altseed2_Engine_WindowSize">WindowSize</a></h5>
+      <section><p>ウィンドウのサイズを取得または設定します。</p>
+</section>
+      <h5><a class="xref" href="Altseed2.Engine.html#Altseed2_Engine_WindowTitle">WindowTitle</a></h5>
+      <section><p>ウインドウのタイトルを取得または設定します。</p>
+</section>
+  <h4>&#12513;&#12477;&#12483;&#12489;
+  </h4>
+      <h5><a class="xref" href="Altseed2.Engine.html#Altseed2_Engine_AddNode_Altseed2_Node_">AddNode(Node)</a></h5>
+      <section><p>エンジンにノードを追加します。</p>
+</section>
+      <h5><a class="xref" href="Altseed2.Engine.html#Altseed2_Engine_DoEvents">DoEvents()</a></h5>
+      <section><p>システムイベントを処理します。</p>
+</section>
+      <h5><a class="xref" href="Altseed2.Engine.html#Altseed2_Engine_FindNodes__1">FindNodes&lt;T&gt;()</a></h5>
+      <section><p>エンジンに登録されている <code data-dev-comment-type="typeparamref" class="typeparamref">T</code> 型のノードを列挙します。</p>
+</section>
+      <h5><a class="xref" href="Altseed2.Engine.html#Altseed2_Engine_FindNodes__1_System_Func___0_System_Boolean__">FindNodes&lt;T&gt;(Func&lt;T, Boolean&gt;)</a></h5>
+      <section><p>エンジンに登録されている <code data-dev-comment-type="typeparamref" class="typeparamref">T</code> 型のノードのうち <code data-dev-comment-type="paramref" class="paramref">condition</code> を満たすものを列挙します。</p>
+</section>
+      <h5><a class="xref" href="Altseed2.Engine.html#Altseed2_Engine_GetNodes">GetNodes()</a></h5>
+      <section><p>エンジンに登録されているノードの列挙子を返します。</p>
+</section>
+      <h5><a class="xref" href="Altseed2.Engine.html#Altseed2_Engine_Initialize_System_String_System_Int32_System_Int32_Altseed2_Configuration_">Initialize(String, Int32, Int32, Configuration)</a></h5>
+      <section><p>エンジンを初期化します。</p>
+</section>
+      <h5><a class="xref" href="Altseed2.Engine.html#Altseed2_Engine_Pause_Altseed2_Node_">Pause(Node)</a></h5>
+      <section><p>ノードの更新を一時停止します。</p>
+</section>
+      <h5><a class="xref" href="Altseed2.Engine.html#Altseed2_Engine_RemoveNode_Altseed2_Node_">RemoveNode(Node)</a></h5>
+      <section><p>エンジンからノードを削除します。</p>
+</section>
+      <h5><a class="xref" href="Altseed2.Engine.html#Altseed2_Engine_Resume">Resume()</a></h5>
+      <section><p>ノードの更新を再開します。</p>
+</section>
+      <h5><a class="xref" href="Altseed2.Engine.html#Altseed2_Engine_Terminate">Terminate()</a></h5>
+      <section><p>エンジンを終了します。</p>
+</section>
+      <h5><a class="xref" href="Altseed2.Engine.html#Altseed2_Engine_Update">Update()</a></h5>
+      <section><p>エンジンを更新します。</p>
+</section>
+  
+  <h3 id="fields">&#12501;&#12451;&#12540;&#12523;&#12489;
+  </h3>
+  <h4 id="Altseed2_Engine_MaxCameraGroupCount" data-uid="Altseed2.Engine.MaxCameraGroupCount">MaxCameraGroupCount</h4>
+  <section>
+  <div class="markdown level1 summary"><p>カメラグループの個数の最大値</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">const int MaxCameraGroupCount = 64</code></pre>
+  </div>
+  
+  
+  </section>
+  <h4 id="Altseed2_Engine_MaxStackalloclLength" data-uid="Altseed2.Engine.MaxStackalloclLength">MaxStackalloclLength</h4>
+  <section>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">const int MaxStackalloclLength = 16</code></pre>
+  </div>
+  
+  
+  </section>
+  <h3 id="properties">&#12503;&#12525;&#12497;&#12486;&#12451;
+  </h3>
+  <a id="Altseed2_Engine_ClearColor_" data-uid="Altseed2.Engine.ClearColor*"></a>
+  <h4 id="Altseed2_Engine_ClearColor" data-uid="Altseed2.Engine.ClearColor">ClearColor</h4>
+  <section>
+  <div class="markdown level1 summary"><p>スクリーンのクリア色を取得または設定します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Color ClearColor { get; set; }</code></pre>
+  </div>
+  
+  
+  </section>
+  <a id="Altseed2_Engine_CurrentFPS_" data-uid="Altseed2.Engine.CurrentFPS*"></a>
+  <h4 id="Altseed2_Engine_CurrentFPS" data-uid="Altseed2.Engine.CurrentFPS">CurrentFPS</h4>
+  <section>
+  <div class="markdown level1 summary"><p>現在のFPSを取得します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float CurrentFPS { get; }</code></pre>
+  </div>
+  
+  
+  </section>
+  <a id="Altseed2_Engine_DeltaSecond_" data-uid="Altseed2.Engine.DeltaSecond*"></a>
+  <h4 id="Altseed2_Engine_DeltaSecond" data-uid="Altseed2.Engine.DeltaSecond">DeltaSecond</h4>
+  <section>
+  <div class="markdown level1 summary"><p>前のフレームからの経過時間(秒)を取得します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float DeltaSecond { get; }</code></pre>
+  </div>
+  
+  
+  </section>
+  <a id="Altseed2_Engine_File_" data-uid="Altseed2.Engine.File*"></a>
+  <h4 id="Altseed2_Engine_File" data-uid="Altseed2.Engine.File">File</h4>
+  <section>
+  <div class="markdown level1 summary"><p>ファイルを管理するクラスを取得します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static File File { get; }</code></pre>
+  </div>
+  
+  
+  <h5 class="exceptions">&#20363;&#22806;</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>&#22411;</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>エンジンが初期されていなかったり終了していて操作を実行できなかった</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  </section>
+  <a id="Altseed2_Engine_FramerateMode_" data-uid="Altseed2.Engine.FramerateMode*"></a>
+  <h4 id="Altseed2_Engine_FramerateMode" data-uid="Altseed2.Engine.FramerateMode">FramerateMode</h4>
+  <section>
+  <div class="markdown level1 summary"><p>フレームレートの制御方法を取得または設定します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static FramerateMode FramerateMode { get; set; }</code></pre>
+  </div>
+  
+  
+  </section>
+  <a id="Altseed2_Engine_Graphics_" data-uid="Altseed2.Engine.Graphics*"></a>
+  <h4 id="Altseed2_Engine_Graphics" data-uid="Altseed2.Engine.Graphics">Graphics</h4>
+  <section>
+  <div class="markdown level1 summary"><p>グラフィックのクラスを取得します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Graphics Graphics { get; }</code></pre>
+  </div>
+  
+  
+  <h5 class="exceptions">&#20363;&#22806;</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>&#22411;</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>エンジンが初期されていなかったり終了していて操作を実行できなかった</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  </section>
+  <a id="Altseed2_Engine_Joystick_" data-uid="Altseed2.Engine.Joystick*"></a>
+  <h4 id="Altseed2_Engine_Joystick" data-uid="Altseed2.Engine.Joystick">Joystick</h4>
+  <section>
+  <div class="markdown level1 summary"><p>ジョイスティックを管理するクラスを取得します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Joystick Joystick { get; }</code></pre>
+  </div>
+  
+  
+  <h5 class="exceptions">&#20363;&#22806;</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>&#22411;</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>エンジンが初期されていなかったり終了していて操作を実行できなかった</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  </section>
+  <a id="Altseed2_Engine_Keyboard_" data-uid="Altseed2.Engine.Keyboard*"></a>
+  <h4 id="Altseed2_Engine_Keyboard" data-uid="Altseed2.Engine.Keyboard">Keyboard</h4>
+  <section>
+  <div class="markdown level1 summary"><p>キーボードを管理するクラスを取得します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Keyboard Keyboard { get; }</code></pre>
+  </div>
+  
+  
+  <h5 class="exceptions">&#20363;&#22806;</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>&#22411;</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>エンジンが初期されていなかったり終了していて操作を実行できなかった</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  </section>
+  <a id="Altseed2_Engine_Log_" data-uid="Altseed2.Engine.Log*"></a>
+  <h4 id="Altseed2_Engine_Log" data-uid="Altseed2.Engine.Log">Log</h4>
+  <section>
+  <div class="markdown level1 summary"><p>ログを管理するクラスを取得します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Log Log { get; }</code></pre>
+  </div>
+  
+  
+  <h5 class="exceptions">&#20363;&#22806;</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>&#22411;</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>エンジンが初期されていなかったり終了していて操作を実行できなかった</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  </section>
+  <a id="Altseed2_Engine_Mouse_" data-uid="Altseed2.Engine.Mouse*"></a>
+  <h4 id="Altseed2_Engine_Mouse" data-uid="Altseed2.Engine.Mouse">Mouse</h4>
+  <section>
+  <div class="markdown level1 summary"><p>マウスを管理するクラスを取得します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Mouse Mouse { get; }</code></pre>
+  </div>
+  
+  
+  <h5 class="exceptions">&#20363;&#22806;</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>&#22411;</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>エンジンが初期されていなかったり終了していて操作を実行できなかった</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  </section>
+  <a id="Altseed2_Engine_Sound_" data-uid="Altseed2.Engine.Sound*"></a>
+  <h4 id="Altseed2_Engine_Sound" data-uid="Altseed2.Engine.Sound">Sound</h4>
+  <section>
+  <div class="markdown level1 summary"><p>音を管理するクラスを取得します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static SoundMixer Sound { get; }</code></pre>
+  </div>
+  
+  
+  <h5 class="exceptions">&#20363;&#22806;</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>&#22411;</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>エンジンが初期されていなかったり終了していて操作を実行できなかった</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  </section>
+  <a id="Altseed2_Engine_TargetFPS_" data-uid="Altseed2.Engine.TargetFPS*"></a>
+  <h4 id="Altseed2_Engine_TargetFPS" data-uid="Altseed2.Engine.TargetFPS">TargetFPS</h4>
+  <section>
+  <div class="markdown level1 summary"><p>目標フレームレートを取得または設定します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float TargetFPS { get; set; }</code></pre>
+  </div>
+  
+  
+  </section>
+  <a id="Altseed2_Engine_Tool_" data-uid="Altseed2.Engine.Tool*"></a>
+  <h4 id="Altseed2_Engine_Tool" data-uid="Altseed2.Engine.Tool">Tool</h4>
+  <section>
+  <div class="markdown level1 summary"><p>ツールを管理するクラスを取得します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Tool Tool { get; }</code></pre>
+  </div>
+  
+  
+  <h5 class="exceptions">&#20363;&#22806;</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>&#22411;</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>エンジンが初期されていなかったり終了していて操作を実行できなかった</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  </section>
+  <a id="Altseed2_Engine_Vector2FBuffer_" data-uid="Altseed2.Engine.Vector2FBuffer*"></a>
+  <h4 id="Altseed2_Engine_Vector2FBuffer" data-uid="Altseed2.Engine.Vector2FBuffer">Vector2FBuffer</h4>
+  <section>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">static ArrayBuffer&lt;Vector2F&gt; Vector2FBuffer
+{
+}</code></pre>
+  </div>
+  
+  
+  </section>
+  <a id="Altseed2_Engine_WindowSize_" data-uid="Altseed2.Engine.WindowSize*"></a>
+  <h4 id="Altseed2_Engine_WindowSize" data-uid="Altseed2.Engine.WindowSize">WindowSize</h4>
+  <section>
+  <div class="markdown level1 summary"><p>ウィンドウのサイズを取得または設定します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector2I WindowSize { get; set; }</code></pre>
+  </div>
+  
+  
+  </section>
+  <a id="Altseed2_Engine_WindowTitle_" data-uid="Altseed2.Engine.WindowTitle*"></a>
+  <h4 id="Altseed2_Engine_WindowTitle" data-uid="Altseed2.Engine.WindowTitle">WindowTitle</h4>
+  <section>
+  <div class="markdown level1 summary"><p>ウインドウのタイトルを取得または設定します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string WindowTitle { get; set; }</code></pre>
+  </div>
+  
+  
+  </section>
+  <h3 id="methods">&#12513;&#12477;&#12483;&#12489;
+  </h3>
+  <a id="Altseed2_Engine_AddNode_" data-uid="Altseed2.Engine.AddNode*"></a>
+  <h4 id="Altseed2_Engine_AddNode_Altseed2_Node_" data-uid="Altseed2.Engine.AddNode(Altseed2.Node)">AddNode(Node)</h4>
+  <section>
+  <div class="markdown level1 summary"><p>エンジンにノードを追加します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void AddNode(Node node)</code></pre>
+  </div>
+  <h5 class="parameters">&#12497;&#12521;&#12513;&#12540;&#12479;</h5>
+  <section>
+  <table class="table member-table">
+    <tbody>
+      <tr>
+        <td><span class="parametername">node</span></td>
+        <td><p>追加されるノード</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  </section>
+  
+  
+  
+  </section>
+  <a id="Altseed2_Engine_DoEvents_" data-uid="Altseed2.Engine.DoEvents*"></a>
+  <h4 id="Altseed2_Engine_DoEvents" data-uid="Altseed2.Engine.DoEvents">DoEvents()</h4>
+  <section>
+  <div class="markdown level1 summary"><p>システムイベントを処理します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool DoEvents()</code></pre>
+  </div>
+  <h5 class="returns">&#25147;&#12426;&#20516;</h5>
+    <p><section></section></p>
+  
+  
+  </section>
+  <a id="Altseed2_Engine_FindNodes_" data-uid="Altseed2.Engine.FindNodes*"></a>
+  <h4 id="Altseed2_Engine_FindNodes__1" data-uid="Altseed2.Engine.FindNodes``1">FindNodes&lt;T&gt;()</h4>
+  <section>
+  <div class="markdown level1 summary"><p>エンジンに登録されている <code data-dev-comment-type="typeparamref" class="typeparamref">T</code> 型のノードを列挙します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;T&gt; FindNodes&lt;T&gt;()
+    where T : Node</code></pre>
+  </div>
+  <h5 class="returns">&#25147;&#12426;&#20516;</h5>
+    <p><section></section></p>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>&#21517;&#21069;</th>
+        <th>&#35500;&#26126;</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>検索するノードの型</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  </section>
+  <a id="Altseed2_Engine_FindNodes_" data-uid="Altseed2.Engine.FindNodes*"></a>
+  <h4 id="Altseed2_Engine_FindNodes__1_System_Func___0_System_Boolean__" data-uid="Altseed2.Engine.FindNodes``1(System.Func{``0,System.Boolean})">FindNodes&lt;T&gt;(Func&lt;T, Boolean&gt;)</h4>
+  <section>
+  <div class="markdown level1 summary"><p>エンジンに登録されている <code data-dev-comment-type="typeparamref" class="typeparamref">T</code> 型のノードのうち <code data-dev-comment-type="paramref" class="paramref">condition</code> を満たすものを列挙します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;T&gt; FindNodes&lt;T&gt;(Func&lt;T, bool&gt; condition)
+    where T : Node</code></pre>
+  </div>
+  <h5 class="parameters">&#12497;&#12521;&#12513;&#12540;&#12479;</h5>
+  <section>
+  <table class="table member-table">
+    <tbody>
+      <tr>
+        <td><span class="parametername">condition</span></td>
+        <td><p>検索するノードの条件</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  </section>
+  
+  <h5 class="returns">&#25147;&#12426;&#20516;</h5>
+    <p><section></section></p>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>&#21517;&#21069;</th>
+        <th>&#35500;&#26126;</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>検索するノードの型</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h5 class="exceptions">&#20363;&#22806;</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>&#22411;</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">condition</code>がnull</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  </section>
+  <a id="Altseed2_Engine_GetNodes_" data-uid="Altseed2.Engine.GetNodes*"></a>
+  <h4 id="Altseed2_Engine_GetNodes" data-uid="Altseed2.Engine.GetNodes">GetNodes()</h4>
+  <section>
+  <div class="markdown level1 summary"><p>エンジンに登録されているノードの列挙子を返します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Node&gt; GetNodes()</code></pre>
+  </div>
+  <h5 class="returns">&#25147;&#12426;&#20516;</h5>
+    <p><section></section></p>
+  
+  
+  </section>
+  <a id="Altseed2_Engine_Initialize_" data-uid="Altseed2.Engine.Initialize*"></a>
+  <h4 id="Altseed2_Engine_Initialize_System_String_System_Int32_System_Int32_Altseed2_Configuration_" data-uid="Altseed2.Engine.Initialize(System.String,System.Int32,System.Int32,Altseed2.Configuration)">Initialize(String, Int32, Int32, Configuration)</h4>
+  <section>
+  <div class="markdown level1 summary"><p>エンジンを初期化します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool Initialize(string title, int width, int height, Configuration config = null)</code></pre>
+  </div>
+  <h5 class="parameters">&#12497;&#12521;&#12513;&#12540;&#12479;</h5>
+  <section>
+  <table class="table member-table">
+    <tbody>
+      <tr>
+        <td><span class="parametername">title</span></td>
+        <td><p>ウィンドウタイトル</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">width</span></td>
+        <td><p>ウィンドウの横幅</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">height</span></td>
+        <td><p>ウィンドウの縦幅</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">config</span></td>
+        <td><p>設定</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  </section>
+  
+  <h5 class="returns">&#25147;&#12426;&#20516;</h5>
+    <p><section><p>初期化に成功したらtrue、それ以外でfalse</p>
+</section></p>
+  
+  
+  </section>
+  <a id="Altseed2_Engine_Pause_" data-uid="Altseed2.Engine.Pause*"></a>
+  <h4 id="Altseed2_Engine_Pause_Altseed2_Node_" data-uid="Altseed2.Engine.Pause(Altseed2.Node)">Pause(Node)</h4>
+  <section>
+  <div class="markdown level1 summary"><p>ノードの更新を一時停止します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Pause(Node keepUpdated = null)</code></pre>
+  </div>
+  <h5 class="parameters">&#12497;&#12521;&#12513;&#12540;&#12479;</h5>
+  <section>
+  <table class="table member-table">
+    <tbody>
+      <tr>
+        <td><span class="parametername">keepUpdated</span></td>
+        <td><p>一時停止の対象から除外するノード</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  </section>
+  
+  
+  
+  </section>
+  <a id="Altseed2_Engine_RemoveNode_" data-uid="Altseed2.Engine.RemoveNode*"></a>
+  <h4 id="Altseed2_Engine_RemoveNode_Altseed2_Node_" data-uid="Altseed2.Engine.RemoveNode(Altseed2.Node)">RemoveNode(Node)</h4>
+  <section>
+  <div class="markdown level1 summary"><p>エンジンからノードを削除します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void RemoveNode(Node node)</code></pre>
+  </div>
+  <h5 class="parameters">&#12497;&#12521;&#12513;&#12540;&#12479;</h5>
+  <section>
+  <table class="table member-table">
+    <tbody>
+      <tr>
+        <td><span class="parametername">node</span></td>
+        <td><p>削除するノード</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  </section>
+  
+  
+  
+  </section>
+  <a id="Altseed2_Engine_Resume_" data-uid="Altseed2.Engine.Resume*"></a>
+  <h4 id="Altseed2_Engine_Resume" data-uid="Altseed2.Engine.Resume">Resume()</h4>
+  <section>
+  <div class="markdown level1 summary"><p>ノードの更新を再開します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Resume()</code></pre>
+  </div>
+  
+  
+  </section>
+  <a id="Altseed2_Engine_Terminate_" data-uid="Altseed2.Engine.Terminate*"></a>
+  <h4 id="Altseed2_Engine_Terminate" data-uid="Altseed2.Engine.Terminate">Terminate()</h4>
+  <section>
+  <div class="markdown level1 summary"><p>エンジンを終了します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Terminate()</code></pre>
+  </div>
+  
+  
+  </section>
+  <a id="Altseed2_Engine_Update_" data-uid="Altseed2.Engine.Update*"></a>
+  <h4 id="Altseed2_Engine_Update" data-uid="Altseed2.Engine.Update">Update()</h4>
+  <section>
+  <div class="markdown level1 summary"><p>エンジンを更新します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool Update()</code></pre>
+  </div>
+  <h5 class="returns">&#25147;&#12426;&#20516;</h5>
+    <p><section></section></p>
+  
+  
+  </section>
+  <!--
+  -->
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright &copy; 2020 Altseed .
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
