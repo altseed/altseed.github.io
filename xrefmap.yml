@@ -5203,6 +5203,19 @@ references:
   isSpec: "True"
   fullName: Altseed2.Node.FlushQueue
   nameWithType: Node.FlushQueue
+- uid: Altseed2.Node.IsRegistered
+  name: IsRegistered
+  href: References/Altseed2.Node.html#Altseed2_Node_IsRegistered
+  commentId: P:Altseed2.Node.IsRegistered
+  fullName: Altseed2.Node.IsRegistered
+  nameWithType: Node.IsRegistered
+- uid: Altseed2.Node.IsRegistered*
+  name: IsRegistered
+  href: References/Altseed2.Node.html#Altseed2_Node_IsRegistered_
+  commentId: Overload:Altseed2.Node.IsRegistered
+  isSpec: "True"
+  fullName: Altseed2.Node.IsRegistered
+  nameWithType: Node.IsRegistered
 - uid: Altseed2.Node.OnAdded
   name: OnAdded()
   href: References/Altseed2.Node.html#Altseed2_Node_OnAdded
