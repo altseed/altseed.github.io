@@ -147,7 +147,7 @@
 <p>まずは、スコアを表示させるための<code>TextNode</code>を作り、それを表示するところまでやってみます。</p>
 <p>これが表示できたら、あとは表示するテキストをスコアに切り替えます。</p>
 <h2 id="テキストを表示">テキストを表示</h2>
-<p>まずは、スコア表示用の<code>TextNode</code>を追加していきます。</p>
+<p>まずは、スコア変数とスコア表示用の<code>TextNode</code>を追加していきます。</p>
 <p>以下のコードを追加してください。</p>
 <pre><code class="lang-diff" name="MainNode">using Altseed2;
 using System.Collections.Generic;
@@ -175,12 +175,52 @@ namespace Tutorial
 +       // スコアを表示するノード
 +       private TextNode scoreNode;
 
-        // スコア
-        public int score;
++       // スコア
++       public int score;
 
         ...略...
 </code></pre>
 <p>二つの<code>TextNode</code>用の変数を書いたら、</p>
+<p>次は敵を倒したときにスコア加算が行われるようにします。</p>
+<p>以下のコードを追加してください。</p>
+<pre><code class="lang-diff" name="MainNode">using Altseed2;
+
+namespace Tutorial
+{
+    // 敵の基礎となるクラス
+    public class Enemy : CollidableObject
+    {
+
+        ...略...
+
+        // 衝突時に実行
+        protected override void OnCollision(CollidableObject obj)
+        {
+            // 衝突対象が自機弾だったら
+            if (obj is PlayerBullet)
+            {
++               // スコアを加算
++               mainNode.score += score;
+
+                // 死亡時エフェクトを再生
+                Parent.AddChildNode(new DeathEffect(Position));
+
+                // 自身を削除
+                Parent.RemoveChildNode(this);
+
+                // 死亡時サウンドを読み込み
+                var deathSound = Sound.LoadStrict(&quot;Resources/Explosion.wav&quot;, true);
+
+                // 死亡時サウンドを再生
+                Engine.Sound.Play(deathSound);
+            }
+        }
+
+        ...略...
+
+    }
+}
+</code></pre>
 <p>次はこの<code>TextNode</code>の設定していきます。</p>
 <pre><code class="lang-diff" name="MainNode">using Altseed2;
 using System.Collections.Generic;

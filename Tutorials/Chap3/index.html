@@ -181,7 +181,7 @@ namespace Tutorial
                 // ↑キーでY座標を減少
                 if (Engine.Keyboard.GetKeyState(Key.Up) == ButtonState.Hold)
                 {
-                    player.Position += new Vector2F(0.0f, -2.5f);
+                    player.Position -= new Vector2F(0.0f, 2.5f);
                 }
 
                 // ↓キーでY座標を増加
@@ -283,7 +283,7 @@ namespace Tutorial
                 // ↑キーでY座標を減少
                 if (Engine.Keyboard.GetKeyState(Key.Up) == ButtonState.Hold)
                 {
-                    player.Position += new Vector2F(0.0f, -2.5f);
+                    player.Position -= new Vector2F(0.0f, 2.5f);
                 }
 
                 // ↓キーでY座標を増加
@@ -393,7 +393,7 @@ for (int i = 0; i &lt; list.Count; i++)
 <p>ここで1つ疑問が浮かぶかもしれません。
 あれ？<code>i</code>が0からスタートって，<code>list[0]</code>から始めるの？0番目っておかしくない？
 となるかもしれませんが，<code>List&lt;T&gt;</code>において，検索する数字は0番目から始まります。
-つまり，10個の要素が格納されている<code>List&lt;T&gt;</code>では，最初の要素は0番目に存在して最期の要素は9番目に存在しているという事です。</p>
+つまり，10個の要素が格納されている<code>List&lt;T&gt;</code>では，最初の要素は0番目に存在して最後の要素は9番目に存在しているという事です。</p>
 <p>因みに，このfor文をwhile文に書き換えるとこんな感じになります。</p>
 <pre><code class="lang-cs">int i = 0;
 while (i &lt; list.Count)
