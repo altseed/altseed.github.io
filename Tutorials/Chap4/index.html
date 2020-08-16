@@ -171,7 +171,7 @@ namespace Tutorial
 +           // ↑キーでY座標を減少
 +           if (Engine.Keyboard.GetKeyState(Key.Up) == ButtonState.Hold)
 +           {
-+               player.Position += new Vector2F(0.0f, -2.5f);
++               player.Position -= new Vector2F(0.0f, 2.5f);
 +           }
 +
 +           // ↓キーでY座標を増加
@@ -223,7 +223,7 @@ namespace Tutorial
 -               // ↑キーでY座標を減少
 -               if (Engine.Keyboard.GetKeyState(Key.Up) == ButtonState.Hold)
 -               {
--                   player.Position += new Vector2F(0.0f, -2.5f);
+-                   player.Position -= new Vector2F(0.0f, 2.5f);
 -               }
 -
 -               // ↓キーでY座標を増加
@@ -324,7 +324,7 @@ namespace Tutorial
             // ↑キーでY座標を減少
             if (Engine.Keyboard.GetKeyState(Key.Up) == ButtonState.Hold)
             {
-                player.Position += new Vector2F(0.0f, -2.5f);
+                player.Position -= new Vector2F(0.0f, 2.5f);
             }
 
             // ↓キーでY座標を増加
@@ -444,7 +444,7 @@ namespace Tutorial
 +           // ↑キーでY座標を減少
 +           if (Engine.Keyboard.GetKeyState(Key.Up) == ButtonState.Hold)
 +           {
-+               Position += new Vector2F(0.0f, -2.5f);
++               Position -= new Vector2F(0.0f, 2.5f);
 +           }
 +
 +           // ↓キーでY座標を増加
@@ -475,7 +475,7 @@ namespace Tutorial
 -           // ↑キーでY座標を減少
 -           if (Engine.Keyboard.GetKeyState(Key.Up) == ButtonState.Hold)
 -           {
--               player.Position += new Vector2F(0.0f, -2.5f);
+-               player.Position -= new Vector2F(0.0f, 2.5f);
 -           }
 -
 -           // ↓キーでY座標を増加
@@ -595,7 +595,7 @@ namespace Tutorial
             // ↑キーでY座標を減少
             if (Engine.Keyboard.GetKeyState(Key.Up) == ButtonState.Hold)
             {
-                Position += new Vector2F(0.0f, -2.5f);
+                Position -= new Vector2F(0.0f, 2.5f);
             }
 
             // ↓キーでY座標を増加
@@ -725,7 +725,7 @@ namespace Tutorial
             // ↑キーでY座標を減少
             if (Engine.Keyboard.GetKeyState(Key.Up) == ButtonState.Hold)
             {
-                Position += new Vector2F(0.0f, -2.5f);
+                Position -= new Vector2F(0.0f, 2.5f);
             }
 
             // ↓キーでY座標を増加
@@ -864,7 +864,7 @@ namespace Tutorial
             // ↑キーでY座標を減少
             if (Engine.Keyboard.GetKeyState(Key.Up) == ButtonState.Hold)
             {
-                Position += new Vector2F(0.0f, -2.5f);
+                Position -= new Vector2F(0.0f, 2.5f);
             }
 
             // ↓キーでY座標を増加
@@ -898,7 +898,7 @@ namespace Tutorial
 +               // 自機弾のテクスチャを読み込む
 +               bullet.Texture = Texture2D.LoadStrict(&quot;Resources/Bullet_Blue.png&quot;);
 +               // 自機弾の座標を設定
-+               bullet.Position = player.Position;
++               bullet.Position = Position;
 +               // 自機弾の中心座標を設定
 +               bullet.CenterPosition = bullet.ContentSize / 2;
 +               // 自機弾の表示位置を自機より奥に設定
@@ -1026,7 +1026,7 @@ namespace Tutorial
             // ↑キーでY座標を減少
             if (Engine.Keyboard.GetKeyState(Key.Up) == ButtonState.Hold)
             {
-                Position += new Vector2F(0.0f, -2.5f);
+                Position -= new Vector2F(0.0f, 2.5f);
             }
 
             // ↓キーでY座標を増加
@@ -1061,7 +1061,7 @@ namespace Tutorial
 -               // 自機弾のテクスチャを読み込む
 -               bullet.Texture = Texture2D.LoadStrict(&quot;Resources/Bullet_Blue.png&quot;);
 -               // 自機弾の座標を設定
--               bullet.Position = player.Position;
+-               bullet.Position = Position;
 -               // 自機弾の中心座標を設定
 -               bullet.CenterPosition = bullet.ContentSize / 2;
 -               // 自機弾の表示位置を自機より奥に設定
@@ -1145,7 +1145,294 @@ namespace Tutorial
 また、コンストラクタはメソッドであり、引数を持つことができます。
 ソースコードでは、<code>Player</code>クラスと<code>Bullet</code>クラスのコンストラクタに、引数　<code>position</code>を持たせています。
 このようにすることで、プレイヤーや弾の最初の位置を外部から設定できるようになります。</p>
-<h2 id="プレイヤーが画面外に出ないようにする">プレイヤーが画面外に出ないようにする</h2>
+<p>次に、コンストラクタで弾の速度を設定できるようにしましょう。
+<code>Bullet</code>クラスのコンストラクタに速度を引数として設定してそこからいじれるようにします。</p>
+<pre><code class="lang-diff" name="Main">using Altseed2;
+using System;
+using System.Collections.Generic;
+
+namespace Tutorial
+{
+    // プレイヤーのクラス
+    public class Player : SpriteNode
+    {
+        // コンストラクタ
+        public Player(Vector2F position)
+        {
+            // 座標を設定
+            Position = position;
+
+            // テクスチャを読み込む
+            Texture = Texture2D.LoadStrict(&quot;Resources/Player.png&quot;);
+
+            // 中心座標を設定
+            CenterPosition = ContentSize / 2;
+        }
+
+        // フレーム毎に実行
+        protected override void OnUpdate()
+        {
+            // 移動を実行
+            Move();
+
+            // ショットを実行
+            Shot();
+        }
+
+        // 移動を行う
+        void Move()
+        {
+            // ↑キーでY座標を減少
+            if (Engine.Keyboard.GetKeyState(Key.Up) == ButtonState.Hold)
+            {
+                Position -= new Vector2F(0.0f, 2.5f);
+            }
+
+            // ↓キーでY座標を増加
+            if (Engine.Keyboard.GetKeyState(Key.Down) == ButtonState.Hold)
+            {
+                Position += new Vector2F(0.0f, 2.5f);
+            }
+
+            // →キーでX座標を増加
+            if (Engine.Keyboard.GetKeyState(Key.Right) == ButtonState.Hold)
+            {
+                Position += new Vector2F(2.5f, 0.0f);
+            }
+
+            // ←キーでX座標を減少
+            if (Engine.Keyboard.GetKeyState(Key.Left) == ButtonState.Hold)
+            {
+                Position -= new Vector2F(2.5f, 0.0f);
+            }
+        }
+
+        // ショット
+        private void Shot()
+        {
+            // Zキーでショットを放つ
+            if (Engine.Keyboard.GetKeyState(Key.Z) == ButtonState.Push)
+            {
+                // 発射される自機弾
+                var bullet = new Bullet(Position);
+
+                // 自機弾をエンジンに追加
+                Engine.AddNode(bullet);
+            }
+        }
+    }
+
+    // 弾のクラス
+    public class Bullet : SpriteNode
+    {
++       // フレーム毎に進む距離
++       private Vector2F velocity;
+
+        // コンストラクタ
+-       public Bullet(Vector2F position)
++       public Bullet(Vector2F position, Vector2F velocity)
+        {
+            // 座標を設定
+            Position = position;
+ 
+            // テクスチャを読み込む
+            Texture = Texture2D.LoadStrict(&quot;Resources/Bullet_Blue.png&quot;);
+ 
+            // 中心座標を設定
+            CenterPosition = ContentSize / 2;
+
++           // 弾速を設定
++           this.velocity = velocity;
+ 
+            // 表示位置をプレイヤーや敵より奥に設定
+            ZOrder--;
+        }
+
+        // フレーム毎に実行
+        protected override void OnUpdate()
+        {
+            // 座標を速度分進める
+-           Position += new Vector2F(10.0f, 0.0f);
++           Position += velocity;
+        }
+    }
+
+    class Program
+    {
+        [STAThread]
+        static void Main(string[] args)
+        {
+            // エンジンを初期化
+            Engine.Initialize(&quot;Tutorial&quot;, 960, 720);
+
+            // 自機
+            var player = new Player(new Vector2F(100, 360));
+
+            // 自機をエンジンに追加
+            Engine.AddNode(player);
+
+            // メインループ
+            while (Engine.DoEvents())
+            {
+                // エンジンを更新
+                Engine.Update();
+
+                // Escapeキーでゲーム終了
+                if (Engine.Keyboard.GetKeyState(Key.Escape) == ButtonState.Push)
+                {
+                    break;
+                }
+            }
+
+            // エンジンの終了処理を行う
+            Engine.Terminate();
+        }
+    }
+}
+</code></pre>
+<p><code>Bullet</code>クラスのコンストラクタの引数を変えたので、それを呼び出すコードを修正しましょう。</p>
+<pre><code class="lang-diff" name="Main">using Altseed2;
+using System;
+using System.Collections.Generic;
+
+namespace Tutorial
+{
+    // プレイヤーのクラス
+    public class Player : SpriteNode
+    {
+        // コンストラクタ
+        public Player(Vector2F position)
+        {
+            // 座標を設定
+            Position = position;
+
+            // テクスチャを読み込む
+            Texture = Texture2D.LoadStrict(&quot;Resources/Player.png&quot;);
+
+            // 中心座標を設定
+            CenterPosition = ContentSize / 2;
+        }
+
+        // フレーム毎に実行
+        protected override void OnUpdate()
+        {
+            // 移動を実行
+            Move();
+
+            // ショットを実行
+            Shot();
+        }
+
+        // 移動を行う
+        void Move()
+        {
+            // ↑キーでY座標を減少
+            if (Engine.Keyboard.GetKeyState(Key.Up) == ButtonState.Hold)
+            {
+                Position -= new Vector2F(0.0f, 2.5f);
+            }
+
+            // ↓キーでY座標を増加
+            if (Engine.Keyboard.GetKeyState(Key.Down) == ButtonState.Hold)
+            {
+                Position += new Vector2F(0.0f, 2.5f);
+            }
+
+            // →キーでX座標を増加
+            if (Engine.Keyboard.GetKeyState(Key.Right) == ButtonState.Hold)
+            {
+                Position += new Vector2F(2.5f, 0.0f);
+            }
+
+            // ←キーでX座標を減少
+            if (Engine.Keyboard.GetKeyState(Key.Left) == ButtonState.Hold)
+            {
+                Position -= new Vector2F(2.5f, 0.0f);
+            }
+        }
+
+        // ショット
+        private void Shot()
+        {
+            // Zキーでショットを放つ
+            if (Engine.Keyboard.GetKeyState(Key.Z) == ButtonState.Push)
+            {
+                // 発射される自機弾
+-               var bullet = new Bullet(Position);
++               var bullet = new Bullet(Position, new Vector2F(10f, 0f));
+
+                // 自機弾をエンジンに追加
+                Engine.AddNode(bullet);
+            }
+        }
+    }
+
+    // 弾のクラス
+    public class Bullet : SpriteNode
+    {
+        // フレーム毎に進む距離
+        private Vector2F velocity;
+
+        // コンストラクタ
+        public Bullet(Vector2F position, Vector2F velocity)
+        {
+            // 座標を設定
+            Position = position;
+ 
+            // テクスチャを読み込む
+            Texture = Texture2D.LoadStrict(&quot;Resources/Bullet_Blue.png&quot;);
+ 
+            // 中心座標を設定
+            CenterPosition = ContentSize / 2;
+
+            // 弾速を設定
+            this.velocity = velocity;
+ 
+            // 表示位置をプレイヤーや敵より奥に設定
+            ZOrder--;
+        }
+
+        // フレーム毎に実行
+        protected override void OnUpdate()
+        {
+            // 座標を速度分進める
+            Position += velocity;
+        }
+    }
+
+    class Program
+    {
+        [STAThread]
+        static void Main(string[] args)
+        {
+            // エンジンを初期化
+            Engine.Initialize(&quot;Tutorial&quot;, 960, 720);
+
+            // 自機
+            var player = new Player(new Vector2F(100, 360));
+
+            // 自機をエンジンに追加
+            Engine.AddNode(player);
+
+            // メインループ
+            while (Engine.DoEvents())
+            {
+                // エンジンを更新
+                Engine.Update();
+
+                // Escapeキーでゲーム終了
+                if (Engine.Keyboard.GetKeyState(Key.Escape) == ButtonState.Push)
+                {
+                    break;
+                }
+            }
+
+            // エンジンの終了処理を行う
+            Engine.Terminate();
+        }
+    }
+}
+</code></pre><h2 id="プレイヤーが画面外に出ないようにする">プレイヤーが画面外に出ないようにする</h2>
 <p>ここまででできたプログラムを実行してわかると思いますが、方向キーを押しっぱなしにしていると、プレイヤーが画面外に出てしまいます。
 そこで、プレイヤーが画面外に出ないように、処理を追加する必要があります。</p>
 <pre><code class="lang-diff" name="Main">using Altseed2;
@@ -1191,7 +1478,7 @@ namespace Tutorial
             // ↑キーでY座標を減少
             if (Engine.Keyboard.GetKeyState(Key.Up) == ButtonState.Hold)
             {
--               Position += new Vector2F(0.0f, -2.5f);
+-               Position -= new Vector2F(0.0f, 2.5f);
 +               y -= 2.5f;
             }
 
@@ -1235,7 +1522,7 @@ namespace Tutorial
             if (Engine.Keyboard.GetKeyState(Key.Z) == ButtonState.Push)
             {
                 // 発射される自機弾
-                var bullet = new Bullet(Position);
+                var bullet = new Bullet(Position, new Vector2F(10f, 0f));
 
                 // 自機弾をエンジンに追加
                 Engine.AddNode(bullet);
@@ -1246,8 +1533,11 @@ namespace Tutorial
     // 弾のクラス
     public class Bullet : SpriteNode
     {
+        // フレーム毎に進む距離
+        private Vector2F velocity;
+
         // コンストラクタ
-        public Bullet(Vector2F position)
+        public Bullet(Vector2F position, Vector2F velocity)
         {
             // 座標を設定
             Position = position;
@@ -1258,6 +1548,9 @@ namespace Tutorial
             // 中心座標を設定
             CenterPosition = ContentSize / 2;
 
+            // 弾速を設定
+            this.velocity = velocity;
+
             // 表示位置をプレイヤーや敵より奥に設定
             ZOrder--;
         }
@@ -1266,7 +1559,7 @@ namespace Tutorial
         protected override void OnUpdate()
         {
             // 座標を速度分進める
-            Position += new Vector2F(10.0f, 0.0f);
+            Position += velocity;
         }
     }
 
@@ -1392,7 +1685,7 @@ namespace Tutorial
             if (Engine.Keyboard.GetKeyState(Key.Z) == ButtonState.Push)
             {
                 // 発射される自機弾
-                var bullet = new Bullet(Position);
+                var bullet = new Bullet(Position, new Vector2F(10f, 0f));
 
                 // 自機弾をエンジンに追加
                 Engine.AddNode(bullet);
@@ -1403,8 +1696,11 @@ namespace Tutorial
     // 弾のクラス
     public class Bullet : SpriteNode
     {
+        // フレーム毎に進む距離
+        private Vector2F velocity;
+
         // コンストラクタ
-        public Bullet(Vector2F position)
+        public Bullet(Vector2F position, Vector2F velocity)
         {
             // 座標を設定
             Position = position;
@@ -1415,6 +1711,9 @@ namespace Tutorial
             // 中心座標を設定
             CenterPosition = ContentSize / 2;
 
+            // 弾速を設定
+            this.velocity = velocity;
+
             // 表示位置をプレイヤーや敵より奥に設定
             ZOrder--;
         }
@@ -1423,7 +1722,7 @@ namespace Tutorial
         protected override void OnUpdate()
         {
             // 座標を速度分進める
-            Position += new Vector2F(10.0f, 0.0f);
+            Position += velocity;
 
 +           // 画面外に出たら自身を削除
 +           RemoveMyselfIfOutOfWindow();
@@ -1499,7 +1798,7 @@ namespace Tutorial
 あとは、Program.csに記述されている<code>Player</code>クラスの部分を切り取って、Player.csに貼り付けるだけです。
 ただし、ただ切り貼りしただけではエラーが発生します。
 これは、ソースファイルに<code>Altseed</code>という名前空間が知らされていないことが原因です。
-Player.csの頭に「<code>using Altseed;</code>」と記述しましょう。</p>
+Player.csの頭に「<code>using Altseed2;</code>」と記述しましょう。</p>
 <p><img src="Image/newfile_win_4.png" alt="newfile_win_4">
 <img src="Image/newfile_win_5.png" alt="newfile_win_5"></p>
 <p>これと同様の手順を踏んで、Bullet.csを追加し、<code>Bullet</code>クラスを移してみてください。</p>
@@ -1618,7 +1917,7 @@ namespace Tutorial
 このように、<code>Node</code>クラスのインスタンスをうまく利用することで、系統ごとにオブジェクトをまとめて管理することができます。</p>
 <p>では、<code>MainNode</code>クラスのインスタンスを作成し、それをエンジンに登録してみましょう。
 Program.csに移って、以下のようにソースコードを書き換えてください。</p>
-<pre><code class="lang-diff" name="Main">using Altseed;
+<pre><code class="lang-diff" name="Main">using Altseed2;
 using System;
 using System.Collections.Generic;
 
@@ -1660,6 +1959,114 @@ namespace Tutorial
 }
 </code></pre>
 <p>このようにすると、<code>MainNode</code>の子ノードとして登録されているオブジェクト群が更新され、先ほどと同じ挙動をします。</p>
+<p>また、ゲームシーンとして<code>MainNode</code>を定義したため、<code>Player</code>クラスで行っている自機弾の追加先をエンジンから、<code>MainNode</code>にある<code>characterNode</code>に変更しましょう。</p>
+<pre><code class="lang-diff" name="Main">using Altseed2;
+
+namespace Tutorial
+{
+    // プレイヤーのクラス
+    public class Player : SpriteNode
+    {
+        // コンストラクタ
+        public Player(Vector2F position)
+        {
+            // 座標を設定
+            Position = position;
+
+            // テクスチャを読み込む
+            Texture = Texture2D.LoadStrict(&quot;Resources/Player.png&quot;);
+
+            // 中心座標を設定
+            CenterPosition = ContentSize / 2;
+        }
+
+        // フレーム毎に実行
+        protected override void OnUpdate()
+        {
+            // 移動を実行
+            Move();
+
+            // ショットを実行
+            Shot();
+        }
+
+        // 移動を行う
+        void Move()
+        {
+            // 現在のX座標を取得する
+            var x = Position.X;
+            // 現在のY座標を取得する
+            var y = Position.Y;
+
+            // ↑キーでY座標を減少
+            if (Engine.Keyboard.GetKeyState(Key.Up) == ButtonState.Hold)
+            {
+                y -= 2.5f;
+            }
+
+            // ↓キーでY座標を増加
+            if (Engine.Keyboard.GetKeyState(Key.Down) == ButtonState.Hold)
+            {
+                y += 2.5f;
+            }
+
+            // →キーでX座標を増加
+            if (Engine.Keyboard.GetKeyState(Key.Right) == ButtonState.Hold)
+            {
+                x += 2.5f;
+            }
+
+            // ←キーでX座標を減少
+            if (Engine.Keyboard.GetKeyState(Key.Left) == ButtonState.Hold)
+            {
+                x -= 2.5f;
+            }
+
+            // テクスチャのサイズの半分を取得する
+            var halfSize = ContentSize / 2;
+
+            // X座標が画面外に行かないように調整
+            x = MathHelper.Clamp(x, Engine.WindowSize.X - halfSize.X, halfSize.X);
+            // Y座標が画面外に行かないように調整
+            y = MathHelper.Clamp(y, Engine.WindowSize.Y - halfSize.Y, halfSize.Y);
+
+            // 調整された座標を設定
+            Position = new Vector2F(x, y);
+        }
+
+        // ショット
+        private void Shot()
+        {
+            // Zキーでショットを放つ
+            if (Engine.Keyboard.GetKeyState(Key.Z) == ButtonState.Push)
+            {
+-               // 発射される自機弾
+-               var bullet = new Bullet(Position, new Vector2F(10f, 0f));
+-
+-               // 自機弾をエンジンに追加
+-               Engine.AddNode(bullet);
+
++               // Zキーでショットを放つ
++               Parent.AddChildNode(new Bullet(Position , new Vector2F(10f, 0f)));
+            }
+        }
+    }
+}
+</code></pre>
+<p>ここで，<code>MainNode.characterNode</code>がないではないかと思うかもしれませんが、<code>Parent</code>が<code>MainNode.characterNode</code>を表しています。
+MainNode.csにて、</p>
+<pre><code class="lang-cs">// キャラクターノードを追加
+AddChildNode(characterNode);
+
+......
+
+// キャラクターノードにプレイヤーを追加
+characterNode.AddChildNode(player);
+</code></pre>
+<p>という記述があります。これは、
+<code>エンジン-MainNode-characterNode-Player</code>
+という親子関係を示しています。
+ここで<code>MainNode.characterNode</code>の参照が欲しいとなったときは<code>Player</code>から<code>Parent</code>を呼び出すことで解決できます。</p>
 <h2 id="背景を追加する">背景を追加する</h2>
 <p>ソースコードが整理できたので、ここから敵を追加していっても良い頃合いです。
 しかしその前に、プレーンな背景で繰り広げられるゲームは、いまいち面白みに欠けますよね。

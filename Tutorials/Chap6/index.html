@@ -268,7 +268,7 @@ namespace Tutorial
 <p>これまで<code>SpriteNode</code>を継承していたため、<code>CollidableObject</code>でも<code>SpriteNode</code>を継承しています。<br>
 また、<code>Enemy</code>クラスと<code>Bullet</code>クラスに定義していた<code>RemoveMyselfIfOutOfWindow</code>関数ですが同じ処理が二か所にあって冗長です。基本的に同じ処理は一か所にまとめた方が良いのでそれぞれの親クラスになる<code>CollidableObject</code>でこの関数を定義することにします。</p>
 <p>変数とコンストラクタを解説していきます。</p>
-<pre><code class="lang-C#">// コライダのコレクション
+<pre><code class="lang-cs" name="Main">// コライダのコレクション
 public static HashSet&lt;CollidableObject&gt; objects = new HashSet&lt;CollidableObject&gt;();
 
 // コライダ
@@ -394,9 +394,18 @@ protected virtual void OnCollision(CollidableObject obj)
 +    class Bullet : CollidableObject
 </code></pre>
 <p>さらにコンストラクタも書き換えていきます。
-冒頭でも少し触れましたが<code>Enemy</code>クラスと<code>Bullet</code>クラスの<code>RemoveMyselfIfOutOfWindow</code>関数は親クラスである<code>CollidableObject</code>に移したのでついでに削除しましょう。</p>
+冒頭でも少し触れましたが<code>Enemy</code>クラスと<code>Bullet</code>クラスの<code>RemoveMyselfIfOutOfWindow</code>関数は親クラスである<code>CollidableObject</code>に移したのでついでに削除しましょう。
+また，<code>CollidableObject</code>の<code>OnUpdate</code>に処理を書いたので，<code>base.OnUpdate</code>を呼び出しましょう。</p>
 <p><code>Player</code> クラス</p>
-<pre><code class="lang-diff">-       public Player(Vector2F position)
+<pre><code class="lang-diff" name="Main">using Altseed2;
+
+namespace Tutorial
+{
+    // プレイヤーのクラス
+    public class Player : CollidableObject
+    {
+        // コンストラクタ
+-       public Player(Vector2F position)
 +       public Player(MainNode mainNode, Vector2F position) : base(mainNode, position)
         {
 +           // 衝突判定を行うように設定
@@ -411,9 +420,41 @@ protected virtual void OnCollision(CollidableObject obj)
 +           // コライダの半径を設定
 +           collider.Radius = Texture.Size.Y / 2;
         }
+
+        // フレーム毎に実行
+        protected override void OnUpdate()
+        {
+            // 移動を実行
+            Move();
+
+            // ショットを実行
+            Shot();
+
++           // CollidableObjectのOnUpdate呼び出し
++           base.OnUpdate();
+        }
+
+        ...略...
+
+    }
+}
 </code></pre>
 <p><code>Enemy</code> クラス</p>
-<pre><code class="lang-diff">-       public Enemy(Player player, Vector2F position)
+<pre><code class="lang-diff" name="Main">using Altseed2;
+
+namespace Tutorial
+{
+    // 敵の基礎となるクラス
+    public class Enemy : CollidableObject
+    {
+        // 倒された時に加算されるスコアの値
+        protected int score;
+        
+        // プレイヤーへの参照
+        protected Player player;
+        
+        // コンストラクタ
+-       public Enemy(Player player, Vector2F position)
 +       public Enemy(Player player, Vector2F position) : base(player.mainNode, position)
         {
 +           // 衝突判定を行うように設定
@@ -424,6 +465,16 @@ protected virtual void OnCollision(CollidableObject obj)
 
             // プレイヤーへの参照を設定
             this.player = player;
+        }
+
+        // フレーム毎に実行
+        protected override void OnUpdate()
+        {
+            // CollidableObjectのOnUpdateを実行
+            base.OnUpdate();
+
++           // 画面外に出たら自身を削除
++           RemoveMyselfIfOutOfWindow();
         }
 
 -       private void RemoveMyselfIfOutOfWindow()
@@ -438,9 +489,22 @@ protected virtual void OnCollision(CollidableObject obj)
 -               Parent?.RemoveChildNode(this);
 -           }
 -       }
+    }
+}
 </code></pre>
 <p><code>Bullet</code> クラス</p>
-<pre><code class="lang-diff">-       public Bullet(Vector2F position, Vector2F velocity)
+<pre><code class="lang-diff" name="Main">using Altseed2;
+
+namespace Tutorial
+{
+    // 弾のクラス
+    public class Bullet : CollidableObject
+    {
+        // フレーム毎に進む距離
+        private Vector2F velocity;
+
+        // コンストラクタ
+-       public Bullet(Vector2F position, Vector2F velocity)
 +       public Bullet(MainNode mainNpde, Vector2F position, Vector2F velocity) : base(mainNpde, position)
         {
 +           // 衝突判定を行わないように設定
@@ -456,6 +520,19 @@ protected virtual void OnCollision(CollidableObject obj)
             ZOrder--;
         }
 
+        // フレーム毎に実行
+        protected override void OnUpdate()
+        {
+            // 座標を速度分進める
+            Position += velocity;
+
++           // CollidableObjectのOnUpdateを呼び出す
++           base.OnUpdate();
+
+            // 画面外に出たら自身を削除
+            RemoveMyselfIfOutOfWindow();
+        }
+
 -       private void RemoveMyselfIfOutOfWindow()
 -       {
 -           var halfSize = Texture.Size / 2;
@@ -464,10 +541,12 @@ protected virtual void OnCollision(CollidableObject obj)
 -               || Position.Y &lt; -halfSize.Y
 -               || Position.Y &gt; Engine.WindowSize.Y + halfSize.Y)
 -           {
--               // 自身を削除
+-               // 画面外に出たら自身を削除
 -               Parent?.RemoveChildNode(this);
 -           }
 -       }
+    }
+}
 </code></pre>
 <p>ここでコンストラクタの後ろに<code>base</code>というキーワードが出てきました。これは親クラスのコンストラクタ呼び出しという意味です。今回だと<code>ColliderObject</code>のコンストラクタを呼び出します。<code>ColliderObject</code>のコンストラクタでは<code>MainNode</code>と<code>position</code>が必要なため<code>base</code>の後の引数で受け渡します。<code>base</code>についての詳しい解説はこちらを参照してください。</p>
 <p><a href="https://ufcpp.net/study/csharp/oo_inherit.html#base_ctor">C# によるプログラミング入門 : 継承</a></p>
@@ -475,7 +554,7 @@ protected virtual void OnCollision(CollidableObject obj)
 <p><code>Bullet</code>の修正に併せて<code>EnemyBullet</code>と<code>PlayerBullet</code>のコードも修正していきましょう。</p>
 <p>これらはコンストラクタの引数変更と半径を設定させるだけで大丈夫です</p>
 <p><code>EnemyBullet</code> クラス</p>
-<pre><code class="lang-diff">+       public EnemyBullet(MainNode mainNode, Vector2F position, Vector2F velocity) : base(mainNode, position, velocity)
+<pre><code class="lang-diff" name="Main">+       public EnemyBullet(MainNode mainNode, Vector2F position, Vector2F velocity) : base(mainNode, position, velocity)
 -       public EnemyBullet(Vector2F position, Vector2F velocity) : base(position, velocity)
         {
             // テクスチャを読み込む
@@ -489,7 +568,7 @@ protected virtual void OnCollision(CollidableObject obj)
         }
 </code></pre>
 <p><code>PlayerBullet</code> クラス</p>
-<pre><code class="lang-diff">+       public PlayerBullet(MainNode mainNode, Vector2F position) : base(mainNode, position, new Vector2F(10f, 0.0f))
+<pre><code class="lang-diff" name="Main">+       public PlayerBullet(MainNode mainNode, Vector2F position) : base(mainNode, position, new Vector2F(10f, 0.0f))
 -       public PlayerBullet(Vector2F position) : base(position, new Vector2F(10f, 0.0f))
         {
             // テクスチャを読み込む
@@ -504,7 +583,7 @@ protected virtual void OnCollision(CollidableObject obj)
 </code></pre>
 <p>次に<code>Enemy</code>クラスの変更に併せてその派生クラスである<code>ChaseEnemy</code>クラスと<code>RadialShotEnemy</code>クラスと<code>StraightShotEnemy</code>クラスと<code>Meteor</code>クラスを書き換えていきます。先ほど<code>EnemyBullet</code>クラスの引数を変更したので<code>Shot</code>関数の<code>EnemyBullet</code>を生成するコードもついでに書き換えましょう。</p>
 <p><code>ChaseEnemy</code> クラス</p>
-<pre><code class="lang-diff">        public ChaseEnemy(Player player, Vector2F position, float speed) : base(player, position)
+<pre><code class="lang-diff" name="Main">        public ChaseEnemy(Player player, Vector2F position, float speed) : base(player, position)
         {
             // テクスチャを読み込む
             Texture = Texture2D.LoadStrict(&quot;Resources/UFO.png&quot;);
@@ -521,11 +600,9 @@ protected virtual void OnCollision(CollidableObject obj)
             // 自身が倒された時に加算されるスコアを設定
             score = 10;
         }
-
-
 </code></pre>
 <p><code>RadialShotEnemy</code> クラス</p>
-<pre><code class="lang-diff">        public RadialShotEnemy(Player player, Vector2F position, int shotAmount) : base(player, position)
+<pre><code class="lang-diff" name="Main">        public RadialShotEnemy(Player player, Vector2F position, int shotAmount) : base(player, position)
         {
             // 撃ち出すショットの個数を設定
             this.shotAmount = shotAmount;
@@ -549,10 +626,10 @@ protected virtual void OnCollision(CollidableObject obj)
             // 敵弾を画面に追加
 +            Parent.AddChildNode(new EnemyBullet(mainNode, Position, velocity));
 -            Parent.AddChildNode(new EnemyBullet(Position, velocity));
-        }        
+        }
 </code></pre>
 <p><code>StraightShotEnemy</code> クラス</p>
-<pre><code class="lang-diff">        public StraightShotEnemy(Player player, Vector2F position) : base(player, position)
+<pre><code class="lang-diff" name="Main">        public StraightShotEnemy(Player player, Vector2F position) : base(player, position)
         {
             // テクスチャを読み込む
             Texture = Texture2D.LoadStrict(&quot;Resources/UFO.png&quot;);
@@ -576,7 +653,7 @@ protected virtual void OnCollision(CollidableObject obj)
         }
 </code></pre>
 <p><code>Meteor</code> クラス</p>
-<pre><code class="lang-diff">        public Meteor(Player player, Vector2F position, Vector2F velocity) : base(player, position)
+<pre><code class="lang-diff" name="Main">        public Meteor(Player player, Vector2F position, Vector2F velocity) : base(player, position)
         {
             // 速度の設定
             this.velocity = velocity;
@@ -596,7 +673,7 @@ protected virtual void OnCollision(CollidableObject obj)
 </code></pre>
 <p>さらに<code>Player</code>クラスで<code>PlayerBullet</code>を使用していたのでこちらも修正が必要になります。</p>
 <p><code>Player</code> クラスの <code>Shot</code> 関数</p>
-<pre><code class="lang-diff">        // ショット
+<pre><code class="lang-diff" name="Main">        // ショット
         private void Shot()
         {
             // Zキーでショットを放つ
@@ -609,7 +686,7 @@ protected virtual void OnCollision(CollidableObject obj)
 </code></pre>
 <p>最後に<code>MainNode</code>クラスを修正します。まず、<code>Player</code>クラスの呼び出しの変更が必要です。さらにもう一つ変更が必要です。もし<code>MainNode</code>が消去されてもコライダがコレクションに残っている場合、使われていないコライダがコレクションに保存され続けるとになります。この場合、ゲームのリトライなどを行うとリトライ前のコライダが残ってしまい、バグなどを引き起こす恐れがあるのでコライダの消去を行います。<code>HashSet</code>クラスの中身消去は<code>Clear</code>関数でできます。</p>
 <p><code>MainNode</code> クラス</p>
-<pre><code class="lang-diff">        protected override void OnAdded()
+<pre><code class="lang-diff" name="Main">        protected override void OnAdded()
         {
             // プレイヤーを設定
 +            player = new Player(this, new Vector2F(100, 360));
@@ -688,7 +765,7 @@ namespace Tutorial
 Src = new RectF(pos, size);
 </code></pre>
 <p>設定する変数<code>size</code>と<code>pos</code>は<code>count</code>という毎フレーム1ずつ増える整数の変数を作って計算します。今回は2フレームごとに画像をずらすような式にしてあります。上に示した画像は爆破の画像が横に9枚並んでいるもので、2フレーム×9=18なので<code>count</code>が18になった場合<code>Parent.RemoveChildNode(this);</code>により自身を削除してエフェクトの再生を終了します。</p>
-<pre><code class="lang-C#">// 表示されるテクスチャのサイズを取得
+<pre><code class="lang-cs" name="Main">// 表示されるテクスチャのサイズを取得
 var size = new Vector2F(Texture.Size.X / 9, Texture.Size.Y);
 
 // 表示されるテクスチャの左上の座標を計算する
@@ -712,7 +789,7 @@ if (count &gt;= 18)
 衝突時に処理するクラスは<code>Player</code>と<code>Enemy</code>と<code>PlayerBullet</code>と<code>EnemyBullet</code>の4クラスになります。<br>
 これら4つの<code>OnCollide</code>関数を以下に載せます。</p>
 <p><code>Player</code> クラス</p>
-<pre><code class="lang-C#">// 衝突時に実行
+<pre><code class="lang-cs" name="Main">// 衝突時に実行
 protected override void OnCollision(CollidableObject obj)
 {
     // 衝突対象が敵か敵の弾だったら
@@ -724,7 +801,7 @@ protected override void OnCollision(CollidableObject obj)
 }
 </code></pre>
 <p><code>PlayerBullet</code> クラス</p>
-<pre><code class="lang-C#">// 衝突時に実行
+<pre><code class="lang-cs" name="Main">// 衝突時に実行
 protected override void OnCollision(CollidableObject obj)
 {
     // 衝突対象が敵だったら自身を削除
@@ -735,15 +812,12 @@ protected override void OnCollision(CollidableObject obj)
 }
 </code></pre>
 <p><code>Enemy</code> クラス</p>
-<pre><code class="lang-C#">// 衝突時に実行
+<pre><code class="lang-cs" name="Main">// 衝突時に実行
 protected override void OnCollision(CollidableObject obj)
 {
     // 衝突対象が自機弾だったら
     if (obj is PlayerBullet)
     {
-        // スコアを加算
-        mainNode.score += score;
-
         // 死亡時エフェクトを再生
         Parent.AddChildNode(new DeathEffect(Position));
 
@@ -753,7 +827,7 @@ protected override void OnCollision(CollidableObject obj)
 }
 </code></pre>
 <p><code>EnemyBullet</code> クラス</p>
-<pre><code class="lang-C#">// 衝突時に実行
+<pre><code class="lang-cs" name="Main">// 衝突時に実行
 protected override void OnCollision(CollidableObject obj)
 {
     // 衝突対象がプレイヤーだったらBulletのOnCollisionを実行して削除
@@ -770,7 +844,7 @@ protected override void OnCollision(CollidableObject obj)
 <h2 id="meteorクラス改変">Meteorクラス改変</h2>
 <p>今、<code>Meteor</code>クラスの衝突処理は<code>Enemy</code>クラスの<code>OnCollide</code>が呼ばれるので、<code>Player</code>の弾に当たると消滅します。これで完成してもよいのですが、<code>Meteor</code>というからには岩石で硬いはずなので<code>Player</code>の弾ごとき3回くらいまでなら耐えると思います。 そのように改変しましょう。</p>
 <p><code>Meteor</code> クラス</p>
-<pre><code class="lang-diff">using Altseed;
+<pre><code class="lang-diff" name="Main">using Altseed2;
 
 namespace Tutorial
 {
