@@ -442,7 +442,7 @@ if (bgmID.HasValue)
 </code></pre>
 <p>この部分ではBGMのフェードアウトを行っています。
 <code>SoundMixer.FadeOut(int id, float seconds)</code>は，指定した音を指定した秒数でフェードアウトするというものです。
-BGMが再生中，つまり<code>bgmID</code>がnullじゃないときに<code>bgmID.HasValue</code>が<code>true</code>のときにフェードアウトを行い，<code>bgmID</code>を<code>null</code>にします。ここで<code>bgmID</code>を<code>null</code>にすることで<code>bgmID.HasValue</code>が<code>false</code>となるため，フェードアウト処理は一度だけしか行われません。</p>
+BGMが再生中，つまり<code>bgmID</code>がnullじゃないとき(=<code>bgmID.HasValue</code>が<code>true</code>のとき)にフェードアウトを行い，<code>bgmID</code>を<code>null</code>にします。ここで<code>bgmID</code>を<code>null</code>にすることで<code>bgmID.HasValue</code>が<code>false</code>となるため，フェードアウト処理は一度だけしか行われません。</p>
 <h2 id="クリア画面の追加">クリア画面の追加</h2>
 <p>クリア画面も追加してみましょう。
 <code>TitleNode</code>や<code>GameOverNode</code>と同じ要領でクリア画面も作ってみましょう。</p>
