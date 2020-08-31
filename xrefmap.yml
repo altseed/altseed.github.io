@@ -120,6 +120,270 @@ references:
   isSpec: "True"
   fullName: Altseed2.AlphaBlend.Substract
   nameWithType: AlphaBlend.Substract
+- uid: Altseed2.AnchorMode
+  name: AnchorMode
+  href: References/Altseed2.AnchorMode.html
+  commentId: T:Altseed2.AnchorMode
+  fullName: Altseed2.AnchorMode
+  nameWithType: AnchorMode
+- uid: Altseed2.AnchorMode.ContentSize
+  name: ContentSize
+  href: References/Altseed2.AnchorMode.html#Altseed2_AnchorMode_ContentSize
+  commentId: F:Altseed2.AnchorMode.ContentSize
+  fullName: Altseed2.AnchorMode.ContentSize
+  nameWithType: AnchorMode.ContentSize
+- uid: Altseed2.AnchorMode.Fill
+  name: Fill
+  href: References/Altseed2.AnchorMode.html#Altseed2_AnchorMode_Fill
+  commentId: F:Altseed2.AnchorMode.Fill
+  fullName: Altseed2.AnchorMode.Fill
+  nameWithType: AnchorMode.Fill
+- uid: Altseed2.AnchorMode.KeepAspect
+  name: KeepAspect
+  href: References/Altseed2.AnchorMode.html#Altseed2_AnchorMode_KeepAspect
+  commentId: F:Altseed2.AnchorMode.KeepAspect
+  fullName: Altseed2.AnchorMode.KeepAspect
+  nameWithType: AnchorMode.KeepAspect
+- uid: Altseed2.AnchorTransformerNode
+  name: AnchorTransformerNode
+  href: References/Altseed2.AnchorTransformerNode.html
+  commentId: T:Altseed2.AnchorTransformerNode
+  fullName: Altseed2.AnchorTransformerNode
+  nameWithType: AnchorTransformerNode
+- uid: Altseed2.AnchorTransformerNode.AbsoluteTransform
+  name: AbsoluteTransform
+  href: References/Altseed2.AnchorTransformerNode.html#Altseed2_AnchorTransformerNode_AbsoluteTransform
+  commentId: P:Altseed2.AnchorTransformerNode.AbsoluteTransform
+  fullName: Altseed2.AnchorTransformerNode.AbsoluteTransform
+  nameWithType: AnchorTransformerNode.AbsoluteTransform
+- uid: Altseed2.AnchorTransformerNode.AbsoluteTransform*
+  name: AbsoluteTransform
+  href: References/Altseed2.AnchorTransformerNode.html#Altseed2_AnchorTransformerNode_AbsoluteTransform_
+  commentId: Overload:Altseed2.AnchorTransformerNode.AbsoluteTransform
+  isSpec: "True"
+  fullName: Altseed2.AnchorTransformerNode.AbsoluteTransform
+  nameWithType: AnchorTransformerNode.AbsoluteTransform
+- uid: Altseed2.AnchorTransformerNode.AnchorMax
+  name: AnchorMax
+  href: References/Altseed2.AnchorTransformerNode.html#Altseed2_AnchorTransformerNode_AnchorMax
+  commentId: P:Altseed2.AnchorTransformerNode.AnchorMax
+  fullName: Altseed2.AnchorTransformerNode.AnchorMax
+  nameWithType: AnchorTransformerNode.AnchorMax
+- uid: Altseed2.AnchorTransformerNode.AnchorMax*
+  name: AnchorMax
+  href: References/Altseed2.AnchorTransformerNode.html#Altseed2_AnchorTransformerNode_AnchorMax_
+  commentId: Overload:Altseed2.AnchorTransformerNode.AnchorMax
+  isSpec: "True"
+  fullName: Altseed2.AnchorTransformerNode.AnchorMax
+  nameWithType: AnchorTransformerNode.AnchorMax
+- uid: Altseed2.AnchorTransformerNode.AnchorMin
+  name: AnchorMin
+  href: References/Altseed2.AnchorTransformerNode.html#Altseed2_AnchorTransformerNode_AnchorMin
+  commentId: P:Altseed2.AnchorTransformerNode.AnchorMin
+  fullName: Altseed2.AnchorTransformerNode.AnchorMin
+  nameWithType: AnchorTransformerNode.AnchorMin
+- uid: Altseed2.AnchorTransformerNode.AnchorMin*
+  name: AnchorMin
+  href: References/Altseed2.AnchorTransformerNode.html#Altseed2_AnchorTransformerNode_AnchorMin_
+  commentId: Overload:Altseed2.AnchorTransformerNode.AnchorMin
+  isSpec: "True"
+  fullName: Altseed2.AnchorTransformerNode.AnchorMin
+  nameWithType: AnchorTransformerNode.AnchorMin
+- uid: Altseed2.AnchorTransformerNode.AnchorMode
+  name: AnchorMode
+  href: References/Altseed2.AnchorTransformerNode.html#Altseed2_AnchorTransformerNode_AnchorMode
+  commentId: P:Altseed2.AnchorTransformerNode.AnchorMode
+  fullName: Altseed2.AnchorTransformerNode.AnchorMode
+  nameWithType: AnchorTransformerNode.AnchorMode
+- uid: Altseed2.AnchorTransformerNode.AnchorMode*
+  name: AnchorMode
+  href: References/Altseed2.AnchorTransformerNode.html#Altseed2_AnchorTransformerNode_AnchorMode_
+  commentId: Overload:Altseed2.AnchorTransformerNode.AnchorMode
+  isSpec: "True"
+  fullName: Altseed2.AnchorTransformerNode.AnchorMode
+  nameWithType: AnchorTransformerNode.AnchorMode
+- uid: Altseed2.AnchorTransformerNode.Angle
+  name: Angle
+  href: References/Altseed2.AnchorTransformerNode.html#Altseed2_AnchorTransformerNode_Angle
+  commentId: P:Altseed2.AnchorTransformerNode.Angle
+  fullName: Altseed2.AnchorTransformerNode.Angle
+  nameWithType: AnchorTransformerNode.Angle
+- uid: Altseed2.AnchorTransformerNode.Angle*
+  name: Angle
+  href: References/Altseed2.AnchorTransformerNode.html#Altseed2_AnchorTransformerNode_Angle_
+  commentId: Overload:Altseed2.AnchorTransformerNode.Angle
+  isSpec: "True"
+  fullName: Altseed2.AnchorTransformerNode.Angle
+  nameWithType: AnchorTransformerNode.Angle
+- uid: Altseed2.AnchorTransformerNode.CenterPosition
+  name: CenterPosition
+  href: References/Altseed2.AnchorTransformerNode.html#Altseed2_AnchorTransformerNode_CenterPosition
+  commentId: P:Altseed2.AnchorTransformerNode.CenterPosition
+  fullName: Altseed2.AnchorTransformerNode.CenterPosition
+  nameWithType: AnchorTransformerNode.CenterPosition
+- uid: Altseed2.AnchorTransformerNode.CenterPosition*
+  name: CenterPosition
+  href: References/Altseed2.AnchorTransformerNode.html#Altseed2_AnchorTransformerNode_CenterPosition_
+  commentId: Overload:Altseed2.AnchorTransformerNode.CenterPosition
+  isSpec: "True"
+  fullName: Altseed2.AnchorTransformerNode.CenterPosition
+  nameWithType: AnchorTransformerNode.CenterPosition
+- uid: Altseed2.AnchorTransformerNode.HorizontalAlignment
+  name: HorizontalAlignment
+  href: References/Altseed2.AnchorTransformerNode.html#Altseed2_AnchorTransformerNode_HorizontalAlignment
+  commentId: P:Altseed2.AnchorTransformerNode.HorizontalAlignment
+  fullName: Altseed2.AnchorTransformerNode.HorizontalAlignment
+  nameWithType: AnchorTransformerNode.HorizontalAlignment
+- uid: Altseed2.AnchorTransformerNode.HorizontalAlignment*
+  name: HorizontalAlignment
+  href: References/Altseed2.AnchorTransformerNode.html#Altseed2_AnchorTransformerNode_HorizontalAlignment_
+  commentId: Overload:Altseed2.AnchorTransformerNode.HorizontalAlignment
+  isSpec: "True"
+  fullName: Altseed2.AnchorTransformerNode.HorizontalAlignment
+  nameWithType: AnchorTransformerNode.HorizontalAlignment
+- uid: Altseed2.AnchorTransformerNode.HorizontalFlip
+  name: HorizontalFlip
+  href: References/Altseed2.AnchorTransformerNode.html#Altseed2_AnchorTransformerNode_HorizontalFlip
+  commentId: P:Altseed2.AnchorTransformerNode.HorizontalFlip
+  fullName: Altseed2.AnchorTransformerNode.HorizontalFlip
+  nameWithType: AnchorTransformerNode.HorizontalFlip
+- uid: Altseed2.AnchorTransformerNode.HorizontalFlip*
+  name: HorizontalFlip
+  href: References/Altseed2.AnchorTransformerNode.html#Altseed2_AnchorTransformerNode_HorizontalFlip_
+  commentId: Overload:Altseed2.AnchorTransformerNode.HorizontalFlip
+  isSpec: "True"
+  fullName: Altseed2.AnchorTransformerNode.HorizontalFlip
+  nameWithType: AnchorTransformerNode.HorizontalFlip
+- uid: Altseed2.AnchorTransformerNode.InheritedTransform
+  name: InheritedTransform
+  href: References/Altseed2.AnchorTransformerNode.html#Altseed2_AnchorTransformerNode_InheritedTransform
+  commentId: P:Altseed2.AnchorTransformerNode.InheritedTransform
+  fullName: Altseed2.AnchorTransformerNode.InheritedTransform
+  nameWithType: AnchorTransformerNode.InheritedTransform
+- uid: Altseed2.AnchorTransformerNode.InheritedTransform*
+  name: InheritedTransform
+  href: References/Altseed2.AnchorTransformerNode.html#Altseed2_AnchorTransformerNode_InheritedTransform_
+  commentId: Overload:Altseed2.AnchorTransformerNode.InheritedTransform
+  isSpec: "True"
+  fullName: Altseed2.AnchorTransformerNode.InheritedTransform
+  nameWithType: AnchorTransformerNode.InheritedTransform
+- uid: Altseed2.AnchorTransformerNode.LeftTop
+  name: LeftTop
+  href: References/Altseed2.AnchorTransformerNode.html#Altseed2_AnchorTransformerNode_LeftTop
+  commentId: P:Altseed2.AnchorTransformerNode.LeftTop
+  fullName: Altseed2.AnchorTransformerNode.LeftTop
+  nameWithType: AnchorTransformerNode.LeftTop
+- uid: Altseed2.AnchorTransformerNode.LeftTop*
+  name: LeftTop
+  href: References/Altseed2.AnchorTransformerNode.html#Altseed2_AnchorTransformerNode_LeftTop_
+  commentId: Overload:Altseed2.AnchorTransformerNode.LeftTop
+  isSpec: "True"
+  fullName: Altseed2.AnchorTransformerNode.LeftTop
+  nameWithType: AnchorTransformerNode.LeftTop
+- uid: Altseed2.AnchorTransformerNode.Pivot
+  name: Pivot
+  href: References/Altseed2.AnchorTransformerNode.html#Altseed2_AnchorTransformerNode_Pivot
+  commentId: P:Altseed2.AnchorTransformerNode.Pivot
+  fullName: Altseed2.AnchorTransformerNode.Pivot
+  nameWithType: AnchorTransformerNode.Pivot
+- uid: Altseed2.AnchorTransformerNode.Pivot*
+  name: Pivot
+  href: References/Altseed2.AnchorTransformerNode.html#Altseed2_AnchorTransformerNode_Pivot_
+  commentId: Overload:Altseed2.AnchorTransformerNode.Pivot
+  isSpec: "True"
+  fullName: Altseed2.AnchorTransformerNode.Pivot
+  nameWithType: AnchorTransformerNode.Pivot
+- uid: Altseed2.AnchorTransformerNode.Position
+  name: Position
+  href: References/Altseed2.AnchorTransformerNode.html#Altseed2_AnchorTransformerNode_Position
+  commentId: P:Altseed2.AnchorTransformerNode.Position
+  fullName: Altseed2.AnchorTransformerNode.Position
+  nameWithType: AnchorTransformerNode.Position
+- uid: Altseed2.AnchorTransformerNode.Position*
+  name: Position
+  href: References/Altseed2.AnchorTransformerNode.html#Altseed2_AnchorTransformerNode_Position_
+  commentId: Overload:Altseed2.AnchorTransformerNode.Position
+  isSpec: "True"
+  fullName: Altseed2.AnchorTransformerNode.Position
+  nameWithType: AnchorTransformerNode.Position
+- uid: Altseed2.AnchorTransformerNode.RightBottom
+  name: RightBottom
+  href: References/Altseed2.AnchorTransformerNode.html#Altseed2_AnchorTransformerNode_RightBottom
+  commentId: P:Altseed2.AnchorTransformerNode.RightBottom
+  fullName: Altseed2.AnchorTransformerNode.RightBottom
+  nameWithType: AnchorTransformerNode.RightBottom
+- uid: Altseed2.AnchorTransformerNode.RightBottom*
+  name: RightBottom
+  href: References/Altseed2.AnchorTransformerNode.html#Altseed2_AnchorTransformerNode_RightBottom_
+  commentId: Overload:Altseed2.AnchorTransformerNode.RightBottom
+  isSpec: "True"
+  fullName: Altseed2.AnchorTransformerNode.RightBottom
+  nameWithType: AnchorTransformerNode.RightBottom
+- uid: Altseed2.AnchorTransformerNode.Scale
+  name: Scale
+  href: References/Altseed2.AnchorTransformerNode.html#Altseed2_AnchorTransformerNode_Scale
+  commentId: P:Altseed2.AnchorTransformerNode.Scale
+  fullName: Altseed2.AnchorTransformerNode.Scale
+  nameWithType: AnchorTransformerNode.Scale
+- uid: Altseed2.AnchorTransformerNode.Scale*
+  name: Scale
+  href: References/Altseed2.AnchorTransformerNode.html#Altseed2_AnchorTransformerNode_Scale_
+  commentId: Overload:Altseed2.AnchorTransformerNode.Scale
+  isSpec: "True"
+  fullName: Altseed2.AnchorTransformerNode.Scale
+  nameWithType: AnchorTransformerNode.Scale
+- uid: Altseed2.AnchorTransformerNode.Size
+  name: Size
+  href: References/Altseed2.AnchorTransformerNode.html#Altseed2_AnchorTransformerNode_Size
+  commentId: P:Altseed2.AnchorTransformerNode.Size
+  fullName: Altseed2.AnchorTransformerNode.Size
+  nameWithType: AnchorTransformerNode.Size
+- uid: Altseed2.AnchorTransformerNode.Size*
+  name: Size
+  href: References/Altseed2.AnchorTransformerNode.html#Altseed2_AnchorTransformerNode_Size_
+  commentId: Overload:Altseed2.AnchorTransformerNode.Size
+  isSpec: "True"
+  fullName: Altseed2.AnchorTransformerNode.Size
+  nameWithType: AnchorTransformerNode.Size
+- uid: Altseed2.AnchorTransformerNode.Transform
+  name: Transform
+  href: References/Altseed2.AnchorTransformerNode.html#Altseed2_AnchorTransformerNode_Transform
+  commentId: P:Altseed2.AnchorTransformerNode.Transform
+  fullName: Altseed2.AnchorTransformerNode.Transform
+  nameWithType: AnchorTransformerNode.Transform
+- uid: Altseed2.AnchorTransformerNode.Transform*
+  name: Transform
+  href: References/Altseed2.AnchorTransformerNode.html#Altseed2_AnchorTransformerNode_Transform_
+  commentId: Overload:Altseed2.AnchorTransformerNode.Transform
+  isSpec: "True"
+  fullName: Altseed2.AnchorTransformerNode.Transform
+  nameWithType: AnchorTransformerNode.Transform
+- uid: Altseed2.AnchorTransformerNode.VerticalAlignment
+  name: VerticalAlignment
+  href: References/Altseed2.AnchorTransformerNode.html#Altseed2_AnchorTransformerNode_VerticalAlignment
+  commentId: P:Altseed2.AnchorTransformerNode.VerticalAlignment
+  fullName: Altseed2.AnchorTransformerNode.VerticalAlignment
+  nameWithType: AnchorTransformerNode.VerticalAlignment
+- uid: Altseed2.AnchorTransformerNode.VerticalAlignment*
+  name: VerticalAlignment
+  href: References/Altseed2.AnchorTransformerNode.html#Altseed2_AnchorTransformerNode_VerticalAlignment_
+  commentId: Overload:Altseed2.AnchorTransformerNode.VerticalAlignment
+  isSpec: "True"
+  fullName: Altseed2.AnchorTransformerNode.VerticalAlignment
+  nameWithType: AnchorTransformerNode.VerticalAlignment
+- uid: Altseed2.AnchorTransformerNode.VerticalFlip
+  name: VerticalFlip
+  href: References/Altseed2.AnchorTransformerNode.html#Altseed2_AnchorTransformerNode_VerticalFlip
+  commentId: P:Altseed2.AnchorTransformerNode.VerticalFlip
+  fullName: Altseed2.AnchorTransformerNode.VerticalFlip
+  nameWithType: AnchorTransformerNode.VerticalFlip
+- uid: Altseed2.AnchorTransformerNode.VerticalFlip*
+  name: VerticalFlip
+  href: References/Altseed2.AnchorTransformerNode.html#Altseed2_AnchorTransformerNode_VerticalFlip_
+  commentId: Overload:Altseed2.AnchorTransformerNode.VerticalFlip
+  isSpec: "True"
+  fullName: Altseed2.AnchorTransformerNode.VerticalFlip
+  nameWithType: AnchorTransformerNode.VerticalFlip
 - uid: Altseed2.ArcNode
   name: ArcNode
   href: References/Altseed2.ArcNode.html
@@ -885,19 +1149,6 @@ references:
   isSpec: "True"
   fullName: Altseed2.ColliderNode.ColliderNode
   nameWithType: ColliderNode.ColliderNode
-- uid: Altseed2.ColliderNode.AbsoluteTransform
-  name: AbsoluteTransform
-  href: References/Altseed2.ColliderNode.html#Altseed2_ColliderNode_AbsoluteTransform
-  commentId: P:Altseed2.ColliderNode.AbsoluteTransform
-  fullName: Altseed2.ColliderNode.AbsoluteTransform
-  nameWithType: ColliderNode.AbsoluteTransform
-- uid: Altseed2.ColliderNode.AbsoluteTransform*
-  name: AbsoluteTransform
-  href: References/Altseed2.ColliderNode.html#Altseed2_ColliderNode_AbsoluteTransform_
-  commentId: Overload:Altseed2.ColliderNode.AbsoluteTransform
-  isSpec: "True"
-  fullName: Altseed2.ColliderNode.AbsoluteTransform
-  nameWithType: ColliderNode.AbsoluteTransform
 - uid: Altseed2.ColliderVisualizeNodeFactory
   name: ColliderVisualizeNodeFactory
   href: References/Altseed2.ColliderVisualizeNodeFactory.html
@@ -1254,6 +1505,19 @@ references:
   isSpec: "True"
   fullName: Altseed2.Configuration.DeviceType
   nameWithType: Configuration.DeviceType
+- uid: Altseed2.Configuration.EnabledCoreModules
+  name: EnabledCoreModules
+  href: References/Altseed2.Configuration.html#Altseed2_Configuration_EnabledCoreModules
+  commentId: P:Altseed2.Configuration.EnabledCoreModules
+  fullName: Altseed2.Configuration.EnabledCoreModules
+  nameWithType: Configuration.EnabledCoreModules
+- uid: Altseed2.Configuration.EnabledCoreModules*
+  name: EnabledCoreModules
+  href: References/Altseed2.Configuration.html#Altseed2_Configuration_EnabledCoreModules_
+  commentId: Overload:Altseed2.Configuration.EnabledCoreModules
+  isSpec: "True"
+  fullName: Altseed2.Configuration.EnabledCoreModules
+  nameWithType: Configuration.EnabledCoreModules
 - uid: Altseed2.Configuration.FileLoggingEnabled
   name: FileLoggingEnabled
   href: References/Altseed2.Configuration.html#Altseed2_Configuration_FileLoggingEnabled
@@ -1280,19 +1544,6 @@ references:
   isSpec: "True"
   fullName: Altseed2.Configuration.IsFullscreen
   nameWithType: Configuration.IsFullscreen
-- uid: Altseed2.Configuration.IsGraphicsOnly
-  name: IsGraphicsOnly
-  href: References/Altseed2.Configuration.html#Altseed2_Configuration_IsGraphicsOnly
-  commentId: P:Altseed2.Configuration.IsGraphicsOnly
-  fullName: Altseed2.Configuration.IsGraphicsOnly
-  nameWithType: Configuration.IsGraphicsOnly
-- uid: Altseed2.Configuration.IsGraphicsOnly*
-  name: IsGraphicsOnly
-  href: References/Altseed2.Configuration.html#Altseed2_Configuration_IsGraphicsOnly_
-  commentId: Overload:Altseed2.Configuration.IsGraphicsOnly
-  isSpec: "True"
-  fullName: Altseed2.Configuration.IsGraphicsOnly
-  nameWithType: Configuration.IsGraphicsOnly
 - uid: Altseed2.Configuration.IsResizable
   name: IsResizable
   href: References/Altseed2.Configuration.html#Altseed2_Configuration_IsResizable
@@ -1319,19 +1570,6 @@ references:
   isSpec: "True"
   fullName: Altseed2.Configuration.LogFileName
   nameWithType: Configuration.LogFileName
-- uid: Altseed2.Configuration.ToolEnabled
-  name: ToolEnabled
-  href: References/Altseed2.Configuration.html#Altseed2_Configuration_ToolEnabled
-  commentId: P:Altseed2.Configuration.ToolEnabled
-  fullName: Altseed2.Configuration.ToolEnabled
-  nameWithType: Configuration.ToolEnabled
-- uid: Altseed2.Configuration.ToolEnabled*
-  name: ToolEnabled
-  href: References/Altseed2.Configuration.html#Altseed2_Configuration_ToolEnabled_
-  commentId: Overload:Altseed2.Configuration.ToolEnabled
-  isSpec: "True"
-  fullName: Altseed2.Configuration.ToolEnabled
-  nameWithType: Configuration.ToolEnabled
 - uid: Altseed2.Configuration.VisibleTransformInfo
   name: VisibleTransformInfo
   href: References/Altseed2.Configuration.html#Altseed2_Configuration_VisibleTransformInfo
@@ -1818,12 +2056,6 @@ references:
   commentId: F:Altseed2.Engine.MaxCameraGroupCount
   fullName: Altseed2.Engine.MaxCameraGroupCount
   nameWithType: Engine.MaxCameraGroupCount
-- uid: Altseed2.Engine.MaxStackalloclLength
-  name: MaxStackalloclLength
-  href: References/Altseed2.Engine.html#Altseed2_Engine_MaxStackalloclLength
-  commentId: F:Altseed2.Engine.MaxStackalloclLength
-  fullName: Altseed2.Engine.MaxStackalloclLength
-  nameWithType: Engine.MaxStackalloclLength
 - uid: Altseed2.Engine.Mouse
   name: Mouse
   href: References/Altseed2.Engine.html#Altseed2_Engine_Mouse
@@ -1941,19 +2173,6 @@ references:
   isSpec: "True"
   fullName: Altseed2.Engine.Update
   nameWithType: Engine.Update
-- uid: Altseed2.Engine.Vector2FBuffer
-  name: Vector2FBuffer
-  href: References/Altseed2.Engine.html#Altseed2_Engine_Vector2FBuffer
-  commentId: P:Altseed2.Engine.Vector2FBuffer
-  fullName: Altseed2.Engine.Vector2FBuffer
-  nameWithType: Engine.Vector2FBuffer
-- uid: Altseed2.Engine.Vector2FBuffer*
-  name: Vector2FBuffer
-  href: References/Altseed2.Engine.html#Altseed2_Engine_Vector2FBuffer_
-  commentId: Overload:Altseed2.Engine.Vector2FBuffer
-  isSpec: "True"
-  fullName: Altseed2.Engine.Vector2FBuffer
-  nameWithType: Engine.Vector2FBuffer
 - uid: Altseed2.Engine.WindowSize
   name: WindowSize
   href: References/Altseed2.Engine.html#Altseed2_Engine_WindowSize
@@ -2454,6 +2673,30 @@ references:
   isSpec: "True"
   fullName: Altseed2.Glyph.TextureSize
   nameWithType: Glyph.TextureSize
+- uid: Altseed2.HorizontalAlignment
+  name: HorizontalAlignment
+  href: References/Altseed2.HorizontalAlignment.html
+  commentId: T:Altseed2.HorizontalAlignment
+  fullName: Altseed2.HorizontalAlignment
+  nameWithType: HorizontalAlignment
+- uid: Altseed2.HorizontalAlignment.Center
+  name: Center
+  href: References/Altseed2.HorizontalAlignment.html#Altseed2_HorizontalAlignment_Center
+  commentId: F:Altseed2.HorizontalAlignment.Center
+  fullName: Altseed2.HorizontalAlignment.Center
+  nameWithType: HorizontalAlignment.Center
+- uid: Altseed2.HorizontalAlignment.Left
+  name: Left
+  href: References/Altseed2.HorizontalAlignment.html#Altseed2_HorizontalAlignment_Left
+  commentId: F:Altseed2.HorizontalAlignment.Left
+  fullName: Altseed2.HorizontalAlignment.Left
+  nameWithType: HorizontalAlignment.Left
+- uid: Altseed2.HorizontalAlignment.Right
+  name: Right
+  href: References/Altseed2.HorizontalAlignment.html#Altseed2_HorizontalAlignment_Right
+  commentId: F:Altseed2.HorizontalAlignment.Right
+  fullName: Altseed2.HorizontalAlignment.Right
+  nameWithType: HorizontalAlignment.Right
 - uid: Altseed2.ICollisionEventReceiver
   name: ICollisionEventReceiver
   href: References/Altseed2.ICollisionEventReceiver.html
@@ -2499,6 +2742,83 @@ references:
   isSpec: "True"
   fullName: Altseed2.ICollisionEventReceiver.OnCollisionStay
   nameWithType: ICollisionEventReceiver.OnCollisionStay
+- uid: Altseed2.ICullableDrawn
+  name: ICullableDrawn
+  href: References/Altseed2.ICullableDrawn.html
+  commentId: T:Altseed2.ICullableDrawn
+  fullName: Altseed2.ICullableDrawn
+  nameWithType: ICullableDrawn
+- uid: Altseed2.ICullableDrawn.ContentSize
+  name: ContentSize
+  href: References/Altseed2.ICullableDrawn.html#Altseed2_ICullableDrawn_ContentSize
+  commentId: P:Altseed2.ICullableDrawn.ContentSize
+  fullName: Altseed2.ICullableDrawn.ContentSize
+  nameWithType: ICullableDrawn.ContentSize
+- uid: Altseed2.ICullableDrawn.ContentSize*
+  name: ContentSize
+  href: References/Altseed2.ICullableDrawn.html#Altseed2_ICullableDrawn_ContentSize_
+  commentId: Overload:Altseed2.ICullableDrawn.ContentSize
+  isSpec: "True"
+  fullName: Altseed2.ICullableDrawn.ContentSize
+  nameWithType: ICullableDrawn.ContentSize
+- uid: Altseed2.ICullableDrawn.IsDrawn
+  name: IsDrawn
+  href: References/Altseed2.ICullableDrawn.html#Altseed2_ICullableDrawn_IsDrawn
+  commentId: P:Altseed2.ICullableDrawn.IsDrawn
+  fullName: Altseed2.ICullableDrawn.IsDrawn
+  nameWithType: ICullableDrawn.IsDrawn
+- uid: Altseed2.ICullableDrawn.IsDrawn*
+  name: IsDrawn
+  href: References/Altseed2.ICullableDrawn.html#Altseed2_ICullableDrawn_IsDrawn_
+  commentId: Overload:Altseed2.ICullableDrawn.IsDrawn
+  isSpec: "True"
+  fullName: Altseed2.ICullableDrawn.IsDrawn
+  nameWithType: ICullableDrawn.IsDrawn
+- uid: Altseed2.ICullableDrawn.IsDrawnActually
+  name: IsDrawnActually
+  href: References/Altseed2.ICullableDrawn.html#Altseed2_ICullableDrawn_IsDrawnActually
+  commentId: P:Altseed2.ICullableDrawn.IsDrawnActually
+  fullName: Altseed2.ICullableDrawn.IsDrawnActually
+  nameWithType: ICullableDrawn.IsDrawnActually
+- uid: Altseed2.ICullableDrawn.IsDrawnActually*
+  name: IsDrawnActually
+  href: References/Altseed2.ICullableDrawn.html#Altseed2_ICullableDrawn_IsDrawnActually_
+  commentId: Overload:Altseed2.ICullableDrawn.IsDrawnActually
+  isSpec: "True"
+  fullName: Altseed2.ICullableDrawn.IsDrawnActually
+  nameWithType: ICullableDrawn.IsDrawnActually
+- uid: Altseed2.IDrawn
+  name: IDrawn
+  href: References/Altseed2.IDrawn.html
+  commentId: T:Altseed2.IDrawn
+  fullName: Altseed2.IDrawn
+  nameWithType: IDrawn
+- uid: Altseed2.IDrawn.CameraGroup
+  name: CameraGroup
+  href: References/Altseed2.IDrawn.html#Altseed2_IDrawn_CameraGroup
+  commentId: P:Altseed2.IDrawn.CameraGroup
+  fullName: Altseed2.IDrawn.CameraGroup
+  nameWithType: IDrawn.CameraGroup
+- uid: Altseed2.IDrawn.CameraGroup*
+  name: CameraGroup
+  href: References/Altseed2.IDrawn.html#Altseed2_IDrawn_CameraGroup_
+  commentId: Overload:Altseed2.IDrawn.CameraGroup
+  isSpec: "True"
+  fullName: Altseed2.IDrawn.CameraGroup
+  nameWithType: IDrawn.CameraGroup
+- uid: Altseed2.IDrawn.ZOrder
+  name: ZOrder
+  href: References/Altseed2.IDrawn.html#Altseed2_IDrawn_ZOrder
+  commentId: P:Altseed2.IDrawn.ZOrder
+  fullName: Altseed2.IDrawn.ZOrder
+  nameWithType: IDrawn.ZOrder
+- uid: Altseed2.IDrawn.ZOrder*
+  name: ZOrder
+  href: References/Altseed2.IDrawn.html#Altseed2_IDrawn_ZOrder_
+  commentId: Overload:Altseed2.IDrawn.ZOrder
+  isSpec: "True"
+  fullName: Altseed2.IDrawn.ZOrder
+  nameWithType: IDrawn.ZOrder
 - uid: Altseed2.Joystick
   name: Joystick
   href: References/Altseed2.Joystick.html
@@ -5459,19 +5779,6 @@ references:
   isSpec: "True"
   fullName: Altseed2.PolygonNode.PolygonNode
   nameWithType: PolygonNode.PolygonNode
-- uid: Altseed2.PolygonNode.AbsoluteTransform
-  name: AbsoluteTransform
-  href: References/Altseed2.PolygonNode.html#Altseed2_PolygonNode_AbsoluteTransform
-  commentId: P:Altseed2.PolygonNode.AbsoluteTransform
-  fullName: Altseed2.PolygonNode.AbsoluteTransform
-  nameWithType: PolygonNode.AbsoluteTransform
-- uid: Altseed2.PolygonNode.AbsoluteTransform*
-  name: AbsoluteTransform
-  href: References/Altseed2.PolygonNode.html#Altseed2_PolygonNode_AbsoluteTransform_
-  commentId: Overload:Altseed2.PolygonNode.AbsoluteTransform
-  isSpec: "True"
-  fullName: Altseed2.PolygonNode.AbsoluteTransform
-  nameWithType: PolygonNode.AbsoluteTransform
 - uid: Altseed2.PolygonNode.AlphaBlend
   name: AlphaBlend
   href: References/Altseed2.PolygonNode.html#Altseed2_PolygonNode_AlphaBlend
@@ -6486,12 +6793,6 @@ references:
   commentId: T:Altseed2.RuledTransitionNode
   fullName: Altseed2.RuledTransitionNode
   nameWithType: RuledTransitionNode
-- uid: Altseed2.RuledTransitionNode.#ctor(Altseed2.RuledTransitionState,Altseed2.RuledTransitionState)
-  name: RuledTransitionNode(RuledTransitionState, RuledTransitionState)
-  href: References/Altseed2.RuledTransitionNode.html#Altseed2_RuledTransitionNode__ctor_Altseed2_RuledTransitionState_Altseed2_RuledTransitionState_
-  commentId: M:Altseed2.RuledTransitionNode.#ctor(Altseed2.RuledTransitionState,Altseed2.RuledTransitionState)
-  fullName: Altseed2.RuledTransitionNode.RuledTransitionNode(Altseed2.RuledTransitionState, Altseed2.RuledTransitionState)
-  nameWithType: RuledTransitionNode.RuledTransitionNode(RuledTransitionState, RuledTransitionState)
 - uid: Altseed2.RuledTransitionNode.#ctor(Altseed2.RuledTransitionState,Altseed2.RuledTransitionState,Altseed2.Texture2D)
   name: RuledTransitionNode(RuledTransitionState, RuledTransitionState, Texture2D)
   href: References/Altseed2.RuledTransitionNode.html#Altseed2_RuledTransitionNode__ctor_Altseed2_RuledTransitionState_Altseed2_RuledTransitionState_Altseed2_Texture2D_
@@ -6768,19 +7069,6 @@ references:
   isSpec: "True"
   fullName: Altseed2.ShapeNode.ShapeNode
   nameWithType: ShapeNode.ShapeNode
-- uid: Altseed2.ShapeNode.AbsoluteTransform
-  name: AbsoluteTransform
-  href: References/Altseed2.ShapeNode.html#Altseed2_ShapeNode_AbsoluteTransform
-  commentId: P:Altseed2.ShapeNode.AbsoluteTransform
-  fullName: Altseed2.ShapeNode.AbsoluteTransform
-  nameWithType: ShapeNode.AbsoluteTransform
-- uid: Altseed2.ShapeNode.AbsoluteTransform*
-  name: AbsoluteTransform
-  href: References/Altseed2.ShapeNode.html#Altseed2_ShapeNode_AbsoluteTransform_
-  commentId: Overload:Altseed2.ShapeNode.AbsoluteTransform
-  isSpec: "True"
-  fullName: Altseed2.ShapeNode.AbsoluteTransform
-  nameWithType: ShapeNode.AbsoluteTransform
 - uid: Altseed2.ShapeNode.AlphaBlend
   name: AlphaBlend
   href: References/Altseed2.ShapeNode.html#Altseed2_ShapeNode_AlphaBlend
@@ -7302,19 +7590,6 @@ references:
   isSpec: "True"
   fullName: Altseed2.SpriteNode.SpriteNode
   nameWithType: SpriteNode.SpriteNode
-- uid: Altseed2.SpriteNode.AbsoluteTransform
-  name: AbsoluteTransform
-  href: References/Altseed2.SpriteNode.html#Altseed2_SpriteNode_AbsoluteTransform
-  commentId: P:Altseed2.SpriteNode.AbsoluteTransform
-  fullName: Altseed2.SpriteNode.AbsoluteTransform
-  nameWithType: SpriteNode.AbsoluteTransform
-- uid: Altseed2.SpriteNode.AbsoluteTransform*
-  name: AbsoluteTransform
-  href: References/Altseed2.SpriteNode.html#Altseed2_SpriteNode_AbsoluteTransform_
-  commentId: Overload:Altseed2.SpriteNode.AbsoluteTransform
-  isSpec: "True"
-  fullName: Altseed2.SpriteNode.AbsoluteTransform
-  nameWithType: SpriteNode.AbsoluteTransform
 - uid: Altseed2.SpriteNode.AlphaBlend
   name: AlphaBlend
   href: References/Altseed2.SpriteNode.html#Altseed2_SpriteNode_AlphaBlend
@@ -7736,19 +8011,6 @@ references:
   isSpec: "True"
   fullName: Altseed2.TextNode.TextNode
   nameWithType: TextNode.TextNode
-- uid: Altseed2.TextNode.AbsoluteTransform
-  name: AbsoluteTransform
-  href: References/Altseed2.TextNode.html#Altseed2_TextNode_AbsoluteTransform
-  commentId: P:Altseed2.TextNode.AbsoluteTransform
-  fullName: Altseed2.TextNode.AbsoluteTransform
-  nameWithType: TextNode.AbsoluteTransform
-- uid: Altseed2.TextNode.AbsoluteTransform*
-  name: AbsoluteTransform
-  href: References/Altseed2.TextNode.html#Altseed2_TextNode_AbsoluteTransform_
-  commentId: Overload:Altseed2.TextNode.AbsoluteTransform
-  isSpec: "True"
-  fullName: Altseed2.TextNode.AbsoluteTransform
-  nameWithType: TextNode.AbsoluteTransform
 - uid: Altseed2.TextNode.AlphaBlend
   name: AlphaBlend
   href: References/Altseed2.TextNode.html#Altseed2_TextNode_AlphaBlend
@@ -12614,6 +12876,51 @@ references:
   commentId: F:Altseed2.ToolWindowFlags.UnsavedDocument
   fullName: Altseed2.ToolWindowFlags.UnsavedDocument
   nameWithType: ToolWindowFlags.UnsavedDocument
+- uid: Altseed2.TransformerNode
+  name: TransformerNode
+  href: References/Altseed2.TransformerNode.html
+  commentId: T:Altseed2.TransformerNode
+  fullName: Altseed2.TransformerNode
+  nameWithType: TransformerNode
+- uid: Altseed2.TransformerNode.AbsoluteTransform
+  name: AbsoluteTransform
+  href: References/Altseed2.TransformerNode.html#Altseed2_TransformerNode_AbsoluteTransform
+  commentId: P:Altseed2.TransformerNode.AbsoluteTransform
+  fullName: Altseed2.TransformerNode.AbsoluteTransform
+  nameWithType: TransformerNode.AbsoluteTransform
+- uid: Altseed2.TransformerNode.AbsoluteTransform*
+  name: AbsoluteTransform
+  href: References/Altseed2.TransformerNode.html#Altseed2_TransformerNode_AbsoluteTransform_
+  commentId: Overload:Altseed2.TransformerNode.AbsoluteTransform
+  isSpec: "True"
+  fullName: Altseed2.TransformerNode.AbsoluteTransform
+  nameWithType: TransformerNode.AbsoluteTransform
+- uid: Altseed2.TransformerNode.InheritedTransform
+  name: InheritedTransform
+  href: References/Altseed2.TransformerNode.html#Altseed2_TransformerNode_InheritedTransform
+  commentId: P:Altseed2.TransformerNode.InheritedTransform
+  fullName: Altseed2.TransformerNode.InheritedTransform
+  nameWithType: TransformerNode.InheritedTransform
+- uid: Altseed2.TransformerNode.InheritedTransform*
+  name: InheritedTransform
+  href: References/Altseed2.TransformerNode.html#Altseed2_TransformerNode_InheritedTransform_
+  commentId: Overload:Altseed2.TransformerNode.InheritedTransform
+  isSpec: "True"
+  fullName: Altseed2.TransformerNode.InheritedTransform
+  nameWithType: TransformerNode.InheritedTransform
+- uid: Altseed2.TransformerNode.Transform
+  name: Transform
+  href: References/Altseed2.TransformerNode.html#Altseed2_TransformerNode_Transform
+  commentId: P:Altseed2.TransformerNode.Transform
+  fullName: Altseed2.TransformerNode.Transform
+  nameWithType: TransformerNode.Transform
+- uid: Altseed2.TransformerNode.Transform*
+  name: Transform
+  href: References/Altseed2.TransformerNode.html#Altseed2_TransformerNode_Transform_
+  commentId: Overload:Altseed2.TransformerNode.Transform
+  isSpec: "True"
+  fullName: Altseed2.TransformerNode.Transform
+  nameWithType: TransformerNode.Transform
 - uid: Altseed2.TransformNode
   name: TransformNode
   href: References/Altseed2.TransformNode.html
@@ -12659,19 +12966,6 @@ references:
   isSpec: "True"
   fullName: Altseed2.TransformNode.Angle
   nameWithType: TransformNode.Angle
-- uid: Altseed2.TransformNode.CalcTransform
-  name: CalcTransform()
-  href: References/Altseed2.TransformNode.html#Altseed2_TransformNode_CalcTransform
-  commentId: M:Altseed2.TransformNode.CalcTransform
-  fullName: Altseed2.TransformNode.CalcTransform()
-  nameWithType: TransformNode.CalcTransform()
-- uid: Altseed2.TransformNode.CalcTransform*
-  name: CalcTransform
-  href: References/Altseed2.TransformNode.html#Altseed2_TransformNode_CalcTransform_
-  commentId: Overload:Altseed2.TransformNode.CalcTransform
-  isSpec: "True"
-  fullName: Altseed2.TransformNode.CalcTransform
-  nameWithType: TransformNode.CalcTransform
 - uid: Altseed2.TransformNode.CenterPosition
   name: CenterPosition
   href: References/Altseed2.TransformNode.html#Altseed2_TransformNode_CenterPosition
@@ -12737,19 +13031,6 @@ references:
   isSpec: "True"
   fullName: Altseed2.TransformNode.Position
   nameWithType: TransformNode.Position
-- uid: Altseed2.TransformNode.PropagateTransform(Altseed2.Node,Altseed2.Matrix44F)
-  name: PropagateTransform(Node, Matrix44F)
-  href: References/Altseed2.TransformNode.html#Altseed2_TransformNode_PropagateTransform_Altseed2_Node_Altseed2_Matrix44F_
-  commentId: M:Altseed2.TransformNode.PropagateTransform(Altseed2.Node,Altseed2.Matrix44F)
-  fullName: Altseed2.TransformNode.PropagateTransform(Altseed2.Node, Altseed2.Matrix44F)
-  nameWithType: TransformNode.PropagateTransform(Node, Matrix44F)
-- uid: Altseed2.TransformNode.PropagateTransform*
-  name: PropagateTransform
-  href: References/Altseed2.TransformNode.html#Altseed2_TransformNode_PropagateTransform_
-  commentId: Overload:Altseed2.TransformNode.PropagateTransform
-  isSpec: "True"
-  fullName: Altseed2.TransformNode.PropagateTransform
-  nameWithType: TransformNode.PropagateTransform
 - uid: Altseed2.TransformNode.Scale
   name: Scale
   href: References/Altseed2.TransformNode.html#Altseed2_TransformNode_Scale
@@ -12795,19 +13076,6 @@ references:
   isSpec: "True"
   fullName: Altseed2.TransitionNode.TransitionNode
   nameWithType: TransitionNode.TransitionNode
-- uid: Altseed2.TransitionNode.Closing(System.Single)
-  name: Closing(Single)
-  href: References/Altseed2.TransitionNode.html#Altseed2_TransitionNode_Closing_System_Single_
-  commentId: M:Altseed2.TransitionNode.Closing(System.Single)
-  fullName: Altseed2.TransitionNode.Closing(System.Single)
-  nameWithType: TransitionNode.Closing(Single)
-- uid: Altseed2.TransitionNode.Closing*
-  name: Closing
-  href: References/Altseed2.TransitionNode.html#Altseed2_TransitionNode_Closing_
-  commentId: Overload:Altseed2.TransitionNode.Closing
-  isSpec: "True"
-  fullName: Altseed2.TransitionNode.Closing
-  nameWithType: TransitionNode.Closing
 - uid: Altseed2.TransitionNode.GetCoroutine(System.Single,System.Single)
   name: GetCoroutine(Single, Single)
   href: References/Altseed2.TransitionNode.html#Altseed2_TransitionNode_GetCoroutine_System_Single_System_Single_
@@ -12821,32 +13089,6 @@ references:
   isSpec: "True"
   fullName: Altseed2.TransitionNode.GetCoroutine
   nameWithType: TransitionNode.GetCoroutine
-- uid: Altseed2.TransitionNode.NodeSwapped
-  name: NodeSwapped()
-  href: References/Altseed2.TransitionNode.html#Altseed2_TransitionNode_NodeSwapped
-  commentId: M:Altseed2.TransitionNode.NodeSwapped
-  fullName: Altseed2.TransitionNode.NodeSwapped()
-  nameWithType: TransitionNode.NodeSwapped()
-- uid: Altseed2.TransitionNode.NodeSwapped*
-  name: NodeSwapped
-  href: References/Altseed2.TransitionNode.html#Altseed2_TransitionNode_NodeSwapped_
-  commentId: Overload:Altseed2.TransitionNode.NodeSwapped
-  isSpec: "True"
-  fullName: Altseed2.TransitionNode.NodeSwapped
-  nameWithType: TransitionNode.NodeSwapped
-- uid: Altseed2.TransitionNode.NodeSwapping
-  name: NodeSwapping()
-  href: References/Altseed2.TransitionNode.html#Altseed2_TransitionNode_NodeSwapping
-  commentId: M:Altseed2.TransitionNode.NodeSwapping
-  fullName: Altseed2.TransitionNode.NodeSwapping()
-  nameWithType: TransitionNode.NodeSwapping()
-- uid: Altseed2.TransitionNode.NodeSwapping*
-  name: NodeSwapping
-  href: References/Altseed2.TransitionNode.html#Altseed2_TransitionNode_NodeSwapping_
-  commentId: Overload:Altseed2.TransitionNode.NodeSwapping
-  isSpec: "True"
-  fullName: Altseed2.TransitionNode.NodeSwapping
-  nameWithType: TransitionNode.NodeSwapping
 - uid: Altseed2.TransitionNode.OnClosing(System.Single)
   name: OnClosing(Single)
   href: References/Altseed2.TransitionNode.html#Altseed2_TransitionNode_OnClosing_System_Single_
@@ -12925,45 +13167,6 @@ references:
   isSpec: "True"
   fullName: Altseed2.TransitionNode.OnTransitionEnd
   nameWithType: TransitionNode.OnTransitionEnd
-- uid: Altseed2.TransitionNode.Opening(System.Single)
-  name: Opening(Single)
-  href: References/Altseed2.TransitionNode.html#Altseed2_TransitionNode_Opening_System_Single_
-  commentId: M:Altseed2.TransitionNode.Opening(System.Single)
-  fullName: Altseed2.TransitionNode.Opening(System.Single)
-  nameWithType: TransitionNode.Opening(Single)
-- uid: Altseed2.TransitionNode.Opening*
-  name: Opening
-  href: References/Altseed2.TransitionNode.html#Altseed2_TransitionNode_Opening_
-  commentId: Overload:Altseed2.TransitionNode.Opening
-  isSpec: "True"
-  fullName: Altseed2.TransitionNode.Opening
-  nameWithType: TransitionNode.Opening
-- uid: Altseed2.TransitionNode.TransitionBegin
-  name: TransitionBegin()
-  href: References/Altseed2.TransitionNode.html#Altseed2_TransitionNode_TransitionBegin
-  commentId: M:Altseed2.TransitionNode.TransitionBegin
-  fullName: Altseed2.TransitionNode.TransitionBegin()
-  nameWithType: TransitionNode.TransitionBegin()
-- uid: Altseed2.TransitionNode.TransitionBegin*
-  name: TransitionBegin
-  href: References/Altseed2.TransitionNode.html#Altseed2_TransitionNode_TransitionBegin_
-  commentId: Overload:Altseed2.TransitionNode.TransitionBegin
-  isSpec: "True"
-  fullName: Altseed2.TransitionNode.TransitionBegin
-  nameWithType: TransitionNode.TransitionBegin
-- uid: Altseed2.TransitionNode.TransitionEnd
-  name: TransitionEnd()
-  href: References/Altseed2.TransitionNode.html#Altseed2_TransitionNode_TransitionEnd
-  commentId: M:Altseed2.TransitionNode.TransitionEnd
-  fullName: Altseed2.TransitionNode.TransitionEnd()
-  nameWithType: TransitionNode.TransitionEnd()
-- uid: Altseed2.TransitionNode.TransitionEnd*
-  name: TransitionEnd
-  href: References/Altseed2.TransitionNode.html#Altseed2_TransitionNode_TransitionEnd_
-  commentId: Overload:Altseed2.TransitionNode.TransitionEnd
-  isSpec: "True"
-  fullName: Altseed2.TransitionNode.TransitionEnd
-  nameWithType: TransitionNode.TransitionEnd
 - uid: Altseed2.TriangleNode
   name: TriangleNode
   href: References/Altseed2.TriangleNode.html
@@ -13858,6 +14061,30 @@ references:
   commentId: F:Altseed2.Vertex.UV2
   fullName: Altseed2.Vertex.UV2
   nameWithType: Vertex.UV2
+- uid: Altseed2.VerticalAlignment
+  name: VerticalAlignment
+  href: References/Altseed2.VerticalAlignment.html
+  commentId: T:Altseed2.VerticalAlignment
+  fullName: Altseed2.VerticalAlignment
+  nameWithType: VerticalAlignment
+- uid: Altseed2.VerticalAlignment.Bottom
+  name: Bottom
+  href: References/Altseed2.VerticalAlignment.html#Altseed2_VerticalAlignment_Bottom
+  commentId: F:Altseed2.VerticalAlignment.Bottom
+  fullName: Altseed2.VerticalAlignment.Bottom
+  nameWithType: VerticalAlignment.Bottom
+- uid: Altseed2.VerticalAlignment.Center
+  name: Center
+  href: References/Altseed2.VerticalAlignment.html#Altseed2_VerticalAlignment_Center
+  commentId: F:Altseed2.VerticalAlignment.Center
+  fullName: Altseed2.VerticalAlignment.Center
+  nameWithType: VerticalAlignment.Center
+- uid: Altseed2.VerticalAlignment.Top
+  name: Top
+  href: References/Altseed2.VerticalAlignment.html#Altseed2_VerticalAlignment_Top
+  commentId: F:Altseed2.VerticalAlignment.Top
+  fullName: Altseed2.VerticalAlignment.Top
+  nameWithType: VerticalAlignment.Top
 - uid: Altseed2.WritingDirection
   name: WritingDirection
   href: References/Altseed2.WritingDirection.html

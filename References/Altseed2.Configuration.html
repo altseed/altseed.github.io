@@ -107,6 +107,12 @@
                             <a href="Altseed2.AlphaBlend.html" title="AlphaBlend" class="">AlphaBlend</a>
                           </li>
                           <li class="">
+                            <a href="Altseed2.AnchorMode.html" title="AnchorMode" class="">AnchorMode</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.AnchorTransformerNode.html" title="AnchorTransformerNode" class="">AnchorTransformerNode</a>
+                          </li>
+                          <li class="">
                             <a href="Altseed2.ArcNode.html" title="ArcNode" class="">ArcNode</a>
                           </li>
                           <li class="">
@@ -200,7 +206,16 @@
                             <a href="Altseed2.Glyph.html" title="Glyph" class="">Glyph</a>
                           </li>
                           <li class="">
+                            <a href="Altseed2.HorizontalAlignment.html" title="HorizontalAlignment" class="">HorizontalAlignment</a>
+                          </li>
+                          <li class="">
                             <a href="Altseed2.ICollisionEventReceiver.html" title="ICollisionEventReceiver" class="">ICollisionEventReceiver</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.ICullableDrawn.html" title="ICullableDrawn" class="">ICullableDrawn</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.IDrawn.html" title="IDrawn" class="">IDrawn</a>
                           </li>
                           <li class="">
                             <a href="Altseed2.Joystick.html" title="Joystick" class="">Joystick</a>
@@ -416,6 +431,9 @@
                             <a href="Altseed2.ToolWindowFlags.html" title="ToolWindowFlags" class="">ToolWindowFlags</a>
                           </li>
                           <li class="">
+                            <a href="Altseed2.TransformerNode.html" title="TransformerNode" class="">TransformerNode</a>
+                          </li>
+                          <li class="">
                             <a href="Altseed2.TransformNode.html" title="TransformNode" class="">TransformNode</a>
                           </li>
                           <li class="">
@@ -444,6 +462,9 @@
                           </li>
                           <li class="">
                             <a href="Altseed2.Vertex.html" title="Vertex" class="">Vertex</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.VerticalAlignment.html" title="VerticalAlignment" class="">VerticalAlignment</a>
                           </li>
                           <li class="">
                             <a href="Altseed2.WritingDirection.html" title="WritingDirection" class="">WritingDirection</a>
@@ -489,23 +510,20 @@
       <h5><a class="xref" href="Altseed2.Configuration.html#Altseed2_Configuration_DeviceType">DeviceType</a></h5>
       <section><p>描画方法を取得または設定します。</p>
 </section>
+      <h5><a class="xref" href="Altseed2.Configuration.html#Altseed2_Configuration_EnabledCoreModules">EnabledCoreModules</a></h5>
+      <section><p>初期化するモジュールを指定します。</p>
+</section>
       <h5><a class="xref" href="Altseed2.Configuration.html#Altseed2_Configuration_FileLoggingEnabled">FileLoggingEnabled</a></h5>
       <section><p>ログをファイルに出力するかどうかを取得または設定します。</p>
 </section>
       <h5><a class="xref" href="Altseed2.Configuration.html#Altseed2_Configuration_IsFullscreen">IsFullscreen</a></h5>
       <section><p>全画面モードかどうかを取得または設定します。</p>
 </section>
-      <h5><a class="xref" href="Altseed2.Configuration.html#Altseed2_Configuration_IsGraphicsOnly">IsGraphicsOnly</a></h5>
-      <section><p>IO・描画機能以外の機能を無効にします。</p>
-</section>
       <h5><a class="xref" href="Altseed2.Configuration.html#Altseed2_Configuration_IsResizable">IsResizable</a></h5>
       <section><p>画面サイズ可変かどうかを取得または設定します。</p>
 </section>
       <h5><a class="xref" href="Altseed2.Configuration.html#Altseed2_Configuration_LogFileName">LogFileName</a></h5>
       <section><p>ログファイル名を取得または設定します。</p>
-</section>
-      <h5><a class="xref" href="Altseed2.Configuration.html#Altseed2_Configuration_ToolEnabled">ToolEnabled</a></h5>
-      <section><p>ツール機能を使用するかどうかを取得または設定します。</p>
 </section>
       <h5><a class="xref" href="Altseed2.Configuration.html#Altseed2_Configuration_VisibleTransformInfo">VisibleTransformInfo</a></h5>
       <section><p>変形に関する情報の表示を取得または設定します。</p>
@@ -557,6 +575,19 @@
   
   
   </section>
+  <a id="Altseed2_Configuration_EnabledCoreModules_" data-uid="Altseed2.Configuration.EnabledCoreModules*"></a>
+  <h4 id="Altseed2_Configuration_EnabledCoreModules" data-uid="Altseed2.Configuration.EnabledCoreModules">EnabledCoreModules</h4>
+  <section>
+  <div class="markdown level1 summary"><p>初期化するモジュールを指定します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CoreModules EnabledCoreModules { get; set; }</code></pre>
+  </div>
+  
+  
+  </section>
   <a id="Altseed2_Configuration_FileLoggingEnabled_" data-uid="Altseed2.Configuration.FileLoggingEnabled*"></a>
   <h4 id="Altseed2_Configuration_FileLoggingEnabled" data-uid="Altseed2.Configuration.FileLoggingEnabled">FileLoggingEnabled</h4>
   <section>
@@ -583,19 +614,6 @@
   
   
   </section>
-  <a id="Altseed2_Configuration_IsGraphicsOnly_" data-uid="Altseed2.Configuration.IsGraphicsOnly*"></a>
-  <h4 id="Altseed2_Configuration_IsGraphicsOnly" data-uid="Altseed2.Configuration.IsGraphicsOnly">IsGraphicsOnly</h4>
-  <section>
-  <div class="markdown level1 summary"><p>IO・描画機能以外の機能を無効にします。</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool IsGraphicsOnly { get; set; }</code></pre>
-  </div>
-  
-  
-  </section>
   <a id="Altseed2_Configuration_IsResizable_" data-uid="Altseed2.Configuration.IsResizable*"></a>
   <h4 id="Altseed2_Configuration_IsResizable" data-uid="Altseed2.Configuration.IsResizable">IsResizable</h4>
   <section>
@@ -618,19 +636,6 @@
   <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string LogFileName { get; set; }</code></pre>
-  </div>
-  
-  
-  </section>
-  <a id="Altseed2_Configuration_ToolEnabled_" data-uid="Altseed2.Configuration.ToolEnabled*"></a>
-  <h4 id="Altseed2_Configuration_ToolEnabled" data-uid="Altseed2.Configuration.ToolEnabled">ToolEnabled</h4>
-  <section>
-  <div class="markdown level1 summary"><p>ツール機能を使用するかどうかを取得または設定します。</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool ToolEnabled { get; set; }</code></pre>
   </div>
   
   

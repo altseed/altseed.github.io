@@ -107,6 +107,12 @@
                             <a href="Altseed2.AlphaBlend.html" title="AlphaBlend" class="">AlphaBlend</a>
                           </li>
                           <li class="">
+                            <a href="Altseed2.AnchorMode.html" title="AnchorMode" class="">AnchorMode</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.AnchorTransformerNode.html" title="AnchorTransformerNode" class="">AnchorTransformerNode</a>
+                          </li>
+                          <li class="">
                             <a href="Altseed2.ArcNode.html" title="ArcNode" class="">ArcNode</a>
                           </li>
                           <li class="">
@@ -200,7 +206,16 @@
                             <a href="Altseed2.Glyph.html" title="Glyph" class="">Glyph</a>
                           </li>
                           <li class="">
+                            <a href="Altseed2.HorizontalAlignment.html" title="HorizontalAlignment" class="">HorizontalAlignment</a>
+                          </li>
+                          <li class="">
                             <a href="Altseed2.ICollisionEventReceiver.html" title="ICollisionEventReceiver" class="">ICollisionEventReceiver</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.ICullableDrawn.html" title="ICullableDrawn" class="">ICullableDrawn</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.IDrawn.html" title="IDrawn" class="">IDrawn</a>
                           </li>
                           <li class="">
                             <a href="Altseed2.Joystick.html" title="Joystick" class="">Joystick</a>
@@ -416,6 +431,9 @@
                             <a href="Altseed2.ToolWindowFlags.html" title="ToolWindowFlags" class="">ToolWindowFlags</a>
                           </li>
                           <li class="">
+                            <a href="Altseed2.TransformerNode.html" title="TransformerNode" class="">TransformerNode</a>
+                          </li>
+                          <li class="">
                             <a href="Altseed2.TransformNode.html" title="TransformNode" class="">TransformNode</a>
                           </li>
                           <li class="">
@@ -444,6 +462,9 @@
                           </li>
                           <li class="">
                             <a href="Altseed2.Vertex.html" title="Vertex" class="">Vertex</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.VerticalAlignment.html" title="VerticalAlignment" class="">VerticalAlignment</a>
                           </li>
                           <li class="">
                             <a href="Altseed2.WritingDirection.html" title="WritingDirection" class="">WritingDirection</a>
@@ -481,8 +502,6 @@
       <h5><a class="xref" href="Altseed2.Engine.html#Altseed2_Engine_MaxCameraGroupCount">MaxCameraGroupCount</a></h5>
       <section><p>カメラグループの個数の最大値</p>
 </section>
-      <h5><a class="xref" href="Altseed2.Engine.html#Altseed2_Engine_MaxStackalloclLength">MaxStackalloclLength</a></h5>
-      <section></section>
   <h4>&#12503;&#12525;&#12497;&#12486;&#12451;
   </h4>
       <h5><a class="xref" href="Altseed2.Engine.html#Altseed2_Engine_ClearColor">ClearColor</a></h5>
@@ -524,8 +543,6 @@
       <h5><a class="xref" href="Altseed2.Engine.html#Altseed2_Engine_Tool">Tool</a></h5>
       <section><p>ツールを管理するクラスを取得します。</p>
 </section>
-      <h5><a class="xref" href="Altseed2.Engine.html#Altseed2_Engine_Vector2FBuffer">Vector2FBuffer</a></h5>
-      <section></section>
       <h5><a class="xref" href="Altseed2.Engine.html#Altseed2_Engine_WindowSize">WindowSize</a></h5>
       <section><p>ウィンドウのサイズを取得または設定します。</p>
 </section>
@@ -578,17 +595,6 @@
   <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">const int MaxCameraGroupCount = 64</code></pre>
-  </div>
-  
-  
-  </section>
-  <h4 id="Altseed2_Engine_MaxStackalloclLength" data-uid="Altseed2.Engine.MaxStackalloclLength">MaxStackalloclLength</h4>
-  <section>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">const int MaxStackalloclLength = 16</code></pre>
   </div>
   
   
@@ -657,7 +663,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
-        <td><p>エンジンが初期されていなかったり終了していて操作を実行できなかった</p>
+        <td><p>File機能が初期されていなかったり終了していて操作を実行できなかった</p>
 </td>
       </tr>
     </tbody>
@@ -699,7 +705,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
-        <td><p>エンジンが初期されていなかったり終了していて操作を実行できなかった</p>
+        <td><p>Graphics機能が初期されていなかったり終了していて操作を実行できなかった</p>
 </td>
       </tr>
     </tbody>
@@ -728,7 +734,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
-        <td><p>エンジンが初期されていなかったり終了していて操作を実行できなかった</p>
+        <td><p>Joystick機能が初期されていなかったり終了していて操作を実行できなかった</p>
 </td>
       </tr>
     </tbody>
@@ -757,7 +763,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
-        <td><p>エンジンが初期されていなかったり終了していて操作を実行できなかった</p>
+        <td><p>Keyboard機能が初期されていなかったり終了していて操作を実行できなかった</p>
 </td>
       </tr>
     </tbody>
@@ -786,7 +792,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
-        <td><p>エンジンが初期されていなかったり終了していて操作を実行できなかった</p>
+        <td><p>Log機能が初期されていなかったり終了していて操作を実行できなかった</p>
 </td>
       </tr>
     </tbody>
@@ -815,7 +821,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
-        <td><p>エンジンが初期されていなかったり終了していて操作を実行できなかった</p>
+        <td><p>Mouse機能が初期されていなかったり終了していて操作を実行できなかった</p>
 </td>
       </tr>
     </tbody>
@@ -844,7 +850,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
-        <td><p>エンジンが初期されていなかったり終了していて操作を実行できなかった</p>
+        <td><p>Sound機能が初期されていなかったり終了していて操作を実行できなかった</p>
 </td>
       </tr>
     </tbody>
@@ -886,25 +892,11 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
-        <td><p>エンジンが初期されていなかったり終了していて操作を実行できなかった</p>
+        <td><p>Tool機能が初期されていなかったり終了していて操作を実行できなかった</p>
 </td>
       </tr>
     </tbody>
   </table>
-  </section>
-  <a id="Altseed2_Engine_Vector2FBuffer_" data-uid="Altseed2.Engine.Vector2FBuffer*"></a>
-  <h4 id="Altseed2_Engine_Vector2FBuffer" data-uid="Altseed2.Engine.Vector2FBuffer">Vector2FBuffer</h4>
-  <section>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">static ArrayBuffer&lt;Vector2F&gt; Vector2FBuffer
-{
-}</code></pre>
-  </div>
-  
-  
   </section>
   <a id="Altseed2_Engine_WindowSize_" data-uid="Altseed2.Engine.WindowSize*"></a>
   <h4 id="Altseed2_Engine_WindowSize" data-uid="Altseed2.Engine.WindowSize">WindowSize</h4>

@@ -107,6 +107,12 @@
                             <a href="Altseed2.AlphaBlend.html" title="AlphaBlend" class="">AlphaBlend</a>
                           </li>
                           <li class="">
+                            <a href="Altseed2.AnchorMode.html" title="AnchorMode" class="">AnchorMode</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.AnchorTransformerNode.html" title="AnchorTransformerNode" class="">AnchorTransformerNode</a>
+                          </li>
+                          <li class="">
                             <a href="Altseed2.ArcNode.html" title="ArcNode" class="">ArcNode</a>
                           </li>
                           <li class="">
@@ -200,7 +206,16 @@
                             <a href="Altseed2.Glyph.html" title="Glyph" class="">Glyph</a>
                           </li>
                           <li class="">
+                            <a href="Altseed2.HorizontalAlignment.html" title="HorizontalAlignment" class="">HorizontalAlignment</a>
+                          </li>
+                          <li class="">
                             <a href="Altseed2.ICollisionEventReceiver.html" title="ICollisionEventReceiver" class="">ICollisionEventReceiver</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.ICullableDrawn.html" title="ICullableDrawn" class="">ICullableDrawn</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.IDrawn.html" title="IDrawn" class="">IDrawn</a>
                           </li>
                           <li class="">
                             <a href="Altseed2.Joystick.html" title="Joystick" class="">Joystick</a>
@@ -416,6 +431,9 @@
                             <a href="Altseed2.ToolWindowFlags.html" title="ToolWindowFlags" class="">ToolWindowFlags</a>
                           </li>
                           <li class="">
+                            <a href="Altseed2.TransformerNode.html" title="TransformerNode" class="">TransformerNode</a>
+                          </li>
+                          <li class="">
                             <a href="Altseed2.TransformNode.html" title="TransformNode" class="">TransformNode</a>
                           </li>
                           <li class="">
@@ -444,6 +462,9 @@
                           </li>
                           <li class="">
                             <a href="Altseed2.Vertex.html" title="Vertex" class="">Vertex</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.VerticalAlignment.html" title="VerticalAlignment" class="">VerticalAlignment</a>
                           </li>
                           <li class="">
                             <a href="Altseed2.WritingDirection.html" title="WritingDirection" class="">WritingDirection</a>
@@ -479,6 +500,11 @@
   <div class="inheritedMembers">
   
     <div>
+      <h5><a class="xref" href="Altseed2.TransformNode.html#Altseed2_TransformNode_AbsoluteTransform">TransformNode.AbsoluteTransform</a></h5>
+      <p>先祖の変形および<a class="xref" href="Altseed2.TransformNode.html#Altseed2_TransformNode_CenterPosition">CenterPosition</a>を加味した最終的な変形行列を取得します。</p>
+
+    </div>
+    <div>
       <h5><a class="xref" href="Altseed2.TransformNode.html#Altseed2_TransformNode_Angle">TransformNode.Angle</a></h5>
       <p>角度(度数法)を取得または設定します。</p>
 
@@ -506,16 +532,6 @@
     <div>
       <h5><a class="xref" href="Altseed2.TransformNode.html#Altseed2_TransformNode_VerticalFlip">TransformNode.VerticalFlip</a></h5>
       <p>上下を反転するかどうかを取得または設定します。</p>
-
-    </div>
-    <div>
-      <h5><a class="xref" href="Altseed2.TransformNode.html#Altseed2_TransformNode_CalcTransform">TransformNode.CalcTransform()</a></h5>
-      <p><span class="xref">Altseed2.TransformNode.Transform</span> を再計算します。</p>
-
-    </div>
-    <div>
-      <h5><a class="xref" href="Altseed2.TransformNode.html#Altseed2_TransformNode_PropagateTransform_Altseed2_Node_Altseed2_Matrix44F_">TransformNode.PropagateTransform(Node, Matrix44F)</a></h5>
-      <p>子孫ノードのうち<a class="xref" href="Altseed2.TransformNode.html">TransformNode</a>に対して変換行列を伝播させます。</p>
 
     </div>
     <div>
@@ -592,9 +608,6 @@
 </section>
   <h4>&#12503;&#12525;&#12497;&#12486;&#12451;
   </h4>
-      <h5><a class="xref" href="Altseed2.TextNode.html#Altseed2_TextNode_AbsoluteTransform">AbsoluteTransform</a></h5>
-      <section><p>先祖の変形および<a class="xref" href="Altseed2.TransformNode.html#Altseed2_TransformNode_CenterPosition">CenterPosition</a>を加味した最終的な変形行列を取得します。</p>
-</section>
       <h5><a class="xref" href="Altseed2.TextNode.html#Altseed2_TextNode_AlphaBlend">AlphaBlend</a></h5>
       <section><p>ブレンドモードを取得または設定します。</p>
 </section>
@@ -662,22 +675,25 @@ Nullを指定するとフォント標準の行間を使用します。</p>
   </div>
   
   
+  <h5 class="exceptions">&#20363;&#22806;</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>&#22411;</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Graphics機能が初期化されていない。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   </section>
   <h3 id="properties">&#12503;&#12525;&#12497;&#12486;&#12451;
   </h3>
-  <a id="Altseed2_TextNode_AbsoluteTransform_" data-uid="Altseed2.TextNode.AbsoluteTransform*"></a>
-  <h4 id="Altseed2_TextNode_AbsoluteTransform" data-uid="Altseed2.TextNode.AbsoluteTransform">AbsoluteTransform</h4>
-  <section>
-  <div class="markdown level1 summary"><p>先祖の変形および<a class="xref" href="Altseed2.TransformNode.html#Altseed2_TransformNode_CenterPosition">CenterPosition</a>を加味した最終的な変形行列を取得します。</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override Matrix44F AbsoluteTransform { get; }</code></pre>
-  </div>
-  
-  
-  </section>
   <a id="Altseed2_TextNode_AlphaBlend_" data-uid="Altseed2.TextNode.AlphaBlend*"></a>
   <h4 id="Altseed2_TextNode_AlphaBlend" data-uid="Altseed2.TextNode.AlphaBlend">AlphaBlend</h4>
   <section>
@@ -901,6 +917,13 @@ Nullを指定するとフォント標準の行間を使用します。</p>
   
   </section>
   <!--
+  <h3 id="implements">Implements</h3>
+  <div>
+      <xref uid="Altseed2.ICullableDrawn" altProperty="fullName" displayProperty="nameWithType"/>
+  </div>
+  <div>
+      <xref uid="Altseed2.IDrawn" altProperty="fullName" displayProperty="nameWithType"/>
+  </div>
   -->
 </article>
           </div>
