@@ -163,7 +163,7 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="カメラ">カメラ</h1>
 
-<p><a class="xref" href="../../References/Altseed2.CameraNode.html">CameraNode</a>は指定の領域の描画結果を写し撮るノードです。既定では写し撮った領域は画面に描画されます。<a class="xref" href="../../References/Altseed2.CameraNode.html">CameraNode</a>が撮影する領域は<a class="xref" href="../../References/Altseed2.CameraNode.html#Altseed2_CameraNode_Angle">Angle</a>、<a class="xref" href="../../References/Altseed2.CameraNode.html#Altseed2_CameraNode_CenterPosition">CenterPosition</a>、<a class="xref" href="../../References/Altseed2.CameraNode.html#Altseed2_CameraNode_Position">Position</a>、<a class="xref" href="../../References/Altseed2.CameraNode.html#Altseed2_CameraNode_Scale">Scale</a> プロパティを用いることで設定できます。</p>
+<p><a class="xref" href="../../References/Altseed2.CameraNode.html">CameraNode</a>は指定の領域の描画結果を写し撮るノードです。既定では写し撮った領域は画面に描画されます。<a class="xref" href="../../References/Altseed2.CameraNode.html">CameraNode</a>が撮影する領域は<a href="xref:Altseed2.CameraNode.Angle">Angle</a>、<a href="xref:Altseed2.CameraNode.CenterPosition">CenterPosition</a>、<a href="xref:Altseed2.CameraNode.Position">Position</a>、<a href="xref:Altseed2.CameraNode.Scale">Scale</a> プロパティを用いることで設定できます。</p>
 <div class="NOTE">
 <h5>Note</h5>
 <p>既定では、<a class="xref" href="../../References/Altseed2.CameraNode.html">CameraNode</a>が撮影する領域は、点 (0, 0) を左上とする、<a class="xref" href="../../References/Altseed2.Engine.html#Altseed2_Engine_WindowSize">ウインドウサイズ</a>と同じ大きさ（<a class="xref" href="../../References/Altseed2.CameraNode.html#Altseed2_CameraNode_TargetTexture">TargetTexture</a>を設定した場合はその<a class="xref" href="../../References/Altseed2.TextureBase.html#Altseed2_TextureBase_Size">大きさ</a>）の長方形の領域です。上記の各種プロパティを設定することで、この長方形を変形することで撮影する領域を調整すると考えるとよいです。</p>
@@ -203,7 +203,7 @@ namespace Sample
         [STAThread]
         static void Main(string[] args)
         {
-            const int cameraGroup = 1;
+            const ulong cameraGroup = 0b1;
 
             // Altseed2 を初期化します。
             if (!Engine.Initialize(&quot;Camera&quot;, 640, 480)) return;
@@ -213,7 +213,7 @@ namespace Sample
             var sprite = new SpriteNode();
             // テクスチャを設定します。
             sprite.Texture = Texture2D.Load(@&quot;TestData/IO/AltseedPink256.png&quot;);
-            sprite.CameraGroup = 1u &lt;&lt; cameraGroup;
+            sprite.CameraGroup = cameraGroup;
             Engine.AddNode(sprite);
 
             // sprite の座標を設定します。
@@ -256,8 +256,8 @@ namespace Sample
         [STAThread]
         static void Main(string[] args)
         {
-            const int cameraGroup = 1;
-            const int cameraGroup2 = 2;
+            const ulong cameraGroup = 0b1;
+            const ulong cameraGroup2 = 0b10;
 
             // Altseed2 を初期化します。
             if (!Engine.Initialize(&quot;RenderTexture&quot;, 640, 480)) return;
@@ -266,7 +266,7 @@ namespace Sample
             // 詳しくは SpriteNode のサンプルを参照してください。
             var sprite = new SpriteNode();
             sprite.Texture = Texture2D.Load(@&quot;TestData/IO/AltseedPink256.png&quot;);
-            sprite.CameraGroup = 1u &lt;&lt; cameraGroup;
+            sprite.CameraGroup = cameraGroup;
             sprite.Scale = new Vector2F(200, 200) / sprite.Texture.Size;
             Engine.AddNode(sprite);
 
@@ -292,7 +292,7 @@ namespace Sample
             // renderTexture をスクリーンに描画するための SpriteNode を作成します。
             var sprite2 = new SpriteNode();
             sprite2.Texture = renderTexture;
-            sprite2.CameraGroup = 1u &lt;&lt; cameraGroup2;
+            sprite2.CameraGroup = cameraGroup2;
             Engine.AddNode(sprite2);
 
             // sprite2 を写してスクリーンに出力するカメラを作成します。

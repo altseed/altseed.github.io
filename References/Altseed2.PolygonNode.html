@@ -188,6 +188,9 @@
                             <a href="Altseed2.EasingType.html" title="EasingType" class="">EasingType</a>
                           </li>
                           <li class="">
+                            <a href="Altseed2.EdgeCollider.html" title="EdgeCollider" class="">EdgeCollider</a>
+                          </li>
+                          <li class="">
                             <a href="Altseed2.Engine.html" title="Engine" class="">Engine</a>
                           </li>
                           <li class="">
@@ -345,6 +348,9 @@
                           </li>
                           <li class="">
                             <a href="Altseed2.ShaderStage.html" title="ShaderStage" class="">ShaderStage</a>
+                          </li>
+                          <li class="">
+                            <a href="Altseed2.ShapeCollider.html" title="ShapeCollider" class="">ShapeCollider</a>
                           </li>
                           <li class="">
                             <a href="Altseed2.ShapeNode.html" title="ShapeNode" class="">ShapeNode</a>
@@ -586,6 +592,21 @@
 
     </div>
     <div>
+      <h5><a class="xref" href="Altseed2.Node.html#Altseed2_Node_IsUpdated">Node.IsUpdated</a></h5>
+      <p>この<a class="xref" href="Altseed2.Node.html">Node</a>が更新されるかどうかを取得または設定します。</p>
+
+    </div>
+    <div>
+      <h5><a class="xref" href="Altseed2.Node.html#Altseed2_Node_IsUpdatedActually">Node.IsUpdatedActually</a></h5>
+      <p>先祖の<a class="xref" href="Altseed2.Node.html#Altseed2_Node_IsUpdated">IsUpdated</a>を考慮して、このノードが更新されるかどうかを取得します。</p>
+
+    </div>
+    <div>
+      <h5><a class="xref" href="Altseed2.Node.html#Altseed2_Node_PropagateIsUpdatedActually_Altseed2_Node_System_Boolean_">Node.PropagateIsUpdatedActually(Node, Boolean)</a></h5>
+      <p>子孫ノード<a class="xref" href="Altseed2.Node.html">Node</a>に対して<a class="xref" href="Altseed2.Node.html#Altseed2_Node_IsUpdatedActually">IsUpdatedActually</a>を伝播させます。</p>
+
+    </div>
+    <div>
       <h5><a class="xref" href="Altseed2.Node.html#Altseed2_Node_EnumerateAncestors">Node.EnumerateAncestors()</a></h5>
       <p>先祖ノードを列挙します。</p>
 
@@ -611,6 +632,9 @@
   </h4>
       <h5><a class="xref" href="Altseed2.PolygonNode.html#Altseed2_PolygonNode_AlphaBlend">AlphaBlend</a></h5>
       <section><p>ブレンドモードを取得または設定します。</p>
+</section>
+      <h5><a class="xref" href="Altseed2.PolygonNode.html#Altseed2_PolygonNode_Buffers">Buffers</a></h5>
+      <section><p>インデックスバッファを取得または設定します。</p>
 </section>
       <h5><a class="xref" href="Altseed2.PolygonNode.html#Altseed2_PolygonNode_CameraGroup">CameraGroup</a></h5>
       <section><p>カメラグループを取得または設定します。</p>
@@ -647,17 +671,32 @@
       <h5><a class="xref" href="Altseed2.PolygonNode.html#Altseed2_PolygonNode_OverwriteVertexColor_Altseed2_Color_">OverwriteVertexColor(Color)</a></h5>
       <section><p>各頂点に指定した色を設定します。</p>
 </section>
-      <h5><a class="xref" href="Altseed2.PolygonNode.html#Altseed2_PolygonNode_SetVertexes_System_Collections_Generic_IEnumerable_Altseed2_Vector2F__Altseed2_Color_">SetVertexes(IEnumerable&lt;Vector2F&gt;, Color)</a></h5>
+      <h5><a class="xref" href="Altseed2.PolygonNode.html#Altseed2_PolygonNode_SetBuffers_System_Collections_Generic_IEnumerable_System_Int32__">SetBuffers(IEnumerable&lt;Int32&gt;)</a></h5>
+      <section><p>インデックスバッファーを設定します。</p>
+</section>
+      <h5><a class="xref" href="Altseed2.PolygonNode.html#Altseed2_PolygonNode_SetBuffers_System_ReadOnlySpan_System_Int32__">SetBuffers(ReadOnlySpan&lt;Int32&gt;)</a></h5>
+      <section><p>インデックスバッファーを設定します。</p>
+</section>
+      <h5><a class="xref" href="Altseed2.PolygonNode.html#Altseed2_PolygonNode_SetDefaultIndexBuffer">SetDefaultIndexBuffer()</a></h5>
+      <section><p><a class="xref" href="Altseed2.PolygonNode.html">PolygonNode</a>と同様の方法でインデックスバッファの設定を行います。</p>
+</section>
+      <h5><a class="xref" href="Altseed2.PolygonNode.html#Altseed2_PolygonNode_SetVertexes_System_Collections_Generic_IEnumerable_Altseed2_Vector2F__Altseed2_Color_System_Boolean_">SetVertexes(IEnumerable&lt;Vector2F&gt;, Color, Boolean)</a></h5>
       <section><p>座標をもとに頂点情報を設定します。</p>
 </section>
-      <h5><a class="xref" href="Altseed2.PolygonNode.html#Altseed2_PolygonNode_SetVertexes_System_Collections_Generic_IEnumerable_Altseed2_Vertex__">SetVertexes(IEnumerable&lt;Vertex&gt;)</a></h5>
+      <h5><a class="xref" href="Altseed2.PolygonNode.html#Altseed2_PolygonNode_SetVertexes_System_Collections_Generic_IEnumerable_Altseed2_Vertex__System_Boolean_">SetVertexes(IEnumerable&lt;Vertex&gt;, Boolean)</a></h5>
       <section><p>座標をもとに頂点情報を設定します。</p>
 </section>
-      <h5><a class="xref" href="Altseed2.PolygonNode.html#Altseed2_PolygonNode_SetVertexes_System_ReadOnlySpan_Altseed2_Vector2F__Altseed2_Color_">SetVertexes(ReadOnlySpan&lt;Vector2F&gt;, Color)</a></h5>
+      <h5><a class="xref" href="Altseed2.PolygonNode.html#Altseed2_PolygonNode_SetVertexes_System_ReadOnlySpan_Altseed2_Vector2F__Altseed2_Color_System_Boolean_">SetVertexes(ReadOnlySpan&lt;Vector2F&gt;, Color, Boolean)</a></h5>
       <section><p>座標をもとに頂点情報を設定します。</p>
 </section>
-      <h5><a class="xref" href="Altseed2.PolygonNode.html#Altseed2_PolygonNode_SetVertexes_System_ReadOnlySpan_Altseed2_Vertex__">SetVertexes(ReadOnlySpan&lt;Vertex&gt;)</a></h5>
+      <h5><a class="xref" href="Altseed2.PolygonNode.html#Altseed2_PolygonNode_SetVertexes_System_ReadOnlySpan_Altseed2_Vertex__System_Boolean_">SetVertexes(ReadOnlySpan&lt;Vertex&gt;, Boolean)</a></h5>
       <section><p>座標をもとに頂点情報を設定します。</p>
+</section>
+      <h5><a class="xref" href="Altseed2.PolygonNode.html#Altseed2_PolygonNode_SetVertexGroups_System_Collections_Generic_IEnumerable_System_Collections_Generic_IEnumerable_Altseed2_Vertex___">SetVertexGroups(IEnumerable&lt;IEnumerable&lt;Vertex&gt;&gt;)</a></h5>
+      <section><p>設定した頂点のグループを設定し，そのグループごとに<a class="xref" href="Altseed2.PolygonNode.html">PolygonNode</a>と同様の方式でインデックスバッファーを設定します。</p>
+</section>
+      <h5><a class="xref" href="Altseed2.PolygonNode.html#Altseed2_PolygonNode_SetVertexGroupsFromPositions_System_Collections_Generic_IEnumerable_System_Collections_Generic_IEnumerable_Altseed2_Vector2F___Altseed2_Color_">SetVertexGroupsFromPositions(IEnumerable&lt;IEnumerable&lt;Vector2F&gt;&gt;, Color)</a></h5>
+      <section><p>設定した座標をもとに頂点のグループを設定し，そのグループごとに<a class="xref" href="Altseed2.PolygonNode.html">PolygonNode</a>と同様の方式でインデックスバッファーを設定します。</p>
 </section>
   
   <h3 id="constructors">&#12467;&#12531;&#12473;&#12488;&#12521;&#12463;&#12479;
@@ -705,6 +744,38 @@
   </div>
   
   
+  </section>
+  <a id="Altseed2_PolygonNode_Buffers_" data-uid="Altseed2.PolygonNode.Buffers*"></a>
+  <h4 id="Altseed2_PolygonNode_Buffers" data-uid="Altseed2.PolygonNode.Buffers">Buffers</h4>
+  <section>
+  <div class="markdown level1 summary"><p>インデックスバッファを取得または設定します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;int&gt; Buffers { get; set; }</code></pre>
+  </div>
+  
+  
+  <h5 id="Altseed2_PolygonNode_Buffers_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>大きさは3の倍数である必要があります。余った要素は無視されます。</p>
+</div>
+  <h5 class="exceptions">&#20363;&#22806;</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>&#22411;</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>設定しようとした値がnull</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   </section>
   <a id="Altseed2_PolygonNode_CameraGroup_" data-uid="Altseed2.PolygonNode.CameraGroup*"></a>
   <h4 id="Altseed2_PolygonNode_CameraGroup" data-uid="Altseed2.PolygonNode.CameraGroup">CameraGroup</h4>
@@ -864,15 +935,102 @@
   
   
   </section>
+  <a id="Altseed2_PolygonNode_SetBuffers_" data-uid="Altseed2.PolygonNode.SetBuffers*"></a>
+  <h4 id="Altseed2_PolygonNode_SetBuffers_System_Collections_Generic_IEnumerable_System_Int32__" data-uid="Altseed2.PolygonNode.SetBuffers(System.Collections.Generic.IEnumerable{System.Int32})">SetBuffers(IEnumerable&lt;Int32&gt;)</h4>
+  <section>
+  <div class="markdown level1 summary"><p>インデックスバッファーを設定します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetBuffers(IEnumerable&lt;int&gt; buffers)</code></pre>
+  </div>
+  <h5 class="parameters">&#12497;&#12521;&#12513;&#12540;&#12479;</h5>
+  <section>
+  <table class="table member-table">
+    <tbody>
+      <tr>
+        <td><span class="parametername">buffers</span></td>
+        <td><p>設定するインデックスバッファー</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  </section>
+  
+  
+  
+  <h5 id="Altseed2_PolygonNode_SetBuffers_System_Collections_Generic_IEnumerable_System_Int32___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>大きさは3の倍数である必要があります。余った要素は無視されます。</p>
+</div>
+  <h5 class="exceptions">&#20363;&#22806;</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>&#22411;</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">buffers</code>がnull</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  </section>
+  <a id="Altseed2_PolygonNode_SetBuffers_" data-uid="Altseed2.PolygonNode.SetBuffers*"></a>
+  <h4 id="Altseed2_PolygonNode_SetBuffers_System_ReadOnlySpan_System_Int32__" data-uid="Altseed2.PolygonNode.SetBuffers(System.ReadOnlySpan{System.Int32})">SetBuffers(ReadOnlySpan&lt;Int32&gt;)</h4>
+  <section>
+  <div class="markdown level1 summary"><p>インデックスバッファーを設定します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetBuffers(ReadOnlySpan&lt;int&gt; buffers)</code></pre>
+  </div>
+  <h5 class="parameters">&#12497;&#12521;&#12513;&#12540;&#12479;</h5>
+  <section>
+  <table class="table member-table">
+    <tbody>
+      <tr>
+        <td><span class="parametername">buffers</span></td>
+        <td><p>設定するインデックスバッファー</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  </section>
+  
+  
+  
+  <h5 id="Altseed2_PolygonNode_SetBuffers_System_ReadOnlySpan_System_Int32___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>大きさは3の倍数である必要があります。余った要素は無視されます。</p>
+</div>
+  </section>
+  <a id="Altseed2_PolygonNode_SetDefaultIndexBuffer_" data-uid="Altseed2.PolygonNode.SetDefaultIndexBuffer*"></a>
+  <h4 id="Altseed2_PolygonNode_SetDefaultIndexBuffer" data-uid="Altseed2.PolygonNode.SetDefaultIndexBuffer">SetDefaultIndexBuffer()</h4>
+  <section>
+  <div class="markdown level1 summary"><p><a class="xref" href="Altseed2.PolygonNode.html">PolygonNode</a>と同様の方法でインデックスバッファの設定を行います。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetDefaultIndexBuffer()</code></pre>
+  </div>
+  
+  
+  </section>
   <a id="Altseed2_PolygonNode_SetVertexes_" data-uid="Altseed2.PolygonNode.SetVertexes*"></a>
-  <h4 id="Altseed2_PolygonNode_SetVertexes_System_Collections_Generic_IEnumerable_Altseed2_Vector2F__Altseed2_Color_" data-uid="Altseed2.PolygonNode.SetVertexes(System.Collections.Generic.IEnumerable{Altseed2.Vector2F},Altseed2.Color)">SetVertexes(IEnumerable&lt;Vector2F&gt;, Color)</h4>
+  <h4 id="Altseed2_PolygonNode_SetVertexes_System_Collections_Generic_IEnumerable_Altseed2_Vector2F__Altseed2_Color_System_Boolean_" data-uid="Altseed2.PolygonNode.SetVertexes(System.Collections.Generic.IEnumerable{Altseed2.Vector2F},Altseed2.Color,System.Boolean)">SetVertexes(IEnumerable&lt;Vector2F&gt;, Color, Boolean)</h4>
   <section>
   <div class="markdown level1 summary"><p>座標をもとに頂点情報を設定します。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void SetVertexes(IEnumerable&lt;Vector2F&gt; vertexes, Color color)</code></pre>
+    <pre><code class="lang-csharp hljs">public void SetVertexes(IEnumerable&lt;Vector2F&gt; vertexes, Color color, bool resetIB = true)</code></pre>
   </div>
   <h5 class="parameters">&#12497;&#12521;&#12513;&#12540;&#12479;</h5>
   <section>
@@ -886,6 +1044,11 @@
       <tr>
         <td><span class="parametername">color</span></td>
         <td><p>各頂点に設定する色</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">resetIB</span></td>
+        <td><p><a class="xref" href="Altseed2.PolygonNode.html#Altseed2_PolygonNode_Buffers">Buffers</a>を自動計算したものに設定するかどうか</p>
 </td>
       </tr>
     </tbody>
@@ -912,14 +1075,14 @@
   </table>
   </section>
   <a id="Altseed2_PolygonNode_SetVertexes_" data-uid="Altseed2.PolygonNode.SetVertexes*"></a>
-  <h4 id="Altseed2_PolygonNode_SetVertexes_System_Collections_Generic_IEnumerable_Altseed2_Vertex__" data-uid="Altseed2.PolygonNode.SetVertexes(System.Collections.Generic.IEnumerable{Altseed2.Vertex})">SetVertexes(IEnumerable&lt;Vertex&gt;)</h4>
+  <h4 id="Altseed2_PolygonNode_SetVertexes_System_Collections_Generic_IEnumerable_Altseed2_Vertex__System_Boolean_" data-uid="Altseed2.PolygonNode.SetVertexes(System.Collections.Generic.IEnumerable{Altseed2.Vertex},System.Boolean)">SetVertexes(IEnumerable&lt;Vertex&gt;, Boolean)</h4>
   <section>
   <div class="markdown level1 summary"><p>座標をもとに頂点情報を設定します。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void SetVertexes(IEnumerable&lt;Vertex&gt; vertexes)</code></pre>
+    <pre><code class="lang-csharp hljs">public void SetVertexes(IEnumerable&lt;Vertex&gt; vertexes, bool resetIB = true)</code></pre>
   </div>
   <h5 class="parameters">&#12497;&#12521;&#12513;&#12540;&#12479;</h5>
   <section>
@@ -930,13 +1093,18 @@
         <td><p>設定する各頂点の座標を格納する<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable&lt;T&gt;</a></p>
 </td>
       </tr>
+      <tr>
+        <td><span class="parametername">resetIB</span></td>
+        <td><p><a class="xref" href="Altseed2.PolygonNode.html#Altseed2_PolygonNode_Buffers">Buffers</a>を自動計算したものに設定するかどうか</p>
+</td>
+      </tr>
     </tbody>
   </table>
   </section>
   
   
   
-  <h5 id="Altseed2_PolygonNode_SetVertexes_System_Collections_Generic_IEnumerable_Altseed2_Vertex___remarks">Remarks</h5>
+  <h5 id="Altseed2_PolygonNode_SetVertexes_System_Collections_Generic_IEnumerable_Altseed2_Vertex__System_Boolean__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>色は白(255, 255, 255)に設定されます。</p>
 </div>
   <h5 class="exceptions">&#20363;&#22806;</h5>
@@ -957,14 +1125,14 @@
   </table>
   </section>
   <a id="Altseed2_PolygonNode_SetVertexes_" data-uid="Altseed2.PolygonNode.SetVertexes*"></a>
-  <h4 id="Altseed2_PolygonNode_SetVertexes_System_ReadOnlySpan_Altseed2_Vector2F__Altseed2_Color_" data-uid="Altseed2.PolygonNode.SetVertexes(System.ReadOnlySpan{Altseed2.Vector2F},Altseed2.Color)">SetVertexes(ReadOnlySpan&lt;Vector2F&gt;, Color)</h4>
+  <h4 id="Altseed2_PolygonNode_SetVertexes_System_ReadOnlySpan_Altseed2_Vector2F__Altseed2_Color_System_Boolean_" data-uid="Altseed2.PolygonNode.SetVertexes(System.ReadOnlySpan{Altseed2.Vector2F},Altseed2.Color,System.Boolean)">SetVertexes(ReadOnlySpan&lt;Vector2F&gt;, Color, Boolean)</h4>
   <section>
   <div class="markdown level1 summary"><p>座標をもとに頂点情報を設定します。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void SetVertexes(ReadOnlySpan&lt;Vector2F&gt; vertexes, Color color)</code></pre>
+    <pre><code class="lang-csharp hljs">public void SetVertexes(ReadOnlySpan&lt;Vector2F&gt; vertexes, Color color, bool resetIB = true)</code></pre>
   </div>
   <h5 class="parameters">&#12497;&#12521;&#12513;&#12540;&#12479;</h5>
   <section>
@@ -980,6 +1148,11 @@
         <td><p>各頂点に設定する色</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="parametername">resetIB</span></td>
+        <td><p><a class="xref" href="Altseed2.PolygonNode.html#Altseed2_PolygonNode_Buffers">Buffers</a>を自動計算したものに設定するかどうか</p>
+</td>
+      </tr>
     </tbody>
   </table>
   </section>
@@ -988,14 +1161,14 @@
   
   </section>
   <a id="Altseed2_PolygonNode_SetVertexes_" data-uid="Altseed2.PolygonNode.SetVertexes*"></a>
-  <h4 id="Altseed2_PolygonNode_SetVertexes_System_ReadOnlySpan_Altseed2_Vertex__" data-uid="Altseed2.PolygonNode.SetVertexes(System.ReadOnlySpan{Altseed2.Vertex})">SetVertexes(ReadOnlySpan&lt;Vertex&gt;)</h4>
+  <h4 id="Altseed2_PolygonNode_SetVertexes_System_ReadOnlySpan_Altseed2_Vertex__System_Boolean_" data-uid="Altseed2.PolygonNode.SetVertexes(System.ReadOnlySpan{Altseed2.Vertex},System.Boolean)">SetVertexes(ReadOnlySpan&lt;Vertex&gt;, Boolean)</h4>
   <section>
   <div class="markdown level1 summary"><p>座標をもとに頂点情報を設定します。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void SetVertexes(ReadOnlySpan&lt;Vertex&gt; vertexes)</code></pre>
+    <pre><code class="lang-csharp hljs">public void SetVertexes(ReadOnlySpan&lt;Vertex&gt; vertexes, bool resetIB = true)</code></pre>
   </div>
   <h5 class="parameters">&#12497;&#12521;&#12513;&#12540;&#12479;</h5>
   <section>
@@ -1006,15 +1179,109 @@
         <td><p>設定する各頂点の座標を格納する<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span&lt;T&gt;</a></p>
 </td>
       </tr>
+      <tr>
+        <td><span class="parametername">resetIB</span></td>
+        <td><p><a class="xref" href="Altseed2.PolygonNode.html#Altseed2_PolygonNode_Buffers">Buffers</a>を自動計算したものに設定するかどうか</p>
+</td>
+      </tr>
     </tbody>
   </table>
   </section>
   
   
   
-  <h5 id="Altseed2_PolygonNode_SetVertexes_System_ReadOnlySpan_Altseed2_Vertex___remarks">Remarks</h5>
+  <h5 id="Altseed2_PolygonNode_SetVertexes_System_ReadOnlySpan_Altseed2_Vertex__System_Boolean__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>色は白(255, 255, 255)に設定されます。</p>
 </div>
+  </section>
+  <a id="Altseed2_PolygonNode_SetVertexGroups_" data-uid="Altseed2.PolygonNode.SetVertexGroups*"></a>
+  <h4 id="Altseed2_PolygonNode_SetVertexGroups_System_Collections_Generic_IEnumerable_System_Collections_Generic_IEnumerable_Altseed2_Vertex___" data-uid="Altseed2.PolygonNode.SetVertexGroups(System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{Altseed2.Vertex}})">SetVertexGroups(IEnumerable&lt;IEnumerable&lt;Vertex&gt;&gt;)</h4>
+  <section>
+  <div class="markdown level1 summary"><p>設定した頂点のグループを設定し，そのグループごとに<a class="xref" href="Altseed2.PolygonNode.html">PolygonNode</a>と同様の方式でインデックスバッファーを設定します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetVertexGroups(IEnumerable&lt;IEnumerable&lt;Vertex&gt;&gt; vertexes)</code></pre>
+  </div>
+  <h5 class="parameters">&#12497;&#12521;&#12513;&#12540;&#12479;</h5>
+  <section>
+  <table class="table member-table">
+    <tbody>
+      <tr>
+        <td><span class="parametername">vertexes</span></td>
+        <td><p>設定する頂点のグループ</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  </section>
+  
+  
+  
+  <h5 class="exceptions">&#20363;&#22806;</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>&#22411;</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">vertexes</code>または<code data-dev-comment-type="paramref" class="paramref">vertexes</code>内の要素がnull</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  </section>
+  <a id="Altseed2_PolygonNode_SetVertexGroupsFromPositions_" data-uid="Altseed2.PolygonNode.SetVertexGroupsFromPositions*"></a>
+  <h4 id="Altseed2_PolygonNode_SetVertexGroupsFromPositions_System_Collections_Generic_IEnumerable_System_Collections_Generic_IEnumerable_Altseed2_Vector2F___Altseed2_Color_" data-uid="Altseed2.PolygonNode.SetVertexGroupsFromPositions(System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{Altseed2.Vector2F}},Altseed2.Color)">SetVertexGroupsFromPositions(IEnumerable&lt;IEnumerable&lt;Vector2F&gt;&gt;, Color)</h4>
+  <section>
+  <div class="markdown level1 summary"><p>設定した座標をもとに頂点のグループを設定し，そのグループごとに<a class="xref" href="Altseed2.PolygonNode.html">PolygonNode</a>と同様の方式でインデックスバッファーを設定します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetVertexGroupsFromPositions(IEnumerable&lt;IEnumerable&lt;Vector2F&gt;&gt; vertexes, Color color)</code></pre>
+  </div>
+  <h5 class="parameters">&#12497;&#12521;&#12513;&#12540;&#12479;</h5>
+  <section>
+  <table class="table member-table">
+    <tbody>
+      <tr>
+        <td><span class="parametername">vertexes</span></td>
+        <td><p>設定する頂点のグループ</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">color</span></td>
+        <td><p>設定する色</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  </section>
+  
+  
+  
+  <h5 class="exceptions">&#20363;&#22806;</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>&#22411;</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">vertexes</code>または<code data-dev-comment-type="paramref" class="paramref">vertexes</code>内の要素がnull</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   </section>
   <!--
   <h3 id="implements">Implements</h3>

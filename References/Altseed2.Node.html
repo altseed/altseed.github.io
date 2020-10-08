@@ -188,6 +188,9 @@
                             <a href="Altseed2.EasingType.html" title="EasingType" class="">EasingType</a>
                           </li>
                           <li class="">
+                            <a href="Altseed2.EdgeCollider.html" title="EdgeCollider" class="">EdgeCollider</a>
+                          </li>
+                          <li class="">
                             <a href="Altseed2.Engine.html" title="Engine" class="">Engine</a>
                           </li>
                           <li class="">
@@ -347,6 +350,9 @@
                             <a href="Altseed2.ShaderStage.html" title="ShaderStage" class="">ShaderStage</a>
                           </li>
                           <li class="">
+                            <a href="Altseed2.ShapeCollider.html" title="ShapeCollider" class="">ShapeCollider</a>
+                          </li>
+                          <li class="">
                             <a href="Altseed2.ShapeNode.html" title="ShapeNode" class="">ShapeNode</a>
                           </li>
                           <li class="">
@@ -491,7 +497,6 @@
     <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><span class="xref">Altseed2.Registerable</span>&lt;<a class="xref" href="Altseed2.Node.html">Node</a>&gt;</div>
     <div class="level2"><span class="xref">Node</span></div>
-      <div class="level3"><a class="xref" href="Altseed2.CameraNode.html">CameraNode</a></div>
       <div class="level3"><a class="xref" href="Altseed2.CollisionManagerNode.html">CollisionManagerNode</a></div>
       <div class="level3"><a class="xref" href="Altseed2.PostEffectNode.html">PostEffectNode</a></div>
       <div class="level3"><a class="xref" href="Altseed2.TransformerNode.html">TransformerNode</a></div>
@@ -516,6 +521,12 @@
 </section>
       <h5><a class="xref" href="Altseed2.Node.html#Altseed2_Node_IsRegistered">IsRegistered</a></h5>
       <section><p>エンジンに登録され、ノードツリーを辿って<span class="xref">Altseed2.RootNode</span> にたどり着けるかどうかを取得します。</p>
+</section>
+      <h5><a class="xref" href="Altseed2.Node.html#Altseed2_Node_IsUpdated">IsUpdated</a></h5>
+      <section><p>この<a class="xref" href="Altseed2.Node.html">Node</a>が更新されるかどうかを取得または設定します。</p>
+</section>
+      <h5><a class="xref" href="Altseed2.Node.html#Altseed2_Node_IsUpdatedActually">IsUpdatedActually</a></h5>
+      <section><p>先祖の<a class="xref" href="Altseed2.Node.html#Altseed2_Node_IsUpdated">IsUpdated</a>を考慮して、このノードが更新されるかどうかを取得します。</p>
 </section>
       <h5><a class="xref" href="Altseed2.Node.html#Altseed2_Node_Parent">Parent</a></h5>
       <section><p>親ノードを取得または設定します。</p>
@@ -548,6 +559,9 @@
 </section>
       <h5><a class="xref" href="Altseed2.Node.html#Altseed2_Node_OnUpdate">OnUpdate()</a></h5>
       <section><p>自身が更新された時に実行します。</p>
+</section>
+      <h5><a class="xref" href="Altseed2.Node.html#Altseed2_Node_PropagateIsUpdatedActually_Altseed2_Node_System_Boolean_">PropagateIsUpdatedActually(Node, Boolean)</a></h5>
+      <section><p>子孫ノード<a class="xref" href="Altseed2.Node.html">Node</a>に対して<a class="xref" href="Altseed2.Node.html#Altseed2_Node_IsUpdatedActually">IsUpdatedActually</a>を伝播させます。</p>
 </section>
       <h5><a class="xref" href="Altseed2.Node.html#Altseed2_Node_RemoveChildNode_Altseed2_Node_">RemoveChildNode(Node)</a></h5>
       <section><p>子要素を削除します。</p>
@@ -592,6 +606,32 @@
   <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool IsRegistered { get; }</code></pre>
+  </div>
+  
+  
+  </section>
+  <a id="Altseed2_Node_IsUpdated_" data-uid="Altseed2.Node.IsUpdated*"></a>
+  <h4 id="Altseed2_Node_IsUpdated" data-uid="Altseed2.Node.IsUpdated">IsUpdated</h4>
+  <section>
+  <div class="markdown level1 summary"><p>この<a class="xref" href="Altseed2.Node.html">Node</a>が更新されるかどうかを取得または設定します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsUpdated { get; set; }</code></pre>
+  </div>
+  
+  
+  </section>
+  <a id="Altseed2_Node_IsUpdatedActually_" data-uid="Altseed2.Node.IsUpdatedActually*"></a>
+  <h4 id="Altseed2_Node_IsUpdatedActually" data-uid="Altseed2.Node.IsUpdatedActually">IsUpdatedActually</h4>
+  <section>
+  <div class="markdown level1 summary"><p>先祖の<a class="xref" href="Altseed2.Node.html#Altseed2_Node_IsUpdated">IsUpdated</a>を考慮して、このノードが更新されるかどうかを取得します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsUpdatedActually { get; }</code></pre>
   </div>
   
   
@@ -783,6 +823,37 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected virtual void OnUpdate()</code></pre>
   </div>
+  
+  
+  </section>
+  <a id="Altseed2_Node_PropagateIsUpdatedActually_" data-uid="Altseed2.Node.PropagateIsUpdatedActually*"></a>
+  <h4 id="Altseed2_Node_PropagateIsUpdatedActually_Altseed2_Node_System_Boolean_" data-uid="Altseed2.Node.PropagateIsUpdatedActually(Altseed2.Node,System.Boolean)">PropagateIsUpdatedActually(Node, Boolean)</h4>
+  <section>
+  <div class="markdown level1 summary"><p>子孫ノード<a class="xref" href="Altseed2.Node.html">Node</a>に対して<a class="xref" href="Altseed2.Node.html#Altseed2_Node_IsUpdatedActually">IsUpdatedActually</a>を伝播させます。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void PropagateIsUpdatedActually(Node node, bool isUpdatedActually)</code></pre>
+  </div>
+  <h5 class="parameters">&#12497;&#12521;&#12513;&#12540;&#12479;</h5>
+  <section>
+  <table class="table member-table">
+    <tbody>
+      <tr>
+        <td><span class="parametername">node</span></td>
+        <td><p><a class="xref" href="Altseed2.Node.html#Altseed2_Node_IsUpdatedActually">IsUpdatedActually</a>を変更する対象のノード</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">isUpdatedActually</span></td>
+        <td><p>親ノードの<a class="xref" href="Altseed2.Node.html#Altseed2_Node_IsUpdatedActually">IsUpdatedActually</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  </section>
+  
   
   
   </section>

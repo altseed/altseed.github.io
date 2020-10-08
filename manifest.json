@@ -5879,12 +5879,15 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "UidNotFound"
+      ],
       "type": "Conceptual",
       "source_relative_path": "Manual/Graphics/Camera.md",
       "output": {
         ".html": {
           "relative_path": "Manual/Graphics/Camera.html",
-          "hash": "S7FccywbV5gqr7Jhye8lGA=="
+          "hash": "sKHGPQqu5mvqsKZX0Z3r2Q=="
         }
       },
       "is_incremental": false,
@@ -6220,7 +6223,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.AlphaBlend.html",
-          "hash": "CXq2Qp29aOnRedtBJVQWng=="
+          "hash": "M3dgEjPDQ4PzVxh/o4erRw=="
         }
       },
       "is_incremental": false,
@@ -6232,7 +6235,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.AnchorMode.html",
-          "hash": "6spCin9mQEJ+ND11wEaurQ=="
+          "hash": "6kiaAG50TmCOJEIpPYUmIg=="
         }
       },
       "is_incremental": false,
@@ -6244,7 +6247,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.AnchorTransformerNode.html",
-          "hash": "oVws+/MalL3/peJqUSbt8Q=="
+          "hash": "5zEXailLFmu8lvswWrIMnQ=="
         }
       },
       "is_incremental": false,
@@ -6256,7 +6259,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.ArcNode.html",
-          "hash": "zDY8sYPSiJhTuXEPKo020Q=="
+          "hash": "iy1HRSyUBur9TkP3cWtG3A=="
         }
       },
       "is_incremental": false,
@@ -6268,7 +6271,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.BlendEquation.html",
-          "hash": "Ubmdrekx8ysmvbXTF8S4GQ=="
+          "hash": "4c47uDzwbuaMMSlSiI1rtg=="
         }
       },
       "is_incremental": false,
@@ -6280,7 +6283,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.BlendFunction.html",
-          "hash": "JAUPEEHjDdPX6R+Hqtotzg=="
+          "hash": "1QbTslnywLbIRmoq5NJMZQ=="
         }
       },
       "is_incremental": false,
@@ -6292,7 +6295,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.BuiltinShader.html",
-          "hash": "Jq2b19cB0UKmaaiObxGjmw=="
+          "hash": "RhTv/kEksc4W+sAczwstGg=="
         }
       },
       "is_incremental": false,
@@ -6304,7 +6307,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.BuiltinShaderType.html",
-          "hash": "OpG8yRwYfsQ51xtXVbdEsw=="
+          "hash": "GwD4eUHNYFB2QxkTXZ9XzQ=="
         }
       },
       "is_incremental": false,
@@ -6316,7 +6319,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.ButtonState.html",
-          "hash": "l+2DDB9mIY5dJCNrNw2leQ=="
+          "hash": "It1s4crClfZA1PlOMdwDWQ=="
         }
       },
       "is_incremental": false,
@@ -6328,7 +6331,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.CameraNode.html",
-          "hash": "suItkqrqA4efm9JzzlMpBA=="
+          "hash": "JHy3HPTdcv+VljcAr80cqA=="
         }
       },
       "is_incremental": false,
@@ -6340,7 +6343,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.CircleCollider.html",
-          "hash": "x2B7XaUZBDzCiPDx8h6HrQ=="
+          "hash": "76k5RS/0BiiSbrCQq1/aog=="
         }
       },
       "is_incremental": false,
@@ -6352,7 +6355,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.CircleColliderNode.ScaleCalcType.html",
-          "hash": "O3ADtJhGCd7dGwRNYaZoSw=="
+          "hash": "px4L5Hu5ANPQJjL2hbIzDw=="
         }
       },
       "is_incremental": false,
@@ -6364,7 +6367,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.CircleColliderNode.html",
-          "hash": "a/SfO0nGEfs8AmuOsOra0g=="
+          "hash": "WbaU96arYZYMKEp557+PbA=="
         }
       },
       "is_incremental": false,
@@ -6376,7 +6379,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.CircleColliderVisualizeNode.html",
-          "hash": "jOW++plU08VBfDoWt19+uw=="
+          "hash": "ONUXiNHGPTRxcZlxdnL2BQ=="
         }
       },
       "is_incremental": false,
@@ -6388,7 +6391,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.CircleNode.html",
-          "hash": "PUrkr/ni65ftKIfNQ3DOPg=="
+          "hash": "friI0U6bb0YUO82GILwo1g=="
         }
       },
       "is_incremental": false,
@@ -6400,7 +6403,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.Collider.html",
-          "hash": "tAZ7H6iinuK/u2Z6rjqgtA=="
+          "hash": "IZYOvCGJFN6bzBzmsax3Nw=="
         }
       },
       "is_incremental": false,
@@ -6412,7 +6415,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.ColliderNode.html",
-          "hash": "lyQdXVoz/Qxn5vQcTeq60Q=="
+          "hash": "LCvLNjBise34prVTP2uRLw=="
         }
       },
       "is_incremental": false,
@@ -6424,7 +6427,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.ColliderVisualizeNodeFactory.html",
-          "hash": "FpbgyZn9nN8iUFgQpPZy6Q=="
+          "hash": "4H+p/UvtZir+MGb9nNbv9A=="
         }
       },
       "is_incremental": false,
@@ -6436,7 +6439,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.CollisionInfo.html",
-          "hash": "Ksoyvd0r950N1riBgB+ndA=="
+          "hash": "2/LomMB8VnrO+Pe+z0mQDA=="
         }
       },
       "is_incremental": false,
@@ -6448,7 +6451,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.CollisionManagerNode.html",
-          "hash": "wLZi6Wj+TFmSexQNheJ6+w=="
+          "hash": "AZTtlRNsK2p1dlR1nUQxAg=="
         }
       },
       "is_incremental": false,
@@ -6460,7 +6463,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.CollisionType.html",
-          "hash": "9MC2Q0EPRooQFh7+o8OE/g=="
+          "hash": "ZxlAJftnon/GVGikxyXp6g=="
         }
       },
       "is_incremental": false,
@@ -6472,7 +6475,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.Color.html",
-          "hash": "60w1GVm1a0dq4wrptCVfuw=="
+          "hash": "7SJD9kUFnmxwjc1eAewkMA=="
         }
       },
       "is_incremental": false,
@@ -6484,7 +6487,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.CommandList.html",
-          "hash": "euKMg0wTyth+1C2pXFf0Gg=="
+          "hash": "5c4oVfZSkonLS+7SDdHdNA=="
         }
       },
       "is_incremental": false,
@@ -6496,7 +6499,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.Configuration.html",
-          "hash": "49XfVVOR5hRWutXTyBxtJA=="
+          "hash": "F26ueq0RcfCc7wa8Lb0ReA=="
         }
       },
       "is_incremental": false,
@@ -6508,7 +6511,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.Cursor.html",
-          "hash": "bPp71zrxLPFHfEFvMU/fvw=="
+          "hash": "SGfiSeeKM1wzGbaPigvdtw=="
         }
       },
       "is_incremental": false,
@@ -6520,7 +6523,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.CursorMode.html",
-          "hash": "Atc63x5itiIqxfTDf6UM1Q=="
+          "hash": "v72q1PnDd6GUMp9U5s/zYg=="
         }
       },
       "is_incremental": false,
@@ -6532,7 +6535,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.Easing.html",
-          "hash": "alFcd7xY2S88dL7/mHGMJw=="
+          "hash": "ddpnaEMeahLtTpKIhyxldg=="
         }
       },
       "is_incremental": false,
@@ -6544,7 +6547,19 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.EasingType.html",
-          "hash": "1abxtFnoAqC2Lb865wSfnw=="
+          "hash": "FbWgO+jUN0fMXje7KczHsQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.EdgeCollider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.EdgeCollider.html",
+          "hash": "8IymzU+RFCTN7bIhOYf5zw=="
         }
       },
       "is_incremental": false,
@@ -6556,7 +6571,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.Engine.html",
-          "hash": "ewndMcWL0b2bNs36NzgQLg=="
+          "hash": "NGo0JOH5oGh3OQLnltGGog=="
         }
       },
       "is_incremental": false,
@@ -6568,7 +6583,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.FFTWindow.html",
-          "hash": "C4y3r0z6XewXbZefa/CWIA=="
+          "hash": "ZRisTCfRICQRWqZZM638eQ=="
         }
       },
       "is_incremental": false,
@@ -6580,7 +6595,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.File.html",
-          "hash": "jo6znd/jULjRCMd80++ZZg=="
+          "hash": "e+tfs++fDE/fNJzj9q4UGA=="
         }
       },
       "is_incremental": false,
@@ -6592,7 +6607,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.Font.html",
-          "hash": "1LLrsw8jhT6qcEqYluNJ9w=="
+          "hash": "wmyyVF37k0gxft6YhQM3VQ=="
         }
       },
       "is_incremental": false,
@@ -6604,7 +6619,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.FramerateMode.html",
-          "hash": "XdK/HgY/5Ly3UyoLtLYP8A=="
+          "hash": "O/MiKSOk5lydIsB0qnnIPQ=="
         }
       },
       "is_incremental": false,
@@ -6616,7 +6631,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.Glyph.html",
-          "hash": "/5kDw4NwtYQxEEMp28KyVw=="
+          "hash": "O6dDAdJkO3VUPbrmbOlrnw=="
         }
       },
       "is_incremental": false,
@@ -6628,7 +6643,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.HorizontalAlignment.html",
-          "hash": "SNq0v63YnZHGXtVEFN8AJQ=="
+          "hash": "4lcozSWx5ridWywX1EXFRg=="
         }
       },
       "is_incremental": false,
@@ -6640,7 +6655,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.ICollisionEventReceiver.html",
-          "hash": "+uuVrybNYHPgZC4cDL+Qrg=="
+          "hash": "69EZxyhGqCT/mgKmZMl9HA=="
         }
       },
       "is_incremental": false,
@@ -6652,7 +6667,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.ICullableDrawn.html",
-          "hash": "qLx3BcCg4lbJX5D1hZ7K/g=="
+          "hash": "0decXh0KSAMmLZTBeEop8g=="
         }
       },
       "is_incremental": false,
@@ -6664,7 +6679,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.IDrawn.html",
-          "hash": "3fY5l/tGQ3GWSf7OruOYLQ=="
+          "hash": "A7mBihtK14WgGwmzQUNUHg=="
         }
       },
       "is_incremental": false,
@@ -6676,7 +6691,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.Joystick.html",
-          "hash": "n+tb5n/BMd4pNq1cxwP0wA=="
+          "hash": "CSeBjL5saE+KvvSkl/G8RQ=="
         }
       },
       "is_incremental": false,
@@ -6688,7 +6703,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.JoystickAxis.html",
-          "hash": "NU5A7kNwQ+t+bDcEHi8/7w=="
+          "hash": "T6yf1FwzsWGKagmUBn7PmA=="
         }
       },
       "is_incremental": false,
@@ -6700,7 +6715,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.JoystickButton.html",
-          "hash": "N06UnMy9ooHvB/h1+1TxZg=="
+          "hash": "ngqeW0T6Ifp6vBnv7MkKUw=="
         }
       },
       "is_incremental": false,
@@ -6712,7 +6727,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.JoystickInfo.html",
-          "hash": "WKA/UpV89u8cnWhVrkQAvA=="
+          "hash": "I8BM5VQaVY+zp9ZXhFJJ3Q=="
         }
       },
       "is_incremental": false,
@@ -6724,7 +6739,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.JoystickType.html",
-          "hash": "8uaXXEmpB7hSwQ0GO0QVyw=="
+          "hash": "srv2yJitYXkkvqeRMLhNQw=="
         }
       },
       "is_incremental": false,
@@ -6736,7 +6751,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.Key.html",
-          "hash": "lQ+9Bq2H0BmyvyCQ6386uQ=="
+          "hash": "MoDpRzIlSBsOjslBCZIUrw=="
         }
       },
       "is_incremental": false,
@@ -6748,7 +6763,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.Keyboard.html",
-          "hash": "b+q7qT3Lr/2zRBUUv6pSGA=="
+          "hash": "+qZa/wofafnbOwxI4RCFrg=="
         }
       },
       "is_incremental": false,
@@ -6760,7 +6775,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.LineNode.html",
-          "hash": "ibfd164iUYsY++y9FN+dKQ=="
+          "hash": "W+6y3M99yRBSCm6GyJcdng=="
         }
       },
       "is_incremental": false,
@@ -6772,7 +6787,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.Log.html",
-          "hash": "R5o01dZabHBwIpg0881jcQ=="
+          "hash": "xTxPPngiJdQTLXioJn5pJg=="
         }
       },
       "is_incremental": false,
@@ -6784,7 +6799,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.LogCategory.html",
-          "hash": "EIfjqbuK3dCPg1lZYIJdig=="
+          "hash": "8SPZ5RlPEaa/368I8qb+MA=="
         }
       },
       "is_incremental": false,
@@ -6796,7 +6811,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.LogLevel.html",
-          "hash": "dACVNC8UhB6K/8LTGU/0wg=="
+          "hash": "AOzA+vlXBmkeytBf8kBENg=="
         }
       },
       "is_incremental": false,
@@ -6808,7 +6823,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.Material.html",
-          "hash": "v/XaFwDMmJh22vE6RPJ+Nw=="
+          "hash": "985vTaePx4Qhmq/Om440MQ=="
         }
       },
       "is_incremental": false,
@@ -6820,7 +6835,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.MathHelper.html",
-          "hash": "24ICSepaW1mWg4/p7X7SXw=="
+          "hash": "U3NcfGl+qt5bfCxZN0akrQ=="
         }
       },
       "is_incremental": false,
@@ -6832,7 +6847,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.Matrix33F.html",
-          "hash": "R8u3xKd0BY44fnwexnh73w=="
+          "hash": "Jo2mFWnUrf2pWIViyo/RUw=="
         }
       },
       "is_incremental": false,
@@ -6844,7 +6859,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.Matrix33I.html",
-          "hash": "JIbqmLnH9okGYwAET8m9Mw=="
+          "hash": "mytBgRGmqWbKSmBS1frcUw=="
         }
       },
       "is_incremental": false,
@@ -6856,7 +6871,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.Matrix44F.html",
-          "hash": "mex9B4CkCPecVTx3uhgIBA=="
+          "hash": "2flqKrdY7Hiknas+eFFoIw=="
         }
       },
       "is_incremental": false,
@@ -6868,7 +6883,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.Matrix44I.html",
-          "hash": "GeZ+R2s66iYWFKFe0wvJzg=="
+          "hash": "NsbqKfj5ZL287VfXO4j59A=="
         }
       },
       "is_incremental": false,
@@ -6880,7 +6895,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.Mouse.html",
-          "hash": "REoTLyI75KajJqTgNfmE5Q=="
+          "hash": "n27VlV6GgQ8z8YexZCp6xw=="
         }
       },
       "is_incremental": false,
@@ -6892,7 +6907,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.MouseButton.html",
-          "hash": "gw+PKcZkkCikKH8GeS0coA=="
+          "hash": "X3r9fMCmUGLx3jwedGGpmA=="
         }
       },
       "is_incremental": false,
@@ -6904,7 +6919,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.Node.html",
-          "hash": "24/7Q9HX6YaIq3FFkPBdjQ=="
+          "hash": "ju5ectDyEnWXYylGdF+JTQ=="
         }
       },
       "is_incremental": false,
@@ -6916,7 +6931,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.PolygonCollider.html",
-          "hash": "wEcwuvHj/NV1buGriYf5TQ=="
+          "hash": "WghnXp8YXsuhhcOt125Nxw=="
         }
       },
       "is_incremental": false,
@@ -6928,7 +6943,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.PolygonColliderNode.html",
-          "hash": "VLvk+5qSUiVeK912gFEUWw=="
+          "hash": "RTwfTfeibtfoV0Xf+cXxJA=="
         }
       },
       "is_incremental": false,
@@ -6940,7 +6955,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.PolygonColliderVisualizeNode.html",
-          "hash": "UTpUW3BAo7eoIPMy/EZ44A=="
+          "hash": "dWQUXjFwPtqjeaNLMV2VXg=="
         }
       },
       "is_incremental": false,
@@ -6952,7 +6967,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.PolygonNode.html",
-          "hash": "iR3vs8KvUjiT2aKOJ5W7Vg=="
+          "hash": "1Up+xUA6b9qE9cIKxjOS3w=="
         }
       },
       "is_incremental": false,
@@ -6964,7 +6979,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.PostEffectGaussianBlurNode.html",
-          "hash": "NDn8XFKZXU76EB5pvOG2xg=="
+          "hash": "pCxFbM1IcCFV176hHAdnZA=="
         }
       },
       "is_incremental": false,
@@ -6976,7 +6991,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.PostEffectGrayScaleNode.html",
-          "hash": "rRgQn3V/Qsl/0iUJWGH41Q=="
+          "hash": "n/vr5V8W3xRgV6w7yWbbmg=="
         }
       },
       "is_incremental": false,
@@ -6988,7 +7003,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.PostEffectLightBloomNode.html",
-          "hash": "JB92Vt7+w64/EUgr40tG2A=="
+          "hash": "inlw9splid1Es9YTpTzmBw=="
         }
       },
       "is_incremental": false,
@@ -7000,7 +7015,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.PostEffectNode.html",
-          "hash": "m54JFakzuAF1zKanNH0ziQ=="
+          "hash": "rVIzECEylj6hxc+VjLZS9A=="
         }
       },
       "is_incremental": false,
@@ -7012,7 +7027,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.PostEffectSepiaNode.html",
-          "hash": "F/noYIQwkkAkyGID8Ok+/A=="
+          "hash": "MocC7O7byrr/NbCB91UhaQ=="
         }
       },
       "is_incremental": false,
@@ -7024,7 +7039,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.RectF.html",
-          "hash": "HE/OgVOdqTf8MicjYecUkA=="
+          "hash": "SJJPxFiD3yD+pK3lHON1mQ=="
         }
       },
       "is_incremental": false,
@@ -7036,7 +7051,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.RectI.html",
-          "hash": "hijerUyhi838mkkxqHPypQ=="
+          "hash": "Xk00KS/NpLtxOoGHIsUSFw=="
         }
       },
       "is_incremental": false,
@@ -7048,7 +7063,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.RectangleCollider.html",
-          "hash": "5BIFe6HokarBNcewo6Mizw=="
+          "hash": "WbAKkX30X6jd4j4ew+9ghw=="
         }
       },
       "is_incremental": false,
@@ -7060,7 +7075,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.RectangleColliderNode.html",
-          "hash": "b7xTRk0PESNMDYFLeLz4ZQ=="
+          "hash": "oKtlJG9t4NaA3xaiAePm/Q=="
         }
       },
       "is_incremental": false,
@@ -7072,7 +7087,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.RectangleColliderVisualizeNode.html",
-          "hash": "kP2PF3uUGhWdcMuMCdEN+g=="
+          "hash": "nDH2xLDZtMvqrRUmoZyAeA=="
         }
       },
       "is_incremental": false,
@@ -7084,7 +7099,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.RectangleNode.html",
-          "hash": "D8VexL+8aoi3bv7MmvTEmA=="
+          "hash": "7MDWEcQrIDjb8S6dOuVSvw=="
         }
       },
       "is_incremental": false,
@@ -7096,7 +7111,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.RegisteredStatus.html",
-          "hash": "X1eGL2ptr0b27GRSRKr8sw=="
+          "hash": "UPqdG78N2tNwtIx0/5yrng=="
         }
       },
       "is_incremental": false,
@@ -7108,7 +7123,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.RenderPassParameter.html",
-          "hash": "JI7pbgJi2Rpv54Moy41idw=="
+          "hash": "nFAVlygcxyMORy8mVqF4WA=="
         }
       },
       "is_incremental": false,
@@ -7120,7 +7135,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.RenderTexture.html",
-          "hash": "W+12YquKQrXH9wLbg8YmDg=="
+          "hash": "LgreE1GA24HTMsLMtXj7eg=="
         }
       },
       "is_incremental": false,
@@ -7132,7 +7147,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.RuledTransitionEffectNode.html",
-          "hash": "4KSyg20gqClYHUQ2/Q0urg=="
+          "hash": "3pKCYbiW7g4i7uuJZIieJg=="
         }
       },
       "is_incremental": false,
@@ -7144,7 +7159,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.RuledTransitionNode.html",
-          "hash": "2OwQE5h6Hi/RKDEToWw0Vg=="
+          "hash": "J86W6JkygNM95ucLfflFKQ=="
         }
       },
       "is_incremental": false,
@@ -7156,7 +7171,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.RuledTransitionState.html",
-          "hash": "LQzXEWNXTNdhTo3nDraLRg=="
+          "hash": "bSLEGVxQ+GOuSq2uzWVeCQ=="
         }
       },
       "is_incremental": false,
@@ -7168,7 +7183,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.Shader.html",
-          "hash": "udMqOi55aLEG6gsp+nFEfw=="
+          "hash": "61HhF+0HM6HezMAxy/pRiQ=="
         }
       },
       "is_incremental": false,
@@ -7180,7 +7195,19 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.ShaderStage.html",
-          "hash": "lc01rBoTtFI66QV6dB3Q5A=="
+          "hash": "7Tv9FubgTcFnF9wwR8HXDA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.ShapeCollider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.ShapeCollider.html",
+          "hash": "GHNl15QAi5OwQBTXq9tqxQ=="
         }
       },
       "is_incremental": false,
@@ -7192,7 +7219,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.ShapeNode.html",
-          "hash": "3/xUhNVj3uN7EvdTJsKWpA=="
+          "hash": "j6OjubX6JdTmUq/UOyZOKA=="
         }
       },
       "is_incremental": false,
@@ -7204,7 +7231,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.Sound.html",
-          "hash": "rafPJUFcGoC0wSOR92UaQA=="
+          "hash": "h2D/PnR1igPwOHutqeHwvg=="
         }
       },
       "is_incremental": false,
@@ -7216,7 +7243,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.SoundMixer.html",
-          "hash": "5I/Lw1l5LrvKYBopLidXyw=="
+          "hash": "Y5ArRpwXFyh0C3uNDeRqhg=="
         }
       },
       "is_incremental": false,
@@ -7228,7 +7255,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.SpriteNode.html",
-          "hash": "0eRS2z5OlJyu9XsN0ct0gg=="
+          "hash": "3EJKOpa5QhP8avZs2JzV5A=="
         }
       },
       "is_incremental": false,
@@ -7240,7 +7267,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.StaticFile.html",
-          "hash": "AuY5VNK5Nz18hXws0bSJtA=="
+          "hash": "PzAeDCjSIaxHxUQ+8twmCA=="
         }
       },
       "is_incremental": false,
@@ -7252,7 +7279,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.StreamFile.html",
-          "hash": "/w9V90LhVtIWf0tRDMBEAA=="
+          "hash": "QcXhVM2awJVsScpl9qAWNg=="
         }
       },
       "is_incremental": false,
@@ -7264,7 +7291,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.TextNode.html",
-          "hash": "g+nf5gYjSMtx3cCJdhW7pg=="
+          "hash": "QrvZ5H/Pze7pketXjvisdA=="
         }
       },
       "is_incremental": false,
@@ -7276,7 +7303,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.Texture2D.html",
-          "hash": "wzpvytH/WJvDQlU1hWdH7g=="
+          "hash": "2BPOFEFAyJOOZ0za3WKvFw=="
         }
       },
       "is_incremental": false,
@@ -7288,7 +7315,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.TextureBase.html",
-          "hash": "xUR1O/YwUCkpqdIQjOZrlw=="
+          "hash": "2cgA8Q0500IiyPaHKhM0oA=="
         }
       },
       "is_incremental": false,
@@ -7300,7 +7327,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.TextureFilter.html",
-          "hash": "hpLkKkpyiCzTio61bNrLvg=="
+          "hash": "0yRvc0gLZYDg3SKCwtQ1qg=="
         }
       },
       "is_incremental": false,
@@ -7312,7 +7339,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.TextureFormat.html",
-          "hash": "4PP5sNW8OlULhBtSl+GunQ=="
+          "hash": "Cr6eRS+uvrUd45Tcte+bxw=="
         }
       },
       "is_incremental": false,
@@ -7324,7 +7351,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.TextureWrapMode.html",
-          "hash": "XhGlBSHptnZYWs2r0zlslw=="
+          "hash": "80WVa7BHVcfcXm3RKqXTmQ=="
         }
       },
       "is_incremental": false,
@@ -7336,7 +7363,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.Tool.html",
-          "hash": "xtiHnmRFuRWYZ81RN8cv7w=="
+          "hash": "g1NnJOKvEisGLuPyAUMuwg=="
         }
       },
       "is_incremental": false,
@@ -7348,7 +7375,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.ToolColor.html",
-          "hash": "UKptHJlAOpyGlOstEwRMEw=="
+          "hash": "6wFtbgyp5xWXq/Cs/jeDIQ=="
         }
       },
       "is_incremental": false,
@@ -7360,7 +7387,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.ToolColorEditFlags.html",
-          "hash": "gqmSqw5L7PX9mlI6AwD9hQ=="
+          "hash": "OjEsJfvpvUA1N/LXQJUVDA=="
         }
       },
       "is_incremental": false,
@@ -7372,7 +7399,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.ToolComboFlags.html",
-          "hash": "/XpnRCYihYvzSY4EOzhgAQ=="
+          "hash": "ksim8bKTz3qoR0V3Gk4n+A=="
         }
       },
       "is_incremental": false,
@@ -7384,7 +7411,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.ToolCond.html",
-          "hash": "ANTnAqqtpFruCmm3j8D40A=="
+          "hash": "8qIs4nB3TzIcUVMPKVr1Sw=="
         }
       },
       "is_incremental": false,
@@ -7396,7 +7423,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.ToolDir.html",
-          "hash": "2lzFVA6XhlGQt+OhOQAHSA=="
+          "hash": "KobfZ2xeKcwCB5YMSiWxMg=="
         }
       },
       "is_incremental": false,
@@ -7408,7 +7435,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.ToolFocused.html",
-          "hash": "ibPs/szgwUdwjMb5DyKGkw=="
+          "hash": "GtX1/X8zohIOTAR70Kv3VA=="
         }
       },
       "is_incremental": false,
@@ -7420,7 +7447,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.ToolGlyphRange.html",
-          "hash": "It9N+bHp0Ot4aGQnt6Xnnw=="
+          "hash": "tFPBpsZxGbXEZZju3Bypcg=="
         }
       },
       "is_incremental": false,
@@ -7432,7 +7459,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.ToolHoveredFlags.html",
-          "hash": "i8gRt2KhE9ZnUdwXFbYkDQ=="
+          "hash": "KDYZYHIOFChsq9iDXt7YhQ=="
         }
       },
       "is_incremental": false,
@@ -7444,7 +7471,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.ToolInputTextFlags.html",
-          "hash": "1sboOzzaH1wH3Z8IoXrViQ=="
+          "hash": "JB7qDfY/ULjMTPHGo3A49Q=="
         }
       },
       "is_incremental": false,
@@ -7456,7 +7483,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.ToolSelectableFlags.html",
-          "hash": "aBQ3vvwuqXeJ3qZ/BSBDwA=="
+          "hash": "GqKyrUin1WCUOIammrDC/A=="
         }
       },
       "is_incremental": false,
@@ -7468,7 +7495,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.ToolStyleVar.html",
-          "hash": "YN2AD/fSAKLHcCYDIyyvTw=="
+          "hash": "xIwrBzuG28TTOAWsiH6jtQ=="
         }
       },
       "is_incremental": false,
@@ -7480,7 +7507,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.ToolTabBarFlags.html",
-          "hash": "Xb8ZecP2KaX+3Iv72PgrcA=="
+          "hash": "cwv6bs4mv2CMLUiEhJweXA=="
         }
       },
       "is_incremental": false,
@@ -7492,7 +7519,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.ToolTreeNodeFlags.html",
-          "hash": "zTnnPfg0GhlpDx9NKDiTXA=="
+          "hash": "gDPSObXofTxCApOGThyxWQ=="
         }
       },
       "is_incremental": false,
@@ -7504,7 +7531,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.ToolUsage.html",
-          "hash": "5SpfW07WFF74zYX9tCZvUg=="
+          "hash": "3u5ZCavLs9mPjTEC8ocv2A=="
         }
       },
       "is_incremental": false,
@@ -7516,7 +7543,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.ToolWindowFlags.html",
-          "hash": "BIIAVWA7CQY/qCfO/5uZmg=="
+          "hash": "P5pdmiC7zjwhsOZpg6UlxA=="
         }
       },
       "is_incremental": false,
@@ -7528,7 +7555,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.TransformNode.html",
-          "hash": "p8e9BzT/XttE09MYk3JQ3Q=="
+          "hash": "pbOLdAsqf9AhcB0dVqCWJQ=="
         }
       },
       "is_incremental": false,
@@ -7540,7 +7567,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.TransformerNode.html",
-          "hash": "sm7YpLXTtGjcB/zdFEHK9g=="
+          "hash": "Plfzu7SHZak11pVFkvgFTg=="
         }
       },
       "is_incremental": false,
@@ -7552,7 +7579,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.TransitionNode.html",
-          "hash": "juQyBohHCalOUouwreyxjQ=="
+          "hash": "F6LIH8N0a7L1bBBIIbxoBQ=="
         }
       },
       "is_incremental": false,
@@ -7564,7 +7591,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.TriangleNode.html",
-          "hash": "OQfKro11GHO14Bft/yDi/w=="
+          "hash": "3TqvO18/CD1bG57mlVo46w=="
         }
       },
       "is_incremental": false,
@@ -7576,7 +7603,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.Vector2F.html",
-          "hash": "KGWRZ16Qw65UTY/z/9CSFg=="
+          "hash": "is8GEbMUk0rvYSoj/NIrYw=="
         }
       },
       "is_incremental": false,
@@ -7588,7 +7615,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.Vector2I.html",
-          "hash": "YLT2bfpOt2m1EbhEY3q1PA=="
+          "hash": "aDdc3DngVgxakcpVSWiBSQ=="
         }
       },
       "is_incremental": false,
@@ -7600,7 +7627,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.Vector3F.html",
-          "hash": "55IvhrQiOIk7UQkeRM2N9g=="
+          "hash": "GE28ScDkDycKRJvMnYKhsw=="
         }
       },
       "is_incremental": false,
@@ -7612,7 +7639,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.Vector3I.html",
-          "hash": "kjW5H1NgLFSI1PZ0cIjzJA=="
+          "hash": "acrNazS0Tf71qrEuqi4/JA=="
         }
       },
       "is_incremental": false,
@@ -7624,7 +7651,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.Vector4F.html",
-          "hash": "oskU8NMHA5jKLl8Lu9TIlw=="
+          "hash": "VmsXnDRdr8TRDRPK8tR+pg=="
         }
       },
       "is_incremental": false,
@@ -7636,7 +7663,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.Vector4I.html",
-          "hash": "41t7eek80I5M7SkU26yY8g=="
+          "hash": "a21fWKRhfd6TJvYqiX5RIA=="
         }
       },
       "is_incremental": false,
@@ -7648,7 +7675,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.Vertex.html",
-          "hash": "viP+3CKzND9hHUMWCozuWw=="
+          "hash": "k+QnIDCMK26UInSqOSH19A=="
         }
       },
       "is_incremental": false,
@@ -7660,7 +7687,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.VerticalAlignment.html",
-          "hash": "EsjVAKRApjrz42K+GikszQ=="
+          "hash": "RAK0+Ij9Heab1Jok0SVb8g=="
         }
       },
       "is_incremental": false,
@@ -7672,7 +7699,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.WritingDirection.html",
-          "hash": "YOIOyM/2v25b1HmcY7W/+A=="
+          "hash": "TUZcUYD2YagcJkBF9gsV6w=="
         }
       },
       "is_incremental": false,
@@ -7684,7 +7711,7 @@
       "output": {
         ".html": {
           "relative_path": "References/Altseed2.html",
-          "hash": "Jg75yQ4LZSnDjt5YgrLweg=="
+          "hash": "+XV6J+Pfy59jvMdazOq/Vg=="
         }
       },
       "is_incremental": false,
@@ -7696,7 +7723,7 @@
       "output": {
         ".html": {
           "relative_path": "References/toc.html",
-          "hash": "EENhsnJn/x4uCB4ejdR2TA=="
+          "hash": "WNv4clOsowvbH2PL2uwvqQ=="
         }
       },
       "is_incremental": false,
@@ -7807,7 +7834,7 @@
       "output": {
         ".html": {
           "relative_path": "Tutorials/Chap0/index.html",
-          "hash": "5KLCZF/vaMNv+aDxio9m2A=="
+          "hash": "071oAQWRmfP/aHuAWBVFZw=="
         }
       },
       "is_incremental": false,
@@ -8074,7 +8101,7 @@
       "output": {
         ".html": {
           "relative_path": "Tutorials/Chap2/index.html",
-          "hash": "bgmqR8YVm6En+iHl7Sta9w=="
+          "hash": "DVsrosg7nfSKl9/oR3tgSw=="
         }
       },
       "is_incremental": false,
@@ -8412,7 +8439,7 @@
       "output": {
         ".html": {
           "relative_path": "Tutorials/index.html",
-          "hash": "Q3po0ILHBwdh0IAdf82+xA=="
+          "hash": "ac4BxoHG+mpI8/W7cWn40A=="
         }
       },
       "is_incremental": false,
@@ -8447,7 +8474,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "KJknbCnvw5xz+9T2B5i3Lw=="
+          "hash": "NuqZNW2Q1ySbuX5Q7nMWjA=="
         }
       },
       "is_incremental": false,
@@ -8486,7 +8513,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 123,
+          "total_file_count": 125,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

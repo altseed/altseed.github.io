@@ -753,32 +753,6 @@ references:
   isSpec: "True"
   fullName: Altseed2.CameraNode.CameraNode
   nameWithType: CameraNode.CameraNode
-- uid: Altseed2.CameraNode.Angle
-  name: Angle
-  href: References/Altseed2.CameraNode.html#Altseed2_CameraNode_Angle
-  commentId: P:Altseed2.CameraNode.Angle
-  fullName: Altseed2.CameraNode.Angle
-  nameWithType: CameraNode.Angle
-- uid: Altseed2.CameraNode.Angle*
-  name: Angle
-  href: References/Altseed2.CameraNode.html#Altseed2_CameraNode_Angle_
-  commentId: Overload:Altseed2.CameraNode.Angle
-  isSpec: "True"
-  fullName: Altseed2.CameraNode.Angle
-  nameWithType: CameraNode.Angle
-- uid: Altseed2.CameraNode.CenterPosition
-  name: CenterPosition
-  href: References/Altseed2.CameraNode.html#Altseed2_CameraNode_CenterPosition
-  commentId: P:Altseed2.CameraNode.CenterPosition
-  fullName: Altseed2.CameraNode.CenterPosition
-  nameWithType: CameraNode.CenterPosition
-- uid: Altseed2.CameraNode.CenterPosition*
-  name: CenterPosition
-  href: References/Altseed2.CameraNode.html#Altseed2_CameraNode_CenterPosition_
-  commentId: Overload:Altseed2.CameraNode.CenterPosition
-  isSpec: "True"
-  fullName: Altseed2.CameraNode.CenterPosition
-  nameWithType: CameraNode.CenterPosition
 - uid: Altseed2.CameraNode.ClearColor
   name: ClearColor
   href: References/Altseed2.CameraNode.html#Altseed2_CameraNode_ClearColor
@@ -818,32 +792,6 @@ references:
   isSpec: "True"
   fullName: Altseed2.CameraNode.IsColorCleared
   nameWithType: CameraNode.IsColorCleared
-- uid: Altseed2.CameraNode.Position
-  name: Position
-  href: References/Altseed2.CameraNode.html#Altseed2_CameraNode_Position
-  commentId: P:Altseed2.CameraNode.Position
-  fullName: Altseed2.CameraNode.Position
-  nameWithType: CameraNode.Position
-- uid: Altseed2.CameraNode.Position*
-  name: Position
-  href: References/Altseed2.CameraNode.html#Altseed2_CameraNode_Position_
-  commentId: Overload:Altseed2.CameraNode.Position
-  isSpec: "True"
-  fullName: Altseed2.CameraNode.Position
-  nameWithType: CameraNode.Position
-- uid: Altseed2.CameraNode.Scale
-  name: Scale
-  href: References/Altseed2.CameraNode.html#Altseed2_CameraNode_Scale
-  commentId: P:Altseed2.CameraNode.Scale
-  fullName: Altseed2.CameraNode.Scale
-  nameWithType: CameraNode.Scale
-- uid: Altseed2.CameraNode.Scale*
-  name: Scale
-  href: References/Altseed2.CameraNode.html#Altseed2_CameraNode_Scale_
-  commentId: Overload:Altseed2.CameraNode.Scale
-  isSpec: "True"
-  fullName: Altseed2.CameraNode.Scale
-  nameWithType: CameraNode.Scale
 - uid: Altseed2.CameraNode.TargetTexture
   name: TargetTexture
   href: References/Altseed2.CameraNode.html#Altseed2_CameraNode_TargetTexture
@@ -863,19 +811,19 @@ references:
   commentId: T:Altseed2.CircleCollider
   fullName: Altseed2.CircleCollider
   nameWithType: CircleCollider
-- uid: Altseed2.CircleCollider.Create
-  name: Create()
-  href: References/Altseed2.CircleCollider.html#Altseed2_CircleCollider_Create
-  commentId: M:Altseed2.CircleCollider.Create
-  fullName: Altseed2.CircleCollider.Create()
-  nameWithType: CircleCollider.Create()
-- uid: Altseed2.CircleCollider.Create*
-  name: Create
-  href: References/Altseed2.CircleCollider.html#Altseed2_CircleCollider_Create_
-  commentId: Overload:Altseed2.CircleCollider.Create
+- uid: Altseed2.CircleCollider.#ctor
+  name: CircleCollider()
+  href: References/Altseed2.CircleCollider.html#Altseed2_CircleCollider__ctor
+  commentId: M:Altseed2.CircleCollider.#ctor
+  fullName: Altseed2.CircleCollider.CircleCollider()
+  nameWithType: CircleCollider.CircleCollider()
+- uid: Altseed2.CircleCollider.#ctor*
+  name: CircleCollider
+  href: References/Altseed2.CircleCollider.html#Altseed2_CircleCollider__ctor_
+  commentId: Overload:Altseed2.CircleCollider.#ctor
   isSpec: "True"
-  fullName: Altseed2.CircleCollider.Create
-  nameWithType: CircleCollider.Create
+  fullName: Altseed2.CircleCollider.CircleCollider
+  nameWithType: CircleCollider.CircleCollider
 - uid: Altseed2.CircleCollider.Radius
   name: Radius
   href: References/Altseed2.CircleCollider.html#Altseed2_CircleCollider_Radius
@@ -1850,6 +1798,51 @@ references:
   commentId: F:Altseed2.EasingType.OutSine
   fullName: Altseed2.EasingType.OutSine
   nameWithType: EasingType.OutSine
+- uid: Altseed2.EdgeCollider
+  name: EdgeCollider
+  href: References/Altseed2.EdgeCollider.html
+  commentId: T:Altseed2.EdgeCollider
+  fullName: Altseed2.EdgeCollider
+  nameWithType: EdgeCollider
+- uid: Altseed2.EdgeCollider.#ctor
+  name: EdgeCollider()
+  href: References/Altseed2.EdgeCollider.html#Altseed2_EdgeCollider__ctor
+  commentId: M:Altseed2.EdgeCollider.#ctor
+  fullName: Altseed2.EdgeCollider.EdgeCollider()
+  nameWithType: EdgeCollider.EdgeCollider()
+- uid: Altseed2.EdgeCollider.#ctor*
+  name: EdgeCollider
+  href: References/Altseed2.EdgeCollider.html#Altseed2_EdgeCollider__ctor_
+  commentId: Overload:Altseed2.EdgeCollider.#ctor
+  isSpec: "True"
+  fullName: Altseed2.EdgeCollider.EdgeCollider
+  nameWithType: EdgeCollider.EdgeCollider
+- uid: Altseed2.EdgeCollider.Point1
+  name: Point1
+  href: References/Altseed2.EdgeCollider.html#Altseed2_EdgeCollider_Point1
+  commentId: P:Altseed2.EdgeCollider.Point1
+  fullName: Altseed2.EdgeCollider.Point1
+  nameWithType: EdgeCollider.Point1
+- uid: Altseed2.EdgeCollider.Point1*
+  name: Point1
+  href: References/Altseed2.EdgeCollider.html#Altseed2_EdgeCollider_Point1_
+  commentId: Overload:Altseed2.EdgeCollider.Point1
+  isSpec: "True"
+  fullName: Altseed2.EdgeCollider.Point1
+  nameWithType: EdgeCollider.Point1
+- uid: Altseed2.EdgeCollider.Point2
+  name: Point2
+  href: References/Altseed2.EdgeCollider.html#Altseed2_EdgeCollider_Point2
+  commentId: P:Altseed2.EdgeCollider.Point2
+  fullName: Altseed2.EdgeCollider.Point2
+  nameWithType: EdgeCollider.Point2
+- uid: Altseed2.EdgeCollider.Point2*
+  name: Point2
+  href: References/Altseed2.EdgeCollider.html#Altseed2_EdgeCollider_Point2_
+  commentId: Overload:Altseed2.EdgeCollider.Point2
+  isSpec: "True"
+  fullName: Altseed2.EdgeCollider.Point2
+  nameWithType: EdgeCollider.Point2
 - uid: Altseed2.Engine
   name: Engine
   href: References/Altseed2.Engine.html
@@ -5536,6 +5529,32 @@ references:
   isSpec: "True"
   fullName: Altseed2.Node.IsRegistered
   nameWithType: Node.IsRegistered
+- uid: Altseed2.Node.IsUpdated
+  name: IsUpdated
+  href: References/Altseed2.Node.html#Altseed2_Node_IsUpdated
+  commentId: P:Altseed2.Node.IsUpdated
+  fullName: Altseed2.Node.IsUpdated
+  nameWithType: Node.IsUpdated
+- uid: Altseed2.Node.IsUpdated*
+  name: IsUpdated
+  href: References/Altseed2.Node.html#Altseed2_Node_IsUpdated_
+  commentId: Overload:Altseed2.Node.IsUpdated
+  isSpec: "True"
+  fullName: Altseed2.Node.IsUpdated
+  nameWithType: Node.IsUpdated
+- uid: Altseed2.Node.IsUpdatedActually
+  name: IsUpdatedActually
+  href: References/Altseed2.Node.html#Altseed2_Node_IsUpdatedActually
+  commentId: P:Altseed2.Node.IsUpdatedActually
+  fullName: Altseed2.Node.IsUpdatedActually
+  nameWithType: Node.IsUpdatedActually
+- uid: Altseed2.Node.IsUpdatedActually*
+  name: IsUpdatedActually
+  href: References/Altseed2.Node.html#Altseed2_Node_IsUpdatedActually_
+  commentId: Overload:Altseed2.Node.IsUpdatedActually
+  isSpec: "True"
+  fullName: Altseed2.Node.IsUpdatedActually
+  nameWithType: Node.IsUpdatedActually
 - uid: Altseed2.Node.OnAdded
   name: OnAdded()
   href: References/Altseed2.Node.html#Altseed2_Node_OnAdded
@@ -5588,6 +5607,19 @@ references:
   isSpec: "True"
   fullName: Altseed2.Node.Parent
   nameWithType: Node.Parent
+- uid: Altseed2.Node.PropagateIsUpdatedActually(Altseed2.Node,System.Boolean)
+  name: PropagateIsUpdatedActually(Node, Boolean)
+  href: References/Altseed2.Node.html#Altseed2_Node_PropagateIsUpdatedActually_Altseed2_Node_System_Boolean_
+  commentId: M:Altseed2.Node.PropagateIsUpdatedActually(Altseed2.Node,System.Boolean)
+  fullName: Altseed2.Node.PropagateIsUpdatedActually(Altseed2.Node, System.Boolean)
+  nameWithType: Node.PropagateIsUpdatedActually(Node, Boolean)
+- uid: Altseed2.Node.PropagateIsUpdatedActually*
+  name: PropagateIsUpdatedActually
+  href: References/Altseed2.Node.html#Altseed2_Node_PropagateIsUpdatedActually_
+  commentId: Overload:Altseed2.Node.PropagateIsUpdatedActually
+  isSpec: "True"
+  fullName: Altseed2.Node.PropagateIsUpdatedActually
+  nameWithType: Node.PropagateIsUpdatedActually
 - uid: Altseed2.Node.RemoveChildNode(Altseed2.Node)
   name: RemoveChildNode(Node)
   href: References/Altseed2.Node.html#Altseed2_Node_RemoveChildNode_Altseed2_Node_
@@ -5620,37 +5652,88 @@ references:
   commentId: T:Altseed2.PolygonCollider
   fullName: Altseed2.PolygonCollider
   nameWithType: PolygonCollider
-- uid: Altseed2.PolygonCollider.Create
-  name: Create()
-  href: References/Altseed2.PolygonCollider.html#Altseed2_PolygonCollider_Create
-  commentId: M:Altseed2.PolygonCollider.Create
-  fullName: Altseed2.PolygonCollider.Create()
-  nameWithType: PolygonCollider.Create()
-- uid: Altseed2.PolygonCollider.Create*
-  name: Create
-  href: References/Altseed2.PolygonCollider.html#Altseed2_PolygonCollider_Create_
-  commentId: Overload:Altseed2.PolygonCollider.Create
+- uid: Altseed2.PolygonCollider.#ctor
+  name: PolygonCollider()
+  href: References/Altseed2.PolygonCollider.html#Altseed2_PolygonCollider__ctor
+  commentId: M:Altseed2.PolygonCollider.#ctor
+  fullName: Altseed2.PolygonCollider.PolygonCollider()
+  nameWithType: PolygonCollider.PolygonCollider()
+- uid: Altseed2.PolygonCollider.#ctor*
+  name: PolygonCollider
+  href: References/Altseed2.PolygonCollider.html#Altseed2_PolygonCollider__ctor_
+  commentId: Overload:Altseed2.PolygonCollider.#ctor
   isSpec: "True"
-  fullName: Altseed2.PolygonCollider.Create
-  nameWithType: PolygonCollider.Create
-- uid: Altseed2.PolygonCollider.SetVertexes(System.Collections.Generic.IEnumerable{Altseed2.Vector2F})
-  name: SetVertexes(IEnumerable<Vector2F>)
-  href: References/Altseed2.PolygonCollider.html#Altseed2_PolygonCollider_SetVertexes_System_Collections_Generic_IEnumerable_Altseed2_Vector2F__
-  commentId: M:Altseed2.PolygonCollider.SetVertexes(System.Collections.Generic.IEnumerable{Altseed2.Vector2F})
-  name.vb: SetVertexes(IEnumerable(Of Vector2F))
-  fullName: Altseed2.PolygonCollider.SetVertexes(System.Collections.Generic.IEnumerable<Altseed2.Vector2F>)
-  fullName.vb: Altseed2.PolygonCollider.SetVertexes(System.Collections.Generic.IEnumerable(Of Altseed2.Vector2F))
-  nameWithType: PolygonCollider.SetVertexes(IEnumerable<Vector2F>)
-  nameWithType.vb: PolygonCollider.SetVertexes(IEnumerable(Of Vector2F))
-- uid: Altseed2.PolygonCollider.SetVertexes(System.ReadOnlySpan{Altseed2.Vector2F})
-  name: SetVertexes(ReadOnlySpan<Vector2F>)
-  href: References/Altseed2.PolygonCollider.html#Altseed2_PolygonCollider_SetVertexes_System_ReadOnlySpan_Altseed2_Vector2F__
-  commentId: M:Altseed2.PolygonCollider.SetVertexes(System.ReadOnlySpan{Altseed2.Vector2F})
-  name.vb: SetVertexes(ReadOnlySpan(Of Vector2F))
-  fullName: Altseed2.PolygonCollider.SetVertexes(System.ReadOnlySpan<Altseed2.Vector2F>)
-  fullName.vb: Altseed2.PolygonCollider.SetVertexes(System.ReadOnlySpan(Of Altseed2.Vector2F))
-  nameWithType: PolygonCollider.SetVertexes(ReadOnlySpan<Vector2F>)
-  nameWithType.vb: PolygonCollider.SetVertexes(ReadOnlySpan(Of Vector2F))
+  fullName: Altseed2.PolygonCollider.PolygonCollider
+  nameWithType: PolygonCollider.PolygonCollider
+- uid: Altseed2.PolygonCollider.Buffers
+  name: Buffers
+  href: References/Altseed2.PolygonCollider.html#Altseed2_PolygonCollider_Buffers
+  commentId: P:Altseed2.PolygonCollider.Buffers
+  fullName: Altseed2.PolygonCollider.Buffers
+  nameWithType: PolygonCollider.Buffers
+- uid: Altseed2.PolygonCollider.Buffers*
+  name: Buffers
+  href: References/Altseed2.PolygonCollider.html#Altseed2_PolygonCollider_Buffers_
+  commentId: Overload:Altseed2.PolygonCollider.Buffers
+  isSpec: "True"
+  fullName: Altseed2.PolygonCollider.Buffers
+  nameWithType: PolygonCollider.Buffers
+- uid: Altseed2.PolygonCollider.SetBuffers(System.Collections.Generic.IEnumerable{System.Int32})
+  name: SetBuffers(IEnumerable<Int32>)
+  href: References/Altseed2.PolygonCollider.html#Altseed2_PolygonCollider_SetBuffers_System_Collections_Generic_IEnumerable_System_Int32__
+  commentId: M:Altseed2.PolygonCollider.SetBuffers(System.Collections.Generic.IEnumerable{System.Int32})
+  name.vb: SetBuffers(IEnumerable(Of Int32))
+  fullName: Altseed2.PolygonCollider.SetBuffers(System.Collections.Generic.IEnumerable<System.Int32>)
+  fullName.vb: Altseed2.PolygonCollider.SetBuffers(System.Collections.Generic.IEnumerable(Of System.Int32))
+  nameWithType: PolygonCollider.SetBuffers(IEnumerable<Int32>)
+  nameWithType.vb: PolygonCollider.SetBuffers(IEnumerable(Of Int32))
+- uid: Altseed2.PolygonCollider.SetBuffers(System.ReadOnlySpan{System.Int32})
+  name: SetBuffers(ReadOnlySpan<Int32>)
+  href: References/Altseed2.PolygonCollider.html#Altseed2_PolygonCollider_SetBuffers_System_ReadOnlySpan_System_Int32__
+  commentId: M:Altseed2.PolygonCollider.SetBuffers(System.ReadOnlySpan{System.Int32})
+  name.vb: SetBuffers(ReadOnlySpan(Of Int32))
+  fullName: Altseed2.PolygonCollider.SetBuffers(System.ReadOnlySpan<System.Int32>)
+  fullName.vb: Altseed2.PolygonCollider.SetBuffers(System.ReadOnlySpan(Of System.Int32))
+  nameWithType: PolygonCollider.SetBuffers(ReadOnlySpan<Int32>)
+  nameWithType.vb: PolygonCollider.SetBuffers(ReadOnlySpan(Of Int32))
+- uid: Altseed2.PolygonCollider.SetBuffers*
+  name: SetBuffers
+  href: References/Altseed2.PolygonCollider.html#Altseed2_PolygonCollider_SetBuffers_
+  commentId: Overload:Altseed2.PolygonCollider.SetBuffers
+  isSpec: "True"
+  fullName: Altseed2.PolygonCollider.SetBuffers
+  nameWithType: PolygonCollider.SetBuffers
+- uid: Altseed2.PolygonCollider.SetDefaultIndexBuffer
+  name: SetDefaultIndexBuffer()
+  href: References/Altseed2.PolygonCollider.html#Altseed2_PolygonCollider_SetDefaultIndexBuffer
+  commentId: M:Altseed2.PolygonCollider.SetDefaultIndexBuffer
+  fullName: Altseed2.PolygonCollider.SetDefaultIndexBuffer()
+  nameWithType: PolygonCollider.SetDefaultIndexBuffer()
+- uid: Altseed2.PolygonCollider.SetDefaultIndexBuffer*
+  name: SetDefaultIndexBuffer
+  href: References/Altseed2.PolygonCollider.html#Altseed2_PolygonCollider_SetDefaultIndexBuffer_
+  commentId: Overload:Altseed2.PolygonCollider.SetDefaultIndexBuffer
+  isSpec: "True"
+  fullName: Altseed2.PolygonCollider.SetDefaultIndexBuffer
+  nameWithType: PolygonCollider.SetDefaultIndexBuffer
+- uid: Altseed2.PolygonCollider.SetVertexes(System.Collections.Generic.IEnumerable{Altseed2.Vector2F},System.Boolean)
+  name: SetVertexes(IEnumerable<Vector2F>, Boolean)
+  href: References/Altseed2.PolygonCollider.html#Altseed2_PolygonCollider_SetVertexes_System_Collections_Generic_IEnumerable_Altseed2_Vector2F__System_Boolean_
+  commentId: M:Altseed2.PolygonCollider.SetVertexes(System.Collections.Generic.IEnumerable{Altseed2.Vector2F},System.Boolean)
+  name.vb: SetVertexes(IEnumerable(Of Vector2F), Boolean)
+  fullName: Altseed2.PolygonCollider.SetVertexes(System.Collections.Generic.IEnumerable<Altseed2.Vector2F>, System.Boolean)
+  fullName.vb: Altseed2.PolygonCollider.SetVertexes(System.Collections.Generic.IEnumerable(Of Altseed2.Vector2F), System.Boolean)
+  nameWithType: PolygonCollider.SetVertexes(IEnumerable<Vector2F>, Boolean)
+  nameWithType.vb: PolygonCollider.SetVertexes(IEnumerable(Of Vector2F), Boolean)
+- uid: Altseed2.PolygonCollider.SetVertexes(System.ReadOnlySpan{Altseed2.Vector2F},System.Boolean)
+  name: SetVertexes(ReadOnlySpan<Vector2F>, Boolean)
+  href: References/Altseed2.PolygonCollider.html#Altseed2_PolygonCollider_SetVertexes_System_ReadOnlySpan_Altseed2_Vector2F__System_Boolean_
+  commentId: M:Altseed2.PolygonCollider.SetVertexes(System.ReadOnlySpan{Altseed2.Vector2F},System.Boolean)
+  name.vb: SetVertexes(ReadOnlySpan(Of Vector2F), Boolean)
+  fullName: Altseed2.PolygonCollider.SetVertexes(System.ReadOnlySpan<Altseed2.Vector2F>, System.Boolean)
+  fullName.vb: Altseed2.PolygonCollider.SetVertexes(System.ReadOnlySpan(Of Altseed2.Vector2F), System.Boolean)
+  nameWithType: PolygonCollider.SetVertexes(ReadOnlySpan<Vector2F>, Boolean)
+  nameWithType.vb: PolygonCollider.SetVertexes(ReadOnlySpan(Of Vector2F), Boolean)
 - uid: Altseed2.PolygonCollider.SetVertexes*
   name: SetVertexes
   href: References/Altseed2.PolygonCollider.html#Altseed2_PolygonCollider_SetVertexes_
@@ -5690,6 +5773,19 @@ references:
   isSpec: "True"
   fullName: Altseed2.PolygonColliderNode.PolygonColliderNode
   nameWithType: PolygonColliderNode.PolygonColliderNode
+- uid: Altseed2.PolygonColliderNode.Buffers
+  name: Buffers
+  href: References/Altseed2.PolygonColliderNode.html#Altseed2_PolygonColliderNode_Buffers
+  commentId: P:Altseed2.PolygonColliderNode.Buffers
+  fullName: Altseed2.PolygonColliderNode.Buffers
+  nameWithType: PolygonColliderNode.Buffers
+- uid: Altseed2.PolygonColliderNode.Buffers*
+  name: Buffers
+  href: References/Altseed2.PolygonColliderNode.html#Altseed2_PolygonColliderNode_Buffers_
+  commentId: Overload:Altseed2.PolygonColliderNode.Buffers
+  isSpec: "True"
+  fullName: Altseed2.PolygonColliderNode.Buffers
+  nameWithType: PolygonColliderNode.Buffers
 - uid: Altseed2.PolygonColliderNode.ContentSize
   name: ContentSize
   href: References/Altseed2.PolygonColliderNode.html#Altseed2_PolygonColliderNode_ContentSize
@@ -5716,24 +5812,49 @@ references:
   isSpec: "True"
   fullName: Altseed2.PolygonColliderNode.InheritedTransform
   nameWithType: PolygonColliderNode.InheritedTransform
-- uid: Altseed2.PolygonColliderNode.SetVertexes(System.Collections.Generic.IEnumerable{Altseed2.Vector2F})
-  name: SetVertexes(IEnumerable<Vector2F>)
-  href: References/Altseed2.PolygonColliderNode.html#Altseed2_PolygonColliderNode_SetVertexes_System_Collections_Generic_IEnumerable_Altseed2_Vector2F__
-  commentId: M:Altseed2.PolygonColliderNode.SetVertexes(System.Collections.Generic.IEnumerable{Altseed2.Vector2F})
-  name.vb: SetVertexes(IEnumerable(Of Vector2F))
-  fullName: Altseed2.PolygonColliderNode.SetVertexes(System.Collections.Generic.IEnumerable<Altseed2.Vector2F>)
-  fullName.vb: Altseed2.PolygonColliderNode.SetVertexes(System.Collections.Generic.IEnumerable(Of Altseed2.Vector2F))
-  nameWithType: PolygonColliderNode.SetVertexes(IEnumerable<Vector2F>)
-  nameWithType.vb: PolygonColliderNode.SetVertexes(IEnumerable(Of Vector2F))
-- uid: Altseed2.PolygonColliderNode.SetVertexes(System.Span{Altseed2.Vector2F})
-  name: SetVertexes(Span<Vector2F>)
-  href: References/Altseed2.PolygonColliderNode.html#Altseed2_PolygonColliderNode_SetVertexes_System_Span_Altseed2_Vector2F__
-  commentId: M:Altseed2.PolygonColliderNode.SetVertexes(System.Span{Altseed2.Vector2F})
-  name.vb: SetVertexes(Span(Of Vector2F))
-  fullName: Altseed2.PolygonColliderNode.SetVertexes(System.Span<Altseed2.Vector2F>)
-  fullName.vb: Altseed2.PolygonColliderNode.SetVertexes(System.Span(Of Altseed2.Vector2F))
-  nameWithType: PolygonColliderNode.SetVertexes(Span<Vector2F>)
-  nameWithType.vb: PolygonColliderNode.SetVertexes(Span(Of Vector2F))
+- uid: Altseed2.PolygonColliderNode.SetBuffers(System.Collections.Generic.IEnumerable{System.Int32})
+  name: SetBuffers(IEnumerable<Int32>)
+  href: References/Altseed2.PolygonColliderNode.html#Altseed2_PolygonColliderNode_SetBuffers_System_Collections_Generic_IEnumerable_System_Int32__
+  commentId: M:Altseed2.PolygonColliderNode.SetBuffers(System.Collections.Generic.IEnumerable{System.Int32})
+  name.vb: SetBuffers(IEnumerable(Of Int32))
+  fullName: Altseed2.PolygonColliderNode.SetBuffers(System.Collections.Generic.IEnumerable<System.Int32>)
+  fullName.vb: Altseed2.PolygonColliderNode.SetBuffers(System.Collections.Generic.IEnumerable(Of System.Int32))
+  nameWithType: PolygonColliderNode.SetBuffers(IEnumerable<Int32>)
+  nameWithType.vb: PolygonColliderNode.SetBuffers(IEnumerable(Of Int32))
+- uid: Altseed2.PolygonColliderNode.SetBuffers(System.ReadOnlySpan{System.Int32})
+  name: SetBuffers(ReadOnlySpan<Int32>)
+  href: References/Altseed2.PolygonColliderNode.html#Altseed2_PolygonColliderNode_SetBuffers_System_ReadOnlySpan_System_Int32__
+  commentId: M:Altseed2.PolygonColliderNode.SetBuffers(System.ReadOnlySpan{System.Int32})
+  name.vb: SetBuffers(ReadOnlySpan(Of Int32))
+  fullName: Altseed2.PolygonColliderNode.SetBuffers(System.ReadOnlySpan<System.Int32>)
+  fullName.vb: Altseed2.PolygonColliderNode.SetBuffers(System.ReadOnlySpan(Of System.Int32))
+  nameWithType: PolygonColliderNode.SetBuffers(ReadOnlySpan<Int32>)
+  nameWithType.vb: PolygonColliderNode.SetBuffers(ReadOnlySpan(Of Int32))
+- uid: Altseed2.PolygonColliderNode.SetBuffers*
+  name: SetBuffers
+  href: References/Altseed2.PolygonColliderNode.html#Altseed2_PolygonColliderNode_SetBuffers_
+  commentId: Overload:Altseed2.PolygonColliderNode.SetBuffers
+  isSpec: "True"
+  fullName: Altseed2.PolygonColliderNode.SetBuffers
+  nameWithType: PolygonColliderNode.SetBuffers
+- uid: Altseed2.PolygonColliderNode.SetVertexes(System.Collections.Generic.IEnumerable{Altseed2.Vector2F},System.Boolean)
+  name: SetVertexes(IEnumerable<Vector2F>, Boolean)
+  href: References/Altseed2.PolygonColliderNode.html#Altseed2_PolygonColliderNode_SetVertexes_System_Collections_Generic_IEnumerable_Altseed2_Vector2F__System_Boolean_
+  commentId: M:Altseed2.PolygonColliderNode.SetVertexes(System.Collections.Generic.IEnumerable{Altseed2.Vector2F},System.Boolean)
+  name.vb: SetVertexes(IEnumerable(Of Vector2F), Boolean)
+  fullName: Altseed2.PolygonColliderNode.SetVertexes(System.Collections.Generic.IEnumerable<Altseed2.Vector2F>, System.Boolean)
+  fullName.vb: Altseed2.PolygonColliderNode.SetVertexes(System.Collections.Generic.IEnumerable(Of Altseed2.Vector2F), System.Boolean)
+  nameWithType: PolygonColliderNode.SetVertexes(IEnumerable<Vector2F>, Boolean)
+  nameWithType.vb: PolygonColliderNode.SetVertexes(IEnumerable(Of Vector2F), Boolean)
+- uid: Altseed2.PolygonColliderNode.SetVertexes(System.Span{Altseed2.Vector2F},System.Boolean)
+  name: SetVertexes(Span<Vector2F>, Boolean)
+  href: References/Altseed2.PolygonColliderNode.html#Altseed2_PolygonColliderNode_SetVertexes_System_Span_Altseed2_Vector2F__System_Boolean_
+  commentId: M:Altseed2.PolygonColliderNode.SetVertexes(System.Span{Altseed2.Vector2F},System.Boolean)
+  name.vb: SetVertexes(Span(Of Vector2F), Boolean)
+  fullName: Altseed2.PolygonColliderNode.SetVertexes(System.Span<Altseed2.Vector2F>, System.Boolean)
+  fullName.vb: Altseed2.PolygonColliderNode.SetVertexes(System.Span(Of Altseed2.Vector2F), System.Boolean)
+  nameWithType: PolygonColliderNode.SetVertexes(Span<Vector2F>, Boolean)
+  nameWithType.vb: PolygonColliderNode.SetVertexes(Span(Of Vector2F), Boolean)
 - uid: Altseed2.PolygonColliderNode.SetVertexes*
   name: SetVertexes
   href: References/Altseed2.PolygonColliderNode.html#Altseed2_PolygonColliderNode_SetVertexes_
@@ -5792,6 +5913,19 @@ references:
   isSpec: "True"
   fullName: Altseed2.PolygonNode.AlphaBlend
   nameWithType: PolygonNode.AlphaBlend
+- uid: Altseed2.PolygonNode.Buffers
+  name: Buffers
+  href: References/Altseed2.PolygonNode.html#Altseed2_PolygonNode_Buffers
+  commentId: P:Altseed2.PolygonNode.Buffers
+  fullName: Altseed2.PolygonNode.Buffers
+  nameWithType: PolygonNode.Buffers
+- uid: Altseed2.PolygonNode.Buffers*
+  name: Buffers
+  href: References/Altseed2.PolygonNode.html#Altseed2_PolygonNode_Buffers_
+  commentId: Overload:Altseed2.PolygonNode.Buffers
+  isSpec: "True"
+  fullName: Altseed2.PolygonNode.Buffers
+  nameWithType: PolygonNode.Buffers
 - uid: Altseed2.PolygonNode.CameraGroup
   name: CameraGroup
   href: References/Altseed2.PolygonNode.html#Altseed2_PolygonNode_CameraGroup
@@ -5883,42 +6017,80 @@ references:
   isSpec: "True"
   fullName: Altseed2.PolygonNode.OverwriteVertexColor
   nameWithType: PolygonNode.OverwriteVertexColor
-- uid: Altseed2.PolygonNode.SetVertexes(System.Collections.Generic.IEnumerable{Altseed2.Vector2F},Altseed2.Color)
-  name: SetVertexes(IEnumerable<Vector2F>, Color)
-  href: References/Altseed2.PolygonNode.html#Altseed2_PolygonNode_SetVertexes_System_Collections_Generic_IEnumerable_Altseed2_Vector2F__Altseed2_Color_
-  commentId: M:Altseed2.PolygonNode.SetVertexes(System.Collections.Generic.IEnumerable{Altseed2.Vector2F},Altseed2.Color)
-  name.vb: SetVertexes(IEnumerable(Of Vector2F), Color)
-  fullName: Altseed2.PolygonNode.SetVertexes(System.Collections.Generic.IEnumerable<Altseed2.Vector2F>, Altseed2.Color)
-  fullName.vb: Altseed2.PolygonNode.SetVertexes(System.Collections.Generic.IEnumerable(Of Altseed2.Vector2F), Altseed2.Color)
-  nameWithType: PolygonNode.SetVertexes(IEnumerable<Vector2F>, Color)
-  nameWithType.vb: PolygonNode.SetVertexes(IEnumerable(Of Vector2F), Color)
-- uid: Altseed2.PolygonNode.SetVertexes(System.Collections.Generic.IEnumerable{Altseed2.Vertex})
-  name: SetVertexes(IEnumerable<Vertex>)
-  href: References/Altseed2.PolygonNode.html#Altseed2_PolygonNode_SetVertexes_System_Collections_Generic_IEnumerable_Altseed2_Vertex__
-  commentId: M:Altseed2.PolygonNode.SetVertexes(System.Collections.Generic.IEnumerable{Altseed2.Vertex})
-  name.vb: SetVertexes(IEnumerable(Of Vertex))
-  fullName: Altseed2.PolygonNode.SetVertexes(System.Collections.Generic.IEnumerable<Altseed2.Vertex>)
-  fullName.vb: Altseed2.PolygonNode.SetVertexes(System.Collections.Generic.IEnumerable(Of Altseed2.Vertex))
-  nameWithType: PolygonNode.SetVertexes(IEnumerable<Vertex>)
-  nameWithType.vb: PolygonNode.SetVertexes(IEnumerable(Of Vertex))
-- uid: Altseed2.PolygonNode.SetVertexes(System.ReadOnlySpan{Altseed2.Vector2F},Altseed2.Color)
-  name: SetVertexes(ReadOnlySpan<Vector2F>, Color)
-  href: References/Altseed2.PolygonNode.html#Altseed2_PolygonNode_SetVertexes_System_ReadOnlySpan_Altseed2_Vector2F__Altseed2_Color_
-  commentId: M:Altseed2.PolygonNode.SetVertexes(System.ReadOnlySpan{Altseed2.Vector2F},Altseed2.Color)
-  name.vb: SetVertexes(ReadOnlySpan(Of Vector2F), Color)
-  fullName: Altseed2.PolygonNode.SetVertexes(System.ReadOnlySpan<Altseed2.Vector2F>, Altseed2.Color)
-  fullName.vb: Altseed2.PolygonNode.SetVertexes(System.ReadOnlySpan(Of Altseed2.Vector2F), Altseed2.Color)
-  nameWithType: PolygonNode.SetVertexes(ReadOnlySpan<Vector2F>, Color)
-  nameWithType.vb: PolygonNode.SetVertexes(ReadOnlySpan(Of Vector2F), Color)
-- uid: Altseed2.PolygonNode.SetVertexes(System.ReadOnlySpan{Altseed2.Vertex})
-  name: SetVertexes(ReadOnlySpan<Vertex>)
-  href: References/Altseed2.PolygonNode.html#Altseed2_PolygonNode_SetVertexes_System_ReadOnlySpan_Altseed2_Vertex__
-  commentId: M:Altseed2.PolygonNode.SetVertexes(System.ReadOnlySpan{Altseed2.Vertex})
-  name.vb: SetVertexes(ReadOnlySpan(Of Vertex))
-  fullName: Altseed2.PolygonNode.SetVertexes(System.ReadOnlySpan<Altseed2.Vertex>)
-  fullName.vb: Altseed2.PolygonNode.SetVertexes(System.ReadOnlySpan(Of Altseed2.Vertex))
-  nameWithType: PolygonNode.SetVertexes(ReadOnlySpan<Vertex>)
-  nameWithType.vb: PolygonNode.SetVertexes(ReadOnlySpan(Of Vertex))
+- uid: Altseed2.PolygonNode.SetBuffers(System.Collections.Generic.IEnumerable{System.Int32})
+  name: SetBuffers(IEnumerable<Int32>)
+  href: References/Altseed2.PolygonNode.html#Altseed2_PolygonNode_SetBuffers_System_Collections_Generic_IEnumerable_System_Int32__
+  commentId: M:Altseed2.PolygonNode.SetBuffers(System.Collections.Generic.IEnumerable{System.Int32})
+  name.vb: SetBuffers(IEnumerable(Of Int32))
+  fullName: Altseed2.PolygonNode.SetBuffers(System.Collections.Generic.IEnumerable<System.Int32>)
+  fullName.vb: Altseed2.PolygonNode.SetBuffers(System.Collections.Generic.IEnumerable(Of System.Int32))
+  nameWithType: PolygonNode.SetBuffers(IEnumerable<Int32>)
+  nameWithType.vb: PolygonNode.SetBuffers(IEnumerable(Of Int32))
+- uid: Altseed2.PolygonNode.SetBuffers(System.ReadOnlySpan{System.Int32})
+  name: SetBuffers(ReadOnlySpan<Int32>)
+  href: References/Altseed2.PolygonNode.html#Altseed2_PolygonNode_SetBuffers_System_ReadOnlySpan_System_Int32__
+  commentId: M:Altseed2.PolygonNode.SetBuffers(System.ReadOnlySpan{System.Int32})
+  name.vb: SetBuffers(ReadOnlySpan(Of Int32))
+  fullName: Altseed2.PolygonNode.SetBuffers(System.ReadOnlySpan<System.Int32>)
+  fullName.vb: Altseed2.PolygonNode.SetBuffers(System.ReadOnlySpan(Of System.Int32))
+  nameWithType: PolygonNode.SetBuffers(ReadOnlySpan<Int32>)
+  nameWithType.vb: PolygonNode.SetBuffers(ReadOnlySpan(Of Int32))
+- uid: Altseed2.PolygonNode.SetBuffers*
+  name: SetBuffers
+  href: References/Altseed2.PolygonNode.html#Altseed2_PolygonNode_SetBuffers_
+  commentId: Overload:Altseed2.PolygonNode.SetBuffers
+  isSpec: "True"
+  fullName: Altseed2.PolygonNode.SetBuffers
+  nameWithType: PolygonNode.SetBuffers
+- uid: Altseed2.PolygonNode.SetDefaultIndexBuffer
+  name: SetDefaultIndexBuffer()
+  href: References/Altseed2.PolygonNode.html#Altseed2_PolygonNode_SetDefaultIndexBuffer
+  commentId: M:Altseed2.PolygonNode.SetDefaultIndexBuffer
+  fullName: Altseed2.PolygonNode.SetDefaultIndexBuffer()
+  nameWithType: PolygonNode.SetDefaultIndexBuffer()
+- uid: Altseed2.PolygonNode.SetDefaultIndexBuffer*
+  name: SetDefaultIndexBuffer
+  href: References/Altseed2.PolygonNode.html#Altseed2_PolygonNode_SetDefaultIndexBuffer_
+  commentId: Overload:Altseed2.PolygonNode.SetDefaultIndexBuffer
+  isSpec: "True"
+  fullName: Altseed2.PolygonNode.SetDefaultIndexBuffer
+  nameWithType: PolygonNode.SetDefaultIndexBuffer
+- uid: Altseed2.PolygonNode.SetVertexes(System.Collections.Generic.IEnumerable{Altseed2.Vector2F},Altseed2.Color,System.Boolean)
+  name: SetVertexes(IEnumerable<Vector2F>, Color, Boolean)
+  href: References/Altseed2.PolygonNode.html#Altseed2_PolygonNode_SetVertexes_System_Collections_Generic_IEnumerable_Altseed2_Vector2F__Altseed2_Color_System_Boolean_
+  commentId: M:Altseed2.PolygonNode.SetVertexes(System.Collections.Generic.IEnumerable{Altseed2.Vector2F},Altseed2.Color,System.Boolean)
+  name.vb: SetVertexes(IEnumerable(Of Vector2F), Color, Boolean)
+  fullName: Altseed2.PolygonNode.SetVertexes(System.Collections.Generic.IEnumerable<Altseed2.Vector2F>, Altseed2.Color, System.Boolean)
+  fullName.vb: Altseed2.PolygonNode.SetVertexes(System.Collections.Generic.IEnumerable(Of Altseed2.Vector2F), Altseed2.Color, System.Boolean)
+  nameWithType: PolygonNode.SetVertexes(IEnumerable<Vector2F>, Color, Boolean)
+  nameWithType.vb: PolygonNode.SetVertexes(IEnumerable(Of Vector2F), Color, Boolean)
+- uid: Altseed2.PolygonNode.SetVertexes(System.Collections.Generic.IEnumerable{Altseed2.Vertex},System.Boolean)
+  name: SetVertexes(IEnumerable<Vertex>, Boolean)
+  href: References/Altseed2.PolygonNode.html#Altseed2_PolygonNode_SetVertexes_System_Collections_Generic_IEnumerable_Altseed2_Vertex__System_Boolean_
+  commentId: M:Altseed2.PolygonNode.SetVertexes(System.Collections.Generic.IEnumerable{Altseed2.Vertex},System.Boolean)
+  name.vb: SetVertexes(IEnumerable(Of Vertex), Boolean)
+  fullName: Altseed2.PolygonNode.SetVertexes(System.Collections.Generic.IEnumerable<Altseed2.Vertex>, System.Boolean)
+  fullName.vb: Altseed2.PolygonNode.SetVertexes(System.Collections.Generic.IEnumerable(Of Altseed2.Vertex), System.Boolean)
+  nameWithType: PolygonNode.SetVertexes(IEnumerable<Vertex>, Boolean)
+  nameWithType.vb: PolygonNode.SetVertexes(IEnumerable(Of Vertex), Boolean)
+- uid: Altseed2.PolygonNode.SetVertexes(System.ReadOnlySpan{Altseed2.Vector2F},Altseed2.Color,System.Boolean)
+  name: SetVertexes(ReadOnlySpan<Vector2F>, Color, Boolean)
+  href: References/Altseed2.PolygonNode.html#Altseed2_PolygonNode_SetVertexes_System_ReadOnlySpan_Altseed2_Vector2F__Altseed2_Color_System_Boolean_
+  commentId: M:Altseed2.PolygonNode.SetVertexes(System.ReadOnlySpan{Altseed2.Vector2F},Altseed2.Color,System.Boolean)
+  name.vb: SetVertexes(ReadOnlySpan(Of Vector2F), Color, Boolean)
+  fullName: Altseed2.PolygonNode.SetVertexes(System.ReadOnlySpan<Altseed2.Vector2F>, Altseed2.Color, System.Boolean)
+  fullName.vb: Altseed2.PolygonNode.SetVertexes(System.ReadOnlySpan(Of Altseed2.Vector2F), Altseed2.Color, System.Boolean)
+  nameWithType: PolygonNode.SetVertexes(ReadOnlySpan<Vector2F>, Color, Boolean)
+  nameWithType.vb: PolygonNode.SetVertexes(ReadOnlySpan(Of Vector2F), Color, Boolean)
+- uid: Altseed2.PolygonNode.SetVertexes(System.ReadOnlySpan{Altseed2.Vertex},System.Boolean)
+  name: SetVertexes(ReadOnlySpan<Vertex>, Boolean)
+  href: References/Altseed2.PolygonNode.html#Altseed2_PolygonNode_SetVertexes_System_ReadOnlySpan_Altseed2_Vertex__System_Boolean_
+  commentId: M:Altseed2.PolygonNode.SetVertexes(System.ReadOnlySpan{Altseed2.Vertex},System.Boolean)
+  name.vb: SetVertexes(ReadOnlySpan(Of Vertex), Boolean)
+  fullName: Altseed2.PolygonNode.SetVertexes(System.ReadOnlySpan<Altseed2.Vertex>, System.Boolean)
+  fullName.vb: Altseed2.PolygonNode.SetVertexes(System.ReadOnlySpan(Of Altseed2.Vertex), System.Boolean)
+  nameWithType: PolygonNode.SetVertexes(ReadOnlySpan<Vertex>, Boolean)
+  nameWithType.vb: PolygonNode.SetVertexes(ReadOnlySpan(Of Vertex), Boolean)
 - uid: Altseed2.PolygonNode.SetVertexes*
   name: SetVertexes
   href: References/Altseed2.PolygonNode.html#Altseed2_PolygonNode_SetVertexes_
@@ -5926,6 +6098,38 @@ references:
   isSpec: "True"
   fullName: Altseed2.PolygonNode.SetVertexes
   nameWithType: PolygonNode.SetVertexes
+- uid: Altseed2.PolygonNode.SetVertexGroups(System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{Altseed2.Vertex}})
+  name: SetVertexGroups(IEnumerable<IEnumerable<Vertex>>)
+  href: References/Altseed2.PolygonNode.html#Altseed2_PolygonNode_SetVertexGroups_System_Collections_Generic_IEnumerable_System_Collections_Generic_IEnumerable_Altseed2_Vertex___
+  commentId: M:Altseed2.PolygonNode.SetVertexGroups(System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{Altseed2.Vertex}})
+  name.vb: SetVertexGroups(IEnumerable(Of IEnumerable(Of Vertex)))
+  fullName: Altseed2.PolygonNode.SetVertexGroups(System.Collections.Generic.IEnumerable<System.Collections.Generic.IEnumerable<Altseed2.Vertex>>)
+  fullName.vb: Altseed2.PolygonNode.SetVertexGroups(System.Collections.Generic.IEnumerable(Of System.Collections.Generic.IEnumerable(Of Altseed2.Vertex)))
+  nameWithType: PolygonNode.SetVertexGroups(IEnumerable<IEnumerable<Vertex>>)
+  nameWithType.vb: PolygonNode.SetVertexGroups(IEnumerable(Of IEnumerable(Of Vertex)))
+- uid: Altseed2.PolygonNode.SetVertexGroups*
+  name: SetVertexGroups
+  href: References/Altseed2.PolygonNode.html#Altseed2_PolygonNode_SetVertexGroups_
+  commentId: Overload:Altseed2.PolygonNode.SetVertexGroups
+  isSpec: "True"
+  fullName: Altseed2.PolygonNode.SetVertexGroups
+  nameWithType: PolygonNode.SetVertexGroups
+- uid: Altseed2.PolygonNode.SetVertexGroupsFromPositions(System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{Altseed2.Vector2F}},Altseed2.Color)
+  name: SetVertexGroupsFromPositions(IEnumerable<IEnumerable<Vector2F>>, Color)
+  href: References/Altseed2.PolygonNode.html#Altseed2_PolygonNode_SetVertexGroupsFromPositions_System_Collections_Generic_IEnumerable_System_Collections_Generic_IEnumerable_Altseed2_Vector2F___Altseed2_Color_
+  commentId: M:Altseed2.PolygonNode.SetVertexGroupsFromPositions(System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{Altseed2.Vector2F}},Altseed2.Color)
+  name.vb: SetVertexGroupsFromPositions(IEnumerable(Of IEnumerable(Of Vector2F)), Color)
+  fullName: Altseed2.PolygonNode.SetVertexGroupsFromPositions(System.Collections.Generic.IEnumerable<System.Collections.Generic.IEnumerable<Altseed2.Vector2F>>, Altseed2.Color)
+  fullName.vb: Altseed2.PolygonNode.SetVertexGroupsFromPositions(System.Collections.Generic.IEnumerable(Of System.Collections.Generic.IEnumerable(Of Altseed2.Vector2F)), Altseed2.Color)
+  nameWithType: PolygonNode.SetVertexGroupsFromPositions(IEnumerable<IEnumerable<Vector2F>>, Color)
+  nameWithType.vb: PolygonNode.SetVertexGroupsFromPositions(IEnumerable(Of IEnumerable(Of Vector2F)), Color)
+- uid: Altseed2.PolygonNode.SetVertexGroupsFromPositions*
+  name: SetVertexGroupsFromPositions
+  href: References/Altseed2.PolygonNode.html#Altseed2_PolygonNode_SetVertexGroupsFromPositions_
+  commentId: Overload:Altseed2.PolygonNode.SetVertexGroupsFromPositions
+  isSpec: "True"
+  fullName: Altseed2.PolygonNode.SetVertexGroupsFromPositions
+  nameWithType: PolygonNode.SetVertexGroupsFromPositions
 - uid: Altseed2.PolygonNode.Src
   name: Src
   href: References/Altseed2.PolygonNode.html#Altseed2_PolygonNode_Src
@@ -6280,6 +6484,19 @@ references:
   commentId: T:Altseed2.RectangleCollider
   fullName: Altseed2.RectangleCollider
   nameWithType: RectangleCollider
+- uid: Altseed2.RectangleCollider.#ctor
+  name: RectangleCollider()
+  href: References/Altseed2.RectangleCollider.html#Altseed2_RectangleCollider__ctor
+  commentId: M:Altseed2.RectangleCollider.#ctor
+  fullName: Altseed2.RectangleCollider.RectangleCollider()
+  nameWithType: RectangleCollider.RectangleCollider()
+- uid: Altseed2.RectangleCollider.#ctor*
+  name: RectangleCollider
+  href: References/Altseed2.RectangleCollider.html#Altseed2_RectangleCollider__ctor_
+  commentId: Overload:Altseed2.RectangleCollider.#ctor
+  isSpec: "True"
+  fullName: Altseed2.RectangleCollider.RectangleCollider
+  nameWithType: RectangleCollider.RectangleCollider
 - uid: Altseed2.RectangleCollider.CenterPosition
   name: CenterPosition
   href: References/Altseed2.RectangleCollider.html#Altseed2_RectangleCollider_CenterPosition
@@ -6293,19 +6510,19 @@ references:
   isSpec: "True"
   fullName: Altseed2.RectangleCollider.CenterPosition
   nameWithType: RectangleCollider.CenterPosition
-- uid: Altseed2.RectangleCollider.Create
-  name: Create()
-  href: References/Altseed2.RectangleCollider.html#Altseed2_RectangleCollider_Create
-  commentId: M:Altseed2.RectangleCollider.Create
-  fullName: Altseed2.RectangleCollider.Create()
-  nameWithType: RectangleCollider.Create()
-- uid: Altseed2.RectangleCollider.Create*
-  name: Create
-  href: References/Altseed2.RectangleCollider.html#Altseed2_RectangleCollider_Create_
-  commentId: Overload:Altseed2.RectangleCollider.Create
+- uid: Altseed2.RectangleCollider.GetIsCollidedWith(Altseed2.Collider)
+  name: GetIsCollidedWith(Collider)
+  href: References/Altseed2.RectangleCollider.html#Altseed2_RectangleCollider_GetIsCollidedWith_Altseed2_Collider_
+  commentId: M:Altseed2.RectangleCollider.GetIsCollidedWith(Altseed2.Collider)
+  fullName: Altseed2.RectangleCollider.GetIsCollidedWith(Altseed2.Collider)
+  nameWithType: RectangleCollider.GetIsCollidedWith(Collider)
+- uid: Altseed2.RectangleCollider.GetIsCollidedWith*
+  name: GetIsCollidedWith
+  href: References/Altseed2.RectangleCollider.html#Altseed2_RectangleCollider_GetIsCollidedWith_
+  commentId: Overload:Altseed2.RectangleCollider.GetIsCollidedWith
   isSpec: "True"
-  fullName: Altseed2.RectangleCollider.Create
-  nameWithType: RectangleCollider.Create
+  fullName: Altseed2.RectangleCollider.GetIsCollidedWith
+  nameWithType: RectangleCollider.GetIsCollidedWith
 - uid: Altseed2.RectangleCollider.Size
   name: Size
   href: References/Altseed2.RectangleCollider.html#Altseed2_RectangleCollider_Size
@@ -6319,6 +6536,19 @@ references:
   isSpec: "True"
   fullName: Altseed2.RectangleCollider.Size
   nameWithType: RectangleCollider.Size
+- uid: Altseed2.RectangleCollider.UpdateVertexes
+  name: UpdateVertexes()
+  href: References/Altseed2.RectangleCollider.html#Altseed2_RectangleCollider_UpdateVertexes
+  commentId: M:Altseed2.RectangleCollider.UpdateVertexes
+  fullName: Altseed2.RectangleCollider.UpdateVertexes()
+  nameWithType: RectangleCollider.UpdateVertexes()
+- uid: Altseed2.RectangleCollider.UpdateVertexes*
+  name: UpdateVertexes
+  href: References/Altseed2.RectangleCollider.html#Altseed2_RectangleCollider_UpdateVertexes_
+  commentId: Overload:Altseed2.RectangleCollider.UpdateVertexes
+  isSpec: "True"
+  fullName: Altseed2.RectangleCollider.UpdateVertexes
+  nameWithType: RectangleCollider.UpdateVertexes
 - uid: Altseed2.RectangleColliderNode
   name: RectangleColliderNode
   href: References/Altseed2.RectangleColliderNode.html
@@ -7050,6 +7280,50 @@ references:
   commentId: F:Altseed2.ShaderStage.Vertex
   fullName: Altseed2.ShaderStage.Vertex
   nameWithType: ShaderStage.Vertex
+- uid: Altseed2.ShapeCollider
+  name: ShapeCollider
+  href: References/Altseed2.ShapeCollider.html
+  commentId: T:Altseed2.ShapeCollider
+  fullName: Altseed2.ShapeCollider
+  nameWithType: ShapeCollider
+- uid: Altseed2.ShapeCollider.#ctor
+  name: ShapeCollider()
+  href: References/Altseed2.ShapeCollider.html#Altseed2_ShapeCollider__ctor
+  commentId: M:Altseed2.ShapeCollider.#ctor
+  fullName: Altseed2.ShapeCollider.ShapeCollider()
+  nameWithType: ShapeCollider.ShapeCollider()
+- uid: Altseed2.ShapeCollider.#ctor*
+  name: ShapeCollider
+  href: References/Altseed2.ShapeCollider.html#Altseed2_ShapeCollider__ctor_
+  commentId: Overload:Altseed2.ShapeCollider.#ctor
+  isSpec: "True"
+  fullName: Altseed2.ShapeCollider.ShapeCollider
+  nameWithType: ShapeCollider.ShapeCollider
+- uid: Altseed2.ShapeCollider.SetVertexes(System.Collections.Generic.IEnumerable{Altseed2.Vector2F})
+  name: SetVertexes(IEnumerable<Vector2F>)
+  href: References/Altseed2.ShapeCollider.html#Altseed2_ShapeCollider_SetVertexes_System_Collections_Generic_IEnumerable_Altseed2_Vector2F__
+  commentId: M:Altseed2.ShapeCollider.SetVertexes(System.Collections.Generic.IEnumerable{Altseed2.Vector2F})
+  name.vb: SetVertexes(IEnumerable(Of Vector2F))
+  fullName: Altseed2.ShapeCollider.SetVertexes(System.Collections.Generic.IEnumerable<Altseed2.Vector2F>)
+  fullName.vb: Altseed2.ShapeCollider.SetVertexes(System.Collections.Generic.IEnumerable(Of Altseed2.Vector2F))
+  nameWithType: ShapeCollider.SetVertexes(IEnumerable<Vector2F>)
+  nameWithType.vb: ShapeCollider.SetVertexes(IEnumerable(Of Vector2F))
+- uid: Altseed2.ShapeCollider.SetVertexes(System.ReadOnlySpan{Altseed2.Vector2F})
+  name: SetVertexes(ReadOnlySpan<Vector2F>)
+  href: References/Altseed2.ShapeCollider.html#Altseed2_ShapeCollider_SetVertexes_System_ReadOnlySpan_Altseed2_Vector2F__
+  commentId: M:Altseed2.ShapeCollider.SetVertexes(System.ReadOnlySpan{Altseed2.Vector2F})
+  name.vb: SetVertexes(ReadOnlySpan(Of Vector2F))
+  fullName: Altseed2.ShapeCollider.SetVertexes(System.ReadOnlySpan<Altseed2.Vector2F>)
+  fullName.vb: Altseed2.ShapeCollider.SetVertexes(System.ReadOnlySpan(Of Altseed2.Vector2F))
+  nameWithType: ShapeCollider.SetVertexes(ReadOnlySpan<Vector2F>)
+  nameWithType.vb: ShapeCollider.SetVertexes(ReadOnlySpan(Of Vector2F))
+- uid: Altseed2.ShapeCollider.SetVertexes*
+  name: SetVertexes
+  href: References/Altseed2.ShapeCollider.html#Altseed2_ShapeCollider_SetVertexes_
+  commentId: Overload:Altseed2.ShapeCollider.SetVertexes
+  isSpec: "True"
+  fullName: Altseed2.ShapeCollider.SetVertexes
+  nameWithType: ShapeCollider.SetVertexes
 - uid: Altseed2.ShapeNode
   name: ShapeNode
   href: References/Altseed2.ShapeNode.html

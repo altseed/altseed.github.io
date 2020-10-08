@@ -188,6 +188,9 @@
                             <a href="Altseed2.EasingType.html" title="EasingType" class="">EasingType</a>
                           </li>
                           <li class="">
+                            <a href="Altseed2.EdgeCollider.html" title="EdgeCollider" class="">EdgeCollider</a>
+                          </li>
+                          <li class="">
                             <a href="Altseed2.Engine.html" title="Engine" class="">Engine</a>
                           </li>
                           <li class="">
@@ -347,6 +350,9 @@
                             <a href="Altseed2.ShaderStage.html" title="ShaderStage" class="">ShaderStage</a>
                           </li>
                           <li class="">
+                            <a href="Altseed2.ShapeCollider.html" title="ShapeCollider" class="">ShapeCollider</a>
+                          </li>
+                          <li class="">
                             <a href="Altseed2.ShapeNode.html" title="ShapeNode" class="">ShapeNode</a>
                           </li>
                           <li class="">
@@ -482,7 +488,7 @@
   
   <h1 id="Altseed2_RectangleCollider" data-uid="Altseed2.RectangleCollider" class="text-break">RectangleCollider クラス
   </h1>
-  <div class="markdown level0 summary"><p>矩形コライダのクラス</p>
+  <div class="markdown level0 summary"><p>短形コライダのクラス</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   
@@ -490,7 +496,8 @@
   <div class="inheritance">
     <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><a class="xref" href="Altseed2.Collider.html">Collider</a></div>
-    <div class="level2"><span class="xref">RectangleCollider</span></div>
+    <div class="level2"><a class="xref" href="Altseed2.ShapeCollider.html">ShapeCollider</a></div>
+    <div class="level3"><span class="xref">RectangleCollider</span></div>
   </div>
   
   <h3 id="継承したメンバー">継承したメンバー</h3>
@@ -498,8 +505,13 @@
   <div class="inheritedMembers">
   
     <div>
-      <h5><a class="xref" href="Altseed2.Collider.html#Altseed2_Collider_GetIsCollidedWith_Altseed2_Collider_">Collider.GetIsCollidedWith(Collider)</a></h5>
-      <p>指定したコライダとの衝突判定を行います。</p>
+      <h5><a class="xref" href="Altseed2.ShapeCollider.html#Altseed2_ShapeCollider_SetVertexes_System_Collections_Generic_IEnumerable_Altseed2_Vector2F__">ShapeCollider.SetVertexes(IEnumerable&lt;Vector2F&gt;)</a></h5>
+      <p>指定した座標に頂点を設定します。</p>
+
+    </div>
+    <div>
+      <h5><a class="xref" href="Altseed2.ShapeCollider.html#Altseed2_ShapeCollider_SetVertexes_System_ReadOnlySpan_Altseed2_Vector2F__">ShapeCollider.SetVertexes(ReadOnlySpan&lt;Vector2F&gt;)</a></h5>
+      <p>指定した座標に頂点を設定する</p>
 
     </div>
     <div>
@@ -522,26 +534,48 @@
   
   
   <h3 id="MemberToc">&#12513;&#12531;&#12496;&#12540;</h3>
+  <h4>&#12467;&#12531;&#12473;&#12488;&#12521;&#12463;&#12479;
+  </h4>
+      <h5><a class="xref" href="Altseed2.RectangleCollider.html#Altseed2_RectangleCollider__ctor">RectangleCollider()</a></h5>
+      <section><p><a class="xref" href="Altseed2.RectangleCollider.html">RectangleCollider</a>の新しいインスタンスを生成します。</p>
+</section>
   <h4>&#12503;&#12525;&#12497;&#12486;&#12451;
   </h4>
       <h5><a class="xref" href="Altseed2.RectangleCollider.html#Altseed2_RectangleCollider_CenterPosition">CenterPosition</a></h5>
-      <section><p>矩形コライダの中心の位置を取得または設定します。</p>
+      <section><p>中心座標を取得または設定します。</p>
 </section>
       <h5><a class="xref" href="Altseed2.RectangleCollider.html#Altseed2_RectangleCollider_Size">Size</a></h5>
-      <section><p>矩形コライダの幅・高さを取得または設定します。</p>
+      <section><p>短形の大きさを取得または設定します。</p>
 </section>
   <h4>&#12513;&#12477;&#12483;&#12489;
   </h4>
-      <h5><a class="xref" href="Altseed2.RectangleCollider.html#Altseed2_RectangleCollider_Create">Create()</a></h5>
-      <section><p>矩形コライダを作成します。</p>
+      <h5><a class="xref" href="Altseed2.RectangleCollider.html#Altseed2_RectangleCollider_GetIsCollidedWith_Altseed2_Collider_">GetIsCollidedWith(Collider)</a></h5>
+      <section><p>指定したコライダとの衝突判定を行います。</p>
 </section>
+      <h5><a class="xref" href="Altseed2.RectangleCollider.html#Altseed2_RectangleCollider_UpdateVertexes">UpdateVertexes()</a></h5>
+      <section></section>
   
+  <h3 id="constructors">&#12467;&#12531;&#12473;&#12488;&#12521;&#12463;&#12479;
+  </h3>
+  <a id="Altseed2_RectangleCollider__ctor_" data-uid="Altseed2.RectangleCollider.#ctor*"></a>
+  <h4 id="Altseed2_RectangleCollider__ctor" data-uid="Altseed2.RectangleCollider.#ctor">RectangleCollider()</h4>
+  <section>
+  <div class="markdown level1 summary"><p><a class="xref" href="Altseed2.RectangleCollider.html">RectangleCollider</a>の新しいインスタンスを生成します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RectangleCollider()</code></pre>
+  </div>
+  
+  
+  </section>
   <h3 id="properties">&#12503;&#12525;&#12497;&#12486;&#12451;
   </h3>
   <a id="Altseed2_RectangleCollider_CenterPosition_" data-uid="Altseed2.RectangleCollider.CenterPosition*"></a>
   <h4 id="Altseed2_RectangleCollider_CenterPosition" data-uid="Altseed2.RectangleCollider.CenterPosition">CenterPosition</h4>
   <section>
-  <div class="markdown level1 summary"><p>矩形コライダの中心の位置を取得または設定します。</p>
+  <div class="markdown level1 summary"><p>中心座標を取得または設定します。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
@@ -554,7 +588,7 @@
   <a id="Altseed2_RectangleCollider_Size_" data-uid="Altseed2.RectangleCollider.Size*"></a>
   <h4 id="Altseed2_RectangleCollider_Size" data-uid="Altseed2.RectangleCollider.Size">Size</h4>
   <section>
-  <div class="markdown level1 summary"><p>矩形コライダの幅・高さを取得または設定します。</p>
+  <div class="markdown level1 summary"><p>短形の大きさを取得または設定します。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
@@ -566,18 +600,44 @@
   </section>
   <h3 id="methods">&#12513;&#12477;&#12483;&#12489;
   </h3>
-  <a id="Altseed2_RectangleCollider_Create_" data-uid="Altseed2.RectangleCollider.Create*"></a>
-  <h4 id="Altseed2_RectangleCollider_Create" data-uid="Altseed2.RectangleCollider.Create">Create()</h4>
+  <a id="Altseed2_RectangleCollider_GetIsCollidedWith_" data-uid="Altseed2.RectangleCollider.GetIsCollidedWith*"></a>
+  <h4 id="Altseed2_RectangleCollider_GetIsCollidedWith_Altseed2_Collider_" data-uid="Altseed2.RectangleCollider.GetIsCollidedWith(Altseed2.Collider)">GetIsCollidedWith(Collider)</h4>
   <section>
-  <div class="markdown level1 summary"><p>矩形コライダを作成します。</p>
+  <div class="markdown level1 summary"><p>指定したコライダとの衝突判定を行います。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static RectangleCollider Create()</code></pre>
+    <pre><code class="lang-csharp hljs">public override bool GetIsCollidedWith(Collider collider)</code></pre>
   </div>
+  <h5 class="parameters">&#12497;&#12521;&#12513;&#12540;&#12479;</h5>
+  <section>
+  <table class="table member-table">
+    <tbody>
+      <tr>
+        <td><span class="parametername">collider</span></td>
+        <td><p>衝突判定を行うコライダ</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  </section>
+  
   <h5 class="returns">&#25147;&#12426;&#20516;</h5>
-    <p><section></section></p>
+    <p><section><p>このインスタンスと<code data-dev-comment-type="paramref" class="paramref">collider</code>が衝突していたらtrue，それ以外でfalse</p>
+</section></p>
+  
+  
+  </section>
+  <a id="Altseed2_RectangleCollider_UpdateVertexes_" data-uid="Altseed2.RectangleCollider.UpdateVertexes*"></a>
+  <h4 id="Altseed2_RectangleCollider_UpdateVertexes" data-uid="Altseed2.RectangleCollider.UpdateVertexes">UpdateVertexes()</h4>
+  <section>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void UpdateVertexes()</code></pre>
+  </div>
   
   
   </section>

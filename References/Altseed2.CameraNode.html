@@ -188,6 +188,9 @@
                             <a href="Altseed2.EasingType.html" title="EasingType" class="">EasingType</a>
                           </li>
                           <li class="">
+                            <a href="Altseed2.EdgeCollider.html" title="EdgeCollider" class="">EdgeCollider</a>
+                          </li>
+                          <li class="">
                             <a href="Altseed2.Engine.html" title="Engine" class="">Engine</a>
                           </li>
                           <li class="">
@@ -347,6 +350,9 @@
                             <a href="Altseed2.ShaderStage.html" title="ShaderStage" class="">ShaderStage</a>
                           </li>
                           <li class="">
+                            <a href="Altseed2.ShapeCollider.html" title="ShapeCollider" class="">ShapeCollider</a>
+                          </li>
+                          <li class="">
                             <a href="Altseed2.ShapeNode.html" title="ShapeNode" class="">ShapeNode</a>
                           </li>
                           <li class="">
@@ -491,13 +497,59 @@
     <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><span class="xref">Altseed2.Registerable</span>&lt;<a class="xref" href="Altseed2.Node.html">Node</a>&gt;</div>
     <div class="level2"><a class="xref" href="Altseed2.Node.html">Node</a></div>
-    <div class="level3"><span class="xref">CameraNode</span></div>
+    <div class="level3"><a class="xref" href="Altseed2.TransformNode.html">TransformNode</a></div>
+    <div class="level4"><span class="xref">CameraNode</span></div>
   </div>
   
   <h3 id="継承したメンバー">継承したメンバー</h3>
   
   <div class="inheritedMembers">
   
+    <div>
+      <h5><a class="xref" href="Altseed2.TransformNode.html#Altseed2_TransformNode_InheritedTransform">TransformNode.InheritedTransform</a></h5>
+      <p>先祖の変形を加味した変形行列を取得します。</p>
+
+    </div>
+    <div>
+      <h5><a class="xref" href="Altseed2.TransformNode.html#Altseed2_TransformNode_AbsoluteTransform">TransformNode.AbsoluteTransform</a></h5>
+      <p>先祖の変形および<a class="xref" href="Altseed2.TransformNode.html#Altseed2_TransformNode_CenterPosition">CenterPosition</a>を加味した最終的な変形行列を取得します。</p>
+
+    </div>
+    <div>
+      <h5><a class="xref" href="Altseed2.TransformNode.html#Altseed2_TransformNode_Angle">TransformNode.Angle</a></h5>
+      <p>角度(度数法)を取得または設定します。</p>
+
+    </div>
+    <div>
+      <h5><a class="xref" href="Altseed2.TransformNode.html#Altseed2_TransformNode_Position">TransformNode.Position</a></h5>
+      <p>座標を取得または設定します。</p>
+
+    </div>
+    <div>
+      <h5><a class="xref" href="Altseed2.TransformNode.html#Altseed2_TransformNode_CenterPosition">TransformNode.CenterPosition</a></h5>
+      <p>中心となる座標をピクセル単位で取得または設定します。</p>
+
+    </div>
+    <div>
+      <h5><a class="xref" href="Altseed2.TransformNode.html#Altseed2_TransformNode_Scale">TransformNode.Scale</a></h5>
+      <p>拡大率を取得または設定します。</p>
+
+    </div>
+    <div>
+      <h5><a class="xref" href="Altseed2.TransformNode.html#Altseed2_TransformNode_ContentSize">TransformNode.ContentSize</a></h5>
+      <p>コンテンツのサイズを取得します。</p>
+
+    </div>
+    <div>
+      <h5><a class="xref" href="Altseed2.TransformNode.html#Altseed2_TransformNode_HorizontalFlip">TransformNode.HorizontalFlip</a></h5>
+      <p>左右を反転するかどうかを取得または設定します。</p>
+
+    </div>
+    <div>
+      <h5><a class="xref" href="Altseed2.TransformNode.html#Altseed2_TransformNode_VerticalFlip">TransformNode.VerticalFlip</a></h5>
+      <p>上下を反転するかどうかを取得または設定します。</p>
+
+    </div>
     <div>
       <h5><a class="xref" href="Altseed2.Node.html#Altseed2_Node_Parent">Node.Parent</a></h5>
       <p>親ノードを取得または設定します。</p>
@@ -549,6 +601,21 @@
 
     </div>
     <div>
+      <h5><a class="xref" href="Altseed2.Node.html#Altseed2_Node_IsUpdated">Node.IsUpdated</a></h5>
+      <p>この<a class="xref" href="Altseed2.Node.html">Node</a>が更新されるかどうかを取得または設定します。</p>
+
+    </div>
+    <div>
+      <h5><a class="xref" href="Altseed2.Node.html#Altseed2_Node_IsUpdatedActually">Node.IsUpdatedActually</a></h5>
+      <p>先祖の<a class="xref" href="Altseed2.Node.html#Altseed2_Node_IsUpdated">IsUpdated</a>を考慮して、このノードが更新されるかどうかを取得します。</p>
+
+    </div>
+    <div>
+      <h5><a class="xref" href="Altseed2.Node.html#Altseed2_Node_PropagateIsUpdatedActually_Altseed2_Node_System_Boolean_">Node.PropagateIsUpdatedActually(Node, Boolean)</a></h5>
+      <p>子孫ノード<a class="xref" href="Altseed2.Node.html">Node</a>に対して<a class="xref" href="Altseed2.Node.html#Altseed2_Node_IsUpdatedActually">IsUpdatedActually</a>を伝播させます。</p>
+
+    </div>
+    <div>
       <h5><a class="xref" href="Altseed2.Node.html#Altseed2_Node_EnumerateAncestors">Node.EnumerateAncestors()</a></h5>
       <p>先祖ノードを列挙します。</p>
 
@@ -572,12 +639,6 @@
 </section>
   <h4>&#12503;&#12525;&#12497;&#12486;&#12451;
   </h4>
-      <h5><a class="xref" href="Altseed2.CameraNode.html#Altseed2_CameraNode_Angle">Angle</a></h5>
-      <section><p>描画領域の回転角（度数法）を取得または設定します。</p>
-</section>
-      <h5><a class="xref" href="Altseed2.CameraNode.html#Altseed2_CameraNode_CenterPosition">CenterPosition</a></h5>
-      <section><p>描画領域の中心座標をピクセル単位で取得または設定します。</p>
-</section>
       <h5><a class="xref" href="Altseed2.CameraNode.html#Altseed2_CameraNode_ClearColor">ClearColor</a></h5>
       <section><p>何も描画されていない部分の色を取得または設定します。</p>
 </section>
@@ -586,12 +647,6 @@
 </section>
       <h5><a class="xref" href="Altseed2.CameraNode.html#Altseed2_CameraNode_IsColorCleared">IsColorCleared</a></h5>
       <section><p>描画開始時に<a class="xref" href="Altseed2.CameraNode.html#Altseed2_CameraNode_ClearColor">ClearColor</a>で描画先を塗りつぶすかどうかを取得または設定します。</p>
-</section>
-      <h5><a class="xref" href="Altseed2.CameraNode.html#Altseed2_CameraNode_Position">Position</a></h5>
-      <section><p>描画領域の座標を取得または設定します。</p>
-</section>
-      <h5><a class="xref" href="Altseed2.CameraNode.html#Altseed2_CameraNode_Scale">Scale</a></h5>
-      <section><p>描画領域の拡大率を取得または設定します。</p>
 </section>
       <h5><a class="xref" href="Altseed2.CameraNode.html#Altseed2_CameraNode_TargetTexture">TargetTexture</a></h5>
       <section><p>描画先のテクスチャを取得または設定します。</p>
@@ -630,32 +685,6 @@
   </section>
   <h3 id="properties">&#12503;&#12525;&#12497;&#12486;&#12451;
   </h3>
-  <a id="Altseed2_CameraNode_Angle_" data-uid="Altseed2.CameraNode.Angle*"></a>
-  <h4 id="Altseed2_CameraNode_Angle" data-uid="Altseed2.CameraNode.Angle">Angle</h4>
-  <section>
-  <div class="markdown level1 summary"><p>描画領域の回転角（度数法）を取得または設定します。</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float Angle { get; set; }</code></pre>
-  </div>
-  
-  
-  </section>
-  <a id="Altseed2_CameraNode_CenterPosition_" data-uid="Altseed2.CameraNode.CenterPosition*"></a>
-  <h4 id="Altseed2_CameraNode_CenterPosition" data-uid="Altseed2.CameraNode.CenterPosition">CenterPosition</h4>
-  <section>
-  <div class="markdown level1 summary"><p>描画領域の中心座標をピクセル単位で取得または設定します。</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Vector2F CenterPosition { get; set; }</code></pre>
-  </div>
-  
-  
-  </section>
   <a id="Altseed2_CameraNode_ClearColor_" data-uid="Altseed2.CameraNode.ClearColor*"></a>
   <h4 id="Altseed2_CameraNode_ClearColor" data-uid="Altseed2.CameraNode.ClearColor">ClearColor</h4>
   <section>
@@ -677,7 +706,7 @@
   <div class="markdown level1 conceptual"></div>
   <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int Group { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public ulong Group { get; set; }</code></pre>
   </div>
   
   
@@ -691,32 +720,6 @@
   <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool IsColorCleared { get; set; }</code></pre>
-  </div>
-  
-  
-  </section>
-  <a id="Altseed2_CameraNode_Position_" data-uid="Altseed2.CameraNode.Position*"></a>
-  <h4 id="Altseed2_CameraNode_Position" data-uid="Altseed2.CameraNode.Position">Position</h4>
-  <section>
-  <div class="markdown level1 summary"><p>描画領域の座標を取得または設定します。</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Vector2F Position { get; set; }</code></pre>
-  </div>
-  
-  
-  </section>
-  <a id="Altseed2_CameraNode_Scale_" data-uid="Altseed2.CameraNode.Scale*"></a>
-  <h4 id="Altseed2_CameraNode_Scale" data-uid="Altseed2.CameraNode.Scale">Scale</h4>
-  <section>
-  <div class="markdown level1 summary"><p>描画領域の拡大率を取得または設定します。</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Vector2F Scale { get; set; }</code></pre>
   </div>
   
   

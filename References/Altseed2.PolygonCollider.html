@@ -188,6 +188,9 @@
                             <a href="Altseed2.EasingType.html" title="EasingType" class="">EasingType</a>
                           </li>
                           <li class="">
+                            <a href="Altseed2.EdgeCollider.html" title="EdgeCollider" class="">EdgeCollider</a>
+                          </li>
+                          <li class="">
                             <a href="Altseed2.Engine.html" title="Engine" class="">Engine</a>
                           </li>
                           <li class="">
@@ -347,6 +350,9 @@
                             <a href="Altseed2.ShaderStage.html" title="ShaderStage" class="">ShaderStage</a>
                           </li>
                           <li class="">
+                            <a href="Altseed2.ShapeCollider.html" title="ShapeCollider" class="">ShapeCollider</a>
+                          </li>
+                          <li class="">
                             <a href="Altseed2.ShapeNode.html" title="ShapeNode" class="">ShapeNode</a>
                           </li>
                           <li class="">
@@ -498,11 +504,6 @@
   <div class="inheritedMembers">
   
     <div>
-      <h5><a class="xref" href="Altseed2.Collider.html#Altseed2_Collider_GetIsCollidedWith_Altseed2_Collider_">Collider.GetIsCollidedWith(Collider)</a></h5>
-      <p>指定したコライダとの衝突判定を行います。</p>
-
-    </div>
-    <div>
       <h5><a class="xref" href="Altseed2.Collider.html#Altseed2_Collider_Position">Collider.Position</a></h5>
       <p>座標を取得または設定します。</p>
 
@@ -517,30 +518,77 @@
       <p>変形行列を取得または設定します。</p>
 
     </div>
+    <div>
+      <h5><a class="xref" href="Altseed2.Collider.html#Altseed2_Collider_GetIsCollidedWith_Altseed2_Collider_">Collider.GetIsCollidedWith(Collider)</a></h5>
+      <p>指定したコライダとの衝突判定を行います。</p>
+
+    </div>
   
   </div>
   
   
   <h3 id="MemberToc">&#12513;&#12531;&#12496;&#12540;</h3>
+  <h4>&#12467;&#12531;&#12473;&#12488;&#12521;&#12463;&#12479;
+  </h4>
+      <h5><a class="xref" href="Altseed2.PolygonCollider.html#Altseed2_PolygonCollider__ctor">PolygonCollider()</a></h5>
+      <section><p><a class="xref" href="Altseed2.PolygonCollider.html">PolygonCollider</a>の新しいインスタンスを生成します。</p>
+</section>
   <h4>&#12503;&#12525;&#12497;&#12486;&#12451;
   </h4>
+      <h5><a class="xref" href="Altseed2.PolygonCollider.html#Altseed2_PolygonCollider_Buffers">Buffers</a></h5>
+      <section><p>インデックスバッファーを取得または設定します。</p>
+</section>
       <h5><a class="xref" href="Altseed2.PolygonCollider.html#Altseed2_PolygonCollider_Vertexes">Vertexes</a></h5>
       <section><p>頂点情報のコレクションを取得または設定します。</p>
 </section>
   <h4>&#12513;&#12477;&#12483;&#12489;
   </h4>
-      <h5><a class="xref" href="Altseed2.PolygonCollider.html#Altseed2_PolygonCollider_Create">Create()</a></h5>
-      <section><p>多角形コライダを作成します。</p>
+      <h5><a class="xref" href="Altseed2.PolygonCollider.html#Altseed2_PolygonCollider_SetBuffers_System_Collections_Generic_IEnumerable_System_Int32__">SetBuffers(IEnumerable&lt;Int32&gt;)</a></h5>
+      <section><p>インデックスバッファーを設定します。</p>
 </section>
-      <h5><a class="xref" href="Altseed2.PolygonCollider.html#Altseed2_PolygonCollider_SetVertexes_System_Collections_Generic_IEnumerable_Altseed2_Vector2F__">SetVertexes(IEnumerable&lt;Vector2F&gt;)</a></h5>
+      <h5><a class="xref" href="Altseed2.PolygonCollider.html#Altseed2_PolygonCollider_SetBuffers_System_ReadOnlySpan_System_Int32__">SetBuffers(ReadOnlySpan&lt;Int32&gt;)</a></h5>
+      <section><p>インデックスバッファーを設定します。</p>
+</section>
+      <h5><a class="xref" href="Altseed2.PolygonCollider.html#Altseed2_PolygonCollider_SetDefaultIndexBuffer">SetDefaultIndexBuffer()</a></h5>
+      <section><p>インデックスバッファーを既定のものに設定します。</p>
+</section>
+      <h5><a class="xref" href="Altseed2.PolygonCollider.html#Altseed2_PolygonCollider_SetVertexes_System_Collections_Generic_IEnumerable_Altseed2_Vector2F__System_Boolean_">SetVertexes(IEnumerable&lt;Vector2F&gt;, Boolean)</a></h5>
       <section><p>指定した座標に頂点を設定します。</p>
 </section>
-      <h5><a class="xref" href="Altseed2.PolygonCollider.html#Altseed2_PolygonCollider_SetVertexes_System_ReadOnlySpan_Altseed2_Vector2F__">SetVertexes(ReadOnlySpan&lt;Vector2F&gt;)</a></h5>
+      <h5><a class="xref" href="Altseed2.PolygonCollider.html#Altseed2_PolygonCollider_SetVertexes_System_ReadOnlySpan_Altseed2_Vector2F__System_Boolean_">SetVertexes(ReadOnlySpan&lt;Vector2F&gt;, Boolean)</a></h5>
       <section><p>指定した座標に頂点を設定する</p>
 </section>
   
+  <h3 id="constructors">&#12467;&#12531;&#12473;&#12488;&#12521;&#12463;&#12479;
+  </h3>
+  <a id="Altseed2_PolygonCollider__ctor_" data-uid="Altseed2.PolygonCollider.#ctor*"></a>
+  <h4 id="Altseed2_PolygonCollider__ctor" data-uid="Altseed2.PolygonCollider.#ctor">PolygonCollider()</h4>
+  <section>
+  <div class="markdown level1 summary"><p><a class="xref" href="Altseed2.PolygonCollider.html">PolygonCollider</a>の新しいインスタンスを生成します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PolygonCollider()</code></pre>
+  </div>
+  
+  
+  </section>
   <h3 id="properties">&#12503;&#12525;&#12497;&#12486;&#12451;
   </h3>
+  <a id="Altseed2_PolygonCollider_Buffers_" data-uid="Altseed2.PolygonCollider.Buffers*"></a>
+  <h4 id="Altseed2_PolygonCollider_Buffers" data-uid="Altseed2.PolygonCollider.Buffers">Buffers</h4>
+  <section>
+  <div class="markdown level1 summary"><p>インデックスバッファーを取得または設定します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;int&gt; Buffers { get; set; }</code></pre>
+  </div>
+  
+  
+  </section>
   <a id="Altseed2_PolygonCollider_Vertexes_" data-uid="Altseed2.PolygonCollider.Vertexes*"></a>
   <h4 id="Altseed2_PolygonCollider_Vertexes" data-uid="Altseed2.PolygonCollider.Vertexes">Vertexes</h4>
   <section>
@@ -556,30 +604,86 @@
   </section>
   <h3 id="methods">&#12513;&#12477;&#12483;&#12489;
   </h3>
-  <a id="Altseed2_PolygonCollider_Create_" data-uid="Altseed2.PolygonCollider.Create*"></a>
-  <h4 id="Altseed2_PolygonCollider_Create" data-uid="Altseed2.PolygonCollider.Create">Create()</h4>
+  <a id="Altseed2_PolygonCollider_SetBuffers_" data-uid="Altseed2.PolygonCollider.SetBuffers*"></a>
+  <h4 id="Altseed2_PolygonCollider_SetBuffers_System_Collections_Generic_IEnumerable_System_Int32__" data-uid="Altseed2.PolygonCollider.SetBuffers(System.Collections.Generic.IEnumerable{System.Int32})">SetBuffers(IEnumerable&lt;Int32&gt;)</h4>
   <section>
-  <div class="markdown level1 summary"><p>多角形コライダを作成します。</p>
+  <div class="markdown level1 summary"><p>インデックスバッファーを設定します。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static PolygonCollider Create()</code></pre>
+    <pre><code class="lang-csharp hljs">public void SetBuffers(IEnumerable&lt;int&gt; buffers)</code></pre>
   </div>
-  <h5 class="returns">&#25147;&#12426;&#20516;</h5>
-    <p><section></section></p>
+  <h5 class="parameters">&#12497;&#12521;&#12513;&#12540;&#12479;</h5>
+  <section>
+  <table class="table member-table">
+    <tbody>
+      <tr>
+        <td><span class="parametername">buffers</span></td>
+        <td><p>設定する座標</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  </section>
+  
+  
+  
+  <h5 id="Altseed2_PolygonCollider_SetBuffers_System_Collections_Generic_IEnumerable_System_Int32___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>サイズは3の倍数である必要があります<br>余った値は無視されます</p>
+</div>
+  </section>
+  <a id="Altseed2_PolygonCollider_SetBuffers_" data-uid="Altseed2.PolygonCollider.SetBuffers*"></a>
+  <h4 id="Altseed2_PolygonCollider_SetBuffers_System_ReadOnlySpan_System_Int32__" data-uid="Altseed2.PolygonCollider.SetBuffers(System.ReadOnlySpan{System.Int32})">SetBuffers(ReadOnlySpan&lt;Int32&gt;)</h4>
+  <section>
+  <div class="markdown level1 summary"><p>インデックスバッファーを設定します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetBuffers(ReadOnlySpan&lt;int&gt; buffers)</code></pre>
+  </div>
+  <h5 class="parameters">&#12497;&#12521;&#12513;&#12540;&#12479;</h5>
+  <section>
+  <table class="table member-table">
+    <tbody>
+      <tr>
+        <td><span class="parametername">buffers</span></td>
+        <td><p>設定するインデックスバッファー</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  </section>
+  
+  
+  
+  <h5 id="Altseed2_PolygonCollider_SetBuffers_System_ReadOnlySpan_System_Int32___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>サイズは3の倍数である必要があります<br>余った値は無視されます</p>
+</div>
+  </section>
+  <a id="Altseed2_PolygonCollider_SetDefaultIndexBuffer_" data-uid="Altseed2.PolygonCollider.SetDefaultIndexBuffer*"></a>
+  <h4 id="Altseed2_PolygonCollider_SetDefaultIndexBuffer" data-uid="Altseed2.PolygonCollider.SetDefaultIndexBuffer">SetDefaultIndexBuffer()</h4>
+  <section>
+  <div class="markdown level1 summary"><p>インデックスバッファーを既定のものに設定します。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetDefaultIndexBuffer()</code></pre>
+  </div>
   
   
   </section>
   <a id="Altseed2_PolygonCollider_SetVertexes_" data-uid="Altseed2.PolygonCollider.SetVertexes*"></a>
-  <h4 id="Altseed2_PolygonCollider_SetVertexes_System_Collections_Generic_IEnumerable_Altseed2_Vector2F__" data-uid="Altseed2.PolygonCollider.SetVertexes(System.Collections.Generic.IEnumerable{Altseed2.Vector2F})">SetVertexes(IEnumerable&lt;Vector2F&gt;)</h4>
+  <h4 id="Altseed2_PolygonCollider_SetVertexes_System_Collections_Generic_IEnumerable_Altseed2_Vector2F__System_Boolean_" data-uid="Altseed2.PolygonCollider.SetVertexes(System.Collections.Generic.IEnumerable{Altseed2.Vector2F},System.Boolean)">SetVertexes(IEnumerable&lt;Vector2F&gt;, Boolean)</h4>
   <section>
   <div class="markdown level1 summary"><p>指定した座標に頂点を設定します。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void SetVertexes(IEnumerable&lt;Vector2F&gt; positions)</code></pre>
+    <pre><code class="lang-csharp hljs">public void SetVertexes(IEnumerable&lt;Vector2F&gt; positions, bool resetIB = true)</code></pre>
   </div>
   <h5 class="parameters">&#12497;&#12521;&#12513;&#12540;&#12479;</h5>
   <section>
@@ -590,6 +694,11 @@
         <td><p>設定する座標</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="parametername">resetIB</span></td>
+        <td><p><a class="xref" href="Altseed2.PolygonCollider.html#Altseed2_PolygonCollider_Buffers">Buffers</a>を自動計算したものに設定するかどうか</p>
+</td>
+      </tr>
     </tbody>
   </table>
   </section>
@@ -598,14 +707,14 @@
   
   </section>
   <a id="Altseed2_PolygonCollider_SetVertexes_" data-uid="Altseed2.PolygonCollider.SetVertexes*"></a>
-  <h4 id="Altseed2_PolygonCollider_SetVertexes_System_ReadOnlySpan_Altseed2_Vector2F__" data-uid="Altseed2.PolygonCollider.SetVertexes(System.ReadOnlySpan{Altseed2.Vector2F})">SetVertexes(ReadOnlySpan&lt;Vector2F&gt;)</h4>
+  <h4 id="Altseed2_PolygonCollider_SetVertexes_System_ReadOnlySpan_Altseed2_Vector2F__System_Boolean_" data-uid="Altseed2.PolygonCollider.SetVertexes(System.ReadOnlySpan{Altseed2.Vector2F},System.Boolean)">SetVertexes(ReadOnlySpan&lt;Vector2F&gt;, Boolean)</h4>
   <section>
   <div class="markdown level1 summary"><p>指定した座標に頂点を設定する</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void SetVertexes(ReadOnlySpan&lt;Vector2F&gt; positions)</code></pre>
+    <pre><code class="lang-csharp hljs">public void SetVertexes(ReadOnlySpan&lt;Vector2F&gt; positions, bool resetIB = true)</code></pre>
   </div>
   <h5 class="parameters">&#12497;&#12521;&#12513;&#12540;&#12479;</h5>
   <section>
@@ -614,6 +723,11 @@
       <tr>
         <td><span class="parametername">positions</span></td>
         <td><p>設定する座標</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">resetIB</span></td>
+        <td><p><a class="xref" href="Altseed2.PolygonCollider.html#Altseed2_PolygonCollider_Buffers">Buffers</a>を自動計算したものに設定するかどうか</p>
 </td>
       </tr>
     </tbody>
