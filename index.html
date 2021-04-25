@@ -8,7 +8,7 @@
     <title>Altseed2 | Altseed2 </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Altseed2 | Altseed2 ">
-    <meta name="generator" content="docfx 2.56.2.0">
+    <meta name="generator" content="docfx 2.57.2.0">
     
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="styles/docfx.vendor.css">
@@ -62,50 +62,76 @@
         <div id="content">
             
 <div id="budges">
-<p>NuGet:<a href="https://www.nuget.org/packages/Altseed2"><img src="https://img.shields.io/nuget/vpre/Altseed2?color=darkgreen&amp;logo=nuget&amp;label=%20&amp;style=plastic" alt="NuGet Package"></a>
-Engine:<a href="https://github.com/altseed/Altseed2-csharp"><img src="https://img.shields.io/github/commits-since/altseed/Altseed2-csharp/2.0.0-beta4?include_prereleases&amp;logo=github&amp;color=blue&amp;style=plastic" alt="GitHub Engine"></a>
-Core:<a href="https://github.com/altseed/Altseed2"><img src="https://img.shields.io/github/milestones/progress/altseed/Altseed2/1?color=orange&amp;logo=github&amp;style=plastic" alt="Github Core"></a></p>
+<p>NuGet: <a href="https://www.nuget.org/packages/Altseed2" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/nuget/vpre/Altseed2?color=darkgreen&logo=nuget&label=%20&style=plastic)](https://www.nuget.org/packages/Altseed2"></a>
+Engine:<a href="https://github.com/altseed/Altseed2-csharp" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/github/commits-since/altseed/Altseed2-csharp/2.0.0-beta4?include_prereleases&logo=github&color=blue&style=plastic"></a>
+Core:<a href="https://github.com/altseed/Altseed2" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/github/milestones/progress/altseed/Altseed2/1?color=orange&logo=github&style=plastic"></a></p>
 </div>
 <h2 id="altseed2とは">Altseed2とは</h2>
-<p>Altseed2 はグラフィック、サウンド、ジョイスティックなどの機能をまとめたゲーム用ライブラリです。
+<p>Altseed2 は画面描画・音・入力・衝突判定などの機能をまとめたゲーム用ライブラリです。
 オブジェクト指向を用いた開発に適したインタフェースにより、複雑になりがちな機能を少ないコード量で実装することができます。
-かつての Altseed と異なり、ノードシステムを採用しており、オブジェクトやオブジェクトが持つ機能の管理を、より柔軟に行うことができます。
+かつての Altseed と異なり、ノードシステムを採用しており、オブジェクトやオブジェクトが持つ機能の管理を、より柔軟かつ統一的に行うことができます。
 その他にも、Altseed2 には初代 Altseed にはなかった機能がいくつか実装されています。</p>
-<h2 id="使い方">使い方</h2>
-<p>チュートリアルは<a href="Tutorials/Chap0/index.html">こちら</a>！</p>
+<h2 id="ページ">ページ</h2>
+<ul>
+<li><a href="Tutorials/Chap0/index.html">チュートリアル</a> : プログラミング初心者向けに、Altseed2 を使ってシューティングゲームを実装するコースを用意してあります。</li>
+<li><a href="Manual/Engine/Engine.html">機能解説</a> : Altseed2 の各機能についてサンプルコードと共に使い方の解説を学べます。</li>
+<li><a href="xref:Altseed2">リファレンス</a> : 各クラスのプロパティやメソッドについて詳細に確認することができます。</li>
+</ul>
+<h2 id="必要な環境">必要な環境</h2>
+<ul>
+<li>Windows : 10 以降 (DirectX11 以上が必要)</li>
+<li>Mac : Mojave 以降</li>
+<li>Linux : 2.1 以降</li>
+</ul>
+<h2 id="ライセンス">ライセンス</h2>
+<p>Altseed2 の開発者が書いたコードは MIT ライセンスですが、Altseed2 を利用したアプリケーションを配布する際には、Altseed2 が利用しているすべてのライブラリのライセンスについても記述する必要があります。
+Altseed2 をダウンロードした際に含まれている <code>LICENSE</code> ファイルを、または GitHub 上の <a href="https://github.com/altseed/Altseed2/blob/master/LICENSE" target="_blank" rel="noopener noreferrer"><code>LICENSE</code></a> ファイルをダウンロードして、アプリケーション配布時に含めるようにしてください。</p>
+<h2 id="サポート">サポート</h2>
+<ul>
+<li><a href="https://github.com/altseed/Altseed2" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+<li><a href="https://twitter.com/altseed" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+<li><a href="https://altseed.herokuapp.com/" target="_blank" rel="noopener noreferrer">Slack</a></li>
+</ul>
 <h2 id="altseed2-でできること">Altseed2 でできること</h2>
-<h3 id="例--オーディオビジュアライザ">例 : オーディオビジュアライザ</h3>
-<p>Altseed2 で新たに追加された機能の中に、再生中の音声についてスペクトル解析を行う機能があります。
-これを使用することで、音楽に合わせて動くオブジェクトを、簡単に実装することができます。</p>
+<h3 id="例--オーディオビジュアライザ">例 : <a href="Manual/Sound/Sound.html">オーディオビジュアライザ</a></h3>
+<p>Altseed2 では再生中の音声についてスペクトル解析を行うことができます。
+これを使用して、音楽に合わせて動くオブジェクトを実装することができます。</p>
 <video width="320" height="240" autoplay="" muted="true" loop="true" preload="" poster="Images/Spectrum.png">
   <source src="Images/Spectrum.mp4" type="video/mp4">
   <source src="Images/Spectrum.webm" type="video/webm">
   <img src="Images/Spectrum.png">
 </source></source></video>
 <!--[!code-csharp[Main](Src/Samples/AudioVisualizerDemonstration/AudioVisualizerDemonstration.cs)]-->
-<h3 id="例--衝突判定">例 : 衝突判定</h3>
-<p>Altseed2 では、オブジェクト同士の衝突判定機能が実装されています。
-衝突時の処理を、メソッドとしてクラスの中に記述することができます。</p>
+<h3 id="例--衝突判定">例 : <a href="Manual/Physics/Collision.html">衝突判定</a></h3>
+<p>Altseed2 ではオブジェクト同士の衝突判定を行うことができます。
+衝突時の処理をメソッドとして簡単に記述することができます。</p>
 <video width="320" height="240" autoplay="" muted="true" loop="true" preload="" poster="Images/Collision.png">
   <source src="Images/Collision.mp4" type="video/mp4">
   <source src="Images/Collision.webm" type="video/webm">
   <img src="Images/Collision.png">
 </source></source></video>
 <!--[!code-csharp[Main](Src/Samples/CollisionDemonstration/CollisionDemonstration.cs)]-->
-<h2 id="必要な環境">必要な環境</h2>
-<p>Windows : 10 以降 (DirectX11 以上が必要)<br>
-Mac : Mojave 以降<br>
-Linux : 2.1 以降</p>
-<h2 id="リファレンス">リファレンス</h2>
-<ul>
-<li><a class="xref" href="References/Altseed2.html">リファレンス</a></li>
-</ul>
-<h2 id="サポート">サポート</h2>
-<ul>
-<li><a href="https://github.com/altseed/Altseed2">GitHub</a></li>
-<li><a href="https://twitter.com/altseed">Twitter</a></li>
-<li><a href="https://altseed.herokuapp.com/">Slack</a></li>
-</ul>
+<h3 id="例--ジョイスティック">例 : <a href="Manual/Input/Joystick.html">ジョイスティック</a></h3>
+<p>Altseed2 では、SDL_GameControllerDBによって記述されているコントローラ（100~200種類ほど）に対して、ゲームパッドのボタンの種類（<a href="xref:Altseed2.JoystickButton"><code>JoystickButton</code></a>）によってその入力を取得することができます。
+これにより、単一のコードで100種類以上のゲームパッドに対応することができます。
+非対応のコントローラーでも、ボタンのインデックスを利用して入力を取得可能です。</p>
+<h3 id="例--カメラ">例 : <a href="Manual/Graphics/Camera.html">カメラ</a></h3>
+<p>Altseed2 では、カメラ機能を利用することで特定の範囲だけを切り取って描画することができます。</p>
+<h3 id="例--ポストエフェクト">例 : <a href="Manual/Graphics/PostEffect.html">ポストエフェクト</a></h3>
+<p>Altseed2 では、ポストエフェクト機能を利用して描画結果に加工を加えられます。
+標準ではグレースケール、セピア、ガウスぼかし、ライトブルームを利用できます。
+シェーダーを記述して、独自のポストエフェクトを作成することもできます。</p>
+<h3 id="例--マテリアル">例 : <a href="Manual/Graphics/Material.html">マテリアル</a></h3>
+<p>Altseed2 では、HLSL を利用してシェーダーを記述できます。
+シェーダーはプラットフォームごとに自動で変換されるため、すべてのプラットフォームで動作します。</p>
+<h3 id="例--フォントファイルの画像化">例 : フォントファイルの画像化</h3>
+<p>Altseed2 では、フォントファイルを事前に画像ファイルに変換して、それを利用することができます。
+ライセンスによってフォントファイルそのものを配布できない場合でも、画像に変換することで利用できる場合があります。（ライセンスはフォントごとに異なるので、使用しているフォントのライセンスをよく確認してください）</p>
+<h3 id="例--ファイルパッケージ">例 : <a href="Manual/File/Package.html">ファイルパッケージ</a></h3>
+<p>Altseed2 では、画像ファイルや音声ファイルを入れたリソースフォルダを、暗号化したパッケージファイルに変換することができます。
+ゲームファイルを配布する際には暗号化したリソースを利用することで、画像や音声が意図しない使われ方をすることを防ぐことができます。</p>
+<h3 id="例--プロファイリング">例 : <a href="Manual/Profiler/Profiler.html">プロファイリング</a></h3>
+<p>プロファイラ機能を利用して、特定の範囲の処理の実行に掛かる時間を測定する事ができます。</p>
 <h2 id="altseed2-for-rust-について">Altseed2 For Rust について</h2>
 <p>現在、Rust で使用できる Altseed2 を鋭意開発中です。</p>
 
@@ -117,7 +143,7 @@ Linux : 2.1 以降</p>
       <div class="footer">
         <div class="container">
           <span class="pull-right">
-            <a href="#top">Back to top</a>
+            <a href="#top"></a>
           </span>
           Copyright &copy; 2020 Altseed .
           

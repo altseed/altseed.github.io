@@ -8,7 +8,7 @@
     <title>&#12461;&#12540;&#12508;&#12540;&#12489; | Altseed2 </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="&#12461;&#12540;&#12508;&#12540;&#12489; | Altseed2 ">
-    <meta name="generator" content="docfx 2.56.2.0">
+    <meta name="generator" content="docfx 2.57.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -54,7 +54,7 @@
                           <a href="../../Manual/index.html" title="&#27231;&#33021;&#35299;&#35500;">&#27231;&#33021;&#35299;&#35500;</a>
                       </li>
                       <li>
-                          <a href="../../References/Altseed2.html" title="&#12522;&#12501;&#12449;&#12524;&#12531;&#12473;">&#12522;&#12501;&#12449;&#12524;&#12531;&#12473;</a>
+                          <a>リファレンス</a>
                       </li>
                       <li>
                           <a href="../../First/index.html" title="&#21021;&#20195;Altseed&#12399;&#12467;&#12481;&#12521;">&#21021;&#20195;Altseed&#12399;&#12467;&#12481;&#12521;</a>
@@ -74,16 +74,16 @@
       <div class="container body-content">
         
         <div id="search-results">
-          <div class="search-list"></div>
+          <div class="search-list"> <span></span></div>
           <div class="sr-items">
             <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
           </div>
-          <ul id="pagination"></ul>
+          <ul id="pagination" data-first="data-prev=" data-next="data-last="></ul>
         </div>
       </div>
       <div role="main" class="container body-content hide-when-search">
         <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle"></a>
           <div class="sidetoggle collapse" id="sidetoggle">
             <div>
               <div class="sidefilter">
@@ -122,6 +122,9 @@
                     </li>
                     <li class="">
                       <a href="../Log/Log.html" title="&#12525;&#12464;" class="">&#12525;&#12464;</a>
+                    </li>
+                    <li class="">
+                      <a href="../Profiler/Profiler.html" title="&#12503;&#12525;&#12501;&#12449;&#12452;&#12521;" class="">&#12503;&#12525;&#12501;&#12449;&#12452;&#12521;</a>
                     </li>
                     <li class="">
                       <a href="../File/file.html" title="&#12501;&#12449;&#12452;&#12523;" class="">&#12501;&#12449;&#12452;&#12523;</a>
@@ -163,14 +166,14 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="キーボード">キーボード</h1>
 
-<p><a class="xref" href="../../References/Altseed2.Keyboard.html">Keyboard</a> は キーボード入力に関する機能を提供します。</p>
-<h2 id="keyboard"><a class="xref" href="../../References/Altseed2.Keyboard.html">Keyboard</a></h2>
-<p><a class="xref" href="../../References/Altseed2.Keyboard.html">Keyboard</a>では次の機能を提供します。</p>
+<p><a href="xref:Altseed2.Keyboard">Keyboard</a> は キーボード入力に関する機能を提供します。</p>
+<h2 id="keyboard"><a href="xref:Altseed2.Keyboard">Keyboard</a></h2>
+<p><a href="xref:Altseed2.Keyboard">Keyboard</a>では次の機能を提供します。</p>
 <ul>
 <li>キーボード入力の取得</li>
 </ul>
 <h2 id="基本的な呼び出し手順">基本的な呼び出し手順</h2>
-<p>Altseed2の<a class="xref" href="../../References/Altseed2.Engine.html#Altseed2_Engine_Initialize_System_String_System_Int32_System_Int32_Altseed2_Configuration_">Initialize</a>を呼び出した後、Engine.Keyboard という形でKeyboardの各種メソッドを呼び出してください。</p>
+<p>Altseed2の<a href="xref:Altseed2.Engine.Initialize(System.String,System.Int32,System.Int32,Altseed2.Configuration)">Initialize</a>を呼び出した後、Engine.Keyboard という形でKeyboardの各種メソッドを呼び出してください。</p>
 <h2 id="キー入力">キー入力</h2>
 <p>サンプル</p>
 <pre><code class="lang-csharp" name="Main">using System;
@@ -224,9 +227,9 @@ namespace Sample
 </code></pre>
 <p>カーソルの座標の取得・設定は以下のプロパティを通して行います。</p>
 <ul>
-<li><a class="xref" href="../../References/Altseed2.Keyboard.html#Altseed2_Keyboard_GetKeyState_Altseed2_Key_">GetKeyState</a></li>
+<li><a href="xref:Altseed2.Keyboard.GetKeyState(Altseed2.Key)">GetKeyState</a></li>
 </ul>
-<p>戻り値は<a class="xref" href="../../References/Altseed2.ButtonState.html">ButtonState</a>です。</p>
+<p>戻り値は<a href="xref:Altseed2.ButtonState">ButtonState</a>です。</p>
 <h4 id="cursormode">CursorMode</h4>
 <ul>
 <li>Normal  ...  デフォルト値</li>
@@ -250,7 +253,7 @@ namespace Sample
         <div class="footer">
           <div class="container">
             <span class="pull-right">
-              <a href="#top">Back to top</a>
+              <a href="#top"></a>
             </span>
             Copyright &copy; 2020 Altseed .
             

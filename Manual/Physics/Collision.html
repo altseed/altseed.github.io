@@ -8,7 +8,7 @@
     <title>&#34909;&#31361;&#21028;&#23450; | Altseed2 </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="&#34909;&#31361;&#21028;&#23450; | Altseed2 ">
-    <meta name="generator" content="docfx 2.56.2.0">
+    <meta name="generator" content="docfx 2.57.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -54,7 +54,7 @@
                           <a href="../../Manual/index.html" title="&#27231;&#33021;&#35299;&#35500;">&#27231;&#33021;&#35299;&#35500;</a>
                       </li>
                       <li>
-                          <a href="../../References/Altseed2.html" title="&#12522;&#12501;&#12449;&#12524;&#12531;&#12473;">&#12522;&#12501;&#12449;&#12524;&#12531;&#12473;</a>
+                          <a>リファレンス</a>
                       </li>
                       <li>
                           <a href="../../First/index.html" title="&#21021;&#20195;Altseed&#12399;&#12467;&#12481;&#12521;">&#21021;&#20195;Altseed&#12399;&#12467;&#12481;&#12521;</a>
@@ -74,16 +74,16 @@
       <div class="container body-content">
         
         <div id="search-results">
-          <div class="search-list"></div>
+          <div class="search-list"> <span></span></div>
           <div class="sr-items">
             <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
           </div>
-          <ul id="pagination"></ul>
+          <ul id="pagination" data-first="data-prev=" data-next="data-last="></ul>
         </div>
       </div>
       <div role="main" class="container body-content hide-when-search">
         <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle"></a>
           <div class="sidetoggle collapse" id="sidetoggle">
             <div>
               <div class="sidefilter">
@@ -122,6 +122,9 @@
                     </li>
                     <li class="">
                       <a href="../Log/Log.html" title="&#12525;&#12464;" class="">&#12525;&#12464;</a>
+                    </li>
+                    <li class="">
+                      <a href="../Profiler/Profiler.html" title="&#12503;&#12525;&#12501;&#12449;&#12452;&#12521;" class="">&#12503;&#12525;&#12501;&#12449;&#12452;&#12521;</a>
                     </li>
                     <li class="">
                       <a href="../File/file.html" title="&#12501;&#12449;&#12452;&#12523;" class="">&#12501;&#12449;&#12452;&#12523;</a>
@@ -164,72 +167,72 @@
 <h1 id="衝突判定">衝突判定</h1>
 
 <p>Altseed2では物理演算を用いて，2Dの衝突判定を行う機構が備わっています。</p>
-<h2 id="colliderクラス"><a class="xref" href="../../References/Altseed2.Collider.html">Collider</a>クラス</h2>
-<p><a class="xref" href="../../References/Altseed2.Collider.html">Collider</a>クラスは自身のメンバの情報をもとに他<a class="xref" href="../../References/Altseed2.Collider.html">Collider</a>のインスタンスとの衝突の有無を判定します。<br>
-<a class="xref" href="../../References/Altseed2.Collider.html">Collider</a>と衝突判定の種類は以下の通りです。</p>
+<h2 id="colliderクラス"><a href="xref:Altseed2.Collider">Collider</a>クラス</h2>
+<p><a href="xref:Altseed2.Collider">Collider</a>クラスは自身のメンバの情報をもとに他<a href="xref:Altseed2.Collider">Collider</a>のインスタンスとの衝突の有無を判定します。<br>
+<a href="xref:Altseed2.Collider">Collider</a>と衝突判定の種類は以下の通りです。</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: center;"><a class="xref" href="../../References/Altseed2.Collider.html">Collider</a></th>
+<th style="text-align: center;"><a href="xref:Altseed2.Collider">Collider</a></th>
 <th style="text-align: center;">衝突判定のタイプ</th>
 <th style="text-align: center;">使用するメンバ</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;"><a class="xref" href="../../References/Altseed2.CircleCollider.html">CircleCollider</a></td>
+<td style="text-align: center;"><a href="xref:Altseed2.CircleCollider">CircleCollider</a></td>
 <td style="text-align: center;">円形</td>
-<td style="text-align: center;"><a class="xref" href="../../References/Altseed2.Collider.html#Altseed2_Collider_Position">中心</a>，<a class="xref" href="../../References/Altseed2.CircleCollider.html#Altseed2_CircleCollider_Radius">半径</a></td>
+<td style="text-align: center;"><a href="xref:Altseed2.Collider.Position">中心</a>，<a href="xref:Altseed2.CircleCollider.Radius">半径</a></td>
 </tr>
 <tr>
-<td style="text-align: center;"><a class="xref" href="../../References/Altseed2.PolygonCollider.html">PolygonCollider</a></td>
+<td style="text-align: center;"><a href="xref:Altseed2.PolygonCollider">PolygonCollider</a></td>
 <td style="text-align: center;">多角形</td>
-<td style="text-align: center;"><a class="xref" href="../../References/Altseed2.PolygonCollider.html#Altseed2_PolygonCollider_Vertexes">各頂点の座標</a></td>
+<td style="text-align: center;"><a href="xref:Altseed2.PolygonCollider.Vertexes">各頂点の座標</a></td>
 </tr>
 <tr>
-<td style="text-align: center;"><a class="xref" href="../../References/Altseed2.RectangleCollider.html">RectangleCollider</a></td>
+<td style="text-align: center;"><a href="xref:Altseed2.RectangleCollider">RectangleCollider</a></td>
 <td style="text-align: center;">短形</td>
-<td style="text-align: center;"><a class="xref" href="../../References/Altseed2.Collider.html#Altseed2_Collider_Position">左上の座標</a>，<a class="xref" href="../../References/Altseed2.RectangleCollider.html#Altseed2_RectangleCollider_Size">サイズ(縦・横)</a></td>
+<td style="text-align: center;"><a href="xref:Altseed2.Collider.Position">左上の座標</a>，<a href="xref:Altseed2.RectangleCollider.Size">サイズ(縦・横)</a></td>
 </tr>
 </tbody>
 </table>
-<p><a class="xref" href="../../References/Altseed2.Collider.html">Collider</a>との衝突判定は<a class="xref" href="../../References/Altseed2.Collider.html#Altseed2_Collider_GetIsCollidedWith_Altseed2_Collider_">GetIsCollidedWith(Collider)</a>メソッドを使用します。<br>
+<p><a href="xref:Altseed2.Collider">Collider</a>との衝突判定は<a href="xref:Altseed2.Collider.GetIsCollidedWith(Altseed2.Collider)">GetIsCollidedWith(Collider)</a>メソッドを使用します。<br>
 指定したコライダと衝突していたらtrue，衝突していなかったらfalseを返します。</p>
-<h2 id="collidernodeクラスとcollisionmanagernodeクラス"><a class="xref" href="../../References/Altseed2.ColliderNode.html">ColliderNode</a>クラスと<a class="xref" href="../../References/Altseed2.CollisionManagerNode.html">CollisionManagerNode</a>クラス</h2>
+<h2 id="collidernodeクラスとcollisionmanagernodeクラス"><a href="xref:Altseed2.ColliderNode">ColliderNode</a>クラスと<a href="xref:Altseed2.CollisionManagerNode">CollisionManagerNode</a>クラス</h2>
 <p>この2つのクラスによって，コライダの衝突判定を自動で行う事が出来ます。</p>
-<h3 id="collidernodeクラス"><a class="xref" href="../../References/Altseed2.ColliderNode.html">ColliderNode</a>クラス</h3>
-<p>このクラスは<a class="xref" href="../../References/Altseed2.Collider.html">Collider</a>クラスを内部に持っています。<br>
-また，この派生クラスに<a class="xref" href="../../References/Altseed2.CircleColliderNode.html">CircleColliderNode</a>，<a class="xref" href="../../References/Altseed2.PolygonColliderNode.html">PolygonColliderNode</a>，
-<a class="xref" href="../../References/Altseed2.RectangleColliderNode.html">RectangleColliderNode</a>クラスがあり，それぞれ<a class="xref" href="../../References/Altseed2.CircleCollider.html">CircleCollider</a>，
-<a class="xref" href="../../References/Altseed2.PolygonCollider.html">PolygonCollider</a>，
-<a class="xref" href="../../References/Altseed2.RectangleCollider.html">RectangleCollider</a>クラスのインスタンスを内部に持っています。<br>
+<h3 id="collidernodeクラス"><a href="xref:Altseed2.ColliderNode">ColliderNode</a>クラス</h3>
+<p>このクラスは<a href="xref:Altseed2.Collider">Collider</a>クラスを内部に持っています。<br>
+また，この派生クラスに<a href="xref:Altseed2.CircleColliderNode">CircleColliderNode</a>，<a href="xref:Altseed2.PolygonColliderNode">PolygonColliderNode</a>，
+<a href="xref:Altseed2.RectangleColliderNode">RectangleColliderNode</a>クラスがあり，それぞれ<a href="xref:Altseed2.CircleCollider">CircleCollider</a>，
+<a href="xref:Altseed2.PolygonCollider">PolygonCollider</a>，
+<a href="xref:Altseed2.RectangleCollider">RectangleCollider</a>クラスのインスタンスを内部に持っています。<br>
 これらのクラスのプロパティを通して，内部コライダのメンバの操作を行う事が出来ます。</p>
 <div class="IMPORTANT">
 <h5>Important</h5>
 <p>このクラスは，衝突判定を行いたいノード(シューティングゲームで言う自機や弾となるノード)の<strong>子ノードとして</strong>使用される必要があります。</p>
 </div>
-<h3 id="collisionmanagernodeクラス"><a class="xref" href="../../References/Altseed2.CollisionManagerNode.html">CollisionManagerNode</a>クラス</h3>
-<p>このクラスでは<a class="xref" href="../../References/Altseed2.ColliderNode.html">ColliderNode</a>クラスのインスタンスが自動的に登録され，<a class="xref" href="../../References/Altseed2.Collider.html#Altseed2_Collider_GetIsCollidedWith_Altseed2_Collider_">GetIsCollidedWith(Collider)</a>メソッドを自動的に実行します。</p>
+<h3 id="collisionmanagernodeクラス"><a href="xref:Altseed2.CollisionManagerNode">CollisionManagerNode</a>クラス</h3>
+<p>このクラスでは<a href="xref:Altseed2.ColliderNode">ColliderNode</a>クラスのインスタンスが自動的に登録され，<a href="xref:Altseed2.Collider.GetIsCollidedWith(Altseed2.Collider)">GetIsCollidedWith(Collider)</a>メソッドを自動的に実行します。</p>
 <div class="TIP">
 <h5>Tip</h5>
-<p><a class="xref" href="../../References/Altseed2.Collider.html#Altseed2_Collider_GetIsCollidedWith_Altseed2_Collider_">GetIsCollidedWith(Collider)</a>メソッドによる衝突判定は，同じ<a class="xref" href="../../References/Altseed2.ColliderNode.html">ColliderNode</a>の組み合わせに対して1フレームにつき1度しか行われません。</p>
+<p><a href="xref:Altseed2.Collider.GetIsCollidedWith(Altseed2.Collider)">GetIsCollidedWith(Collider)</a>メソッドによる衝突判定は，同じ<a href="xref:Altseed2.ColliderNode">ColliderNode</a>の組み合わせに対して1フレームにつき1度しか行われません。</p>
 </div>
 <div class="IMPORTANT">
 <h5>Important</h5>
 <p>このクラスは衝突判定を行いたいノードの<strong>親ノードの子として</strong>使用される必要があります。<br>
-また，1つのノードに対して，<a class="xref" href="../../References/Altseed2.CollisionManagerNode.html">CollisionManagerNode</a>クラスのインスタンスは1つしか子として持つ事が出来ません。(登録しようとした場合は例外がスローされます。)</p>
+また，1つのノードに対して，<a href="xref:Altseed2.CollisionManagerNode">CollisionManagerNode</a>クラスのインスタンスは1つしか子として持つ事が出来ません。(登録しようとした場合は例外がスローされます。)</p>
 </div>
 <h3 id="実装の形式">実装の形式</h3>
-<p><a class="xref" href="../../References/Altseed2.ColliderNode.html">ColliderNode</a>クラスと<a class="xref" href="../../References/Altseed2.CollisionManagerNode.html">CollisionManagerNode</a>クラスはそれぞれ以下の図のような関係でなければなりません。</p>
+<p><a href="xref:Altseed2.ColliderNode">ColliderNode</a>クラスと<a href="xref:Altseed2.CollisionManagerNode">CollisionManagerNode</a>クラスはそれぞれ以下の図のような関係でなければなりません。</p>
 <div class="CAUTION">
 <h5>Caution</h5>
-<p><a class="xref" href="../../References/Altseed2.ColliderNode.html">ColliderNode</a>の自動登録には，シーンとなるノードに対して，<strong><a class="xref" href="../../References/Altseed2.CollisionManagerNode.html">CollisionManagerNode</a>が子ノードであり，かつ<a class="xref" href="../../References/Altseed2.ColliderNode.html">ColliderNode</a>が孫ノードである</strong>事が重要です。<br>
-それ以外の場合における<a class="xref" href="../../References/Altseed2.ColliderNode.html">ColliderNode</a>の自動的な追加/削除は発生しません。</p>
+<p><a href="xref:Altseed2.ColliderNode">ColliderNode</a>の自動登録には，シーンとなるノードに対して，<strong><a href="xref:Altseed2.CollisionManagerNode">CollisionManagerNode</a>が子ノードであり，かつ<a href="xref:Altseed2.ColliderNode">ColliderNode</a>が孫ノードである</strong>事が重要です。<br>
+それ以外の場合における<a href="xref:Altseed2.ColliderNode">ColliderNode</a>の自動的な追加/削除は発生しません。</p>
 </div>
 <p><img src="Image/Structure.png" alt="Structure"></p>
 <div class="NOTE">
 <h5>Note</h5>
-<p>衝突判定を行うノードが<a class="xref" href="../../References/Altseed2.ICollisionEventReceiver.html">ICollisionEventReceiver</a>インターフェイスを実装している場合，</p>
+<p>衝突判定を行うノードが<a href="xref:Altseed2.ICollisionEventReceiver">ICollisionEventReceiver</a>インターフェイスを実装している場合，</p>
 <ul>
 <li>衝突の開始</li>
 <li>衝突の継続</li>
@@ -343,11 +346,11 @@ namespace Sample
 <div class="IMPORTANT">
 <h5>Important</h5>
 <p>得られたノードを，<code>Node.AddChildNode(Node)</code>で登録しなければ衝突判定の視覚化は行われません。
-生成元の<a class="xref" href="../../References/Altseed2.ColliderNode.html">ColliderNode</a>を<a class="xref" href="../../References/Altseed2.CollisionManagerNode.html">CollisionManagerNode</a>の子にすることで，描画範囲を衝突範囲に同期することが出来ます。</p>
+生成元の<a href="xref:Altseed2.ColliderNode">ColliderNode</a>を<a href="xref:Altseed2.CollisionManagerNode">CollisionManagerNode</a>の子にすることで，描画範囲を衝突範囲に同期することが出来ます。</p>
 </div>
 <div class="CAUTION">
 <h5>Caution</h5>
-<p>衝突範囲の描画の同期は，元となる<a class="xref" href="../../References/Altseed2.ColliderNode.html">ColliderNode</a>が<a class="xref" href="../../References/Altseed2.CollisionManagerNode.html">CollisionManagerNode</a>の管理下にある必要があります。</p>
+<p>衝突範囲の描画の同期は，元となる<a href="xref:Altseed2.ColliderNode">ColliderNode</a>が<a href="xref:Altseed2.CollisionManagerNode">CollisionManagerNode</a>の管理下にある必要があります。</p>
 </div>
 <p>使い方は以下のサンプルコードを参考にしてください。</p>
 <pre><code class="lang-csharp" name="Main">using Altseed2;
@@ -426,7 +429,7 @@ namespace Sample
         <div class="footer">
           <div class="container">
             <span class="pull-right">
-              <a href="#top">Back to top</a>
+              <a href="#top"></a>
             </span>
             Copyright &copy; 2020 Altseed .
             

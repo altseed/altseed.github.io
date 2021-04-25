@@ -8,7 +8,7 @@
     <title>&#12501;&#12449;&#12452;&#12523;&#12497;&#12483;&#12465;&#12540;&#12472; | Altseed2 </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="&#12501;&#12449;&#12452;&#12523;&#12497;&#12483;&#12465;&#12540;&#12472; | Altseed2 ">
-    <meta name="generator" content="docfx 2.56.2.0">
+    <meta name="generator" content="docfx 2.57.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -54,7 +54,7 @@
                           <a href="../../Manual/index.html" title="&#27231;&#33021;&#35299;&#35500;">&#27231;&#33021;&#35299;&#35500;</a>
                       </li>
                       <li>
-                          <a href="../../References/Altseed2.html" title="&#12522;&#12501;&#12449;&#12524;&#12531;&#12473;">&#12522;&#12501;&#12449;&#12524;&#12531;&#12473;</a>
+                          <a>リファレンス</a>
                       </li>
                       <li>
                           <a href="../../First/index.html" title="&#21021;&#20195;Altseed&#12399;&#12467;&#12481;&#12521;">&#21021;&#20195;Altseed&#12399;&#12467;&#12481;&#12521;</a>
@@ -74,16 +74,16 @@
       <div class="container body-content">
         
         <div id="search-results">
-          <div class="search-list"></div>
+          <div class="search-list"> <span></span></div>
           <div class="sr-items">
             <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
           </div>
-          <ul id="pagination"></ul>
+          <ul id="pagination" data-first="data-prev=" data-next="data-last="></ul>
         </div>
       </div>
       <div role="main" class="container body-content hide-when-search">
         <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle"></a>
           <div class="sidetoggle collapse" id="sidetoggle">
             <div>
               <div class="sidefilter">
@@ -122,6 +122,9 @@
                     </li>
                     <li class="">
                       <a href="../Log/Log.html" title="&#12525;&#12464;" class="">&#12525;&#12464;</a>
+                    </li>
+                    <li class="">
+                      <a href="../Profiler/Profiler.html" title="&#12503;&#12525;&#12501;&#12449;&#12452;&#12521;" class="">&#12503;&#12525;&#12501;&#12449;&#12452;&#12521;</a>
                     </li>
                     <li class="">
                       <a href="../File/file.html" title="&#12501;&#12449;&#12452;&#12523;" class="">&#12501;&#12449;&#12452;&#12523;</a>
@@ -166,15 +169,15 @@
 <p>ファイルパッケージングとは、Altseed2で使用するファイルを一つのファイルにまとめる機能を指します。
 この機能を使用することで、Altseed2で使用するリソースデータを、ユーザから簡単に見られないようにすることができます。</p>
 <h2 id="パッケージの作り方">パッケージの作り方</h2>
-<p>パッケージの作成は、<a class="xref" href="../../References/Altseed2.File.html#Altseed2_File_Pack_System_String_System_String_">Engine.File.Pack</a>メソッドで、パッケージ化するディレクトリとパッケージのパスを指定することでできます。
-また、<a class="xref" href="../../References/Altseed2.File.html#Altseed2_File_PackWithPassword_System_String_System_String_System_String_">Engine.File.PackWithPassword</a>メソッドによって、パスワード付きでパッケージ化することが可能です。
+<p>パッケージの作成は、<a href="xref:Altseed2.File.Pack(System.String,System.String)">Engine.File.Pack</a>メソッドで、パッケージ化するディレクトリとパッケージのパスを指定することでできます。
+また、<a href="xref:Altseed2.File.PackWithPassword(System.String,System.String,System.String)">Engine.File.PackWithPassword</a>メソッドによって、パスワード付きでパッケージ化することが可能です。
 パスワード付きのパッケージにすることで、パッケージ化されたリソースデータをユーザから抽出されるのを防ぐことができます。</p>
 <h2 id="パッケージの使い方">パッケージの使い方</h2>
-<p><a class="xref" href="../../References/Altseed2.File.html#Altseed2_File_AddRootPackage_System_String_">Engine.File.AddRootPackage</a>メソッドでパッケージをルートに指定することが可能で、パッケージ内からファイルを読み込みます。
+<p><a href="xref:Altseed2.File.AddRootPackage(System.String)">Engine.File.AddRootPackage</a>メソッドでパッケージをルートに指定することが可能で、パッケージ内からファイルを読み込みます。
 そして、ルートディレクトリやパッケージは複数指定できます。
 ファイルを読み込む時に複数のファイルが見つかった時、後から追加されたルートディレクトリやパッケージから読み込みます。
 絶対パスを指定した場合、ルートの指定関係なく絶対パスで指定された先を読み込みます。
-パスワード付きのパッケージをルートに指定する場合、<a class="xref" href="../../References/Altseed2.File.html#Altseed2_File_AddRootPackageWithPassword_System_String_System_String_">Engine.File.AddRootPackageWithPassword</a>メソッドを使用してください。</p>
+パスワード付きのパッケージをルートに指定する場合、<a href="xref:Altseed2.File.AddRootPackageWithPassword(System.String,System.String)">Engine.File.AddRootPackageWithPassword</a>メソッドを使用してください。</p>
 <div class="TIP">
 <h5>Tip</h5>
 <p>複数のパッケージを読み込んだ時の優先順位を利用することでアップデートパッチを容易に実装できます。
@@ -330,7 +333,7 @@ namespace Sample
         <div class="footer">
           <div class="container">
             <span class="pull-right">
-              <a href="#top">Back to top</a>
+              <a href="#top"></a>
             </span>
             Copyright &copy; 2020 Altseed .
             

@@ -8,7 +8,7 @@
     <title>&#12472;&#12519;&#12452;&#12473;&#12486;&#12451;&#12483;&#12463; | Altseed2 </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="&#12472;&#12519;&#12452;&#12473;&#12486;&#12451;&#12483;&#12463; | Altseed2 ">
-    <meta name="generator" content="docfx 2.56.2.0">
+    <meta name="generator" content="docfx 2.57.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -54,7 +54,7 @@
                           <a href="../../Manual/index.html" title="&#27231;&#33021;&#35299;&#35500;">&#27231;&#33021;&#35299;&#35500;</a>
                       </li>
                       <li>
-                          <a href="../../References/Altseed2.html" title="&#12522;&#12501;&#12449;&#12524;&#12531;&#12473;">&#12522;&#12501;&#12449;&#12524;&#12531;&#12473;</a>
+                          <a>リファレンス</a>
                       </li>
                       <li>
                           <a href="../../First/index.html" title="&#21021;&#20195;Altseed&#12399;&#12467;&#12481;&#12521;">&#21021;&#20195;Altseed&#12399;&#12467;&#12481;&#12521;</a>
@@ -74,16 +74,16 @@
       <div class="container body-content">
         
         <div id="search-results">
-          <div class="search-list"></div>
+          <div class="search-list"> <span></span></div>
           <div class="sr-items">
             <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
           </div>
-          <ul id="pagination"></ul>
+          <ul id="pagination" data-first="data-prev=" data-next="data-last="></ul>
         </div>
       </div>
       <div role="main" class="container body-content hide-when-search">
         <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle"></a>
           <div class="sidetoggle collapse" id="sidetoggle">
             <div>
               <div class="sidefilter">
@@ -122,6 +122,9 @@
                     </li>
                     <li class="">
                       <a href="../Log/Log.html" title="&#12525;&#12464;" class="">&#12525;&#12464;</a>
+                    </li>
+                    <li class="">
+                      <a href="../Profiler/Profiler.html" title="&#12503;&#12525;&#12501;&#12449;&#12452;&#12521;" class="">&#12503;&#12525;&#12501;&#12449;&#12452;&#12521;</a>
                     </li>
                     <li class="">
                       <a href="../File/file.html" title="&#12501;&#12449;&#12452;&#12523;" class="">&#12501;&#12449;&#12452;&#12523;</a>
@@ -163,31 +166,31 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="ジョイスティック">ジョイスティック</h1>
 
-<p><a class="xref" href="../../References/Altseed2.Joystick.html">Joystick</a>クラスはジョイスティックコントローラーについての機能を提供します。
+<p><a href="xref:Altseed2.Joystick">Joystick</a>クラスはジョイスティックコントローラーについての機能を提供します。
 コントローラーの検出やコントローラー情報の取得、ボタンやスティックの入力の取得が可能です。</p>
-<p><a href="https://github.com/gabomdq/SDL_GameControllerDB">SDL GameControllerDB</a>に対応しているコントローラー（およそ数百種類）では、<a class="xref" href="../../References/Altseed2.JoystickButton.html">JoystickButton</a>や<a class="xref" href="../../References/Altseed2.JoystickAxis.html">JoystickAxis</a>を利用して抽象化されたコントローラーへのアクセスが可能です。</p>
+<p><a href="https://github.com/gabomdq/SDL_GameControllerDB">SDL GameControllerDB</a>に対応しているコントローラー（およそ数百種類）では、<a href="xref:Altseed2.JoystickButton">JoystickButton</a>や<a href="xref:Altseed2.JoystickAxis">JoystickAxis</a>を利用して抽象化されたコントローラーへのアクセスが可能です。</p>
 <h2 id="基本的な呼び出し手順">基本的な呼び出し手順</h2>
-<p>Altseed2の<a class="xref" href="../../References/Altseed2.Engine.html#Altseed2_Engine_Initialize_System_String_System_Int32_System_Int32_Altseed2_Configuration_">Initialize</a>を呼び出した後、<code>Engine.Joystick</code> という形でJoystickの各種メソッドを呼び出してください。</p>
+<p>Altseed2の<a href="xref:Altseed2.Engine.Initialize(System.String,System.Int32,System.Int32,Altseed2.Configuration)">Initialize</a>を呼び出した後、<code>Engine.Joystick</code> という形でJoystickの各種メソッドを呼び出してください。</p>
 <p>Joystickを接続・取り外しした際には、自動的にインデックスが更新されます。</p>
 <h2 id="ジョイスティックの情報の取得">ジョイスティックの情報の取得</h2>
-<p><a class="xref" href="../../References/Altseed2.Joystick.html#Altseed2_Joystick_GetJoystickInfo_System_Int32_">Engine.Joystick.GetJoystickInfo(int joystickIndex)</a>を利用して、指定したインデックスのジョイスティックの情報を取得できます。
-返り値は<a class="xref" href="../../References/Altseed2.JoystickInfo.html">JoystickInfo</a>です。
+<p><a href="xref:Altseed2.Joystick.GetJoystickInfo(System.Int32)">Engine.Joystick.GetJoystickInfo(int joystickIndex)</a>を利用して、指定したインデックスのジョイスティックの情報を取得できます。
+返り値は<a href="xref:Altseed2.JoystickInfo">JoystickInfo</a>です。
 ジョイスティックが接続されていない場合は<code>null</code>を返します。</p>
-<p><a class="xref" href="../../References/Altseed2.JoystickInfo.html">JoystickInfo</a>を通して、ジョイスティックの情報を取得できます。</p>
+<p><a href="xref:Altseed2.JoystickInfo">JoystickInfo</a>を通して、ジョイスティックの情報を取得できます。</p>
 <ul>
-<li><a class="xref" href="../../References/Altseed2.JoystickInfo.html#Altseed2_JoystickInfo_IsGamepad">IsGamepad</a>: ジョイスティックがGameControllerDBに登録された製品かどうかを取得できます。</li>
-<li><a class="xref" href="../../References/Altseed2.JoystickInfo.html#Altseed2_JoystickInfo_GamepadName">GamepadName</a>: <a class="xref" href="../../References/Altseed2.JoystickInfo.html#Altseed2_JoystickInfo_IsGamepad">IsGamepad</a>が<code>true</code>の場合にのみ使えます。GameControllerDBに登録された、わかりやすい名前を取得できます。</li>
-<li><a class="xref" href="../../References/Altseed2.JoystickInfo.html#Altseed2_JoystickInfo_Name">Name</a>: <a class="xref" href="../../References/Altseed2.JoystickInfo.html#Altseed2_JoystickInfo_IsGamepad">IsGamepad</a>が<code>false</code>の場合はこちらを利用してください。</li>
+<li><a href="xref:Altseed2.JoystickInfo.IsGamepad">IsGamepad</a>: ジョイスティックがGameControllerDBに登録された製品かどうかを取得できます。</li>
+<li><a href="xref:Altseed2.JoystickInfo.GamepadName">GamepadName</a>: <a href="xref:Altseed2.JoystickInfo.IsGamepad">IsGamepad</a>が<code>true</code>の場合にのみ使えます。GameControllerDBに登録された、わかりやすい名前を取得できます。</li>
+<li><a href="xref:Altseed2.JoystickInfo.Name">Name</a>: <a href="xref:Altseed2.JoystickInfo.IsGamepad">IsGamepad</a>が<code>false</code>の場合はこちらを利用してください。</li>
 </ul>
-<p>また、<a class="xref" href="../../References/Altseed2.Joystick.html#Altseed2_Joystick_IsPresent_System_Int32_">Engine.Joystick.IsPresent(int joystickIndex)</a>を利用しても、指定したインデックスにジョイスティックが接続されているかどうかを取得できます。</p>
+<p>また、<a href="xref:Altseed2.Joystick.IsPresent(System.Int32)">Engine.Joystick.IsPresent(int joystickIndex)</a>を利用しても、指定したインデックスにジョイスティックが接続されているかどうかを取得できます。</p>
 <h2 id="ボタン入力の取得">ボタン入力の取得</h2>
 <p>ボタンの取得は以下のメソッドを用いて行います。
 第一引数に取得したいジョイスティックコントローラーのインデックスを指定します。
-戻り値は<a class="xref" href="../../References/Altseed2.ButtonState.html">ButtonState</a>です。</p>
-<h3 id="getbuttonstateint-joystickindex-joystickbutton-button"><a class="xref" href="../../References/Altseed2.Joystick.html#Altseed2_Joystick_GetButtonState_System_Int32_Altseed2_JoystickButton_">GetButtonState(int joystickIndex, JoystickButton button)</a></h3>
-<p>第2引数に<a class="xref" href="../../References/Altseed2.JoystickButton.html">JoystickButton</a>を指定します。
-<a class="xref" href="../../References/Altseed2.JoystickInfo.html">JoystickInfo</a>の<a class="xref" href="../../References/Altseed2.JoystickInfo.html#Altseed2_JoystickInfo_IsGamepad">IsGamepad</a>が<code>true</code>の時のみ利用できます。</p>
-<h3 id="getbuttonstateint-joystickindex-int-buttonindex"><a class="xref" href="../../References/Altseed2.Joystick.html#Altseed2_Joystick_GetButtonState_System_Int32_System_Int32_">GetButtonState(int joystickIndex, int buttonIndex)</a></h3>
+戻り値は<a href="xref:Altseed2.ButtonState">ButtonState</a>です。</p>
+<h3 id="getbuttonstateint-joystickindex-joystickbutton-button"><a href="xref:Altseed2.Joystick.GetButtonState(System.Int32,Altseed2.JoystickButton)">GetButtonState(int joystickIndex, JoystickButton button)</a></h3>
+<p>第2引数に<a href="xref:Altseed2.JoystickButton">JoystickButton</a>を指定します。
+<a href="xref:Altseed2.JoystickInfo">JoystickInfo</a>の<a href="xref:Altseed2.JoystickInfo.IsGamepad">IsGamepad</a>が<code>true</code>の時のみ利用できます。</p>
+<h3 id="getbuttonstateint-joystickindex-int-buttonindex"><a href="xref:Altseed2.Joystick.GetButtonState(System.Int32,System.Int32)">GetButtonState(int joystickIndex, int buttonIndex)</a></h3>
 <p>第2引数にボタンのインデックスを指定します。</p>
 <pre><code class="lang-csharp" name="Main">using System;
 using Altseed2;
@@ -294,10 +297,10 @@ namespace Sample
 <p>第一引数に取得したいジョイスティックコントローラーのインデックスを指定します。
 戻り値は-1から1の間のfloatです。
 取得できる値は、左右スティックの水平方向(LeftX, RightX), 垂直方向(LeftY, RightY)、左右のトリガー(LeftTrigger, RightTrigger)です。</p>
-<h3 id="getaxisstateint-joystickindex-joystickaxis-axis"><a class="xref" href="../../References/Altseed2.Joystick.html#Altseed2_Joystick_GetAxisState_System_Int32_Altseed2_JoystickAxis_">GetAxisState(int joystickIndex, JoystickAxis axis)</a></h3>
-<p>第２引数に<a class="xref" href="../../References/Altseed2.JoystickAxis.html">JoystickAxis</a>を指定します。
-<a class="xref" href="../../References/Altseed2.JoystickInfo.html">JoystickInfo</a>の<a class="xref" href="../../References/Altseed2.JoystickInfo.html#Altseed2_JoystickInfo_IsGamepad">IsGamepad</a>が<code>true</code>の時のみ利用できます。</p>
-<h3 id="getaxisstateint-joystickindex-int-axisindex"><a class="xref" href="../../References/Altseed2.Joystick.html#Altseed2_Joystick_GetAxisState_System_Int32_System_Int32_">GetAxisState(int joystickIndex, int axisIndex)</a></h3>
+<h3 id="getaxisstateint-joystickindex-joystickaxis-axis"><a href="xref:Altseed2.Joystick.GetAxisState(System.Int32,Altseed2.JoystickAxis)">GetAxisState(int joystickIndex, JoystickAxis axis)</a></h3>
+<p>第２引数に<a href="xref:Altseed2.JoystickAxis">JoystickAxis</a>を指定します。
+<a href="xref:Altseed2.JoystickInfo">JoystickInfo</a>の<a href="xref:Altseed2.JoystickInfo.IsGamepad">IsGamepad</a>が<code>true</code>の時のみ利用できます。</p>
+<h3 id="getaxisstateint-joystickindex-int-axisindex"><a href="xref:Altseed2.Joystick.GetAxisState(System.Int32,System.Int32)">GetAxisState(int joystickIndex, int axisIndex)</a></h3>
 <p>第２引数にスティックのインデックスを指定します。</p>
 <pre><code class="lang-csharp" name="Main">using System;
 
@@ -421,7 +424,7 @@ namespace Sample
         <div class="footer">
           <div class="container">
             <span class="pull-right">
-              <a href="#top">Back to top</a>
+              <a href="#top"></a>
             </span>
             Copyright &copy; 2020 Altseed .
             

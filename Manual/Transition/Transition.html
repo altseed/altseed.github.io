@@ -8,7 +8,7 @@
     <title>&#12488;&#12521;&#12531;&#12472;&#12471;&#12519;&#12531; | Altseed2 </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="&#12488;&#12521;&#12531;&#12472;&#12471;&#12519;&#12531; | Altseed2 ">
-    <meta name="generator" content="docfx 2.56.2.0">
+    <meta name="generator" content="docfx 2.57.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -54,7 +54,7 @@
                           <a href="../../Manual/index.html" title="&#27231;&#33021;&#35299;&#35500;">&#27231;&#33021;&#35299;&#35500;</a>
                       </li>
                       <li>
-                          <a href="../../References/Altseed2.html" title="&#12522;&#12501;&#12449;&#12524;&#12531;&#12473;">&#12522;&#12501;&#12449;&#12524;&#12531;&#12473;</a>
+                          <a>リファレンス</a>
                       </li>
                       <li>
                           <a href="../../First/index.html" title="&#21021;&#20195;Altseed&#12399;&#12467;&#12481;&#12521;">&#21021;&#20195;Altseed&#12399;&#12467;&#12481;&#12521;</a>
@@ -74,16 +74,16 @@
       <div class="container body-content">
         
         <div id="search-results">
-          <div class="search-list"></div>
+          <div class="search-list"> <span></span></div>
           <div class="sr-items">
             <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
           </div>
-          <ul id="pagination"></ul>
+          <ul id="pagination" data-first="data-prev=" data-next="data-last="></ul>
         </div>
       </div>
       <div role="main" class="container body-content hide-when-search">
         <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle"></a>
           <div class="sidetoggle collapse" id="sidetoggle">
             <div>
               <div class="sidefilter">
@@ -122,6 +122,9 @@
                     </li>
                     <li class="">
                       <a href="../Log/Log.html" title="&#12525;&#12464;" class="">&#12525;&#12464;</a>
+                    </li>
+                    <li class="">
+                      <a href="../Profiler/Profiler.html" title="&#12503;&#12525;&#12501;&#12449;&#12452;&#12521;" class="">&#12503;&#12525;&#12501;&#12449;&#12452;&#12521;</a>
                     </li>
                     <li class="">
                       <a href="../File/file.html" title="&#12501;&#12449;&#12452;&#12523;" class="">&#12501;&#12449;&#12452;&#12523;</a>
@@ -165,55 +168,55 @@
 
 <p>トランジションとは、画面効果を演出しながら時間をかけて画面を切り替える機能を指します。
 トランジションは、例えばフェードアウト・フェードインといった画面効果を与えます。
-<a class="xref" href="../../References/Altseed2.TransitionNode.html">TransitionNode</a>を使用することで、トランジションを導入することができます。</p>
-<h2 id="transitionnode"><a class="xref" href="../../References/Altseed2.TransitionNode.html">TransitionNode</a></h2>
+<a href="xref:Altseed2.TransitionNode">TransitionNode</a>を使用することで、トランジションを導入することができます。</p>
+<h2 id="transitionnode"><a href="xref:Altseed2.TransitionNode">TransitionNode</a></h2>
 <p>トランジションを担当するノードです。
 このノードは、トランジション効果を演出するとともに、指定されたノードの入れ替えを行います。</p>
 <p>コンストラクタの引数には、削除するノードと新しく追加するノード、そしてノードが入れ替わる前後の期間を指定します。
-<a class="xref" href="../../References/Altseed2.TransitionNode.html">TransitionNode</a>がエンジンに追加されると、<strong>自動的にトランジションが開始されます。</strong>
+<a href="xref:Altseed2.TransitionNode">TransitionNode</a>がエンジンに追加されると、<strong>自動的にトランジションが開始されます。</strong>
 また、トランジションが終了すると、<strong>自動的にエンジンから削除されます。</strong></p>
 <p>ノードの入れ替えでは、下図のように、削除されたノードの親に新しくノードを追加するような形で行われます。</p>
 <p><img src="transition.png" alt="transition"></p>
-<p><a class="xref" href="../../References/Altseed2.TransitionNode.html">TransitionNode</a>を継承する事で、独自のトランジションを作成する事ができます。
+<p><a href="xref:Altseed2.TransitionNode">TransitionNode</a>を継承する事で、独自のトランジションを作成する事ができます。
 継承したクラスでは、以下の処理をオーバーライドできます。</p>
 <ul>
-<li>トランジションが開始した瞬間の処理(<a class="xref" href="../../References/Altseed2.TransitionNode.html#Altseed2_TransitionNode_OnTransitionBegin">OnTransitionBegin</a>メソッド)</li>
-<li>ノードが入れ替わるまでに継続して行われる処理(<a class="xref" href="../../References/Altseed2.TransitionNode.html#Altseed2_TransitionNode_OnClosing_System_Single_">OnClosing</a>メソッド)</li>
-<li>ノードが入れ替わる瞬間の処理(<a class="xref" href="../../References/Altseed2.TransitionNode.html#Altseed2_TransitionNode_OnNodeSwapped">OnNodeSwapped</a>メソッド)</li>
-<li>トランジションが終了するまでに継続して行われる処理(<a class="xref" href="../../References/Altseed2.TransitionNode.html#Altseed2_TransitionNode_OnOpening_System_Single_">OnOpening</a>メソッド)</li>
-<li>トランジションが終了した瞬間の処理(<a class="xref" href="../../References/Altseed2.TransitionNode.html#Altseed2_TransitionNode_OnTransitionEnd">OnTransitionEnd</a>メソッド)</li>
+<li>トランジションが開始した瞬間の処理(<a href="xref:Altseed2.TransitionNode.OnTransitionBegin">OnTransitionBegin</a>メソッド)</li>
+<li>ノードが入れ替わるまでに継続して行われる処理(<a href="xref:Altseed2.TransitionNode.OnClosing(System.Single)">OnClosing</a>メソッド)</li>
+<li>ノードが入れ替わる瞬間の処理(<a href="xref:Altseed2.TransitionNode.OnNodeSwapped">OnNodeSwapped</a>メソッド)</li>
+<li>トランジションが終了するまでに継続して行われる処理(<a href="xref:Altseed2.TransitionNode.OnOpening(System.Single)">OnOpening</a>メソッド)</li>
+<li>トランジションが終了した瞬間の処理(<a href="xref:Altseed2.TransitionNode.OnTransitionEnd">OnTransitionEnd</a>メソッド)</li>
 </ul>
-<p>なお、ノードの入れ替えは<a class="xref" href="../../References/Altseed2.TransitionNode.html">TransitionNode</a>が自動で行う為、これらのメソッドの中にノードを入れ替える処理を記述する必要はありません。</p>
+<p>なお、ノードの入れ替えは<a href="xref:Altseed2.TransitionNode">TransitionNode</a>が自動で行う為、これらのメソッドの中にノードを入れ替える処理を記述する必要はありません。</p>
 <div class="IMPORTANT">
 <h5>Important</h5>
-<p><a class="xref" href="../../References/Altseed2.TransitionNode.html">TransitionNode</a>をエンジンに追加しても、すぐにノードが入れ替わるわけではありません。
+<p><a href="xref:Altseed2.TransitionNode">TransitionNode</a>をエンジンに追加しても、すぐにノードが入れ替わるわけではありません。
 トランジションが実行されている間にノードの入れ替えをすると、予期せぬ挙動が発生する可能性があります。</p>
 </div>
 <div class="IMPORTANT">
 <h5>Important</h5>
-<p><a class="xref" href="../../References/Altseed2.TransitionNode.html">TransitionNode</a>を、削除予定のノードの子孫ノードにしないでください。
+<p><a href="xref:Altseed2.TransitionNode">TransitionNode</a>を、削除予定のノードの子孫ノードにしないでください。
 ノードは入れ替わりますが、その瞬間トランジションの演出が停止します。</p>
 </div>
-<h2 id="ruledtransitionnode"><a class="xref" href="../../References/Altseed2.RuledTransitionNode.html">RuledTransitionNode</a></h2>
+<h2 id="ruledtransitionnode"><a href="xref:Altseed2.RuledTransitionNode">RuledTransitionNode</a></h2>
 <p>画面遷移演出を自作する手間を省きたい場合は、こちらを使用します。
 このノードは、ルール画像を用いたトランジション機能を提供します。
 ルール画像とは、その名の通りトランジションのルールを規定するものです。
 一般的には白黒の画像であり、適用すると白い部分から先に画面が切り替わります。</p>
-<p>コンストラクタの引数には、<a class="xref" href="../../References/Altseed2.RuledTransitionState.html">RuledTransitionState</a>クラスのインスタンスを2つ、そして任意で上から被せるテクスチャを指定します。
+<p>コンストラクタの引数には、<a href="xref:Altseed2.RuledTransitionState">RuledTransitionState</a>クラスのインスタンスを2つ、そして任意で上から被せるテクスチャを指定します。
 上から被せるテクスチャを指定しなかった場合、代わりにノードが追加されたときのの描画情報が、テクスチャとして渡されます。</p>
-<p><a class="xref" href="../../References/Altseed2.RuledTransitionNode.html">RuledTransitionNode</a>がエンジンに追加されると、まず画面が指定されたテクスチャの画像に置き換わります。
+<p><a href="xref:Altseed2.RuledTransitionNode">RuledTransitionNode</a>がエンジンに追加されると、まず画面が指定されたテクスチャの画像に置き換わります。
 完全に置き換わった瞬間、指定されたノードが入れ替わります。
 その後、テクスチャの画像が少しずつ消えていき、最後にノードが入れ替わった後の新しい描画情報が画面に表示されます。</p>
-<h2 id="ruledtransitionstate"><a class="xref" href="../../References/Altseed2.RuledTransitionState.html">RuledTransitionState</a></h2>
-<p><a class="xref" href="../../References/Altseed2.RuledTransitionNode.html">RuledTransitionNode</a>のコンストラクタの引数に指定するインスタンスのクラスです。
-<a class="xref" href="../../References/Altseed2.RuledTransitionState.html">RuledTransitionState</a>クラスは、以下をプロパティに持ちます。</p>
+<h2 id="ruledtransitionstate"><a href="xref:Altseed2.RuledTransitionState">RuledTransitionState</a></h2>
+<p><a href="xref:Altseed2.RuledTransitionNode">RuledTransitionNode</a>のコンストラクタの引数に指定するインスタンスのクラスです。
+<a href="xref:Altseed2.RuledTransitionState">RuledTransitionState</a>クラスは、以下をプロパティに持ちます。</p>
 <ul>
-<li><a class="xref" href="../../References/Altseed2.RuledTransitionState.html#Altseed2_RuledTransitionState_TargetNode">TargetNode</a> : 操作を加えるノードを表します。
+<li><a href="xref:Altseed2.RuledTransitionState.TargetNode">TargetNode</a> : 操作を加えるノードを表します。
 1つ目の引数にするときは<strong>削除するノード</strong>を、2つ目の引数にするときは<strong>新しく追加するノード</strong>を指定してください。</li>
-<li><a class="xref" href="../../References/Altseed2.RuledTransitionState.html#Altseed2_RuledTransitionState_Duration">Duration</a> : ノードが入れ替わる前後の期間を表します。
+<li><a href="xref:Altseed2.RuledTransitionState.Duration">Duration</a> : ノードが入れ替わる前後の期間を表します。
 1つ目の引数にするときは<strong>ノードが入れ替わるまでの期間</strong>を、2つ目の引数にするときは<strong>ノードが入れ替わった後の期間</strong>を指定してください。</li>
-<li><a class="xref" href="../../References/Altseed2.RuledTransitionState.html#Altseed2_RuledTransitionState_RuleTexture">RuleTexture</a> : トランジションに使用するルール画像を指定します。</li>
-<li><a class="xref" href="../../References/Altseed2.RuledTransitionState.html#Altseed2_RuledTransitionState_Softness">Softness</a> : 画面の変化がどれだけ柔らかくなるかを指定します。
+<li><a href="xref:Altseed2.RuledTransitionState.RuleTexture">RuleTexture</a> : トランジションに使用するルール画像を指定します。</li>
+<li><a href="xref:Altseed2.RuledTransitionState.Softness">Softness</a> : 画面の変化がどれだけ柔らかくなるかを指定します。
 この値が0に近ければ近いほど、画面がシャープに切り替わります。</li>
 </ul>
 </article>
@@ -233,7 +236,7 @@
         <div class="footer">
           <div class="container">
             <span class="pull-right">
-              <a href="#top">Back to top</a>
+              <a href="#top"></a>
             </span>
             Copyright &copy; 2020 Altseed .
             

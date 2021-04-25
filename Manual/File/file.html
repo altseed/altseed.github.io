@@ -8,7 +8,7 @@
     <title>&#12501;&#12449;&#12452;&#12523; | Altseed2 </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="&#12501;&#12449;&#12452;&#12523; | Altseed2 ">
-    <meta name="generator" content="docfx 2.56.2.0">
+    <meta name="generator" content="docfx 2.57.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -54,7 +54,7 @@
                           <a href="../../Manual/index.html" title="&#27231;&#33021;&#35299;&#35500;">&#27231;&#33021;&#35299;&#35500;</a>
                       </li>
                       <li>
-                          <a href="../../References/Altseed2.html" title="&#12522;&#12501;&#12449;&#12524;&#12531;&#12473;">&#12522;&#12501;&#12449;&#12524;&#12531;&#12473;</a>
+                          <a>リファレンス</a>
                       </li>
                       <li>
                           <a href="../../First/index.html" title="&#21021;&#20195;Altseed&#12399;&#12467;&#12481;&#12521;">&#21021;&#20195;Altseed&#12399;&#12467;&#12481;&#12521;</a>
@@ -74,16 +74,16 @@
       <div class="container body-content">
         
         <div id="search-results">
-          <div class="search-list"></div>
+          <div class="search-list"> <span></span></div>
           <div class="sr-items">
             <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
           </div>
-          <ul id="pagination"></ul>
+          <ul id="pagination" data-first="data-prev=" data-next="data-last="></ul>
         </div>
       </div>
       <div role="main" class="container body-content hide-when-search">
         <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle"></a>
           <div class="sidetoggle collapse" id="sidetoggle">
             <div>
               <div class="sidefilter">
@@ -122,6 +122,9 @@
                     </li>
                     <li class="">
                       <a href="../Log/Log.html" title="&#12525;&#12464;" class="">&#12525;&#12464;</a>
+                    </li>
+                    <li class="">
+                      <a href="../Profiler/Profiler.html" title="&#12503;&#12525;&#12501;&#12449;&#12452;&#12521;" class="">&#12503;&#12525;&#12501;&#12449;&#12452;&#12521;</a>
                     </li>
                     <li class="active">
                       <a href="../File/file.html" title="&#12501;&#12449;&#12452;&#12523;" class="active">&#12501;&#12449;&#12452;&#12523;</a>
@@ -164,29 +167,29 @@
 <h1 id="ファイル">ファイル</h1>
 
 <p>ファイル操作に関する機能を提供します。<br>
-<a class="xref" href="../../References/Altseed2.File.html">Engine.File</a>では、ファイルを読み込む先のディレクトリ・パッケージの指定やディレクトリのパッケージ化が可能です。
-そして、ファイルを読み込むことができ、<a class="xref" href="../../References/Altseed2.StaticFile.html#Altseed2_StaticFile_Create_System_String_">StaticFile.Create</a>メソッドを用いて<a class="xref" href="../../References/Altseed2.StaticFile.html">StaticFile</a>インスタンスを作成するか、<a class="xref" href="../../References/Altseed2.StreamFile.html#Altseed2_StreamFile_Create_System_String_">StreamFile.Create</a>メソッドを用いて<a class="xref" href="../../References/Altseed2.StreamFile.html">StreamFile</a>インスタンスを作成する方法の2種類があります。</p>
-<h2 id="enginefile"><a class="xref" href="../../References/Altseed2.File.html">Engine.File</a></h2>
-<p><a class="xref" href="../../References/Altseed2.File.html#Altseed2_File_AddRootDirectory_System_String_">Engine.File.AddRootDirectory</a>メソッドでファイルを読み込む時のルートを指定します。
+<a href="xref:Altseed2.File">Engine.File</a>では、ファイルを読み込む先のディレクトリ・パッケージの指定やディレクトリのパッケージ化が可能です。
+そして、ファイルを読み込むことができ、<a href="xref:Altseed2.StaticFile.Create(System.String)">StaticFile.Create</a>メソッドを用いて<a href="xref:Altseed2.StaticFile">StaticFile</a>インスタンスを作成するか、<a href="xref:Altseed2.StreamFile.Create(System.String)">StreamFile.Create</a>メソッドを用いて<a href="xref:Altseed2.StreamFile">StreamFile</a>インスタンスを作成する方法の2種類があります。</p>
+<h2 id="enginefile"><a href="xref:Altseed2.File">Engine.File</a></h2>
+<p><a href="xref:Altseed2.File.AddRootDirectory(System.String)">Engine.File.AddRootDirectory</a>メソッドでファイルを読み込む時のルートを指定します。
 一切ルートを指定していないと、カレントディレクトリから相対的にファイルを読み込みます。
 ルートディレクトリが指定されていると、ルートディレクトリから相対的にファイルを読み込みます。
-また、<a class="xref" href="../../References/Altseed2.File.html#Altseed2_File_AddRootPackage_System_String_">Engine.File.AddRootPackage</a>メソッドで複数のファイルを1つにまとめたパッケージをルートに指定することが可能で、パッケージ内からファイルを読み込みます。
-パスワード付きのパッケージをルートに指定する場合、<a class="xref" href="../../References/Altseed2.File.html#Altseed2_File_AddRootPackageWithPassword_System_String_System_String_">Engine.File.AddRootPackageWithPassword</a>メソッドを使用してください。</p>
-<h2 id="staticfile"><a class="xref" href="../../References/Altseed2.StaticFile.html">StaticFile</a></h2>
-<p><a class="xref" href="../../References/Altseed2.StaticFile.html">StaticFile</a>は、ファイルを一括で全て読み込むクラスです。
-ファイルを読み込んで<a class="xref" href="../../References/Altseed2.StaticFile.html">StaticFile</a>インスタンスを生成するには<a class="xref" href="../../References/Altseed2.StaticFile.html#Altseed2_StaticFile_Create_System_String_">Create</a>メソッドを使います。</p>
-<p>読み込んだファイルの内容は、<a class="xref" href="../../References/Altseed2.StaticFile.html#Altseed2_StaticFile_Buffer">Buffer</a>で、Byte配列として得られます。</p>
+また、<a href="xref:Altseed2.File.AddRootPackage(System.String)">Engine.File.AddRootPackage</a>メソッドで複数のファイルを1つにまとめたパッケージをルートに指定することが可能で、パッケージ内からファイルを読み込みます。
+パスワード付きのパッケージをルートに指定する場合、<a href="xref:Altseed2.File.AddRootPackageWithPassword(System.String,System.String)">Engine.File.AddRootPackageWithPassword</a>メソッドを使用してください。</p>
+<h2 id="staticfile"><a href="xref:Altseed2.StaticFile">StaticFile</a></h2>
+<p><a href="xref:Altseed2.StaticFile">StaticFile</a>は、ファイルを一括で全て読み込むクラスです。
+ファイルを読み込んで<a href="xref:Altseed2.StaticFile">StaticFile</a>インスタンスを生成するには<a href="xref:Altseed2.StaticFile.Create(System.String)">Create</a>メソッドを使います。</p>
+<p>読み込んだファイルの内容は、<a href="xref:Altseed2.StaticFile.Buffer">Buffer</a>で、Byte配列として得られます。</p>
 <div class="TIP">
 <h5>Tip</h5>
-<p>一度、<a class="xref" href="../../References/Altseed2.StaticFile.html#Altseed2_StaticFile_Create_System_String_">Create</a>するとキャッシュされます。
-よって、同じパスでファイルを<a class="xref" href="../../References/Altseed2.StaticFile.html#Altseed2_StaticFile_Create_System_String_">Create</a>した場合、キャッシュから読み込まれるため、読み込み時間が小さくなります。</p>
+<p>一度、<a href="xref:Altseed2.StaticFile.Create(System.String)">Create</a>するとキャッシュされます。
+よって、同じパスでファイルを<a href="xref:Altseed2.StaticFile.Create(System.String)">Create</a>した場合、キャッシュから読み込まれるため、読み込み時間が小さくなります。</p>
 </div>
-<h2 id="streamfile"><a class="xref" href="../../References/Altseed2.StreamFile.html">StreamFile</a></h2>
-<p><a class="xref" href="../../References/Altseed2.StaticFile.html">StreamFile</a>は、ファイルを部分的に読み込むクラスです。
-ファイルを読み込んで<a class="xref" href="../../References/Altseed2.StreamFile.html">StreamFile</a>インスタンスを生成するには<a class="xref" href="../../References/Altseed2.StreamFile.html#Altseed2_StreamFile_Create_System_String_">Create</a>メソッドを使います。</p>
-<p><a class="xref" href="../../References/Altseed2.StreamFile.html#Altseed2_StreamFile_Read_System_Int32_">Read</a>メソッドによって、指定されたサイズの分だけ、ファイルに格納されているデータを読み込みます。</p>
-<p>読み込んだ内容は、<a class="xref" href="../../References/Altseed2.StreamFile.html#Altseed2_StreamFile_TempBuffer">TempBuffer</a>で、Byte配列として得られます。
-また、現在読み込まれているデータのサイズは、<a class="xref" href="../../References/Altseed2.StreamFile.html#Altseed2_StreamFile_TempBufferSize">TempBufferSize</a>で得られます。</p>
+<h2 id="streamfile"><a href="xref:Altseed2.StreamFile">StreamFile</a></h2>
+<p><a href="xref:Altseed2.StaticFile">StreamFile</a>は、ファイルを部分的に読み込むクラスです。
+ファイルを読み込んで<a href="xref:Altseed2.StreamFile">StreamFile</a>インスタンスを生成するには<a href="xref:Altseed2.StreamFile.Create(System.String)">Create</a>メソッドを使います。</p>
+<p><a href="xref:Altseed2.StreamFile.Read(System.Int32)">Read</a>メソッドによって、指定されたサイズの分だけ、ファイルに格納されているデータを読み込みます。</p>
+<p>読み込んだ内容は、<a href="xref:Altseed2.StreamFile.TempBuffer">TempBuffer</a>で、Byte配列として得られます。
+また、現在読み込まれているデータのサイズは、<a href="xref:Altseed2.StreamFile.TempBufferSize">TempBufferSize</a>で得られます。</p>
 <h2 id="サンプル">サンプル</h2>
 <h3 id="staticfileによるファイル読み込み">StaticFileによるファイル読み込み</h3>
 <pre><code class="lang-csharp" name="Main">using System;
@@ -279,7 +282,7 @@ namespace Sample
         <div class="footer">
           <div class="container">
             <span class="pull-right">
-              <a href="#top">Back to top</a>
+              <a href="#top"></a>
             </span>
             Copyright &copy; 2020 Altseed .
             

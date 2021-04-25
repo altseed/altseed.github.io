@@ -8,7 +8,7 @@
     <title>&#12494;&#12540;&#12489; | Altseed2 </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="&#12494;&#12540;&#12489; | Altseed2 ">
-    <meta name="generator" content="docfx 2.56.2.0">
+    <meta name="generator" content="docfx 2.57.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -54,7 +54,7 @@
                           <a href="../Manual/index.html" title="&#27231;&#33021;&#35299;&#35500;">&#27231;&#33021;&#35299;&#35500;</a>
                       </li>
                       <li>
-                          <a href="../References/Altseed2.html" title="&#12522;&#12501;&#12449;&#12524;&#12531;&#12473;">&#12522;&#12501;&#12449;&#12524;&#12531;&#12473;</a>
+                          <a>リファレンス</a>
                       </li>
                       <li>
                           <a href="../First/index.html" title="&#21021;&#20195;Altseed&#12399;&#12467;&#12481;&#12521;">&#21021;&#20195;Altseed&#12399;&#12467;&#12481;&#12521;</a>
@@ -74,16 +74,16 @@
       <div class="container body-content">
         
         <div id="search-results">
-          <div class="search-list"></div>
+          <div class="search-list"> <span></span></div>
           <div class="sr-items">
             <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
           </div>
-          <ul id="pagination"></ul>
+          <ul id="pagination" data-first="data-prev=" data-next="data-last="></ul>
         </div>
       </div>
       <div role="main" class="container body-content hide-when-search">
         <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle"></a>
           <div class="sidetoggle collapse" id="sidetoggle">
             <div>
               <div class="sidefilter">
@@ -122,6 +122,9 @@
                     </li>
                     <li class="">
                       <a href="Log/Log.html" title="&#12525;&#12464;" class="">&#12525;&#12464;</a>
+                    </li>
+                    <li class="">
+                      <a href="Profiler/Profiler.html" title="&#12503;&#12525;&#12501;&#12449;&#12452;&#12521;" class="">&#12503;&#12525;&#12501;&#12449;&#12452;&#12521;</a>
                     </li>
                     <li class="">
                       <a href="File/file.html" title="&#12501;&#12449;&#12452;&#12523;" class="">&#12501;&#12449;&#12452;&#12523;</a>
@@ -164,7 +167,7 @@
 <h1 id="ノード">ノード</h1>
 
 <p>Altseed2では、ゲームに登場する<em>キャラクター等のオブジェクト</em>、及び<em>オブジェクトが持つ機能</em>等をノードとして管理します。
-例えばゲームに画像を表示する際には、描画機能を持ったノード(<a class="xref" href="../References/Altseed2.SpriteNode.html">SpriteNode</a>)をエンジンに追加します。</p>
+例えばゲームに画像を表示する際には、描画機能を持ったノード(<a href="xref:Altseed2.SpriteNode">SpriteNode</a>)をエンジンに追加します。</p>
 <p>ノードは親子関係の階層構造を持ちます。また、ノードはエンジンに実装されているものを使うだけでなく、独自に継承・拡張して利用することができます。</p>
 <div class="NOTE">
 <h5>Note</h5>
@@ -177,15 +180,15 @@
 <p>便宜上ノードの追加・削除という表現をしていますが、ノードインスタンスの作成・削除とは直接関係が有りません。
 必要に応じて、登録・登録解除と読み替えてください。</p>
 </div>
-<h2 id="node"><a class="xref" href="../References/Altseed2.Node.html">Node</a></h2>
-<p><a class="xref" href="../References/Altseed2.Node.html">Node</a> は全てのノードの基本です。全てのノードはこのNodeを継承する必要があります（もちろん <a class="xref" href="../References/Altseed2.SpriteNode.html">SpriteNode</a> 等のNodeを継承したクラスをさらに継承しても構いません）。<br>
+<h2 id="node"><a href="xref:Altseed2.Node">Node</a></h2>
+<p><a href="xref:Altseed2.Node">Node</a> は全てのノードの基本です。全てのノードはこのNodeを継承する必要があります（もちろん <a href="xref:Altseed2.SpriteNode">SpriteNode</a> 等のNodeを継承したクラスをさらに継承しても構いません）。<br>
 使い道は主に以下の二つです。</p>
 <ul>
 <li>ノードを自作する場合に、継承して使う。</li>
 <li>複数のノードをまとめて管理したい場合に、親ノードとして利用する。</li>
 </ul>
-<p>エンジンへの追加は<a class="xref" href="../References/Altseed2.Engine.html#Altseed2_Engine_AddNode_Altseed2_Node_">Engine.AddNode</a>メソッドを使います。逆に削除したい場合は、<a class="xref" href="../References/Altseed2.Engine.html#Altseed2_Engine_RemoveNode_Altseed2_Node_">Engine.RemoveNode</a>メソッドを使います。<br>
-親子関係の追加・削除も同様に、<a class="xref" href="../References/Altseed2.Node.html#Altseed2_Node_AddChildNode_Altseed2_Node_">AddChildNode</a>メソッド、<a class="xref" href="../References/Altseed2.Node.html#Altseed2_Node_RemoveChildNode_Altseed2_Node_">RemoveChildNode</a>メソッドを使います。</p>
+<p>エンジンへの追加は<a href="xref:Altseed2.Engine.AddNode(Altseed2.Node)">Engine.AddNode</a>メソッドを使います。逆に削除したい場合は、<a href="xref:Altseed2.Engine.RemoveNode(Altseed2.Node)">Engine.RemoveNode</a>メソッドを使います。<br>
+親子関係の追加・削除も同様に、<a href="xref:Altseed2.Node.AddChildNode(Altseed2.Node)">AddChildNode</a>メソッド、<a href="xref:Altseed2.Node.RemoveChildNode(Altseed2.Node)">RemoveChildNode</a>メソッドを使います。</p>
 <div class="IMPORTANT">
 <h5>Important</h5>
 <p>ノードは作成だけしても、エンジンに登録されていなければ<strong>更新されません</strong>。<br>
@@ -215,7 +218,7 @@
         <div class="footer">
           <div class="container">
             <span class="pull-right">
-              <a href="#top">Back to top</a>
+              <a href="#top"></a>
             </span>
             Copyright &copy; 2020 Altseed .
             
