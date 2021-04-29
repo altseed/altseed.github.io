@@ -54,7 +54,7 @@
                           <a href="../../Manual/index.html" title="&#27231;&#33021;&#35299;&#35500;">&#27231;&#33021;&#35299;&#35500;</a>
                       </li>
                       <li>
-                          <a>リファレンス</a>
+                          <a href="../../References/Altseed2.html" title="&#12522;&#12501;&#12449;&#12524;&#12531;&#12473;">&#12522;&#12501;&#12449;&#12524;&#12531;&#12473;</a>
                       </li>
                       <li>
                           <a href="../../First/index.html" title="&#21021;&#20195;Altseed&#12399;&#12467;&#12481;&#12521;">&#21021;&#20195;Altseed&#12399;&#12467;&#12481;&#12521;</a>
@@ -166,9 +166,9 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="マウス">マウス</h1>
 
-<p><a href="xref:Altseed2.Mouse">Mouse</a> は マウス入力に関する基本的な機能を提供します。</p>
-<h2 id="mouse"><a href="xref:Altseed2.Mouse">Mouse</a></h2>
-<p><a href="xref:Altseed2.Mouse">Mouse</a>では次の機能を提供します。</p>
+<p><a class="xref" href="../../References/Altseed2.Mouse.html">Mouse</a> は マウス入力に関する基本的な機能を提供します。</p>
+<h2 id="mouse"><a class="xref" href="../../References/Altseed2.Mouse.html">Mouse</a></h2>
+<p><a class="xref" href="../../References/Altseed2.Mouse.html">Mouse</a>では次の機能を提供します。</p>
 <ul>
 <li>マウスカーソルの座標を取得・設定</li>
 <li>マウスボタンの状態を取得</li>
@@ -176,10 +176,10 @@
 <li>カーソルモードの取得または設定</li>
 </ul>
 <h2 id="基本的な呼び出し手順">基本的な呼び出し手順</h2>
-<p>Altseed2の<a href="xref:Altseed2.Engine.Initialize(System.String,System.Int32,System.Int32,Altseed2.Configuration)">Initialize</a>を呼び出した後、Engine.Mouse という形でMouseの各種メソッドを呼び出してください。</p>
+<p>Altseed2の<a class="xref" href="../../References/Altseed2.Engine.html#Altseed2_Engine_Initialize_System_String_System_Int32_System_Int32_Altseed2_Configuration_">Initialize</a>を呼び出した後、Engine.Mouse という形でMouseの各種メソッドを呼び出してください。</p>
 <div class="NOTE">
 <h5>Note</h5>
-<p><a href="xref:Altseed2.MouseButton">MouseButton</a>や<a href="xref:Altseed2.ButtonState">ButtonState</a>は
+<p><a class="xref" href="../../References/Altseed2.MouseButton.html">MouseButton</a>や<a class="xref" href="../../References/Altseed2.ButtonState.html">ButtonState</a>は
 Mouseには含まれていません。</p>
 </div>
 <h2 id="カーソル座標">カーソル座標</h2>
@@ -238,7 +238,7 @@ namespace Sample
 <ul>
 <li>[Position](xref:Altseed2.Mouse.Position</li>
 </ul>
-<p>戻り値は<a href="xref:Altseed2.Vector2F">Vector2F</a>です。</p>
+<p>戻り値は<a class="xref" href="../../References/Altseed2.Vector2F.html">Vector2F</a>です。</p>
 <h2 id="マウスボタン">マウスボタン</h2>
 <p>サンプル</p>
 <pre><code class="lang-csharp" name="Main">using System;
@@ -293,9 +293,9 @@ namespace Sample
 </code></pre>
 <p>スティックの取得には以下のメソッドを用います。</p>
 <ul>
-<li><a href="xref:Altseed2.Mouse.GetMouseButtonState(Altseed2.MouseButton)">GetMouseButtonState</a></li>
+<li><a class="xref" href="../../References/Altseed2.Mouse.html#Altseed2_Mouse_GetMouseButtonState_Altseed2_MouseButton_">GetMouseButtonState</a></li>
 </ul>
-<p>戻り値は<a href="xref:Altseed2.ButtonState">ButtonState</a>です。</p>
+<p>戻り値は<a class="xref" href="../../References/Altseed2.ButtonState.html">ButtonState</a>です。</p>
 <h3 id="マウスホイール">マウスホイール</h3>
 <p>サンプル</p>
 <pre><code class="lang-csharp" name="Main">using System;
@@ -350,15 +350,15 @@ namespace Sample
 </code></pre>
 <p>マウスホイールの回転量を取得するには以下のプロパティを使用します。</p>
 <ul>
-<li><a href="xref:Altseed2.Mouse.Wheel">Wheel</a></li>
+<li><a class="xref" href="../../References/Altseed2.Mouse.html#Altseed2_Mouse_Wheel">Wheel</a></li>
 </ul>
 <p>戻り値は-1~1の範囲の<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">float</a>です。</p>
 <h3 id="カーソルモード">カーソルモード</h3>
 <p>CursorModeを取得・設定するには、以下のプロパティを使用します。</p>
 <ul>
-<li><a href="xref:Altseed2.Mouse.CursorMode">CursorMode</a></li>
+<li><a class="xref" href="../../References/Altseed2.Mouse.html#Altseed2_Mouse_CursorMode">CursorMode</a></li>
 </ul>
-<p>カーソルモードの設定は<a href="xref:Altseed2.CursorMode">CursorMode</a>の中から行ってください。</p>
+<p>カーソルモードの設定は<a class="xref" href="../../References/Altseed2.CursorMode.html">CursorMode</a>の中から行ってください。</p>
 <h4 id="cursormode">CursorMode</h4>
 <ul>
 <li>Normal  ...  デフォルト値</li>
@@ -368,9 +368,9 @@ namespace Sample
 <h2 id="カーソル画像">カーソル画像</h2>
 <p>カーソル画像を指定するには、以下のメソッドを使います。</p>
 <ul>
-<li><a href="xref:Altseed2.Mouse.SetCursorImage(Altseed2.Cursor)">SetCursorImage</a></li>
+<li><a class="xref" href="../../References/Altseed2.Mouse.html#Altseed2_Mouse_SetCursorImage_Altseed2_Cursor_">SetCursorImage</a></li>
 </ul>
-<p>第一引数に、設定したい画像を読み込んだ<a href="xref:Altseed2.Cursor">カーソル</a>オブジェクトを渡します。</p>
+<p>第一引数に、設定したい画像を読み込んだ<a class="xref" href="../../References/Altseed2.Cursor.html">カーソル</a>オブジェクトを渡します。</p>
 </article>
           </div>
           

@@ -5843,45 +5843,36 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "UidNotFound"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Manual/Engine/Engine.md",
       "output": {
         ".html": {
           "relative_path": "Manual/Engine/Engine.html",
-          "hash": "A8tSUAVIxGer5U/0GMzbFc/3KnuYJI/v64rcav+FalQ="
+          "hash": "FsZ+K788rCvg9f+/y8joz0eg0mcke4j7Fnbl1vBKKPw="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
-      "log_codes": [
-        "UidNotFound"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Manual/File/Package.md",
       "output": {
         ".html": {
           "relative_path": "Manual/File/Package.html",
-          "hash": "uBvQPhG7cw92KyIrZmk+VLq+BqHNaMuQmmQBA8r7E8k="
+          "hash": "Jyg3ENSdPh3LuYehlbXHjZSk22AXSHRoRAn207WHeU8="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
-      "log_codes": [
-        "UidNotFound"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Manual/File/file.md",
       "output": {
         ".html": {
           "relative_path": "Manual/File/file.html",
-          "hash": "KkimPoX56Qvu5xtGBcH7QGod/pfvkEpg3yePfpK/8M8="
+          "hash": "g5J4a/Vf+/RiO17T6+Uax3cuw3Dla4ZX+CkWDQ3jb44="
         }
       },
       "is_incremental": false,
@@ -5896,7 +5887,7 @@
       "output": {
         ".html": {
           "relative_path": "Manual/Graphics/Camera.html",
-          "hash": "CdPA/8fvvIupVXViJ9So3Vk5z63EBZguukyFHmc3DLs="
+          "hash": "On9CuQdtZWZpUtirAlq95AUkLx7xgfiuTkOnhn8vxik="
         }
       },
       "is_incremental": false,
@@ -5908,7 +5899,7 @@
       "output": {
         ".html": {
           "relative_path": "Manual/Graphics/Material.html",
-          "hash": "efDDdgtokHV3d7P6earVT4z173dLEnmld5xqUrJTKoY="
+          "hash": "V6FPOdHrKTmKIPeeC2m4dGSzm9VgmGuNAZAd3NiCbg4="
         }
       },
       "is_incremental": false,
@@ -5981,135 +5972,108 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "UidNotFound"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Manual/Graphics/PostEffect.md",
       "output": {
         ".html": {
           "relative_path": "Manual/Graphics/PostEffect.html",
-          "hash": "0BgIwUQSfTAq3AtwUhO3YqYsKsrPficxYssEUHJJT+M="
+          "hash": "y5QmHAImMfXrHLVE5lJBwRYEHiwHJLs4DPUbJDZEdPw="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
-      "log_codes": [
-        "UidNotFound"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Manual/Graphics/Sprite.md",
       "output": {
         ".html": {
           "relative_path": "Manual/Graphics/Sprite.html",
-          "hash": "irkzUeE671H2XPa0el7dbzRDBd/opWjqgF+IppL5jHY="
+          "hash": "XX5/RJr42oHZpyuzboUrW1j3iTVcTsgJsqJLZIoTLeQ="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
-      "log_codes": [
-        "UidNotFound"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Manual/Input/Cursor.md",
       "output": {
         ".html": {
           "relative_path": "Manual/Input/Cursor.html",
-          "hash": "5gO6PFN0IO1ooN0NWDHtVSLFsprEo5RsVD814m91k+U="
+          "hash": "0rNp5oQ8/skatiNxLLeWSmoBZXhAm+oOlfD0IqeodNE="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
-      "log_codes": [
-        "UidNotFound"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Manual/Input/Joystick.md",
       "output": {
         ".html": {
           "relative_path": "Manual/Input/Joystick.html",
-          "hash": "wmI/hCdKBvqIP7NIYVP0Sru9jHsfS63NB7KTsj0dcHA="
+          "hash": "KkZsSM1bdE5Rlgb9WsfqygC+F3HNwRrg2g8nkzBuDDY="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
-      "log_codes": [
-        "UidNotFound"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Manual/Input/Keyboard.md",
       "output": {
         ".html": {
           "relative_path": "Manual/Input/Keyboard.html",
-          "hash": "7KYhsA0V1Xeq+mEXleSXCxkV/wgMP1C4yHzhBY9qfi8="
+          "hash": "F4Up/K4ZhQYEcdVc8zfN+s/i0x4SQU+6R98VIAOlTHI="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
-      "log_codes": [
-        "UidNotFound"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Manual/Input/Mouse.md",
       "output": {
         ".html": {
           "relative_path": "Manual/Input/Mouse.html",
-          "hash": "TWwfofNyk0quH8IDEyjxADk9lWwPAYr5xIBde2dm5Lc="
+          "hash": "ySpp5BsouQtuXEQWml4/iTW4r1pCj59cb/VAGKzj6VA="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
-      "log_codes": [
-        "UidNotFound"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Manual/Log/Log.md",
       "output": {
         ".html": {
           "relative_path": "Manual/Log/Log.html",
-          "hash": "pySJcugs3hlhkrz7zmKKi616klFhZvGbnzcnOMxW8fY="
+          "hash": "Bs68PtCq6MOOTyLp1Fi8VIUor+bmrj4UsKibrP771BM="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
-      "log_codes": [
-        "UidNotFound"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Manual/Node.md",
       "output": {
         ".html": {
           "relative_path": "Manual/Node.html",
-          "hash": "zSZA18qhpAP+vtpRaQz+7mxMoHKCa1kpM43x/VlY85g="
+          "hash": "G9jC0Gqq1vggRZddDS/QXCJFi6sQ8LQSIsC2doCmonY="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
-      "log_codes": [
-        "UidNotFound"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Manual/Physics/Collision.md",
       "output": {
         ".html": {
           "relative_path": "Manual/Physics/Collision.html",
-          "hash": "xgu51i+v6W2qHEkUI5b42alGoojnqbtRDGCVsJeg2W4="
+          "hash": "DHV6GIsv4XhUFyf4dIwXlK7ml1KGaOBtHMF1AupxYtw="
         }
       },
       "is_incremental": false,
@@ -6146,7 +6110,7 @@
       "output": {
         ".html": {
           "relative_path": "Manual/Profiler/Profiler.html",
-          "hash": "e9idUkcH4doVn3Qkw0ITapyVezLzejjXizWvXGL4c0U="
+          "hash": "973pWnDyK1SYCDYP7JgJshyx5QF3lwV/t07TRJtvn7g="
         }
       },
       "is_incremental": false,
@@ -6164,15 +6128,12 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "UidNotFound"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Manual/Serialization/Serialization.md",
       "output": {
         ".html": {
           "relative_path": "Manual/Serialization/Serialization.html",
-          "hash": "qP0IJgOIIEBvm1fBFLOqgor6mUZrrmu2TgbrnShcoZY="
+          "hash": "AY3cpLUjoZ2+7TkYXvBLxnRxAE5dzcqr8YNxCku65a4="
         }
       },
       "is_incremental": false,
@@ -6190,30 +6151,24 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "UidNotFound"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Manual/ShapeNode/ShapeNode.md",
       "output": {
         ".html": {
           "relative_path": "Manual/ShapeNode/ShapeNode.html",
-          "hash": "h4ytx9+hQFmZfcfk6J5yl2zu5n8rh0S+VcYerIcK9h4="
+          "hash": "STEi/6tMOVL7wLgNS9fxAdye2p2WH76+1JvFtLOEtg8="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
-      "log_codes": [
-        "UidNotFound"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Manual/Sound/Sound.md",
       "output": {
         ".html": {
           "relative_path": "Manual/Sound/Sound.html",
-          "hash": "ADWVkB9HRHs9RogdALlDhCpwaHElQk8c+TD4XhnQe38="
+          "hash": "+O9p8Kop5NppfoVl7TpZXD4TYpQRDXNmpHa78mcP0l8="
         }
       },
       "is_incremental": false,
@@ -6242,15 +6197,12 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "UidNotFound"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Manual/Transition/Transition.md",
       "output": {
         ".html": {
           "relative_path": "Manual/Transition/Transition.html",
-          "hash": "Nt8WXYFNwYSLXoXsQ+r4fEeMAI+9wyEq6lr6C2RiCT4="
+          "hash": "fCkU36LhWj/lkECahLVlyZ8EizRsxEXTxy1J5fNzEXQ="
         }
       },
       "is_incremental": false,
@@ -6273,7 +6225,7 @@
       "output": {
         ".html": {
           "relative_path": "Manual/index.html",
-          "hash": "2nMfUVrtzHQNv8Ow83y4SHuZr1TtThswOWPq4z6AWQQ="
+          "hash": "6U1mPVYjNkCyDoWipal0OabhhYIC94VsA+jzvGSi8+k="
         }
       },
       "is_incremental": false,
@@ -6286,6 +6238,1518 @@
         ".html": {
           "relative_path": "Manual/toc.html",
           "hash": "U+nWzdu360PHNmf5iYUgne3Yb6TeXEfJb8AgxeT2HRE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.AlphaBlend.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.AlphaBlend.html",
+          "hash": "IDqOxSEdVp140Cec678UhSKx+Cm8jzXiUFREzZAq/Eg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.AnchorMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.AnchorMode.html",
+          "hash": "bVs5Ug1eeiE9TjcAuAU2Bp/vZtricLVRRf+2ZySHtUc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.AnchorTransformerNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.AnchorTransformerNode.html",
+          "hash": "Yg2/zdSlqaHh8tvNBJ2ovb/pwAedIGMvK15GuOz7lTw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.ArcNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.ArcNode.html",
+          "hash": "gKVdQOWNjZ01gRtKDe0Bf3lU/ubDaLnYQHAM89Pzmz4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.BlendEquation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.BlendEquation.html",
+          "hash": "HeYQghVvPo3z9COwE4TCiSVHVvc2OoBP5NpA2aP1VHo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.BlendFunction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.BlendFunction.html",
+          "hash": "yNpD0Ca21laroUDhuwTR0Pg4Z0FrPHBNpckHKE3v8YY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.BuiltinShader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.BuiltinShader.html",
+          "hash": "I3IGUZdmPajFD7E7yhU8Y2kTVz8rh9vi/nAORBbbzoo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.BuiltinShaderType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.BuiltinShaderType.html",
+          "hash": "FZXuqb7u+Vj97wXmE34Nru4wCsL8zlwt+LF6C859kYQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.ButtonState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.ButtonState.html",
+          "hash": "IjtPxxu81weu0u2VUvF53s/m2/Ul0q/xHBTvAxW1/xk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.CameraNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.CameraNode.html",
+          "hash": "jmZ5R0TFVU60D1TiJQz7TkVZ+WH69gayz0/WpjJZsrE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.CircleCollider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.CircleCollider.html",
+          "hash": "xbjy+WwmvRdssv3MqNm64yYNzn6bz5YyeyqReXWbP/k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.CircleColliderNode.ScaleCalcType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.CircleColliderNode.ScaleCalcType.html",
+          "hash": "Iqc8kmDdkb6DgnjQ1OCH7FKH1/if9mvpNGDxmuWrWWs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.CircleColliderNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.CircleColliderNode.html",
+          "hash": "/mrkB8R5LnCuMEIAjZjAohUbKqLreNbKnrvUlkNKuco="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.CircleColliderVisualizeNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.CircleColliderVisualizeNode.html",
+          "hash": "8O0TJ3aB2m+Vms/KtEAQohYxpfwO642D3vIGKsPQ1X8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.CircleNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.CircleNode.html",
+          "hash": "N4peTdP1WPNBsRqkXkcSVFqd70iIp47JiYKhf21dRaU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.Collider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.Collider.html",
+          "hash": "jx0RQXOkODV/jUcSAHXZ9nEkcsCLe5DTnqQqnJuCD/4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.ColliderNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.ColliderNode.html",
+          "hash": "lPIMmFgqebMhYo4BSimYSJ73c7EH3nJfWaMrHAHu+GI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.ColliderVisualizeNodeFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.ColliderVisualizeNodeFactory.html",
+          "hash": "DDBXMB/Wc4dFpVtbVmPM33ESantfYh3iFAcZx5F7iCI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.CollisionInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.CollisionInfo.html",
+          "hash": "CJKc77bp3Zi5Xja0JoScPx1PFNzQnG6vK/Ha9Dvmw3k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.CollisionManagerNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.CollisionManagerNode.html",
+          "hash": "t8QolrwegffmTCk+iF+gjKlEP1+BN/yWhWRkCpESF5A="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.CollisionType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.CollisionType.html",
+          "hash": "m9xNw9jsg7Ng4Vh3xBXqr8NA3xig9eXCDJpSBJdvnXc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.Color.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.Color.html",
+          "hash": "dTpDmmmaa1k+HGSlbmZFFCdYUJZ+nJ5L5zsHJPezdWU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.CommandList.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.CommandList.html",
+          "hash": "F2buXk09RGkjvO5SzsNvY2PrHvsSniDpve9zEiD+Bz0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.Configuration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.Configuration.html",
+          "hash": "Crl/6y1LG3kcwoe5EJOLy38ca9CaTphk2uRUVULJV04="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.Cursor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.Cursor.html",
+          "hash": "1g2RkYcgiZ4vjKFuxnAHqiX/TiKZ1myow87tbSG01vQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.CursorMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.CursorMode.html",
+          "hash": "iPxHn5geS+R6kfB5k5X76YvMY+K/etz5aV1cp2aSunk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.Easing.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.Easing.html",
+          "hash": "2TW1qBFN5+sGZ0KMgwl5CWYGmWvf7Hj0pNpH0gGXoDQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.EasingType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.EasingType.html",
+          "hash": "sF2Mgt5X2nii40OWHE9XjJt+WfdgAe/hypauTRDYHH8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.EdgeCollider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.EdgeCollider.html",
+          "hash": "x9VO7YpbYhPK//2VX59OOVZpltkf1C6/Id3/XLhHzs0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.Engine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.Engine.html",
+          "hash": "hStdVC+7A2j8lxzWOTKb8HCSkNLYm7nggU+35mxDYfI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.FFTWindow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.FFTWindow.html",
+          "hash": "ptZaqZz/ZZEQ2SQyhY+qXh/yS1H3bmR9TCJRNItZSFc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.File.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.File.html",
+          "hash": "VXb9b2iZ8EQOjaV4sYjrFHWcLMG9Aldgrh0jPGiHmeI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.Font.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.Font.html",
+          "hash": "pFE3wEEJlC+jzae1ZZ5vQL88YdjgxRUaKtMW0xNs2O4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.FramerateMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.FramerateMode.html",
+          "hash": "Lf0LlQF5zv5qvPW+KctvMLxQ2rduaSmVT+y/MPElFxs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.Glyph.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.Glyph.html",
+          "hash": "SVy9LNj58jNad1slvA4BvLFxGHWTBTuB1CWLrAaR4pM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.HorizontalAlignment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.HorizontalAlignment.html",
+          "hash": "wvuapyEkLHwYGw/zbFNVpc0emuEUlgRUpBvWgYl8wwg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.ICollisionEventReceiver.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.ICollisionEventReceiver.html",
+          "hash": "uEhwYNNwh0tF6STaVBQ1wPNRHV47EnclMSaE+x9s2dk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.ICullableDrawn.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.ICullableDrawn.html",
+          "hash": "e+HoBZCpuISsZJhm9P378eSJQD1OyG2feCBSSnzZkFU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.IDrawn.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.IDrawn.html",
+          "hash": "XqcElVrlPCQYkRLxFx9+rsmpQstkdHDmGMew3You8VI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.Joystick.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.Joystick.html",
+          "hash": "ZAEDRxEh9ZoS/Q4UuWxATKWwJp9ZT3vYs4zhSgoE6Y0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.JoystickAxis.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.JoystickAxis.html",
+          "hash": "LCxW9rfOnuOkdHUNo9IVibTfvNZLrpqiYQrC8bk3cF8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.JoystickButton.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.JoystickButton.html",
+          "hash": "hkMS9ARyRk1VUvVc6v6eXKRTjp86+b/HFkpZxY/G6Kc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.JoystickInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.JoystickInfo.html",
+          "hash": "Afgz3wC4nsSAdZzmDGp7pMUIxkRmohWZNqEmgunI94M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.JoystickType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.JoystickType.html",
+          "hash": "T7vH8llTxHGVW9XF/p3Beb9bL3eLp3J4nqVBbbnu5lc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.Key.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.Key.html",
+          "hash": "f6/JslIaxWqSS0JVyj98UIUho7ZC8pT3+wtG7AMOG9M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.Keyboard.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.Keyboard.html",
+          "hash": "Q8dwnLBSbFNkYZnK/obYOXjODvnc+1TqU6plZwtVvCQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.LineNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.LineNode.html",
+          "hash": "DfV0Uc0CcJsIHMRnoBGCk5nU3Gy9CSWFtTYUxzBAtyA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.Log.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.Log.html",
+          "hash": "ey5+xCTfF+dnJuqX0kFX3LAuXZgNOUWM0qg74S3nLJ0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.LogCategory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.LogCategory.html",
+          "hash": "UaEu+28lpeAJHzJ5S+eUSagLxFIYR378IHd6+uL7Cn4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.LogLevel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.LogLevel.html",
+          "hash": "C+frlW8qObVMiSXh7DOL18Kif7krOTds3bL1aUnL9d4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.Material.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.Material.html",
+          "hash": "Za0bH7kl9HiAc1ijZJEMlltKk6SogHO61Qc9J2HiLJ4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.MathHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.MathHelper.html",
+          "hash": "KJf1tO8ErB7pXB5SzJTpjxhWwulrlTo4wqP62hzU8Y0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.Matrix33F.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.Matrix33F.html",
+          "hash": "ik8iWLTgVjtWPDnLJwvcOnmSwWsd9Kqyg8E3+PXVvsU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.Matrix33I.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.Matrix33I.html",
+          "hash": "Jj7K8WkR98rv8e9szV5pBTPkkc++ERt+dinU7d5bN9A="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.Matrix44F.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.Matrix44F.html",
+          "hash": "RVAo/TsLRHx5dZFZFkgt3d/XyDm9768EmIyBq8w4KiQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.Matrix44I.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.Matrix44I.html",
+          "hash": "96eaXj+jlZkzbZMViO4w774THJZsMdjHPxha/PHttXY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.Mouse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.Mouse.html",
+          "hash": "yB98dm9x0NCkZbx6kz2tZgDjptfx6PgRQ2Q2lFi2I7Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.MouseButton.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.MouseButton.html",
+          "hash": "W2dqTp67Urvz8frVm+73FTq5KTnhRY8c3etrk4FezCg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.Node.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.Node.html",
+          "hash": "o21bb3+J0aphEd0XJcnIRqpn1glurn7e6Rvjk5Fwnoc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.PolygonCollider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.PolygonCollider.html",
+          "hash": "xdBrQYhjb6nYrcENpLos0orLEOfYk72PcpP96Y3UYJI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.PolygonColliderNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.PolygonColliderNode.html",
+          "hash": "StRW5nmr+flSLFb3+cWeBRU9CKS81fisrKGaUR5Xf2w="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.PolygonColliderVisualizeNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.PolygonColliderVisualizeNode.html",
+          "hash": "I7ohCu7WX3ISkxDiVkkYRCFqYxkleLjDjfJnkEz/JeA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.PolygonNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.PolygonNode.html",
+          "hash": "lonskMswAtRnBWXxlz02llANFB8NJ8kNwXdLdpUjh7U="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.PostEffectGaussianBlurNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.PostEffectGaussianBlurNode.html",
+          "hash": "Kp201Nfbz8iMZ8lIiP+Mch4d1S7+8hFo5rRMwpdsZ1I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.PostEffectGrayScaleNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.PostEffectGrayScaleNode.html",
+          "hash": "19mTHm5ITpURIoRbqWZyoKFgb+DJ6Sm0aDxrl3BfvfM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.PostEffectLightBloomNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.PostEffectLightBloomNode.html",
+          "hash": "H95Me7TJHqVvJAjzy6z19Nnx1oQfc75LwlxXz1BvOiQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.PostEffectNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.PostEffectNode.html",
+          "hash": "eVrtXkhKDOEDamEB1GgGyXVSH6nsJSatnO0whrsPRDM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.PostEffectSepiaNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.PostEffectSepiaNode.html",
+          "hash": "4J2RLlVwfonsJ33XDvvoKOq4cOuBcFOhqivfQ2zaQYQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.RectF.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.RectF.html",
+          "hash": "gG9C7vASkwQlSsTZbrIgcO3LvjL1P6KN1fOGyzoJaEA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.RectI.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.RectI.html",
+          "hash": "Af6QByz0zKrNisPCaSvB7bBRG07ywjbjau48QVgEcbs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.RectangleCollider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.RectangleCollider.html",
+          "hash": "Yq1FIu9XjxHdAaSOLC+73fNAhjujCKXaCrfFCToVb9I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.RectangleColliderNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.RectangleColliderNode.html",
+          "hash": "KeNMlq+T2dUlomhXW15iAyh3G/IcwvTkd8dtl1XcqvA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.RectangleColliderVisualizeNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.RectangleColliderVisualizeNode.html",
+          "hash": "pyyHuXTN2EdLYPTzUo5cggjcqo3T++sB9xurOnmrCiQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.RectangleNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.RectangleNode.html",
+          "hash": "4oNT99eouvmKBmyDHtYs5P38dSnANEM0ysjwx74HxQE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.RegisteredStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.RegisteredStatus.html",
+          "hash": "lv+AFJOVaJdCeQXgZSuWwlNCdsM71okvk38Gk98Do/w="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.RenderPassParameter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.RenderPassParameter.html",
+          "hash": "an2XszOtGNL2wBav5xeBQF2xY7zXxbVqC3aXMITSbss="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.RenderTexture.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.RenderTexture.html",
+          "hash": "l/X3EQQg0jdS0lGhT0X/vYiQ2/VTkVQ3caSZAAKb1F4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.RuledTransitionEffectNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.RuledTransitionEffectNode.html",
+          "hash": "ND8MhTTkTt8XcdRE4R0FNl6GHrCKGvdsy2BaGP3yd9Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.RuledTransitionNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.RuledTransitionNode.html",
+          "hash": "G3+bRunAnvu4udwCxKKWLw5XvN3POVW4TBvvL5GUQhk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.RuledTransitionState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.RuledTransitionState.html",
+          "hash": "y7twbVtmbaBraYjdG0CqTwVFUPzH/XS+XIo1/Vdb668="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.Shader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.Shader.html",
+          "hash": "Q5DDOBMfIFKimyxnFsLtbpDSFDqM/CSglbIHPYpP1UA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.ShaderStage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.ShaderStage.html",
+          "hash": "Snhfeug+ginS/pf+cjAbrzNPbAyQgI1fiKJk7ioMFW8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.ShapeCollider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.ShapeCollider.html",
+          "hash": "lzsa3V6zBCuDwmyx3YCF3BS5D9/TdvfFuHqlwkDr3xQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.ShapeNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.ShapeNode.html",
+          "hash": "htUT6S9TLTN7wyzriB8cOUu7qp8mT+nj/Nk/4Wvz8fA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.Sound.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.Sound.html",
+          "hash": "9uLAx8xc7JnuZg40gSJxokXLc/z3IHi5HJEYA4fwBus="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.SoundMixer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.SoundMixer.html",
+          "hash": "gHy/xIglrDJE3nchFg7N7/fpFcFueWxmtFYMReERni0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.SpriteNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.SpriteNode.html",
+          "hash": "jL1W6U/mSxm6mvn+riZes3vwBOROYVrfBE/Kjg6/Irk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.StaticFile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.StaticFile.html",
+          "hash": "NSBadd+4f01YaeLeNMk/h13YHh0ccp6iiKzIg+M8S0U="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.StreamFile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.StreamFile.html",
+          "hash": "zSIuOKJKhuKaIUQBmnCxc3eiDUldbYJ9s4ngLgm6YV4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.TextNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.TextNode.html",
+          "hash": "2wuNksouNdMPB1c0P0OfTHvl9Hc5f8x39kwpvKJWOm0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.Texture2D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.Texture2D.html",
+          "hash": "mh+iy1xouoczZeXWJQI3zvtUq+bupBaT0z8xsEwfXpI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.TextureBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.TextureBase.html",
+          "hash": "xeow+fudfkLHT1B4j/chrHY4CKSNJKCy4qH0EyVUZfE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.TextureFilter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.TextureFilter.html",
+          "hash": "vfFvx+/CH9l5J6dYUiDVtiQcrc3F6nQDBAYnfSevVk8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.TextureFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.TextureFormat.html",
+          "hash": "ntrszy7MmFGfc3uVWZa79hXe+NME78HnKPA7ugz79Vo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.TextureWrapMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.TextureWrapMode.html",
+          "hash": "tJOBIH5E4mnLW065c5Hyk2lAZwmKm5hMhhZgRGisgIs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.Tool.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.Tool.html",
+          "hash": "tybOl2aGkT3zzkJakzPILqtcdWtBQkbhcJOJgwW3E48="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.ToolColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.ToolColor.html",
+          "hash": "x9DwRH4n4lRMP6fTsVm7ODxVX3x4AETlasHlnb+WyBM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.ToolColorEditFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.ToolColorEditFlags.html",
+          "hash": "DyTdTVClPEB3APv+XwTIYiTVicxbXhhwJRkguTn4yCE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.ToolComboFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.ToolComboFlags.html",
+          "hash": "/mMzg+05aJ6kyYkVMESlcYVzgyneR1R1Z68w651S1FE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.ToolCond.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.ToolCond.html",
+          "hash": "PVKggW3DIKOt16n1Ub31qQWqRHgWzUpVdTZMsTMZm6g="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.ToolDir.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.ToolDir.html",
+          "hash": "CjpSOW9NYNQFEVMEuOkoXz4lOyVDC1tLGbjpIMi3qkE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.ToolFocused.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.ToolFocused.html",
+          "hash": "w5VVQYmMgUl4EQEFzfd11cpG9jVtACfgCIx+dMFWiyk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.ToolGlyphRange.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.ToolGlyphRange.html",
+          "hash": "Ncypscvuu5LBX+YVmn8/ebX1nRaU+jC9Uv/q8dfpHb8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.ToolHoveredFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.ToolHoveredFlags.html",
+          "hash": "U+4XxOcaH39fIazi5AjGo6ZonB+tBO1ciHzNew4qbWk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.ToolInputTextFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.ToolInputTextFlags.html",
+          "hash": "3qW6KY3DmlAEtXZwX7hRkke8RcuGu3y7G9Au8mhC7eA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.ToolSelectableFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.ToolSelectableFlags.html",
+          "hash": "kC4syzAHrXEYGePS4XkA1K9DKHjzPVKj00BQGdkoSj4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.ToolStyleVar.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.ToolStyleVar.html",
+          "hash": "IPtK67hm3xr+cS9tScQqriRhJHXK9R46h1KSJiYn/ko="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.ToolTabBarFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.ToolTabBarFlags.html",
+          "hash": "pxSsS+wdEM9E3JAGoinVkVyTU+gFcjqgTVPCWJ0I4xI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.ToolTreeNodeFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.ToolTreeNodeFlags.html",
+          "hash": "6MWMvHhJr21kcgsLEV2QKvy33U7ZHLjBTDD5pdfyX6M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.ToolUsage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.ToolUsage.html",
+          "hash": "IPs2pcIUkxec6QSjhYi755VHbwvzgqlmEQDV6uFWklc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.ToolWindowFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.ToolWindowFlags.html",
+          "hash": "k3w/NQCzQjeX4T83Ki5SoIPQ0Aum2gjeyETa4ybBTDI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.TransformNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.TransformNode.html",
+          "hash": "6mY30Pcdptu3CT7NKn3hGYFxJNbTP4x0J7YLIeQ2P1Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.TransformerNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.TransformerNode.html",
+          "hash": "u2zZSM4bLbjOLMSOAebZTerip1koQtgjDlp5NZXGCa0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.TransitionNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.TransitionNode.html",
+          "hash": "NVszRC/rBePNd+rKSfNfW8AGbSxTYXbk8F3ncq/1z08="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.TriangleNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.TriangleNode.html",
+          "hash": "/rCoEi1cz+7mQrF99X8Fay6pV19pRyCmwnzvpNP4jsw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.Vector2F.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.Vector2F.html",
+          "hash": "rzb3KfA+hMJz36q1cQ4d97xm2l7MNIu2WRcKv61EFkk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.Vector2I.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.Vector2I.html",
+          "hash": "3duH00fxKPC/GZLoOQo1nqnJbaGQVbKg6KzBveVAFFs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.Vector3F.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.Vector3F.html",
+          "hash": "kgefN6oGxQFu1/wNjuMHToy0rbQl5VmJ0y632z0wRIU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.Vector3I.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.Vector3I.html",
+          "hash": "VLQ5h50OJO23NmVA3Xh5xr8j3fxxVKxD5T9fUKM1ikI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.Vector4F.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.Vector4F.html",
+          "hash": "57K4oyn8FUk7LUO6dR2AvrRNjk9Req/8bE0A+NDvJcA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.Vector4I.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.Vector4I.html",
+          "hash": "Xe4QhFnuZ9q7LEnwGsuAE4ZFOuy0yKTWPPffcn1++IA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.Vertex.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.Vertex.html",
+          "hash": "mY4UTyzfVb7vtUZZKaY3v+I3JEGPiEhoD73vmUAXH7w="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.VerticalAlignment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.VerticalAlignment.html",
+          "hash": "YuPAATNNbW+OCV4dcN53XA2zbNAcFU/dMGlBDkpaRVU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.WritingDirection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.WritingDirection.html",
+          "hash": "40h+Q2gKA7pCypa1/xyOMOjhJ78nof/zR+LNJBGqHXk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "References/Altseed2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/Altseed2.html",
+          "hash": "eloMuSiDYyRdroBa8RVuqxw4LHbd7h4ByXTmi6svlHc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "References/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "References/toc.html",
+          "hash": "xey9PibNz3CT2vp31wTNF33ZaegSdtvpyQPz6fIzN7k="
         }
       },
       "is_incremental": false,
@@ -6396,7 +7860,7 @@
       "output": {
         ".html": {
           "relative_path": "Tutorials/Chap0/index.html",
-          "hash": "n+DQLWWitFd6LXauisiYl9NPpf6JD4aap2ORmU/XnIs="
+          "hash": "rNss4LnhhhzXBLBLI0JS05HhdKhaY5a20G3rOCqWbRw="
         }
       },
       "is_incremental": false,
@@ -6617,7 +8081,7 @@
       "output": {
         ".html": {
           "relative_path": "Tutorials/Chap1/index.html",
-          "hash": "6McghwBa9CLUSEf61IViOgLJwnk2moILtPJjvatL7SI="
+          "hash": "jAUBneUJMJvtbujOya9BXE6cS/hLVz8bVuwzpu5kbmA="
         }
       },
       "is_incremental": false,
@@ -6629,7 +8093,7 @@
       "output": {
         ".html": {
           "relative_path": "Tutorials/Chap10/index.html",
-          "hash": "aDcWcEl1n4WjOF8JHWAczYCCVcS4l1X3lFfe8UpFLVc="
+          "hash": "sGwBT0DCx5ovoaOyrSfC3YXOppY6NhB0n8Fz78zzOK4="
         }
       },
       "is_incremental": false,
@@ -6663,7 +8127,7 @@
       "output": {
         ".html": {
           "relative_path": "Tutorials/Chap2/index.html",
-          "hash": "okIE4sdJHMQJ/AyyEN2XDUVyzgPxGk572Q8ImoUniV8="
+          "hash": "RGRej/HIXWBxm9mKB1pfjPU5azroDkX9jl4EH+HR1Vo="
         }
       },
       "is_incremental": false,
@@ -6697,7 +8161,7 @@
       "output": {
         ".html": {
           "relative_path": "Tutorials/Chap3/index.html",
-          "hash": "9SV0/xcQ6xydIH70mTU6z3lq/FupXinilNgKYpY7M5Q="
+          "hash": "jGQdhq9qH7oSsq0O//OnAHXVgqau9rlN8QMKVhjwOuI="
         }
       },
       "is_incremental": false,
@@ -6808,7 +8272,7 @@
       "output": {
         ".html": {
           "relative_path": "Tutorials/Chap4/index.html",
-          "hash": "etfcbqgFFC96Q3VXJXGOMiZHx/Hg4FCMEYLAeqYiKn8="
+          "hash": "VsQH3veMCD3lNLgXmDMlBsSIY5t/c1rJLmEUNu9pY0A="
         }
       },
       "is_incremental": false,
@@ -6864,7 +8328,7 @@
       "output": {
         ".html": {
           "relative_path": "Tutorials/Chap5/index.html",
-          "hash": "i61gpUUh91iSn1eb0O+7UecTrAmGkd1JyxTOvWesDVo="
+          "hash": "GqAKP+5EBZs8RZaAVOFzBpg5dUh+r050brwfrDcIe2k="
         }
       },
       "is_incremental": false,
@@ -6898,7 +8362,7 @@
       "output": {
         ".html": {
           "relative_path": "Tutorials/Chap6/index.html",
-          "hash": "L5IWu0hXwZW1f0vqxnbPjMsLRuxFAAwURfTSst7Zyj0="
+          "hash": "UMNxbog+dbwh0IuS9DiPsgcn9jCyRjax/UmD8H+O/hY="
         }
       },
       "is_incremental": false,
@@ -6910,7 +8374,7 @@
       "output": {
         ".html": {
           "relative_path": "Tutorials/Chap7/index.html",
-          "hash": "UewWR5W1KGmN8Pg2hGxwtb2gXo/pOGPz+KZnLEe36hI="
+          "hash": "fKzBSlNkPn3Aw9Kih5ac4bc1W7Tg3L9S3xt9XQkDZ3s="
         }
       },
       "is_incremental": false,
@@ -6944,7 +8408,7 @@
       "output": {
         ".html": {
           "relative_path": "Tutorials/Chap8/index.html",
-          "hash": "3TqiQZah33548ZdSsq0125Ae8cGfxBYtZ2cBVW2sCiU="
+          "hash": "NWcWfyFKhD88Kyg1wOUnOf/lh38r3oxJUOMDoBgsRpM="
         }
       },
       "is_incremental": false,
@@ -6989,7 +8453,7 @@
       "output": {
         ".html": {
           "relative_path": "Tutorials/Chap9/index.html",
-          "hash": "nKokccJT+luWdq20OhX8D2T/POFvlxgyptyLCAK1OX0="
+          "hash": "XTsGKJVwT4NWg5K5QRfm7aas/d5HsqKl9UNX8QZO4Tk="
         }
       },
       "is_incremental": false,
@@ -7001,7 +8465,7 @@
       "output": {
         ".html": {
           "relative_path": "Tutorials/index.html",
-          "hash": "feKOjiS7c7OYr8QWV217Lu0WfIOToEy5YkOImD0vYNk="
+          "hash": "sKx1eu9ABSq7NhPXshKQnM9DxMG0oaMOcCXsHC8nPdU="
         }
       },
       "is_incremental": false,
@@ -7031,15 +8495,12 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "UidNotFound"
-      ],
       "type": "index",
       "source_relative_path": "index.md",
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "JZZUBcYOSTyGgaaRlOoEY12qXvq4OhSM0GstngYWmG0="
+          "hash": "0HA5ILxsuOg+siIcZ5xtS2td5DLiUeMvpWu3Ua+EAa4="
         }
       },
       "is_incremental": false,
@@ -7051,7 +8512,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "mloOwSLGe3NPJHDzETB7NIyICNmW+Hkgq5O5YLhFqiQ="
+          "hash": "8y7rVKcUbZjhlS0JZiCw7q2b8xHqO3H2MDeLraD+N3w="
         }
       },
       "is_incremental": false,
@@ -7073,6 +8534,12 @@
           "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 33,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 125,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
