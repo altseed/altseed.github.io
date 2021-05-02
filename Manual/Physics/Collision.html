@@ -200,6 +200,11 @@
 <td style="text-align: center;">短形</td>
 <td style="text-align: center;"><a class="xref" href="../../References/Altseed2.Collider.html#Altseed2_Collider_Position">左上の座標</a>，<a class="xref" href="../../References/Altseed2.RectangleCollider.html#Altseed2_RectangleCollider_Size">サイズ(縦・横)</a></td>
 </tr>
+<tr>
+<td style="text-align: center;"><a class="xref" href="../../References/Altseed2.EdgeCollider.html">EdgeCollider</a></td>
+<td style="text-align: center;">線分</td>
+<td style="text-align: center;"><a class="xref" href="../../References/Altseed2.EdgeCollider.html#Altseed2_EdgeCollider_Point1">端点1</a>，<a class="xref" href="../../References/Altseed2.EdgeCollider.html#Altseed2_EdgeCollider_Point2">端点2</a></td>
+</tr>
 </tbody>
 </table>
 <p><a class="xref" href="../../References/Altseed2.Collider.html">Collider</a>との衝突判定は<a class="xref" href="../../References/Altseed2.Collider.html#Altseed2_Collider_GetIsCollidedWith_Altseed2_Collider_">GetIsCollidedWith(Collider)</a>メソッドを使用します。<br>
@@ -209,9 +214,9 @@
 <h3 id="collidernodeクラス"><a class="xref" href="../../References/Altseed2.ColliderNode.html">ColliderNode</a>クラス</h3>
 <p>このクラスは<a class="xref" href="../../References/Altseed2.Collider.html">Collider</a>クラスを内部に持っています。<br>
 また，この派生クラスに<a class="xref" href="../../References/Altseed2.CircleColliderNode.html">CircleColliderNode</a>，<a class="xref" href="../../References/Altseed2.PolygonColliderNode.html">PolygonColliderNode</a>，
-<a class="xref" href="../../References/Altseed2.RectangleColliderNode.html">RectangleColliderNode</a>クラスがあり，それぞれ<a class="xref" href="../../References/Altseed2.CircleCollider.html">CircleCollider</a>，
+<a class="xref" href="../../References/Altseed2.RectangleColliderNode.html">RectangleColliderNode</a>, <a class="xref" href="../../References/Altseed2.EdgeColliderNode.html">EdgeColliderNode</a>クラスがあり，それぞれ<a class="xref" href="../../References/Altseed2.CircleCollider.html">CircleCollider</a>，
 <a class="xref" href="../../References/Altseed2.PolygonCollider.html">PolygonCollider</a>，
-<a class="xref" href="../../References/Altseed2.RectangleCollider.html">RectangleCollider</a>クラスのインスタンスを内部に持っています。<br>
+<a class="xref" href="../../References/Altseed2.RectangleCollider.html">RectangleCollider</a>, <a class="xref" href="../../References/Altseed2.EdgeCollider.html">EdgeCollider</a>クラスのインスタンスを内部に持っています。<br>
 これらのクラスのプロパティを通して，内部コライダのメンバの操作を行う事が出来ます。</p>
 <div class="IMPORTANT">
 <h5>Important</h5>
