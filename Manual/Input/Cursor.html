@@ -190,44 +190,25 @@ using Altseed2;
 
 namespace Sample
 {
-    class Mouse
+    class MouseCursor
     {
         static void Main(string[] args)
         {
             // Altseed2 を初期化します。
-            Engine.Initialize(&quot;Mouse&quot;, 640, 480);
+            Engine.Initialize(&quot;MouseCursor&quot;, 640, 480);
 
-            // 状態を出力するための TextNode を作成します。
-            // 詳細は TextNode のサンプルを参照してください。
-            var font = Font.LoadDynamicFont(&quot;./mplus-1m-regular.ttf&quot;, 64);
-            var textNode = new TextNode();
-            textNode.Font = font;
-            textNode.FontSize = 40;
+            // まず、カーソルオブジェクトを生成します。画像の読み込みに失敗するとnullが返ります。
+            // 引数は、string(png画像のパス), Altseed2.Vector2I(クリック判定の相対座標) です。
+            var cursor = Cursor.Create(&quot;../../Core/TestData/Input/altseed_logo.png&quot;, new Vector2I(16, 16));
 
-            Engine.AddNode(textNode);
+            if (cursor != null)
+            {
+                // マウスにカーソルをセットします。
+                Engine.Mouse.CursorImage = cursor;
+            }
 
             while (Engine.DoEvents())
             {
-                // マウスの左ボタンが押されているかどうかを取得します。
-                if (Engine.Mouse.GetMouseButtonState(MouseButton.ButtonLeft) == ButtonState.Hold)
-                {
-                    textNode.Text = &quot;左ボタンが押されています。&quot;;
-                }
-                else
-                {
-                    textNode.Text = &quot;左ボタンが押されていません。&quot;;
-                }
-
-                // マウスの座標を取得します。
-                Vector2F position = Engine.Mouse.Position;
-                textNode.Text += $&quot;\nポジション(x/y): {position.X} / {position.Y}&quot;;
-
-                // マウスホイールの値を取得します。
-                textNode.Text += $&quot;\nホイール　　　　: {Engine.Mouse.Wheel}&quot;;
-
-                // マウスモードを取得します。
-                textNode.Text += $&quot;\nモード　　　　　: {Engine.Mouse.CursorMode}&quot;;
-
                 Engine.Update();
             }
 
