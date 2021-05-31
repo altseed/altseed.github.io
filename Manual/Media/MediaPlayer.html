@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>&#12510;&#12454;&#12473; | Altseed2 </title>
+    <title>MediaPlayer | Altseed2 </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="&#12510;&#12454;&#12473; | Altseed2 ">
+    <meta name="title" content="MediaPlayer | Altseed2 ">
     <meta name="generator" content="docfx 2.57.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
@@ -141,8 +141,8 @@
                     <li class="">
                       <a href="../Input/Keyboard.html" title="&#12461;&#12540;&#12508;&#12540;&#12489;" class="">&#12461;&#12540;&#12508;&#12540;&#12489;</a>
                     </li>
-                    <li class="active">
-                      <a href="../Input/Mouse.html" title="&#12510;&#12454;&#12473;" class="active">&#12510;&#12454;&#12473;</a>
+                    <li class="">
+                      <a href="../Input/Mouse.html" title="&#12510;&#12454;&#12473;" class="">&#12510;&#12454;&#12473;</a>
                     </li>
                     <li class="">
                       <a href="../Input/Cursor.html" title="&#12459;&#12540;&#12477;&#12523;" class="">&#12459;&#12540;&#12477;&#12523;</a>
@@ -159,8 +159,8 @@
                     <li class="">
                       <a href="../Transition/Transition.html" title="&#12488;&#12521;&#12531;&#12472;&#12471;&#12519;&#12531;" class="">&#12488;&#12521;&#12531;&#12472;&#12471;&#12519;&#12531;</a>
                     </li>
-                    <li class="">
-                      <a href="../Media/MediaPlayer.html" title="&#12513;&#12487;&#12451;&#12450;&#12503;&#12524;&#12452;&#12516;&#12540;" class="">&#12513;&#12487;&#12451;&#12450;&#12503;&#12524;&#12452;&#12516;&#12540;</a>
+                    <li class="active">
+                      <a href="../Media/MediaPlayer.html" title="&#12513;&#12487;&#12451;&#12450;&#12503;&#12524;&#12452;&#12516;&#12540;" class="active">&#12513;&#12487;&#12451;&#12450;&#12503;&#12524;&#12452;&#12516;&#12540;</a>
                     </li>
                     <li class="">
                       <a href="../CLITool.html" title="Altseed2.Tools (.NET&#12484;&#12540;&#12523;)" class="">Altseed2.Tools (.NET&#12484;&#12540;&#12523;)</a>
@@ -173,219 +173,62 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="マウス">マウス</h1>
+<h1 id="mediaplayer">MediaPlayer</h1>
 
-<p><a href="xref:Altseed2.Mouse">Mouse</a> は マウス入力に関する基本的な機能を提供します。</p>
-<h2 id="mouse"><a href="xref:Altseed2.Mouse">Mouse</a></h2>
-<p><a href="xref:Altseed2.Mouse">Mouse</a>では次の機能を提供します。</p>
-<ul>
-<li>マウスカーソルの座標を取得・設定</li>
-<li>マウスボタンの状態を取得</li>
-<li>マウスホイールの回転量を取得を取得</li>
-<li>カーソルモードの取得または設定</li>
-</ul>
-<h2 id="基本的な呼び出し手順">基本的な呼び出し手順</h2>
-<p>Altseed2の<a href="xref:Altseed2.Engine.Initialize(System.String,System.Int32,System.Int32,Altseed2.Configuration)">Initialize</a>を呼び出した後、Engine.Mouse という形でMouseの各種メソッドを呼び出してください。</p>
-<div class="NOTE">
-<h5>Note</h5>
-<p><a href="xref:Altseed2.MouseButton">MouseButton</a>や<a href="xref:Altseed2.ButtonState">ButtonState</a>は
-Mouseには含まれていません。</p>
-</div>
-<h2 id="カーソル座標">カーソル座標</h2>
-<p>サンプル</p>
-<pre><code class="lang-csharp" name="Main">using System;
+<p><a href="xref:Altseed2.MediaPlayer">MediaPlayer</a>クラスは、映像を再生する機能です。
+h264の映像を読み込み、テクスチャに出力します。</p>
+<p>パッケージ機能には対応しておらず、映像はパッケージの外に置く必要があります。</p>
+<p>以下のように記述して映像を出力します。</p>
+<pre><code class="lang-csharp">using System;
 
 using Altseed2;
 
 namespace Sample
 {
-    class Mouse
+    class Movie
     {
+        [STAThread]
         static void Main(string[] args)
         {
             // Altseed2 を初期化します。
-            Engine.Initialize(&quot;Mouse&quot;, 640, 480);
+            if (!Engine.Initialize(&quot;Movie&quot;, 640, 480)) return;
 
-            // 状態を出力するための TextNode を作成します。
-            // 詳細は TextNode のサンプルを参照してください。
-            var font = Font.LoadDynamicFont(&quot;./mplus-1m-regular.ttf&quot;, 64);
-            var textNode = new TextNode();
-            textNode.Font = font;
-            textNode.FontSize = 40;
+            // 空のテクスチャを作成します。
+            var texture = Texture2D.Create(new Vector2I(640, 480));
 
-            Engine.AddNode(textNode);
+            // 映像を読み込みます。
+            var mediaPlayer = MediaPlayer.Load(@&quot;TestData/Movie/Test1.mp4&quot;);
 
+            // 映像を再生します。
+            mediaPlayer.Play(false);
+
+            // スプライトを描画するノードを作成します。
+            var node = new SpriteNode();
+
+            // テクスチャを設定します。
+            node.Texture = texture;
+
+            // ノードを登録します。
+            Engine.AddNode(node);
+
+            // メインループ。
+            // Altseed のウインドウが閉じられると終了します。
             while (Engine.DoEvents())
             {
-                // マウスの左ボタンが押されているかどうかを取得します。
-                if (Engine.Mouse.GetMouseButtonState(MouseButton.ButtonLeft) == ButtonState.Hold)
-                {
-                    textNode.Text = &quot;左ボタンが押されています。&quot;;
-                }
-                else
-                {
-                    textNode.Text = &quot;左ボタンが押されていません。&quot;;
-                }
+                // 現在の映像を画像に書き込みます。
+                mediaPlayer.WriteToTexture2D(texture);
 
-                // マウスの座標を取得します。
-                Vector2F position = Engine.Mouse.Position;
-                textNode.Text += $&quot;\nポジション(x/y): {position.X} / {position.Y}&quot;;
-
-                // マウスホイールの値を取得します。
-                textNode.Text += $&quot;\nホイール　　　　: {Engine.Mouse.Wheel}&quot;;
-
-                // マウスモードを取得します。
-                textNode.Text += $&quot;\nモード　　　　　: {Engine.Mouse.CursorMode}&quot;;
-
+                // Altseed を更新します。
                 Engine.Update();
             }
 
+            // Altseed の終了処理をします。
             Engine.Terminate();
         }
     }
 }
+
 </code></pre>
-<p>カーソルの座標の取得・設定は以下のプロパティを通して行います。</p>
-<ul>
-<li>[Position](xref:Altseed2.Mouse.Position</li>
-</ul>
-<p>戻り値は<a href="xref:Altseed2.Vector2F">Vector2F</a>です。</p>
-<h2 id="マウスボタン">マウスボタン</h2>
-<p>サンプル</p>
-<pre><code class="lang-csharp" name="Main">using System;
-
-using Altseed2;
-
-namespace Sample
-{
-    class Mouse
-    {
-        static void Main(string[] args)
-        {
-            // Altseed2 を初期化します。
-            Engine.Initialize(&quot;Mouse&quot;, 640, 480);
-
-            // 状態を出力するための TextNode を作成します。
-            // 詳細は TextNode のサンプルを参照してください。
-            var font = Font.LoadDynamicFont(&quot;./mplus-1m-regular.ttf&quot;, 64);
-            var textNode = new TextNode();
-            textNode.Font = font;
-            textNode.FontSize = 40;
-
-            Engine.AddNode(textNode);
-
-            while (Engine.DoEvents())
-            {
-                // マウスの左ボタンが押されているかどうかを取得します。
-                if (Engine.Mouse.GetMouseButtonState(MouseButton.ButtonLeft) == ButtonState.Hold)
-                {
-                    textNode.Text = &quot;左ボタンが押されています。&quot;;
-                }
-                else
-                {
-                    textNode.Text = &quot;左ボタンが押されていません。&quot;;
-                }
-
-                // マウスの座標を取得します。
-                Vector2F position = Engine.Mouse.Position;
-                textNode.Text += $&quot;\nポジション(x/y): {position.X} / {position.Y}&quot;;
-
-                // マウスホイールの値を取得します。
-                textNode.Text += $&quot;\nホイール　　　　: {Engine.Mouse.Wheel}&quot;;
-
-                // マウスモードを取得します。
-                textNode.Text += $&quot;\nモード　　　　　: {Engine.Mouse.CursorMode}&quot;;
-
-                Engine.Update();
-            }
-
-            Engine.Terminate();
-        }
-    }
-}
-</code></pre>
-<p>スティックの取得には以下のメソッドを用います。</p>
-<ul>
-<li><a href="xref:Altseed2.Mouse.GetMouseButtonState(Altseed2.MouseButton)">GetMouseButtonState</a></li>
-</ul>
-<p>戻り値は<a href="xref:Altseed2.ButtonState">ButtonState</a>です。</p>
-<h3 id="マウスホイール">マウスホイール</h3>
-<p>サンプル</p>
-<pre><code class="lang-csharp" name="Main">using System;
-
-using Altseed2;
-
-namespace Sample
-{
-    class Mouse
-    {
-        static void Main(string[] args)
-        {
-            // Altseed2 を初期化します。
-            Engine.Initialize(&quot;Mouse&quot;, 640, 480);
-
-            // 状態を出力するための TextNode を作成します。
-            // 詳細は TextNode のサンプルを参照してください。
-            var font = Font.LoadDynamicFont(&quot;./mplus-1m-regular.ttf&quot;, 64);
-            var textNode = new TextNode();
-            textNode.Font = font;
-            textNode.FontSize = 40;
-
-            Engine.AddNode(textNode);
-
-            while (Engine.DoEvents())
-            {
-                // マウスの左ボタンが押されているかどうかを取得します。
-                if (Engine.Mouse.GetMouseButtonState(MouseButton.ButtonLeft) == ButtonState.Hold)
-                {
-                    textNode.Text = &quot;左ボタンが押されています。&quot;;
-                }
-                else
-                {
-                    textNode.Text = &quot;左ボタンが押されていません。&quot;;
-                }
-
-                // マウスの座標を取得します。
-                Vector2F position = Engine.Mouse.Position;
-                textNode.Text += $&quot;\nポジション(x/y): {position.X} / {position.Y}&quot;;
-
-                // マウスホイールの値を取得します。
-                textNode.Text += $&quot;\nホイール　　　　: {Engine.Mouse.Wheel}&quot;;
-
-                // マウスモードを取得します。
-                textNode.Text += $&quot;\nモード　　　　　: {Engine.Mouse.CursorMode}&quot;;
-
-                Engine.Update();
-            }
-
-            Engine.Terminate();
-        }
-    }
-}
-</code></pre>
-<p>マウスホイールの回転量を取得するには以下のプロパティを使用します。</p>
-<ul>
-<li><a href="xref:Altseed2.Mouse.Wheel">Wheel</a></li>
-</ul>
-<p>戻り値は-1~1の範囲の<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">float</a>です。</p>
-<h3 id="カーソルモード">カーソルモード</h3>
-<p>CursorModeを取得・設定するには、以下のプロパティを使用します。</p>
-<ul>
-<li><a href="xref:Altseed2.Mouse.CursorMode">CursorMode</a></li>
-</ul>
-<p>カーソルモードの設定は<a href="xref:Altseed2.CursorMode">CursorMode</a>の中から行ってください。</p>
-<h4 id="cursormode">CursorMode</h4>
-<ul>
-<li>Normal  ...  デフォルト値</li>
-<li>Hidden  ...  カーソル非表示の状態</li>
-<li>Disable ...  カーソルの入力が無効の状態。カーソルがウィンドウ中央にロックされます。</li>
-</ul>
-<h2 id="カーソル画像">カーソル画像</h2>
-<p>カーソル画像を指定するには、以下のメソッドを使います。</p>
-<ul>
-<li><a href="xref:Altseed2.Mouse.SetCursorImage(Altseed2.Cursor)">SetCursorImage</a></li>
-</ul>
-<p>第一引数に、設定したい画像を読み込んだ<a href="xref:Altseed2.Cursor">カーソル</a>オブジェクトを渡します。</p>
 </article>
           </div>
           
