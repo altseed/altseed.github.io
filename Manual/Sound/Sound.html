@@ -54,7 +54,7 @@
                           <a href="../../Manual/index.html" title="&#27231;&#33021;&#35299;&#35500;">&#27231;&#33021;&#35299;&#35500;</a>
                       </li>
                       <li>
-                          <a>リファレンス</a>
+                          <a href="../../References/Altseed2.html" title="&#12522;&#12501;&#12449;&#12524;&#12531;&#12473;">&#12522;&#12501;&#12449;&#12524;&#12531;&#12473;</a>
                       </li>
                       <li>
                           <a href="../../First/index.html" title="&#21021;&#20195;Altseed&#12399;&#12467;&#12481;&#12521;">&#21021;&#20195;Altseed&#12399;&#12467;&#12481;&#12521;</a>
@@ -175,11 +175,11 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="サウンド">サウンド</h1>
 
-<p>サウンドを再生するには、<a href="xref:Altseed2.Sound.Load(System.String,System.Boolean)">Load</a>メソッドを用いてサウンドファイルを読み込み<a href="xref:Altseed2.Sound">Sound</a>インスタンスを作成します。次に<a href="xref:Altseed2.SoundMixer.Play(Altseed2.Sound)">Engine.Sound.Play</a>メソッドを用いて<a href="xref:Altseed2.Sound">Sound</a>インスタンスを再生します。</p>
+<p>サウンドを再生するには、<a class="xref" href="../../References/Altseed2.Sound.html#Altseed2_Sound_Load_System_String_System_Boolean_">Load</a>メソッドを用いてサウンドファイルを読み込み<a class="xref" href="../../References/Altseed2.Sound.html">Sound</a>インスタンスを作成します。次に<a class="xref" href="../../References/Altseed2.SoundMixer.html#Altseed2_SoundMixer_Play_Altseed2_Sound_">Engine.Sound.Play</a>メソッドを用いて<a class="xref" href="../../References/Altseed2.Sound.html">Sound</a>インスタンスを再生します。</p>
 <p>このとき返される ID や、ID を用いて再生中のサウンドを操作する機能について解説します。</p>
-<h2 id="sound"><a href="xref:Altseed2.Sound">Sound</a></h2>
-<p><a href="xref:Altseed2.Sound">Sound</a>はサウンドファイルを読み込んで生成される音源の情報を表すデータです。
-サウンドファイルを読み込んで<a href="xref:Altseed2.Sound">Sound</a>インスタンスを生成するには<a href="xref:Altseed2.Sound.Load(System.String,System.Boolean)">Load</a>メソッドを使います。</p>
+<h2 id="sound"><a class="xref" href="../../References/Altseed2.Sound.html">Sound</a></h2>
+<p><a class="xref" href="../../References/Altseed2.Sound.html">Sound</a>はサウンドファイルを読み込んで生成される音源の情報を表すデータです。
+サウンドファイルを読み込んで<a class="xref" href="../../References/Altseed2.Sound.html">Sound</a>インスタンスを生成するには<a class="xref" href="../../References/Altseed2.Sound.html#Altseed2_Sound_Load_System_String_System_Boolean_">Load</a>メソッドを使います。</p>
 <p>この時、事前に音のデータを解凍するかどうかを指定できます。
 OGG等のフォーマットでは、音のデータが圧縮された状態で格納されているため、音を再生前にデータを解凍しなければなりません。
 読み込み時に音のデータを解凍しなかった場合、再生しながらリアルタイムに解凍することになります。</p>
@@ -190,17 +190,17 @@ OGG等のフォーマットでは、音のデータが圧縮された状態で�
 一方、再生中にリアルタイムに解凍する場合は、読み込み時間もメモリも小さくなりますが、再生時に若干CPUの処理を必要とします。
 基本的に、音が長い <strong>BGMは圧縮したまま</strong> 、音が短くたくさん鳴らす <strong>効果音は事前に解凍</strong> して読み込みます。</p>
 </div>
-<p>サウンドはループさせることが可能です。サウンドをループさせるには<a href="xref:Altseed2.Sound.IsLoopingMode">IsLoopingMode</a>を<code>true</code>にします。
-ループする範囲は<a href="xref:Altseed2.Sound.LoopStartingPoint">LoopStartingPoint</a>や<a href="xref:Altseed2.Sound.LoopEndPoint">LoopEndPoint</a>を設定することでを設定でき、
+<p>サウンドはループさせることが可能です。サウンドをループさせるには<a class="xref" href="../../References/Altseed2.Sound.html#Altseed2_Sound_IsLoopingMode">IsLoopingMode</a>を<code>true</code>にします。
+ループする範囲は<a class="xref" href="../../References/Altseed2.Sound.html#Altseed2_Sound_LoopStartingPoint">LoopStartingPoint</a>や<a class="xref" href="../../References/Altseed2.Sound.html#Altseed2_Sound_LoopEndPoint">LoopEndPoint</a>を設定することでを設定でき、
 ループする範囲を設定していない場合、音を最後まで再生したら最初に戻ってループします。
-<a href="xref:Altseed2.Sound.LoopStartingPoint">LoopStartingPoint</a>や<a href="xref:Altseed2.Sound.LoopEndPoint">LoopEndPoint</a>を設定すると、先頭から音を再生し、
-<a href="xref:Altseed2.Sound.LoopEndPoint">LoopEndPoint</a>に到達したら<a href="xref:Altseed2.Sound.LoopStartingPoint">LoopStartingPoint</a>の位置に戻ることを繰り返します。</p>
+<a class="xref" href="../../References/Altseed2.Sound.html#Altseed2_Sound_LoopStartingPoint">LoopStartingPoint</a>や<a class="xref" href="../../References/Altseed2.Sound.html#Altseed2_Sound_LoopEndPoint">LoopEndPoint</a>を設定すると、先頭から音を再生し、
+<a class="xref" href="../../References/Altseed2.Sound.html#Altseed2_Sound_LoopEndPoint">LoopEndPoint</a>に到達したら<a class="xref" href="../../References/Altseed2.Sound.html#Altseed2_Sound_LoopStartingPoint">LoopStartingPoint</a>の位置に戻ることを繰り返します。</p>
 <p><img src="loop.png" alt="loop"></p>
-<h2 id="soundmixer"><a href="xref:Altseed2.SoundMixer">SoundMixer</a></h2>
+<h2 id="soundmixer"><a class="xref" href="../../References/Altseed2.SoundMixer.html">SoundMixer</a></h2>
 <p>音の再生・停止・その他操作を行う機能を提供します。音を再生する際に使用します。</p>
-<p>音を再生するには<a href="xref:Altseed2.SoundMixer.Play(Altseed2.Sound)">Play</a>メソッドを使用します。このメソッドを実行すると、再生される音に対応するIDが返されます。
-<a href="xref:Altseed2.SoundMixer">SoundMixer</a>クラスの各メソッドに、このIDを渡すことで再生されている音に対して操作をすることができます。</p>
-<p><a href="xref:Altseed2.SoundMixer">SoundMixer</a>クラスで行える操作は次の通りです。</p>
+<p>音を再生するには<a class="xref" href="../../References/Altseed2.SoundMixer.html#Altseed2_SoundMixer_Play_Altseed2_Sound_">Play</a>メソッドを使用します。このメソッドを実行すると、再生される音に対応するIDが返されます。
+<a class="xref" href="../../References/Altseed2.SoundMixer.html">SoundMixer</a>クラスの各メソッドに、このIDを渡すことで再生されている音に対して操作をすることができます。</p>
+<p><a class="xref" href="../../References/Altseed2.SoundMixer.html">SoundMixer</a>クラスで行える操作は次の通りです。</p>
 <ul>
 <li>音の停止・一時停止・再開</li>
 <li>音量の変更・フェードイン/アウト</li>
@@ -217,7 +217,7 @@ OGG等のフォーマットでは、音のデータが圧縮された状態で�
 <p>BGMなどを除き、再生中に停止などの操作を行うことは稀です。そのため再生の度に、再生情報を含むインスタンスを生成することは無駄が大きいため、都度IDを用いて操作する仕組みになっています。</p>
 </div>
 <h3 id="スペクトル情報の取得">スペクトル情報の取得</h3>
-<p><a href="xref:Altseed2.SoundMixer">SoundMixer</a>クラスにはメディアアートのための機能として、スペクトルアナライザが実装されています。<a href="xref:Altseed2.SoundMixer.GetSpectrum(System.Int32,System.Int32,Altseed2.FFTWindow)">GetSpectrumData</a>メソッドを使用することで、再生中の音声のスペクトル情報を取得し、それを使って独自のサウンドビジュアライザを作ることができます。</p>
+<p><a class="xref" href="../../References/Altseed2.SoundMixer.html">SoundMixer</a>クラスにはメディアアートのための機能として、スペクトルアナライザが実装されています。<a class="xref" href="../../References/Altseed2.SoundMixer.html#Altseed2_SoundMixer_GetSpectrum_System_Int32_System_Int32_Altseed2_FFTWindow_">GetSpectrumData</a>メソッドを使用することで、再生中の音声のスペクトル情報を取得し、それを使って独自のサウンドビジュアライザを作ることができます。</p>
 <div class="TIP">
 <h5>Tip</h5>
 <p>音は波としての性質を持ちます。スペクトルアナライザでは、その波のデータに対して、どの周波数の成分の波形がどれくらいの量含まれているかを解析します。解析する手法としてフーリエ変換が用いられています。</p>

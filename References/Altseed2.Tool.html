@@ -290,6 +290,9 @@
                             <a href="Altseed2.Matrix44I.html" title="Matrix44I" class="">Matrix44I</a>
                           </li>
                           <li class="">
+                            <a href="Altseed2.MediaPlayer.html" title="MediaPlayer" class="">MediaPlayer</a>
+                          </li>
+                          <li class="">
                             <a href="Altseed2.Mouse.html" title="Mouse" class="">Mouse</a>
                           </li>
                           <li class="">
@@ -627,7 +630,7 @@
       <section></section>
       <h5><a class="xref" href="Altseed2.Tool.html#Altseed2_Tool_BeginDragDropTarget">BeginDragDropTarget()</a></h5>
       <section></section>
-      <h5><a class="xref" href="Altseed2.Tool.html#Altseed2_Tool_BeginFullScreen_System_Int32_">BeginFullScreen(Int32)</a></h5>
+      <h5><a class="xref" href="Altseed2.Tool.html#Altseed2_Tool_BeginFullScreen_System_Int32_Altseed2_ToolWindowFlags_">BeginFullScreen(Int32, ToolWindowFlags)</a></h5>
       <section><p>フルスクリーンでツールウィンドウを開始します。</p>
 </section>
       <h5><a class="xref" href="Altseed2.Tool.html#Altseed2_Tool_BeginGroup">BeginGroup()</a></h5>
@@ -827,6 +830,16 @@
       <h5><a class="xref" href="Altseed2.Tool.html#Altseed2_Tool_GetKeyIndex_Altseed2_ToolKey_">GetKeyIndex(ToolKey)</a></h5>
       <section></section>
       <h5><a class="xref" href="Altseed2.Tool.html#Altseed2_Tool_GetKeyPressedAmount_System_Int32_System_Single_System_Single_">GetKeyPressedAmount(Int32, Single, Single)</a></h5>
+      <section></section>
+      <h5><a class="xref" href="Altseed2.Tool.html#Altseed2_Tool_GetMainViewportID">GetMainViewportID()</a></h5>
+      <section></section>
+      <h5><a class="xref" href="Altseed2.Tool.html#Altseed2_Tool_GetMainViewportPos">GetMainViewportPos()</a></h5>
+      <section></section>
+      <h5><a class="xref" href="Altseed2.Tool.html#Altseed2_Tool_GetMainViewportSize">GetMainViewportSize()</a></h5>
+      <section></section>
+      <h5><a class="xref" href="Altseed2.Tool.html#Altseed2_Tool_GetMainViewportWorkPos">GetMainViewportWorkPos()</a></h5>
+      <section></section>
+      <h5><a class="xref" href="Altseed2.Tool.html#Altseed2_Tool_GetMainViewportWorkSize">GetMainViewportWorkSize()</a></h5>
       <section></section>
       <h5><a class="xref" href="Altseed2.Tool.html#Altseed2_Tool_GetMouseDragDelta_Altseed2_ToolMouseButton_System_Single_">GetMouseDragDelta(ToolMouseButton, Single)</a></h5>
       <section></section>
@@ -1741,14 +1754,14 @@
   
   </section>
   <a id="Altseed2_Tool_BeginFullScreen_" data-uid="Altseed2.Tool.BeginFullScreen*"></a>
-  <h4 id="Altseed2_Tool_BeginFullScreen_System_Int32_" data-uid="Altseed2.Tool.BeginFullScreen(System.Int32)">BeginFullScreen(Int32)</h4>
+  <h4 id="Altseed2_Tool_BeginFullScreen_System_Int32_Altseed2_ToolWindowFlags_" data-uid="Altseed2.Tool.BeginFullScreen(System.Int32,Altseed2.ToolWindowFlags)">BeginFullScreen(Int32, ToolWindowFlags)</h4>
   <section>
   <div class="markdown level1 summary"><p>フルスクリーンでツールウィンドウを開始します。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool BeginFullScreen(int offset)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool BeginFullScreen(int offset, ToolWindowFlags flags = ToolWindowFlags.None)</code></pre>
   </div>
   <h5 class="parameters">&#12497;&#12521;&#12513;&#12540;&#12479;</h5>
   <section>
@@ -1756,6 +1769,10 @@
     <tbody>
       <tr>
         <td><span class="parametername">offset</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -4237,6 +4254,76 @@
   </table>
   </section>
   
+  <h5 class="returns">&#25147;&#12426;&#20516;</h5>
+    <p><section></section></p>
+  
+  
+  </section>
+  <a id="Altseed2_Tool_GetMainViewportID_" data-uid="Altseed2.Tool.GetMainViewportID*"></a>
+  <h4 id="Altseed2_Tool_GetMainViewportID" data-uid="Altseed2.Tool.GetMainViewportID">GetMainViewportID()</h4>
+  <section>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetMainViewportID()</code></pre>
+  </div>
+  <h5 class="returns">&#25147;&#12426;&#20516;</h5>
+    <p><section></section></p>
+  
+  
+  </section>
+  <a id="Altseed2_Tool_GetMainViewportPos_" data-uid="Altseed2.Tool.GetMainViewportPos*"></a>
+  <h4 id="Altseed2_Tool_GetMainViewportPos" data-uid="Altseed2.Tool.GetMainViewportPos">GetMainViewportPos()</h4>
+  <section>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2F GetMainViewportPos()</code></pre>
+  </div>
+  <h5 class="returns">&#25147;&#12426;&#20516;</h5>
+    <p><section></section></p>
+  
+  
+  </section>
+  <a id="Altseed2_Tool_GetMainViewportSize_" data-uid="Altseed2.Tool.GetMainViewportSize*"></a>
+  <h4 id="Altseed2_Tool_GetMainViewportSize" data-uid="Altseed2.Tool.GetMainViewportSize">GetMainViewportSize()</h4>
+  <section>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2F GetMainViewportSize()</code></pre>
+  </div>
+  <h5 class="returns">&#25147;&#12426;&#20516;</h5>
+    <p><section></section></p>
+  
+  
+  </section>
+  <a id="Altseed2_Tool_GetMainViewportWorkPos_" data-uid="Altseed2.Tool.GetMainViewportWorkPos*"></a>
+  <h4 id="Altseed2_Tool_GetMainViewportWorkPos" data-uid="Altseed2.Tool.GetMainViewportWorkPos">GetMainViewportWorkPos()</h4>
+  <section>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2F GetMainViewportWorkPos()</code></pre>
+  </div>
+  <h5 class="returns">&#25147;&#12426;&#20516;</h5>
+    <p><section></section></p>
+  
+  
+  </section>
+  <a id="Altseed2_Tool_GetMainViewportWorkSize_" data-uid="Altseed2.Tool.GetMainViewportWorkSize*"></a>
+  <h4 id="Altseed2_Tool_GetMainViewportWorkSize" data-uid="Altseed2.Tool.GetMainViewportWorkSize">GetMainViewportWorkSize()</h4>
+  <section>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <!-- <h5 class="decalaration">&#23459;&#35328;</h5> -->
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2F GetMainViewportWorkSize()</code></pre>
+  </div>
   <h5 class="returns">&#25147;&#12426;&#20516;</h5>
     <p><section></section></p>
   

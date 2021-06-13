@@ -54,7 +54,7 @@
                           <a href="../../Manual/index.html" title="&#27231;&#33021;&#35299;&#35500;">&#27231;&#33021;&#35299;&#35500;</a>
                       </li>
                       <li>
-                          <a>リファレンス</a>
+                          <a href="../../References/Altseed2.html" title="&#12522;&#12501;&#12449;&#12524;&#12531;&#12473;">&#12522;&#12501;&#12449;&#12524;&#12531;&#12473;</a>
                       </li>
                       <li>
                           <a href="../../First/index.html" title="&#21021;&#20195;Altseed&#12399;&#12467;&#12481;&#12521;">&#21021;&#20195;Altseed&#12399;&#12467;&#12481;&#12521;</a>
@@ -175,32 +175,32 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="カメラ">カメラ</h1>
 
-<p><a href="xref:Altseed2.CameraNode">CameraNode</a>は指定の領域の描画結果を写し撮るノードです。既定では写し撮った領域は画面に描画されます。<a href="xref:Altseed2.CameraNode">CameraNode</a>が撮影する領域は<a href="xref:Altseed2.CameraNode.Angle">Angle</a>、<a href="xref:Altseed2.CameraNode.CenterPosition">CenterPosition</a>、<a href="xref:Altseed2.CameraNode.Position">Position</a>、<a href="xref:Altseed2.CameraNode.Scale">Scale</a> プロパティを用いることで設定できます。</p>
+<p><a class="xref" href="../../References/Altseed2.CameraNode.html">CameraNode</a>は指定の領域の描画結果を写し撮るノードです。既定では写し撮った領域は画面に描画されます。<a class="xref" href="../../References/Altseed2.CameraNode.html">CameraNode</a>が撮影する領域は<a href="xref:Altseed2.CameraNode.Angle">Angle</a>、<a href="xref:Altseed2.CameraNode.CenterPosition">CenterPosition</a>、<a href="xref:Altseed2.CameraNode.Position">Position</a>、<a href="xref:Altseed2.CameraNode.Scale">Scale</a> プロパティを用いることで設定できます。</p>
 <div class="NOTE">
 <h5>Note</h5>
-<p>既定では、<a href="xref:Altseed2.CameraNode">CameraNode</a>が撮影する領域は、点 (0, 0) を左上とする、<a href="xref:Altseed2.Engine.WindowSize">ウインドウサイズ</a>と同じ大きさ（<a href="xref:Altseed2.CameraNode.TargetTexture">TargetTexture</a>を設定した場合はその<a href="xref:Altseed2.TextureBase.Size">大きさ</a>）の長方形の領域です。上記の各種プロパティを設定してこの長方形を変形することで、撮影する領域を調整すると考えるとよいです。</p>
+<p>既定では、<a class="xref" href="../../References/Altseed2.CameraNode.html">CameraNode</a>が撮影する領域は、点 (0, 0) を左上とする、<a class="xref" href="../../References/Altseed2.Engine.html#Altseed2_Engine_WindowSize">ウインドウサイズ</a>と同じ大きさ（<a class="xref" href="../../References/Altseed2.CameraNode.html#Altseed2_CameraNode_TargetTexture">TargetTexture</a>を設定した場合はその<a class="xref" href="../../References/Altseed2.TextureBase.html#Altseed2_TextureBase_Size">大きさ</a>）の長方形の領域です。上記の各種プロパティを設定してこの長方形を変形することで、撮影する領域を調整すると考えるとよいです。</p>
 </div>
-<p>描画結果を <a href="xref:Altseed2.RenderTexture">RenderTexure</a> として取り出して再利用することもできます。<a href="xref:Altseed2.Material">Material</a> などを付けて再描画することができます。</p>
+<p>描画結果を <a class="xref" href="../../References/Altseed2.RenderTexture.html">RenderTexure</a> として取り出して再利用することもできます。<a class="xref" href="../../References/Altseed2.Material.html">Material</a> などを付けて再描画することができます。</p>
 <div class="IMPORTANT">
 <h5>Important</h5>
-<p>　エンジンにカメラが一つも登録されていない場合は、暗黙的に存在するデフォルトカメラによって登録されている描画できる全てのノードが描画されます。しかし <strong>エンジンにカメラが一つでも登録した場合は、デフォルトカメラが無効化されるため、下記の<a href="xref:Altseed2.SpriteNode.CameraGroup">CameraGroup</a> プロパティを適切に設定していないノードは描画されません。</strong></p>
+<p>　エンジンにカメラが一つも登録されていない場合は、暗黙的に存在するデフォルトカメラによって登録されている描画できる全てのノードが描画されます。しかし <strong>エンジンにカメラが一つでも登録した場合は、デフォルトカメラが無効化されるため、下記の<a class="xref" href="../../References/Altseed2.SpriteNode.html#Altseed2_SpriteNode_CameraGroup">CameraGroup</a> プロパティを適切に設定していないノードは描画されません。</strong></p>
 </div>
 <h2 id="クリア">クリア</h2>
-<p><a href="xref:Altseed2.CameraNode.IsColorCleared">IsColorCleared</a> プロパティを設定することで、<a href="xref:Altseed2.CameraNode">CameraNode</a>が描画を開始する前、描画領域をクリアすることができます。その際の色は <a href="xref:Altseed2.CameraNode.ClearColor">ClearColor</a> プロパティで設定できます。クリアを行わないと、前のフレームの描画結果に上書きして描画した結果が得られます。</p>
+<p><a class="xref" href="../../References/Altseed2.CameraNode.html#Altseed2_CameraNode_IsColorCleared">IsColorCleared</a> プロパティを設定することで、<a class="xref" href="../../References/Altseed2.CameraNode.html">CameraNode</a>が描画を開始する前、描画領域をクリアすることができます。その際の色は <a class="xref" href="../../References/Altseed2.CameraNode.html#Altseed2_CameraNode_ClearColor">ClearColor</a> プロパティで設定できます。クリアを行わないと、前のフレームの描画結果に上書きして描画した結果が得られます。</p>
 <div class="NOTE">
 <h5>Note</h5>
 <p>複数のカメラの描画結果を画面に出力する場合、透明な色でクリアすることによって、より下に（先に）出力されるカメラの描画結果も表示することができます。</p>
 </div>
 <h2 id="グループ">グループ</h2>
-<p><a href="xref:Altseed2.SpriteNode">SpriteNode</a> や <a href="xref:Altseed2.PostEffectNode">PostEffectNode</a> のような描画できるノードが持っている<a href="xref:Altseed2.SpriteNode.CameraGroup">CameraGroup</a> プロパティは、どのカメラの描画によって描画されるかを指定するものです。
-描画の対象となる<a href="xref:Altseed2.SpriteNode.CameraGroup">CameraGroup</a>は、<a href="xref:Altseed2.CameraNode">CameraNode</a>クラスが持つ<a href="xref:Altseed2.CameraNode.Group">Group</a> プロパティと、 <a href="xref:Altseed2.SpriteNode.CameraGroup">CameraGroup</a> プロパティの AND 演算の結果が 0 以外である場合、描画します。</p>
+<p><a class="xref" href="../../References/Altseed2.SpriteNode.html">SpriteNode</a> や <a class="xref" href="../../References/Altseed2.PostEffectNode.html">PostEffectNode</a> のような描画できるノードが持っている<a class="xref" href="../../References/Altseed2.SpriteNode.html#Altseed2_SpriteNode_CameraGroup">CameraGroup</a> プロパティは、どのカメラの描画によって描画されるかを指定するものです。
+描画の対象となる<a class="xref" href="../../References/Altseed2.SpriteNode.html#Altseed2_SpriteNode_CameraGroup">CameraGroup</a>は、<a class="xref" href="../../References/Altseed2.CameraNode.html">CameraNode</a>クラスが持つ<a class="xref" href="../../References/Altseed2.CameraNode.html#Altseed2_CameraNode_Group">Group</a> プロパティと、 <a class="xref" href="../../References/Altseed2.SpriteNode.html#Altseed2_SpriteNode_CameraGroup">CameraGroup</a> プロパティの AND 演算の結果が 0 以外である場合、描画します。</p>
 <div class="NOTE">
 <h5>Note</h5>
-<p><a href="xref:Altseed2.CameraNode">CameraNode</a> は <a href="xref:Altseed2.CameraNode.Group">Group</a> プロパティの値に従い <strong>降順</strong> に描画結果を生成します。これはペイントソフトなどにおけるレイヤーの重ね順のように機能します。</p>
+<p><a class="xref" href="../../References/Altseed2.CameraNode.html">CameraNode</a> は <a class="xref" href="../../References/Altseed2.CameraNode.html#Altseed2_CameraNode_Group">Group</a> プロパティの値に従い <strong>降順</strong> に描画結果を生成します。これはペイントソフトなどにおけるレイヤーの重ね順のように機能します。</p>
 </div>
 <div class="IMPORTANT">
 <h5>Important</h5>
-<p>上記の通り、画面もしくは<a href="xref:Altseed2.RenderTexture">RenderTexure</a> への描画は<a href="xref:Altseed2.CameraNode.Group">Group</a> プロパティの値に従い <strong>降順</strong> に行われます。<a href="xref:Altseed2.RenderTexture">RenderTexure</a>への描画結果を<a href="xref:Altseed2.SpriteNode">SpriteNode</a>などで再利用する場合、その<a href="xref:Altseed2.SpriteNode">SpriteNode</a>は<a href="xref:Altseed2.RenderTexture">RenderTexure</a>への描画を行った<a href="xref:Altseed2.SpriteNode.CameraGroup">CameraGroup</a>よりも<a href="xref:Altseed2.CameraNode.Group">Group</a> プロパティの値がより大きい<a href="xref:Altseed2.SpriteNode.CameraGroup">CameraGroup</a>によって撮影する場合のみ正常に描画されます。<a href="xref:Altseed2.CameraNode.Group">Group</a> プロパティの値が同じか、より小さい<a href="xref:Altseed2.CameraNode">CameraNode</a>によって撮影しようとした場合、<a href="xref:Altseed2.RenderTexture">RenderTexure</a> への描画がその時点でまだ行われていないため、何も描画されていないか1フレーム前の描画結果を使用して描画が行われます。</p>
+<p>上記の通り、画面もしくは<a class="xref" href="../../References/Altseed2.RenderTexture.html">RenderTexure</a> への描画は<a class="xref" href="../../References/Altseed2.CameraNode.html#Altseed2_CameraNode_Group">Group</a> プロパティの値に従い <strong>降順</strong> に行われます。<a class="xref" href="../../References/Altseed2.RenderTexture.html">RenderTexure</a>への描画結果を<a class="xref" href="../../References/Altseed2.SpriteNode.html">SpriteNode</a>などで再利用する場合、その<a class="xref" href="../../References/Altseed2.SpriteNode.html">SpriteNode</a>は<a class="xref" href="../../References/Altseed2.RenderTexture.html">RenderTexure</a>への描画を行った<a class="xref" href="../../References/Altseed2.SpriteNode.html#Altseed2_SpriteNode_CameraGroup">CameraGroup</a>よりも<a class="xref" href="../../References/Altseed2.CameraNode.html#Altseed2_CameraNode_Group">Group</a> プロパティの値がより大きい<a class="xref" href="../../References/Altseed2.SpriteNode.html#Altseed2_SpriteNode_CameraGroup">CameraGroup</a>によって撮影する場合のみ正常に描画されます。<a class="xref" href="../../References/Altseed2.CameraNode.html#Altseed2_CameraNode_Group">Group</a> プロパティの値が同じか、より小さい<a class="xref" href="../../References/Altseed2.CameraNode.html">CameraNode</a>によって撮影しようとした場合、<a class="xref" href="../../References/Altseed2.RenderTexture.html">RenderTexure</a> への描画がその時点でまだ行われていないため、何も描画されていないか1フレーム前の描画結果を使用して描画が行われます。</p>
 </div>
 <h2 id="サンプル">サンプル</h2>
 <h3 id="カメラ-1">カメラ</h3>

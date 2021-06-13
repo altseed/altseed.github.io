@@ -54,7 +54,7 @@
                           <a href="../../Manual/index.html" title="&#27231;&#33021;&#35299;&#35500;">&#27231;&#33021;&#35299;&#35500;</a>
                       </li>
                       <li>
-                          <a>リファレンス</a>
+                          <a href="../../References/Altseed2.html" title="&#12522;&#12501;&#12449;&#12524;&#12531;&#12473;">&#12522;&#12501;&#12449;&#12524;&#12531;&#12473;</a>
                       </li>
                       <li>
                           <a href="../../First/index.html" title="&#21021;&#20195;Altseed&#12399;&#12467;&#12481;&#12521;">&#21021;&#20195;Altseed&#12399;&#12467;&#12481;&#12521;</a>
@@ -177,11 +177,11 @@
 
 <p>文字を描画するには、</p>
 <ul>
-<li>フォントデータを格納する<a href="xref:Altseed2.Font">Font</a></li>
-<li>Fontを使って文字列を描画する<a href="xref:Altseed2.TextNode">TextNode</a>
+<li>フォントデータを格納する<a class="xref" href="../../References/Altseed2.Font.html">Font</a></li>
+<li>Fontを使って文字列を描画する<a class="xref" href="../../References/Altseed2.TextNode.html">TextNode</a>
 を使用します。</li>
 </ul>
-<h2 id="font"><a href="xref:Altseed2">Font</a></h2>
+<h2 id="font"><a class="xref" href="../../References/Altseed2.html">Font</a></h2>
 <p>フォント情報を格納するクラスです。
 実行時にフォント情報を作成する動的フォントと、事前にフォント情報を作成する静的フォントの二種類があります。</p>
 <ul>
@@ -242,8 +242,8 @@
 <p><a href="https://www.freetype.org/freetype2/docs/index.html">https://www.freetype.org/freetype2/docs/index.html</a></p>
 </blockquote>
 <h3 id="動的フォント">動的フォント</h3>
-<p><a href="xref:Altseed2.Font.LoadDynamicFont(System.String,System.Int32)">LoadDynamicFont</a>
-静的メソッドを用いてフォントファイルを読み込み<a href="xref:Altseed2.Texture2D">Font</a>インスタンスを作成します。</p>
+<p><a class="xref" href="../../References/Altseed2.Font.html#Altseed2_Font_LoadDynamicFont_System_String_System_Int32_">LoadDynamicFont</a>
+静的メソッドを用いてフォントファイルを読み込み<a class="xref" href="../../References/Altseed2.Texture2D.html">Font</a>インスタンスを作成します。</p>
 <pre><code class="lang-csharp">// 動的フォントを読み込む (デフォルトのサンプリングサイズは64)
 var font = Font.LoadDynamicFont(&quot;path/to/dynamicfont.ttf&quot;);
 
@@ -256,11 +256,11 @@ var fontWithSamplingSize = Font.LoadDynamicFont(&quot;path/to/dynamicfont.otf&qu
 <p><a href="../CLITool.html">Altseed2.Tools (.NETツール)</a>を利用して、CLIコマンドまたはGUIを用いて静的フォントを作成することができます。</p>
 <h3 id="ソースコード上から生成する">ソースコード上から生成する</h3>
 <p>Altseed2 から直接呼び出したい場合は、
-<a href="xref:Altseed2.Font.GenerateFontFile(System.String,System.String,System.String,System.Int32)">GenerateFontFile</a>
+<a class="xref" href="../../References/Altseed2.Font.html#Altseed2_Font_GenerateFontFile_System_String_System_String_System_String_System_Int32_">GenerateFontFile</a>
 静的メソッドを利用して、a2fファイルを生成することができます。</p>
 <p>その後、
-<a href="xref:Altseed2.Font.LoadStaticFont(System.String)">LoadStaticFont</a>
-静的メソッドを用いてa2fファイルを読み込み<a href="xref:Altseed2.Texture2D">Font</a>インスタンスを作成します。</p>
+<a class="xref" href="../../References/Altseed2.Font.html#Altseed2_Font_LoadStaticFont_System_String_">LoadStaticFont</a>
+静的メソッドを用いてa2fファイルを読み込み<a class="xref" href="../../References/Altseed2.Texture2D.html">Font</a>インスタンスを作成します。</p>
 <pre><code class="lang-csharp">// 事前に生成したa2fファイルから静的フォントを読み込む
 var font = Font.LoadStaticFont(&quot;path/to/staticfont.a2f&quot;);
 
@@ -281,7 +281,7 @@ font/
 └── TextureN.png
 </code></pre>
 <p>このa2fファイルを使いたい場合は、この相対位置を保って<code>font.a2f</code>ファイルと<code>font</code>フォルダを同じフォルダに配置する必要があります。</p>
-<h2 id="textnode"><a href="xref:Altseed2.TextNode">TextNode</a></h2>
+<h2 id="textnode"><a class="xref" href="../../References/Altseed2.TextNode.html">TextNode</a></h2>
 <p>描画する文字列やそれに適用するオプションなどを設定可能にしたノードです。
 描画する文字列、文字列の大きさなどを設定することができます。</p>
 <h2 id="サンプル">サンプル</h2>
