@@ -179,7 +179,7 @@
 h264の映像を読み込み、テクスチャに出力します。</p>
 <p>パッケージ機能には対応しておらず、映像はパッケージの外に置く必要があります。</p>
 <p>以下のように記述して映像を出力します。</p>
-<pre><code class="lang-csharp">using System;
+<pre><code class="lang-csharp" name="Main">using System;
 
 using Altseed2;
 
@@ -193,8 +193,8 @@ namespace Sample
             // Altseed2 を初期化します。
             if (!Engine.Initialize(&quot;Movie&quot;, 640, 480)) return;
 
-            // 空のテクスチャを作成します。
-            var texture = Texture2D.Create(new Vector2I(640, 480));
+            // 空のテクスチャを読み込みます。
+            var texture = RenderTexture.Create(new Vector2I(640, 480), TextureFormat.R8G8B8A8_UNORM);
 
             // 映像を読み込みます。
             var mediaPlayer = MediaPlayer.Load(@&quot;TestData/Movie/Test1.mp4&quot;);
@@ -216,7 +216,7 @@ namespace Sample
             while (Engine.DoEvents())
             {
                 // 現在の映像を画像に書き込みます。
-                mediaPlayer.WriteToTexture2D(texture);
+                mediaPlayer.WriteToRenderTexture(texture);
 
                 // Altseed を更新します。
                 Engine.Update();
@@ -227,9 +227,7 @@ namespace Sample
         }
     }
 }
-
-</code></pre>
-</article>
+</code></pre></article>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
