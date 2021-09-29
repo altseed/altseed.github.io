@@ -6054,19 +6054,19 @@ references:
   isSpec: "True"
   fullName: Altseed2.MediaPlayer.Size
   nameWithType: MediaPlayer.Size
-- uid: Altseed2.MediaPlayer.WriteToTexture2D(Altseed2.Texture2D)
-  name: WriteToTexture2D(Texture2D)
-  href: References/Altseed2.MediaPlayer.html#Altseed2_MediaPlayer_WriteToTexture2D_Altseed2_Texture2D_
-  commentId: M:Altseed2.MediaPlayer.WriteToTexture2D(Altseed2.Texture2D)
-  fullName: Altseed2.MediaPlayer.WriteToTexture2D(Altseed2.Texture2D)
-  nameWithType: MediaPlayer.WriteToTexture2D(Texture2D)
-- uid: Altseed2.MediaPlayer.WriteToTexture2D*
-  name: WriteToTexture2D
-  href: References/Altseed2.MediaPlayer.html#Altseed2_MediaPlayer_WriteToTexture2D_
-  commentId: Overload:Altseed2.MediaPlayer.WriteToTexture2D
+- uid: Altseed2.MediaPlayer.WriteToRenderTexture(Altseed2.RenderTexture)
+  name: WriteToRenderTexture(RenderTexture)
+  href: References/Altseed2.MediaPlayer.html#Altseed2_MediaPlayer_WriteToRenderTexture_Altseed2_RenderTexture_
+  commentId: M:Altseed2.MediaPlayer.WriteToRenderTexture(Altseed2.RenderTexture)
+  fullName: Altseed2.MediaPlayer.WriteToRenderTexture(Altseed2.RenderTexture)
+  nameWithType: MediaPlayer.WriteToRenderTexture(RenderTexture)
+- uid: Altseed2.MediaPlayer.WriteToRenderTexture*
+  name: WriteToRenderTexture
+  href: References/Altseed2.MediaPlayer.html#Altseed2_MediaPlayer_WriteToRenderTexture_
+  commentId: Overload:Altseed2.MediaPlayer.WriteToRenderTexture
   isSpec: "True"
-  fullName: Altseed2.MediaPlayer.WriteToTexture2D
-  nameWithType: MediaPlayer.WriteToTexture2D
+  fullName: Altseed2.MediaPlayer.WriteToRenderTexture
+  nameWithType: MediaPlayer.WriteToRenderTexture
 - uid: Altseed2.Mouse
   name: Mouse
   href: References/Altseed2.Mouse.html
@@ -16646,6 +16646,19 @@ references:
   isSpec: "True"
   fullName: Altseed2.TransformNode.VerticalFlip
   nameWithType: TransformNode.VerticalFlip
+- uid: Altseed2.TransformNode.VisibleTransformNodeInfo
+  name: VisibleTransformNodeInfo
+  href: References/Altseed2.TransformNode.html#Altseed2_TransformNode_VisibleTransformNodeInfo
+  commentId: P:Altseed2.TransformNode.VisibleTransformNodeInfo
+  fullName: Altseed2.TransformNode.VisibleTransformNodeInfo
+  nameWithType: TransformNode.VisibleTransformNodeInfo
+- uid: Altseed2.TransformNode.VisibleTransformNodeInfo*
+  name: VisibleTransformNodeInfo
+  href: References/Altseed2.TransformNode.html#Altseed2_TransformNode_VisibleTransformNodeInfo_
+  commentId: Overload:Altseed2.TransformNode.VisibleTransformNodeInfo
+  isSpec: "True"
+  fullName: Altseed2.TransformNode.VisibleTransformNodeInfo
+  nameWithType: TransformNode.VisibleTransformNodeInfo
 - uid: Altseed2.TransitionNode
   name: TransitionNode
   href: References/Altseed2.TransitionNode.html
